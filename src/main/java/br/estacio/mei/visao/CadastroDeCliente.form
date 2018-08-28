@@ -70,7 +70,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jTextField_codigo2" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
                               <Component id="jTextField_cpfCnpj" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
-                              <Component id="jTextField_nome" alignment="0" pref="304" max="32767" attributes="0"/>
+                              <Component id="jTextField_nome" alignment="0" pref="327" max="32767" attributes="0"/>
                               <Component id="jTextField_nomeFantasia" alignment="0" max="32767" attributes="0"/>
                               <Component id="jTextField_endereco" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
                               <Component id="jTextField_complemento" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
@@ -344,9 +344,6 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ce" green="b4" red="c" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/main/resources/icones/confirm.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Confirmar"/>
           </Properties>
         </Component>
@@ -355,10 +352,8 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/main/resources/icones/cancel.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
+            <Property name="name" type="java.lang.String" value="Inclus&#xe3;o de Cliente" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_inscrEstadual">
