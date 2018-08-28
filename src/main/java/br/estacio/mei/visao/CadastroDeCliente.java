@@ -106,7 +106,7 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/icones/confirm.png"))); // NOI18N
         jButton1.setText("Confirmar");
 
-        jButton2.setBackground(new java.awt.Color(204, 0, 0));
+        jButton2.setBackground(new java.awt.Color(255, 0, 51));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/icones/cancel.png"))); // NOI18N
         jButton2.setText("Cancelar");
 
