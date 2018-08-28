@@ -67,8 +67,6 @@ public class CrudExemplo extends javax.swing.JFrame {
 
         panelInicio.setBackground(new java.awt.Color(2, 139, 229));
 
-        imgInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Home_25px.png"))); // NOI18N
-
         lblInicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblInicio.setForeground(new java.awt.Color(255, 255, 255));
         lblInicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -97,8 +95,6 @@ public class CrudExemplo extends javax.swing.JFrame {
         menuLateral.add(panelInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 437, -1));
 
         panelContasPagar.setBackground(new java.awt.Color(2, 119, 225));
-
-        imgContasPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Cost_25px.png"))); // NOI18N
 
         lblContasPagar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblContasPagar.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,8 +125,6 @@ public class CrudExemplo extends javax.swing.JFrame {
 
         panelProdutos.setBackground(new java.awt.Color(2, 119, 225));
 
-        imgProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Trolley_25px.png"))); // NOI18N
-
         lblProduto.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblProduto.setForeground(new java.awt.Color(255, 255, 255));
         lblProduto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -160,8 +154,6 @@ public class CrudExemplo extends javax.swing.JFrame {
 
         panelClientes.setBackground(new java.awt.Color(2, 119, 225));
 
-        imgClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Add_User_Group_Man_Woman_25px.png"))); // NOI18N
-
         lblClientes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClientes.setForeground(new java.awt.Color(255, 255, 255));
         lblClientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -188,8 +180,6 @@ public class CrudExemplo extends javax.swing.JFrame {
         );
 
         menuLateral.add(panelClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, -1, -1));
-
-        imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Stocks_64px.png"))); // NOI18N
         menuLateral.add(imgLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         lblNomeSistema.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
@@ -304,7 +294,7 @@ public class CrudExemplo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,14 +355,8 @@ public class CrudExemplo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
