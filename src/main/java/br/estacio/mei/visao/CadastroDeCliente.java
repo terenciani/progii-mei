@@ -103,12 +103,11 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         jLabel_bairro1.setText("Cidade:");
 
         jButton1.setBackground(new java.awt.Color(12, 180, 206));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/icones/confirm.png"))); // NOI18N
         jButton1.setText("Confirmar");
 
         jButton2.setBackground(new java.awt.Color(255, 0, 51));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/icones/cancel.png"))); // NOI18N
         jButton2.setText("Cancelar");
+        jButton2.setName("Inclusão de Cliente"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -133,7 +132,7 @@ public class CadastroDeCliente extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField_codigo2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField_cpfCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_nome, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+                            .addComponent(jTextField_nome, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
                             .addComponent(jTextField_nomeFantasia)
                             .addComponent(jTextField_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField_complemento, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
