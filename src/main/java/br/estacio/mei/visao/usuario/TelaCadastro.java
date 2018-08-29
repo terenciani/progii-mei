@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.br.estacio.mei.visao;
+package br.estacio.mei.visao.usuario;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -46,14 +46,13 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtnome = new javax.swing.JTextField();
         txtsenha = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
         cdCancelar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         CdTable = new javax.swing.JTable();
         cdExcluir = new javax.swing.JButton();
         cdAlterar = new javax.swing.JButton();
         cdSair = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -89,7 +88,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Cadastro de Usuáro");
+        jLabel1.setText("Cadastro de Usuário");
 
         jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,8 +98,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("SENHA:");
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PicsArt_08-28-07.50.53.jpg"))); // NOI18N
 
         cdCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cdCancelar.setText("Cadastrar");
@@ -157,7 +154,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/PicsArt_08-28-07.50.53.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/PicsArt_08-28-07.50.53.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -202,18 +199,12 @@ public class TelaCadastro extends javax.swing.JFrame {
                         .addGap(247, 247, 247)
                         .addComponent(jLabel4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(240, 240, 240))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
@@ -246,7 +237,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -347,7 +338,6 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
