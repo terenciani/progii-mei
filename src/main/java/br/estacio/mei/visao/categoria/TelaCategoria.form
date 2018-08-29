@@ -73,28 +73,19 @@
                                   <Component id="botaoBuscar" min="-2" pref="105" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="botaoSair" min="-2" pref="109" max="-2" attributes="0"/>
-                                      <Component id="botaoConfirmar" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="botaoAlterar" min="-2" pref="105" max="-2" attributes="0"/>
-                                      <Component id="botaoIncluir" min="-2" pref="105" max="-2" attributes="0"/>
-                                      <Component id="botaoExcluir" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                                      <Component id="botaoImprimir" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="botaoImprimir" alignment="0" pref="109" max="32767" attributes="0"/>
+                              <Component id="botaoSair" pref="109" max="32767" attributes="0"/>
+                              <Component id="botaoConfirmar" alignment="0" pref="109" max="32767" attributes="0"/>
+                              <Component id="botaoExcluir" alignment="0" max="32767" attributes="0"/>
+                              <Component id="botaoAlterar" alignment="0" max="32767" attributes="0"/>
+                              <Component id="botaoIncluir" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="labelBuscaCate" min="-2" pref="114" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="248" max="32767" attributes="0"/>
+                  <EmptySpace pref="259" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -121,11 +112,11 @@
                           <Component id="botaoImprimir" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   <Component id="botaoConfirmar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="botaoSair" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="156" max="32767" attributes="0"/>
+                  <EmptySpace pref="184" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
