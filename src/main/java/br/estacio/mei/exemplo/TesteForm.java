@@ -7,7 +7,7 @@ package br.estacio.mei.exemplo;
 
 import br.estacio.mei.visao.usuario.TelaCadastro;
 import javax.swing.JFrame;
-import main.java.br.estacio.mei.exemplo.LayoutBase;
+import br.estacio.mei.exemplo.LayoutBase;
 
 /**
  *
