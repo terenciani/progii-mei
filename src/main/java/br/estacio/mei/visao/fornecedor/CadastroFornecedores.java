@@ -113,14 +113,31 @@ public class CadastroFornecedores extends javax.swing.JFrame {
         jTextField17 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jTextField18 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
         jComboBox1 = new javax.swing.JComboBox<>();
+        painelLateral = new javax.swing.JPanel();
+        btnInicio = new javax.swing.JPanel();
+        imgInicio = new javax.swing.JLabel();
+        lblInicio = new javax.swing.JLabel();
+        btnContasAPagar = new javax.swing.JPanel();
+        imgContasAPagar = new javax.swing.JLabel();
+        lblContasAPagar = new javax.swing.JLabel();
+        btnContasAReceber = new javax.swing.JPanel();
+        imgContasAReceber = new javax.swing.JLabel();
+        lblContasAReceber = new javax.swing.JLabel();
+        btnCategorias = new javax.swing.JPanel();
+        imgCategorias = new javax.swing.JLabel();
+        lblCategorias = new javax.swing.JLabel();
+        btnClientes = new javax.swing.JPanel();
+        imgClientes = new javax.swing.JLabel();
+        lblClientes = new javax.swing.JLabel();
+        btnSair = new javax.swing.JPanel();
+        imgSair = new javax.swing.JLabel();
+        lblSair = new javax.swing.JLabel();
+        btnFornecedores = new javax.swing.JPanel();
+        imgFornecedores = new javax.swing.JLabel();
+        lblFornecedores = new javax.swing.JLabel();
+        separador = new javax.swing.JSeparator();
+        imgLogo = new javax.swing.JLabel();
 
         jLabel7.setText("CPF:");
 
@@ -143,13 +160,13 @@ public class CadastroFornecedores extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nome/Raz√£o", "CPF", "CNPJ", "Cidade" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nome/Raz„o", "CPF", "CNPJ", "Cidade" }));
 
         jLabel22.setText("Campo procura:");
 
         jLabel23.setText("Digite o dado:");
 
-        jLabel24.setText("Nome/Raz√£o:");
+        jLabel24.setText("Nome/Raz„o:");
 
         jLabel25.setText("Fantasia:");
 
@@ -157,7 +174,7 @@ public class CadastroFornecedores extends javax.swing.JFrame {
 
         jLabel27.setText("CNPJ:");
 
-        jLabel28.setText("Endere√ßo:");
+        jLabel28.setText("EndereÁo:");
 
         jLabel29.setText("Numero");
 
@@ -399,147 +416,105 @@ public class CadastroFornecedores extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Fornecedor");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(1024, 768));
+        setMinimumSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(null);
 
-        jLabel4.setText("Nome/Raz√£o:");
+        jLabel4.setText("Nome/Raz„o:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(31, 184, 65, 23);
+        jLabel4.setBounds(340, 160, 65, 23);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(100, 185, 730, 20);
+        jTextField2.setBounds(410, 170, 560, 20);
 
         jLabel5.setText("Fantasia:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(31, 213, 45, 23);
+        jLabel5.setBounds(340, 200, 45, 23);
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(100, 214, 730, 20);
+        jTextField3.setBounds(410, 200, 560, 20);
 
         jLabel6.setText("CPF:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(133, 143, 23, 14);
+        jLabel6.setBounds(440, 120, 23, 14);
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(160, 140, 105, 20);
+        jTextField4.setBounds(470, 120, 105, 20);
 
         jLabel8.setText("CNPJ:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(275, 143, 29, 14);
+        jLabel8.setBounds(590, 120, 29, 14);
         getContentPane().add(jTextField6);
-        jTextField6.setBounds(310, 140, 123, 20);
+        jTextField6.setBounds(620, 120, 123, 20);
         getContentPane().add(jTextField7);
-        jTextField7.setBounds(100, 248, 373, 20);
+        jTextField7.setBounds(410, 230, 373, 20);
 
-        jLabel9.setText("Endere√ßo:");
+        jLabel9.setText("EndereÁo:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(31, 247, 49, 23);
+        jLabel9.setBounds(340, 230, 49, 23);
 
         jLabel10.setText("Numero");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(483, 247, 37, 23);
+        jLabel10.setBounds(800, 230, 37, 23);
         getContentPane().add(jTextField8);
-        jTextField8.setBounds(524, 248, 53, 20);
+        jTextField8.setBounds(840, 230, 53, 20);
 
         jLabel11.setText("CEP:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(587, 247, 23, 23);
+        jLabel11.setBounds(900, 230, 23, 23);
         getContentPane().add(jTextField9);
-        jTextField9.setBounds(614, 248, 216, 20);
+        jTextField9.setBounds(930, 230, 40, 20);
 
         jLabel12.setText("Inscr. Estadual");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(449, 143, 72, 14);
+        jLabel12.setBounds(750, 120, 72, 14);
         getContentPane().add(jTextField10);
-        jTextField10.setBounds(530, 140, 137, 20);
+        jTextField10.setBounds(840, 120, 137, 20);
 
         jLabel13.setText("Telefone:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(31, 319, 46, 23);
+        jLabel13.setBounds(340, 300, 46, 23);
         getContentPane().add(jTextField11);
-        jTextField11.setBounds(100, 320, 107, 20);
+        jTextField11.setBounds(410, 300, 107, 20);
 
         jLabel14.setText("Celular:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(217, 319, 37, 23);
+        jLabel14.setBounds(530, 300, 37, 23);
         getContentPane().add(jTextField12);
-        jTextField12.setBounds(258, 320, 95, 20);
+        jTextField12.setBounds(570, 300, 95, 20);
 
         jLabel15.setText("E-mail:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(371, 319, 32, 23);
+        jLabel15.setBounds(680, 300, 32, 23);
         getContentPane().add(jTextField13);
-        jTextField13.setBounds(407, 320, 423, 20);
+        jTextField13.setBounds(720, 300, 240, 20);
 
         jLabel16.setText("Contato:");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(31, 360, 43, 23);
+        jLabel16.setBounds(340, 340, 43, 23);
         getContentPane().add(jTextField14);
-        jTextField14.setBounds(100, 361, 233, 20);
+        jTextField14.setBounds(410, 340, 233, 20);
 
         jLabel17.setText("Bairro:");
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(31, 281, 32, 23);
+        jLabel17.setBounds(340, 260, 32, 23);
         getContentPane().add(jTextField15);
-        jTextField15.setBounds(100, 282, 174, 20);
+        jTextField15.setBounds(410, 260, 174, 20);
 
         jLabel18.setText("Cidade:");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(302, 281, 37, 23);
+        jLabel18.setBounds(610, 260, 37, 23);
         getContentPane().add(jTextField16);
-        jTextField16.setBounds(343, 282, 234, 20);
+        jTextField16.setBounds(660, 260, 234, 20);
 
         jLabel19.setText("UF:");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(587, 281, 17, 23);
+        jLabel19.setBounds(900, 260, 17, 23);
         getContentPane().add(jTextField17);
-        jTextField17.setBounds(608, 282, 84, 20);
+        jTextField17.setBounds(920, 260, 40, 20);
 
         jLabel20.setText("Site:");
         getContentPane().add(jLabel20);
-        jLabel20.setBounds(371, 360, 22, 23);
+        jLabel20.setBounds(680, 340, 22, 23);
         getContentPane().add(jTextField18);
-        jTextField18.setBounds(397, 361, 433, 20);
-
-        jButton1.setText("NOVO");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(160, 30, 61, 23);
-
-        jButton2.setText("EDITAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(230, 30, 69, 23);
-
-        jButton3.setText("CONSULTAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(320, 30, 93, 23);
-
-        jButton4.setText("CANCELAR");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(420, 30, 85, 23);
-
-        jButton5.setText("FECHAR");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(510, 30, 73, 23);
-        getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(31, 70, 673, 10);
-        getContentPane().add(jSeparator4);
-        jSeparator4.setBounds(31, 125, 673, 10);
+        jTextField18.setBounds(710, 340, 250, 20);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Juridico", "Fisico", " " }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -548,26 +523,218 @@ public class CadastroFornecedores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(40, 140, 80, 20);
+        jComboBox1.setBounds(350, 120, 80, 20);
+
+        painelLateral.setBackground(new java.awt.Color(12, 197, 205));
+
+        btnInicio.setBackground(new java.awt.Color(13, 155, 177));
+
+        lblInicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblInicio.setForeground(new java.awt.Color(255, 255, 255));
+        lblInicio.setText("InÌcio");
+
+        javax.swing.GroupLayout btnInicioLayout = new javax.swing.GroupLayout(btnInicio);
+        btnInicio.setLayout(btnInicioLayout);
+        btnInicioLayout.setHorizontalGroup(
+            btnInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnInicioLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgInicio)
+                .addGap(18, 18, 18)
+                .addComponent(lblInicio)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnInicioLayout.setVerticalGroup(
+            btnInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(lblInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        btnContasAPagar.setBackground(new java.awt.Color(12, 180, 206));
+
+        lblContasAPagar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblContasAPagar.setForeground(new java.awt.Color(255, 255, 255));
+        lblContasAPagar.setText("Contas a Pagar");
+
+        javax.swing.GroupLayout btnContasAPagarLayout = new javax.swing.GroupLayout(btnContasAPagar);
+        btnContasAPagar.setLayout(btnContasAPagarLayout);
+        btnContasAPagarLayout.setHorizontalGroup(
+            btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnContasAPagarLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgContasAPagar)
+                .addGap(18, 18, 18)
+                .addComponent(lblContasAPagar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnContasAPagarLayout.setVerticalGroup(
+            btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(lblContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        btnContasAReceber.setBackground(new java.awt.Color(12, 180, 206));
+
+        lblContasAReceber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblContasAReceber.setForeground(new java.awt.Color(255, 255, 255));
+        lblContasAReceber.setText("Contas a Receber");
+
+        javax.swing.GroupLayout btnContasAReceberLayout = new javax.swing.GroupLayout(btnContasAReceber);
+        btnContasAReceber.setLayout(btnContasAReceberLayout);
+        btnContasAReceberLayout.setHorizontalGroup(
+            btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnContasAReceberLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgContasAReceber)
+                .addGap(18, 18, 18)
+                .addComponent(lblContasAReceber)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnContasAReceberLayout.setVerticalGroup(
+            btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(lblContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        btnCategorias.setBackground(new java.awt.Color(12, 180, 206));
+
+        lblCategorias.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblCategorias.setForeground(new java.awt.Color(255, 255, 255));
+        lblCategorias.setText("Categorias");
+
+        javax.swing.GroupLayout btnCategoriasLayout = new javax.swing.GroupLayout(btnCategorias);
+        btnCategorias.setLayout(btnCategoriasLayout);
+        btnCategoriasLayout.setHorizontalGroup(
+            btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnCategoriasLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgCategorias)
+                .addGap(18, 18, 18)
+                .addComponent(lblCategorias)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnCategoriasLayout.setVerticalGroup(
+            btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(lblCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        btnClientes.setBackground(new java.awt.Color(12, 180, 206));
+
+        lblClientes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblClientes.setForeground(new java.awt.Color(255, 255, 255));
+        lblClientes.setText("Clientes");
+
+        javax.swing.GroupLayout btnClientesLayout = new javax.swing.GroupLayout(btnClientes);
+        btnClientes.setLayout(btnClientesLayout);
+        btnClientesLayout.setHorizontalGroup(
+            btnClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnClientesLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgClientes)
+                .addGap(18, 18, 18)
+                .addComponent(lblClientes)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnClientesLayout.setVerticalGroup(
+            btnClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(lblClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        btnSair.setBackground(new java.awt.Color(12, 180, 206));
+
+        lblSair.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblSair.setForeground(new java.awt.Color(255, 255, 255));
+        lblSair.setText("Sair");
+
+        javax.swing.GroupLayout btnSairLayout = new javax.swing.GroupLayout(btnSair);
+        btnSair.setLayout(btnSairLayout);
+        btnSairLayout.setHorizontalGroup(
+            btnSairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnSairLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgSair)
+                .addGap(18, 18, 18)
+                .addComponent(lblSair)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnSairLayout.setVerticalGroup(
+            btnSairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgSair, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(lblSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        btnFornecedores.setBackground(new java.awt.Color(12, 180, 206));
+
+        lblFornecedores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblFornecedores.setForeground(new java.awt.Color(255, 255, 255));
+        lblFornecedores.setText("Fornecedores");
+
+        javax.swing.GroupLayout btnFornecedoresLayout = new javax.swing.GroupLayout(btnFornecedores);
+        btnFornecedores.setLayout(btnFornecedoresLayout);
+        btnFornecedoresLayout.setHorizontalGroup(
+            btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnFornecedoresLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgFornecedores)
+                .addGap(18, 18, 18)
+                .addComponent(lblFornecedores)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnFornecedoresLayout.setVerticalGroup(
+            btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+        );
+
+        imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout painelLateralLayout = new javax.swing.GroupLayout(painelLateral);
+        painelLateral.setLayout(painelLateralLayout);
+        painelLateralLayout.setHorizontalGroup(
+            painelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnFornecedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(imgLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(painelLateralLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        painelLateralLayout.setVerticalGroup(
+            painelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelLateralLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(imgLogo)
+                .addGap(18, 18, 18)
+                .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnContasAPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnContasAReceber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 268, Short.MAX_VALUE)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        getContentPane().add(painelLateral);
+        painelLateral.setBounds(0, 0, 280, 716);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         // TODO add your handling code here:
@@ -634,17 +801,27 @@ public class CadastroFornecedores extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btnCategorias;
+    private javax.swing.JPanel btnClientes;
+    private javax.swing.JPanel btnContasAPagar;
+    private javax.swing.JPanel btnContasAReceber;
+    private javax.swing.JPanel btnFornecedores;
+    private javax.swing.JPanel btnInicio;
+    private javax.swing.JPanel btnSair;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel imgCategorias;
+    private javax.swing.JLabel imgClientes;
+    private javax.swing.JLabel imgContasAPagar;
+    private javax.swing.JLabel imgContasAReceber;
+    private javax.swing.JLabel imgFornecedores;
+    private javax.swing.JLabel imgInicio;
+    private javax.swing.JLabel imgLogo;
+    private javax.swing.JLabel imgSair;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
@@ -690,10 +867,8 @@ public class CadastroFornecedores extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
@@ -728,5 +903,14 @@ public class CadastroFornecedores extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lblCategorias;
+    private javax.swing.JLabel lblClientes;
+    private javax.swing.JLabel lblContasAPagar;
+    private javax.swing.JLabel lblContasAReceber;
+    private javax.swing.JLabel lblFornecedores;
+    private javax.swing.JLabel lblInicio;
+    private javax.swing.JLabel lblSair;
+    private javax.swing.JPanel painelLateral;
+    private javax.swing.JSeparator separador;
     // End of variables declaration//GEN-END:variables
 }
