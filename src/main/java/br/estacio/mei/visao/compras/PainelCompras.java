@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package visao1;
+package br.estacio.mei.visao.compras;
 
 /**
  *

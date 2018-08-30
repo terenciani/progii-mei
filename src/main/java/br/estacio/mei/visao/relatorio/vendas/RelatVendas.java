@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RelatorioVendas;
+package br.estacio.mei.visao.relatorio.vendas;
 
 /**
  *
@@ -47,9 +47,7 @@ public class RelatVendas extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLabel12 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,7 +83,6 @@ public class RelatVendas extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Parâmetros");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel4.setText("Categoria do Produto");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todas as Categorias", "Categoria 1 ", "Categoria 2", "Categoria 3", "Categoria 4" }));
@@ -96,17 +93,14 @@ public class RelatVendas extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel5.setText("Fabricante");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos os Fabricantes", "Fabricante 1", "Fabricante 2", "Fabricante 3", "Fabricante 4" }));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel6.setText("Forma de Pagamento");
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A Vista(Dinheiro)", "A Vista(Débito)", "Crédito", "Crediário", " " }));
 
-        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jCheckBox1.setText("Incluir vendas estornadas");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,19 +110,15 @@ public class RelatVendas extends javax.swing.JFrame {
 
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/icones/imprimir.png"))); // NOI18N
         jButton2.setText("Imprimir");
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/icones/salvar.png"))); // NOI18N
         jButton3.setText("Salvar");
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/icones/fechar.png"))); // NOI18N
         jButton4.setText("Fechar");
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/icones/visualizar.png"))); // NOI18N
         jButton5.setText("Visualizar");
 
@@ -143,7 +133,7 @@ public class RelatVendas extends javax.swing.JFrame {
                 .addComponent(jButton2)
                 .addGap(60, 60, 60)
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addGap(34, 34, 34))
         );
@@ -162,13 +152,10 @@ public class RelatVendas extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel9.setText("Período ");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel10.setText("Data Inicial");
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel11.setText("Data Final");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel12.setText("a");
 
         jDesktopPane2.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -184,9 +171,7 @@ public class RelatVendas extends javax.swing.JFrame {
         jDesktopPane2.setLayer(jLabel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jDateChooser2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabel12, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jDateChooser1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
         jDesktopPane2.setLayout(jDesktopPane2Layout);
@@ -208,7 +193,7 @@ public class RelatVendas extends javax.swing.JFrame {
                                 .addGap(25, 25, 25)
                                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox2, 0, 128, Short.MAX_VALUE)
+                                    .addComponent(jComboBox2, 0, 0, Short.MAX_VALUE)
                                     .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -217,11 +202,8 @@ public class RelatVendas extends javax.swing.JFrame {
                                 .addGap(82, 82, 82)
                                 .addComponent(jLabel11))
                             .addGroup(jDesktopPane2Layout.createSequentialGroup()
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(112, 112, 112)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -254,10 +236,7 @@ public class RelatVendas extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -338,8 +317,6 @@ public class RelatVendas extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JDesktopPane jDesktopPane4;
     private javax.swing.JLabel jLabel10;
