@@ -65,9 +65,9 @@
                       <Component id="painelBreadcrumb" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNomeSistema" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="473" max="32767" attributes="0"/>
-                          <Component id="lblNomeSistema" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="lblSairSuperior" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -78,8 +78,8 @@
               <Component id="painelLateral" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblNomeSistema" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                      <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSairSuperior" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                      <Component id="lblNomeSistema" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="painelBreadcrumb" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
@@ -91,6 +91,17 @@
         <Component class="javax.swing.JLabel" name="lblNomeSistema">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Sistema de Apoio ao Microempreendedor Individual"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblSairSuperior">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -100,7 +111,7 @@
             <Property name="text" type="java.lang.String" value="X"/>
           </Properties>
           <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblNomeSistemaMousePressed"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSairSuperiorMousePressed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="painelBreadcrumb">
@@ -115,7 +126,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Component id="lblBreadCrumb" min="-2" pref="243" max="-2" attributes="0"/>
+                      <Component id="jLabel6" min="-2" pref="243" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -124,14 +135,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="lblBreadCrumb" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="108" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblBreadCrumb">
+            <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -514,17 +525,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel14">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Sistema de Apoio ao Microempreendedor Individual"/>
-          </Properties>
-        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

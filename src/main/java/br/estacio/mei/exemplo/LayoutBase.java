@@ -30,8 +30,9 @@ public class LayoutBase extends javax.swing.JFrame {
 
         painelPrincipal = new javax.swing.JPanel();
         lblNomeSistema = new javax.swing.JLabel();
+        lblSairSuperior = new javax.swing.JLabel();
         painelBreadcrumb = new javax.swing.JPanel();
-        lblBreadCrumb = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         painelLateral = new javax.swing.JPanel();
         btnInicio = new javax.swing.JPanel();
         imgInicio = new javax.swing.JLabel();
@@ -56,7 +57,6 @@ public class LayoutBase extends javax.swing.JFrame {
         lblFornecedores = new javax.swing.JLabel();
         separador = new javax.swing.JSeparator();
         imgLogo = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
 
         setUndecorated(true);
         setResizable(false);
@@ -66,22 +66,26 @@ public class LayoutBase extends javax.swing.JFrame {
         painelPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 204, 204), new java.awt.Color(153, 153, 153)));
         painelPrincipal.setPreferredSize(new java.awt.Dimension(1280, 720));
 
-        lblNomeSistema.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblNomeSistema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblNomeSistema.setForeground(new java.awt.Color(153, 153, 153));
-        lblNomeSistema.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblNomeSistema.setText("X");
-        lblNomeSistema.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblNomeSistema.setText("Sistema de Apoio ao Microempreendedor Individual");
+
+        lblSairSuperior.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblSairSuperior.setForeground(new java.awt.Color(153, 153, 153));
+        lblSairSuperior.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSairSuperior.setText("X");
+        lblSairSuperior.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblNomeSistemaMousePressed(evt);
+                lblSairSuperiorMousePressed(evt);
             }
         });
 
         painelBreadcrumb.setBackground(new java.awt.Color(102, 102, 102));
 
-        lblBreadCrumb.setBackground(new java.awt.Color(204, 204, 204));
-        lblBreadCrumb.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblBreadCrumb.setForeground(new java.awt.Color(153, 153, 153));
-        lblBreadCrumb.setText("Estou na Tela de Produtos");
+        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("Estou na Tela de Produtos");
 
         javax.swing.GroupLayout painelBreadcrumbLayout = new javax.swing.GroupLayout(painelBreadcrumb);
         painelBreadcrumb.setLayout(painelBreadcrumbLayout);
@@ -89,14 +93,14 @@ public class LayoutBase extends javax.swing.JFrame {
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(lblBreadCrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelBreadcrumbLayout.setVerticalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(lblBreadCrumb)
+                .addComponent(jLabel6)
                 .addContainerGap(108, Short.MAX_VALUE))
         );
 
@@ -310,10 +314,6 @@ public class LayoutBase extends javax.swing.JFrame {
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel14.setText("Sistema de Apoio ao Microempreendedor Individual");
-
         javax.swing.GroupLayout painelPrincipalLayout = new javax.swing.GroupLayout(painelPrincipal);
         painelPrincipal.setLayout(painelPrincipalLayout);
         painelPrincipalLayout.setHorizontalGroup(
@@ -325,17 +325,17 @@ public class LayoutBase extends javax.swing.JFrame {
                     .addComponent(painelBreadcrumb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(painelPrincipalLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
-                        .addComponent(jLabel14)
+                        .addComponent(lblNomeSistema)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 473, Short.MAX_VALUE)
-                        .addComponent(lblNomeSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(lblSairSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         painelPrincipalLayout.setVerticalGroup(
             painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(painelLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelPrincipalLayout.createSequentialGroup()
                 .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNomeSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
+                    .addComponent(lblSairSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNomeSistema))
                 .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -354,9 +354,9 @@ public class LayoutBase extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblNomeSistemaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNomeSistemaMousePressed
+    private void lblSairSuperiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairSuperiorMousePressed
         System.exit(0);
-    }//GEN-LAST:event_lblNomeSistemaMousePressed
+    }//GEN-LAST:event_lblSairSuperiorMousePressed
 
     /**
      * @param args the command line arguments
@@ -409,8 +409,7 @@ public class LayoutBase extends javax.swing.JFrame {
     private javax.swing.JLabel imgInicio;
     private javax.swing.JLabel imgLogo;
     private javax.swing.JLabel imgSair;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel lblBreadCrumb;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lblCategorias;
     private javax.swing.JLabel lblClientes;
     private javax.swing.JLabel lblContasAPagar;
@@ -419,6 +418,7 @@ public class LayoutBase extends javax.swing.JFrame {
     private javax.swing.JLabel lblInicio;
     private javax.swing.JLabel lblNomeSistema;
     private javax.swing.JLabel lblSair;
+    private javax.swing.JLabel lblSairSuperior;
     private javax.swing.JPanel painelBreadcrumb;
     private javax.swing.JPanel painelLateral;
     private javax.swing.JPanel painelPrincipal;
