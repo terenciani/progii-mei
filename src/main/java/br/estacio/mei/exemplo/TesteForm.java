@@ -5,9 +5,7 @@
  */
 package br.estacio.mei.exemplo;
 
-import br.estacio.mei.visao.usuario.TelaCadastro;
 import javax.swing.JFrame;
-import br.estacio.mei.exemplo.LayoutBase;
 
 /**
  *
@@ -15,7 +13,7 @@ import br.estacio.mei.exemplo.LayoutBase;
  */
 public class TesteForm {
     public static void main(String[] args) {
-        JFrame form = new TelaCadastro();
+        JFrame form = new TesteForm();
         form.setVisible(true);
     }
 }
