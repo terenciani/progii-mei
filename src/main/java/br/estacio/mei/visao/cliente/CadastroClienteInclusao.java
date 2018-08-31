@@ -59,12 +59,10 @@ public class CadastroClienteInclusao extends javax.swing.JFrame {
         jLabel_bairro1 = new javax.swing.JLabel();
         jTextField_cidade = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jTextField_inscrEstadual = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(2, 139, 229));
 
         jLabel_codigo.setText("Código:");
 
@@ -104,12 +102,17 @@ public class CadastroClienteInclusao extends javax.swing.JFrame {
 
         jLabel_bairro1.setText("Cidade:");
 
-        jButton1.setBackground(new java.awt.Color(12, 180, 206));
+        jButton1.setBackground(new java.awt.Color(0, 204, 0));
         jButton1.setText("Confirmar");
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 51));
-        jButton2.setText("Cancelar");
-        jButton2.setName("Inclusão de Cliente"); // NOI18N
+        btnCancelar.setBackground(new java.awt.Color(255, 0, 51));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.setName("Inclusão de Cliente"); // NOI18N
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -162,7 +165,7 @@ public class CadastroClienteInclusao extends javax.swing.JFrame {
                                     .addGap(0, 0, Short.MAX_VALUE))
                                 .addComponent(jTextField_bairro))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(btnCancelar)
                                 .addGap(75, 75, 75)))
                         .addGap(65, 65, 65))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -237,7 +240,7 @@ public class CadastroClienteInclusao extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnCancelar))
                 .addContainerGap())
         );
 
@@ -256,6 +259,12 @@ public class CadastroClienteInclusao extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        CadastroClienteTelaInicial telaInicial = new CadastroClienteTelaInicial();
+        telaInicial.dispose();
+        new CadastroClienteTelaInicial().setVisible(true);
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,9 +305,9 @@ public class CadastroClienteInclusao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
     private javax.swing.ButtonGroup buttonGroup_tipoPessoa;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox_estado;
     private javax.swing.JLabel jLabel_bairro;
     private javax.swing.JLabel jLabel_bairro1;
