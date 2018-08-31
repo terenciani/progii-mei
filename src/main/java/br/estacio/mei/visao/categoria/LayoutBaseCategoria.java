@@ -73,11 +73,11 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
         labelDescricao = new javax.swing.JLabel();
         textCampoDesc = new javax.swing.JTextField();
         panelBotoes = new javax.swing.JPanel();
-        botaoIncluir = new javax.swing.JButton();
         botaoAlterar = new javax.swing.JButton();
         botaoExcluir = new javax.swing.JButton();
         botaoImprimir = new javax.swing.JButton();
-        botaoSairCateg = new javax.swing.JButton();
+        botaoFecharCateg = new javax.swing.JButton();
+        botaoIncluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -330,7 +330,8 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(btnFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
         );
 
         labelBuscaCate.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
@@ -356,12 +357,12 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        panelCategAcao.setBackground(new java.awt.Color(12, 180, 206));
         panelCategAcao.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         panelCategAcao.setToolTipText("");
 
-        botaoConfirmar.setBackground(new java.awt.Color(153, 153, 153));
+        botaoConfirmar.setBackground(new java.awt.Color(51, 51, 51));
         botaoConfirmar.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        botaoConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-salvar-25.png"))); // NOI18N
         botaoConfirmar.setText("Confirmar");
         botaoConfirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoConfirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -370,8 +371,9 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
             }
         });
 
-        botaoSair.setBackground(new java.awt.Color(153, 153, 153));
+        botaoSair.setBackground(new java.awt.Color(51, 51, 51));
         botaoSair.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        botaoSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-sair-25.png"))); // NOI18N
         botaoSair.setText("Sair");
         botaoSair.setBorderPainted(false);
         botaoSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -412,11 +414,11 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(textCampoDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelCategAcaoLayout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addComponent(botaoConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addComponent(botaoConfirmar)
                                 .addGap(36, 36, 36)
                                 .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         panelCategAcaoLayout.setVerticalGroup(
             panelCategAcaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -438,18 +440,9 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        botaoIncluir.setBackground(new java.awt.Color(153, 153, 153));
-        botaoIncluir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        botaoIncluir.setText("Incluir");
-        botaoIncluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoIncluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoIncluirActionPerformed(evt);
-            }
-        });
-
-        botaoAlterar.setBackground(new java.awt.Color(153, 153, 153));
+        botaoAlterar.setBackground(new java.awt.Color(51, 51, 51));
         botaoAlterar.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        botaoAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-alterar-25.png"))); // NOI18N
         botaoAlterar.setText("Alterar");
         botaoAlterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoAlterar.addActionListener(new java.awt.event.ActionListener() {
@@ -458,8 +451,9 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
             }
         });
 
-        botaoExcluir.setBackground(new java.awt.Color(153, 153, 153));
+        botaoExcluir.setBackground(new java.awt.Color(51, 51, 51));
         botaoExcluir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        botaoExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-apagar-25.png"))); // NOI18N
         botaoExcluir.setText("Excluir");
         botaoExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -468,8 +462,9 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
             }
         });
 
-        botaoImprimir.setBackground(new java.awt.Color(153, 153, 153));
+        botaoImprimir.setBackground(new java.awt.Color(51, 51, 51));
         botaoImprimir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        botaoImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-imprimir-25.png"))); // NOI18N
         botaoImprimir.setText("Imprimir");
         botaoImprimir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoImprimir.setMaximumSize(new java.awt.Dimension(97, 23));
@@ -480,14 +475,26 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
             }
         });
 
-        botaoSairCateg.setBackground(new java.awt.Color(153, 153, 153));
-        botaoSairCateg.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        botaoSairCateg.setText("Sair");
-        botaoSairCateg.setBorderPainted(false);
-        botaoSairCateg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoSairCateg.addActionListener(new java.awt.event.ActionListener() {
+        botaoFecharCateg.setBackground(new java.awt.Color(51, 51, 51));
+        botaoFecharCateg.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        botaoFecharCateg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-sair-25.png"))); // NOI18N
+        botaoFecharCateg.setText("Fechar");
+        botaoFecharCateg.setBorderPainted(false);
+        botaoFecharCateg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoFecharCateg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSairCategActionPerformed(evt);
+                botaoFecharCategActionPerformed(evt);
+            }
+        });
+
+        botaoIncluir.setBackground(new java.awt.Color(51, 51, 51));
+        botaoIncluir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        botaoIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-incluir-25.png"))); // NOI18N
+        botaoIncluir.setText("Incluir");
+        botaoIncluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoIncluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoIncluirActionPerformed(evt);
             }
         });
 
@@ -496,68 +503,70 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
         panelBotoesLayout.setHorizontalGroup(
             panelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBotoesLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(panelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoSairCateg, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(botaoAlterar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                        .addComponent(botaoIncluir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(botaoExcluir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botaoImprimir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)))
-                .addGap(0, 19, Short.MAX_VALUE))
+                    .addComponent(botaoIncluir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoFecharCateg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoImprimir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoExcluir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         panelBotoesLayout.setVerticalGroup(
             panelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBotoesLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
                 .addComponent(botaoIncluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoAlterar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoExcluir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botaoSairCateg)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(botaoFecharCateg)
+                .addContainerGap(221, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelCategoriaLayout = new javax.swing.GroupLayout(panelCategoria);
         panelCategoria.setLayout(panelCategoriaLayout);
         panelCategoriaLayout.setHorizontalGroup(
             panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCategoriaLayout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+            .addGroup(panelCategoriaLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelCategoriaLayout.createSequentialGroup()
-                        .addComponent(labelBuscaCate, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(135, 135, 135))
-                    .addGroup(panelCategoriaLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCategoriaLayout.createSequentialGroup()
                         .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelCategoriaLayout.createSequentialGroup()
                                 .addComponent(textCampoEntradaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(botaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelCategAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(panelCategAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                        .addComponent(panelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCategoriaLayout.createSequentialGroup()
+                        .addComponent(labelBuscaCate, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         panelCategoriaLayout.setVerticalGroup(
             panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCategoriaLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(7, 7, 7)
                 .addComponent(labelBuscaCate, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textCampoEntradaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(panelCategAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
-            .addComponent(panelBotoes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panelCategoriaLayout.createSequentialGroup()
+                        .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textCampoEntradaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(panelCategAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCategoriaLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(panelBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout painelPrincipalLayout = new javax.swing.GroupLayout(painelPrincipal);
@@ -655,10 +664,10 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
         labelAcaoUsuario.setText("");
     }//GEN-LAST:event_botaoSairActionPerformed
 
-    private void botaoSairCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairCategActionPerformed
+    private void botaoFecharCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFecharCategActionPerformed
         // TODO add your handling code here:
         LayoutBaseCategoria.this.dispose();
-    }//GEN-LAST:event_botaoSairCategActionPerformed
+    }//GEN-LAST:event_botaoFecharCategActionPerformed
 
     /**
      * @param args the command line arguments
@@ -700,10 +709,10 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
     private javax.swing.JButton botaoBuscar;
     private javax.swing.JButton botaoConfirmar;
     private javax.swing.JButton botaoExcluir;
+    private javax.swing.JButton botaoFecharCateg;
     private javax.swing.JButton botaoImprimir;
     private javax.swing.JButton botaoIncluir;
     private javax.swing.JButton botaoSair;
-    private javax.swing.JButton botaoSairCateg;
     private javax.swing.JPanel btnCategorias;
     private javax.swing.JPanel btnClientes;
     private javax.swing.JPanel btnContasAPagar;
