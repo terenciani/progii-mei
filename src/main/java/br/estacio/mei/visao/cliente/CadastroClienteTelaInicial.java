@@ -31,15 +31,8 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
         painelPrincipal = new javax.swing.JPanel();
         lblNomeSistema = new javax.swing.JLabel();
         lblFechar = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField2 = new javax.swing.JTextField();
         painelQueSome = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jButton2_buscar = new javax.swing.JButton();
-        jButton_excluirCliente = new javax.swing.JButton();
-        jButton_editarCliente = new javax.swing.JButton();
-        jButton_novoCliente = new javax.swing.JButton();
         painelLateral = new javax.swing.JPanel();
         btnInicio = new javax.swing.JPanel();
         lblInicio = new javax.swing.JLabel();
@@ -62,6 +55,15 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
         btnSair = new javax.swing.JPanel();
         lbSair = new javax.swing.JLabel();
         imgSair = new javax.swing.JLabel();
+        imgLogo = new javax.swing.JLabel();
+        painelListagem = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton_novoCliente = new javax.swing.JButton();
+        jButton2_buscar = new javax.swing.JButton();
+        jButton_excluirCliente = new javax.swing.JButton();
+        jButton_editarCliente = new javax.swing.JButton();
+        txtCampoBusca = new javax.swing.JTextField();
 
         setTitle("Cadastro de Clientes");
         setBackground(new java.awt.Color(102, 102, 102));
@@ -94,18 +96,6 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setBackground(new java.awt.Color(102, 102, 102));
-        jTable1.setForeground(new java.awt.Color(102, 102, 102));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Ações", "Código", "Nome", "Telefone", "CPF/CNPJ", "Endereço"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
-
         painelQueSome.setBackground(new java.awt.Color(102, 102, 102));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, painelPrincipal, org.jdesktop.beansbinding.ObjectProperty.create(), painelQueSome, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
@@ -123,7 +113,7 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
             .addGroup(painelQueSomeLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelQueSomeLayout.setVerticalGroup(
             painelQueSomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,33 +123,17 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
                 .addContainerGap(108, Short.MAX_VALUE))
         );
 
-        jButton2_buscar.setBackground(new java.awt.Color(153, 153, 153));
-        jButton2_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
-
-        jButton_excluirCliente.setBackground(new java.awt.Color(153, 153, 153));
-        jButton_excluirCliente.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jButton_excluirCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/deleteUser20.png"))); // NOI18N
-
-        jButton_editarCliente.setBackground(new java.awt.Color(153, 153, 153));
-        jButton_editarCliente.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jButton_editarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar_cliente.png"))); // NOI18N
-
-        jButton_novoCliente.setBackground(new java.awt.Color(153, 153, 153));
-        jButton_novoCliente.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jButton_novoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/addUser20.png"))); // NOI18N
-
         painelLateral.setBackground(new java.awt.Color(12, 197, 205));
-        painelLateral.setPreferredSize(new java.awt.Dimension(280, 716));
+        painelLateral.setPreferredSize(new java.awt.Dimension(280, 500));
 
         btnInicio.setBackground(new java.awt.Color(13, 155, 177));
         btnInicio.setPreferredSize(new java.awt.Dimension(120, 55));
 
         lblInicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblInicio.setForeground(new java.awt.Color(255, 255, 255));
+        lblInicio.setForeground(new java.awt.Color(253, 253, 253));
         lblInicio.setText("Início");
-        lblInicio.setPreferredSize(new java.awt.Dimension(47, 25));
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, new javax.swing.JButton(), org.jdesktop.beansbinding.ObjectProperty.create(), lblInicio, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, btnInicio, org.jdesktop.beansbinding.ObjectProperty.create(), lblInicio, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
         bindingGroup.addBinding(binding);
 
         imgInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Home_25px.png"))); // NOI18N
@@ -172,16 +146,16 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(imgInicio)
                 .addGap(18, 18, 18)
-                .addComponent(lblInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblInicio)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btnInicioLayout.setVerticalGroup(
             btnInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnInicioLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(btnInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imgInicio)
-                    .addComponent(lblInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(btnInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imgInicio))
                 .addGap(41, 41, 41))
         );
 
@@ -207,9 +181,9 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
             btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnContasAPagarLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imgContasAPagar)
-                    .addComponent(lblContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imgContasAPagar))
                 .addGap(41, 41, 41))
         );
 
@@ -235,9 +209,9 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
             btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnContasAReceberLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imgContasAReceber)
-                    .addComponent(lblContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imgContasAReceber))
                 .addGap(41, 41, 41))
         );
 
@@ -263,9 +237,9 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
             btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnCategoriasLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imgCategorias)
-                    .addComponent(lblCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imgCategorias))
                 .addGap(41, 41, 41))
         );
 
@@ -291,9 +265,9 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
             btnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnFornecedorLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(btnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imgFornecedor)
-                    .addComponent(lbFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(btnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imgFornecedor))
                 .addGap(41, 41, 41))
         );
 
@@ -319,14 +293,17 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
             btnProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnProdutosLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(btnProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imgProdutos)
-                    .addComponent(lbProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(btnProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imgProdutos))
                 .addGap(41, 41, 41))
         );
 
         btnSair.setBackground(new java.awt.Color(13, 155, 177));
         btnSair.setPreferredSize(new java.awt.Dimension(120, 55));
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, painelLateral, org.jdesktop.beansbinding.ObjectProperty.create(), btnSair, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
         lbSair.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbSair.setForeground(new java.awt.Color(255, 255, 255));
@@ -349,11 +326,14 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
             btnSairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSairLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(btnSairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imgSair)
-                    .addComponent(lbSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(btnSairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imgSair))
                 .addGap(41, 41, 41))
         );
+
+        imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Stocks_64px.png"))); // NOI18N
 
         javax.swing.GroupLayout painelLateralLayout = new javax.swing.GroupLayout(painelLateral);
         painelLateral.setLayout(painelLateralLayout);
@@ -366,11 +346,14 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
             .addComponent(btnFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
             .addComponent(btnProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
             .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(imgLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         painelLateralLayout.setVerticalGroup(
             painelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLateralLayout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(24, 24, 24)
+                .addComponent(imgLogo)
+                .addGap(48, 48, 48)
                 .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(btnContasAPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -383,7 +366,77 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(btnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(124, 124, 124))
+        );
+
+        painelListagem.setBackground(new java.awt.Color(253, 253, 253));
+        painelListagem.setForeground(new java.awt.Color(253, 253, 253));
+
+        jTable1.setBackground(new java.awt.Color(102, 102, 102));
+        jTable1.setForeground(new java.awt.Color(102, 102, 102));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Ações", "Código", "Nome", "Telefone", "CPF/CNPJ", "Endereço"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        jButton_novoCliente.setBackground(new java.awt.Color(153, 153, 153));
+        jButton_novoCliente.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jButton_novoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/addUser20.png"))); // NOI18N
+
+        jButton2_buscar.setBackground(new java.awt.Color(153, 153, 153));
+        jButton2_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
+
+        jButton_excluirCliente.setBackground(new java.awt.Color(153, 153, 153));
+        jButton_excluirCliente.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jButton_excluirCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/deleteUser20.png"))); // NOI18N
+
+        jButton_editarCliente.setBackground(new java.awt.Color(153, 153, 153));
+        jButton_editarCliente.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jButton_editarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar_cliente.png"))); // NOI18N
+
+        javax.swing.GroupLayout painelListagemLayout = new javax.swing.GroupLayout(painelListagem);
+        painelListagem.setLayout(painelListagemLayout);
+        painelListagemLayout.setHorizontalGroup(
+            painelListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelListagemLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addGroup(painelListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelListagemLayout.createSequentialGroup()
+                        .addComponent(txtCampoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(painelListagemLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton_excluirCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                            .addComponent(jButton_novoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                            .addComponent(jButton_editarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(944, 944, 944))
+        );
+        painelListagemLayout.setVerticalGroup(
+            painelListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelListagemLayout.createSequentialGroup()
+                .addGroup(painelListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCampoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2_buscar))
+                .addGap(29, 29, 29)
+                .addGroup(painelListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelListagemLayout.createSequentialGroup()
+                        .addComponent(jButton_novoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton_editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton_excluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout painelPrincipalLayout = new javax.swing.GroupLayout(painelPrincipal);
@@ -395,60 +448,31 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
                 .addComponent(painelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelQueSome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(painelPrincipalLayout.createSequentialGroup()
-                        .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(painelPrincipalLayout.createSequentialGroup()
-                                .addComponent(jScrollPane2)
-                                .addGap(327, 327, 327))
-                            .addGroup(painelPrincipalLayout.createSequentialGroup()
-                                .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(painelPrincipalLayout.createSequentialGroup()
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton2_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(lblNomeSistema))
-                                .addGap(383, 383, 383)))
-                        .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelPrincipalLayout.createSequentialGroup()
-                                .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton_novoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                                    .addComponent(jButton_editarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton_excluirCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(painelPrincipalLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                                .addComponent(lblFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(376, 376, 376))))
+                        .addGap(42, 42, 42)
+                        .addComponent(lblNomeSistema)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(painelPrincipalLayout.createSequentialGroup()
-                        .addComponent(painelQueSome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(painelListagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         painelPrincipalLayout.setVerticalGroup(
             painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelPrincipalLayout.createSequentialGroup()
-                .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelPrincipalLayout.createSequentialGroup()
-                        .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblNomeSistema)
-                            .addComponent(lblFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addComponent(painelQueSome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2_buscar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelPrincipalLayout.createSequentialGroup()
-                                .addComponent(jButton_novoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton_editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton_excluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 152, Short.MAX_VALUE))
-                    .addComponent(painelLateral, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE))
+                .addComponent(painelLateral, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(painelPrincipalLayout.createSequentialGroup()
+                .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNomeSistema))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(painelQueSome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(painelListagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -456,14 +480,14 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 1574, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1348, Short.MAX_VALUE))
+                .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 533, Short.MAX_VALUE))
+                .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         bindingGroup.bind();
@@ -526,6 +550,7 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel imgContasAReceber;
     private javax.swing.JLabel imgFornecedor;
     private javax.swing.JLabel imgInicio;
+    private javax.swing.JLabel imgLogo;
     private javax.swing.JLabel imgProdutos;
     private javax.swing.JLabel imgSair;
     private javax.swing.JButton jButton2_buscar;
@@ -535,7 +560,6 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lbFornecedor;
     private javax.swing.JLabel lbProdutos;
     private javax.swing.JLabel lbSair;
@@ -546,8 +570,10 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel lblInicio;
     private javax.swing.JLabel lblNomeSistema;
     private javax.swing.JPanel painelLateral;
+    private javax.swing.JPanel painelListagem;
     private javax.swing.JPanel painelPrincipal;
     private javax.swing.JPanel painelQueSome;
+    private javax.swing.JTextField txtCampoBusca;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
