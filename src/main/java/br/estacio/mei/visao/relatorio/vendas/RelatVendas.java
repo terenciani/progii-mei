@@ -157,7 +157,7 @@ public class RelatVendas extends javax.swing.JFrame {
                 .addComponent(jButton2)
                 .addGap(60, 60, 60)
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addGap(34, 34, 34))
         );
@@ -487,7 +487,8 @@ public class RelatVendas extends javax.swing.JFrame {
                     .addComponent(jDesktopPane4)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jDesktopPane2))))
+                        .addComponent(jDesktopPane2)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
