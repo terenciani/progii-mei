@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 public class TesteForm {
     
     public static void main(String[] args) {
-        JFrame form = new TelaCategoria();
+        JFrame form = new LayoutBaseCategoria();
         form.setVisible(true);
     }
 }
