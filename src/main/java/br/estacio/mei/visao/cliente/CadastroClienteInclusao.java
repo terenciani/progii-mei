@@ -10,10 +10,10 @@ package br.estacio.mei.visao.cliente;
  *
  * @author ericvdias
  */
-public class CadastroCliente_Inclusao extends javax.swing.JFrame {
+public class CadastroClienteInclusao extends javax.swing.JFrame {
 
     /** Creates new form CadastroDeCliente */
-    public CadastroCliente_Inclusao() {
+    public CadastroClienteInclusao() {
         initComponents();
     }
 
@@ -274,21 +274,23 @@ public class CadastroCliente_Inclusao extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente_Inclusao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClienteInclusao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente_Inclusao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClienteInclusao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente_Inclusao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClienteInclusao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente_Inclusao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClienteInclusao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroCliente_Inclusao().setVisible(true);
+                new CadastroClienteInclusao().setVisible(true);
             }
         });
     }
