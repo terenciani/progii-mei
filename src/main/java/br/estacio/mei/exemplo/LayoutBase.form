@@ -82,7 +82,7 @@
                       <Component id="lblNomeSistema" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="painelBreadcrumb" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="509" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
