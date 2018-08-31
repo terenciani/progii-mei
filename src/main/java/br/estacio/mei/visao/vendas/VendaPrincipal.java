@@ -3,28 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.visao.usuario;
+package br.estacio.mei.visao.vendas;
 
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
+import javax.swing.JFrame;
 
 /**
  *
- * @author Juliano
+ * @author aluno
  */
-public class TelaCadastro extends javax.swing.JFrame {
+public class VendaPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaLogin
+     * Creates new form VendaPrincipal
      */
-    public TelaCadastro() {
+    public VendaPrincipal() {
         initComponents();
-        
-        DefaultTableModel modelo = (DefaultTableModel) CdTable.getModel();
-        CdTable.setRowSorter(new TableRowSorter(modelo));
-        this.setLocationRelativeTo(cdCancelar);
     }
 
     /**
@@ -36,23 +29,11 @@ public class TelaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtnome = new javax.swing.JTextField();
-        txtsenha = new javax.swing.JPasswordField();
-        cdCancelar = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        CdTable = new javax.swing.JTable();
-        cdExcluir = new javax.swing.JButton();
-        cdAlterar = new javax.swing.JButton();
-        cdSair = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        painelPrincipal = new javax.swing.JPanel();
+        lblNomeSistema = new javax.swing.JLabel();
+        lblSairSuperior = new javax.swing.JLabel();
+        painelBreadcrumb = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         painelLateral = new javax.swing.JPanel();
         btnInicio = new javax.swing.JPanel();
         imgInicio = new javax.swing.JLabel();
@@ -77,179 +58,53 @@ public class TelaCadastro extends javax.swing.JFrame {
         lblFornecedores = new javax.swing.JLabel();
         separador = new javax.swing.JSeparator();
         imgLogo = new javax.swing.JLabel();
-        lblNomeSistema = new javax.swing.JLabel();
-        painelBreadcrumb = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cadastro");
-        setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(12, 180, 206));
+        painelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        painelPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 204, 204), new java.awt.Color(153, 153, 153)));
+        painelPrincipal.setPreferredSize(new java.awt.Dimension(1280, 720));
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Cadastro de Usuário");
+        lblNomeSistema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblNomeSistema.setForeground(new java.awt.Color(153, 153, 153));
+        lblNomeSistema.setText("Sistema de Apoio ao Microempreendedor Individual");
 
-        jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("NOME:");
-        jLabel2.setToolTipText("Cadastro");
-
-        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("SENHA:");
-
-        cdCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdCancelar.setText("Cadastrar");
-        cdCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdCancelarActionPerformed(evt);
+        lblSairSuperior.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblSairSuperior.setForeground(new java.awt.Color(153, 153, 153));
+        lblSairSuperior.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSairSuperior.setText("X");
+        lblSairSuperior.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblSairSuperiorMousePressed(evt);
             }
         });
 
-        CdTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        painelBreadcrumb.setBackground(new java.awt.Color(102, 102, 102));
 
-            },
-            new String [] {
-                "Nome", "Senha"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
+        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("Estou na Tela de Produtos");
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        CdTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CdTableMouseClicked(evt);
-            }
-        });
-        jScrollPane3.setViewportView(CdTable);
-
-        cdExcluir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdExcluir.setText("Excluir");
-        cdExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdExcluirActionPerformed(evt);
-            }
-        });
-
-        cdAlterar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdAlterar.setText("Alterar");
-        cdAlterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdAlterarActionPerformed(evt);
-            }
-        });
-
-        cdSair.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdSair.setText("Sair");
-        cdSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdSairActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/PicsArt_08-28-07.50.53.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
-                                .addGap(258, 258, 258))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(67, 67, 67)
-                                .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 19, Short.MAX_VALUE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(cdCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(cdAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(cdExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(cdSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(5, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(247, 247, 247)
-                        .addComponent(jLabel4)))
+        javax.swing.GroupLayout painelBreadcrumbLayout = new javax.swing.GroupLayout(painelBreadcrumb);
+        painelBreadcrumb.setLayout(painelBreadcrumbLayout);
+        painelBreadcrumbLayout.setHorizontalGroup(
+            painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelBreadcrumbLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane3)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cdCancelar)
-                    .addComponent(cdExcluir)
-                    .addComponent(cdSair)
-                    .addComponent(cdAlterar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+        painelBreadcrumbLayout.setVerticalGroup(
+            painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelBreadcrumbLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel6)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         painelLateral.setBackground(new java.awt.Color(12, 197, 205));
@@ -458,118 +313,104 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(btnFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        lblNomeSistema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblNomeSistema.setForeground(new java.awt.Color(153, 153, 153));
-        lblNomeSistema.setText("Sistema de Apoio ao Microempreendedor Individual");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
-        painelBreadcrumb.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(12, 197, 205));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
 
-        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("Estou na Tela de Produtos");
+        jLabel1.setBackground(new java.awt.Color(12, 197, 205));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("  Adicionar Produto ");
 
-        javax.swing.GroupLayout painelBreadcrumbLayout = new javax.swing.GroupLayout(painelBreadcrumb);
-        painelBreadcrumb.setLayout(painelBreadcrumbLayout);
-        painelBreadcrumbLayout.setHorizontalGroup(
-            painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelBreadcrumbLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        painelBreadcrumbLayout.setVerticalGroup(
-            painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelBreadcrumbLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel6)
-                .addContainerGap(108, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/fechar.png"))); // NOI18N
+        javax.swing.GroupLayout painelPrincipalLayout = new javax.swing.GroupLayout(painelPrincipal);
+        painelPrincipal.setLayout(painelPrincipalLayout);
+        painelPrincipalLayout.setHorizontalGroup(
+            painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelPrincipalLayout.createSequentialGroup()
+                .addComponent(painelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelBreadcrumb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(painelPrincipalLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(lblNomeSistema)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblSairSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelPrincipalLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        painelPrincipalLayout.setVerticalGroup(
+            painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(painelLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(painelPrincipalLayout.createSequentialGroup()
+                .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSairSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNomeSistema))
+                .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(109, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(painelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelBreadcrumb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNomeSistema)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, 0))
+            .addComponent(painelPrincipal, 813, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelLateral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNomeSistema)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+            .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdCancelarActionPerformed
-        
-        DefaultTableModel dtmCadastro = (DefaultTableModel) CdTable.getModel();
-        Object[] dados = {txtnome.getText(),txtsenha.getText()};
-        dtmCadastro.addRow(dados);
+    private void lblSairSuperiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairSuperiorMousePressed
+        System.exit(0);
+    }//GEN-LAST:event_lblSairSuperiorMousePressed
 
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cdCancelarActionPerformed
-
-    private void cdSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdSairActionPerformed
-this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_cdSairActionPerformed
-
-    private void cdExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdExcluirActionPerformed
-        
-    //System.out.println("Usuario Selecionado: "+CdTable.getSelectedRow());        // TODO add your handling code here:
-        if(CdTable.getSelectedRow()!= -1){
-        DefaultTableModel dtmCadastro = (DefaultTableModel) CdTable.getModel();
-        dtmCadastro.removeRow(CdTable.getSelectedRow());
-    }else{
-            JOptionPane.showMessageDialog(null,"Selecione um Usuario para Excluir!");
-        }
-        
-        
-    }//GEN-LAST:event_cdExcluirActionPerformed
-
-    private void CdTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CdTableMouseClicked
-             if(CdTable.getSelectedRow() != -1){
-            
-            txtnome.setText(CdTable.getValueAt(CdTable.getSelectedRow(),0).toString());// TODO add your handling code here:
-            txtsenha.setText(CdTable.getValueAt(CdTable.getSelectedRow(),1).toString());// TODO add your handling code here:
-    }        // TODO add your handling code here:
-    }//GEN-LAST:event_CdTableMouseClicked
-
-    private void cdAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdAlterarActionPerformed
-        if(CdTable.getSelectedRow() != -1){
-            CdTable.setValueAt(txtnome.getText(),CdTable.getSelectedRow() , 0);
-            CdTable.setValueAt(txtsenha.getText(),CdTable.getSelectedRow() , 1);
-        }
-        
-
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cdAlterarActionPerformed
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        JFrame frame = new GerenciamentoDeVendas();
+        frame.setVisible(true);
+    }//GEN-LAST:event_jPanel1MousePressed
 
     /**
      * @param args the command line arguments
@@ -588,29 +429,25 @@ this.dispose();        // TODO add your handling code here:
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadastro().setVisible(true);
+                new VendaPrincipal().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable CdTable;
     private javax.swing.JPanel btnCategorias;
     private javax.swing.JPanel btnClientes;
     private javax.swing.JPanel btnContasAPagar;
@@ -618,10 +455,6 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JPanel btnFornecedores;
     private javax.swing.JPanel btnInicio;
     private javax.swing.JPanel btnSair;
-    private javax.swing.JButton cdAlterar;
-    private javax.swing.JButton cdCancelar;
-    private javax.swing.JButton cdExcluir;
-    private javax.swing.JButton cdSair;
     private javax.swing.JLabel imgCategorias;
     private javax.swing.JLabel imgClientes;
     private javax.swing.JLabel imgContasAPagar;
@@ -631,17 +464,10 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JLabel imgLogo;
     private javax.swing.JLabel imgSair;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JLabel lblCategorias;
     private javax.swing.JLabel lblClientes;
     private javax.swing.JLabel lblContasAPagar;
@@ -650,16 +476,10 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JLabel lblInicio;
     private javax.swing.JLabel lblNomeSistema;
     private javax.swing.JLabel lblSair;
+    private javax.swing.JLabel lblSairSuperior;
     private javax.swing.JPanel painelBreadcrumb;
     private javax.swing.JPanel painelLateral;
+    private javax.swing.JPanel painelPrincipal;
     private javax.swing.JSeparator separador;
-    private javax.swing.JTextField txtnome;
-    private javax.swing.JPasswordField txtsenha;
     // End of variables declaration//GEN-END:variables
-
-    private static class DefautTableModel {
-
-        public DefautTableModel() {
-        }
-    }
 }
