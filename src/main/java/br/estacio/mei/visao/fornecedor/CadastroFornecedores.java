@@ -160,13 +160,13 @@ public class CadastroFornecedores extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nome/Raz„o", "CPF", "CNPJ", "Cidade" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nome/Raz√£o", "CPF", "CNPJ", "Cidade" }));
 
         jLabel22.setText("Campo procura:");
 
         jLabel23.setText("Digite o dado:");
 
-        jLabel24.setText("Nome/Raz„o:");
+        jLabel24.setText("Nome/Raz√£o:");
 
         jLabel25.setText("Fantasia:");
 
@@ -174,7 +174,7 @@ public class CadastroFornecedores extends javax.swing.JFrame {
 
         jLabel27.setText("CNPJ:");
 
-        jLabel28.setText("EndereÁo:");
+        jLabel28.setText("Endere√ßo:");
 
         jLabel29.setText("Numero");
 
@@ -420,101 +420,101 @@ public class CadastroFornecedores extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(null);
 
-        jLabel4.setText("Nome/Raz„o:");
+        jLabel4.setText("Nome/Raz√£o:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(340, 160, 65, 23);
+        jLabel4.setBounds(340, 160, 78, 23);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(410, 170, 560, 20);
+        jTextField2.setBounds(410, 170, 560, 22);
 
         jLabel5.setText("Fantasia:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(340, 200, 45, 23);
+        jLabel5.setBounds(340, 200, 53, 23);
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(410, 200, 560, 20);
+        jTextField3.setBounds(410, 200, 560, 22);
 
         jLabel6.setText("CPF:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(440, 120, 23, 14);
+        jLabel6.setBounds(440, 120, 27, 16);
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(470, 120, 105, 20);
+        jTextField4.setBounds(470, 120, 105, 22);
 
         jLabel8.setText("CNPJ:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(590, 120, 29, 14);
+        jLabel8.setBounds(590, 120, 33, 16);
         getContentPane().add(jTextField6);
-        jTextField6.setBounds(620, 120, 123, 20);
+        jTextField6.setBounds(620, 120, 123, 22);
         getContentPane().add(jTextField7);
-        jTextField7.setBounds(410, 230, 373, 20);
+        jTextField7.setBounds(410, 230, 373, 22);
 
-        jLabel9.setText("EndereÁo:");
+        jLabel9.setText("Endere√ßo:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(340, 230, 49, 23);
+        jLabel9.setBounds(340, 230, 58, 23);
 
         jLabel10.setText("Numero");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(800, 230, 37, 23);
+        jLabel10.setBounds(800, 230, 45, 23);
         getContentPane().add(jTextField8);
-        jTextField8.setBounds(840, 230, 53, 20);
+        jTextField8.setBounds(840, 230, 53, 22);
 
         jLabel11.setText("CEP:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(900, 230, 23, 23);
+        jLabel11.setBounds(900, 230, 27, 23);
         getContentPane().add(jTextField9);
-        jTextField9.setBounds(930, 230, 40, 20);
+        jTextField9.setBounds(930, 230, 40, 22);
 
         jLabel12.setText("Inscr. Estadual");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(750, 120, 72, 14);
+        jLabel12.setBounds(750, 120, 84, 16);
         getContentPane().add(jTextField10);
-        jTextField10.setBounds(840, 120, 137, 20);
+        jTextField10.setBounds(840, 120, 137, 22);
 
         jLabel13.setText("Telefone:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(340, 300, 46, 23);
+        jLabel13.setBounds(340, 300, 55, 23);
         getContentPane().add(jTextField11);
-        jTextField11.setBounds(410, 300, 107, 20);
+        jTextField11.setBounds(410, 300, 107, 22);
 
         jLabel14.setText("Celular:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(530, 300, 37, 23);
+        jLabel14.setBounds(530, 300, 45, 23);
         getContentPane().add(jTextField12);
-        jTextField12.setBounds(570, 300, 95, 20);
+        jTextField12.setBounds(570, 300, 95, 22);
 
         jLabel15.setText("E-mail:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(680, 300, 32, 23);
+        jLabel15.setBounds(680, 300, 41, 23);
         getContentPane().add(jTextField13);
-        jTextField13.setBounds(720, 300, 240, 20);
+        jTextField13.setBounds(720, 300, 240, 22);
 
         jLabel16.setText("Contato:");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(340, 340, 43, 23);
+        jLabel16.setBounds(340, 340, 49, 23);
         getContentPane().add(jTextField14);
-        jTextField14.setBounds(410, 340, 233, 20);
+        jTextField14.setBounds(410, 340, 233, 22);
 
         jLabel17.setText("Bairro:");
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(340, 260, 32, 23);
+        jLabel17.setBounds(340, 260, 39, 23);
         getContentPane().add(jTextField15);
-        jTextField15.setBounds(410, 260, 174, 20);
+        jTextField15.setBounds(410, 260, 174, 22);
 
         jLabel18.setText("Cidade:");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(610, 260, 37, 23);
+        jLabel18.setBounds(610, 260, 44, 23);
         getContentPane().add(jTextField16);
-        jTextField16.setBounds(660, 260, 234, 20);
+        jTextField16.setBounds(660, 260, 234, 22);
 
         jLabel19.setText("UF:");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(900, 260, 17, 23);
+        jLabel19.setBounds(900, 260, 20, 23);
         getContentPane().add(jTextField17);
-        jTextField17.setBounds(920, 260, 40, 20);
+        jTextField17.setBounds(920, 260, 40, 22);
 
         jLabel20.setText("Site:");
         getContentPane().add(jLabel20);
-        jLabel20.setBounds(680, 340, 22, 23);
+        jLabel20.setBounds(680, 340, 27, 23);
         getContentPane().add(jTextField18);
-        jTextField18.setBounds(710, 340, 250, 20);
+        jTextField18.setBounds(710, 340, 250, 22);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Juridico", "Fisico", " " }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -523,7 +523,7 @@ public class CadastroFornecedores extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(350, 120, 80, 20);
+        jComboBox1.setBounds(350, 120, 80, 22);
 
         painelLateral.setBackground(new java.awt.Color(12, 197, 205));
 
@@ -531,7 +531,7 @@ public class CadastroFornecedores extends javax.swing.JFrame {
 
         lblInicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblInicio.setForeground(new java.awt.Color(255, 255, 255));
-        lblInicio.setText("InÌcio");
+        lblInicio.setText("In√≠cio");
 
         javax.swing.GroupLayout btnInicioLayout = new javax.swing.GroupLayout(btnInicio);
         btnInicio.setLayout(btnInicioLayout);

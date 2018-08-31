@@ -47,12 +47,12 @@
                 <Column editable="true" title="Raz&#xe3;o/Nome" type="java.lang.Object">
                   <Data value="FERNANDO"/>
                   <Data value="ANTONIO"/>
-                  <Data value="ANDR&#xc9; FELIX"/>
+                  <Data value="ANDRE FELIX"/>
                   <Data value="RODRIGO"/>
                 </Column>
                 <Column editable="true" title="Fantasia" type="java.lang.Object">
                   <Data value="SISTEMAS"/>
-                  <Data value="TONH&#xc3;O SISTEMAS"/>
+                  <Data value="TONHAO SISTEMAS"/>
                   <Data value="ZAP ZAP SISTEMAS"/>
                   <Data value="GOOGLE"/>
                 </Column>
@@ -113,7 +113,7 @@
           <StringArray count="4">
             <StringItem index="0" value="CNPJ"/>
             <StringItem index="1" value="CPF"/>
-            <StringItem index="2" value="NOME/RAZ&#xc3;O"/>
+            <StringItem index="2" value="NOME/RAZAO"/>
             <StringItem index="3" value="FANTASIA"/>
           </StringArray>
         </Property>

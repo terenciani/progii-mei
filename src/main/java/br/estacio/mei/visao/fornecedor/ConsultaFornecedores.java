@@ -64,12 +64,12 @@ public class ConsultaFornecedores extends javax.swing.JFrame {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"FERNANDO", "SISTEMAS", "RUA DAS RUAS", "", null},
-                {"ANTONIO", "TONH√O SISTEMAS", "AVENIDA", null, null},
-                {"ANDR… FELIX", "ZAP ZAP SISTEMAS", "RUA DAS MORGAS", null, null},
+                {"ANTONIO", "TONHAO SISTEMAS", "AVENIDA", null, null},
+                {"ANDRE FELIX", "ZAP ZAP SISTEMAS", "RUA DAS MORGAS", null, null},
                 {"RODRIGO", "GOOGLE", null, null, null}
             },
             new String [] {
-                "Raz„o/Nome", "Fantasia", "EndereÁo", "CNPJ", "CPF"
+                "Raz√£o/Nome", "Fantasia", "Endere√ßo", "CNPJ", "CPF"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -77,7 +77,7 @@ public class ConsultaFornecedores extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(310, 190, 610, 188);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CNPJ", "CPF", "NOME/RAZ√O", "FANTASIA" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CNPJ", "CPF", "NOME/RAZAO", "FANTASIA" }));
         getContentPane().add(jComboBox4);
         jComboBox4.setBounds(350, 120, 99, 29);
 
@@ -92,7 +92,7 @@ public class ConsultaFornecedores extends javax.swing.JFrame {
 
         jButton4.setText("Pesquisar");
         getContentPane().add(jButton4);
-        jButton4.setBounds(730, 120, 79, 54);
+        jButton4.setBounds(730, 120, 87, 54);
 
         painelLateral.setBackground(new java.awt.Color(12, 197, 205));
 
@@ -100,7 +100,7 @@ public class ConsultaFornecedores extends javax.swing.JFrame {
 
         lblInicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblInicio.setForeground(new java.awt.Color(255, 255, 255));
-        lblInicio.setText("InÌcio");
+        lblInicio.setText("In√≠cio");
 
         javax.swing.GroupLayout btnInicioLayout = new javax.swing.GroupLayout(btnInicio);
         btnInicio.setLayout(btnInicioLayout);
