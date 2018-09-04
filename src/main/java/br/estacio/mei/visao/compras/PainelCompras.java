@@ -30,7 +30,7 @@ public class PainelCompras extends javax.swing.JFrame {
 
         jTextFieldCampoBusca = new javax.swing.JTextField();
         jButtonPesquisar = new javax.swing.JButton();
-        jButtonNovaCompra = new javax.swing.JButton();
+        jButtonIncluirCompra = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
         jButtonSalvar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -67,9 +67,30 @@ public class PainelCompras extends javax.swing.JFrame {
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jButtonPesquisar, org.jdesktop.beansbinding.ELProperty.create("${selected}"), jTextFieldCampoBusca, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
-        jButtonPesquisar.setText("Pesquisar");
+        jTextFieldCampoBusca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCampoBuscaActionPerformed(evt);
+            }
+        });
 
-        jButtonNovaCompra.setText("Incluir");
+        jButtonPesquisar.setText("Pesquisar");
+        jButtonPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonPesquisarMouseClicked(evt);
+            }
+        });
+        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPesquisarActionPerformed(evt);
+            }
+        });
+
+        jButtonIncluirCompra.setText("Incluir");
+        jButtonIncluirCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIncluirCompraActionPerformed(evt);
+            }
+        });
 
         jButtonExcluir.setText("Excluir");
         jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +138,19 @@ public class PainelCompras extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTableArmazenamendoDados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableArmazenamendoDadosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableArmazenamendoDados);
+        if (jTableArmazenamendoDados.getColumnModel().getColumnCount() > 0) {
+            jTableArmazenamendoDados.getColumnModel().getColumn(0).setHeaderValue("Descrição");
+            jTableArmazenamendoDados.getColumnModel().getColumn(1).setHeaderValue("Valor");
+            jTableArmazenamendoDados.getColumnModel().getColumn(2).setHeaderValue("Quantidade");
+            jTableArmazenamendoDados.getColumnModel().getColumn(3).setHeaderValue("Data da Compra");
+            jTableArmazenamendoDados.getColumnModel().getColumn(4).setHeaderValue("Total");
+        }
 
         painelLateral.setBackground(new java.awt.Color(12, 197, 205));
 
@@ -348,7 +381,7 @@ public class PainelCompras extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonExcluir)
                         .addGap(10, 10, 10)
-                        .addComponent(jButtonNovaCompra)
+                        .addComponent(jButtonIncluirCompra)
                         .addGap(10, 10, 10)
                         .addComponent(jButtonSalvar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -366,7 +399,7 @@ public class PainelCompras extends javax.swing.JFrame {
                 .addGap(91, 91, 91)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonExcluir)
-                    .addComponent(jButtonNovaCompra)
+                    .addComponent(jButtonIncluirCompra)
                     .addComponent(jButtonSalvar))
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -385,6 +418,30 @@ public class PainelCompras extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
+    private void jButtonIncluirCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIncluirCompraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonIncluirCompraActionPerformed
+
+    private void jButtonPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPesquisarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonPesquisarMouseClicked
+
+    private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonPesquisarActionPerformed
+
+    private void jTextFieldCampoBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCampoBuscaActionPerformed
+       
+        
+    }//GEN-LAST:event_jTextFieldCampoBuscaActionPerformed
+
+    private void jTableArmazenamendoDadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableArmazenamendoDadosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTableArmazenamendoDadosMouseClicked
+   
+    public boolean isCellEditable(int row, int col) {  
+        return false;
+}
     /**
      * @param args the command line arguments
      */
@@ -414,6 +471,7 @@ public class PainelCompras extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new PainelCompras().setVisible(true);
             }
@@ -437,7 +495,7 @@ public class PainelCompras extends javax.swing.JFrame {
     private javax.swing.JLabel imgLogo;
     private javax.swing.JLabel imgSair;
     private javax.swing.JButton jButtonExcluir;
-    private javax.swing.JButton jButtonNovaCompra;
+    private javax.swing.JButton jButtonIncluirCompra;
     private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JScrollPane jScrollPane1;
