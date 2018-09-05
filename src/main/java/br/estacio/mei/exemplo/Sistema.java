@@ -65,6 +65,11 @@ public class Sistema extends javax.swing.JFrame {
         menuLateral.setBackground(new java.awt.Color(12, 197, 205));
 
         btnInicio.setBackground(new java.awt.Color(13, 155, 177));
+        btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnInicioMousePressed(evt);
+            }
+        });
 
         imgInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Home_25px.png"))); // NOI18N
 
@@ -385,6 +390,15 @@ public class Sistema extends javax.swing.JFrame {
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnContasAReceberMousePressed
+
+    private void btnInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMousePressed
+        ExemploPopulaTabela exemplo = new ExemploPopulaTabela();
+        lblBreadcrumb.setText("Gerência de Contas a Pagar");
+        painelDinamico.removeAll();
+        painelDinamico.add(exemplo);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_btnInicioMousePressed
 
     /**
      * @param args the command line arguments

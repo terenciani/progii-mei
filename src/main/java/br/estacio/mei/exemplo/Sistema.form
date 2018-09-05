@@ -96,6 +96,9 @@
               <Color blue="b1" green="9b" red="d" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnInicioMousePressed"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
