@@ -123,7 +123,7 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
                 .addContainerGap(108, Short.MAX_VALUE))
         );
 
-        painelLateral.setBackground(new java.awt.Color(12, 197, 205));
+        painelLateral.setBackground(new java.awt.Color(12, 180, 206));
 
         btnInicio.setBackground(new java.awt.Color(13, 155, 177));
 
@@ -337,7 +337,7 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
         labelBuscaCate.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         labelBuscaCate.setText("Busca Categoria");
 
-        botaoBuscar.setBackground(new java.awt.Color(51, 51, 51));
+        botaoBuscar.setBackground(new java.awt.Color(153, 153, 153));
         botaoBuscar.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-pesquisar-25.png"))); // NOI18N
         botaoBuscar.setText("Pesquisar");
@@ -361,7 +361,7 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
         panelCategAcao.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         panelCategAcao.setToolTipText("");
 
-        botaoConfirmar.setBackground(new java.awt.Color(51, 51, 51));
+        botaoConfirmar.setBackground(new java.awt.Color(153, 153, 153));
         botaoConfirmar.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-salvar-25.png"))); // NOI18N
         botaoConfirmar.setText("Confirmar");
@@ -372,7 +372,7 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
             }
         });
 
-        botaoSair.setBackground(new java.awt.Color(51, 51, 51));
+        botaoSair.setBackground(new java.awt.Color(153, 153, 153));
         botaoSair.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-sair-25.png"))); // NOI18N
         botaoSair.setText("Sair");
@@ -441,7 +441,7 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        botaoAlterar.setBackground(new java.awt.Color(51, 51, 51));
+        botaoAlterar.setBackground(new java.awt.Color(153, 153, 153));
         botaoAlterar.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-alterar-25.png"))); // NOI18N
         botaoAlterar.setText("Alterar");
@@ -452,7 +452,7 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
             }
         });
 
-        botaoExcluir.setBackground(new java.awt.Color(51, 51, 51));
+        botaoExcluir.setBackground(new java.awt.Color(153, 153, 153));
         botaoExcluir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-apagar-25.png"))); // NOI18N
         botaoExcluir.setText("Excluir");
@@ -463,7 +463,7 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
             }
         });
 
-        botaoImprimir.setBackground(new java.awt.Color(51, 51, 51));
+        botaoImprimir.setBackground(new java.awt.Color(153, 153, 153));
         botaoImprimir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-imprimir-25.png"))); // NOI18N
         botaoImprimir.setText("Imprimir");
@@ -476,7 +476,7 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
             }
         });
 
-        botaoFecharCateg.setBackground(new java.awt.Color(51, 51, 51));
+        botaoFecharCateg.setBackground(new java.awt.Color(153, 153, 153));
         botaoFecharCateg.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoFecharCateg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-sair-25.png"))); // NOI18N
         botaoFecharCateg.setText("Fechar");
@@ -488,7 +488,7 @@ public class LayoutBaseCategoria extends javax.swing.JFrame {
             }
         });
 
-        botaoIncluir.setBackground(new java.awt.Color(51, 51, 51));
+        botaoIncluir.setBackground(new java.awt.Color(153, 153, 153));
         botaoIncluir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-incluir-25.png"))); // NOI18N
         botaoIncluir.setText("Incluir");
