@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Marcelo
  */
 public class ExemploPopulaTabela extends javax.swing.JPanel {
-
+    AlunoDao dao = new AlunoDaoEstatica();
     /**
      * Creates new form ExemploPopulaTabela
      */
@@ -36,7 +36,7 @@ public class ExemploPopulaTabela extends javax.swing.JPanel {
 
     public void populaTabela() {
 
-        AlunoDao dao = AlunoDao.getInstance();
+        
         ArrayList<Aluno> lista = dao.listarAlunos();
 
         for (int i = 0; i < lista.size(); i++) {
@@ -166,7 +166,7 @@ public class ExemploPopulaTabela extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AlunoDao dao = AlunoDao.getInstance();
+        
         Aluno aluno = new Aluno();
         aluno.setNome("Marcelo F. Terenciani");
         aluno.setRA(cont);

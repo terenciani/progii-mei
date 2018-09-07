@@ -6,18 +6,34 @@
 package br.estacio.mei.aula;
 
 import br.estacio.mei.exemplo.PainelInicial;
+import java.util.ArrayList;
 
 /**
  *
  * @author Marcelo
  */
-public class Layouts extends javax.swing.JFrame {
-
+public class GerenciarAluno extends javax.swing.JFrame {
+    AlunoDao daoAluno = new AlunoDaoEstatico();
     /**
      * Creates new form Layouts
      */
-    public Layouts() {
+    public GerenciarAluno() {
         initComponents();
+        
+        Aluno aluno = new Aluno("Pablo", 1234, "4321");
+        daoAluno.salvarAluno(aluno);
+        
+        
+        aluno = new Aluno("Gabriel Chaplin", 1234, "4321");
+        daoAluno.salvarAluno(aluno);
+        
+        ArrayList<Aluno> listaDeAlunos = daoAluno.buscarAlunos();
+        
+        // Para cada aluno da lista de alunos faca
+        for (Aluno a : listaDeAlunos) {
+            System.out.println(a.toString());
+        }
+        
     }
 
     /**
@@ -147,20 +163,23 @@ public class Layouts extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Layouts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerenciarAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Layouts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerenciarAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Layouts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerenciarAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Layouts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GerenciarAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Layouts().setVisible(true);
+                new GerenciarAluno().setVisible(true);
             }
         });
     }

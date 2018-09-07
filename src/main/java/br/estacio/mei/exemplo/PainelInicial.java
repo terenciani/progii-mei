@@ -17,6 +17,11 @@ public class PainelInicial extends javax.swing.JPanel {
      */
     public PainelInicial() {
         initComponents();
+        
+        AlunoDao dao = new AlunoDaoEstatica();
+        Aluno aluno = dao.buscarPorId(0);
+        
+        jButton1.setText(aluno.getNome());
     }
 
     /**

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.exemplo;
+package br.estacio.mei.aula;
 
 import java.util.ArrayList;
 
@@ -13,14 +13,11 @@ import java.util.ArrayList;
  */
 public interface AlunoDao {
 
+    public ArrayList<Aluno> buscarAlunos();
+
     public Aluno salvarAluno(Aluno aluno);
 
-    public boolean excluirAluno(Aluno aluno);
-
-    public ArrayList<Aluno> listarAlunos();
-
     public Aluno atualizarAluno(Aluno aluno);
-    
-    public Aluno buscarPorId(int id);
 
+    public boolean excluirAluno(Aluno aluno);
 }
