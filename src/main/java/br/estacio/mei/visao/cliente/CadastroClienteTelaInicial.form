@@ -127,8 +127,7 @@
                               <Component id="jScrollPane2" min="-2" pref="719" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnExcluirCliente" alignment="0" pref="269" max="32767" attributes="0"/>
-                                  <Component id="btnNovoCliente" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnNovoCliente" alignment="0" pref="269" max="32767" attributes="0"/>
                                   <Component id="btnEditarCliente" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -150,8 +149,6 @@
                               <Component id="btnNovoCliente" min="-2" pref="41" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnEditarCliente" min="-2" pref="37" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnExcluirCliente" min="-2" pref="41" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane2" min="-2" pref="283" max="-2" attributes="0"/>
                       </Group>
@@ -250,19 +247,6 @@
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/icones/findUser20.png"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnExcluirCliente">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="99" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/deleteUser20.png"/>
                 </Property>
               </Properties>
             </Component>

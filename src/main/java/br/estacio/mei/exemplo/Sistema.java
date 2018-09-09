@@ -5,6 +5,8 @@
  */
 package br.estacio.mei.exemplo;
 
+import br.estacio.mei.visao.cliente.GerenciamentoCliente;
+import br.estacio.mei.visao.cliente.NovoCliente;
 import javax.swing.JFrame;
 
 /**
@@ -174,6 +176,11 @@ public class Sistema extends javax.swing.JFrame {
         );
 
         btnClientes.setBackground(new java.awt.Color(12, 180, 206));
+        btnClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnClientesMousePressed(evt);
+            }
+        });
 
         lblClientes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClientes.setForeground(new java.awt.Color(255, 255, 255));
@@ -398,7 +405,17 @@ public class Sistema extends javax.swing.JFrame {
         painelDinamico.add(exemplo);
         painelDinamico.validate();
         painelDinamico.repaint();
+
     }//GEN-LAST:event_btnInicioMousePressed
+
+    private void btnClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMousePressed
+        GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
+        lblBreadcrumb.setText("Gerência de Clientes");
+        painelDinamico.removeAll();
+        painelDinamico.add(gerenciaCliente);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_btnClientesMousePressed
 
     /**
      * @param args the command line arguments
