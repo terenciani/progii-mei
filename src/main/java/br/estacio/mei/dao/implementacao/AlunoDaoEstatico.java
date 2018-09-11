@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.aula;
+package br.estacio.mei.dao.implementacao;
 
+import br.estacio.mei.model.Aluno;
+import br.estacio.mei.dao.AlunoDao;
 import java.util.ArrayList;
 
 /**
  *
  * @author Marcelo
  */
-class AlunoDaoEstatico implements AlunoDao{
+public class AlunoDaoEstatico implements AlunoDao{
     ArrayList<Aluno> bancoDeDados = new ArrayList();
             
             

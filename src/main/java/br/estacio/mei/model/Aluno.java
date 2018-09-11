@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.aula;
+package br.estacio.mei.model;
 
 import java.util.Objects;
 
@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author Marcelo
  */
-class Aluno {
+public class Aluno {
 
     private String nome;
     private int RA;

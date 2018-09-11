@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.aula;
+package br.estacio.mei.dao;
 
+import br.estacio.mei.model.Aluno;
 import java.util.ArrayList;
 
 /**

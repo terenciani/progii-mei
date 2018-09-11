@@ -5,6 +5,9 @@
  */
 package br.estacio.mei.aula;
 
+import br.estacio.mei.dao.implementacao.AlunoDaoEstatico;
+import br.estacio.mei.model.Aluno;
+import br.estacio.mei.dao.AlunoDao;
 import br.estacio.mei.exemplo.PainelInicial;
 import java.util.ArrayList;
 
