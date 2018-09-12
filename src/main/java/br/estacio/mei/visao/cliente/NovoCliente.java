@@ -17,6 +17,12 @@ public class NovoCliente extends javax.swing.JPanel {
     public NovoCliente() {
         initComponents();
     }
+    
+    public NovoCliente(String cliente){
+        initComponents();
+        jTextField_bairro.setText(cliente);
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

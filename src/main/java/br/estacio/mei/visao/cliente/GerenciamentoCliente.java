@@ -36,6 +36,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        panelDinamico = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -73,6 +74,11 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar_cliente.png"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/deleteUser20.png"))); // NOI18N
 
@@ -112,6 +118,8 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
 
         add(jPanel5, java.awt.BorderLayout.LINE_END);
 
+        panelDinamico.setLayout(new java.awt.BorderLayout());
+
         jTable1.setBackground(new java.awt.Color(102, 102, 102));
         jTable1.setForeground(new java.awt.Color(102, 102, 102));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -124,12 +132,26 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        add(jScrollPane2, java.awt.BorderLayout.CENTER);
+        panelDinamico.add(jScrollPane2, java.awt.BorderLayout.CENTER);
+
+        add(panelDinamico, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        NovoCliente adicionarCliente = new NovoCliente();
+        panelDinamico.removeAll();
+        panelDinamico.add(adicionarCliente);
+        panelDinamico.validate();
+        panelDinamico.repaint();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        NovoCliente adicionarCliente = new NovoCliente("Carlota");
+        panelDinamico.removeAll();
+        panelDinamico.add(adicionarCliente);
+        panelDinamico.validate();
+        panelDinamico.repaint();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     
 
@@ -143,6 +165,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel panelDinamico;
     // End of variables declaration//GEN-END:variables
-    private javax.swing.JPanel painelDinamico;
+
 }
