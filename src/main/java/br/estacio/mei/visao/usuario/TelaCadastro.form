@@ -98,7 +98,6 @@
               <Component id="painelBreadcrumb" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -321,7 +320,7 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icones/PicsArt_08-28-07.50.53.jpg"/>
+              <Image iconType="3" name="/icones/user.png"/>
             </Property>
           </Properties>
         </Component>
@@ -717,7 +716,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="jLabel6" min="-2" pref="243" max="-2" attributes="0"/>
+                  <Component id="jLabel6" min="-2" pref="326" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -744,7 +743,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Estou na Tela de Produtos"/>
+            <Property name="text" type="java.lang.String" value="Estou na Tela de Cadastro de Usu&#xe1;rio"/>
           </Properties>
         </Component>
       </SubComponents>

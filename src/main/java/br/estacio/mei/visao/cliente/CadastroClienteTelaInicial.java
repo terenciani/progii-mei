@@ -33,7 +33,6 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         btnNovoCliente = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
-        btnExcluirCliente = new javax.swing.JButton();
         btnEditarCliente = new javax.swing.JButton();
         txtCampoBusca = new javax.swing.JTextField();
         painelLateral = new javax.swing.JPanel();
@@ -103,10 +102,6 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
         btnBuscar.setBackground(new java.awt.Color(153, 153, 153));
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
 
-        btnExcluirCliente.setBackground(new java.awt.Color(153, 153, 153));
-        btnExcluirCliente.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        btnExcluirCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/deleteUser20.png"))); // NOI18N
-
         btnEditarCliente.setBackground(new java.awt.Color(153, 153, 153));
         btnEditarCliente.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         btnEditarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar_cliente.png"))); // NOI18N
@@ -127,8 +122,7 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(painelListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnExcluirCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                            .addComponent(btnNovoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnNovoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                             .addComponent(btnEditarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -143,9 +137,7 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
                     .addGroup(painelListagemLayout.createSequentialGroup()
                         .addComponent(btnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnExcluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnEditarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -513,7 +505,6 @@ public class CadastroClienteTelaInicial extends javax.swing.JFrame {
     private javax.swing.JPanel btnContasAPagar;
     private javax.swing.JPanel btnContasAReceber;
     private javax.swing.JButton btnEditarCliente;
-    private javax.swing.JButton btnExcluirCliente;
     private javax.swing.JPanel btnFornecedores;
     private javax.swing.JPanel btnInicio;
     private javax.swing.JButton btnNovoCliente;
