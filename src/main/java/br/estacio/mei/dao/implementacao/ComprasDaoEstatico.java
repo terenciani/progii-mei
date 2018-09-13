@@ -35,8 +35,11 @@ public class ComprasDaoEstatico implements ComprasDao {
     }
 
     @Override
-    public Compras excluirCompras(Compras compras) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean excluirCompras(Compras compras) {
+        return true;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 
 }
