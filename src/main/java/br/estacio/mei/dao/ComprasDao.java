@@ -20,6 +20,6 @@ public interface ComprasDao {
 
     public Compras editarCompras(Compras compras);
 
-    public Compras excluirCompras(Compras compras);
-
+    public boolean excluirCompras(Compras compras);
+    
 }
