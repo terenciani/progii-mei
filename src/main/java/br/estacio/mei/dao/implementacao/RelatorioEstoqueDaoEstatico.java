@@ -17,18 +17,11 @@ public class RelatorioEstoqueDaoEstatico implements RelatorioEstoqueDao{
     ArrayList<RelatorioEstoque> bancoDeDados = new ArrayList();
             
             
-    public ArrayList<RelatorioEstoque> buscarAlunos() {
+    @Override
+    public ArrayList<RelatorioEstoque> buscarRelatorio() {
         return bancoDeDados;
     }
 
-    /**
-     *
-     * @return
-     */
-    @Override
-    public ArrayList<RelatorioEstoque> buscarRelatorio() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     
     
