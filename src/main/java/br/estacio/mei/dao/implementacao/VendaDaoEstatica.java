@@ -5,34 +5,40 @@
  */
 package br.estacio.mei.dao.implementacao;
 
-import br.estacio.mei.dao.GerenciarVendasDao;
 import java.util.ArrayList;
+import br.estacio.mei.dao.VendaDao;
+import br.estacio.mei.model.Venda;
 /**
  *
  * @author venda
  */
-public class VendasDaoEstatico implements GerenciarVendasDao{
-    ArrayList<venda> bancoDeDados = new ArrayList();
-    
-    @Override
-    public ArrayList<venda> buscarvendas() {
-        return bancoDeDados;
-    }
+public class VendaDaoEstatica implements VendaDao{
+    ArrayList<Venda> tabelaVendas = new ArrayList();
 
     @Override
-    public venda salvarvenda(venda venda) {
-        bancoDeDados.add(venda);
+    public ArrayList<Venda> buscarVendas() {
+        for(Venda venda: tabelaVendas){
+            System.out.println(venda.toString());
+        }
+        return tabelaVendas;
+    }   
+
+    @Override
+    public Venda salvarVenda(Venda venda) {
+        tabelaVendas.add(venda);
         return venda;
     }
 
     @Override
-    public venda atualizarvenda(venda venda) {
+    public Venda atualizarVenda(Venda venda) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean excluirvenda(venda venda) {
+    public boolean excluirVenda(Venda venda) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
     
 }
