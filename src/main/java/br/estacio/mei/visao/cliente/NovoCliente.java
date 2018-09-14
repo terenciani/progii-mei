@@ -5,11 +5,17 @@
  */
 package br.estacio.mei.visao.cliente;
 
+import br.estacio.mei.dao.ClienteDao;
+import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
+import br.estacio.mei.model.Cliente;
+
 /**
  *
  * @author ericvdias
  */
 public class NovoCliente extends javax.swing.JPanel {
+
+    ClienteDao clienteDao = new ClienteDaoEstatico;
 
     /**
      * Creates new form NovoCliente
@@ -17,11 +23,11 @@ public class NovoCliente extends javax.swing.JPanel {
     public NovoCliente() {
         initComponents();
     }
-    
-    public NovoCliente(String cliente){
+
+    public NovoCliente(String cliente) {
         initComponents();
         jTextField_bairro.setText(cliente);
-        
+
     }
 
     /**
@@ -34,7 +40,6 @@ public class NovoCliente extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel_codigo = new javax.swing.JLabel();
-        jLabel_tipo = new javax.swing.JLabel();
         jLabel_cpfCnpj = new javax.swing.JLabel();
         jLabel_nome = new javax.swing.JLabel();
         jLabel_endereco = new javax.swing.JLabel();
@@ -43,19 +48,15 @@ public class NovoCliente extends javax.swing.JPanel {
         jLabel_foneRes = new javax.swing.JLabel();
         jLabel_estado = new javax.swing.JLabel();
         jLabel_email = new javax.swing.JLabel();
-        jRadioButton_PF = new javax.swing.JRadioButton();
-        jRadioButton_PJ = new javax.swing.JRadioButton();
         jTextField_cpfCnpj = new javax.swing.JTextField();
-        jTextField_nome = new javax.swing.JTextField();
-        jTextField_codigo2 = new javax.swing.JTextField();
-        jTextField_nomeFantasia = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
+        txtNomeFantasia = new javax.swing.JTextField();
         jTextField_endereco = new javax.swing.JTextField();
         jTextField_complemento = new javax.swing.JTextField();
-        jTextField_foneRes = new javax.swing.JTextField();
+        jTextField_telefone = new javax.swing.JTextField();
         jTextField_email = new javax.swing.JTextField();
         jComboBox_estado = new javax.swing.JComboBox<>();
-        jTextField_celular = new javax.swing.JTextField();
-        jLabel_celular = new javax.swing.JLabel();
         jLabel_inscrEstadual = new javax.swing.JLabel();
         jLabel_numero = new javax.swing.JLabel();
         jTextField_numero = new javax.swing.JTextField();
@@ -63,15 +64,13 @@ public class NovoCliente extends javax.swing.JPanel {
         jTextField_bairro = new javax.swing.JTextField();
         jLabel_bairro1 = new javax.swing.JLabel();
         jTextField_cidade = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtConfirma = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jTextField_inscrEstadual = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(786, 531));
 
         jLabel_codigo.setText("Código:");
-
-        jLabel_tipo.setText("Tipo:");
 
         jLabel_cpfCnpj.setText("CPF / CNPJ:");
 
@@ -83,19 +82,13 @@ public class NovoCliente extends javax.swing.JPanel {
 
         jLabel_complemento.setText("Complemento:");
 
-        jLabel_foneRes.setText("Telefone Res:");
+        jLabel_foneRes.setText("Telefone:");
 
         jLabel_estado.setText("Estado:");
 
         jLabel_email.setText("Email:");
 
-        jRadioButton_PF.setText("Pessoa Física");
-
-        jRadioButton_PJ.setText("Pessoa Jurídica");
-
         jComboBox_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AP", "BA", "MT", "MS" }));
-
-        jLabel_celular.setText("Celular:");
 
         jLabel_inscrEstadual.setText("Inscr Estadual:");
 
@@ -105,8 +98,13 @@ public class NovoCliente extends javax.swing.JPanel {
 
         jLabel_bairro1.setText("Cidade:");
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 0));
-        jButton1.setText("Confirmar");
+        txtConfirma.setBackground(new java.awt.Color(0, 204, 0));
+        txtConfirma.setText("Confirmar");
+        txtConfirma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConfirmaActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setBackground(new java.awt.Color(255, 0, 51));
         btnCancelar.setText("Cancelar");
@@ -125,7 +123,6 @@ public class NovoCliente extends javax.swing.JPanel {
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_codigo, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel_tipo, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel_cpfCnpj, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel_nome, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel_nomeFantasia, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -137,65 +134,51 @@ public class NovoCliente extends javax.swing.JPanel {
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButton_PF)
-                        .addGap(22, 22, 22)
-                        .addComponent(jRadioButton_PJ)
-                        .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_cpfCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNome)
+                            .addComponent(txtNomeFantasia)
+                            .addComponent(jTextField_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_complemento, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_email, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 25, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtConfirma)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel_bairro1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel_bairro, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel_numero, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel_inscrEstadual, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField_cidade)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextField_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jTextField_bairro))
+                        .addGap(65, 65, 65))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField_codigo2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField_cpfCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField_nome)
-                                    .addComponent(jTextField_nomeFantasia)
-                                    .addComponent(jTextField_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField_complemento, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField_foneRes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField_email, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 25, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel_celular, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel_bairro1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel_bairro, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel_numero, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel_inscrEstadual, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField_cidade)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextField_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jTextField_bairro))
-                                .addGap(65, 65, 65))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(jTextField_inscrEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField_celular, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnCancelar))
-                                .addContainerGap(56, Short.MAX_VALUE))))))
+                                .addGap(3, 3, 3)
+                                .addComponent(jTextField_inscrEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnCancelar))
+                        .addContainerGap(22, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_codigo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_tipo)
-                    .addComponent(jRadioButton_PF)
-                    .addComponent(jRadioButton_PJ))
-                .addGap(19, 19, 19)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_cpfCnpj)
                     .addComponent(jTextField_cpfCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,11 +187,11 @@ public class NovoCliente extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_nome)
-                    .addComponent(jTextField_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_nomeFantasia)
-                    .addComponent(jTextField_nomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField_numero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -233,24 +216,17 @@ public class NovoCliente extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel_estado)
                             .addComponent(jComboBox_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel_celular)
-                            .addComponent(jTextField_celular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField_foneRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel_foneRes))))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_foneRes))
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_email)
                     .addComponent(jTextField_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(txtConfirma)
                     .addComponent(btnCancelar))
                 .addGap(48, 48, 48))
         );
@@ -260,14 +236,20 @@ public class NovoCliente extends javax.swing.JPanel {
         System.exit(0);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void txtConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmaActionPerformed
+        Cliente cliente = new Cliente();
+        cliente.setNome(txtNome.getText());
+        //cliente.setCodigo(txtCodigo.get());
+
+        clienteDao.salvarCliente(cliente);
+    }//GEN-LAST:event_txtConfirmaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox_estado;
     private javax.swing.JLabel jLabel_bairro;
     private javax.swing.JLabel jLabel_bairro1;
-    private javax.swing.JLabel jLabel_celular;
     private javax.swing.JLabel jLabel_codigo;
     private javax.swing.JLabel jLabel_complemento;
     private javax.swing.JLabel jLabel_cpfCnpj;
@@ -279,21 +261,18 @@ public class NovoCliente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel_nome;
     private javax.swing.JLabel jLabel_nomeFantasia;
     private javax.swing.JLabel jLabel_numero;
-    private javax.swing.JLabel jLabel_tipo;
-    private javax.swing.JRadioButton jRadioButton_PF;
-    private javax.swing.JRadioButton jRadioButton_PJ;
     private javax.swing.JTextField jTextField_bairro;
-    private javax.swing.JTextField jTextField_celular;
     private javax.swing.JTextField jTextField_cidade;
-    private javax.swing.JTextField jTextField_codigo2;
     private javax.swing.JTextField jTextField_complemento;
     private javax.swing.JTextField jTextField_cpfCnpj;
     private javax.swing.JTextField jTextField_email;
     private javax.swing.JTextField jTextField_endereco;
-    private javax.swing.JTextField jTextField_foneRes;
     private javax.swing.JTextField jTextField_inscrEstadual;
-    private javax.swing.JTextField jTextField_nome;
-    private javax.swing.JTextField jTextField_nomeFantasia;
     private javax.swing.JTextField jTextField_numero;
+    private javax.swing.JTextField jTextField_telefone;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JButton txtConfirma;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNomeFantasia;
     // End of variables declaration//GEN-END:variables
 }

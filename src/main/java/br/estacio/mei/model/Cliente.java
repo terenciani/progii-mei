@@ -73,6 +73,11 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "codigo=" + codigo + ", cpfCnpj=" + cpfCnpj + ", nome=" + nome + ", nomeFantasia=" + nomeFantasia + ", inscrEstadual=" + inscrEstadual + ", telefone=" + telefone + ", email=" + email + '}';
+    }
     
     
     

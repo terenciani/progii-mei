@@ -13,35 +13,38 @@ import java.util.ArrayList;
  *
  * @author aluno
  */
-public class ClienteDaoEstatico implements ClienteDao{
+public class ClienteDaoEstatico implements ClienteDao {
+
     ArrayList<Cliente> listaCliente = new ArrayList();
 
     @Override
     public ArrayList<Cliente> buscarClientes() {
+        for (Cliente cliente : listaCliente) {
+            System.out.println(cliente.toString());
+        }
+
         return listaCliente;
-        
+
     }
 
     @Override
     public Cliente salvarCliente(Cliente cliente) {
+
         listaCliente.add(cliente);
         return cliente;
-        
+
     }
 
     @Override
     public Cliente atualizarCliente(Cliente cliente) {
         return cliente;
-        
-        
+
     }
 
     @Override
     public boolean excluirCliente(Cliente cliente) {
         return true;
-        
+
     }
-    
-    
-    
+
 }

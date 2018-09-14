@@ -6,6 +6,7 @@
 package br.estacio.mei.visao.cliente;
 
 import br.estacio.mei.exemplo.Sistema;
+import br.estacio.mei.model.Cliente;
 
 /**
  *
@@ -48,6 +49,11 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         jPanel2.setPreferredSize(new java.awt.Dimension(786, 80));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -152,6 +158,13 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         panelDinamico.validate();
         panelDinamico.repaint();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    Cliente cliente = new Cliente();
+    
+    //cliente.getNome(listaCliente);
+    
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
 
