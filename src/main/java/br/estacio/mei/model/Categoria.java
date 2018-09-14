@@ -22,8 +22,22 @@ public class Categoria {
         this.Codigo = Codigo;
         this.descricao = descricao;
     }
-    
-    
+
+    public int getCodigo() {
+        return Codigo;
+    }
+
+    public void setCodigo(int Codigo) {
+        this.Codigo = Codigo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
     private void Codigo(int codigo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
