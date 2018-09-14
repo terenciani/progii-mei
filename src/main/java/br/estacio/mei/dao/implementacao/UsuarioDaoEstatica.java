@@ -7,6 +7,7 @@ package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.dao.UsuarioDao;
 import br.estacio.mei.model.Usuario;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,16 +15,16 @@ import br.estacio.mei.model.Usuario;
  */
 public class UsuarioDaoEstatica implements UsuarioDao{
     
-    Usuario usuario = new Usuario();
+    ArrayList<Usuario> tabelaUsuario = new ArrayList();
     
     @Override
-    public Usuario buscaUsuarioPorLogin(Usuario usuario){
+    public Usuario buscarUsuarioPorLogin(Usuario usuario){
         return usuario;
     }
     
     @Override
     public Usuario salvarUsuario(Usuario usuario){
-        Usuario.add(usuario);
+        tabelaUsuario.add(usuario);
         return usuario;
     }
     
@@ -35,5 +36,11 @@ public class UsuarioDaoEstatica implements UsuarioDao{
     @Override
     public boolean excluirUsuario(Usuario usuario){
         return true;
+    }
+
+
+    @Override
+    public ArrayList<Usuario> buscarUsuarios() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

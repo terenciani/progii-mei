@@ -11,12 +11,14 @@ import java.util.ArrayList;
  *
  * @author aluno
  */
-public interface ContasAPagarDao {
+public interface ContasAPagarDao{
     public ArrayList<ContasAPagar> buscarContasApagarDao();
 
     public ContasAPagar salvarContasApagarDao(ContasAPagarDao ContasApagarDao);
+    
 
     public ContasAPagar atualizarContasApagarDao(ContasAPagarDao ContasApagarDao);
+    
 
     public boolean excluirContasApagarDao(ContasAPagarDao ContasApagarDao);
 }
