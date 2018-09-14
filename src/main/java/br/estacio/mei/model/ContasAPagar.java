@@ -9,7 +9,7 @@ package br.estacio.mei.model;
  *
  * @author aluno
  */
-public class ContasAPagar {
+public class ContasAPagar{
        private int codigo;
        private int dataVencimento;
        private String descricao;
@@ -17,11 +17,11 @@ public class ContasAPagar {
        private int dataPagamento;
        private String status;
 
-    public int getCodigo() {
+    public int getCodigo(){
         return codigo;
     }
 
-    public int getDataPagamento() {
+    public int getDataPagamento(){
         return dataPagamento;
     }
 

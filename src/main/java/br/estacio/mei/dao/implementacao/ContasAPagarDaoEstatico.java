@@ -12,9 +12,9 @@ import br.estacio.mei.model.ContasAPagar;
  *
  * @author aluno
  */
-public class ContasAPagarDaoEstatico implements ContasAPagarDao {
+public class ContasAPagarDaoEstatico implements ContasAPagarDao{
     
-     ArrayList<ContasAPagar> bancoDeDados = new ArrayList();
+     ArrayList<ContasAPagar>bancoDeDados = new ArrayList();
     
 
     @Override
