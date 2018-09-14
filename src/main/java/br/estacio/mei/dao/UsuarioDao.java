@@ -7,6 +7,7 @@ package br.estacio.mei.dao;
 
 
 import br.estacio.mei.model.Usuario;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,8 @@ import br.estacio.mei.model.Usuario;
  */
 public interface UsuarioDao {
     public Usuario buscarUsuarioPorLogin(Usuario usuario);
+    
+    public ArrayList<Usuario> buscarUsuarios();
     
     public Usuario salvarUsuario(Usuario usuario);
     

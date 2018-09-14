@@ -11,9 +11,7 @@ package br.estacio.mei.model;
  */
 public class Usuario {
 
-    public static void add(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
     private int id;
     private String usuario;
     private String senha;
