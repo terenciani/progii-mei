@@ -6,12 +6,12 @@
 package br.estacio.mei.dao;
 
 import java.util.ArrayList;
-
+import br.estacio.mei.model.Venda;
 /**
  *
  * @author Venda
  */
-public interface GerenciarVendasDao {
+public interface VendaDao {
     
     public ArrayList<Venda> buscarVendas();
 

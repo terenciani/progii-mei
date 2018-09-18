@@ -5,10 +5,22 @@
  */
 package br.estacio.mei.dao;
 
+
+import br.estacio.mei.model.Usuario;
+import java.util.ArrayList;
+
 /**
  *
  * @author sena the great
  */
 public interface UsuarioDao {
+    public Usuario buscarUsuarioPorLogin(Usuario usuario);
     
+    public ArrayList<Usuario> buscarUsuarios();
+    
+    public Usuario salvarUsuario(Usuario usuario);
+    
+    public Usuario atualizarUsuario (Usuario usuario);
+    
+    public boolean excluirUsuario(Usuario usuario);
 }
