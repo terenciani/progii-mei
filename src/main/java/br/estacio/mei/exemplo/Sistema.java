@@ -7,6 +7,7 @@ package br.estacio.mei.exemplo;
 
 import br.estacio.mei.visao.cliente.GerenciamentoCliente;
 import br.estacio.mei.visao.cliente.NovoCliente;
+import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoque;
 import javax.swing.JFrame;
 
 /**
@@ -229,10 +230,15 @@ public class Sistema extends javax.swing.JFrame {
         );
 
         btnFornecedores.setBackground(new java.awt.Color(12, 180, 206));
+        btnFornecedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnFornecedoresMousePressed(evt);
+            }
+        });
 
         lblFornecedores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblFornecedores.setForeground(new java.awt.Color(255, 255, 255));
-        lblFornecedores.setText("Fornecedores");
+        lblFornecedores.setText("Relatório de Estoque");
 
         javax.swing.GroupLayout btnFornecedoresLayout = new javax.swing.GroupLayout(btnFornecedores);
         btnFornecedores.setLayout(btnFornecedoresLayout);
@@ -416,6 +422,16 @@ public class Sistema extends javax.swing.JFrame {
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnClientesMousePressed
+
+    private void btnFornecedoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedoresMousePressed
+        // TODO add your handling code here:
+        RelatorioDeEstoque relatorioDeEstoque = new RelatorioDeEstoque();
+        lblBreadcrumb.setText("Relatório de Estoque");
+        painelDinamico.removeAll();
+        painelDinamico.add(relatorioDeEstoque);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_btnFornecedoresMousePressed
 
     /**
      * @param args the command line arguments
