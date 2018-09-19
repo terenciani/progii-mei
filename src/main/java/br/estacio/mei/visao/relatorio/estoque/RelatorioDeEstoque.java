@@ -5,17 +5,27 @@
  */
 package br.estacio.mei.visao.relatorio.estoque;
 
+import br.estacio.mei.dao.ProdutoDao;
+import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
+import br.estacio.mei.model.Produto;
+import java.util.ArrayList;
+
 /**
  *
  * @author Marcelo
  */
 public class RelatorioDeEstoque extends javax.swing.JPanel {
-
+    ProdutoDao produtoDao = new ProdutoDaoEstatico();
     /**
      * Creates new form RelatorioDeEstoque
      */
     public RelatorioDeEstoque() {
         initComponents();
+        Produto produto = new Produto();
+        produto.setNome("Camisa");
+        produtoDao.salvar(produto);
+        ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
+        System.out.println(listaDeProdutos.get(0).getNome());
     }
 
     /**
