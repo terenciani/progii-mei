@@ -17,10 +17,9 @@ import java.util.ArrayList;
  * @author Marcelo
  */
 public class VendaProfessor extends javax.swing.JFrame {
-    
+
     VendaDao vendaDao = new VendaDaoEstatica();
-    
-    
+
     /**
      * Creates new form VendaProfessor
      */
@@ -128,23 +127,21 @@ public class VendaProfessor extends javax.swing.JFrame {
 
     private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
         ArrayList<Produto> listaDeProdutos = new ArrayList();
-        
+
         Produto produto = new Produto();
         produto.setNome(txtProduto.getText());
-        
+
         listaDeProdutos.add(produto);
-        
-        
+
         Cliente cliente = new Cliente();
         cliente.setNome(txtCliente.getText());
-        
+
         Venda venda = new Venda();
         venda.setListaDeProdutos(listaDeProdutos);
         venda.setCliente(cliente);
         venda.setUsuario(null);
         venda.setData(null);
-        
-        
+
         vendaDao.salvarVenda(venda);
     }//GEN-LAST:event_btnVenderActionPerformed
 
@@ -195,6 +192,5 @@ public class VendaProfessor extends javax.swing.JFrame {
     private javax.swing.JTextField txtCliente;
     private javax.swing.JTextField txtProduto;
     // End of variables declaration//GEN-END:variables
-    
 
 }

@@ -8,6 +8,7 @@ package br.estacio.mei.visao.cliente;
 import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
 import br.estacio.mei.model.Cliente;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,7 +16,7 @@ import br.estacio.mei.model.Cliente;
  */
 public class NovoCliente extends javax.swing.JPanel {
 
-    ClienteDao clienteDao = new ClienteDaoEstatico;
+    ClienteDao clienteDao = new ClienteDaoEstatico();
 
     /**
      * Creates new form NovoCliente
@@ -26,7 +27,6 @@ public class NovoCliente extends javax.swing.JPanel {
 
     public NovoCliente(String cliente) {
         initComponents();
-        jTextField_bairro.setText(cliente);
 
     }
 
@@ -174,7 +174,11 @@ public class NovoCliente extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtConfirma)
+                    .addComponent(btnCancelar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -224,24 +228,21 @@ public class NovoCliente extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_email)
                     .addComponent(jTextField_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtConfirma)
-                    .addComponent(btnCancelar))
-                .addGap(48, 48, 48))
+                .addGap(77, 77, 77))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         System.exit(0);
+
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txtConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmaActionPerformed
         Cliente cliente = new Cliente();
         cliente.setNome(txtNome.getText());
-        //cliente.setCodigo(txtCodigo.get());
-
         clienteDao.salvarCliente(cliente);
+        //ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
+        //System.out.println(listaDeClientes.get(0).getNome());
     }//GEN-LAST:event_txtConfirmaActionPerformed
 
 

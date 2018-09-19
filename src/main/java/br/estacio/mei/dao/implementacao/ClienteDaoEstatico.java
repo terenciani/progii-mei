@@ -20,7 +20,7 @@ public class ClienteDaoEstatico implements ClienteDao {
     @Override
     public ArrayList<Cliente> buscarClientes() {
         for (Cliente cliente : listaCliente) {
-            System.out.println(cliente.toString());
+            //listaCliente.;
         }
 
         return listaCliente;
