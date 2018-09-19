@@ -370,6 +370,9 @@
               <Color blue="ce" green="b4" red="c" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnFornecedoresMousePressed"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -401,7 +404,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Fornecedores"/>
+                <Property name="text" type="java.lang.String" value="Relat&#xf3;rio de Estoque"/>
               </Properties>
             </Component>
           </SubComponents>
