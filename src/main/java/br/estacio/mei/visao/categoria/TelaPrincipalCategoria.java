@@ -16,6 +16,7 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
      */
     public TelaPrincipalCategoria() {
         initComponents();
+        panelCategAcao.setVisible(false);
     }
 
     /**
