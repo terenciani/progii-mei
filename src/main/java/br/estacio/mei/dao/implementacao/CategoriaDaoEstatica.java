@@ -16,24 +16,28 @@ import java.util.ArrayList;
  */
 
 public class CategoriaDaoEstatica implements CategoriaDao {
-    ArrayList<Categoria> bancoDeDados = new ArrayList();
+    ArrayList<Categoria> listaCategoria = new ArrayList();
 
     @Override
     public ArrayList<Categoria> buscarCategoria() {
-        return bancoDeDados;
+        for (Categoria categoria: listaCategoria){
+            //.listarCategoria
+        }
+        return listaCategoria;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Categoria salvarCategoria(Categoria categoria) {
-        bancoDeDados.add(categoria);
+        listaCategoria.add(categoria);
         return categoria;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Categoria atualizarCategoria(Categoria categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return categoria;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -43,7 +47,8 @@ public class CategoriaDaoEstatica implements CategoriaDao {
 
     @Override
     public boolean excluirCategoria(Categoria categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 
