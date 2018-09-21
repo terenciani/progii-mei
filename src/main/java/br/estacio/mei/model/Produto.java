@@ -17,6 +17,18 @@ public class Produto {
     private double precoCompra;
     private double precoVenda;
 
+    public Produto(int codigo, String nome, int quantidade, Fornecedor fornecedor, double precoCompra, double precoVenda) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.fornecedor = fornecedor;
+        this.precoCompra = precoCompra;
+        this.precoVenda = precoVenda;
+    }
+
+    
+    
+    
     public int getCodigo() {
         return codigo;
     }

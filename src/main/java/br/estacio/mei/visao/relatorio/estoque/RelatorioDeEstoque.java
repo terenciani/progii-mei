@@ -7,8 +7,10 @@ package br.estacio.mei.visao.relatorio.estoque;
 
 import br.estacio.mei.dao.ProdutoDao;
 import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
+import br.estacio.mei.model.Fornecedor;
 import br.estacio.mei.model.Produto;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,11 +23,30 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
      */
     public RelatorioDeEstoque() {
         initComponents();
-        Produto produto = new Produto();
-        produto.setNome("Camisa");
+        
+        Fornecedor fornecedor = new Fornecedor();
+        fornecedor.setRazaoSocial("Estacio & CIA");
+        Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);
         produtoDao.salvar(produto);
+        produto = new Produto(1, "Short", 5, fornecedor, 40, 80);
+        
+        produtoDao.salvar(produto);
+        
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
+        
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
-        System.out.println(listaDeProdutos.get(0).getNome());
+        for (int i=0; i< listaDeProdutos.size();i++)
+        {
+            Produto p = listaDeProdutos.get(i);
+            Object[] dadosDaLinha = new Object[6];
+            dadosDaLinha[0] = p.getCodigo();
+            dadosDaLinha[1] = p.getNome();
+            dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+            dadosDaLinha[3] = p.getPrecoCompra();
+            dadosDaLinha[4] = p.getPrecoVenda();
+            dadosDaLinha[5] = p.getQuantidade();
+            modeloDeColunasDaTabela.addRow(dadosDaLinha);
+        }
     }
 
     /**
@@ -45,7 +66,8 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
         jButtonNovoProduto = new javax.swing.JButton();
         jComboBoxFiltrar = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbProdutos = new javax.swing.JTable();
+        lblCodigo = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -56,6 +78,11 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
 
         jButtonNovoProduto.setText("Novo Produto");
+        jButtonNovoProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNovoProdutoActionPerformed(evt);
+            }
+        });
 
         jComboBoxFiltrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Nome", "Fornecedor", "Preço de Compra", "Preço de Venda", "Qtde Estoque" }));
 
@@ -87,24 +114,26 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
                 .addGap(50, 50, 50))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Calça", "Marcelo", "R$25,00", "R$50,00", "10"},
-                {"2", "Camiseta", "Marcelo", "R$25,00", "R$50,00", "10"},
-                {"3", "Short", "Marcelo", "R$25,00", "R$50,00", "10"},
-                {"4", "Boné", "Marcelo", "R$25,00", "R$50,00", "10"}
+
             },
             new String [] {
                 "Código", "Nome", "Fornecedor", "Preço de Compra", "Preço de Venda", "Qtde Estoque"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbProdutos);
+
+        lblCodigo.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(366, 366, 366)
+                .addComponent(lblCodigo)
+                .addContainerGap(368, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -117,7 +146,9 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 723, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(lblCodigo)
+                .addGap(0, 709, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -130,6 +161,12 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonNovoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoProdutoActionPerformed
+        int linha = tbProdutos.getSelectedRow();
+        int codigo = (int)tbProdutos.getModel().getValueAt(linha, 0);
+        lblCodigo.setText(""+codigo);
+    }//GEN-LAST:event_jButtonNovoProdutoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -139,7 +176,8 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextPane jTextPaneBuscar;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JTable tbProdutos;
     // End of variables declaration//GEN-END:variables
 }
