@@ -27,62 +27,57 @@
                   <Component id="jLabel_codigo" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_cpfCnpj" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_nome" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel_nomeFantasia" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_endereco" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_complemento" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_estado" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_foneRes" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel_email" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <Component id="txtConfirma" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtCodigo" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
-                          <Component id="jTextField_cpfCnpj" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
-                          <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtNomeFantasia" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtCpfCNPJ" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
                           <Component id="jTextField_endereco" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
                           <Component id="jTextField_complemento" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
                           <Component id="jComboBox_estado" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField_telefone" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="jTextField_email" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                          <Component id="txtTelefone" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="txtNome" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" pref="25" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="txtConfirma" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel_email" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_bairro1" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_bairro" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_numero" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_nomeFantasia" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_inscrEstadual" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel_bairro1" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel_bairro" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel_numero" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel_inscrEstadual" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextField_cidade" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTextField_numero" min="-2" pref="93" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jTextField_bairro" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                              <Component id="jTextField_inscrEstadual" min="-2" pref="152" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_inscrEstadual" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
+                          <Component id="jTextField_numero" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="jTextField_bairro" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextField_cidade" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtEmail" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="txtNomeFantasia" min="-2" pref="254" max="-2" attributes="0"/>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -91,20 +86,15 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtConfirma" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel_codigo" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
                   <Component id="txtCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel_cpfCnpj" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField_cpfCnpj" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCpfCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_inscrEstadual" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField_inscrEstadual" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -112,55 +102,43 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel_nome" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel_nomeFantasia" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtNomeFantasia" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField_numero" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="jLabel_endereco" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField_endereco" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel_numero" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel_endereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField_endereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel_numero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField_numero" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel_complemento" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField_complemento" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_bairro" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField_bairro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel_bairro1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField_cidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel_estado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox_estado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel_estado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jComboBox_estado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel_bairro1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField_cidade" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField_telefone" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_foneRes" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_email" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField_email" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtConfirma" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -211,7 +189,7 @@
         <Property name="text" type="java.lang.String" value="Email:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField_cpfCnpj">
+    <Component class="javax.swing.JTextField" name="txtCpfCNPJ">
     </Component>
     <Component class="javax.swing.JTextField" name="txtNome">
     </Component>
@@ -223,9 +201,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField_complemento">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField_telefone">
+    <Component class="javax.swing.JTextField" name="txtTelefone">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField_email">
+    <Component class="javax.swing.JTextField" name="txtEmail">
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox_estado">
       <Properties>

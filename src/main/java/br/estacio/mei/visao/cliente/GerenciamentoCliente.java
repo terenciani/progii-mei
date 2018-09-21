@@ -10,6 +10,7 @@ import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
 import br.estacio.mei.exemplo.Sistema;
 import br.estacio.mei.model.Cliente;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,7 +25,31 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
      */
     public GerenciamentoCliente() {
         initComponents();
-        
+
+        ///TESTES:
+        Cliente cliente = new Cliente();
+
+        cliente.setCodigo(1);
+        cliente.setNome("Eric Dias");
+        cliente.setTelefone(799998888);
+        cliente.setCpfCnpj("12345678911");
+        cliente.setEmail("email@email");
+
+        clienteDao.salvarCliente(cliente);
+
+        DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
+        ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
+
+        for (int i = 0; i < listaDeClientes.size(); i++) {
+            //Cliente exibeCliente = new Cliente();
+            Object[] dadosDaLinha = new Object[5];
+            dadosDaLinha[0] = cliente.getCodigo();
+            dadosDaLinha[1] = cliente.getNome();
+            dadosDaLinha[2] = cliente.getTelefone();
+            dadosDaLinha[3] = cliente.getCpfCnpj();
+            dadosDaLinha[4] = cliente.getEmail(); // Endereco Criar classe. 
+            modeloDeColuna.addRow(dadosDaLinha);
+        }
     }
 
     /**
@@ -36,52 +61,35 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        btnBuscarClientes = new javax.swing.JButton();
+        panelDinamico = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbListaClientes = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         btnEditarCliente = new javax.swing.JButton();
         btnExcluirCliente = new javax.swing.JButton();
         btnAdicionarNovoCliente = new javax.swing.JButton();
-        panelDinamico = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        btnBuscarClientes = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(786, 531));
         setLayout(new java.awt.BorderLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(786, 80));
+        panelDinamico.setLayout(new java.awt.BorderLayout());
 
-        btnBuscarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
-        btnBuscarClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarClientesActionPerformed(evt);
+        tbListaClientes.setForeground(new java.awt.Color(102, 102, 102));
+        tbListaClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Código", "Nome", "Telefone", "CPF/CNPJ", "Endereço"
             }
-        });
+        ));
+        jScrollPane2.setViewportView(tbListaClientes);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(339, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnBuscarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-
-        add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        panelDinamico.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -128,23 +136,39 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
                 .addContainerGap(329, Short.MAX_VALUE))
         );
 
-        add(jPanel5, java.awt.BorderLayout.LINE_END);
+        panelDinamico.add(jPanel5, java.awt.BorderLayout.LINE_END);
 
-        panelDinamico.setLayout(new java.awt.BorderLayout());
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setPreferredSize(new java.awt.Dimension(786, 80));
 
-        jTable1.setBackground(new java.awt.Color(102, 102, 102));
-        jTable1.setForeground(new java.awt.Color(102, 102, 102));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Ações", "Código", "Nome", "Telefone", "CPF/CNPJ", "Endereço"
+        btnBuscarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
+        btnBuscarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarClientesActionPerformed(evt);
             }
-        ));
-        jScrollPane2.setViewportView(jTable1);
+        });
 
-        panelDinamico.add(jScrollPane2, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBuscarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(339, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnBuscarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField1))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        panelDinamico.add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
         add(panelDinamico, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -158,13 +182,27 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAdicionarNovoClienteActionPerformed
 
     private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
-
+        int linha = tbListaClientes.getSelectedRow();
+        int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
     private void btnBuscarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClientesActionPerformed
         Cliente cliente = new Cliente();
-       
+
+        DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
         ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
+
+        for (int i = 0; i < listaDeClientes.size(); i++) {
+            Cliente exibeCliente = new Cliente();
+            Object[] dadosDaLinha = new Object[5];
+            dadosDaLinha[0] = exibeCliente.getCodigo();
+            dadosDaLinha[1] = exibeCliente.getNome();
+            dadosDaLinha[2] = exibeCliente.getTelefone();
+            dadosDaLinha[4] = exibeCliente.getCpfCnpj();
+            dadosDaLinha[1] = exibeCliente.getEmail(); // Endereco Criar classe. 
+            modeloDeColuna.addRow(dadosDaLinha);
+        }
+
         System.out.println(listaDeClientes.get(0).getNome());
 
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
@@ -178,9 +216,9 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel panelDinamico;
+    private javax.swing.JTable tbListaClientes;
     // End of variables declaration//GEN-END:variables
 
 }
