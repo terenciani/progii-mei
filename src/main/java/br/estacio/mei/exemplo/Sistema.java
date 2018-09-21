@@ -5,6 +5,7 @@
  */
 package br.estacio.mei.exemplo;
 
+import br.estacio.mei.visao.categoria.TelaPrincipalCategoria;
 import br.estacio.mei.visao.cliente.GerenciamentoCliente;
 import br.estacio.mei.visao.contas.pagar.ContasAPagarPrincipal;
 import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoque;
@@ -154,6 +155,11 @@ public class Sistema extends javax.swing.JFrame {
         );
 
         btnCategorias.setBackground(new java.awt.Color(12, 180, 206));
+        btnCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnCategoriasMousePressed(evt);
+            }
+        });
 
         lblCategorias.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblCategorias.setForeground(new java.awt.Color(255, 255, 255));
@@ -432,6 +438,15 @@ public class Sistema extends javax.swing.JFrame {
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnFornecedoresMousePressed
+
+    private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
+        TelaPrincipalCategoria gerenciaCliente = new TelaPrincipalCategoria();
+        lblBreadcrumb.setText("Gerência de Clientes");
+        painelDinamico.removeAll();
+        painelDinamico.add(gerenciaCliente);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_btnCategoriasMousePressed
 
     /**
      * @param args the command line arguments

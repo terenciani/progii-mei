@@ -10,12 +10,16 @@ package br.estacio.mei.model;
  * @author Marcelo
  */
 public class Produto {
+
     private int codigo;
     private String nome;
     private int quantidade;
     private Fornecedor fornecedor;
     private double precoCompra;
     private double precoVenda;
+
+    public Produto() {
+    }
 
     public Produto(int codigo, String nome, int quantidade, Fornecedor fornecedor, double precoCompra, double precoVenda) {
         this.codigo = codigo;
@@ -26,9 +30,6 @@ public class Produto {
         this.precoVenda = precoVenda;
     }
 
-    
-    
-    
     public int getCodigo() {
         return codigo;
     }
@@ -76,9 +77,5 @@ public class Produto {
     public void setPrecoVenda(double precoVenda) {
         this.precoVenda = precoVenda;
     }
-    
-    
+
 }
-
-
-
