@@ -223,9 +223,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
             dadosDaLinha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
             modeloDeColuna.addRow(dadosDaLinha);
         }
-
-        System.out.println(listaDeClientes.get(0).getNome());
-
+        
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
 
 
