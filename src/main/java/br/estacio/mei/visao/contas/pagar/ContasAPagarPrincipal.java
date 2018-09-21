@@ -10,14 +10,14 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author joaos
+ * @author aluno
  */
-public class InterfaceContas_ extends javax.swing.JFrame {
+public class ContasAPagarPrincipal extends javax.swing.JPanel {
 
     /**
-     * Creates new form InterfaceContas
+     * Creates new form ContasAPagarPrincipal
      */
-    public InterfaceContas_() {
+    public ContasAPagarPrincipal() {
         initComponents();
     }
 
@@ -49,8 +49,7 @@ public class InterfaceContas_ extends javax.swing.JFrame {
         Beditar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("SGM- Contas a pagar");
+        setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setAlignmentX(0.0F);
@@ -163,7 +162,7 @@ public class InterfaceContas_ extends javax.swing.JFrame {
                                     .addComponent(txtdtv))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(txtdesc, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtv, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,7 +187,7 @@ public class InterfaceContas_ extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(46, 46, 46)
                                         .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel6)
                                         .addGap(40, 40, 40)))))))
                 .addContainerGap())
@@ -213,7 +212,7 @@ public class InterfaceContas_ extends javax.swing.JFrame {
                     .addComponent(txtdesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtdtv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -222,22 +221,58 @@ public class InterfaceContas_ extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        pack();
-        setLocationRelativeTo(null);
+        add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtdtvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdtvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdtvActionPerformed
+
+    private void txtdescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdescActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdescActionPerformed
+
+    private void txtcodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcodActionPerformed
+
+    private void txtstatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtstatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtstatusActionPerformed
+
+    private void jTabelaPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabelaPMouseClicked
+        if(jTabelaP.getSelectedRow() != -1){
+            txtdtv.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 0).toString());
+            txtdesc.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 1).toString());
+            txtv.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 2).toString());
+            txtdtp.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 3).toString());
+            txtcod.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 4).toString());
+            txtstatus.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 5).toString());
+        }
+    }//GEN-LAST:event_jTabelaPMouseClicked
+
+    private void BexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BexcluirActionPerformed
+
+        if(jTabelaP.getSelectedRow() != -1){
+            DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
+            dtmContas.removeRow(jTabelaP.getSelectedRow());
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione um produto para excluir");
+        }
+    }//GEN-LAST:event_BexcluirActionPerformed
+
+    private void BeditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BeditarActionPerformed
+        if(jTabelaP.getSelectedRow() != -1){
+            jTabelaP.setValueAt(txtdtv.getText(), jTabelaP.getSelectedRow(), 0);
+            jTabelaP.setValueAt(txtdesc.getText(), jTabelaP.getSelectedRow(), 1);
+            jTabelaP.setValueAt(txtv.getText(), jTabelaP.getSelectedRow(), 2);
+            jTabelaP.setValueAt(txtdtp.getText(), jTabelaP.getSelectedRow(), 3);
+            jTabelaP.setValueAt(txtcod.getText(), jTabelaP.getSelectedRow(), 4);
+            jTabelaP.setValueAt(txtstatus.getText(), jTabelaP.getSelectedRow(), 5);
+
+        }
+    }//GEN-LAST:event_BeditarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
@@ -252,128 +287,6 @@ public class InterfaceContas_ extends javax.swing.JFrame {
         txtstatus.setText(" ");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void BeditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BeditarActionPerformed
-        if(jTabelaP.getSelectedRow() != -1){
-            jTabelaP.setValueAt(txtdtv.getText(), jTabelaP.getSelectedRow(), 0);
-            jTabelaP.setValueAt(txtdesc.getText(), jTabelaP.getSelectedRow(), 1);
-            jTabelaP.setValueAt(txtv.getText(), jTabelaP.getSelectedRow(), 2);
-            jTabelaP.setValueAt(txtdtp.getText(), jTabelaP.getSelectedRow(), 3);
-            jTabelaP.setValueAt(txtcod.getText(), jTabelaP.getSelectedRow(), 4);
-            jTabelaP.setValueAt(txtstatus.getText(), jTabelaP.getSelectedRow(), 5);
-
-        }
-    }//GEN-LAST:event_BeditarActionPerformed
-
-    private void BexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BexcluirActionPerformed
-
-        if(jTabelaP.getSelectedRow() != -1){
-            DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
-            dtmContas.removeRow(jTabelaP.getSelectedRow());
-
-        }else{
-            JOptionPane.showMessageDialog(null, "Selecione um produto para excluir");
-        }
-    }//GEN-LAST:event_BexcluirActionPerformed
-
-    private void jTabelaPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabelaPMouseClicked
-        if(jTabelaP.getSelectedRow() != -1){
-            txtdtv.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 0).toString());
-            txtdesc.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 1).toString());
-            txtv.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 2).toString());
-            txtdtp.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 3).toString());
-            txtcod.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 4).toString());
-            txtstatus.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 5).toString());
-        }
-    }//GEN-LAST:event_jTabelaPMouseClicked
-
-    private void txtstatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtstatusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtstatusActionPerformed
-
-    private void txtcodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcodActionPerformed
-
-    private void txtdescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdescActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtdescActionPerformed
-
-lignment.BASELINE)
-                    .addComponent(txtstatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtcod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtdtp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtdesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtdtv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(Bexcluir)
-                    .addComponent(Beditar))
-                .addGap(7, 7, 7))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        pack();
-        setLocationRelativeTo(null);
-    }// </editor-fold>                        
-
-    private void txtdtvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdtvActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtdtvActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfaceContas_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfaceContas_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfaceContas_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfaceContas_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new InterfaceContas_().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Beditar;

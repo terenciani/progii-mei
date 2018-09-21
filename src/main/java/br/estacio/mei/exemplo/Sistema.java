@@ -6,7 +6,7 @@
 package br.estacio.mei.exemplo;
 
 import br.estacio.mei.visao.cliente.GerenciamentoCliente;
-import br.estacio.mei.visao.cliente.NovoCliente;
+import br.estacio.mei.visao.contas.pagar.ContasAPagarPrincipal;
 import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoque;
 import javax.swing.JFrame;
 
@@ -390,7 +390,7 @@ public class Sistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnContasAPagarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMousePressed
-        PainelInicial painelInicial = new PainelInicial();
+        ContasAPagarPrincipal painelInicial = new ContasAPagarPrincipal();
         lblBreadcrumb.setText("Gerência de Contas a Pagar");
         painelDinamico.removeAll();
         painelDinamico.add(painelInicial);
