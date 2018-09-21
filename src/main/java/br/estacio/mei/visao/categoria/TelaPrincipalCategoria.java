@@ -5,11 +5,15 @@
  */
 package br.estacio.mei.visao.categoria;
 
+import br.estacio.mei.dao.CategoriaDao;
+import br.estacio.mei.dao.implementacao.CategoriaDaoEstatica;
+
 /**
  *
  * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir Orico)
  */
 public class TelaPrincipalCategoria extends javax.swing.JPanel {
+    CategoriaDao categoriaDao = new CategoriaDaoEstatica();
 
     /**
      * Creates new form TelaPrincipalCategoria
@@ -17,6 +21,7 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
     public TelaPrincipalCategoria() {
         initComponents();
         panelCategAcao.setVisible(false);
+        
     }
 
     /**
