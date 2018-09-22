@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author aluno
  */
 public class ClienteDaoEstatico implements ClienteDao {
-    //ClienteDao clienteDao = new ClienteDaoEstatico();
+    ClienteDao clienteDao = new ClienteDaoEstatico();
     ArrayList<Cliente> listaCliente = new ArrayList();
 
     @Override

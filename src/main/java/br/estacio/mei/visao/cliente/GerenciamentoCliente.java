@@ -19,15 +19,16 @@ import javax.swing.table.DefaultTableModel;
 public class GerenciamentoCliente extends javax.swing.JPanel {
 
     ClienteDao clienteDao = new ClienteDaoEstatico();
-
+    InformaDadosCliente adicionarCliente = new InformaDadosCliente();
+    Cliente cliente = new Cliente();
     /**
      * Creates new form GerenciamentoCliente
      */
     public GerenciamentoCliente() {
         initComponents();
 
-        /*     ///TESTES:
-      Cliente cliente = new Cliente();
+        ///TESTES:
+        Cliente cliente = new Cliente();
 
         cliente.setCodigo(1);
         cliente.setNome("Eric Dias");
@@ -36,7 +37,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         cliente.setEmail("email@email");
 
         clienteDao.salvarCliente(cliente);
-
+        /*
         DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
         ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
 
@@ -75,6 +76,8 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         btnBuscarClientes = new javax.swing.JButton();
+        testeCodigo = new javax.swing.JLabel();
+        testeNome = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(786, 531));
@@ -152,6 +155,10 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
             }
         });
 
+        testeCodigo.setText("jLabel1");
+
+        testeNome.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -160,16 +167,25 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBuscarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(339, Short.MAX_VALUE))
+                .addGap(59, 59, 59)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(testeCodigo)
+                    .addComponent(testeNome))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnBuscarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(testeCodigo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(testeNome))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnBuscarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField1)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         panelDinamico.add(jPanel2, java.awt.BorderLayout.PAGE_START);
@@ -178,8 +194,6 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdicionarNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarNovoClienteActionPerformed
-
-        InformaDadosCliente adicionarCliente = new InformaDadosCliente();
 
         panelDinamico.removeAll();
         panelDinamico.add(adicionarCliente);
@@ -190,6 +204,25 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
         /*int linha = tbListaClientes.getSelectedRow();
         int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);*/
+        
+        int linha = tbListaClientes.getSelectedRow();
+        int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
+        String nome = (String) tbListaClientes.getModel().getValueAt(linha, 1);
+        int telefone = (int) tbListaClientes.getModel().getValueAt(linha, 2);
+        String cpfCnpj = (String) tbListaClientes.getModel().getValueAt(linha, 3);
+        String endereco = (String) tbListaClientes.getModel().getValueAt(linha, 4);
+
+        testeNome.setText(nome);
+        testeCodigo.setText("" + codigo);
+        
+        
+        
+        cliente.getCodigo();
+        
+        panelDinamico.removeAll();
+        panelDinamico.add(adicionarCliente);
+        panelDinamico.validate();
+        panelDinamico.repaint();
         
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
@@ -224,6 +257,8 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel panelDinamico;
     private javax.swing.JTable tbListaClientes;
+    private javax.swing.JLabel testeCodigo;
+    private javax.swing.JLabel testeNome;
     // End of variables declaration//GEN-END:variables
 
 }
