@@ -459,7 +459,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCategoriasMousePressed
 
     private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
-    
+    System.exit(0);
     }//GEN-LAST:event_lblSairMousePressed
 
     private void btnSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMousePressed
