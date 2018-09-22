@@ -25,9 +25,9 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
      */
     public GerenciamentoCliente() {
         initComponents();
- 
-        ///TESTES:
-        Cliente cliente = new Cliente();
+
+        /*     ///TESTES:
+      Cliente cliente = new Cliente();
 
         cliente.setCodigo(1);
         cliente.setNome("Eric Dias");
@@ -36,41 +36,24 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         cliente.setEmail("email@email");
 
         clienteDao.salvarCliente(cliente);
-/*
+
         DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
         ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
 
         for (int i = 0; i < listaDeClientes.size(); i++) {
             Cliente exibeCliente = listaDeClientes.get(i);
-            Object[] dadosDaLinha = new Object[5];
-            dadosDaLinha[0] = exibeCliente.getCodigo();
-            dadosDaLinha[1] = exibeCliente.getNome();
-            dadosDaLinha[2] = exibeCliente.getTelefone();
-            dadosDaLinha[3] = exibeCliente.getCpfCnpj();
-            dadosDaLinha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
-            modeloDeColuna.addRow(dadosDaLinha);
+            Object[] linha = new Object[5];
+            linha[0] = exibeCliente.getCodigo();
+            linha[1] = exibeCliente.getNome();
+            linha[2] = exibeCliente.getTelefone();
+            linha[3] = exibeCliente.getCpfCnpj();
+            linha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
+            modeloDeColuna.addRow(linha);
         }
         
-       
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
-        
-        ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
-        for (int i=0; i< listaDeProdutos.size();i++)
-        {
-            Produto p = listaDeProdutos.get(i);
-            Object[] dadosDaLinha = new Object[6];
-            dadosDaLinha[0] = p.getCodigo();
-            dadosDaLinha[1] = p.getNome();
-            dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-            dadosDaLinha[3] = p.getPrecoCompra();
-            dadosDaLinha[4] = p.getPrecoVenda();
-            dadosDaLinha[5] = p.getQuantidade();
-            modeloDeColunasDaTabela.addRow(dadosDaLinha);
-        }
-        */
         
         
-        
+         */
     }
 
     /**
@@ -195,7 +178,9 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdicionarNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarNovoClienteActionPerformed
-        NovoCliente adicionarCliente = new NovoCliente();
+
+        InformaDadosCliente adicionarCliente = new InformaDadosCliente();
+
         panelDinamico.removeAll();
         panelDinamico.add(adicionarCliente);
         panelDinamico.validate();
@@ -203,8 +188,9 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAdicionarNovoClienteActionPerformed
 
     private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
-        int linha = tbListaClientes.getSelectedRow();
-        int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
+        /*int linha = tbListaClientes.getSelectedRow();
+        int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);*/
+        
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
     private void btnBuscarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClientesActionPerformed
@@ -215,15 +201,15 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
 
         for (int i = 0; i < listaDeClientes.size(); i++) {
             Cliente exibeCliente = listaDeClientes.get(i);
-            Object[] dadosDaLinha = new Object[5];
-            dadosDaLinha[0] = exibeCliente.getCodigo();
-            dadosDaLinha[1] = exibeCliente.getNome();
-            dadosDaLinha[2] = exibeCliente.getTelefone();
-            dadosDaLinha[3] = exibeCliente.getCpfCnpj();
-            dadosDaLinha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
-            modeloDeColuna.addRow(dadosDaLinha);
+            Object[] linha = new Object[5];
+            linha[0] = exibeCliente.getCodigo();
+            linha[1] = exibeCliente.getNome();
+            linha[2] = exibeCliente.getTelefone();
+            linha[3] = exibeCliente.getCpfCnpj();
+            linha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
+            modeloDeColuna.addRow(linha);
         }
-        
+
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
 
 

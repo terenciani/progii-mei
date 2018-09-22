@@ -326,6 +326,9 @@
               <Color blue="ce" green="b4" red="c" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnSairMousePressed"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -364,6 +367,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSairMousePressed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

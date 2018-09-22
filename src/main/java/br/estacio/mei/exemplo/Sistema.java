@@ -211,12 +211,22 @@ public class Sistema extends javax.swing.JFrame {
         );
 
         btnSair.setBackground(new java.awt.Color(12, 180, 206));
+        btnSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSairMousePressed(evt);
+            }
+        });
 
         imgSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Sign_Out_25px.png"))); // NOI18N
 
         lblSair.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblSair.setForeground(new java.awt.Color(255, 255, 255));
         lblSair.setText("Sair");
+        lblSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblSairMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnSairLayout = new javax.swing.GroupLayout(btnSair);
         btnSair.setLayout(btnSairLayout);
@@ -447,6 +457,14 @@ public class Sistema extends javax.swing.JFrame {
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnCategoriasMousePressed
+
+    private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
+    
+    }//GEN-LAST:event_lblSairMousePressed
+
+    private void btnSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMousePressed
+    System.exit(0);
+    }//GEN-LAST:event_btnSairMousePressed
 
     /**
      * @param args the command line arguments
