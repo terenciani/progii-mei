@@ -9,14 +9,15 @@ package br.estacio.mei.model;
  *
  * @author Marcelo
  */
-class Endereco {
-    String rua;
-    int numero;
-    String bairro;
-    String cidade;
-    String estado;
-    int cep;
-    String complemento;
+public class Endereco {
+
+    private String rua;
+    private int numero;
+    private String bairro;
+    private String cidade;
+    private String estado;
+    private int cep;
+    private String complemento;
 
     public String getRua() {
         return rua;
@@ -73,6 +74,5 @@ class Endereco {
     public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
-
 
 }
