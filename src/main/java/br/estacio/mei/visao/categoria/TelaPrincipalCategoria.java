@@ -63,6 +63,11 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
         botaoBuscar.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-pesquisar-25.png"))); // NOI18N
         botaoBuscar.setText("Pesquisar");
+        botaoBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoBuscarActionPerformed(evt);
+            }
+        });
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -281,7 +286,7 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
                             .addComponent(botaoBuscar))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                         .addComponent(panelCategAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53))
                     .addGroup(panelCategoriaLayout.createSequentialGroup()
@@ -294,14 +299,16 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoIncluirActionPerformed
-        // TODO add your handling code here:
+        String opcao = "Inc";
         labelAcaoUsuario.setText("Inclusão");
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
+        
     }//GEN-LAST:event_botaoIncluirActionPerformed
 
     private void botaoFecharCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFecharCategActionPerformed
-        // TODO add your handling code here:
+        //Fechar o panelDinamico.removeAll();
+        
         
     }//GEN-LAST:event_botaoFecharCategActionPerformed
 
@@ -330,6 +337,9 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
         //Aqui Esconde Panel
         panelCategAcao.setVisible(false);
         labelAcaoUsuario.setText("");
+        String opcao = "";
+        int codigo = 0;
+        String descricao = " ";
     }//GEN-LAST:event_botaoSairActionPerformed
 
     private void botaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarActionPerformed
@@ -341,6 +351,10 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
         botaoConfirmar.setText("Confirmar");
         labelAcaoUsuario.setText("");
     }//GEN-LAST:event_botaoConfirmarActionPerformed
+
+    private void botaoBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

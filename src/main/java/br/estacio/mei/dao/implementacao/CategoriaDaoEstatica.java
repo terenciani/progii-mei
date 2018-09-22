@@ -31,13 +31,14 @@ public class CategoriaDaoEstatica implements CategoriaDao {
     public Categoria salvarCategoria(Categoria categoria) {
         listaCategoria.add(categoria);
         return categoria;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public Categoria atualizarCategoria(Categoria categoria) {
+        
         return categoria;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
@@ -48,7 +49,7 @@ public class CategoriaDaoEstatica implements CategoriaDao {
     @Override
     public boolean excluirCategoria(Categoria categoria) {
         return true;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 
