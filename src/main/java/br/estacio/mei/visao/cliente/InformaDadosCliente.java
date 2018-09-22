@@ -8,6 +8,8 @@ package br.estacio.mei.visao.cliente;
 import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
 import br.estacio.mei.model.Cliente;
+import br.estacio.mei.model.Endereco;
+import br.estacio.mei.model.Fornecedor;
 import java.awt.Color;
 
 /**
@@ -17,8 +19,7 @@ import java.awt.Color;
 public class InformaDadosCliente extends javax.swing.JPanel {
 
     ClienteDao clienteDao = new ClienteDaoEstatico();
-    
-    
+
     /**
      * Creates new form testeFechaTela
      */
@@ -48,20 +49,20 @@ public class InformaDadosCliente extends javax.swing.JPanel {
         txtTelefone = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         jLabel_endereco = new javax.swing.JLabel();
-        jTextField_endereco = new javax.swing.JTextField();
+        txtRua = new javax.swing.JTextField();
         jLabel_complemento = new javax.swing.JLabel();
-        jTextField_complemento = new javax.swing.JTextField();
+        txtComplemento = new javax.swing.JTextField();
         jLabel_estado = new javax.swing.JLabel();
-        jComboBox_estado = new javax.swing.JComboBox<>();
+        cbEstado = new javax.swing.JComboBox<>();
         jLabel_inscrEstadual = new javax.swing.JLabel();
-        jTextField_inscrEstadual = new javax.swing.JTextField();
+        TxtInscrEstadual = new javax.swing.JTextField();
         jLabel_nomeFantasia = new javax.swing.JLabel();
         txtNomeFantasia = new javax.swing.JTextField();
-        jTextField_numero = new javax.swing.JTextField();
+        txtNumero = new javax.swing.JTextField();
         jLabel_numero = new javax.swing.JLabel();
         jLabel_bairro = new javax.swing.JLabel();
-        jTextField_bairro = new javax.swing.JTextField();
-        jTextField_cidade = new javax.swing.JTextField();
+        txtBairro = new javax.swing.JTextField();
+        txtCidade = new javax.swing.JTextField();
         jLabel_bairro1 = new javax.swing.JLabel();
         jLabel_email = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
@@ -109,7 +110,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
 
         jLabel_estado.setText("Estado:");
 
-        jComboBox_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AP", "BA", "MT", "MS" }));
+        cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "AP", "BA", "MT", "MS" }));
 
         jLabel_inscrEstadual.setText("Inscr Estadual:");
 
@@ -166,7 +167,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                                     .addComponent(jLabel_complemento)
                                     .addComponent(jLabel_estado))
                                 .addGap(56, 56, 56)
-                                .addComponent(jTextField_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel_foneRes)
@@ -174,8 +175,8 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                                 .addGap(87, 87, 87)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField_complemento, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +193,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(165, 165, 165))
-                                    .addComponent(jTextField_cidade))
+                                    .addComponent(txtCidade))
                                 .addGap(16, 16, 16))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(99, 99, 99)
@@ -200,12 +201,12 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField_bairro, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtBairro, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jTextField_inscrEstadual, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TxtInscrEstadual, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtNomeFantasia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField_numero, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtNumero, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 53, Short.MAX_VALUE)))
                                 .addGap(27, 27, 27))))))
         );
@@ -223,7 +224,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                     .addComponent(jLabel_cpfCnpj)
                     .addComponent(txtCpfCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel_inscrEstadual)
-                    .addComponent(jTextField_inscrEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtInscrEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_nome)
@@ -235,15 +236,15 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel_endereco)
-                            .addComponent(jTextField_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel_complemento)
-                            .addComponent(jTextField_complemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel_estado)
-                            .addComponent(jComboBox_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel_foneRes)
@@ -255,15 +256,15 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel_numero)
-                            .addComponent(jTextField_numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel_bairro)
-                            .addComponent(jTextField_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel_bairro1)
-                            .addComponent(jTextField_cidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblCep)
@@ -289,12 +290,14 @@ public class InformaDadosCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txtConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmaActionPerformed
+        Fornecedor fornecedor = new Fornecedor();
+        Endereco enderecoCliente = new Endereco();
         if (txtCpfCNPJ.getText().isEmpty()) {
             txtCpfCNPJ.setBackground(Color.red);
-        
+
         } else if (txtNome.getText().isEmpty()) {
             txtNome.setBackground(Color.red);
-        
+
         } else {
             lblMsgCampoObrigatorio.setText("");
             Cliente cliente = new Cliente();
@@ -302,13 +305,38 @@ public class InformaDadosCliente extends javax.swing.JPanel {
             cliente.setNome(txtNome.getText());
             cliente.setCpfCnpj(txtCpfCNPJ.getText());
 
+            if (!txtNomeFantasia.getText().isEmpty()) {
+                cliente.setNomeFantasia(txtNomeFantasia.getText());
+            }
             if (!txtTelefone.getText().isEmpty()) {
                 cliente.setTelefone(Integer.parseInt(txtTelefone.getText()));
             }
             if (!txtEmail.getText().isEmpty()) {
                 cliente.setEmail(txtEmail.getText());
             }
-            
+
+            if (!txtRua.getText().isEmpty()) {
+                enderecoCliente.setRua(txtRua.getText());
+            }
+            if (!txtNumero.getText().isEmpty()) {
+                enderecoCliente.setNumero(Integer.parseInt(txtNumero.getText()));
+            }
+            if (!txtComplemento.getText().isEmpty()) {
+                enderecoCliente.setComplemento(txtComplemento.getText());
+            }
+            if (!txtBairro.getText().isEmpty()) {
+                enderecoCliente.setBairro(txtBairro.getText());
+            }
+            if (!txtCidade.getText().isEmpty()) {
+                enderecoCliente.setCidade(txtCidade.getText());
+            }
+
+            enderecoCliente.setEstado(String.valueOf(cbEstado.getSelectedItem()));
+
+            if (!txtCep.getText().isEmpty()) {
+                enderecoCliente.setCep(Integer.parseInt(txtCep.getText()));
+            }
+
             clienteDao.salvarCliente(cliente);
             GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
             painelDinamico.removeAll();
@@ -333,8 +361,9 @@ public class InformaDadosCliente extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TxtInscrEstadual;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JComboBox<String> jComboBox_estado;
+    private javax.swing.JComboBox<String> cbEstado;
     private javax.swing.JLabel jLabel_bairro;
     private javax.swing.JLabel jLabel_bairro1;
     private javax.swing.JLabel jLabel_codigo;
@@ -349,22 +378,21 @@ public class InformaDadosCliente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel_nomeFantasia;
     private javax.swing.JLabel jLabel_numero;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField_bairro;
-    private javax.swing.JTextField jTextField_cidade;
-    private javax.swing.JTextField jTextField_complemento;
-    private javax.swing.JTextField jTextField_endereco;
-    private javax.swing.JTextField jTextField_inscrEstadual;
-    private javax.swing.JTextField jTextField_numero;
     private javax.swing.JLabel lblCep;
     private javax.swing.JLabel lblMsgCampoObrigatorio;
     private javax.swing.JPanel painelDinamico;
+    private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtCep;
+    private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtComplemento;
     private javax.swing.JButton txtConfirma;
     private javax.swing.JTextField txtCpfCNPJ;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNomeFantasia;
+    private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtRua;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }

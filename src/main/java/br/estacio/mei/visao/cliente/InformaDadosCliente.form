@@ -68,7 +68,7 @@
                                           <Component id="jLabel_estado" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                                      <Component id="jTextField_endereco" min="-2" pref="290" max="-2" attributes="0"/>
+                                      <Component id="txtRua" min="-2" pref="290" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -78,8 +78,8 @@
                                       <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="txtTelefone" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jTextField_complemento" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
-                                          <Component id="jComboBox_estado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtComplemento" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                          <Component id="cbEstado" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="txtEmail" min="-2" pref="236" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -101,7 +101,7 @@
                                               <Component id="txtCep" min="-2" pref="93" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jTextField_cidade" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtCidade" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                   </Group>
@@ -112,12 +112,12 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jTextField_bairro" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBairro" alignment="0" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jTextField_inscrEstadual" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
+                                                  <Component id="TxtInscrEstadual" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
                                                   <Component id="txtNomeFantasia" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
-                                                  <Component id="jTextField_numero" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                                                  <Component id="txtNumero" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="0" pref="53" max="32767" attributes="0"/>
                                           </Group>
@@ -145,7 +145,7 @@
                           <Component id="jLabel_cpfCnpj" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtCpfCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_inscrEstadual" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField_inscrEstadual" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtInscrEstadual" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -159,17 +159,17 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel_endereco" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField_endereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtRua" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel_complemento" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField_complemento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel_estado" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox_estado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbEstado" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -185,17 +185,17 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel_numero" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField_numero" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNumero" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel_bairro" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField_bairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtBairro" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel_bairro1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField_cidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCidade" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -266,28 +266,29 @@
                 <Property name="text" type="java.lang.String" value="Rua:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_endereco">
+            <Component class="javax.swing.JTextField" name="txtRua">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_complemento">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Complemento:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_complemento">
+            <Component class="javax.swing.JTextField" name="txtComplemento">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_estado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estado:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox_estado">
+            <Component class="javax.swing.JComboBox" name="cbEstado">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="AP"/>
-                    <StringItem index="1" value="BA"/>
-                    <StringItem index="2" value="MT"/>
-                    <StringItem index="3" value="MS"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value=" "/>
+                    <StringItem index="1" value="AP"/>
+                    <StringItem index="2" value="BA"/>
+                    <StringItem index="3" value="MT"/>
+                    <StringItem index="4" value="MS"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -300,7 +301,7 @@
                 <Property name="text" type="java.lang.String" value="Inscr Estadual:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_inscrEstadual">
+            <Component class="javax.swing.JTextField" name="TxtInscrEstadual">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_nomeFantasia">
               <Properties>
@@ -309,7 +310,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomeFantasia">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_numero">
+            <Component class="javax.swing.JTextField" name="txtNumero">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_numero">
               <Properties>
@@ -321,9 +322,9 @@
                 <Property name="text" type="java.lang.String" value="Bairro:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_bairro">
+            <Component class="javax.swing.JTextField" name="txtBairro">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_cidade">
+            <Component class="javax.swing.JTextField" name="txtCidade">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_bairro1">
               <Properties>
