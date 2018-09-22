@@ -9,18 +9,16 @@ import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.model.Cliente;
 import java.util.ArrayList;
 
-
 /**
  *
  * @author aluno
  */
 public class ClienteDaoEstatico implements ClienteDao {
-    ClienteDao clienteDao = new ClienteDaoEstatico();
+
     ArrayList<Cliente> listaCliente = new ArrayList();
 
     @Override
     public ArrayList<Cliente> buscarClientes() {
-        
 
         return listaCliente;
 

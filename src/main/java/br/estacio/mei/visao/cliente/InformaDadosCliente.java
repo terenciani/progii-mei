@@ -17,7 +17,7 @@ import java.awt.Color;
 public class InformaDadosCliente extends javax.swing.JPanel {
 
     ClienteDao clienteDao = new ClienteDaoEstatico();
-    GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
+    
     
     /**
      * Creates new form testeFechaTela
@@ -281,7 +281,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-
+        GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
         painelDinamico.removeAll();
         painelDinamico.add(gerenciaCliente);
         painelDinamico.validate();
@@ -310,7 +310,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
             }
             
             clienteDao.salvarCliente(cliente);
-
+            GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
             painelDinamico.removeAll();
             painelDinamico.add(gerenciaCliente);
             painelDinamico.validate();

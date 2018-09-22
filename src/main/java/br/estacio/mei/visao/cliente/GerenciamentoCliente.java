@@ -19,7 +19,6 @@ import javax.swing.table.DefaultTableModel;
 public class GerenciamentoCliente extends javax.swing.JPanel {
 
     ClienteDao clienteDao = new ClienteDaoEstatico();
-    InformaDadosCliente adicionarCliente = new InformaDadosCliente();
     Cliente cliente = new Cliente();
     /**
      * Creates new form GerenciamentoCliente
@@ -194,7 +193,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdicionarNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarNovoClienteActionPerformed
-
+        InformaDadosCliente adicionarCliente = new InformaDadosCliente();
         panelDinamico.removeAll();
         panelDinamico.add(adicionarCliente);
         panelDinamico.validate();
@@ -218,7 +217,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         
         
         cliente.getCodigo();
-        
+        InformaDadosCliente adicionarCliente = new InformaDadosCliente();
         panelDinamico.removeAll();
         panelDinamico.add(adicionarCliente);
         panelDinamico.validate();
