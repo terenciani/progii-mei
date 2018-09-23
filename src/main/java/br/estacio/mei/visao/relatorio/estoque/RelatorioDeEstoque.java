@@ -28,6 +28,7 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
         fornecedor.setRazaoSocial("Estacio & CIA");
         Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);
         produtoDao.salvar(produto);
+        
         produto = new Produto(1, "Short", 5, fornecedor, 40, 80);
         
         produtoDao.salvar(produto);

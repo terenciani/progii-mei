@@ -6,11 +6,13 @@
 package br.estacio.mei.visao.cliente;
 
 import br.estacio.mei.dao.ClienteDao;
+import br.estacio.mei.dao.EnderecoDao;
 import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
+import br.estacio.mei.dao.implementacao.EnderecoDaoEstatico;
 import br.estacio.mei.model.Cliente;
 import br.estacio.mei.model.Endereco;
-import br.estacio.mei.model.Fornecedor;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,13 +21,18 @@ import java.awt.Color;
 public class InformaDadosCliente extends javax.swing.JPanel {
 
     ClienteDao clienteDao = new ClienteDaoEstatico();
-
+    EnderecoDao enderecoDao = new EnderecoDaoEstatico();
+    
     /**
      * Creates new form testeFechaTela
      */
     public InformaDadosCliente() {
         initComponents();
-
+        GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
+     
+        
+    
+        
     }
 
     /**
@@ -148,8 +155,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCpfCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtConfirma))
-                        .addContainerGap())
+                            .addComponent(txtConfirma)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -167,7 +173,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                                     .addComponent(jLabel_complemento)
                                     .addComponent(jLabel_estado))
                                 .addGap(56, 56, 56)
-                                .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel_foneRes)
@@ -188,27 +194,19 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                             .addComponent(lblCep))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtCidade, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(165, 165, 165))
-                                    .addComponent(txtCidade))
-                                .addGap(16, 16, 16))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(99, 99, 99)
-                                .addComponent(btnCancelar)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtBairro, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(TxtInscrEstadual, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtNomeFantasia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtNumero, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 53, Short.MAX_VALUE)))
-                                .addGap(27, 27, 27))))))
+                                        .addGap(99, 99, 99)
+                                        .addComponent(btnCancelar))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txtBairro, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(TxtInscrEstadual, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtNomeFantasia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                                        .addComponent(txtNumero, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,8 +287,10 @@ public class InformaDadosCliente extends javax.swing.JPanel {
         painelDinamico.repaint();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    
+
     private void txtConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmaActionPerformed
-        Fornecedor fornecedor = new Fornecedor();
+        
         Endereco enderecoCliente = new Endereco();
         if (txtCpfCNPJ.getText().isEmpty()) {
             txtCpfCNPJ.setBackground(Color.red);
@@ -301,7 +301,9 @@ public class InformaDadosCliente extends javax.swing.JPanel {
         } else {
             lblMsgCampoObrigatorio.setText("");
             Cliente cliente = new Cliente();
-            cliente.setCodigo(1);
+            
+            cliente.setCodigo(Integer.parseInt(txtCodigo.getText()));
+            enderecoCliente.setCodigo(Integer.parseInt(txtCodigo.getText()));
             cliente.setNome(txtNome.getText());
             cliente.setCpfCnpj(txtCpfCNPJ.getText());
 
@@ -314,9 +316,14 @@ public class InformaDadosCliente extends javax.swing.JPanel {
             if (!txtEmail.getText().isEmpty()) {
                 cliente.setEmail(txtEmail.getText());
             }
+            if (!TxtInscrEstadual.getText().isEmpty()) {
+                cliente.setInscrEstadual(TxtInscrEstadual.getText());
+            }
 
             if (!txtRua.getText().isEmpty()) {
+
                 enderecoCliente.setRua(txtRua.getText());
+
             }
             if (!txtNumero.getText().isEmpty()) {
                 enderecoCliente.setNumero(Integer.parseInt(txtNumero.getText()));
@@ -338,6 +345,13 @@ public class InformaDadosCliente extends javax.swing.JPanel {
             }
 
             clienteDao.salvarCliente(cliente);
+            enderecoDao.salvarEnderecoCliente(enderecoCliente);
+
+            //Imprime Testes
+            System.out.println(cliente.toString());
+            System.out.println(enderecoCliente.toString());
+
+            JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
             GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
             painelDinamico.removeAll();
             painelDinamico.add(gerenciaCliente);

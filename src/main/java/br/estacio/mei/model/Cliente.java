@@ -10,6 +10,7 @@ package br.estacio.mei.model;
  * @author aluno
  */
 public class Cliente {
+
     private int codigo;
     private String cpfCnpj;
     private String nome;
@@ -17,6 +18,21 @@ public class Cliente {
     private String inscrEstadual;
     private int telefone;
     private String email;
+    private Endereco endereco;
+
+    public Cliente() {
+    }
+    
+    public Cliente(int codigo, String cpfCnpj, String nome, String nomeFantasia, String inscrEstadual, int telefone, String email, Endereco endereco) {
+        this.codigo = codigo;
+        this.cpfCnpj = cpfCnpj;
+        this.nome = nome;
+        this.nomeFantasia = nomeFantasia;
+        this.inscrEstadual = inscrEstadual;
+        this.telefone = telefone;
+        this.email = email;
+        this.endereco = endereco;
+    }
 
     public int getCodigo() {
         return codigo;
@@ -74,13 +90,18 @@ public class Cliente {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" + "codigo=" + codigo + ", cpfCnpj=" + cpfCnpj + ", nome=" + nome + ", nomeFantasia=" + nomeFantasia + ", inscrEstadual=" + inscrEstadual + ", telefone=" + telefone + ", email=" + email + '}';
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
     
-    
-    
-    
-    
+    @Override
+    public String toString() {
+        return "Cliente{" + "codigo= " + codigo + ", cpfCnpj= " + cpfCnpj + ", nome= " + nome + ", nomeFantasia= " + nomeFantasia + ", inscrEstadual= " + inscrEstadual + ", telefone= " + telefone + ", email= " + email + '}';
+    }
+     
+
 }

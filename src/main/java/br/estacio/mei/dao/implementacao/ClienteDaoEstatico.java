@@ -19,7 +19,8 @@ public class ClienteDaoEstatico implements ClienteDao {
 
     @Override
     public ArrayList<Cliente> buscarClientes() {
-
+        System.out.println(listaCliente.get(0));
+        
         return listaCliente;
 
     }
@@ -28,12 +29,15 @@ public class ClienteDaoEstatico implements ClienteDao {
     public Cliente salvarCliente(Cliente cliente) {
 
         listaCliente.add(cliente);
+        System.out.println("salvou");
         return cliente;
 
     }
 
     @Override
     public Cliente atualizarCliente(Cliente cliente) {
+        listaCliente.get(0);
+        
         return cliente;
 
     }
