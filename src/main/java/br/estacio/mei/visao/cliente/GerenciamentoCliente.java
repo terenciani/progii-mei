@@ -9,6 +9,7 @@ import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
 
 import br.estacio.mei.model.Cliente;
+import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -29,15 +30,6 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
 
         ///TESTES:
         Cliente cliente = new Cliente();
-        /*
-        cliente.setCodigo(1);
-        cliente.setNome("Eric Dias");
-        cliente.setTelefone(799998888);
-        cliente.setCpfCnpj("12345678911");
-        cliente.setEmail("email@email");
-
-        clienteDao.salvarCliente(cliente);
-    
         DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
         ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
 
@@ -51,7 +43,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
             linha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
             modeloDeColuna.addRow(linha);
         }
-         */
+            
 
     }
 
@@ -213,10 +205,10 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
 
     private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
 
-        /*
+        
         int linha = tbListaClientes.getSelectedRow();
         int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
-        String nome = (String) tbListaClientes.getModel().getValueAt(linha, 1);
+        /*String nome = (String) tbListaClientes.getModel().getValueAt(linha, 1);
         int telefone = (int) tbListaClientes.getModel().getValueAt(linha, 2);
         String cpfCnpj = (String) tbListaClientes.getModel().getValueAt(linha, 3);
         String endereco = (String) tbListaClientes.getModel().getValueAt(linha, 4);
@@ -233,7 +225,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         }
 
         //cliente.getCodigo();
-        InformaDadosCliente adicionarCliente = new InformaDadosCliente();
+        InformaDadosCliente adicionarCliente = new InformaDadosCliente(codigo);
         panelDinamico.removeAll();
         panelDinamico.add(adicionarCliente);
         panelDinamico.validate();
@@ -258,7 +250,8 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
             linha[3] = exibeCliente.getCpfCnpj();
             linha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
             modeloDeColuna.addRow(linha);
-        }*/
+        }
+*/
 
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
 

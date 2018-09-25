@@ -28,12 +28,16 @@ public class InformaDadosCliente extends javax.swing.JPanel {
      */
     public InformaDadosCliente() {
         initComponents();
-        GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
      
         
     
         
     }
+    public InformaDadosCliente(int codigo) {
+        initComponents();
+        txtCodigo.setText(""+codigo);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
