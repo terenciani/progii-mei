@@ -19,6 +19,16 @@ public class Compras {
    private Date data;
    private double total;
 
+    public Compras(String descricao, double valor, int quantidade, Date data, double total) {
+        this.descricao = descricao;
+        this.valor = valor;
+        this.quantidade = quantidade;
+        this.data = data;
+        this.total = total;
+    }
+
+    
+
     public String getDescricao() {
         return descricao;
     }
