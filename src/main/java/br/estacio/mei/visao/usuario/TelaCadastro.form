@@ -654,14 +654,14 @@
                       <Component id="imgFornecedores" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lblFornecedores" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="128" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="imgFornecedores" alignment="0" max="32767" attributes="0"/>
-                  <Component id="lblFornecedores" alignment="0" pref="55" max="32767" attributes="0"/>
+                  <Component id="lblFornecedores" alignment="0" pref="77" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
