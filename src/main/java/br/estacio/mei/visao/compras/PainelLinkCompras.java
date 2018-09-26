@@ -5,7 +5,10 @@
  */
 package br.estacio.mei.visao.compras;
 
+import br.estacio.mei.dao.ComprasDao;
 import br.estacio.mei.dao.implementacao.ComprasDaoEstatico;
+import br.estacio.mei.model.Compras;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -13,13 +16,19 @@ import br.estacio.mei.dao.implementacao.ComprasDaoEstatico;
  * @author rhena
  */
 public class PainelLinkCompras extends javax.swing.JPanel {
-    ComprasDaoEstatico compras = new ComprasDaoEstatico();
+    ComprasDao compra = new ComprasDaoEstatico();
+    Compras compras = new Compras();
+    
+    
+    
     
     /**
-     * Creates new form PainelLinkCompras
+     * Creates new fornm PainelLinkCompras
      */
     public PainelLinkCompras() {
         initComponents();
+        
+        DefaultTableModel novaColuna = (DefaltTableModel) jTableArmazenamendoDados.getModel();
     }
 
     /**
@@ -149,8 +158,7 @@ public class PainelLinkCompras extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTableArmazenamendoDadosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableArmazenamendoDadosMousePressed
-       
-        
+              
         
         
     }//GEN-LAST:event_jTableArmazenamendoDadosMousePressed
@@ -169,7 +177,7 @@ public class PainelLinkCompras extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonExcluirMousePressed
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     private void jButtonSalvarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalvarMousePressed
@@ -177,7 +185,8 @@ public class PainelLinkCompras extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonSalvarMousePressed
 
     private void jTextFieldCampoBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCampoBuscaActionPerformed
-
+         
+            
     }//GEN-LAST:event_jTextFieldCampoBuscaActionPerformed
 
     private void jButtonPesquisarnenhum(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPesquisarnenhum
