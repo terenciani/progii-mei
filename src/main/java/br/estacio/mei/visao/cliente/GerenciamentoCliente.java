@@ -29,7 +29,6 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     public GerenciamentoCliente() {
         initComponents();
 
-        ///TESTES:
         Cliente cliente = new Cliente();
         DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
         ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
@@ -85,7 +84,6 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
                 "Código", "Nome", "Telefone", "CPF/CNPJ", "Endereço"
             }
         ));
-        tbListaClientes.setEnabled(false);
         jScrollPane2.setViewportView(tbListaClientes);
 
         panelDinamico.add(jScrollPane2, java.awt.BorderLayout.CENTER);
