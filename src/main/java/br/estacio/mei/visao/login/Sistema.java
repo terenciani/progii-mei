@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.exemplo;
+package br.estacio.mei.visao.login;
 
+import br.estacio.mei.exemplo.ExemploPopulaTabela;
 import br.estacio.mei.visao.categoria.TelaPrincipalCategoria;
 import br.estacio.mei.visao.cliente.GerenciamentoCliente;
 import br.estacio.mei.visao.contas.pagar.ContasAPagarPrincipal;
 import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoque;
+import br.estacio.mei.visao.contas.receber.ContasAReceber;
 import javax.swing.JFrame;
 
 /**
@@ -136,6 +138,11 @@ public class Sistema extends javax.swing.JFrame {
         lblContasAReceber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblContasAReceber.setForeground(new java.awt.Color(255, 255, 255));
         lblContasAReceber.setText("Contas a Receber");
+        lblContasAReceber.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblContasAReceberMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnContasAReceberLayout = new javax.swing.GroupLayout(btnContasAReceber);
         btnContasAReceber.setLayout(btnContasAReceberLayout);
@@ -415,7 +422,10 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContasAPagarMousePressed
 
     private void btnContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMousePressed
+        ContasAReceber painelInicialContasReceber = new ContasAReceber();
+        lblBreadcrumb.setText("Gerência de Contas a Receber");    
         painelDinamico.removeAll();
+        painelDinamico.add(painelInicialContasReceber);
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnContasAReceberMousePressed
@@ -465,6 +475,16 @@ public class Sistema extends javax.swing.JFrame {
     private void btnSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMousePressed
     System.exit(0);
     }//GEN-LAST:event_btnSairMousePressed
+
+    private void lblContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblContasAReceberMousePressed
+        // TODO add your handling code here:
+         ContasAReceber painelInicialContasReceber = new ContasAReceber();
+        lblBreadcrumb.setText("Gerência de Contas a Receber");    
+        painelDinamico.removeAll();
+        painelDinamico.add(painelInicialContasReceber);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_lblContasAReceberMousePressed
 
     /**
      * @param args the command line arguments
