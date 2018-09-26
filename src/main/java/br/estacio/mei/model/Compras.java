@@ -5,6 +5,7 @@
  */
 package br.estacio.mei.model;
 
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -15,8 +16,8 @@ public class Compras {
    private String descricao;
    private double valor;
    private int quantidade;
-   private String dataCompra;
-   private double totalCompra;
+   private Date data;
+   private double total;
 
     public String getDescricao() {
         return descricao;
@@ -42,30 +43,30 @@ public class Compras {
         this.quantidade = quantidade;
     }
 
-    public String getDataCompra() {
-        return dataCompra;
+    public Date getData() {
+        return data;
     }
 
-    public void setDataCompra(String dataCompra) {
-        this.dataCompra = dataCompra;
+    public void setData(Date data) {
+        this.data = data;
     }
 
-    public double getTotalCompra() {
-        return totalCompra;
+    public double getTotal() {
+        return total;
     }
 
-    public void setTotalCompra(double totalCompra) {
-        this.totalCompra = totalCompra;
+    public void setTotal(double total) {
+        this.total = total;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.descricao);
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.valor) ^ (Double.doubleToLongBits(this.valor) >>> 32));
-        hash = 37 * hash + this.quantidade;
-        hash = 37 * hash + Objects.hashCode(this.dataCompra);
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.totalCompra) ^ (Double.doubleToLongBits(this.totalCompra) >>> 32));
+        hash = 97 * hash + Objects.hashCode(this.descricao);
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.valor) ^ (Double.doubleToLongBits(this.valor) >>> 32));
+        hash = 97 * hash + this.quantidade;
+        hash = 97 * hash + Objects.hashCode(this.data);
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.total) ^ (Double.doubleToLongBits(this.total) >>> 32));
         return hash;
     }
 
@@ -87,18 +88,18 @@ public class Compras {
         if (this.quantidade != other.quantidade) {
             return false;
         }
-        if (Double.doubleToLongBits(this.totalCompra) != Double.doubleToLongBits(other.totalCompra)) {
+        if (Double.doubleToLongBits(this.total) != Double.doubleToLongBits(other.total)) {
             return false;
         }
         if (!Objects.equals(this.descricao, other.descricao)) {
             return false;
         }
-        return Objects.equals(this.dataCompra, other.dataCompra);
+        return Objects.equals(this.data, other.data);
     }
 
     @Override
     public String toString() {
-        return "Compras{" + "descricao=" + descricao + ", valor=" + valor + ", quantidade=" + quantidade + ", dataCompra=" + dataCompra + ", totalCompra=" + totalCompra + '}';
+        return "Compras{" + "descricao=" + descricao + ", valor=" + valor + ", quantidade=" + quantidade + ", data=" + data + ", total=" + total + '}';
     }
-    
+
 }

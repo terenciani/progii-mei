@@ -33,7 +33,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jTextFieldCampoBusca" min="-2" pref="353" max="-2" attributes="0"/>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButtonPesquisar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -53,12 +53,9 @@
           <Component id="painelLateral" min="-2" max="-2" attributes="0"/>
           <Group type="102" attributes="0">
               <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                      <Component id="jTextFieldCampoBusca" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jButtonPesquisar" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButtonPesquisar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldCampoBusca" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="91" pref="91" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
