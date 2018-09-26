@@ -15,8 +15,6 @@ import java.util.ArrayList;
  * @author aluno
  */
 public class ClienteDaoEstatico implements ClienteDao {
-    
-   
 
     @Override
     public ArrayList<Cliente> buscarClientes() {
@@ -36,7 +34,7 @@ public class ClienteDaoEstatico implements ClienteDao {
     @Override
     public Cliente atualizarCliente(Cliente cliente) {
         BancoSingleton.getInstance().tabelaClientes.get(0);
-        
+
         return cliente;
 
     }
