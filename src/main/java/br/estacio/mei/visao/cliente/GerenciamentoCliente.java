@@ -9,6 +9,8 @@ import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
 
 import br.estacio.mei.model.Cliente;
+import java.util.ArrayList;
+import javax.swing.JTable;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -29,15 +31,6 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
 
         ///TESTES:
         Cliente cliente = new Cliente();
-        /*
-        cliente.setCodigo(1);
-        cliente.setNome("Eric Dias");
-        cliente.setTelefone(799998888);
-        cliente.setCpfCnpj("12345678911");
-        cliente.setEmail("email@email");
-
-        clienteDao.salvarCliente(cliente);
-    
         DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
         ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
 
@@ -51,8 +44,9 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
             linha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
             modeloDeColuna.addRow(linha);
         }
-         */
 
+        tbListaClientes.getTableHeader();
+        
     }
 
     /**
@@ -73,10 +67,8 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         btnAdicionarNovoCliente = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txtCampoBusca = new javax.swing.JTextField();
         btnBuscarClientes = new javax.swing.JButton();
-        testeCodigo = new javax.swing.JLabel();
-        testeNome = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(786, 531));
@@ -93,6 +85,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
                 "Código", "Nome", "Telefone", "CPF/CNPJ", "Endereço"
             }
         ));
+        tbListaClientes.setEnabled(false);
         jScrollPane2.setViewportView(tbListaClientes);
 
         panelDinamico.add(jScrollPane2, java.awt.BorderLayout.CENTER);
@@ -164,37 +157,24 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
             }
         });
 
-        testeCodigo.setText("jLabel1");
-
-        testeNome.setText("jLabel2");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCampoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBuscarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(testeCodigo)
-                    .addComponent(testeNome))
-                .addContainerGap(239, Short.MAX_VALUE))
+                .addContainerGap(339, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(testeCodigo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(testeNome))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnBuscarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnBuscarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtCampoBusca))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         panelDinamico.add(jPanel2, java.awt.BorderLayout.PAGE_START);
@@ -213,10 +193,9 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
 
     private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
 
-        /*
         int linha = tbListaClientes.getSelectedRow();
         int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
-        String nome = (String) tbListaClientes.getModel().getValueAt(linha, 1);
+        /*String nome = (String) tbListaClientes.getModel().getValueAt(linha, 1);
         int telefone = (int) tbListaClientes.getModel().getValueAt(linha, 2);
         String cpfCnpj = (String) tbListaClientes.getModel().getValueAt(linha, 3);
         String endereco = (String) tbListaClientes.getModel().getValueAt(linha, 4);
@@ -233,7 +212,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         }
 
         //cliente.getCodigo();
-        InformaDadosCliente adicionarCliente = new InformaDadosCliente();
+        InformaDadosCliente adicionarCliente = new InformaDadosCliente(codigo);
         panelDinamico.removeAll();
         panelDinamico.add(adicionarCliente);
         panelDinamico.validate();
@@ -242,23 +221,42 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
     private void btnBuscarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClientesActionPerformed
+        ((DefaultTableModel) tbListaClientes.getModel()).setRowCount(0);
 
         clienteDao.buscarClientes();
 
-        /*
         DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
         ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
 
         for (int i = 0; i < listaDeClientes.size(); i++) {
             Cliente exibeCliente = listaDeClientes.get(i);
-            Object[] linha = new Object[5];
-            linha[0] = exibeCliente.getCodigo();
-            linha[1] = exibeCliente.getNome();
-            linha[2] = exibeCliente.getTelefone();
-            linha[3] = exibeCliente.getCpfCnpj();
-            linha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
-            modeloDeColuna.addRow(linha);
-        }*/
+            String nome = txtCampoBusca.getText();
+
+            if (exibeCliente.getNome().contains(nome)) {
+
+                Object[] linha = new Object[5];
+
+                linha[0] = exibeCliente.getCodigo();
+                linha[1] = exibeCliente.getNome();
+                linha[2] = exibeCliente.getTelefone();
+                linha[3] = exibeCliente.getCpfCnpj();
+                linha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
+                modeloDeColuna.addRow(linha);
+            } else {
+
+            }
+        }
+
+        /*
+        
+        public static Pessoa buscaPessoaPorNome(List<Pessoa> pessoas, String nome) {
+        for (Pessoa pessoa : pessoas) {
+            if (pessoa.getNome().equals(nome)) {
+                return pessoa;
+            }
+        }
+        return null;
+    }*/
 
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
 
@@ -276,11 +274,9 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel panelDinamico;
     private javax.swing.JTable tbListaClientes;
-    private javax.swing.JLabel testeCodigo;
-    private javax.swing.JLabel testeNome;
+    private javax.swing.JTextField txtCampoBusca;
     // End of variables declaration//GEN-END:variables
 
 }

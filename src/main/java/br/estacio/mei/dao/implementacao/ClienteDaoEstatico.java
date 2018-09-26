@@ -7,6 +7,7 @@ package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.model.Cliente;
+import br.estacio.mei.visao.cliente.BancoSingleton;
 import java.util.ArrayList;
 
 /**
@@ -15,20 +16,16 @@ import java.util.ArrayList;
  */
 public class ClienteDaoEstatico implements ClienteDao {
 
-    ArrayList<Cliente> listaCliente = new ArrayList();
-
     @Override
     public ArrayList<Cliente> buscarClientes() {
-        System.out.println(listaCliente.get(0));
-        
-        return listaCliente;
+        return BancoSingleton.getInstance().tabelaClientes;
 
     }
 
     @Override
     public Cliente salvarCliente(Cliente cliente) {
 
-        listaCliente.add(cliente);
+        BancoSingleton.getInstance().tabelaClientes.add(cliente);
         System.out.println("salvou");
         return cliente;
 
@@ -36,8 +33,8 @@ public class ClienteDaoEstatico implements ClienteDao {
 
     @Override
     public Cliente atualizarCliente(Cliente cliente) {
-        listaCliente.get(0);
-        
+        BancoSingleton.getInstance().tabelaClientes.get(0);
+
         return cliente;
 
     }
