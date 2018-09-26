@@ -10,6 +10,7 @@ import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
 
 import br.estacio.mei.model.Cliente;
 import java.util.ArrayList;
+import javax.swing.JTable;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -30,7 +31,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
 
         ///TESTES:
         Cliente cliente = new Cliente();
-        /*DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
+        DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
         ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
 
         for (int i = 0; i < listaDeClientes.size(); i++) {
@@ -45,7 +46,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
         }
 
         tbListaClientes.getTableHeader();
-         */
+        
     }
 
     /**
@@ -220,20 +221,19 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
     private void btnBuscarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClientesActionPerformed
-        
+        ((DefaultTableModel) tbListaClientes.getModel()).setRowCount(0);
+
         clienteDao.buscarClientes();
 
         DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
         ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
-        
-                            
 
         for (int i = 0; i < listaDeClientes.size(); i++) {
             Cliente exibeCliente = listaDeClientes.get(i);
             String nome = txtCampoBusca.getText();
 
             if (exibeCliente.getNome().contains(nome)) {
-                System.out.println("ok");
+
                 Object[] linha = new Object[5];
 
                 linha[0] = exibeCliente.getCodigo();
@@ -242,10 +242,8 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
                 linha[3] = exibeCliente.getCpfCnpj();
                 linha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
                 modeloDeColuna.addRow(linha);
-            }else
-            {
-            
-            
+            } else {
+
             }
         }
 
