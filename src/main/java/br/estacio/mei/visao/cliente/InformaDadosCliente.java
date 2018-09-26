@@ -35,7 +35,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
         initComponents();
         txtCodigo.setText("" + codigo);
         txtCodigo.setEditable(false);
-        txtCodigo.setBackground(new Color(160,160,160));
+        txtCodigo.setBackground(new Color(170,170,170));
 
     }
 
