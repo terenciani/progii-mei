@@ -28,7 +28,7 @@ public class PainelLinkCompras extends javax.swing.JPanel {
     public PainelLinkCompras() {
         initComponents();
         
-        DefaultTableModel novaColuna = (DefaltTableModel) jTableArmazenamendoDados.getModel();
+        DefaultTableModel novaColuna = (DefaultTableModel) jTableArmazenamendoDados.getModel();
     }
 
     /**

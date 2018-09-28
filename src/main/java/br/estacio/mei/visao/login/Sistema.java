@@ -9,8 +9,8 @@ import br.estacio.mei.exemplo.ExemploPopulaTabela;
 import br.estacio.mei.visao.categoria.TelaPrincipalCategoria;
 import br.estacio.mei.visao.cliente.GerenciamentoCliente;
 import br.estacio.mei.visao.contas.pagar.ContasAPagarPrincipal;
+import br.estacio.mei.visao.contas.receber.ContasAReceberPrincipal;
 import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoque;
-import br.estacio.mei.visao.contas.receber.ContasAReceber;
 import javax.swing.JFrame;
 
 /**
@@ -422,8 +422,8 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContasAPagarMousePressed
 
     private void btnContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMousePressed
-        ContasAReceber painelInicialContasReceber = new ContasAReceber();
-        lblBreadcrumb.setText("Gerência de Contas a Receber");    
+        ContasAReceberPrincipal painelInicialContasReceber = new ContasAReceberPrincipal();
+        lblBreadcrumb.setText("Gerência de Contas a Receber");
         painelDinamico.removeAll();
         painelDinamico.add(painelInicialContasReceber);
         painelDinamico.validate();
@@ -469,17 +469,17 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCategoriasMousePressed
 
     private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
-    System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_lblSairMousePressed
 
     private void btnSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMousePressed
-    System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_btnSairMousePressed
 
     private void lblContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblContasAReceberMousePressed
         // TODO add your handling code here:
-         ContasAReceber painelInicialContasReceber = new ContasAReceber();
-        lblBreadcrumb.setText("Gerência de Contas a Receber");    
+        ContasAReceberPrincipal painelInicialContasReceber = new ContasAReceberPrincipal();
+        lblBreadcrumb.setText("Gerência de Contas a Receber");
         painelDinamico.removeAll();
         painelDinamico.add(painelInicialContasReceber);
         painelDinamico.validate();
