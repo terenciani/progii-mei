@@ -411,12 +411,12 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addComponent(imgFornecedores)
                 .addGap(18, 18, 18)
                 .addComponent(lblFornecedores)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
         btnFornecedoresLayout.setVerticalGroup(
             btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(imgFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
         );
 
         imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -535,7 +535,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_cdCancelarActionPerformed
 
     private void cdSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdSairActionPerformed
-this.dispose();        // TODO add your handling code here:
+        this.dispose();       
     }//GEN-LAST:event_cdSairActionPerformed
 
     private void cdExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdExcluirActionPerformed

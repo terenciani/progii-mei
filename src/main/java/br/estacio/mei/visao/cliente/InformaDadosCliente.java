@@ -22,22 +22,22 @@ public class InformaDadosCliente extends javax.swing.JPanel {
 
     ClienteDao clienteDao = new ClienteDaoEstatico();
     EnderecoDao enderecoDao = new EnderecoDaoEstatico();
-    
+
     /**
      * Creates new form testeFechaTela
      */
     public InformaDadosCliente() {
         initComponents();
-     
-        
-    
-        
+
     }
+
     public InformaDadosCliente(int codigo) {
         initComponents();
-        txtCodigo.setText(""+codigo);
+        txtCodigo.setText("" + codigo);
+        txtCodigo.setEditable(false);
+        txtCodigo.setBackground(new Color(170,170,170));
+
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -291,10 +291,9 @@ public class InformaDadosCliente extends javax.swing.JPanel {
         painelDinamico.repaint();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    
 
     private void txtConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmaActionPerformed
-        
+
         Endereco enderecoCliente = new Endereco();
         if (txtCpfCNPJ.getText().isEmpty()) {
             txtCpfCNPJ.setBackground(Color.red);
@@ -305,7 +304,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
         } else {
             lblMsgCampoObrigatorio.setText("");
             Cliente cliente = new Cliente();
-            
+
             cliente.setCodigo(Integer.parseInt(txtCodigo.getText()));
             enderecoCliente.setCodigo(Integer.parseInt(txtCodigo.getText()));
             cliente.setNome(txtNome.getText());
@@ -350,10 +349,6 @@ public class InformaDadosCliente extends javax.swing.JPanel {
 
             clienteDao.salvarCliente(cliente);
             enderecoDao.salvarEnderecoCliente(enderecoCliente);
-
-            //Imprime Testes
-            System.out.println(cliente.toString());
-            System.out.println(enderecoCliente.toString());
 
             JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
             GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();

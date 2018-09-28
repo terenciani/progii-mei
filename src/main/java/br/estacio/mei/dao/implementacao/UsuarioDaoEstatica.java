@@ -30,6 +30,15 @@ public class UsuarioDaoEstatica implements UsuarioDao{
     
     @Override
     public Usuario atualizarUsuario(Usuario usuario){
+        for(int i = 0; i < tabelaUsuario.size(); i++){
+            if(tabelaUsuario.get(i).getId() == usuario.getId()){
+                //troca
+            }
+        }
+        /*for (lista)
+            achar a posicao
+                    trocar pelo novo usuario*/
+                            
         return usuario;
     }
     

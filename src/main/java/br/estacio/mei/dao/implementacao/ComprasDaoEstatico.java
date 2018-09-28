@@ -8,9 +8,11 @@ package br.estacio.mei.dao.implementacao;
 import br.estacio.mei.model.Compras;
 import br.estacio.mei.dao.ComprasDao;
 import java.util.ArrayList;
+import javax.swing.JTable;
 
 /**
- *Da
+ * Da
+ *
  * @author rhena
  */
 public class ComprasDaoEstatico implements ComprasDao {
@@ -18,7 +20,8 @@ public class ComprasDaoEstatico implements ComprasDao {
     ArrayList<Compras> bancoDados = new ArrayList();
 
     @Override
-    public ArrayList<Compras> buscarCompras(){
+    public ArrayList<Compras> buscarCompras() {
+
         return bancoDados;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -39,7 +42,5 @@ public class ComprasDaoEstatico implements ComprasDao {
         return true;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    
 
 }
