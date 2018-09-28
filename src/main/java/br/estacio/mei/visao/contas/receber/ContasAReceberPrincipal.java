@@ -5,6 +5,7 @@
  */
 package br.estacio.mei.visao.contas.receber;
 
+import javax.swing.JFrame;
 /**
  *
  * @author aluno
@@ -236,7 +237,9 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        ContasAReceberBaixa frame = new ContasAReceberBaixa();
+        frame.setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void sl_status_consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sl_status_consultaActionPerformed
