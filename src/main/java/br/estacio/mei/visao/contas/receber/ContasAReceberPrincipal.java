@@ -44,9 +44,9 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_consulta_receber = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        ef_baixa_consulta = new javax.swing.JButton();
+        al_venda_consulta = new javax.swing.JButton();
+        rl_mensal_consulta = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(970, 470));
         setMinimumSize(new java.awt.Dimension(970, 470));
@@ -54,7 +54,7 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
 
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(12, 197, 205));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setMaximumSize(new java.awt.Dimension(1305, 105));
         jPanel1.setMinimumSize(new java.awt.Dimension(1305, 105));
         jPanel1.setPreferredSize(new java.awt.Dimension(1305, 105));
@@ -185,25 +185,35 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tb_consulta_receber);
 
-        jButton1.setText("Efetuar Baixa");
-        jButton1.setMaximumSize(new java.awt.Dimension(123, 59));
-        jButton1.setMinimumSize(new java.awt.Dimension(123, 59));
-        jButton1.setPreferredSize(new java.awt.Dimension(123, 59));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ef_baixa_consulta.setText("Efetuar Baixa");
+        ef_baixa_consulta.setMaximumSize(new java.awt.Dimension(123, 59));
+        ef_baixa_consulta.setMinimumSize(new java.awt.Dimension(123, 59));
+        ef_baixa_consulta.setPreferredSize(new java.awt.Dimension(123, 59));
+        ef_baixa_consulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ef_baixa_consultaActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Alterar Venda");
-        jButton2.setMaximumSize(new java.awt.Dimension(123, 59));
-        jButton2.setMinimumSize(new java.awt.Dimension(123, 59));
-        jButton2.setPreferredSize(new java.awt.Dimension(123, 59));
+        al_venda_consulta.setText("Alterar Venda");
+        al_venda_consulta.setMaximumSize(new java.awt.Dimension(123, 59));
+        al_venda_consulta.setMinimumSize(new java.awt.Dimension(123, 59));
+        al_venda_consulta.setPreferredSize(new java.awt.Dimension(123, 59));
+        al_venda_consulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                al_venda_consultaActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Relatório Mensal");
-        jButton3.setMaximumSize(new java.awt.Dimension(123, 59));
-        jButton3.setMinimumSize(new java.awt.Dimension(123, 59));
-        jButton3.setPreferredSize(new java.awt.Dimension(123, 59));
+        rl_mensal_consulta.setText("Relatório Mensal");
+        rl_mensal_consulta.setMaximumSize(new java.awt.Dimension(123, 59));
+        rl_mensal_consulta.setMinimumSize(new java.awt.Dimension(123, 59));
+        rl_mensal_consulta.setPreferredSize(new java.awt.Dimension(123, 59));
+        rl_mensal_consulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rl_mensal_consultaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -215,9 +225,9 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(al_venda_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ef_baixa_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rl_mensal_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,21 +236,21 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ef_baixa_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(al_venda_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(rl_mensal_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ContasAReceberBaixa frame = new ContasAReceberBaixa();
-        frame.setVisible(true);
+    private void ef_baixa_consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ef_baixa_consultaActionPerformed
+        ContasAReceberBaixa painel = new ContasAReceberBaixa();
+        painel.setVisible(true);
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ef_baixa_consultaActionPerformed
 
     private void sl_status_consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sl_status_consultaActionPerformed
         // TODO add your handling code here:
@@ -254,11 +264,20 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void al_venda_consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_al_venda_consultaActionPerformed
+       ContasAReceberAlterar painel = new ContasAReceberAlterar();
+        painel.setVisible(true);
+    }//GEN-LAST:event_al_venda_consultaActionPerformed
+
+    private void rl_mensal_consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rl_mensal_consultaActionPerformed
+        ContasAReceberRelatorio painel = new ContasAReceberRelatorio();
+        painel.setVisible(true);
+    }//GEN-LAST:event_rl_mensal_consultaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton al_venda_consulta;
+    private javax.swing.JButton ef_baixa_consulta;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -271,6 +290,7 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton rl_mensal_consulta;
     private javax.swing.JComboBox<String> sl_status_consulta;
     private javax.swing.JTable tb_consulta_receber;
     private javax.swing.JTextField tx_cliente_consulta;
