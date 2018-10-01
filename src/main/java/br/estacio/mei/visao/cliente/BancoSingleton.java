@@ -6,6 +6,7 @@
 package br.estacio.mei.visao.cliente;
 
 import br.estacio.mei.model.Cliente;
+import br.estacio.mei.model.Endereco;
 import java.util.ArrayList;
 
 /**
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 public class BancoSingleton {
     private static BancoSingleton bancoSingleton;
     public ArrayList<Cliente> tabelaClientes = new ArrayList(); 
+    
+    public ArrayList<Endereco> tabelaEndereco = new ArrayList(); 
     
     private BancoSingleton(){
     }

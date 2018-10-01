@@ -7,12 +7,19 @@ package br.estacio.mei.visao.categoria;
 
 import br.estacio.mei.dao.CategoriaDao;
 import br.estacio.mei.dao.implementacao.CategoriaDaoEstatica;
+import java.awt.Component;
+import java.awt.Container;
+import javax.lang.model.util.Elements;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
- * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir Orico)
+ * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir
+ * Orico)
  */
 public class TelaPrincipalCategoria extends javax.swing.JPanel {
+
     CategoriaDao categoriaDao = new CategoriaDaoEstatica();
 
     /**
@@ -21,7 +28,7 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
     public TelaPrincipalCategoria() {
         initComponents();
         panelCategAcao.setVisible(false);
-        
+
     }
 
     /**
@@ -303,17 +310,40 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
         labelAcaoUsuario.setText("Inclusão");
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
-        
+
     }//GEN-LAST:event_botaoIncluirActionPerformed
 
     private void botaoFecharCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFecharCategActionPerformed
         //Fechar o panelDinamico.removeAll();
-        
-        
+
+
     }//GEN-LAST:event_botaoFecharCategActionPerformed
 
     private void botaoImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImprimirActionPerformed
-        // TODO add your handling code here:
+        
+        // O método getParent pega o pai de um elemento, no caso
+        // pegou dois paneis acima do atual. O metodo getComponents
+        // retorna todos os elementos dentro de um painel e retorna um vetor de
+        // componentes
+        Component[] elements = this.getParent().getParent().getComponents();
+        
+        // O primeiro elemento da lista é o JPanelBreadCrumb, assim, faço 
+        // uma verificação se realmente é um JPanel
+        if (elements[0] instanceof JPanel) {
+            // Converto o componente para JPanel
+            JPanel painel = (JPanel) elements[0];
+            // Pego a lsita de componentes dentro do JPanel BreadCrumb
+            Component[] elementos = painel.getComponents();
+            // Faço uma verficação se é uma instancia do JLabel
+            if (elementos[0] instanceof JLabel) {
+                // Converto o componente para JLabel
+                JLabel label = (JLabel) elementos[0];
+                label.setText("Teste");
+
+            }
+        }
+
+
     }//GEN-LAST:event_botaoImprimirActionPerformed
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
