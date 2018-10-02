@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.visao.login;
+package br.estacio.mei.visao.cliente;
 
-import br.estacio.mei.exemplo.ExemploPopulaTabela;
+import br.estacio.mei.visao.contas.receber.*;
+import br.estacio.mei.exemplo.*;
 import br.estacio.mei.visao.categoria.CategoriaPrincipal;
 import br.estacio.mei.visao.cliente.ClientePrincipal;
 import br.estacio.mei.visao.contas.pagar.ContasAPagarPrincipal;
-import br.estacio.mei.visao.contas.receber.ContasAReceberPrincipal;
 import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoquePrincipal;
 import javax.swing.JFrame;
 
@@ -17,12 +17,12 @@ import javax.swing.JFrame;
  *
  * @author Marcelo
  */
-public class Sistema extends javax.swing.JFrame {
+public class SistemaClientes extends javax.swing.JFrame {
 
     /**
      * Creates new form Sistema
      */
-    public Sistema() {
+    public SistemaClientes() {
         initComponents();
     }
 
@@ -138,11 +138,6 @@ public class Sistema extends javax.swing.JFrame {
         lblContasAReceber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblContasAReceber.setForeground(new java.awt.Color(255, 255, 255));
         lblContasAReceber.setText("Contas a Receber");
-        lblContasAReceber.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblContasAReceberMousePressed(evt);
-            }
-        });
 
         javax.swing.GroupLayout btnContasAReceberLayout = new javax.swing.GroupLayout(btnContasAReceber);
         btnContasAReceber.setLayout(btnContasAReceberLayout);
@@ -158,7 +153,10 @@ public class Sistema extends javax.swing.JFrame {
         btnContasAReceberLayout.setVerticalGroup(
             btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(imgContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-            .addComponent(lblContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnContasAReceberLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         btnCategorias.setBackground(new java.awt.Color(12, 180, 206));
@@ -185,7 +183,7 @@ public class Sistema extends javax.swing.JFrame {
         );
         btnCategoriasLayout.setVerticalGroup(
             btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(imgCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
             .addComponent(lblCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -298,7 +296,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(menuLateralLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
         menuLateralLayout.setVerticalGroup(
             menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,7 +317,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(btnFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -337,10 +335,9 @@ public class Sistema extends javax.swing.JFrame {
         painelBreadcrumb.setLayout(painelBreadcrumbLayout);
         painelBreadcrumbLayout.setHorizontalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelBreadcrumbLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBreadcrumbLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 741, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         painelBreadcrumbLayout.setVerticalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,12 +370,12 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(lblNomeSistema)
-                .addGap(0, 417, Short.MAX_VALUE))
+                .addGap(0, 301, Short.MAX_VALUE))
             .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         areaDeTrabalhoLayout.setVerticalGroup(
@@ -387,9 +384,9 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(lblNomeSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -413,19 +410,17 @@ public class Sistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnContasAPagarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMousePressed
-        ContasAPagarPrincipal painelInicial = new ContasAPagarPrincipal();
-        lblBreadcrumb.setText("Gerência de Contas a Pagar");
         painelDinamico.removeAll();
-        painelDinamico.add(painelInicial);
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnContasAPagarMousePressed
 
     private void btnContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMousePressed
-        ContasAReceberPrincipal painelInicialContasReceber = new ContasAReceberPrincipal();
+      
+           ContasAReceberPrincipal painelInicial = new ContasAReceberPrincipal();
         lblBreadcrumb.setText("Gerência de Contas a Receber");
         painelDinamico.removeAll();
-        painelDinamico.add(painelInicialContasReceber);
+        painelDinamico.add(painelInicial);
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnContasAReceberMousePressed
@@ -460,32 +455,21 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFornecedoresMousePressed
 
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
-
-        CategoriaPrincipal gerenciaCategoria = new CategoriaPrincipal();
-        lblBreadcrumb.setText("Gerência de Categoria");
+        CategoriaPrincipal gerenciaCliente = new CategoriaPrincipal();
+        lblBreadcrumb.setText("Gerência de Clientes");
         painelDinamico.removeAll();
-        painelDinamico.add(gerenciaCategoria);
+        painelDinamico.add(gerenciaCliente);
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnCategoriasMousePressed
 
     private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
-        System.exit(0);
+    System.exit(0);
     }//GEN-LAST:event_lblSairMousePressed
 
     private void btnSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMousePressed
-        System.exit(0);
+    System.exit(0);
     }//GEN-LAST:event_btnSairMousePressed
-
-    private void lblContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblContasAReceberMousePressed
-        // TODO add your handling code here:
-        ContasAReceberPrincipal painelInicialContasReceber = new ContasAReceberPrincipal();
-        lblBreadcrumb.setText("Gerência de Contas a Receber");
-        painelDinamico.removeAll();
-        painelDinamico.add(painelInicialContasReceber);
-        painelDinamico.validate();
-        painelDinamico.repaint();
-    }//GEN-LAST:event_lblContasAReceberMousePressed
 
     /**
      * @param args the command line arguments
@@ -504,21 +488,35 @@ public class Sistema extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SistemaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SistemaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SistemaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SistemaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JFrame sistema = new Sistema();
+                JFrame sistema = new SistemaClientes();
                 sistema.setVisible(true);
             }
         });

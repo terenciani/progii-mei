@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir
  * Orico)
  */
-public class TelaPrincipalCategoria extends javax.swing.JPanel {
+public class CategoriaPrincipal extends javax.swing.JPanel {
 
     CategoriaDao categoriaDao = new CategoriaDaoEstatica();
     Categoria categoria = new Categoria();
@@ -29,7 +29,7 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
     /**
      * Creates new form TelaPrincipalCategoria
      */
-    public TelaPrincipalCategoria() {
+    public CategoriaPrincipal() {
         initComponents();
         panelCategAcao.setVisible(false);
         DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();

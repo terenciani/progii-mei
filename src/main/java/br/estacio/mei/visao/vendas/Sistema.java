@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.visao.login;
+package br.estacio.mei.visao.vendas;
+
 
 import br.estacio.mei.exemplo.ExemploPopulaTabela;
 import br.estacio.mei.visao.categoria.CategoriaPrincipal;
@@ -460,11 +461,10 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFornecedoresMousePressed
 
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
-
-        CategoriaPrincipal gerenciaCategoria = new CategoriaPrincipal();
-        lblBreadcrumb.setText("Gerência de Categoria");
+        CategoriaPrincipal gerenciaCliente = new CategoriaPrincipal();
+        lblBreadcrumb.setText("Gerência de Clientes");
         painelDinamico.removeAll();
-        painelDinamico.add(gerenciaCategoria);
+        painelDinamico.add(gerenciaCliente);
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnCategoriasMousePressed
@@ -512,6 +512,20 @@ public class Sistema extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

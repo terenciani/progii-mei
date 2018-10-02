@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.visao.vendas;
+package br.estacio.mei.visao.produto;
 
 /**
  *
- * @author aluno
+ * @author Marcelo
  */
-public class VendaPrincipal extends javax.swing.JPanel {
+public class ProdutoPrincipal extends javax.swing.JPanel {
 
     /**
-     * Creates new form InclusãoVenda
+     * Creates new form ProdutoPrincipal
      */
-    public VendaPrincipal() {
+    public ProdutoPrincipal() {
         initComponents();
     }
 

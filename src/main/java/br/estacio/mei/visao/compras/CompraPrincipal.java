@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author rhena
  */
-public class PainelLinkCompras extends javax.swing.JPanel {
+public class CompraPrincipal extends javax.swing.JPanel {
     ComprasDao compra = new ComprasDaoEstatico();
     Compras compras = new Compras();
     
@@ -25,7 +25,7 @@ public class PainelLinkCompras extends javax.swing.JPanel {
     /**
      * Creates new fornm PainelLinkCompras
      */
-    public PainelLinkCompras() {
+    public CompraPrincipal() {
         initComponents();
         
         DefaultTableModel novaColuna = (DefaultTableModel) jTableArmazenamendoDados.getModel();
