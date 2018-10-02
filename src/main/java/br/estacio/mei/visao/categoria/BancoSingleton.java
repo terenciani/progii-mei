@@ -3,11 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.visao.cliente;
+package br.estacio.mei.visao.categoria;
 
 import br.estacio.mei.model.Categoria;
-import br.estacio.mei.model.Cliente;
-import br.estacio.mei.model.Endereco;
 import java.util.ArrayList;
 
 /**
@@ -16,9 +14,7 @@ import java.util.ArrayList;
  */
 public class BancoSingleton {
     private static BancoSingleton bancoSingleton;
-    public ArrayList<Cliente> tabelaClientes = new ArrayList(); 
-    
-    public ArrayList<Endereco> tabelaEndereco = new ArrayList(); 
+    public ArrayList<Categoria> tabelaCategorias = new ArrayList(); 
     
     private BancoSingleton(){
     }
