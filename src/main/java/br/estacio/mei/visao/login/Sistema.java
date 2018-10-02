@@ -460,10 +460,10 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFornecedoresMousePressed
 
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
-        TelaPrincipalCategoria gerenciaCliente = new TelaPrincipalCategoria();
-        lblBreadcrumb.setText("Gerência de Clientes");
+        TelaPrincipalCategoria gerenciaCategoria = new TelaPrincipalCategoria();
+        lblBreadcrumb.setText("Gerência de Categoria");
         painelDinamico.removeAll();
-        painelDinamico.add(gerenciaCliente);
+        painelDinamico.add(gerenciaCategoria);
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnCategoriasMousePressed
