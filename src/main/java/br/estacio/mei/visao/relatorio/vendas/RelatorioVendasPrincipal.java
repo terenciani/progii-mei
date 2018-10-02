@@ -9,12 +9,12 @@ package br.estacio.mei.visao.relatorio.vendas;
  *
  * @author rodol
  */
-public class RelatVendas extends javax.swing.JFrame {
+public class RelatorioVendasPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form RelatVendas
      */
-    public RelatVendas() {
+    public RelatorioVendasPrincipal() {
         initComponents();
     }
 
@@ -109,10 +109,8 @@ public class RelatVendas extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Parâmetros");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel4.setText("Categoria do Produto");
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todas as Categorias", "Categoria 1 ", "Categoria 2", "Categoria 3", "Categoria 4" }));
         jComboBox1.setToolTipText("");
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -121,19 +119,14 @@ public class RelatVendas extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel5.setText("Fabricante");
 
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos os Fabricantes", "Fabricante 1", "Fabricante 2", "Fabricante 3", "Fabricante 4" }));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel6.setText("Forma de Pagamento");
 
-        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A Vista(Dinheiro)", "A Vista(Débito)", "Crédito", "Crediário", " " }));
 
-        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jCheckBox1.setText("Incluir vendas estornadas");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,19 +136,15 @@ public class RelatVendas extends javax.swing.JFrame {
 
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/imprimir.png"))); // NOI18N
         jButton2.setText("Imprimir");
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/salvar.png"))); // NOI18N
         jButton3.setText("Salvar");
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/fechar.png"))); // NOI18N
         jButton4.setText("Fechar");
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/visualizar.png"))); // NOI18N
         jButton5.setText("Visualizar");
 
@@ -189,10 +178,8 @@ public class RelatVendas extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel9.setText("Período ");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel10.setText("Data Inicial");
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel11.setText("Data Final");
 
         jLabel12.setText("a");
@@ -553,20 +540,21 @@ public class RelatVendas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RelatVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatorioVendasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RelatVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatorioVendasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RelatVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatorioVendasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RelatVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatorioVendasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RelatVendas().setVisible(true);
+                new RelatorioVendasPrincipal().setVisible(true);
             }
         });
     }

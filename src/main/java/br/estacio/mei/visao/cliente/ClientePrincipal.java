@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ericvdias
  */
-public class GerenciamentoCliente extends javax.swing.JPanel {
+public class ClientePrincipal extends javax.swing.JPanel {
 
     ClienteDao clienteDao = new ClienteDaoEstatico();
     Cliente cliente = new Cliente();
@@ -27,7 +27,7 @@ public class GerenciamentoCliente extends javax.swing.JPanel {
     /**
      * Creates new form GerenciamentoCliente
      */
-    public GerenciamentoCliente() {
+    public ClientePrincipal() {
         initComponents();
         //==> Quando inicia a tela, exibe os clientes cadastrados <<==\\
         //Cliente cliente = new Cliente();

@@ -306,7 +306,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
+        ClientePrincipal gerenciaCliente = new ClientePrincipal();
         painelDinamico.removeAll();
         painelDinamico.add(gerenciaCliente);
         painelDinamico.validate();
@@ -380,7 +380,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Cliente Atualizado!");
             }
 
-            GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
+            ClientePrincipal gerenciaCliente = new ClientePrincipal();
             painelDinamico.removeAll();
             painelDinamico.add(gerenciaCliente);
             painelDinamico.validate();

@@ -18,14 +18,14 @@ import javax.swing.JPanel;
  * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir
  * Orico)
  */
-public class TelaPrincipalCategoria extends javax.swing.JPanel {
+public class CategoriaPrincipal extends javax.swing.JPanel {
 
     CategoriaDao categoriaDao = new CategoriaDaoEstatica();
 
     /**
      * Creates new form TelaPrincipalCategoria
      */
-    public TelaPrincipalCategoria() {
+    public CategoriaPrincipal() {
         initComponents();
         panelCategAcao.setVisible(false);
 

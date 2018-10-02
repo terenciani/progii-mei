@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Marcelo
  */
-public class RelatorioDeEstoque extends javax.swing.JPanel {
+public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     ProdutoDao produtoDao = new ProdutoDaoEstatico();
     /**
      * Creates new form RelatorioDeEstoque
      */
-    public RelatorioDeEstoque() {
+    public RelatorioDeEstoquePrincipal() {
         initComponents();
         
         Fornecedor fornecedor = new Fornecedor();
@@ -134,7 +134,7 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(366, 366, 366)
                 .addComponent(lblCodigo)
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addContainerGap(361, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -149,13 +149,13 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(lblCodigo)
-                .addGap(0, 709, Short.MAX_VALUE))
+                .addGap(0, 570, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 

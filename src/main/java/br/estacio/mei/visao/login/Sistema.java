@@ -6,11 +6,11 @@
 package br.estacio.mei.visao.login;
 
 import br.estacio.mei.exemplo.ExemploPopulaTabela;
-import br.estacio.mei.visao.categoria.TelaPrincipalCategoria;
-import br.estacio.mei.visao.cliente.GerenciamentoCliente;
+import br.estacio.mei.visao.categoria.CategoriaPrincipal;
+import br.estacio.mei.visao.cliente.ClientePrincipal;
 import br.estacio.mei.visao.contas.pagar.ContasAPagarPrincipal;
 import br.estacio.mei.visao.contas.receber.ContasAReceberPrincipal;
-import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoque;
+import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoquePrincipal;
 import javax.swing.JFrame;
 
 /**
@@ -441,7 +441,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInicioMousePressed
 
     private void btnClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMousePressed
-        GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
+        ClientePrincipal gerenciaCliente = new ClientePrincipal();
         lblBreadcrumb.setText("Gerência de Clientes");
         painelDinamico.removeAll();
         painelDinamico.add(gerenciaCliente);
@@ -451,7 +451,7 @@ public class Sistema extends javax.swing.JFrame {
 
     private void btnFornecedoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedoresMousePressed
         // TODO add your handling code here:
-        RelatorioDeEstoque relatorioDeEstoque = new RelatorioDeEstoque();
+        RelatorioDeEstoquePrincipal relatorioDeEstoque = new RelatorioDeEstoquePrincipal();
         lblBreadcrumb.setText("Relatório de Estoque");
         painelDinamico.removeAll();
         painelDinamico.add(relatorioDeEstoque);
@@ -460,7 +460,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFornecedoresMousePressed
 
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
-        TelaPrincipalCategoria gerenciaCliente = new TelaPrincipalCategoria();
+        CategoriaPrincipal gerenciaCliente = new CategoriaPrincipal();
         lblBreadcrumb.setText("Gerência de Clientes");
         painelDinamico.removeAll();
         painelDinamico.add(gerenciaCliente);

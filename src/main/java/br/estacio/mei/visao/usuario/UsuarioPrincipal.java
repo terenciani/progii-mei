@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author aluno
  */
-public class CadastroUsuario extends javax.swing.JPanel {
+public class UsuarioPrincipal extends javax.swing.JPanel {
     UsuarioDao usuarioDao = new UsuarioDaoEstatica();
     /**
      * Creates new form CadastroUsuario
      */
-    public CadastroUsuario() {
+    public UsuarioPrincipal() {
         initComponents();
         populaTabela();
     }
