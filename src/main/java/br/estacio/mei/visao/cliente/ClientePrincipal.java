@@ -112,7 +112,8 @@ public class ClientePrincipal extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Fecha");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/close.png"))); // NOI18N
+        jButton1.setPreferredSize(new java.awt.Dimension(57, 33));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -144,9 +145,9 @@ public class ClientePrincipal extends javax.swing.JPanel {
                 .addComponent(btnEditarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(btnExcluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(288, Short.MAX_VALUE))
         );
 
         panelDinamico.add(jPanel5, java.awt.BorderLayout.LINE_END);
@@ -274,7 +275,9 @@ public class ClientePrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(0);
+//        panelDinamico.removeAll();
+        panelDinamico.setVisible(false);
+        //System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnExcluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirClienteActionPerformed
