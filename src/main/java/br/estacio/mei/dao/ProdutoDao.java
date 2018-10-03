@@ -21,7 +21,7 @@ public interface ProdutoDao {
     public Produto alterar(Produto produto);
     public ArrayList<Produto> pesquisarPorCodigo(int filtro);
     public ArrayList<Produto> pesquisarPorNome(String filtro);
-    public ArrayList<Produto> pesquisarPorForncedor(String filtro);
+    public ArrayList<Produto> pesquisarPorFornecedor(String filtro);
     public ArrayList<Produto> pesquisarPorPrecoCompra(int filtro);
     public ArrayList<Produto> pesquisarPorPrecoVenda(int filtro);
     public ArrayList<Produto> pesquisarPorQtdEstoque(int filtro);

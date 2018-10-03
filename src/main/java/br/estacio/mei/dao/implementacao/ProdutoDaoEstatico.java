@@ -45,7 +45,6 @@ public class ProdutoDaoEstatico implements ProdutoDao {
                 produtos.add(todosProdutos.get(i));
             }
         }
-        System.out.println(produtos);
         return produtos;
     }
 
@@ -58,20 +57,18 @@ public class ProdutoDaoEstatico implements ProdutoDao {
                 produtos.add(todosProdutos.get(i));
             }
         }
-        System.out.println(produtos);
         return produtos;
     }
 
     @Override
-    public ArrayList<Produto> pesquisarPorForncedor(String filtro) {
+    public ArrayList<Produto> pesquisarPorFornecedor(String filtro) {
         ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
         for (int i = 0; i < todosProdutos.size(); i++) {
-            if (todosProdutos.get(i).getFornecedor().getRazaoSocial().equals(filtro)) {
+             if (todosProdutos.get(i).getFornecedor().getRazaoSocial().equals(filtro)) {
                 produtos.add(todosProdutos.get(i));
             }
         }
-        System.out.println(produtos);
         return produtos;
     }
 
@@ -84,7 +81,6 @@ public class ProdutoDaoEstatico implements ProdutoDao {
                 produtos.add(todosProdutos.get(i));
             }
         }
-        System.out.println(produtos);
         return produtos;
     }
 
@@ -97,7 +93,6 @@ public class ProdutoDaoEstatico implements ProdutoDao {
                 produtos.add(todosProdutos.get(i));
             }
         }
-        System.out.println(produtos);
         return produtos;
     }
 
@@ -110,7 +105,6 @@ public class ProdutoDaoEstatico implements ProdutoDao {
                 produtos.add(todosProdutos.get(i));
             }
         }
-        System.out.println(produtos);
         return produtos;
     }
 

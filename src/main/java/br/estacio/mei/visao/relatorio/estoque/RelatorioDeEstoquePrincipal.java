@@ -5,7 +5,9 @@
  */
 package br.estacio.mei.visao.relatorio.estoque;
 
+import br.estacio.mei.dao.FornecedorDao;
 import br.estacio.mei.dao.ProdutoDao;
+import br.estacio.mei.dao.implementacao.FornecedorDaoEstatica;
 import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
 import br.estacio.mei.model.Fornecedor;
 import br.estacio.mei.model.Produto;
@@ -26,6 +28,8 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         
         Fornecedor fornecedor = new Fornecedor();
         fornecedor.setRazaoSocial("Estacio");
+        FornecedorDao fornecedorDao = new FornecedorDaoEstatica();
+        fornecedorDao.salvarFornecedor(fornecedor);
         Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);
         produtoDao.salvar(produto);
         
@@ -225,7 +229,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     while (modeloDeColunasDaTabela.getRowCount() != 0) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
-                    ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorNome(pesqFornecedor);
+                    ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorFornecedor(pesqFornecedor);
                     for (int i=0; i< produtosPorFornecedor.size();i++)
                     {
                         Produto p = produtosPorFornecedor.get(i);
