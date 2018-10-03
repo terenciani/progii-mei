@@ -81,11 +81,13 @@
                       <Component id="lblNome" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtCodCliente" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="txtNome" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnBusca" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="btnIncluirCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtCodCliente" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="txtNome" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace pref="36" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -93,12 +95,14 @@
                       <Component id="lblDescricao" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblQtd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="7" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtDescricao" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="txtQtd" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="btnAddProduto" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="txtCodProduto" alignment="1" pref="36" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtDescricao" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="txtQtd" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="btnAddProduto" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
