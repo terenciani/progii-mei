@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import javax.lang.model.util.Elements;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -35,7 +36,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
         ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
 
-        for (int i=0; i< listaDeCategoria.size();i++)
+        for (int i=0; i < listaDeCategoria.size(); i++)
         {
             Categoria mostraCategoria = listaDeCategoria.get(i);
             Object[] dadosLinha = new Object[2];
@@ -43,7 +44,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
             dadosLinha[1] = mostraCategoria.getDescricao();
             modeloDeColunasDaTabela.addRow(dadosLinha);
         }
-        jTblCategoria.getTableHeader();
+//        jTblCategoria.getTableHeader();
 
     }
 
@@ -71,11 +72,11 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         labelDescricao = new javax.swing.JLabel();
         textCampoDesc = new javax.swing.JTextField();
         panelBotoes = new javax.swing.JPanel();
+        botaoIncluir = new javax.swing.JButton();
         botaoAlterar = new javax.swing.JButton();
         botaoExcluir = new javax.swing.JButton();
         botaoImprimir = new javax.swing.JButton();
         botaoFecharCateg = new javax.swing.JButton();
-        botaoIncluir = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -191,6 +192,17 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        botaoIncluir.setBackground(new java.awt.Color(153, 153, 153));
+        botaoIncluir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        botaoIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-incluir-25.png"))); // NOI18N
+        botaoIncluir.setText("Incluir");
+        botaoIncluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoIncluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoIncluirActionPerformed(evt);
+            }
+        });
+
         botaoAlterar.setBackground(new java.awt.Color(153, 153, 153));
         botaoAlterar.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-alterar-25.png"))); // NOI18N
@@ -235,17 +247,6 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         botaoFecharCateg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoFecharCategActionPerformed(evt);
-            }
-        });
-
-        botaoIncluir.setBackground(new java.awt.Color(153, 153, 153));
-        botaoIncluir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        botaoIncluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-incluir-25.png"))); // NOI18N
-        botaoIncluir.setText("Incluir");
-        botaoIncluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoIncluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoIncluirActionPerformed(evt);
             }
         });
 
@@ -322,11 +323,27 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoIncluirActionPerformed
-        String opcao = "Inc";
+        String opcao = "inclusao";
         labelAcaoUsuario.setText("Inclusão");
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
-
+        // Rotina buscar o último código de CATEGORIA no Banco de Dados
+        int codigoCategoria = 0;
+        categoriaDao.buscarCategoria();
+//        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
+//        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
+//        int fim=0;
+//        for (int i=0; i < listaDeCategoria.size();i++)
+//        {
+//        // Inicio da busca do último código de categoria cadastrado
+//            Categoria exibeCategoria = listaDeCategoria.get(i);
+//            if (fim == 0) {
+//                codigoCategoria = exibeCategoria.getCodigo();
+//                fim = 1;
+//            } else if (exibeCategoria.getCodigo() > codigoCategoria) {
+//                codigoCategoria = exibeCategoria.getCodigo();
+//            }
+//        }
     }//GEN-LAST:event_botaoIncluirActionPerformed
 
     private void botaoFecharCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFecharCategActionPerformed
@@ -366,7 +383,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
         // TODO add your handling code here:
-        String opcao = "Exc";
+        String opcao = "exclusao";
         botaoConfirmar.setText("Confirmar");
         labelAcaoUsuario.setText("Exclusão");
         panelCategAcao.setVisible(true);
@@ -374,7 +391,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
 
     private void botaoAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarActionPerformed
         // TODO add your handling code here:
-        String opcao = "Alt";
+        String opcao = "alteracao";
         labelAcaoUsuario.setText("Alteração");
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
