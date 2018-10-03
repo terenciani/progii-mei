@@ -5,7 +5,9 @@
  */
 package br.estacio.mei.visao.relatorio.estoque;
 
+import br.estacio.mei.dao.FornecedorDao;
 import br.estacio.mei.dao.ProdutoDao;
+import br.estacio.mei.dao.implementacao.FornecedorDaoEstatica;
 import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
 import br.estacio.mei.model.Fornecedor;
 import br.estacio.mei.model.Produto;
@@ -25,7 +27,9 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         initComponents();
         
         Fornecedor fornecedor = new Fornecedor();
-        fornecedor.setRazaoSocial("Estacio & CIA");
+        fornecedor.setRazaoSocial("Estacio");
+        FornecedorDao fornecedorDao = new FornecedorDaoEstatica();
+        fornecedorDao.salvarFornecedor(fornecedor);
         Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);
         produtoDao.salvar(produto);
         
@@ -34,7 +38,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         produtoDao.salvar(produto);
         
         DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
-        
+
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
         for (int i=0; i< listaDeProdutos.size();i++)
         {
@@ -62,21 +66,25 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPaneBuscar = new javax.swing.JTextPane();
-        jButton1 = new javax.swing.JButton();
+        txtPesquisar = new javax.swing.JTextPane();
+        btnPesquisar = new javax.swing.JButton();
         jButtonNovoProduto = new javax.swing.JButton();
-        jComboBoxFiltrar = new javax.swing.JComboBox<>();
+        tipoPesquisa = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbProdutos = new javax.swing.JTable();
-        lblCodigo = new javax.swing.JLabel();
+        lblResultado = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
-        jTextPaneBuscar.setToolTipText("");
-        jTextPaneBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jScrollPane3.setViewportView(jTextPaneBuscar);
+        txtPesquisar.setToolTipText("");
+        txtPesquisar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane3.setViewportView(txtPesquisar);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
 
         jButtonNovoProduto.setText("Novo Produto");
         jButtonNovoProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -85,18 +93,23 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             }
         });
 
-        jComboBoxFiltrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Nome", "Fornecedor", "Preço de Compra", "Preço de Venda", "Qtde Estoque" }));
+        tipoPesquisa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Nome", "Fornecedor", "Preço de Compra", "Preço de Venda", "Qtde Estoque" }));
+        tipoPesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoPesquisaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jComboBoxFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tipoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnPesquisar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jButtonNovoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
@@ -106,11 +119,11 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap(39, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBoxFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tipoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jButtonNovoProduto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane3))))
                 .addGap(50, 50, 50))
         );
@@ -125,7 +138,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tbProdutos);
 
-        lblCodigo.setText("jLabel1");
+        lblResultado.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -133,8 +146,8 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(366, 366, 366)
-                .addComponent(lblCodigo)
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addComponent(lblResultado)
+                .addContainerGap(368, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -148,8 +161,8 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(lblCodigo)
-                .addGap(0, 570, Short.MAX_VALUE))
+                .addComponent(lblResultado)
+                .addGap(0, 709, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -165,20 +178,146 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     private void jButtonNovoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoProdutoActionPerformed
         int linha = tbProdutos.getSelectedRow();
         int codigo = (int)tbProdutos.getModel().getValueAt(linha, 0);
-        lblCodigo.setText(""+codigo);
+        lblResultado.setText(""+codigo);
     }//GEN-LAST:event_jButtonNovoProdutoActionPerformed
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        int itemSelecionado = tipoPesquisa.getSelectedIndex();
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
+        switch(itemSelecionado) {
+            case 0:
+                    int pesqCodigo = Integer.parseInt(txtPesquisar.getText());
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorCodigo = produtoDao.pesquisarPorCodigo(pesqCodigo);
+                    for (int i=0; i< produtosPorCodigo.size();i++)
+                    {
+                        Produto p = produtosPorCodigo.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
+                    break;
+            case 1:
+                    String pesqNome = txtPesquisar.getText();
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    System.out.println("pesqNome");
+                    ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
+                    for (int i=0; i< produtosPorNome.size();i++)
+                    {
+                        Produto p = produtosPorNome.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
+                    break;
+            case 2:
+                    String pesqFornecedor = txtPesquisar.getText();
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorFornecedor(pesqFornecedor);
+                    for (int i=0; i< produtosPorFornecedor.size();i++)
+                    {
+                        Produto p = produtosPorFornecedor.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
+                    break;
+            case 3:
+                    int pesqPrecoCompra = Integer.parseInt(txtPesquisar.getText());
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorPrecoCompra = produtoDao.pesquisarPorPrecoCompra(pesqPrecoCompra);
+                    for (int i=0; i< produtosPorPrecoCompra.size();i++)
+                    {
+                        Produto p = produtosPorPrecoCompra.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
+                    break;
+            case 4:
+                    int pesqPrecoVenda = Integer.parseInt(txtPesquisar.getText());
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorPrecoVenda = produtoDao.pesquisarPorPrecoVenda(pesqPrecoVenda);
+                    for (int i=0; i< produtosPorPrecoVenda.size();i++)
+                    {
+                        Produto p = produtosPorPrecoVenda.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
+                    break;
+            case 5:
+                    int pesqQtdEstoque = Integer.parseInt(txtPesquisar.getText());
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorQtdEstoque = produtoDao.pesquisarPorQtdEstoque(pesqQtdEstoque);
+                    for (int i=0; i< produtosPorQtdEstoque.size();i++)
+                    {
+                        Produto p = produtosPorQtdEstoque.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
+                    break;
+        }
+    }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void tipoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoPesquisaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipoPesquisaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton jButtonNovoProduto;
-    private javax.swing.JComboBox<String> jComboBoxFiltrar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextPane jTextPaneBuscar;
-    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblResultado;
     private javax.swing.JTable tbProdutos;
+    private javax.swing.JComboBox<String> tipoPesquisa;
+    private javax.swing.JTextPane txtPesquisar;
     // End of variables declaration//GEN-END:variables
 }

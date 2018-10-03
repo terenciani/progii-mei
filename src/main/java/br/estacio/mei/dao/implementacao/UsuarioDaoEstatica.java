@@ -32,7 +32,7 @@ public class UsuarioDaoEstatica implements UsuarioDao{
     public Usuario atualizarUsuario(Usuario usuario){
         for(int i = 0; i < tabelaUsuario.size(); i++){
             if(tabelaUsuario.get(i).getId() == usuario.getId()){
-                //troca
+                tabelaUsuario.add(i, usuario);
             }
         }
         /*for (lista)
@@ -44,6 +44,7 @@ public class UsuarioDaoEstatica implements UsuarioDao{
     
     @Override
     public boolean excluirUsuario(Usuario usuario){
+        tabelaUsuario.remove(usuario);
         return true;
     }
 
