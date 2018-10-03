@@ -76,7 +76,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
 
         panelDinamico.setLayout(new java.awt.BorderLayout());
 
-        tbListaClientes.setForeground(new java.awt.Color(102, 102, 102));
+        tbListaClientes.setBackground(new java.awt.Color(204, 204, 204));
         tbListaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -226,24 +226,25 @@ public class ClientePrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAdicionarNovoClienteActionPerformed
 
     private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
-
-        //==> Pega o cógido do cliente selecionado na tabela <==\\
-        String tipo = "update";
-        int linha = tbListaClientes.getSelectedRow();
-        int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
-        //JPanel onde tem a tabela
-        DefaultTableModel table = (DefaultTableModel) tbListaClientes.getModel();
-
         if (tbListaClientes.getSelectedRow() >= 0) {
-            //clienteEdit = table.getValueAt(tbListaClientes.getSelectedRow(), 1).toString();
-        }
+            //==> Pega o cógido do cliente selecionado na tabela <==\\
+            String tipo = "update";
+            int linha = tbListaClientes.getSelectedRow();
 
-        //==> Abre a tela de edição, passando o código do cliente <==\\
-        InformaDadosCliente adicionarCliente = new InformaDadosCliente(codigo, tipo);
-        panelDinamico.removeAll();
-        panelDinamico.add(adicionarCliente);
-        panelDinamico.validate();
-        panelDinamico.repaint();
+            int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
+            //JPanel onde tem a tabela
+            //DefaultTableModel table = (DefaultTableModel) tbListaClientes.getModel();
+
+            //clienteEdit = table.getValueAt(tbListaClientes.getSelectedRow(), 1).toString();
+            //==> Abre a tela de edição, passando o código do cliente <==\\
+            InformaDadosCliente adicionarCliente = new InformaDadosCliente(codigo, tipo);
+            panelDinamico.removeAll();
+            panelDinamico.add(adicionarCliente);
+            panelDinamico.validate();
+            panelDinamico.repaint();
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um Cliente!");
+        }
 
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
@@ -281,39 +282,44 @@ public class ClientePrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnExcluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirClienteActionPerformed
-        int resposta = JOptionPane.showConfirmDialog(null, "Confirma a exclusão do cliente?", "Excluir Cliente!", JOptionPane.YES_NO_OPTION);
+        if (tbListaClientes.getSelectedRow() >= 0) {
 
-        if (resposta == 0) {
-            int linha = tbListaClientes.getSelectedRow();
-            int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
+            int resposta = JOptionPane.showConfirmDialog(null, "Confirma a exclusão do cliente?", "Excluir Cliente!", JOptionPane.YES_NO_OPTION);
 
-            //==> Chama o método para excluir o cliente selecionado <==\\
-            clienteDao.excluirCliente(codigo);
+            if (resposta == 0) {
+                int linha = tbListaClientes.getSelectedRow();
+                int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
 
-            //==> Faz nova busca, após a exclusão, atualizando a tabela de clientes <==\\
-            ((DefaultTableModel) tbListaClientes.getModel()).setRowCount(0);
-            clienteDao.buscarClientes();
-            DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
-            ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
+                //==> Chama o método para excluir o cliente selecionado <==\\
+                clienteDao.excluirCliente(codigo);
 
-            for (int i = 0; i < listaDeClientes.size(); i++) {
-                Cliente exibeCliente = listaDeClientes.get(i);
-                String nome = txtCampoBusca.getText();
+                //==> Faz nova busca, após a exclusão, atualizando a tabela de clientes <==\\
+                ((DefaultTableModel) tbListaClientes.getModel()).setRowCount(0);
+                clienteDao.buscarClientes();
+                DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
+                ArrayList<Cliente> listaDeClientes = clienteDao.buscarClientes();
 
-                //==> Faz a busca do cliente por qualquer parte do seu nome <==\\
-                if (exibeCliente.getNome().contains(nome)) {
+                for (int i = 0; i < listaDeClientes.size(); i++) {
+                    Cliente exibeCliente = listaDeClientes.get(i);
+                    String nome = txtCampoBusca.getText();
 
-                    Object[] linha1 = new Object[5];
+                    //==> Faz a busca do cliente por qualquer parte do seu nome <==\\
+                    if (exibeCliente.getNome().contains(nome)) {
 
-                    linha1[0] = exibeCliente.getCodigo();
-                    linha1[1] = exibeCliente.getNome();
-                    linha1[2] = exibeCliente.getTelefone();
-                    linha1[3] = exibeCliente.getCpfCnpj();
-                    linha1[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
-                    modeloDeColuna.addRow(linha1);
+                        Object[] linha1 = new Object[5];
+
+                        linha1[0] = exibeCliente.getCodigo();
+                        linha1[1] = exibeCliente.getNome();
+                        linha1[2] = exibeCliente.getTelefone();
+                        linha1[3] = exibeCliente.getCpfCnpj();
+                        linha1[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
+                        modeloDeColuna.addRow(linha1);
+                    }
                 }
+                JOptionPane.showMessageDialog(null, "Cliente Removido!");
             }
-            JOptionPane.showMessageDialog(null, "Cliente Removido!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um Cliente!");
         }
 
     }//GEN-LAST:event_btnExcluirClienteActionPerformed

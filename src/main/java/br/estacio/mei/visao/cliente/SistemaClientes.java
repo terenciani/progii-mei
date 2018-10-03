@@ -455,10 +455,10 @@ public class SistemaClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFornecedoresMousePressed
 
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
-        CategoriaPrincipal gerenciaCliente = new CategoriaPrincipal();
-        lblBreadcrumb.setText("Gerência de Clientes");
+        CategoriaPrincipal categoriaPrincipal = new CategoriaPrincipal();
+        lblBreadcrumb.setText("Categoria");
         painelDinamico.removeAll();
-        painelDinamico.add(gerenciaCliente);
+        painelDinamico.add(categoriaPrincipal);
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnCategoriasMousePressed
