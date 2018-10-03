@@ -12,6 +12,7 @@ import br.estacio.mei.visao.contas.pagar.ContasAPagarPrincipal;
 import br.estacio.mei.visao.contas.receber.ContasAReceberPrincipal;
 import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoquePrincipal;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
@@ -138,11 +139,6 @@ public class Sistema extends javax.swing.JFrame {
         lblContasAReceber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblContasAReceber.setForeground(new java.awt.Color(255, 255, 255));
         lblContasAReceber.setText("Contas a Receber");
-        lblContasAReceber.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblContasAReceberMousePressed(evt);
-            }
-        });
 
         javax.swing.GroupLayout btnContasAReceberLayout = new javax.swing.GroupLayout(btnContasAReceber);
         btnContasAReceber.setLayout(btnContasAReceberLayout);
@@ -413,17 +409,22 @@ public class Sistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnContasAPagarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMousePressed
-        ContasAPagarPrincipal painelInicial = new ContasAPagarPrincipal();
-        lblBreadcrumb.setText("Gerência de Contas a Pagar");
+        atualizaPanelDinamico("Contas a Pagar", new ContasAPagarPrincipal());
+        
+       
+    }//GEN-LAST:event_btnContasAPagarMousePressed
+    private void atualizaPanelDinamico(String label, JPanel panel){
+        lblBreadcrumb.setText(label);
         painelDinamico.removeAll();
-        painelDinamico.add(painelInicial);
+        painelDinamico.add(panel);
         painelDinamico.validate();
         painelDinamico.repaint();
-    }//GEN-LAST:event_btnContasAPagarMousePressed
-
+    
+    }
+    
     private void btnContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMousePressed
         ContasAReceberPrincipal painelInicialContasReceber = new ContasAReceberPrincipal();
-        lblBreadcrumb.setText("Gerência de Contas a Receber");
+        lblBreadcrumb.setText("Contas a Receber");
         painelDinamico.removeAll();
         painelDinamico.add(painelInicialContasReceber);
         painelDinamico.validate();
@@ -432,7 +433,7 @@ public class Sistema extends javax.swing.JFrame {
 
     private void btnInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMousePressed
         ExemploPopulaTabela exemplo = new ExemploPopulaTabela();
-        lblBreadcrumb.setText("Gerência de Contas a Pagar");
+        lblBreadcrumb.setText("Contas a Pagar");
         painelDinamico.removeAll();
         painelDinamico.add(exemplo);
         painelDinamico.validate();
@@ -442,7 +443,7 @@ public class Sistema extends javax.swing.JFrame {
 
     private void btnClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMousePressed
         ClientePrincipal gerenciaCliente = new ClientePrincipal();
-        lblBreadcrumb.setText("Gerência de Clientes");
+        lblBreadcrumb.setText("Clientes");
         painelDinamico.removeAll();
         painelDinamico.add(gerenciaCliente);
         painelDinamico.validate();
@@ -462,7 +463,7 @@ public class Sistema extends javax.swing.JFrame {
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
 
         CategoriaPrincipal gerenciaCategoria = new CategoriaPrincipal();
-        lblBreadcrumb.setText("Gerência de Categoria");
+        lblBreadcrumb.setText("Categoria");
         painelDinamico.removeAll();
         painelDinamico.add(gerenciaCategoria);
         painelDinamico.validate();
@@ -476,16 +477,6 @@ public class Sistema extends javax.swing.JFrame {
     private void btnSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMousePressed
         System.exit(0);
     }//GEN-LAST:event_btnSairMousePressed
-
-    private void lblContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblContasAReceberMousePressed
-        // TODO add your handling code here:
-        ContasAReceberPrincipal painelInicialContasReceber = new ContasAReceberPrincipal();
-        lblBreadcrumb.setText("Gerência de Contas a Receber");
-        painelDinamico.removeAll();
-        painelDinamico.add(painelInicialContasReceber);
-        painelDinamico.validate();
-        painelDinamico.repaint();
-    }//GEN-LAST:event_lblContasAReceberMousePressed
 
     /**
      * @param args the command line arguments
