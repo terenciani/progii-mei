@@ -25,7 +25,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         initComponents();
         
         Fornecedor fornecedor = new Fornecedor();
-        fornecedor.setRazaoSocial("Estacio & CIA");
+        fornecedor.setRazaoSocial("Estacio");
         Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);
         produtoDao.salvar(produto);
         
@@ -179,20 +179,17 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         int itemSelecionado = tipoPesquisa.getSelectedIndex();
-        
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
         switch(itemSelecionado) {
             case 0:
                     int pesqCodigo = Integer.parseInt(txtPesquisar.getText());
-                    DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
-                    System.out.println(modeloDeColunasDaTabela.getRowCount());
                     while (modeloDeColunasDaTabela.getRowCount() != 0) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
-                    ArrayList<Produto> produtos = produtoDao.pesquisarPorCodigo(pesqCodigo);
-                    System.out.println(produtos.size());
-                    for (int i=0; i< produtos.size();i++)
+                    ArrayList<Produto> produtosPorCodigo = produtoDao.pesquisarPorCodigo(pesqCodigo);
+                    for (int i=0; i< produtosPorCodigo.size();i++)
                     {
-                        Produto p = produtos.get(i);
+                        Produto p = produtosPorCodigo.get(i);
                         Object[] dadosDaLinha = new Object[6];
                         dadosDaLinha[0] = p.getCodigo();
                         dadosDaLinha[1] = p.getNome();
@@ -205,23 +202,99 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     break;
             case 1:
                     String pesqNome = txtPesquisar.getText();
-                    produtoDao.pesquisarPorNome(pesqNome);
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    System.out.println("pesqNome");
+                    ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
+                    for (int i=0; i< produtosPorNome.size();i++)
+                    {
+                        Produto p = produtosPorNome.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
                     break;
             case 2:
                     String pesqFornecedor = txtPesquisar.getText();
-                    produtoDao.pesquisarPorForncedor(pesqFornecedor);
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorNome(pesqFornecedor);
+                    for (int i=0; i< produtosPorFornecedor.size();i++)
+                    {
+                        Produto p = produtosPorFornecedor.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
                     break;
             case 3:
                     int pesqPrecoCompra = Integer.parseInt(txtPesquisar.getText());
-                    produtoDao.pesquisarPorPrecoCompra(pesqPrecoCompra);
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorPrecoCompra = produtoDao.pesquisarPorPrecoCompra(pesqPrecoCompra);
+                    for (int i=0; i< produtosPorPrecoCompra.size();i++)
+                    {
+                        Produto p = produtosPorPrecoCompra.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
                     break;
             case 4:
                     int pesqPrecoVenda = Integer.parseInt(txtPesquisar.getText());
-                    produtoDao.pesquisarPorPrecoVenda(pesqPrecoVenda);
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorPrecoVenda = produtoDao.pesquisarPorPrecoVenda(pesqPrecoVenda);
+                    for (int i=0; i< produtosPorPrecoVenda.size();i++)
+                    {
+                        Produto p = produtosPorPrecoVenda.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
                     break;
             case 5:
                     int pesqQtdEstoque = Integer.parseInt(txtPesquisar.getText());
-                    produtoDao.pesquisarPorQtdEstoque(pesqQtdEstoque);
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorQtdEstoque = produtoDao.pesquisarPorQtdEstoque(pesqQtdEstoque);
+                    for (int i=0; i< produtosPorQtdEstoque.size();i++)
+                    {
+                        Produto p = produtosPorQtdEstoque.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getPrecoCompra();
+                        dadosDaLinha[4] = p.getPrecoVenda();
+                        dadosDaLinha[5] = p.getQuantidade();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
                     break;
         }
     }//GEN-LAST:event_btnPesquisarActionPerformed

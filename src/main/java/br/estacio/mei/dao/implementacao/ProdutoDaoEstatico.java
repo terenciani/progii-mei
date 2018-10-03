@@ -51,27 +51,67 @@ public class ProdutoDaoEstatico implements ProdutoDao {
 
     @Override
     public ArrayList<Produto> pesquisarPorNome(String filtro) {
-        return null;
+        ArrayList<Produto> todosProdutos = buscarProdutos();
+        ArrayList<Produto> produtos = new ArrayList<Produto>();
+        for (int i = 0; i < todosProdutos.size(); i++) {
+            if (todosProdutos.get(i).getNome().equals(filtro)) {
+                produtos.add(todosProdutos.get(i));
+            }
+        }
+        System.out.println(produtos);
+        return produtos;
     }
 
     @Override
     public ArrayList<Produto> pesquisarPorForncedor(String filtro) {
-        return null;
+        ArrayList<Produto> todosProdutos = buscarProdutos();
+        ArrayList<Produto> produtos = new ArrayList<Produto>();
+        for (int i = 0; i < todosProdutos.size(); i++) {
+            if (todosProdutos.get(i).getFornecedor().getRazaoSocial().equals(filtro)) {
+                produtos.add(todosProdutos.get(i));
+            }
+        }
+        System.out.println(produtos);
+        return produtos;
     }
 
     @Override
     public ArrayList<Produto> pesquisarPorPrecoCompra(int filtro) {
-        return null;
+         ArrayList<Produto> todosProdutos = buscarProdutos();
+        ArrayList<Produto> produtos = new ArrayList<Produto>();
+        for (int i = 0; i < todosProdutos.size(); i++) {
+            if (todosProdutos.get(i).getPrecoCompra()== filtro) {
+                produtos.add(todosProdutos.get(i));
+            }
+        }
+        System.out.println(produtos);
+        return produtos;
     }
 
     @Override
     public ArrayList<Produto> pesquisarPorPrecoVenda(int filtro) {
-        return null;
+         ArrayList<Produto> todosProdutos = buscarProdutos();
+        ArrayList<Produto> produtos = new ArrayList<Produto>();
+        for (int i = 0; i < todosProdutos.size(); i++) {
+            if (todosProdutos.get(i).getPrecoVenda()== filtro) {
+                produtos.add(todosProdutos.get(i));
+            }
+        }
+        System.out.println(produtos);
+        return produtos;
     }
 
     @Override
     public ArrayList<Produto> pesquisarPorQtdEstoque(int filtro) {
-        return null;
+         ArrayList<Produto> todosProdutos = buscarProdutos();
+        ArrayList<Produto> produtos = new ArrayList<Produto>();
+        for (int i = 0; i < todosProdutos.size(); i++) {
+            if (todosProdutos.get(i).getQuantidade() == filtro) {
+                produtos.add(todosProdutos.get(i));
+            }
+        }
+        System.out.println(produtos);
+        return produtos;
     }
 
 
