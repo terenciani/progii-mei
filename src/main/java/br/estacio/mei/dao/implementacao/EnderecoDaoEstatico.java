@@ -6,7 +6,9 @@
 package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.dao.EnderecoDao;
+import br.estacio.mei.model.Cliente;
 import br.estacio.mei.model.Endereco;
+import br.estacio.mei.visao.cliente.BancoSingleton;
 import java.util.ArrayList;
 
 /**
@@ -15,22 +17,20 @@ import java.util.ArrayList;
  */
 public class EnderecoDaoEstatico implements EnderecoDao {
 
-    ArrayList<Endereco> listaEndereco = new ArrayList();
+    @Override
+    public ArrayList<Endereco> buscarEndereco() {
+        return BancoSingleton.getInstance().tabelaEndereco;
+    }
 
     @Override
     public Endereco salvarEnderecoCliente(Endereco endereco) {
-        
-        listaEndereco.add(endereco);
-        
+        BancoSingleton.getInstance().tabelaEndereco.add(endereco);
         return endereco;
     }
 
     @Override
-    public Endereco alterarEndereco(Endereco categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Endereco alterarEndereco(Endereco endereco) {
+        return endereco;
     }
-
-    
-    
 
 }

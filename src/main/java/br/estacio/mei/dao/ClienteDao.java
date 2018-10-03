@@ -18,10 +18,9 @@ public interface ClienteDao {
 
     public Cliente salvarCliente(Cliente cliente);
 
-    public Cliente atualizarCliente(Cliente cliente);
+    public boolean atualizarCliente(Cliente cliente, int codigo);
 
     public boolean excluirCliente(Cliente cliente);
-
-   
+    public boolean excluirCliente(int codigo);
 
 }

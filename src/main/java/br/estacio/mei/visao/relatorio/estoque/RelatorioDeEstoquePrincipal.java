@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Marcelo
  */
-public class RelatorioDeEstoque extends javax.swing.JPanel {
+public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     ProdutoDao produtoDao = new ProdutoDaoEstatico();
     /**
      * Creates new form RelatorioDeEstoque
      */
-    public RelatorioDeEstoque() {
+    public RelatorioDeEstoquePrincipal() {
         initComponents();
         
         Fornecedor fornecedor = new Fornecedor();
@@ -164,7 +164,7 @@ public class RelatorioDeEstoque extends javax.swing.JPanel {
                     .addContainerGap()
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 

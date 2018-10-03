@@ -3,28 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.estacio.mei.visao.usuario;
+package br.estacio.mei.visao.vendas;
 
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
+
+import br.estacio.mei.exemplo.ExemploPopulaTabela;
+import br.estacio.mei.visao.categoria.CategoriaPrincipal;
+import br.estacio.mei.visao.cliente.ClientePrincipal;
+import br.estacio.mei.visao.contas.pagar.ContasAPagarPrincipal;
+import br.estacio.mei.visao.contas.receber.ContasAReceberPrincipal;
+import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoquePrincipal;
+import javax.swing.JFrame;
 
 /**
  *
- * @author Juliano
+ * @author Marcelo
  */
-public class TelaCadastro extends javax.swing.JFrame {
+public class Sistema extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaLogin
+     * Creates new form Sistema
      */
-    public TelaCadastro() {
+    public Sistema() {
         initComponents();
-        
-        DefaultTableModel modelo = (DefaultTableModel) CdTable.getModel();
-        CdTable.setRowSorter(new TableRowSorter(modelo));
-        this.setLocationRelativeTo(cdCancelar);
     }
 
     /**
@@ -36,23 +36,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtnome = new javax.swing.JTextField();
-        txtsenha = new javax.swing.JPasswordField();
-        cdCancelar = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        CdTable = new javax.swing.JTable();
-        cdExcluir = new javax.swing.JButton();
-        cdAlterar = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        painelLateral = new javax.swing.JPanel();
+        menuLateral = new javax.swing.JPanel();
         btnInicio = new javax.swing.JPanel();
         imgInicio = new javax.swing.JLabel();
         lblInicio = new javax.swing.JLabel();
@@ -76,170 +60,23 @@ public class TelaCadastro extends javax.swing.JFrame {
         lblFornecedores = new javax.swing.JLabel();
         separador = new javax.swing.JSeparator();
         imgLogo = new javax.swing.JLabel();
-        lblNomeSistema = new javax.swing.JLabel();
+        areaDeTrabalho = new javax.swing.JPanel();
         painelBreadcrumb = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblBreadcrumb = new javax.swing.JLabel();
+        lblNomeSistema = new javax.swing.JLabel();
+        painelDinamico = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        setTitle("Sistema de Apoio ao Micro Empreendedor Individual Regional");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cadastro");
-        setUndecorated(true);
-
-        jPanel1.setBackground(new java.awt.Color(12, 180, 206));
-
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Cadastro de Usuário");
-
-        jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("NOME:");
-        jLabel2.setToolTipText("Cadastro");
-
-        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("SENHA:");
-
-        cdCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdCancelar.setText("Cadastrar");
-        cdCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdCancelarActionPerformed(evt);
-            }
-        });
-
-        CdTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome", "Senha"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        CdTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CdTableMouseClicked(evt);
-            }
-        });
-        jScrollPane3.setViewportView(CdTable);
-
-        cdExcluir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdExcluir.setText("Excluir");
-        cdExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdExcluirActionPerformed(evt);
-            }
-        });
-
-        cdAlterar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdAlterar.setText("Alterar");
-        cdAlterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdAlterarActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/user.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addContainerGap(293, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(24, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(247, 247, 247)
-                        .addComponent(jLabel4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane3)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addComponent(cdCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(cdAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(cdExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cdCancelar)
-                    .addComponent(cdExcluir)
-                    .addComponent(cdAlterar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-        );
-
-        painelLateral.setBackground(new java.awt.Color(12, 197, 205));
+        menuLateral.setBackground(new java.awt.Color(12, 197, 205));
 
         btnInicio.setBackground(new java.awt.Color(13, 155, 177));
+        btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnInicioMousePressed(evt);
+            }
+        });
 
         imgInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Home_25px.png"))); // NOI18N
 
@@ -260,11 +97,16 @@ public class TelaCadastro extends javax.swing.JFrame {
         );
         btnInicioLayout.setVerticalGroup(
             btnInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(imgInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
             .addComponent(lblInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         btnContasAPagar.setBackground(new java.awt.Color(12, 180, 206));
+        btnContasAPagar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnContasAPagarMousePressed(evt);
+            }
+        });
 
         lblContasAPagar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblContasAPagar.setForeground(new java.awt.Color(255, 255, 255));
@@ -288,10 +130,20 @@ public class TelaCadastro extends javax.swing.JFrame {
         );
 
         btnContasAReceber.setBackground(new java.awt.Color(12, 180, 206));
+        btnContasAReceber.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnContasAReceberMousePressed(evt);
+            }
+        });
 
         lblContasAReceber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblContasAReceber.setForeground(new java.awt.Color(255, 255, 255));
         lblContasAReceber.setText("Contas a Receber");
+        lblContasAReceber.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblContasAReceberMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnContasAReceberLayout = new javax.swing.GroupLayout(btnContasAReceber);
         btnContasAReceber.setLayout(btnContasAReceberLayout);
@@ -311,6 +163,11 @@ public class TelaCadastro extends javax.swing.JFrame {
         );
 
         btnCategorias.setBackground(new java.awt.Color(12, 180, 206));
+        btnCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnCategoriasMousePressed(evt);
+            }
+        });
 
         lblCategorias.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblCategorias.setForeground(new java.awt.Color(255, 255, 255));
@@ -334,6 +191,11 @@ public class TelaCadastro extends javax.swing.JFrame {
         );
 
         btnClientes.setBackground(new java.awt.Color(12, 180, 206));
+        btnClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnClientesMousePressed(evt);
+            }
+        });
 
         lblClientes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClientes.setForeground(new java.awt.Color(255, 255, 255));
@@ -357,12 +219,22 @@ public class TelaCadastro extends javax.swing.JFrame {
         );
 
         btnSair.setBackground(new java.awt.Color(12, 180, 206));
+        btnSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSairMousePressed(evt);
+            }
+        });
 
         imgSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Sign_Out_25px.png"))); // NOI18N
 
         lblSair.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblSair.setForeground(new java.awt.Color(255, 255, 255));
         lblSair.setText("Sair");
+        lblSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblSairMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnSairLayout = new javax.swing.GroupLayout(btnSair);
         btnSair.setLayout(btnSairLayout);
@@ -382,10 +254,15 @@ public class TelaCadastro extends javax.swing.JFrame {
         );
 
         btnFornecedores.setBackground(new java.awt.Color(12, 180, 206));
+        btnFornecedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnFornecedoresMousePressed(evt);
+            }
+        });
 
         lblFornecedores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblFornecedores.setForeground(new java.awt.Color(255, 255, 255));
-        lblFornecedores.setText("Fornecedores");
+        lblFornecedores.setText("Relatório de Estoque");
 
         javax.swing.GroupLayout btnFornecedoresLayout = new javax.swing.GroupLayout(btnFornecedores);
         btnFornecedores.setLayout(btnFornecedoresLayout);
@@ -396,21 +273,21 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addComponent(imgFornecedores)
                 .addGap(18, 18, 18)
                 .addComponent(lblFornecedores)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btnFornecedoresLayout.setVerticalGroup(
             btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(imgFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
         );
 
         imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Stocks_64px.png"))); // NOI18N
 
-        javax.swing.GroupLayout painelLateralLayout = new javax.swing.GroupLayout(painelLateral);
-        painelLateral.setLayout(painelLateralLayout);
-        painelLateralLayout.setHorizontalGroup(
-            painelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout menuLateralLayout = new javax.swing.GroupLayout(menuLateral);
+        menuLateral.setLayout(menuLateralLayout);
+        menuLateralLayout.setHorizontalGroup(
+            menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -419,14 +296,14 @@ public class TelaCadastro extends javax.swing.JFrame {
             .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnFornecedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(imgLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(painelLateralLayout.createSequentialGroup()
+            .addGroup(menuLateralLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
-        painelLateralLayout.setVerticalGroup(
-            painelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelLateralLayout.createSequentialGroup()
+        menuLateralLayout.setVerticalGroup(
+            menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuLateralLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(imgLogo)
                 .addGap(18, 18, 18)
@@ -443,20 +320,19 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(btnFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        lblNomeSistema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblNomeSistema.setForeground(new java.awt.Color(153, 153, 153));
-        lblNomeSistema.setText("Sistema de Apoio ao Microempreendedor Individual");
+        areaDeTrabalho.setBackground(new java.awt.Color(255, 255, 255));
+        areaDeTrabalho.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         painelBreadcrumb.setBackground(new java.awt.Color(102, 102, 102));
 
-        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("Estou na Tela de Cadastro de Usuário");
+        lblBreadcrumb.setBackground(new java.awt.Color(204, 204, 204));
+        lblBreadcrumb.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblBreadcrumb.setForeground(new java.awt.Color(153, 153, 153));
+        lblBreadcrumb.setText("Estou na Tela de Produtos");
 
         javax.swing.GroupLayout painelBreadcrumbLayout = new javax.swing.GroupLayout(painelBreadcrumb);
         painelBreadcrumb.setLayout(painelBreadcrumbLayout);
@@ -464,92 +340,152 @@ public class TelaCadastro extends javax.swing.JFrame {
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelBreadcrumbLayout.setVerticalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel6)
+                .addComponent(lblBreadcrumb)
                 .addContainerGap(108, Short.MAX_VALUE))
         );
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/fechar.png"))); // NOI18N
+        lblNomeSistema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblNomeSistema.setForeground(new java.awt.Color(153, 153, 153));
+        lblNomeSistema.setText("Sistema de Apoio ao Microempreendedor Individual");
+
+        painelDinamico.setBackground(new java.awt.Color(255, 255, 255));
+        painelDinamico.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        painelDinamico.setToolTipText("MayDay");
+        painelDinamico.setLayout(new java.awt.BorderLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Powered by Students of Estácio TV-Morena");
+
+        javax.swing.GroupLayout areaDeTrabalhoLayout = new javax.swing.GroupLayout(areaDeTrabalho);
+        areaDeTrabalho.setLayout(areaDeTrabalhoLayout);
+        areaDeTrabalhoLayout.setHorizontalGroup(
+            areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(painelBreadcrumb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(lblNomeSistema)
+                .addGap(0, 417, Short.MAX_VALUE))
+            .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        areaDeTrabalhoLayout.setVerticalGroup(
+            areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
+                .addComponent(lblNomeSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(painelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelBreadcrumb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNomeSistema)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(menuLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(areaDeTrabalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelLateral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNomeSistema)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(menuLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(areaDeTrabalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdCancelarActionPerformed
-        
-        DefaultTableModel dtmCadastro = (DefaultTableModel) CdTable.getModel();
-        Object[] dados = {txtnome.getText(),txtsenha.getText()};
-        dtmCadastro.addRow(dados);
+    private void btnContasAPagarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMousePressed
+        ContasAPagarPrincipal painelInicial = new ContasAPagarPrincipal();
+        lblBreadcrumb.setText("Gerência de Contas a Pagar");
+        painelDinamico.removeAll();
+        painelDinamico.add(painelInicial);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_btnContasAPagarMousePressed
 
+    private void btnContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMousePressed
+        ContasAReceberPrincipal painelInicialContasReceber = new ContasAReceberPrincipal();
+        lblBreadcrumb.setText("Gerência de Contas a Receber");
+        painelDinamico.removeAll();
+        painelDinamico.add(painelInicialContasReceber);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_btnContasAReceberMousePressed
+
+    private void btnInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMousePressed
+        ExemploPopulaTabela exemplo = new ExemploPopulaTabela();
+        lblBreadcrumb.setText("Gerência de Contas a Pagar");
+        painelDinamico.removeAll();
+        painelDinamico.add(exemplo);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+
+    }//GEN-LAST:event_btnInicioMousePressed
+
+    private void btnClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMousePressed
+        ClientePrincipal gerenciaCliente = new ClientePrincipal();
+        lblBreadcrumb.setText("Gerência de Clientes");
+        painelDinamico.removeAll();
+        painelDinamico.add(gerenciaCliente);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_btnClientesMousePressed
+
+    private void btnFornecedoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedoresMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cdCancelarActionPerformed
+        RelatorioDeEstoquePrincipal relatorioDeEstoque = new RelatorioDeEstoquePrincipal();
+        lblBreadcrumb.setText("Relatório de Estoque");
+        painelDinamico.removeAll();
+        painelDinamico.add(relatorioDeEstoque);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_btnFornecedoresMousePressed
 
-    private void cdExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdExcluirActionPerformed
-        
-    //System.out.println("Usuario Selecionado: "+CdTable.getSelectedRow());        // TODO add your handling code here:
-        if(CdTable.getSelectedRow()!= -1){
-        DefaultTableModel dtmCadastro = (DefaultTableModel) CdTable.getModel();
-        dtmCadastro.removeRow(CdTable.getSelectedRow());
-    }else{
-            JOptionPane.showMessageDialog(null,"Selecione um Usuario para Excluir!");
-        }
-        
-        
-    }//GEN-LAST:event_cdExcluirActionPerformed
+    private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
+        CategoriaPrincipal gerenciaCliente = new CategoriaPrincipal();
+        lblBreadcrumb.setText("Gerência de Clientes");
+        painelDinamico.removeAll();
+        painelDinamico.add(gerenciaCliente);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_btnCategoriasMousePressed
 
-    private void CdTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CdTableMouseClicked
-             if(CdTable.getSelectedRow() != -1){
-            
-            txtnome.setText(CdTable.getValueAt(CdTable.getSelectedRow(),0).toString());// TODO add your handling code here:
-            txtsenha.setText(CdTable.getValueAt(CdTable.getSelectedRow(),1).toString());// TODO add your handling code here:
-    }        // TODO add your handling code here:
-    }//GEN-LAST:event_CdTableMouseClicked
+    private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
+        System.exit(0);
+    }//GEN-LAST:event_lblSairMousePressed
 
-    private void cdAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdAlterarActionPerformed
-        if(CdTable.getSelectedRow() != -1){
-            CdTable.setValueAt(txtnome.getText(),CdTable.getSelectedRow() , 0);
-            CdTable.setValueAt(txtsenha.getText(),CdTable.getSelectedRow() , 1);
-        }
-        
+    private void btnSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMousePressed
+        System.exit(0);
+    }//GEN-LAST:event_btnSairMousePressed
 
-
+    private void lblContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblContasAReceberMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cdAlterarActionPerformed
+        ContasAReceberPrincipal painelInicialContasReceber = new ContasAReceberPrincipal();
+        lblBreadcrumb.setText("Gerência de Contas a Receber");
+        painelDinamico.removeAll();
+        painelDinamico.add(painelInicialContasReceber);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_lblContasAReceberMousePressed
 
     /**
      * @param args the command line arguments
@@ -568,14 +504,26 @@ public class TelaCadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -584,13 +532,15 @@ public class TelaCadastro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadastro().setVisible(true);
+                JFrame sistema = new Sistema();
+                sistema.setVisible(true);
             }
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable CdTable;
+    private javax.swing.JPanel areaDeTrabalho;
     private javax.swing.JPanel btnCategorias;
     private javax.swing.JPanel btnClientes;
     private javax.swing.JPanel btnContasAPagar;
@@ -598,9 +548,6 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JPanel btnFornecedores;
     private javax.swing.JPanel btnInicio;
     private javax.swing.JPanel btnSair;
-    private javax.swing.JButton cdAlterar;
-    private javax.swing.JButton cdCancelar;
-    private javax.swing.JButton cdExcluir;
     private javax.swing.JLabel imgCategorias;
     private javax.swing.JLabel imgClientes;
     private javax.swing.JLabel imgContasAPagar;
@@ -610,17 +557,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel imgLogo;
     private javax.swing.JLabel imgSair;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JLabel lblBreadcrumb;
     private javax.swing.JLabel lblCategorias;
     private javax.swing.JLabel lblClientes;
     private javax.swing.JLabel lblContasAPagar;
@@ -629,16 +566,9 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel lblInicio;
     private javax.swing.JLabel lblNomeSistema;
     private javax.swing.JLabel lblSair;
+    private javax.swing.JPanel menuLateral;
     private javax.swing.JPanel painelBreadcrumb;
-    private javax.swing.JPanel painelLateral;
+    private javax.swing.JPanel painelDinamico;
     private javax.swing.JSeparator separador;
-    private javax.swing.JTextField txtnome;
-    private javax.swing.JPasswordField txtsenha;
     // End of variables declaration//GEN-END:variables
-
-    private static class DefautTableModel {
-
-        public DefautTableModel() {
-        }
-    }
 }

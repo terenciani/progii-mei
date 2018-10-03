@@ -8,6 +8,7 @@ package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.model.Categoria;
 import br.estacio.mei.dao.CategoriaDao;
+import br.estacio.mei.visao.categoria.BancoSingleton;
 import java.util.ArrayList;
 
 /**
@@ -20,23 +21,20 @@ public class CategoriaDaoEstatica implements CategoriaDao {
 
     @Override
     public ArrayList<Categoria> buscarCategoria() {
-        for (Categoria categoria: listaCategoria){
-            //.listarCategoria
-        }
-        return listaCategoria;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        return BancoSingleton.getInstance().tabelaCategorias;
     }
 
     @Override
     public Categoria salvarCategoria(Categoria categoria) {
-        listaCategoria.add(categoria);
+        BancoSingleton.getInstance().tabelaCategorias.add(categoria);
         return categoria;
         
     }
 
     @Override
     public Categoria atualizarCategoria(Categoria categoria) {
-        
+        BancoSingleton.getInstance().tabelaCategorias.get(0);
         return categoria;
         
     }

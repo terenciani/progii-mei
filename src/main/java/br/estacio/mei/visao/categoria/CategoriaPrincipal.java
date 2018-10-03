@@ -7,21 +7,44 @@ package br.estacio.mei.visao.categoria;
 
 import br.estacio.mei.dao.CategoriaDao;
 import br.estacio.mei.dao.implementacao.CategoriaDaoEstatica;
+import br.estacio.mei.model.Categoria;
+import java.awt.Component;
+import java.awt.Container;
+import java.util.ArrayList;
+import javax.lang.model.util.Elements;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir Orico)
+ * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir
+ * Orico)
  */
-public class TelaPrincipalCategoria extends javax.swing.JPanel {
+public class CategoriaPrincipal extends javax.swing.JPanel {
+
     CategoriaDao categoriaDao = new CategoriaDaoEstatica();
+    Categoria categoria = new Categoria();
 
     /**
      * Creates new form TelaPrincipalCategoria
      */
-    public TelaPrincipalCategoria() {
+    public CategoriaPrincipal() {
         initComponents();
         panelCategAcao.setVisible(false);
-        
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
+        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
+
+        for (int i=0; i< listaDeCategoria.size();i++)
+        {
+            Categoria mostraCategoria = listaDeCategoria.get(i);
+            Object[] dadosLinha = new Object[2];
+            dadosLinha[0] = mostraCategoria.getCodigo();
+            dadosLinha[1] = mostraCategoria.getDescricao();
+            modeloDeColunasDaTabela.addRow(dadosLinha);
+        }
+        jTblCategoria.getTableHeader();
+
     }
 
     /**
@@ -38,7 +61,7 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
         textCampoEntradaBusca = new javax.swing.JTextField();
         botaoBuscar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTblCategoria = new javax.swing.JTable();
         panelCategAcao = new javax.swing.JPanel();
         botaoConfirmar = new javax.swing.JButton();
         botaoSair = new javax.swing.JButton();
@@ -72,7 +95,7 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTblCategoria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -83,7 +106,7 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
                 "Código", "Descrição"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTblCategoria);
 
         panelCategAcao.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         panelCategAcao.setToolTipText("");
@@ -303,21 +326,47 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
         labelAcaoUsuario.setText("Inclusão");
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
-        
+
     }//GEN-LAST:event_botaoIncluirActionPerformed
 
     private void botaoFecharCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFecharCategActionPerformed
-        //Fechar o panelDinamico.removeAll();
-        
-        
+        // O método getParent pega o pai de um elemento, no caso
+        // pegou dois paneis acima do atual. O metodo getComponents
+        // retorna todos os elementos dentro de um painel e retorna um vetor de
+        // componentes
+        Component[] elements = this.getParent().getParent().getComponents();
+        // O primeiro elemento da lista é o JPanelBreadCrumb, assim, faço 
+        // uma verificação se realmente é um JPanel
+        if (elements[0] instanceof JPanel) {
+            // Converto o componente para JPanel
+            JPanel painel = (JPanel) elements[0];
+            // Pego a lsita de componentes dentro do JPanel BreadCrumb
+            Component[] elementos = painel.getComponents();
+            // Faço uma verficação se é uma instancia do JLabel
+            if (elementos[0] instanceof JLabel) {
+                // Converto o componente para JLabel
+                JLabel label = (JLabel) elementos[0];
+                //Sobrescreve o Label
+                label.setText("Tela Principal");
+            }
+        }
+        //Fechar TelaPrincipalCategoria
+        Container jPanel = this.getParent();
+        jPanel.removeAll();
+        jPanel.revalidate();
+        jPanel.repaint();
+
     }//GEN-LAST:event_botaoFecharCategActionPerformed
 
     private void botaoImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImprimirActionPerformed
         // TODO add your handling code here:
+
+
     }//GEN-LAST:event_botaoImprimirActionPerformed
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
         // TODO add your handling code here:
+        String opcao = "Exc";
         botaoConfirmar.setText("Confirmar");
         labelAcaoUsuario.setText("Exclusão");
         panelCategAcao.setVisible(true);
@@ -325,9 +374,21 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
 
     private void botaoAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarActionPerformed
         // TODO add your handling code here:
+        String opcao = "Alt";
         labelAcaoUsuario.setText("Alteração");
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
+        int dadosLinha = jTblCategoria.getSelectedRow();
+        int codigo = (int) jTblCategoria.getModel().getValueAt(dadosLinha, 0);
+        String descricao = (String) jTblCategoria.getModel().getValueAt(dadosLinha, 1);
+        //JPanel onde tem a tabela
+        DefaultTableModel table = (DefaultTableModel) jTblCategoria.getModel();
+
+        if (jTblCategoria.getSelectedRow() >= 0) {
+            //clienteEdit = table.getValueAt(tbListaClientes.getSelectedRow(), 1).toString();
+
+        }
+        
     }//GEN-LAST:event_botaoAlterarActionPerformed
 
     private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed
@@ -354,6 +415,29 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
 
     private void botaoBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBuscarActionPerformed
         // TODO add your handling code here:
+        ((DefaultTableModel) jTblCategoria.getModel()).setRowCount(0);
+
+        categoriaDao.buscarCategoria();
+
+        DefaultTableModel modeloDeColuna = (DefaultTableModel) jTblCategoria.getModel();
+        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
+
+        for (int i = 0; i < listaDeCategoria.size(); i++) {
+            Categoria mostraCategoria = listaDeCategoria.get(i);
+            String descricao = textCampoEntradaBusca.getText();
+
+            if (mostraCategoria.getDescricao().contains(descricao)) {
+
+                Object[] dadosLinha = new Object[2];
+
+                dadosLinha[0] = mostraCategoria.getCodigo();
+                dadosLinha[1] = mostraCategoria.getDescricao();
+                modeloDeColuna.addRow(dadosLinha);
+            } else {
+                //TERMINAR LOGICA SENÃO
+            }
+        }
+
     }//GEN-LAST:event_botaoBuscarActionPerformed
 
 
@@ -367,7 +451,7 @@ public class TelaPrincipalCategoria extends javax.swing.JPanel {
     private javax.swing.JButton botaoIncluir;
     private javax.swing.JButton botaoSair;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTblCategoria;
     private javax.swing.JLabel labelAcaoUsuario;
     private javax.swing.JLabel labelBuscaCate;
     private javax.swing.JLabel labelCodigo;

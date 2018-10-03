@@ -15,24 +15,37 @@ import java.util.ArrayList;
  */
 public class FornecedorDaoEstatica implements FornecedorDao{
     
+    ArrayList<Fornecedor> listaFornecedor = new ArrayList<>();
+            
+    
     @Override
     public Fornecedor salvarFornecedor(Fornecedor fornecedor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        listaFornecedor.add(fornecedor);
+        return fornecedor;
     }
 
     @Override
-    public Fornecedor alterarFornecedor(Fornecedor categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Fornecedor alterarFornecedor(Fornecedor fornecedor) {
+        for(int i = 0; i < listaFornecedor.size(); i++){
+            if(listaFornecedor.get(i).getCodigo() == fornecedor.getCodigo()){
+                listaFornecedor.set(i, fornecedor);
+            }
+        }
+        
+        return fornecedor;
     }
 
     @Override
-    public boolean excluirFornecedor(Fornecedor categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean excluirFornecedor(Fornecedor fornecedor) {
+        if(listaFornecedor.remove(fornecedor))
+           return true;
+        else
+            return false;
     }
 
     @Override
     public ArrayList<br.estacio.mei.model.Fornecedor> listarFornecedores() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return listaFornecedor;
     }
     
 }

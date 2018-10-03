@@ -12,6 +12,7 @@ import br.estacio.mei.dao.implementacao.EnderecoDaoEstatico;
 import br.estacio.mei.model.Cliente;
 import br.estacio.mei.model.Endereco;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,17 +23,42 @@ public class InformaDadosCliente extends javax.swing.JPanel {
 
     ClienteDao clienteDao = new ClienteDaoEstatico();
     EnderecoDao enderecoDao = new EnderecoDaoEstatico();
-    
+    int codigoCliente = 0;
+    String tipo= "";
     /**
      * Creates new form testeFechaTela
      */
     public InformaDadosCliente() {
         initComponents();
-        GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
-     
+
+    }
+
+    public InformaDadosCliente(int codigo, String tipo) {
+        initComponents();
         
-    
-        
+        this.tipo = tipo;
+        codigoCliente = codigo;
+        txtCodigo.setText("" + codigo);
+        txtCodigo.setEditable(false);
+        txtCodigo.setBackground(new Color(170, 170, 170));
+        if (tipo.equals("update")) {
+            clienteDao.buscarClientes();
+            enderecoDao.buscarEndereco();
+
+            ArrayList<Cliente> buscarCliente = clienteDao.buscarClientes();
+            for (int i = 0; i < buscarCliente.size(); i++) {
+                Cliente editarCliente = buscarCliente.get(i);
+
+                if (editarCliente.getCodigo() == codigoCliente) {
+                    txtNome.setText(editarCliente.getNome());
+                    txtCpfCNPJ.setText(editarCliente.getCpfCnpj());
+                    txtNomeFantasia.setText(editarCliente.getNomeFantasia());
+                    TxtInscrEstadual.setText(editarCliente.getInscrEstadual());
+                    txtTelefone.setText("" + editarCliente.getTelefone());
+                    txtEmail.setText(editarCliente.getEmail());
+                }
+            }
+        }
     }
 
     /**
@@ -82,7 +108,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
 
         painelDinamico.setLayout(new java.awt.BorderLayout());
 
-        jLabel_codigo.setText("Código:");
+        jLabel_codigo.setText("Código: *");
 
         jLabel_cpfCnpj.setText("CPF / CNPJ: *");
 
@@ -280,17 +306,16 @@ public class InformaDadosCliente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
+        ClientePrincipal gerenciaCliente = new ClientePrincipal();
         painelDinamico.removeAll();
         painelDinamico.add(gerenciaCliente);
         painelDinamico.validate();
         painelDinamico.repaint();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    
 
     private void txtConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmaActionPerformed
-        
+
         Endereco enderecoCliente = new Endereco();
         if (txtCpfCNPJ.getText().isEmpty()) {
             txtCpfCNPJ.setBackground(Color.red);
@@ -344,15 +369,18 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                 enderecoCliente.setCep(Integer.parseInt(txtCep.getText()));
             }
 
-            clienteDao.salvarCliente(cliente);
-            enderecoDao.salvarEnderecoCliente(enderecoCliente);
+            if (this.tipo.equals("insert") ) {
+                clienteDao.salvarCliente(cliente);
+                enderecoDao.salvarEnderecoCliente(enderecoCliente);
 
-            //Imprime Testes
-            System.out.println(cliente.toString());
-            System.out.println(enderecoCliente.toString());
+                JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
+            } else {
+                clienteDao.atualizarCliente(cliente, codigoCliente);
+                enderecoDao.alterarEndereco(enderecoCliente);
+                JOptionPane.showMessageDialog(null, "Cliente Atualizado!");
+            }
 
-            JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
-            GerenciamentoCliente gerenciaCliente = new GerenciamentoCliente();
+            ClientePrincipal gerenciaCliente = new ClientePrincipal();
             painelDinamico.removeAll();
             painelDinamico.add(gerenciaCliente);
             painelDinamico.validate();
@@ -362,15 +390,17 @@ public class InformaDadosCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_txtConfirmaActionPerformed
 
     private void txtCpfCNPJMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCpfCNPJMouseClicked
-        txtCpfCNPJ.setBackground(Color.white);
-        txtCpfCNPJ.setText("");
-
+        if (codigoCliente == 0) {
+            txtCpfCNPJ.setBackground(Color.white);
+            txtCpfCNPJ.setText("");
+        }
     }//GEN-LAST:event_txtCpfCNPJMouseClicked
 
     private void txtNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomeMouseClicked
-        txtNome.setBackground(Color.white);
-        txtNome.setText("");
-
+        if (codigoCliente == 0) {
+            txtNome.setBackground(Color.white);
+            txtNome.setText("");
+        }
     }//GEN-LAST:event_txtNomeMouseClicked
 
 
