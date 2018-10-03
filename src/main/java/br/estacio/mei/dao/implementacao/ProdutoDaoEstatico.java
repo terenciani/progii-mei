@@ -53,7 +53,7 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
         for (int i = 0; i < todosProdutos.size(); i++) {
-            if (todosProdutos.get(i).getNome().equals(filtro)) {
+            if (todosProdutos.get(i).getNome().contains(filtro)) {
                 produtos.add(todosProdutos.get(i));
             }
         }
@@ -65,7 +65,7 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
         for (int i = 0; i < todosProdutos.size(); i++) {
-             if (todosProdutos.get(i).getFornecedor().getRazaoSocial().equals(filtro)) {
+             if (todosProdutos.get(i).getFornecedor().getRazaoSocial().contains(filtro)) {
                 produtos.add(todosProdutos.get(i));
             }
         }
