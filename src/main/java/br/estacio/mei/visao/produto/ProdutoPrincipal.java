@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.br.estacio.mei.vision;
+package br.estacio.mei.visao.produto;
 
 /**
  *
  * @author Marcelo
  */
-public class InserirProdutoMenuLateral extends javax.swing.JFrame {
+public class ProdutoPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form LayoutBase
      */
-    public InserirProdutoMenuLateral() {
+    public ProdutoPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -133,8 +133,6 @@ public class InserirProdutoMenuLateral extends javax.swing.JFrame {
         lblInicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblInicio.setForeground(new java.awt.Color(255, 255, 255));
         lblInicio.setText("Início");
-
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\progii-mei2\\src\\main\\resources\\icones\\icons8_Home_25px.png")); // NOI18N
 
         javax.swing.GroupLayout btnInicioLayout = new javax.swing.GroupLayout(btnInicio);
         btnInicio.setLayout(btnInicioLayout);
@@ -256,8 +254,6 @@ public class InserirProdutoMenuLateral extends javax.swing.JFrame {
         lblSair.setForeground(new java.awt.Color(255, 255, 255));
         lblSair.setText("Sair");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\progii-mei2\\src\\main\\resources\\icones\\icons8_Sign_Out_25px.png")); // NOI18N
-
         javax.swing.GroupLayout btnSairLayout = new javax.swing.GroupLayout(btnSair);
         btnSair.setLayout(btnSairLayout);
         btnSairLayout.setHorizontalGroup(
@@ -303,8 +299,6 @@ public class InserirProdutoMenuLateral extends javax.swing.JFrame {
 
         imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Stocks_64px.png"))); // NOI18N
-
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\progii-mei2\\src\\main\\resources\\icones\\icons8_Stocks_64px.png")); // NOI18N
 
         javax.swing.GroupLayout painelLateralLayout = new javax.swing.GroupLayout(painelLateral);
         painelLateral.setLayout(painelLateralLayout);
@@ -353,25 +347,31 @@ public class InserirProdutoMenuLateral extends javax.swing.JFrame {
         );
 
         Inserir.setBackground(new java.awt.Color(12, 180, 206));
-        Inserir.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Inserir.setLayout(null);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        Inserir.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 70, -1));
+        Inserir.add(jTextField1);
+        jTextField1.setBounds(240, 40, 70, 22);
 
         jLabel1.setText("Código");
-        Inserir.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 40, 20));
+        Inserir.add(jLabel1);
+        jLabel1.setBounds(200, 40, 40, 20);
 
         jLabel2.setText("Nome");
-        Inserir.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 30, 20));
-        Inserir.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 200, 20));
+        Inserir.add(jLabel2);
+        jLabel2.setBounds(410, 40, 30, 20);
+        Inserir.add(jTextField2);
+        jTextField2.setBounds(440, 40, 200, 20);
 
         jLabel3.setText("Quantidade");
-        Inserir.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, -1, 20));
-        Inserir.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, 50, 20));
+        Inserir.add(jLabel3);
+        jLabel3.setBounds(650, 40, 65, 20);
+        Inserir.add(jTextField3);
+        jTextField3.setBounds(710, 40, 50, 20);
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setText("Inserir Produto");
@@ -380,23 +380,32 @@ public class InserirProdutoMenuLateral extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        Inserir.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, -1));
+        Inserir.add(jButton1);
+        jButton1.setBounds(450, 390, 117, 25);
 
         jLabel4.setText("Valor Atual");
-        Inserir.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, 20));
-        Inserir.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 50, -1));
+        Inserir.add(jLabel4);
+        jLabel4.setBounds(200, 120, 63, 20);
+        Inserir.add(jTextField4);
+        jTextField4.setBounds(260, 120, 50, 22);
 
         jLabel5.setText("Valor Antigo");
-        Inserir.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, 20));
-        Inserir.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 50, -1));
+        Inserir.add(jLabel5);
+        jLabel5.setBounds(400, 120, 70, 20);
+        Inserir.add(jTextField5);
+        jTextField5.setBounds(470, 120, 50, 22);
 
         jLabel7.setText("Lucro %");
-        Inserir.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, -1, 20));
-        Inserir.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, 60, -1));
+        Inserir.add(jLabel7);
+        jLabel7.setBounds(650, 120, 47, 20);
+        Inserir.add(jTextField6);
+        jTextField6.setBounds(700, 120, 60, 22);
 
         jLabel8.setText("Descrição");
-        Inserir.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, -1, 20));
-        Inserir.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 470, 70));
+        Inserir.add(jLabel8);
+        jLabel8.setBounds(210, 260, 55, 20);
+        Inserir.add(jTextField7);
+        jTextField7.setBounds(270, 260, 470, 70);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -486,13 +495,13 @@ public class InserirProdutoMenuLateral extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InserirProdutoMenuLateral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProdutoPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InserirProdutoMenuLateral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProdutoPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InserirProdutoMenuLateral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProdutoPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InserirProdutoMenuLateral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProdutoPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -502,7 +511,7 @@ public class InserirProdutoMenuLateral extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InserirProdutoMenuLateral().setVisible(true);
+                new ProdutoPrincipal().setVisible(true);
             }
         });
     }

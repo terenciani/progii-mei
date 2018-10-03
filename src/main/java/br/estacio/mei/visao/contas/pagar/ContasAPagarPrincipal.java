@@ -6,7 +6,7 @@
 package br.estacio.mei.visao.contas.pagar;
 
 import br.estacio.mei.dao.ContasAPagarDao;
-import br.estacio.mei.dao.implementacao.ContasAPagarDaoEstatico;
+import br.estacio.mei.dao.implementacao.ContasAPagarDaoEstatica;
 import br.estacio.mei.model.ContasAPagar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * @author aluno
  */
 public class ContasAPagarPrincipal extends javax.swing.JPanel {
-    ContasAPagarDao  contasAPagar = new ContasAPagarDaoEstatico();
+    ContasAPagarDao  daoContasAPagar = new ContasAPagarDaoEstatica();
     /**
      * Creates new form ContasAPagarPrincipal
      */
@@ -256,9 +256,8 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
 
     private void BexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BexcluirActionPerformed
         ContasAPagar contasApagar = new ContasAPagar();
-        contasApagar.setText(" ");
         
-        contasAPagar.excluirContasApagar(contasApagar);
+        daoContasAPagar.excluirContasApagar(contasApagar);
         if(jTabelaP.getSelectedRow() != -1){
             DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
             dtmContas.removeRow(jTabelaP.getSelectedRow());
@@ -270,9 +269,8 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
 
     private void BeditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BeditarActionPerformed
         ContasAPagar contasApagar = new ContasAPagar();
-        contasApagar.setText(" ");
         
-        contasAPagar.atualizarContasApagar(contasApagar);
+        daoContasAPagar.atualizarContasApagar(contasApagar);
         if(jTabelaP.getSelectedRow() != -1){
             jTabelaP.setValueAt(txtdtv.getText(), jTabelaP.getSelectedRow(), 0);
             jTabelaP.setValueAt(txtdesc.getText(), jTabelaP.getSelectedRow(), 1);
@@ -286,12 +284,11 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
 
     private void bCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarActionPerformed
         ContasAPagar contasApagar = new ContasAPagar();
-        contasApagar.setText(" ");
         
         DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
         
         
-        contasAPagar.salvarContasApagar(contasApagar);
+        daoContasAPagar.salvarContasApagar(contasApagar);
         Object[] dados = {txtdtv.getText(),txtdesc.getText(),txtv.getText(),txtdtp.getText(),txtcod.getText(),txtstatus.getText()};
         dtmContas.addRow(dados);
 

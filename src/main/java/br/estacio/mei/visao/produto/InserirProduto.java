@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.br.estacio.mei.vision;
+package br.estacio.mei.visao.produto;
 
 /**
  *
@@ -48,25 +48,31 @@ public class InserirProduto extends javax.swing.JFrame {
         setTitle("Inserir Novo Produto");
 
         Inserir.setBackground(new java.awt.Color(12, 180, 206));
-        Inserir.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Inserir.setLayout(null);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        Inserir.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 70, -1));
+        Inserir.add(jTextField1);
+        jTextField1.setBounds(70, 40, 70, 22);
 
         jLabel1.setText("Código");
-        Inserir.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 40, 20));
+        Inserir.add(jLabel1);
+        jLabel1.setBounds(30, 40, 40, 20);
 
         jLabel2.setText("Nome");
-        Inserir.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 30, 20));
-        Inserir.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 200, 20));
+        Inserir.add(jLabel2);
+        jLabel2.setBounds(170, 40, 30, 20);
+        Inserir.add(jTextField2);
+        jTextField2.setBounds(200, 40, 200, 20);
 
         jLabel3.setText("Quantidade");
-        Inserir.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, 20));
-        Inserir.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 50, 20));
+        Inserir.add(jLabel3);
+        jLabel3.setBounds(430, 40, 65, 20);
+        Inserir.add(jTextField3);
+        jTextField3.setBounds(490, 40, 50, 20);
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setText("Inserir Produto");
@@ -75,23 +81,32 @@ public class InserirProduto extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        Inserir.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
+        Inserir.add(jButton1);
+        jButton1.setBounds(250, 210, 117, 25);
 
         jLabel4.setText("Valor Atual");
-        Inserir.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 20));
-        Inserir.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 50, -1));
+        Inserir.add(jLabel4);
+        jLabel4.setBounds(30, 90, 63, 20);
+        Inserir.add(jTextField4);
+        jTextField4.setBounds(90, 90, 50, 22);
 
         jLabel5.setText("Valor Antigo");
-        Inserir.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, 20));
-        Inserir.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 50, -1));
+        Inserir.add(jLabel5);
+        jLabel5.setBounds(170, 90, 70, 20);
+        Inserir.add(jTextField5);
+        jTextField5.setBounds(230, 90, 50, 22);
 
         jLabel6.setText("Lucro %");
-        Inserir.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, 20));
-        Inserir.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 60, -1));
+        Inserir.add(jLabel6);
+        jLabel6.setBounds(300, 90, 47, 20);
+        Inserir.add(jTextField6);
+        jTextField6.setBounds(350, 90, 60, 22);
 
         jLabel7.setText("Descrição");
-        Inserir.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 20));
-        Inserir.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 470, 70));
+        Inserir.add(jLabel7);
+        jLabel7.setBounds(30, 130, 55, 20);
+        Inserir.add(jTextField7);
+        jTextField7.setBounds(80, 130, 470, 70);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

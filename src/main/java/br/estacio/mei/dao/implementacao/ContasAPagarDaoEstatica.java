@@ -13,42 +13,29 @@ import java.util.ArrayList;
  *
  * @author Marcelo
  */
-public class ContasAPagarDaoEstatica implements ContasAPagarDao{
+public class ContasAPagarDaoEstatica implements ContasAPagarDao {
 
-    public ContasAPagar salvarContasAPagar(ContasAPagar contasAPagar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    ArrayList<ContasAPagar> tabelaContasAPagar = new ArrayList<ContasAPagar>();
+
+    @Override
+    public ArrayList<ContasAPagar> buscarContasApagar() {
+        return tabelaContasAPagar;
     }
 
-    public ContasAPagar alterarContasAPagar(ContasAPagar contasAPagar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public ContasAPagar salvarContasApagar(ContasAPagar contasAPagar) {
+        tabelaContasAPagar.add(contasAPagar);
+        return contasAPagar;
     }
 
-    public boolean excluirContasAPagar(ContasAPagar contasAPagar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public ArrayList<br.estacio.mei.model.ContasAPagar> listarContasAPagars() {
+    @Override
+    public ContasAPagar atualizarContasApagar(ContasAPagar contasAPagar) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public ArrayList<ContasAPagar> buscarContasApagarDao() {
+    public boolean excluirContasApagar(ContasAPagar contasAPagar) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public ContasAPagar salvarContasApagarDao(ContasAPagarDao ContasApagarDao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public ContasAPagar atualizarContasApagarDao(ContasAPagarDao ContasApagarDao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean excluirContasApagarDao(ContasAPagarDao ContasApagarDao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
