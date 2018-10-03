@@ -58,8 +58,17 @@ public class Sistema extends javax.swing.JFrame {
         btnFornecedores = new javax.swing.JPanel();
         imgFornecedores = new javax.swing.JLabel();
         lblFornecedores = new javax.swing.JLabel();
+        lblFornecedores1 = new javax.swing.JLabel();
         separador = new javax.swing.JSeparator();
         imgLogo = new javax.swing.JLabel();
+        btnFornecedores1 = new javax.swing.JPanel();
+        imgFornecedores1 = new javax.swing.JLabel();
+        lblFornecedores2 = new javax.swing.JLabel();
+        lblFornecedores3 = new javax.swing.JLabel();
+        btnFornecedores2 = new javax.swing.JPanel();
+        imgFornecedores2 = new javax.swing.JLabel();
+        lblFornecedores4 = new javax.swing.JLabel();
+        lblFornecedores5 = new javax.swing.JLabel();
         areaDeTrabalho = new javax.swing.JPanel();
         painelBreadcrumb = new javax.swing.JPanel();
         lblBreadcrumb = new javax.swing.JLabel();
@@ -257,27 +266,119 @@ public class Sistema extends javax.swing.JFrame {
 
         lblFornecedores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblFornecedores.setForeground(new java.awt.Color(255, 255, 255));
-        lblFornecedores.setText("Relatório de Estoque");
+        lblFornecedores.setText("Relatorio de Estoque");
+
+        lblFornecedores1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblFornecedores1.setForeground(new java.awt.Color(255, 255, 255));
+        lblFornecedores1.setText("Compras");
 
         javax.swing.GroupLayout btnFornecedoresLayout = new javax.swing.GroupLayout(btnFornecedores);
         btnFornecedores.setLayout(btnFornecedoresLayout);
         btnFornecedoresLayout.setHorizontalGroup(
             btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnFornecedoresLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgFornecedores)
-                .addGap(18, 18, 18)
-                .addComponent(lblFornecedores)
+                .addGroup(btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btnFornecedoresLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(imgFornecedores)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblFornecedores))
+                    .addGroup(btnFornecedoresLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(lblFornecedores1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btnFornecedoresLayout.setVerticalGroup(
             btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(imgFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addGroup(btnFornecedoresLayout.createSequentialGroup()
+                .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblFornecedores1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
         );
 
         imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Stocks_64px.png"))); // NOI18N
+
+        btnFornecedores1.setBackground(new java.awt.Color(12, 180, 206));
+        btnFornecedores1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnFornecedores1MousePressed(evt);
+            }
+        });
+
+        lblFornecedores2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblFornecedores2.setForeground(new java.awt.Color(255, 255, 255));
+        lblFornecedores2.setText("Vendas");
+
+        lblFornecedores3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblFornecedores3.setForeground(new java.awt.Color(255, 255, 255));
+        lblFornecedores3.setText("Relatório de Estoque");
+
+        javax.swing.GroupLayout btnFornecedores1Layout = new javax.swing.GroupLayout(btnFornecedores1);
+        btnFornecedores1.setLayout(btnFornecedores1Layout);
+        btnFornecedores1Layout.setHorizontalGroup(
+            btnFornecedores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnFornecedores1Layout.createSequentialGroup()
+                .addGroup(btnFornecedores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btnFornecedores1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(imgFornecedores1)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblFornecedores2))
+                    .addGroup(btnFornecedores1Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(lblFornecedores3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnFornecedores1Layout.setVerticalGroup(
+            btnFornecedores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgFornecedores1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(btnFornecedores1Layout.createSequentialGroup()
+                .addComponent(lblFornecedores2, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblFornecedores3, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+        );
+
+        btnFornecedores2.setBackground(new java.awt.Color(12, 180, 206));
+        btnFornecedores2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnFornecedores2MousePressed(evt);
+            }
+        });
+
+        lblFornecedores4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblFornecedores4.setForeground(new java.awt.Color(255, 255, 255));
+        lblFornecedores4.setText("Vendas");
+
+        lblFornecedores5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblFornecedores5.setForeground(new java.awt.Color(255, 255, 255));
+        lblFornecedores5.setText("Relatório de Estoque");
+
+        javax.swing.GroupLayout btnFornecedores2Layout = new javax.swing.GroupLayout(btnFornecedores2);
+        btnFornecedores2.setLayout(btnFornecedores2Layout);
+        btnFornecedores2Layout.setHorizontalGroup(
+            btnFornecedores2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnFornecedores2Layout.createSequentialGroup()
+                .addGroup(btnFornecedores2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btnFornecedores2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(imgFornecedores2)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblFornecedores4))
+                    .addGroup(btnFornecedores2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(lblFornecedores5)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnFornecedores2Layout.setVerticalGroup(
+            btnFornecedores2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgFornecedores2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(btnFornecedores2Layout.createSequentialGroup()
+                .addComponent(lblFornecedores4, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblFornecedores5, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout menuLateralLayout = new javax.swing.GroupLayout(menuLateral);
         menuLateral.setLayout(menuLateralLayout);
@@ -295,6 +396,8 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
+            .addComponent(btnFornecedores1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnFornecedores2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         menuLateralLayout.setVerticalGroup(
             menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,7 +418,11 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(btnFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(btnFornecedores1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnFornecedores2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -478,6 +585,14 @@ public class Sistema extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSairMousePressed
 
+    private void btnFornecedores1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedores1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFornecedores1MousePressed
+
+    private void btnFornecedores2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedores2MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFornecedores2MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -523,6 +638,8 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel btnContasAPagar;
     private javax.swing.JPanel btnContasAReceber;
     private javax.swing.JPanel btnFornecedores;
+    private javax.swing.JPanel btnFornecedores1;
+    private javax.swing.JPanel btnFornecedores2;
     private javax.swing.JPanel btnInicio;
     private javax.swing.JPanel btnSair;
     private javax.swing.JLabel imgCategorias;
@@ -530,6 +647,8 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel imgContasAPagar;
     private javax.swing.JLabel imgContasAReceber;
     private javax.swing.JLabel imgFornecedores;
+    private javax.swing.JLabel imgFornecedores1;
+    private javax.swing.JLabel imgFornecedores2;
     private javax.swing.JLabel imgInicio;
     private javax.swing.JLabel imgLogo;
     private javax.swing.JLabel imgSair;
@@ -540,6 +659,11 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel lblContasAPagar;
     private javax.swing.JLabel lblContasAReceber;
     private javax.swing.JLabel lblFornecedores;
+    private javax.swing.JLabel lblFornecedores1;
+    private javax.swing.JLabel lblFornecedores2;
+    private javax.swing.JLabel lblFornecedores3;
+    private javax.swing.JLabel lblFornecedores4;
+    private javax.swing.JLabel lblFornecedores5;
     private javax.swing.JLabel lblInicio;
     private javax.swing.JLabel lblNomeSistema;
     private javax.swing.JLabel lblSair;
