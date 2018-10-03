@@ -58,13 +58,15 @@ public class Sistema extends javax.swing.JFrame {
         btnFornecedores = new javax.swing.JPanel();
         imgFornecedores = new javax.swing.JLabel();
         lblFornecedores = new javax.swing.JLabel();
+        btnVendas = new javax.swing.JPanel();
+        lblClientes1 = new javax.swing.JLabel();
         separador = new javax.swing.JSeparator();
         imgLogo = new javax.swing.JLabel();
         areaDeTrabalho = new javax.swing.JPanel();
         painelBreadcrumb = new javax.swing.JPanel();
         lblBreadcrumb = new javax.swing.JLabel();
         lblNomeSistema = new javax.swing.JLabel();
-        painelDinamico = new javax.swing.JPanel();
+        lblVendas = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setTitle("Sistema de Apoio ao Micro Empreendedor Individual Regional");
@@ -264,6 +266,31 @@ public class Sistema extends javax.swing.JFrame {
         lblFornecedores.setForeground(new java.awt.Color(255, 255, 255));
         lblFornecedores.setText("Relatório de Estoque");
 
+        btnVendas.setBackground(new java.awt.Color(12, 180, 206));
+        btnVendas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnVendasMousePressed(evt);
+            }
+        });
+
+        lblClientes1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblClientes1.setForeground(new java.awt.Color(255, 255, 255));
+        lblClientes1.setText("Vendas");
+
+        javax.swing.GroupLayout btnVendasLayout = new javax.swing.GroupLayout(btnVendas);
+        btnVendas.setLayout(btnVendasLayout);
+        btnVendasLayout.setHorizontalGroup(
+            btnVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnVendasLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(lblClientes1)
+                .addContainerGap(160, Short.MAX_VALUE))
+        );
+        btnVendasLayout.setVerticalGroup(
+            btnVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblClientes1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout btnFornecedoresLayout = new javax.swing.GroupLayout(btnFornecedores);
         btnFornecedores.setLayout(btnFornecedoresLayout);
         btnFornecedoresLayout.setHorizontalGroup(
@@ -274,11 +301,20 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lblFornecedores)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnFornecedoresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         btnFornecedoresLayout.setVerticalGroup(
             btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addGroup(btnFornecedoresLayout.createSequentialGroup()
+                .addGroup(btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imgFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -320,7 +356,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(btnFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -330,9 +366,9 @@ public class Sistema extends javax.swing.JFrame {
         painelBreadcrumb.setBackground(new java.awt.Color(102, 102, 102));
 
         lblBreadcrumb.setBackground(new java.awt.Color(204, 204, 204));
-        lblBreadcrumb.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblBreadcrumb.setForeground(new java.awt.Color(153, 153, 153));
-        lblBreadcrumb.setText("Estou na Tela de Produtos");
+        lblBreadcrumb.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblBreadcrumb.setForeground(new java.awt.Color(255, 255, 255));
+        lblBreadcrumb.setText("Tela de Vendas");
 
         javax.swing.GroupLayout painelBreadcrumbLayout = new javax.swing.GroupLayout(painelBreadcrumb);
         painelBreadcrumb.setLayout(painelBreadcrumbLayout);
@@ -340,25 +376,25 @@ public class Sistema extends javax.swing.JFrame {
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelBreadcrumbLayout.setVerticalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(lblBreadcrumb)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         lblNomeSistema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblNomeSistema.setForeground(new java.awt.Color(153, 153, 153));
         lblNomeSistema.setText("Sistema de Apoio ao Microempreendedor Individual");
 
-        painelDinamico.setBackground(new java.awt.Color(255, 255, 255));
-        painelDinamico.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        painelDinamico.setToolTipText("MayDay");
-        painelDinamico.setLayout(new java.awt.BorderLayout());
+        lblVendas.setBackground(new java.awt.Color(255, 255, 255));
+        lblVendas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblVendas.setToolTipText("MayDay");
+        lblVendas.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -378,7 +414,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -389,7 +425,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -416,57 +452,57 @@ public class Sistema extends javax.swing.JFrame {
     private void btnContasAPagarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMousePressed
         ContasAPagarPrincipal painelInicial = new ContasAPagarPrincipal();
         lblBreadcrumb.setText("Gerência de Contas a Pagar");
-        painelDinamico.removeAll();
-        painelDinamico.add(painelInicial);
-        painelDinamico.validate();
-        painelDinamico.repaint();
+        lblVendas.removeAll();
+        lblVendas.add(painelInicial);
+        lblVendas.validate();
+        lblVendas.repaint();
     }//GEN-LAST:event_btnContasAPagarMousePressed
 
     private void btnContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMousePressed
         ContasAReceberPrincipal painelInicialContasReceber = new ContasAReceberPrincipal();
         lblBreadcrumb.setText("Gerência de Contas a Receber");
-        painelDinamico.removeAll();
-        painelDinamico.add(painelInicialContasReceber);
-        painelDinamico.validate();
-        painelDinamico.repaint();
+        lblVendas.removeAll();
+        lblVendas.add(painelInicialContasReceber);
+        lblVendas.validate();
+        lblVendas.repaint();
     }//GEN-LAST:event_btnContasAReceberMousePressed
 
     private void btnInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMousePressed
         ExemploPopulaTabela exemplo = new ExemploPopulaTabela();
         lblBreadcrumb.setText("Gerência de Contas a Pagar");
-        painelDinamico.removeAll();
-        painelDinamico.add(exemplo);
-        painelDinamico.validate();
-        painelDinamico.repaint();
+        lblVendas.removeAll();
+        lblVendas.add(exemplo);
+        lblVendas.validate();
+        lblVendas.repaint();
 
     }//GEN-LAST:event_btnInicioMousePressed
 
     private void btnClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMousePressed
         ClientePrincipal gerenciaCliente = new ClientePrincipal();
         lblBreadcrumb.setText("Gerência de Clientes");
-        painelDinamico.removeAll();
-        painelDinamico.add(gerenciaCliente);
-        painelDinamico.validate();
-        painelDinamico.repaint();
+        lblVendas.removeAll();
+        lblVendas.add(gerenciaCliente);
+        lblVendas.validate();
+        lblVendas.repaint();
     }//GEN-LAST:event_btnClientesMousePressed
 
     private void btnFornecedoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedoresMousePressed
         // TODO add your handling code here:
         RelatorioDeEstoquePrincipal relatorioDeEstoque = new RelatorioDeEstoquePrincipal();
         lblBreadcrumb.setText("Relatório de Estoque");
-        painelDinamico.removeAll();
-        painelDinamico.add(relatorioDeEstoque);
-        painelDinamico.validate();
-        painelDinamico.repaint();
+        lblVendas.removeAll();
+        lblVendas.add(relatorioDeEstoque);
+        lblVendas.validate();
+        lblVendas.repaint();
     }//GEN-LAST:event_btnFornecedoresMousePressed
 
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
         CategoriaPrincipal gerenciaCliente = new CategoriaPrincipal();
         lblBreadcrumb.setText("Gerência de Clientes");
-        painelDinamico.removeAll();
-        painelDinamico.add(gerenciaCliente);
-        painelDinamico.validate();
-        painelDinamico.repaint();
+        lblVendas.removeAll();
+        lblVendas.add(gerenciaCliente);
+        lblVendas.validate();
+        lblVendas.repaint();
     }//GEN-LAST:event_btnCategoriasMousePressed
 
     private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
@@ -481,11 +517,15 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
         ContasAReceberPrincipal painelInicialContasReceber = new ContasAReceberPrincipal();
         lblBreadcrumb.setText("Gerência de Contas a Receber");
-        painelDinamico.removeAll();
-        painelDinamico.add(painelInicialContasReceber);
-        painelDinamico.validate();
-        painelDinamico.repaint();
+        lblVendas.removeAll();
+        lblVendas.add(painelInicialContasReceber);
+        lblVendas.validate();
+        lblVendas.repaint();
     }//GEN-LAST:event_lblContasAReceberMousePressed
+
+    private void btnVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVendasMousePressed
 
     /**
      * @param args the command line arguments
@@ -548,6 +588,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel btnFornecedores;
     private javax.swing.JPanel btnInicio;
     private javax.swing.JPanel btnSair;
+    private javax.swing.JPanel btnVendas;
     private javax.swing.JLabel imgCategorias;
     private javax.swing.JLabel imgClientes;
     private javax.swing.JLabel imgContasAPagar;
@@ -560,15 +601,16 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel lblBreadcrumb;
     private javax.swing.JLabel lblCategorias;
     private javax.swing.JLabel lblClientes;
+    private javax.swing.JLabel lblClientes1;
     private javax.swing.JLabel lblContasAPagar;
     private javax.swing.JLabel lblContasAReceber;
     private javax.swing.JLabel lblFornecedores;
     private javax.swing.JLabel lblInicio;
     private javax.swing.JLabel lblNomeSistema;
     private javax.swing.JLabel lblSair;
+    private javax.swing.JPanel lblVendas;
     private javax.swing.JPanel menuLateral;
     private javax.swing.JPanel painelBreadcrumb;
-    private javax.swing.JPanel painelDinamico;
     private javax.swing.JSeparator separador;
     // End of variables declaration//GEN-END:variables
 }

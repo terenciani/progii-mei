@@ -5,7 +5,9 @@
  */
 package br.estacio.mei.dao;
 
+
 import br.estacio.mei.model.Produto;
+
 import java.util.ArrayList;
 
 /**
@@ -17,4 +19,10 @@ public interface ProdutoDao {
     public Produto salvar(Produto produto);
     public boolean excluir(Produto produto);
     public Produto alterar(Produto produto);
+    public ArrayList<Produto> pesquisarPorCodigo(int filtro);
+    public ArrayList<Produto> pesquisarPorNome(String filtro);
+    public ArrayList<Produto> pesquisarPorForncedor(String filtro);
+    public ArrayList<Produto> pesquisarPorPrecoCompra(int filtro);
+    public ArrayList<Produto> pesquisarPorPrecoVenda(int filtro);
+    public ArrayList<Produto> pesquisarPorQtdEstoque(int filtro);
 }

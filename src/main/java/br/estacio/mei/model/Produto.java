@@ -17,6 +17,10 @@ public class Produto {
     private Fornecedor fornecedor;
     private double precoCompra;
     private double precoVenda;
+    private float valorAtual;
+    private float valorAntigo;
+    private double lucro;
+    private String descricao;
 
     public Produto() {
     }
@@ -76,6 +80,38 @@ public class Produto {
 
     public void setPrecoVenda(double precoVenda) {
         this.precoVenda = precoVenda;
+    }
+
+    public float getValorAtual() {
+        return valorAtual;
+    }
+
+    public void setValorAtual(float valorAtual) {
+        this.valorAtual = valorAtual;
+    }
+
+    public float getValorAntigo() {
+        return valorAntigo;
+    }
+
+    public void setValorAntigo(float valorAntigo) {
+        this.valorAntigo = valorAntigo;
+    }
+
+    public double getLucro() {
+        return lucro;
+    }
+
+    public void setLucro(double lucro) {
+        this.lucro = lucro;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
 }

@@ -5,6 +5,9 @@
  */
 package br.estacio.mei.visao.contas.pagar;
 
+import br.estacio.mei.dao.ContasAPagarDao;
+import br.estacio.mei.dao.implementacao.ContasAPagarDaoEstatica;
+import br.estacio.mei.model.ContasAPagar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -13,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * @author aluno
  */
 public class ContasAPagarPrincipal extends javax.swing.JPanel {
-
+    ContasAPagarDao  daoContasAPagar = new ContasAPagarDaoEstatica();
     /**
      * Creates new form ContasAPagarPrincipal
      */
@@ -47,7 +50,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         jTabelaP = new javax.swing.JTable();
         Bexcluir = new javax.swing.JButton();
         Beditar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        bCadastrar = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -131,11 +134,11 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save-button-interface-symbol-of-outlined-diskette_icon-icons.com_73167.png"))); // NOI18N
-        jButton1.setText("Cadastrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save-button-interface-symbol-of-outlined-diskette_icon-icons.com_73167.png"))); // NOI18N
+        bCadastrar.setText("Cadastrar");
+        bCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bCadastrarActionPerformed(evt);
             }
         });
 
@@ -147,7 +150,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(bCadastrar)
                         .addGap(18, 18, 18)
                         .addComponent(Beditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -212,10 +215,10 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
                     .addComponent(txtdesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtdtv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(bCadastrar)
                     .addComponent(Bexcluir)
                     .addComponent(Beditar))
                 .addGap(7, 7, 7))
@@ -252,7 +255,9 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_jTabelaPMouseClicked
 
     private void BexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BexcluirActionPerformed
-
+        ContasAPagar contasApagar = new ContasAPagar();
+        
+        daoContasAPagar.excluirContasApagar(contasApagar);
         if(jTabelaP.getSelectedRow() != -1){
             DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
             dtmContas.removeRow(jTabelaP.getSelectedRow());
@@ -263,6 +268,9 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_BexcluirActionPerformed
 
     private void BeditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BeditarActionPerformed
+        ContasAPagar contasApagar = new ContasAPagar();
+        
+        daoContasAPagar.atualizarContasApagar(contasApagar);
         if(jTabelaP.getSelectedRow() != -1){
             jTabelaP.setValueAt(txtdtv.getText(), jTabelaP.getSelectedRow(), 0);
             jTabelaP.setValueAt(txtdesc.getText(), jTabelaP.getSelectedRow(), 1);
@@ -274,8 +282,13 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_BeditarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarActionPerformed
+        ContasAPagar contasApagar = new ContasAPagar();
+        
         DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
+        
+        
+        daoContasAPagar.salvarContasApagar(contasApagar);
         Object[] dados = {txtdtv.getText(),txtdesc.getText(),txtv.getText(),txtdtp.getText(),txtcod.getText(),txtstatus.getText()};
         dtmContas.addRow(dados);
 
@@ -285,13 +298,13 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         txtdtp.setText(" ");
         txtcod.setText(" ");
         txtstatus.setText(" ");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bCadastrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Beditar;
     private javax.swing.JButton Bexcluir;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bCadastrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

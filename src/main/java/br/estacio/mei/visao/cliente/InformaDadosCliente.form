@@ -35,53 +35,30 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtNome" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
-                                  <Component id="txtCpfCNPJ" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
-                                  <Component id="txtConfirma" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_codigo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_cpfCnpj" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_nome" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_endereco" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_complemento" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_estado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_foneRes" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_email" min="-2" max="-2" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel_codigo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel_cpfCnpj" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel_nome" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblMsgCampoObrigatorio" alignment="0" min="-2" pref="290" max="-2" attributes="0"/>
-                                          <Component id="txtCodigo" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel_endereco" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel_complemento" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel_estado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                                      <Component id="txtRua" min="-2" pref="254" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel_foneRes" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel_email" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtTelefone" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="txtComplemento" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
-                                          <Component id="cbEstado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtEmail" min="-2" pref="236" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="txtCodigo" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="txtCpfCNPJ" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
+                                  <Component id="txtNome" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+                                  <Component id="txtRua" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+                                  <Component id="txtComplemento" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="cbEstado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTelefone" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="txtEmail" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -112,8 +89,16 @@
                                   </Group>
                               </Group>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="141" pref="141" max="-2" attributes="0"/>
+                              <Component id="lblMsgCampoObrigatorio" min="-2" pref="290" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="157" pref="157" max="-2" attributes="0"/>
+                              <Component id="txtConfirma" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="80" max="32767" attributes="0"/>
+                      <EmptySpace pref="149" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -204,7 +189,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel_codigo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="C&#xf3;digo: *"/>
+                <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_cpfCnpj">
@@ -270,12 +255,33 @@
             <Component class="javax.swing.JComboBox" name="cbEstado">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value=" "/>
-                    <StringItem index="1" value="AP"/>
-                    <StringItem index="2" value="BA"/>
-                    <StringItem index="3" value="MT"/>
-                    <StringItem index="4" value="MS"/>
+                  <StringArray count="26">
+                    <StringItem index="0" value="AC"/>
+                    <StringItem index="1" value="AL"/>
+                    <StringItem index="2" value="AM"/>
+                    <StringItem index="3" value="AP"/>
+                    <StringItem index="4" value="BA"/>
+                    <StringItem index="5" value="CE"/>
+                    <StringItem index="6" value="ES"/>
+                    <StringItem index="7" value="GO"/>
+                    <StringItem index="8" value="MA"/>
+                    <StringItem index="9" value="MG"/>
+                    <StringItem index="10" value="MS"/>
+                    <StringItem index="11" value="MT"/>
+                    <StringItem index="12" value="PA"/>
+                    <StringItem index="13" value="PB"/>
+                    <StringItem index="14" value="PE"/>
+                    <StringItem index="15" value="PI"/>
+                    <StringItem index="16" value="PR"/>
+                    <StringItem index="17" value="RJ"/>
+                    <StringItem index="18" value="RN"/>
+                    <StringItem index="19" value="RO"/>
+                    <StringItem index="20" value="RR"/>
+                    <StringItem index="21" value="RS"/>
+                    <StringItem index="22" value="SC"/>
+                    <StringItem index="23" value="SP"/>
+                    <StringItem index="24" value="TO"/>
+                    <StringItem index="25" value="SE"/>
                   </StringArray>
                 </Property>
               </Properties>
