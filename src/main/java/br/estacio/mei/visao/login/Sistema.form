@@ -227,9 +227,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Contas a Receber"/>
               </Properties>
-              <Events>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblContasAReceberMousePressed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
