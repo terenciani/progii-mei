@@ -12,11 +12,14 @@ import br.estacio.mei.visao.compras.CompraPrincipal;
 import br.estacio.mei.visao.contas.pagar.ContasAPagarPrincipal;
 import br.estacio.mei.visao.contas.receber.ContasAReceberPrincipal;
 import br.estacio.mei.visao.fornecedor.FornecedorPrincipal;
+import br.estacio.mei.visao.produto.ProdutoPrincipal;
 import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoquePrincipal;
 import br.estacio.mei.visao.relatorio.vendas.RelatorioVendasPrincipal;
+import br.estacio.mei.visao.sac.SacPrincipal;
 import br.estacio.mei.visao.vendas.VendaPrincipal;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 
 /**
  *
@@ -41,6 +44,8 @@ public class Sistema extends javax.swing.JFrame {
     private void initComponents() {
 
         menuLateral = new javax.swing.JPanel();
+        separador = new javax.swing.JSeparator();
+        imgLogo = new javax.swing.JLabel();
         btnInicio = new javax.swing.JPanel();
         imgInicio = new javax.swing.JLabel();
         lblInicio = new javax.swing.JLabel();
@@ -53,29 +58,36 @@ public class Sistema extends javax.swing.JFrame {
         btnCategorias = new javax.swing.JPanel();
         imgCategorias = new javax.swing.JLabel();
         lblCategorias = new javax.swing.JLabel();
-        btnFornecedor = new javax.swing.JPanel();
-        imgFornecedores = new javax.swing.JLabel();
-        lblFornecedores = new javax.swing.JLabel();
         btnClientes = new javax.swing.JPanel();
         imgClientes = new javax.swing.JLabel();
         lblClientes = new javax.swing.JLabel();
+        btnFornecedor = new javax.swing.JPanel();
+        imgFornecedores = new javax.swing.JLabel();
+        lblFornecedores = new javax.swing.JLabel();
         btnSair = new javax.swing.JPanel();
         imgSair = new javax.swing.JLabel();
         lblSair = new javax.swing.JLabel();
-        separador = new javax.swing.JSeparator();
-        imgLogo = new javax.swing.JLabel();
         btnCompras = new javax.swing.JPanel();
-        imgFornecedores1 = new javax.swing.JLabel();
+        imgCompras = new javax.swing.JLabel();
         lblCompras = new javax.swing.JLabel();
-        btnRelatorioDeVendas = new javax.swing.JPanel();
-        imgFornecedores3 = new javax.swing.JLabel();
-        lblFornecedores3 = new javax.swing.JLabel();
-        btnRelatorioDeEstoque2 = new javax.swing.JPanel();
-        imgFornecedores2 = new javax.swing.JLabel();
-        lblFornecedores2 = new javax.swing.JLabel();
-        btnVendas1 = new javax.swing.JPanel();
-        imgFornecedores4 = new javax.swing.JLabel();
-        lblFornecedores4 = new javax.swing.JLabel();
+        btnVendas = new javax.swing.JPanel();
+        imgVendas = new javax.swing.JLabel();
+        lblVendas = new javax.swing.JLabel();
+        btnCadastroDeProdutos = new javax.swing.JPanel();
+        imgCadastroDeProdutos = new javax.swing.JLabel();
+        lblCadastroDeProdutos = new javax.swing.JLabel();
+        btnSac = new javax.swing.JPanel();
+        imgSac = new javax.swing.JLabel();
+        lblSac = new javax.swing.JLabel();
+        btnRelatorioDeVendas1 = new javax.swing.JPanel();
+        imgRelatorioDeVendas = new javax.swing.JLabel();
+        lblRelatorioDeVendas = new javax.swing.JLabel();
+        btnRelatorioDeEstoque1 = new javax.swing.JPanel();
+        imgRelatorioDeEstoque1 = new javax.swing.JLabel();
+        lblRelatorioDeEstoque1 = new javax.swing.JLabel();
+        btnUsuario = new javax.swing.JPanel();
+        imgUsuario = new javax.swing.JLabel();
+        lblUsuario1 = new javax.swing.JLabel();
         areaDeTrabalho = new javax.swing.JPanel();
         painelBreadcrumb = new javax.swing.JPanel();
         lblBreadcrumb = new javax.swing.JLabel();
@@ -86,6 +98,9 @@ public class Sistema extends javax.swing.JFrame {
         setTitle("Sistema de Apoio ao Micro Empreendedor Individual Regional");
 
         menuLateral.setBackground(new java.awt.Color(12, 197, 205));
+
+        imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Stocks_64px.png"))); // NOI18N
 
         btnInicio.setBackground(new java.awt.Color(13, 155, 177));
         btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -118,6 +133,7 @@ public class Sistema extends javax.swing.JFrame {
         );
 
         btnContasAPagar.setBackground(new java.awt.Color(12, 180, 206));
+        btnContasAPagar.setPreferredSize(new java.awt.Dimension(171, 40));
         btnContasAPagar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnContasAPagarMousePressed(evt);
@@ -141,11 +157,12 @@ public class Sistema extends javax.swing.JFrame {
         );
         btnContasAPagarLayout.setVerticalGroup(
             btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(imgContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
             .addComponent(lblContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         btnContasAReceber.setBackground(new java.awt.Color(12, 180, 206));
+        btnContasAReceber.setPreferredSize(new java.awt.Dimension(191, 40));
         btnContasAReceber.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnContasAReceberMousePressed(evt);
@@ -169,11 +186,12 @@ public class Sistema extends javax.swing.JFrame {
         );
         btnContasAReceberLayout.setVerticalGroup(
             btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(imgContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
             .addComponent(lblContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         btnCategorias.setBackground(new java.awt.Color(12, 180, 206));
+        btnCategorias.setPreferredSize(new java.awt.Dimension(134, 40));
         btnCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnCategoriasMousePressed(evt);
@@ -197,39 +215,12 @@ public class Sistema extends javax.swing.JFrame {
         );
         btnCategoriasLayout.setVerticalGroup(
             btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(imgCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
             .addComponent(lblCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        btnFornecedor.setBackground(new java.awt.Color(12, 180, 206));
-        btnFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnFornecedorMousePressed(evt);
-            }
-        });
-
-        lblFornecedores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblFornecedores.setForeground(new java.awt.Color(255, 255, 255));
-        lblFornecedores.setText("Fornecedor");
-
-        javax.swing.GroupLayout btnFornecedorLayout = new javax.swing.GroupLayout(btnFornecedor);
-        btnFornecedor.setLayout(btnFornecedorLayout);
-        btnFornecedorLayout.setHorizontalGroup(
-            btnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnFornecedorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(imgFornecedores)
-                .addGap(26, 26, 26)
-                .addComponent(lblFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnFornecedorLayout.setVerticalGroup(
-            btnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-        );
-
         btnClientes.setBackground(new java.awt.Color(12, 180, 206));
+        btnClientes.setPreferredSize(new java.awt.Dimension(111, 40));
         btnClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnClientesMousePressed(evt);
@@ -253,8 +244,37 @@ public class Sistema extends javax.swing.JFrame {
         );
         btnClientesLayout.setVerticalGroup(
             btnClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(imgClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
             .addComponent(lblClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        btnFornecedor.setBackground(new java.awt.Color(12, 180, 206));
+        btnFornecedor.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnFornecedorMousePressed(evt);
+            }
+        });
+
+        lblFornecedores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblFornecedores.setForeground(new java.awt.Color(255, 255, 255));
+        lblFornecedores.setText("Fornecedor");
+
+        javax.swing.GroupLayout btnFornecedorLayout = new javax.swing.GroupLayout(btnFornecedor);
+        btnFornecedor.setLayout(btnFornecedorLayout);
+        btnFornecedorLayout.setHorizontalGroup(
+            btnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnFornecedorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imgFornecedores)
+                .addGap(33, 33, 33)
+                .addComponent(lblFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(200, Short.MAX_VALUE))
+        );
+        btnFornecedorLayout.setVerticalGroup(
+            btnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         btnSair.setBackground(new java.awt.Color(12, 180, 206));
@@ -292,10 +312,8 @@ public class Sistema extends javax.swing.JFrame {
             .addComponent(lblSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Stocks_64px.png"))); // NOI18N
-
         btnCompras.setBackground(new java.awt.Color(12, 180, 206));
+        btnCompras.setPreferredSize(new java.awt.Dimension(111, 40));
         btnCompras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnComprasMousePressed(evt);
@@ -312,99 +330,198 @@ public class Sistema extends javax.swing.JFrame {
             btnComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnComprasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(imgFornecedores1)
-                .addGap(26, 26, 26)
+                .addComponent(imgCompras)
+                .addGap(33, 33, 33)
                 .addComponent(lblCompras)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btnComprasLayout.setVerticalGroup(
             btnComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgFornecedores1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblCompras, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(imgCompras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblCompras, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        btnRelatorioDeVendas.setBackground(new java.awt.Color(12, 180, 206));
-        btnRelatorioDeVendas.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnVendas.setBackground(new java.awt.Color(12, 180, 206));
+        btnVendas.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnVendas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnRelatorioDeVendasMousePressed(evt);
+                btnVendasMousePressed(evt);
             }
         });
 
-        lblFornecedores3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblFornecedores3.setForeground(new java.awt.Color(255, 255, 255));
-        lblFornecedores3.setText("Vendas");
+        lblVendas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblVendas.setForeground(new java.awt.Color(255, 255, 255));
+        lblVendas.setText("Vendas");
 
-        javax.swing.GroupLayout btnRelatorioDeVendasLayout = new javax.swing.GroupLayout(btnRelatorioDeVendas);
-        btnRelatorioDeVendas.setLayout(btnRelatorioDeVendasLayout);
-        btnRelatorioDeVendasLayout.setHorizontalGroup(
-            btnRelatorioDeVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnRelatorioDeVendasLayout.createSequentialGroup()
+        javax.swing.GroupLayout btnVendasLayout = new javax.swing.GroupLayout(btnVendas);
+        btnVendas.setLayout(btnVendasLayout);
+        btnVendasLayout.setHorizontalGroup(
+            btnVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnVendasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(imgFornecedores3)
-                .addGap(27, 27, 27)
-                .addComponent(lblFornecedores3)
+                .addComponent(imgVendas)
+                .addGap(35, 35, 35)
+                .addComponent(lblVendas)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        btnRelatorioDeVendasLayout.setVerticalGroup(
-            btnRelatorioDeVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgFornecedores3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblFornecedores3, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+        btnVendasLayout.setVerticalGroup(
+            btnVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        btnRelatorioDeEstoque2.setBackground(new java.awt.Color(12, 180, 206));
-        btnRelatorioDeEstoque2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCadastroDeProdutos.setBackground(new java.awt.Color(12, 180, 206));
+        btnCadastroDeProdutos.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnCadastroDeProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnRelatorioDeEstoque2MousePressed(evt);
+                btnCadastroDeProdutosMousePressed(evt);
             }
         });
 
-        lblFornecedores2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblFornecedores2.setForeground(new java.awt.Color(255, 255, 255));
-        lblFornecedores2.setText("Relatorio de Estoque");
+        lblCadastroDeProdutos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblCadastroDeProdutos.setForeground(new java.awt.Color(255, 255, 255));
+        lblCadastroDeProdutos.setText("Cadartro de Produtos");
 
-        javax.swing.GroupLayout btnRelatorioDeEstoque2Layout = new javax.swing.GroupLayout(btnRelatorioDeEstoque2);
-        btnRelatorioDeEstoque2.setLayout(btnRelatorioDeEstoque2Layout);
-        btnRelatorioDeEstoque2Layout.setHorizontalGroup(
-            btnRelatorioDeEstoque2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnRelatorioDeEstoque2Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnCadastroDeProdutosLayout = new javax.swing.GroupLayout(btnCadastroDeProdutos);
+        btnCadastroDeProdutos.setLayout(btnCadastroDeProdutosLayout);
+        btnCadastroDeProdutosLayout.setHorizontalGroup(
+            btnCadastroDeProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnCadastroDeProdutosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(imgFornecedores2)
-                .addGap(27, 27, 27)
-                .addComponent(lblFornecedores2)
+                .addComponent(imgCadastroDeProdutos)
+                .addGap(33, 33, 33)
+                .addComponent(lblCadastroDeProdutos)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        btnRelatorioDeEstoque2Layout.setVerticalGroup(
-            btnRelatorioDeEstoque2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgFornecedores2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblFornecedores2, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+        btnCadastroDeProdutosLayout.setVerticalGroup(
+            btnCadastroDeProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgCadastroDeProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblCadastroDeProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        btnVendas1.setBackground(new java.awt.Color(12, 180, 206));
-        btnVendas1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnSac.setBackground(new java.awt.Color(12, 180, 206));
+        btnSac.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnSac.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnVendas1MousePressed(evt);
+                btnSacMousePressed(evt);
             }
         });
 
-        lblFornecedores4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblFornecedores4.setForeground(new java.awt.Color(255, 255, 255));
-        lblFornecedores4.setText("Vendas");
+        lblSac.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblSac.setForeground(new java.awt.Color(255, 255, 255));
+        lblSac.setText("Sac");
 
-        javax.swing.GroupLayout btnVendas1Layout = new javax.swing.GroupLayout(btnVendas1);
-        btnVendas1.setLayout(btnVendas1Layout);
-        btnVendas1Layout.setHorizontalGroup(
-            btnVendas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnVendas1Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnSacLayout = new javax.swing.GroupLayout(btnSac);
+        btnSac.setLayout(btnSacLayout);
+        btnSacLayout.setHorizontalGroup(
+            btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnSacLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(imgFornecedores4)
-                .addGap(28, 28, 28)
-                .addComponent(lblFornecedores4)
+                .addComponent(imgSac)
+                .addGap(31, 31, 31)
+                .addComponent(lblSac)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        btnVendas1Layout.setVerticalGroup(
-            btnVendas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgFornecedores4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblFornecedores4, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+        btnSacLayout.setVerticalGroup(
+            btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnSacLayout.createSequentialGroup()
+                .addGroup(btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imgSac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblSac, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        btnRelatorioDeVendas1.setBackground(new java.awt.Color(12, 180, 206));
+        btnRelatorioDeVendas1.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnRelatorioDeVendas1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnRelatorioDeVendas1MousePressed(evt);
+            }
+        });
+
+        lblRelatorioDeVendas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRelatorioDeVendas.setForeground(new java.awt.Color(255, 255, 255));
+        lblRelatorioDeVendas.setText("Reloatorio de Vendas");
+
+        javax.swing.GroupLayout btnRelatorioDeVendas1Layout = new javax.swing.GroupLayout(btnRelatorioDeVendas1);
+        btnRelatorioDeVendas1.setLayout(btnRelatorioDeVendas1Layout);
+        btnRelatorioDeVendas1Layout.setHorizontalGroup(
+            btnRelatorioDeVendas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnRelatorioDeVendas1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imgRelatorioDeVendas)
+                .addGap(33, 33, 33)
+                .addComponent(lblRelatorioDeVendas)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnRelatorioDeVendas1Layout.setVerticalGroup(
+            btnRelatorioDeVendas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgRelatorioDeVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblRelatorioDeVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        btnRelatorioDeEstoque1.setBackground(new java.awt.Color(12, 180, 206));
+        btnRelatorioDeEstoque1.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnRelatorioDeEstoque1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnRelatorioDeEstoque1MousePressed(evt);
+            }
+        });
+
+        lblRelatorioDeEstoque1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRelatorioDeEstoque1.setForeground(new java.awt.Color(255, 255, 255));
+        lblRelatorioDeEstoque1.setText("Relatorio de Estoque");
+
+        javax.swing.GroupLayout btnRelatorioDeEstoque1Layout = new javax.swing.GroupLayout(btnRelatorioDeEstoque1);
+        btnRelatorioDeEstoque1.setLayout(btnRelatorioDeEstoque1Layout);
+        btnRelatorioDeEstoque1Layout.setHorizontalGroup(
+            btnRelatorioDeEstoque1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnRelatorioDeEstoque1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imgRelatorioDeEstoque1)
+                .addGap(34, 34, 34)
+                .addComponent(lblRelatorioDeEstoque1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnRelatorioDeEstoque1Layout.setVerticalGroup(
+            btnRelatorioDeEstoque1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnRelatorioDeEstoque1Layout.createSequentialGroup()
+                .addGroup(btnRelatorioDeEstoque1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imgRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        btnUsuario.setBackground(new java.awt.Color(12, 180, 206));
+        btnUsuario.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnUsuarioMousePressed(evt);
+            }
+        });
+
+        lblUsuario1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblUsuario1.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuario1.setText("Usuário");
+
+        javax.swing.GroupLayout btnUsuarioLayout = new javax.swing.GroupLayout(btnUsuario);
+        btnUsuario.setLayout(btnUsuarioLayout);
+        btnUsuarioLayout.setHorizontalGroup(
+            btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnUsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imgUsuario)
+                .addGap(34, 34, 34)
+                .addComponent(lblUsuario1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnUsuarioLayout.setVerticalGroup(
+            btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnUsuarioLayout.createSequentialGroup()
+                .addGroup(btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imgUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout menuLateralLayout = new javax.swing.GroupLayout(menuLateral);
@@ -412,21 +529,24 @@ public class Sistema extends javax.swing.JFrame {
         menuLateralLayout.setHorizontalGroup(
             menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
             .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(imgLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
             .addGroup(menuLateralLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-            .addComponent(btnCompras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnRelatorioDeVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnRelatorioDeEstoque2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnVendas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(102, Short.MAX_VALUE))
+            .addComponent(btnVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(imgLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnCadastroDeProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnRelatorioDeVendas1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnCompras, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnSac, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
         );
         menuLateralLayout.setVerticalGroup(
             menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,12 +570,18 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(btnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btnVendas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btnRelatorioDeEstoque2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCadastroDeProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btnRelatorioDeVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRelatorioDeVendas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnRelatorioDeEstoque1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnSac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -509,7 +635,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(lblNomeSistema)
-                .addGap(0, 417, Short.MAX_VALUE))
+                .addGap(0, 337, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -523,7 +649,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
+                .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -601,17 +727,29 @@ public class Sistema extends javax.swing.JFrame {
         atualizaPanelDinamico("Compras", new CompraPrincipal());
     }//GEN-LAST:event_btnComprasMousePressed
 
-    private void btnRelatorioDeEstoque2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoque2MousePressed
-        atualizaPanelDinamico("Relatório de Estoque", new RelatorioDeEstoquePrincipal());
-    }//GEN-LAST:event_btnRelatorioDeEstoque2MousePressed
+    private void btnSacMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSacMousePressed
+        atualizaPanelDinamico("Sac", new SacPrincipal());
+    }//GEN-LAST:event_btnSacMousePressed
 
-    private void btnRelatorioDeVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendasMousePressed
-        atualizaPanelDinamico("Relatório de Vendas", new RelatorioVendasPrincipal());
-    }//GEN-LAST:event_btnRelatorioDeVendasMousePressed
+    private void btnCadastroDeProdutosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroDeProdutosMousePressed
+        atualizaPanelDinamico("Cadstro de Produtos", new ProdutoPrincipal());
+    }//GEN-LAST:event_btnCadastroDeProdutosMousePressed
 
-    private void btnVendas1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendas1MousePressed
+    private void btnVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMousePressed
         atualizaPanelDinamico("Vendas", new VendaPrincipal());
-    }//GEN-LAST:event_btnVendas1MousePressed
+    }//GEN-LAST:event_btnVendasMousePressed
+
+    private void btnRelatorioDeVendas1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendas1MousePressed
+        atualizaPanelDinamico("Relatória de Vendas", new RelatorioVendasPrincipal());
+    }//GEN-LAST:event_btnRelatorioDeVendas1MousePressed
+
+    private void btnRelatorioDeEstoque1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoque1MousePressed
+        atualizaPanelDinamico("Relatória de Estoque", new RelatorioDeEstoquePrincipal());
+    }//GEN-LAST:event_btnRelatorioDeEstoque1MousePressed
+
+    private void btnUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuarioMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUsuarioMousePressed
 
     /**
      * @param args the command line arguments
@@ -640,6 +778,12 @@ public class Sistema extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -653,6 +797,7 @@ public class Sistema extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel areaDeTrabalho;
+    private javax.swing.JPanel btnCadastroDeProdutos;
     private javax.swing.JPanel btnCategorias;
     private javax.swing.JPanel btnClientes;
     private javax.swing.JPanel btnCompras;
@@ -660,36 +805,44 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel btnContasAReceber;
     private javax.swing.JPanel btnFornecedor;
     private javax.swing.JPanel btnInicio;
-    private javax.swing.JPanel btnRelatorioDeEstoque2;
-    private javax.swing.JPanel btnRelatorioDeVendas;
+    private javax.swing.JPanel btnRelatorioDeEstoque1;
+    private javax.swing.JPanel btnRelatorioDeVendas1;
+    private javax.swing.JPanel btnSac;
     private javax.swing.JPanel btnSair;
-    private javax.swing.JPanel btnVendas1;
+    private javax.swing.JPanel btnUsuario;
+    private javax.swing.JPanel btnVendas;
+    private javax.swing.JLabel imgCadastroDeProdutos;
     private javax.swing.JLabel imgCategorias;
     private javax.swing.JLabel imgClientes;
+    private javax.swing.JLabel imgCompras;
     private javax.swing.JLabel imgContasAPagar;
     private javax.swing.JLabel imgContasAReceber;
     private javax.swing.JLabel imgFornecedores;
-    private javax.swing.JLabel imgFornecedores1;
-    private javax.swing.JLabel imgFornecedores2;
-    private javax.swing.JLabel imgFornecedores3;
-    private javax.swing.JLabel imgFornecedores4;
     private javax.swing.JLabel imgInicio;
     private javax.swing.JLabel imgLogo;
+    private javax.swing.JLabel imgRelatorioDeEstoque1;
+    private javax.swing.JLabel imgRelatorioDeVendas;
+    private javax.swing.JLabel imgSac;
     private javax.swing.JLabel imgSair;
+    private javax.swing.JLabel imgUsuario;
+    private javax.swing.JLabel imgVendas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblBreadcrumb;
+    private javax.swing.JLabel lblCadastroDeProdutos;
     private javax.swing.JLabel lblCategorias;
     private javax.swing.JLabel lblClientes;
     private javax.swing.JLabel lblCompras;
     private javax.swing.JLabel lblContasAPagar;
     private javax.swing.JLabel lblContasAReceber;
     private javax.swing.JLabel lblFornecedores;
-    private javax.swing.JLabel lblFornecedores2;
-    private javax.swing.JLabel lblFornecedores3;
-    private javax.swing.JLabel lblFornecedores4;
     private javax.swing.JLabel lblInicio;
     private javax.swing.JLabel lblNomeSistema;
+    private javax.swing.JLabel lblRelatorioDeEstoque1;
+    private javax.swing.JLabel lblRelatorioDeVendas;
+    private javax.swing.JLabel lblSac;
     private javax.swing.JLabel lblSair;
+    private javax.swing.JLabel lblUsuario1;
+    private javax.swing.JLabel lblVendas;
     private javax.swing.JPanel menuLateral;
     private javax.swing.JPanel painelBreadcrumb;
     private javax.swing.JPanel painelDinamico;
