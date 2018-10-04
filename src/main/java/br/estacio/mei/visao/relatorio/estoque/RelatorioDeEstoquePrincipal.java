@@ -29,18 +29,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         initComponents();
         lblError.setVisible(false);
         tbProdutos.setRowHeight(15);
-        
-        Fornecedor fornecedor = new Fornecedor();
-        fornecedor.setRazaoSocial("Estacio");
-        FornecedorDao fornecedorDao = new FornecedorDaoEstatica();
-        fornecedorDao.salvarFornecedor(fornecedor);
-        Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);
-        produtoDao.salvar(produto);
-        
-        produto = new Produto(1, "Short", 5, fornecedor, 40, 80);
-        
-        produtoDao.salvar(produto);
-        
+               
         DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
 
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
@@ -241,7 +230,6 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     while (modeloDeColunasDaTabela.getRowCount() != 0) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
-                    System.out.println(pesqNome);
                     ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
                     for (int i=0; i< produtosPorNome.size();i++)
                     {
