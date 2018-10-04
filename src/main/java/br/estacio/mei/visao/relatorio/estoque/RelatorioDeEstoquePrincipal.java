@@ -13,6 +13,7 @@ import br.estacio.mei.model.Fornecedor;
 import br.estacio.mei.model.Produto;
 import java.util.ArrayList;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -27,6 +28,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     public RelatorioDeEstoquePrincipal() {
         initComponents();
         lblError.setVisible(false);
+        tbProdutos.setRowHeight(15);
         
         Fornecedor fornecedor = new Fornecedor();
         fornecedor.setRazaoSocial("Estacio");
@@ -91,7 +93,9 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(675, 625));
+        jPanel1.setMaximumSize(new java.awt.Dimension(400, 300));
+        jPanel1.setPreferredSize(new java.awt.Dimension(400, 300));
+        jPanel1.setRequestFocusEnabled(false);
 
         txtPesquisar.setToolTipText("");
         txtPesquisar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -103,7 +107,8 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             }
         });
 
-        btnTodos.setText("Novo Produto");
+        btnTodos.setText("Todos Produtos");
+        btnTodos.setActionCommand("Todos Produtos");
         btnTodos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTodosActionPerformed(evt);
@@ -127,9 +132,8 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnPesquisar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(btnTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,6 +157,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 "Código", "Nome", "Fornecedor", "Preço de Compra", "Preço de Venda", "Qtde Estoque"
             }
         ));
+        tbProdutos.setMaximumSize(new java.awt.Dimension(650, 400));
         jScrollPane1.setViewportView(tbProdutos);
 
         lblError.setText("Errors");
@@ -180,15 +185,11 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 736, Short.MAX_VALUE)
-                        .addGap(20, 20, 20))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pnlError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,8 +199,8 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -369,8 +370,24 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_tipoPesquisaActionPerformed
 
     private void btnTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodosActionPerformed
-        int linha = tbProdutos.getSelectedRow();
-        int codigo = (int)tbProdutos.getModel().getValueAt(linha, 0);
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
+        while (modeloDeColunasDaTabela.getRowCount() != 0) {
+            modeloDeColunasDaTabela.removeRow(0);
+        }
+
+        ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
+        for (int i=0; i< listaDeProdutos.size();i++)
+        {
+            Produto p = listaDeProdutos.get(i);
+            Object[] dadosDaLinha = new Object[6];
+            dadosDaLinha[0] = p.getCodigo();
+            dadosDaLinha[1] = p.getNome();
+            dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+            dadosDaLinha[3] = p.getPrecoCompra();
+            dadosDaLinha[4] = p.getPrecoVenda();
+            dadosDaLinha[5] = p.getQuantidade();
+            modeloDeColunasDaTabela.addRow(dadosDaLinha);
+        }
     }//GEN-LAST:event_btnTodosActionPerformed
 
 
