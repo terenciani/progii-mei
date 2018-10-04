@@ -95,6 +95,7 @@ public class Sistema extends javax.swing.JFrame {
         painelDinamico = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Apoio ao Micro Empreendedor Individual Regional");
 
         menuLateral.setBackground(new java.awt.Color(12, 197, 205));
@@ -372,11 +373,6 @@ public class Sistema extends javax.swing.JFrame {
 
         btnCadastroDeProdutos.setBackground(new java.awt.Color(12, 180, 206));
         btnCadastroDeProdutos.setPreferredSize(new java.awt.Dimension(111, 40));
-        btnCadastroDeProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnCadastroDeProdutosMousePressed(evt);
-            }
-        });
 
         lblCadastroDeProdutos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblCadastroDeProdutos.setForeground(new java.awt.Color(255, 255, 255));
@@ -427,7 +423,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnSacLayout.createSequentialGroup()
                 .addGroup(btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgSac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblSac, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                    .addComponent(lblSac, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -488,7 +484,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnRelatorioDeEstoque1Layout.createSequentialGroup()
                 .addGroup(btnRelatorioDeEstoque1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                    .addComponent(lblRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -520,7 +516,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnUsuarioLayout.createSequentialGroup()
                 .addGroup(btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                    .addComponent(lblUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -730,10 +726,6 @@ public class Sistema extends javax.swing.JFrame {
     private void btnSacMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSacMousePressed
         atualizaPanelDinamico("Sac", new SacPrincipal());
     }//GEN-LAST:event_btnSacMousePressed
-
-    private void btnCadastroDeProdutosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroDeProdutosMousePressed
-        atualizaPanelDinamico("Cadstro de Produtos", new ProdutoPrincipal());
-    }//GEN-LAST:event_btnCadastroDeProdutosMousePressed
 
     private void btnVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMousePressed
         atualizaPanelDinamico("Vendas", new VendaPrincipal());
