@@ -209,7 +209,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     while (modeloDeColunasDaTabela.getRowCount() != 0) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
-                    System.out.println("pesqNome");
+                    System.out.println(pesqNome);
                     ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
                     for (int i=0; i< produtosPorNome.size();i++)
                     {
