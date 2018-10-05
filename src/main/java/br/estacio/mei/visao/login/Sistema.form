@@ -193,7 +193,7 @@
                       <Component id="imgContasAPagar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lblContasAPagar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="192" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -570,6 +570,9 @@
               <Dimension value="[111, 40]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCadastroDeProdutosMousePressed"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -601,7 +604,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Cadartro de Produtos"/>
+                <Property name="text" type="java.lang.String" value="Cadastro de Produtos"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -636,7 +639,7 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="imgSac" max="32767" attributes="0"/>
-                          <Component id="lblSac" pref="29" max="32767" attributes="0"/>
+                          <Component id="lblSac" pref="28" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -702,7 +705,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Reloatorio de Vendas"/>
+                <Property name="text" type="java.lang.String" value="Relat&#xf3;rio de Vendas"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -737,7 +740,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="imgRelatorioDeEstoque1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblRelatorioDeEstoque1" alignment="0" pref="29" max="32767" attributes="0"/>
+                          <Component id="lblRelatorioDeEstoque1" alignment="0" pref="28" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -755,7 +758,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Relatorio de Estoque"/>
+                <Property name="text" type="java.lang.String" value="Relat&#xf3;rio de Estoque"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -790,7 +793,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="imgUsuario" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblUsuario1" alignment="0" pref="29" max="32767" attributes="0"/>
+                          <Component id="lblUsuario1" alignment="0" pref="28" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -839,7 +842,7 @@
                   <EmptySpace min="0" pref="337" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   <Component id="painelDinamico" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>

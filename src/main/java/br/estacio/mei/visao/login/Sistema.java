@@ -16,6 +16,7 @@ import br.estacio.mei.visao.produto.ProdutoPrincipal;
 import br.estacio.mei.visao.relatorio.estoque.RelatorioDeEstoquePrincipal;
 import br.estacio.mei.visao.relatorio.vendas.RelatorioVendasPrincipal;
 import br.estacio.mei.visao.sac.SacPrincipal;
+import br.estacio.mei.visao.usuario.UsuarioPrincipal;
 import br.estacio.mei.visao.vendas.VendaPrincipal;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -154,7 +155,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(imgContasAPagar)
                 .addGap(18, 18, 18)
                 .addComponent(lblContasAPagar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
         btnContasAPagarLayout.setVerticalGroup(
             btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,10 +374,15 @@ public class Sistema extends javax.swing.JFrame {
 
         btnCadastroDeProdutos.setBackground(new java.awt.Color(12, 180, 206));
         btnCadastroDeProdutos.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnCadastroDeProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnCadastroDeProdutosMousePressed(evt);
+            }
+        });
 
         lblCadastroDeProdutos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblCadastroDeProdutos.setForeground(new java.awt.Color(255, 255, 255));
-        lblCadastroDeProdutos.setText("Cadartro de Produtos");
+        lblCadastroDeProdutos.setText("Cadastro de Produtos");
 
         javax.swing.GroupLayout btnCadastroDeProdutosLayout = new javax.swing.GroupLayout(btnCadastroDeProdutos);
         btnCadastroDeProdutos.setLayout(btnCadastroDeProdutosLayout);
@@ -423,7 +429,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnSacLayout.createSequentialGroup()
                 .addGroup(btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgSac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblSac, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
+                    .addComponent(lblSac, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -437,7 +443,7 @@ public class Sistema extends javax.swing.JFrame {
 
         lblRelatorioDeVendas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblRelatorioDeVendas.setForeground(new java.awt.Color(255, 255, 255));
-        lblRelatorioDeVendas.setText("Reloatorio de Vendas");
+        lblRelatorioDeVendas.setText("Relatório de Vendas");
 
         javax.swing.GroupLayout btnRelatorioDeVendas1Layout = new javax.swing.GroupLayout(btnRelatorioDeVendas1);
         btnRelatorioDeVendas1.setLayout(btnRelatorioDeVendas1Layout);
@@ -466,7 +472,7 @@ public class Sistema extends javax.swing.JFrame {
 
         lblRelatorioDeEstoque1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblRelatorioDeEstoque1.setForeground(new java.awt.Color(255, 255, 255));
-        lblRelatorioDeEstoque1.setText("Relatorio de Estoque");
+        lblRelatorioDeEstoque1.setText("Relatório de Estoque");
 
         javax.swing.GroupLayout btnRelatorioDeEstoque1Layout = new javax.swing.GroupLayout(btnRelatorioDeEstoque1);
         btnRelatorioDeEstoque1.setLayout(btnRelatorioDeEstoque1Layout);
@@ -484,7 +490,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnRelatorioDeEstoque1Layout.createSequentialGroup()
                 .addGroup(btnRelatorioDeEstoque1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
+                    .addComponent(lblRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -516,7 +522,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnUsuarioLayout.createSequentialGroup()
                 .addGroup(btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
+                    .addComponent(lblUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -633,7 +639,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(lblNomeSistema)
                 .addGap(0, 337, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addGap(1, 1, 1)
                 .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -684,12 +690,12 @@ public class Sistema extends javax.swing.JFrame {
 
     
     private void btnContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMousePressed
-                atualizaPanelDinamico("Contas a Receber", new ContasAReceberPrincipal());
+        atualizaPanelDinamico("Contas a Receber", new ContasAReceberPrincipal());
     }//GEN-LAST:event_btnContasAReceberMousePressed
 
     private void btnInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMousePressed
         ExemploPopulaTabela exemplo = new ExemploPopulaTabela();
-        lblBreadcrumb.setText("Contas a Pagar");
+        lblBreadcrumb.setText("BEM VINDO AO MEI");
         painelDinamico.removeAll();
         painelDinamico.add(exemplo);
         painelDinamico.validate();
@@ -698,12 +704,12 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInicioMousePressed
 
     private void btnClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMousePressed
-        atualizaPanelDinamico("Clientes", new ClientePrincipal());
+        atualizaPanelDinamico("Gerenciamento de Clientes", new ClientePrincipal());
     }//GEN-LAST:event_btnClientesMousePressed
 
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
 
-       atualizaPanelDinamico("Categoria ", new CategoriaPrincipal());
+       atualizaPanelDinamico("Gerenciamento de Categoria ", new CategoriaPrincipal());
    
     }//GEN-LAST:event_btnCategoriasMousePressed
 
@@ -716,11 +722,11 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairMousePressed
 
     private void btnFornecedorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedorMousePressed
-        atualizaPanelDinamico("Fornecedor", new FornecedorPrincipal());
+        atualizaPanelDinamico("Gerenciamento de Fornecedor", new FornecedorPrincipal());
     }//GEN-LAST:event_btnFornecedorMousePressed
 
     private void btnComprasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMousePressed
-        atualizaPanelDinamico("Compras", new CompraPrincipal());
+        atualizaPanelDinamico("Gerenciamento de Compras", new CompraPrincipal());
     }//GEN-LAST:event_btnComprasMousePressed
 
     private void btnSacMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSacMousePressed
@@ -728,7 +734,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSacMousePressed
 
     private void btnVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMousePressed
-        atualizaPanelDinamico("Vendas", new VendaPrincipal());
+        atualizaPanelDinamico("Gerenciamento de Vendas", new VendaPrincipal());
     }//GEN-LAST:event_btnVendasMousePressed
 
     private void btnRelatorioDeVendas1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendas1MousePressed
@@ -740,8 +746,12 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRelatorioDeEstoque1MousePressed
 
     private void btnUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuarioMousePressed
-        // TODO add your handling code here:
+        atualizaPanelDinamico("Usuário", new UsuarioPrincipal());
     }//GEN-LAST:event_btnUsuarioMousePressed
+
+    private void btnCadastroDeProdutosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroDeProdutosMousePressed
+       atualizaPanelDinamico("Cadastro de Produtos", new ProdutoPrincipal());
+    }//GEN-LAST:event_btnCadastroDeProdutosMousePressed
 
     /**
      * @param args the command line arguments
