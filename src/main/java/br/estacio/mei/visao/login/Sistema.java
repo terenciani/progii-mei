@@ -45,50 +45,52 @@ public class Sistema extends javax.swing.JFrame {
     private void initComponents() {
 
         menuLateral = new javax.swing.JPanel();
-        separador = new javax.swing.JSeparator();
+        iconeSistema = new javax.swing.JPanel();
         imgLogo = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        atalhosDoMenu = new javax.swing.JPanel();
         btnInicio = new javax.swing.JPanel();
         imgInicio = new javax.swing.JLabel();
         lblInicio = new javax.swing.JLabel();
-        btnContasAPagar = new javax.swing.JPanel();
-        imgContasAPagar = new javax.swing.JLabel();
-        lblContasAPagar = new javax.swing.JLabel();
-        btnContasAReceber = new javax.swing.JPanel();
-        imgContasAReceber = new javax.swing.JLabel();
-        lblContasAReceber = new javax.swing.JLabel();
-        btnCategorias = new javax.swing.JPanel();
-        imgCategorias = new javax.swing.JLabel();
-        lblCategorias = new javax.swing.JLabel();
-        btnClientes = new javax.swing.JPanel();
-        imgClientes = new javax.swing.JLabel();
-        lblClientes = new javax.swing.JLabel();
-        btnFornecedor = new javax.swing.JPanel();
-        imgFornecedores = new javax.swing.JLabel();
-        lblFornecedores = new javax.swing.JLabel();
-        btnSair = new javax.swing.JPanel();
-        imgSair = new javax.swing.JLabel();
-        lblSair = new javax.swing.JLabel();
-        btnCompras = new javax.swing.JPanel();
-        imgCompras = new javax.swing.JLabel();
-        lblCompras = new javax.swing.JLabel();
         btnVendas = new javax.swing.JPanel();
         imgVendas = new javax.swing.JLabel();
         lblVendas = new javax.swing.JLabel();
-        btnCadastroDeProdutos = new javax.swing.JPanel();
+        btnCompras = new javax.swing.JPanel();
+        imgCompras = new javax.swing.JLabel();
+        lblCompras = new javax.swing.JLabel();
+        btnClientes = new javax.swing.JPanel();
+        imgClientes = new javax.swing.JLabel();
+        lblClientes = new javax.swing.JLabel();
+        btnProdutos = new javax.swing.JPanel();
         imgCadastroDeProdutos = new javax.swing.JLabel();
         lblCadastroDeProdutos = new javax.swing.JLabel();
-        btnSac = new javax.swing.JPanel();
-        imgSac = new javax.swing.JLabel();
-        lblSac = new javax.swing.JLabel();
-        btnRelatorioDeVendas1 = new javax.swing.JPanel();
-        imgRelatorioDeVendas = new javax.swing.JLabel();
-        lblRelatorioDeVendas = new javax.swing.JLabel();
-        btnRelatorioDeEstoque1 = new javax.swing.JPanel();
+        btnCategorias = new javax.swing.JPanel();
+        imgCategorias = new javax.swing.JLabel();
+        lblCategorias = new javax.swing.JLabel();
+        btnFornecedor = new javax.swing.JPanel();
+        imgFornecedores = new javax.swing.JLabel();
+        lblFornecedores = new javax.swing.JLabel();
+        btnContasAReceber = new javax.swing.JPanel();
+        imgContasAReceber = new javax.swing.JLabel();
+        lblContasAReceber = new javax.swing.JLabel();
+        btnContasAPagar = new javax.swing.JPanel();
+        imgContasAPagar = new javax.swing.JLabel();
+        lblContasAPagar = new javax.swing.JLabel();
+        btnRelatorioDeEstoque = new javax.swing.JPanel();
         imgRelatorioDeEstoque1 = new javax.swing.JLabel();
         lblRelatorioDeEstoque1 = new javax.swing.JLabel();
+        btnRelatorioDeVendas = new javax.swing.JPanel();
+        imgRelatorioDeVendas = new javax.swing.JLabel();
+        lblRelatorioDeVendas = new javax.swing.JLabel();
         btnUsuario = new javax.swing.JPanel();
         imgUsuario = new javax.swing.JLabel();
         lblUsuario1 = new javax.swing.JLabel();
+        btnSac = new javax.swing.JPanel();
+        imgSac = new javax.swing.JLabel();
+        lblSac = new javax.swing.JLabel();
+        btnSair = new javax.swing.JPanel();
+        imgSair = new javax.swing.JLabel();
+        lblSair = new javax.swing.JLabel();
         areaDeTrabalho = new javax.swing.JPanel();
         painelBreadcrumb = new javax.swing.JPanel();
         lblBreadcrumb = new javax.swing.JLabel();
@@ -100,9 +102,32 @@ public class Sistema extends javax.swing.JFrame {
         setTitle("Sistema de Apoio ao Micro Empreendedor Individual Regional");
 
         menuLateral.setBackground(new java.awt.Color(12, 197, 205));
+        menuLateral.setMinimumSize(new java.awt.Dimension(64, 64));
+        menuLateral.setPreferredSize(new java.awt.Dimension(334, 811));
+        menuLateral.setLayout(new java.awt.BorderLayout());
+
+        iconeSistema.setBackground(new java.awt.Color(12, 197, 205));
+        iconeSistema.setPreferredSize(new java.awt.Dimension(107, 120));
+        iconeSistema.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                iconeSistemaMousePressed(evt);
+            }
+        });
+        iconeSistema.setLayout(null);
 
         imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Stocks_64px.png"))); // NOI18N
+        imgLogo.setMaximumSize(new java.awt.Dimension(64, 44));
+        imgLogo.setPreferredSize(new java.awt.Dimension(64, 100));
+        iconeSistema.add(imgLogo);
+        imgLogo.setBounds(130, 10, 64, 80);
+        iconeSistema.add(jSeparator1);
+        jSeparator1.setBounds(30, 100, 280, 10);
+
+        menuLateral.add(iconeSistema, java.awt.BorderLayout.PAGE_START);
+
+        atalhosDoMenu.setBackground(new java.awt.Color(12, 197, 205));
+        atalhosDoMenu.setLayout(new java.awt.GridLayout(13, 1));
 
         btnInicio.setBackground(new java.awt.Color(13, 155, 177));
         btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -130,102 +155,77 @@ public class Sistema extends javax.swing.JFrame {
         );
         btnInicioLayout.setVerticalGroup(
             btnInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+            .addComponent(imgInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lblInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        btnContasAPagar.setBackground(new java.awt.Color(12, 180, 206));
-        btnContasAPagar.setPreferredSize(new java.awt.Dimension(171, 40));
-        btnContasAPagar.addMouseListener(new java.awt.event.MouseAdapter() {
+        atalhosDoMenu.add(btnInicio);
+
+        btnVendas.setBackground(new java.awt.Color(12, 180, 206));
+        btnVendas.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnVendas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnContasAPagarMousePressed(evt);
+                btnVendasMousePressed(evt);
             }
         });
 
-        imgContasAPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Merchant_Account_25px_1.png"))); // NOI18N
+        imgVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Christmas_Gift_25px_1.png"))); // NOI18N
 
-        lblContasAPagar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblContasAPagar.setForeground(new java.awt.Color(255, 255, 255));
-        lblContasAPagar.setText("Contas a Pagar");
+        lblVendas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblVendas.setForeground(new java.awt.Color(255, 255, 255));
+        lblVendas.setText("Vendas");
 
-        javax.swing.GroupLayout btnContasAPagarLayout = new javax.swing.GroupLayout(btnContasAPagar);
-        btnContasAPagar.setLayout(btnContasAPagarLayout);
-        btnContasAPagarLayout.setHorizontalGroup(
-            btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnContasAPagarLayout.createSequentialGroup()
+        javax.swing.GroupLayout btnVendasLayout = new javax.swing.GroupLayout(btnVendas);
+        btnVendas.setLayout(btnVendasLayout);
+        btnVendasLayout.setHorizontalGroup(
+            btnVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnVendasLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(imgContasAPagar)
+                .addComponent(imgVendas)
                 .addGap(20, 20, 20)
-                .addComponent(lblContasAPagar)
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
-        btnContasAPagarLayout.setVerticalGroup(
-            btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-            .addComponent(lblContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        btnContasAReceber.setBackground(new java.awt.Color(12, 180, 206));
-        btnContasAReceber.setPreferredSize(new java.awt.Dimension(191, 40));
-        btnContasAReceber.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnContasAReceberMousePressed(evt);
-            }
-        });
-
-        imgContasAReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Capital_25px.png"))); // NOI18N
-
-        lblContasAReceber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblContasAReceber.setForeground(new java.awt.Color(255, 255, 255));
-        lblContasAReceber.setText("Contas a Receber");
-
-        javax.swing.GroupLayout btnContasAReceberLayout = new javax.swing.GroupLayout(btnContasAReceber);
-        btnContasAReceber.setLayout(btnContasAReceberLayout);
-        btnContasAReceberLayout.setHorizontalGroup(
-            btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnContasAReceberLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgContasAReceber)
-                .addGap(20, 20, 20)
-                .addComponent(lblContasAReceber)
+                .addComponent(lblVendas)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        btnContasAReceberLayout.setVerticalGroup(
-            btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-            .addComponent(lblContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        btnVendasLayout.setVerticalGroup(
+            btnVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        btnCategorias.setBackground(new java.awt.Color(12, 180, 206));
-        btnCategorias.setPreferredSize(new java.awt.Dimension(134, 40));
-        btnCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
+        atalhosDoMenu.add(btnVendas);
+
+        btnCompras.setBackground(new java.awt.Color(12, 180, 206));
+        btnCompras.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnCompras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnCategoriasMousePressed(evt);
+                btnComprasMousePressed(evt);
             }
         });
 
-        imgCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Tournament_25px.png"))); // NOI18N
+        imgCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Buy_25px.png"))); // NOI18N
 
-        lblCategorias.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblCategorias.setForeground(new java.awt.Color(255, 255, 255));
-        lblCategorias.setText("Categorias de Produtos");
+        lblCompras.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblCompras.setForeground(new java.awt.Color(255, 255, 255));
+        lblCompras.setText("Compras");
 
-        javax.swing.GroupLayout btnCategoriasLayout = new javax.swing.GroupLayout(btnCategorias);
-        btnCategorias.setLayout(btnCategoriasLayout);
-        btnCategoriasLayout.setHorizontalGroup(
-            btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnCategoriasLayout.createSequentialGroup()
+        javax.swing.GroupLayout btnComprasLayout = new javax.swing.GroupLayout(btnCompras);
+        btnCompras.setLayout(btnComprasLayout);
+        btnComprasLayout.setHorizontalGroup(
+            btnComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnComprasLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(imgCategorias)
+                .addComponent(imgCompras)
                 .addGap(20, 20, 20)
-                .addComponent(lblCategorias)
+                .addComponent(lblCompras)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        btnCategoriasLayout.setVerticalGroup(
-            btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-            .addComponent(lblCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        btnComprasLayout.setVerticalGroup(
+            btnComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgCompras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblCompras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        atalhosDoMenu.add(btnCompras);
 
         btnClientes.setBackground(new java.awt.Color(12, 180, 206));
         btnClientes.setPreferredSize(new java.awt.Dimension(111, 40));
@@ -254,9 +254,77 @@ public class Sistema extends javax.swing.JFrame {
         );
         btnClientesLayout.setVerticalGroup(
             btnClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(imgClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lblClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        atalhosDoMenu.add(btnClientes);
+
+        btnProdutos.setBackground(new java.awt.Color(12, 180, 206));
+        btnProdutos.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnProdutosMousePressed(evt);
+            }
+        });
+
+        imgCadastroDeProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Packaging_25px.png"))); // NOI18N
+
+        lblCadastroDeProdutos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblCadastroDeProdutos.setForeground(new java.awt.Color(255, 255, 255));
+        lblCadastroDeProdutos.setText("Produtos");
+
+        javax.swing.GroupLayout btnProdutosLayout = new javax.swing.GroupLayout(btnProdutos);
+        btnProdutos.setLayout(btnProdutosLayout);
+        btnProdutosLayout.setHorizontalGroup(
+            btnProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnProdutosLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgCadastroDeProdutos)
+                .addGap(20, 20, 20)
+                .addComponent(lblCadastroDeProdutos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnProdutosLayout.setVerticalGroup(
+            btnProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgCadastroDeProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblCadastroDeProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        atalhosDoMenu.add(btnProdutos);
+
+        btnCategorias.setBackground(new java.awt.Color(12, 180, 206));
+        btnCategorias.setPreferredSize(new java.awt.Dimension(134, 40));
+        btnCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnCategoriasMousePressed(evt);
+            }
+        });
+
+        imgCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Tournament_25px.png"))); // NOI18N
+
+        lblCategorias.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblCategorias.setForeground(new java.awt.Color(255, 255, 255));
+        lblCategorias.setText("Categorias de Produtos");
+
+        javax.swing.GroupLayout btnCategoriasLayout = new javax.swing.GroupLayout(btnCategorias);
+        btnCategorias.setLayout(btnCategoriasLayout);
+        btnCategoriasLayout.setHorizontalGroup(
+            btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnCategoriasLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgCategorias)
+                .addGap(20, 20, 20)
+                .addComponent(lblCategorias)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnCategoriasLayout.setVerticalGroup(
+            btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        atalhosDoMenu.add(btnCategorias);
 
         btnFornecedor.setBackground(new java.awt.Color(12, 180, 206));
         btnFornecedor.setPreferredSize(new java.awt.Dimension(111, 40));
@@ -286,8 +354,210 @@ public class Sistema extends javax.swing.JFrame {
         btnFornecedorLayout.setVerticalGroup(
             btnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(imgFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(lblFornecedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        atalhosDoMenu.add(btnFornecedor);
+
+        btnContasAReceber.setBackground(new java.awt.Color(12, 180, 206));
+        btnContasAReceber.setPreferredSize(new java.awt.Dimension(191, 40));
+        btnContasAReceber.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnContasAReceberMousePressed(evt);
+            }
+        });
+
+        imgContasAReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Capital_25px.png"))); // NOI18N
+
+        lblContasAReceber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblContasAReceber.setForeground(new java.awt.Color(255, 255, 255));
+        lblContasAReceber.setText("Contas a Receber");
+
+        javax.swing.GroupLayout btnContasAReceberLayout = new javax.swing.GroupLayout(btnContasAReceber);
+        btnContasAReceber.setLayout(btnContasAReceberLayout);
+        btnContasAReceberLayout.setHorizontalGroup(
+            btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnContasAReceberLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgContasAReceber)
+                .addGap(20, 20, 20)
+                .addComponent(lblContasAReceber)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnContasAReceberLayout.setVerticalGroup(
+            btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        atalhosDoMenu.add(btnContasAReceber);
+
+        btnContasAPagar.setBackground(new java.awt.Color(12, 180, 206));
+        btnContasAPagar.setPreferredSize(new java.awt.Dimension(171, 40));
+        btnContasAPagar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnContasAPagarMousePressed(evt);
+            }
+        });
+
+        imgContasAPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Merchant_Account_25px_1.png"))); // NOI18N
+
+        lblContasAPagar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblContasAPagar.setForeground(new java.awt.Color(255, 255, 255));
+        lblContasAPagar.setText("Contas a Pagar");
+
+        javax.swing.GroupLayout btnContasAPagarLayout = new javax.swing.GroupLayout(btnContasAPagar);
+        btnContasAPagar.setLayout(btnContasAPagarLayout);
+        btnContasAPagarLayout.setHorizontalGroup(
+            btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnContasAPagarLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgContasAPagar)
+                .addGap(20, 20, 20)
+                .addComponent(lblContasAPagar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnContasAPagarLayout.setVerticalGroup(
+            btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        atalhosDoMenu.add(btnContasAPagar);
+
+        btnRelatorioDeEstoque.setBackground(new java.awt.Color(12, 180, 206));
+        btnRelatorioDeEstoque.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnRelatorioDeEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnRelatorioDeEstoqueMousePressed(evt);
+            }
+        });
+
+        imgRelatorioDeEstoque1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Shredder_25px.png"))); // NOI18N
+
+        lblRelatorioDeEstoque1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRelatorioDeEstoque1.setForeground(new java.awt.Color(255, 255, 255));
+        lblRelatorioDeEstoque1.setText("Relatório de Estoque");
+
+        javax.swing.GroupLayout btnRelatorioDeEstoqueLayout = new javax.swing.GroupLayout(btnRelatorioDeEstoque);
+        btnRelatorioDeEstoque.setLayout(btnRelatorioDeEstoqueLayout);
+        btnRelatorioDeEstoqueLayout.setHorizontalGroup(
+            btnRelatorioDeEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnRelatorioDeEstoqueLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgRelatorioDeEstoque1)
+                .addGap(20, 20, 20)
+                .addComponent(lblRelatorioDeEstoque1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnRelatorioDeEstoqueLayout.setVerticalGroup(
+            btnRelatorioDeEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(imgRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        atalhosDoMenu.add(btnRelatorioDeEstoque);
+
+        btnRelatorioDeVendas.setBackground(new java.awt.Color(12, 180, 206));
+        btnRelatorioDeVendas.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnRelatorioDeVendas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnRelatorioDeVendasMousePressed(evt);
+            }
+        });
+
+        imgRelatorioDeVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Print_25px.png"))); // NOI18N
+
+        lblRelatorioDeVendas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRelatorioDeVendas.setForeground(new java.awt.Color(255, 255, 255));
+        lblRelatorioDeVendas.setText("Relatório de Vendas");
+
+        javax.swing.GroupLayout btnRelatorioDeVendasLayout = new javax.swing.GroupLayout(btnRelatorioDeVendas);
+        btnRelatorioDeVendas.setLayout(btnRelatorioDeVendasLayout);
+        btnRelatorioDeVendasLayout.setHorizontalGroup(
+            btnRelatorioDeVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnRelatorioDeVendasLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgRelatorioDeVendas)
+                .addGap(20, 20, 20)
+                .addComponent(lblRelatorioDeVendas)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnRelatorioDeVendasLayout.setVerticalGroup(
+            btnRelatorioDeVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgRelatorioDeVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblRelatorioDeVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        atalhosDoMenu.add(btnRelatorioDeVendas);
+
+        btnUsuario.setBackground(new java.awt.Color(12, 180, 206));
+        btnUsuario.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnUsuarioMousePressed(evt);
+            }
+        });
+
+        imgUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_More_Info_25px.png"))); // NOI18N
+
+        lblUsuario1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblUsuario1.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuario1.setText("Usuário");
+
+        javax.swing.GroupLayout btnUsuarioLayout = new javax.swing.GroupLayout(btnUsuario);
+        btnUsuario.setLayout(btnUsuarioLayout);
+        btnUsuarioLayout.setHorizontalGroup(
+            btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnUsuarioLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgUsuario)
+                .addGap(20, 20, 20)
+                .addComponent(lblUsuario1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnUsuarioLayout.setVerticalGroup(
+            btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(imgUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        atalhosDoMenu.add(btnUsuario);
+
+        btnSac.setBackground(new java.awt.Color(12, 180, 206));
+        btnSac.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnSac.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSacMousePressed(evt);
+            }
+        });
+
+        imgSac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Ask_Question_25px.png"))); // NOI18N
+
+        lblSac.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblSac.setForeground(new java.awt.Color(255, 255, 255));
+        lblSac.setText("Sac");
+
+        javax.swing.GroupLayout btnSacLayout = new javax.swing.GroupLayout(btnSac);
+        btnSac.setLayout(btnSacLayout);
+        btnSacLayout.setHorizontalGroup(
+            btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnSacLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(imgSac)
+                .addGap(20, 20, 20)
+                .addComponent(lblSac)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btnSacLayout.setVerticalGroup(
+            btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblSac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(imgSac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        atalhosDoMenu.add(btnSac);
+
+        menuLateral.add(atalhosDoMenu, java.awt.BorderLayout.CENTER);
 
         btnSair.setBackground(new java.awt.Color(12, 180, 206));
         btnSair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -324,292 +594,7 @@ public class Sistema extends javax.swing.JFrame {
             .addComponent(lblSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        btnCompras.setBackground(new java.awt.Color(12, 180, 206));
-        btnCompras.setPreferredSize(new java.awt.Dimension(111, 40));
-        btnCompras.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnComprasMousePressed(evt);
-            }
-        });
-
-        imgCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Buy_25px.png"))); // NOI18N
-
-        lblCompras.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblCompras.setForeground(new java.awt.Color(255, 255, 255));
-        lblCompras.setText("Compras");
-
-        javax.swing.GroupLayout btnComprasLayout = new javax.swing.GroupLayout(btnCompras);
-        btnCompras.setLayout(btnComprasLayout);
-        btnComprasLayout.setHorizontalGroup(
-            btnComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnComprasLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgCompras)
-                .addGap(20, 20, 20)
-                .addComponent(lblCompras)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnComprasLayout.setVerticalGroup(
-            btnComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgCompras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblCompras, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        btnVendas.setBackground(new java.awt.Color(12, 180, 206));
-        btnVendas.setPreferredSize(new java.awt.Dimension(111, 40));
-        btnVendas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnVendasMousePressed(evt);
-            }
-        });
-
-        imgVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Christmas_Gift_25px_1.png"))); // NOI18N
-
-        lblVendas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblVendas.setForeground(new java.awt.Color(255, 255, 255));
-        lblVendas.setText("Vendas");
-
-        javax.swing.GroupLayout btnVendasLayout = new javax.swing.GroupLayout(btnVendas);
-        btnVendas.setLayout(btnVendasLayout);
-        btnVendasLayout.setHorizontalGroup(
-            btnVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnVendasLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgVendas)
-                .addGap(20, 20, 20)
-                .addComponent(lblVendas)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnVendasLayout.setVerticalGroup(
-            btnVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        btnCadastroDeProdutos.setBackground(new java.awt.Color(12, 180, 206));
-        btnCadastroDeProdutos.setPreferredSize(new java.awt.Dimension(111, 40));
-        btnCadastroDeProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnCadastroDeProdutosMousePressed(evt);
-            }
-        });
-
-        imgCadastroDeProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Packaging_25px.png"))); // NOI18N
-
-        lblCadastroDeProdutos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblCadastroDeProdutos.setForeground(new java.awt.Color(255, 255, 255));
-        lblCadastroDeProdutos.setText("Cadastro de Produtos");
-
-        javax.swing.GroupLayout btnCadastroDeProdutosLayout = new javax.swing.GroupLayout(btnCadastroDeProdutos);
-        btnCadastroDeProdutos.setLayout(btnCadastroDeProdutosLayout);
-        btnCadastroDeProdutosLayout.setHorizontalGroup(
-            btnCadastroDeProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnCadastroDeProdutosLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgCadastroDeProdutos)
-                .addGap(20, 20, 20)
-                .addComponent(lblCadastroDeProdutos)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnCadastroDeProdutosLayout.setVerticalGroup(
-            btnCadastroDeProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgCadastroDeProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblCadastroDeProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        btnSac.setBackground(new java.awt.Color(12, 180, 206));
-        btnSac.setPreferredSize(new java.awt.Dimension(111, 40));
-        btnSac.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnSacMousePressed(evt);
-            }
-        });
-
-        imgSac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Ask_Question_25px.png"))); // NOI18N
-
-        lblSac.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblSac.setForeground(new java.awt.Color(255, 255, 255));
-        lblSac.setText("Sac");
-
-        javax.swing.GroupLayout btnSacLayout = new javax.swing.GroupLayout(btnSac);
-        btnSac.setLayout(btnSacLayout);
-        btnSacLayout.setHorizontalGroup(
-            btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnSacLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgSac)
-                .addGap(20, 20, 20)
-                .addComponent(lblSac)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnSacLayout.setVerticalGroup(
-            btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnSacLayout.createSequentialGroup()
-                .addGroup(btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imgSac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblSac, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        btnRelatorioDeVendas1.setBackground(new java.awt.Color(12, 180, 206));
-        btnRelatorioDeVendas1.setPreferredSize(new java.awt.Dimension(111, 40));
-        btnRelatorioDeVendas1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnRelatorioDeVendas1MousePressed(evt);
-            }
-        });
-
-        imgRelatorioDeVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Print_25px.png"))); // NOI18N
-
-        lblRelatorioDeVendas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblRelatorioDeVendas.setForeground(new java.awt.Color(255, 255, 255));
-        lblRelatorioDeVendas.setText("Relatório de Vendas");
-
-        javax.swing.GroupLayout btnRelatorioDeVendas1Layout = new javax.swing.GroupLayout(btnRelatorioDeVendas1);
-        btnRelatorioDeVendas1.setLayout(btnRelatorioDeVendas1Layout);
-        btnRelatorioDeVendas1Layout.setHorizontalGroup(
-            btnRelatorioDeVendas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnRelatorioDeVendas1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgRelatorioDeVendas)
-                .addGap(20, 20, 20)
-                .addComponent(lblRelatorioDeVendas)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnRelatorioDeVendas1Layout.setVerticalGroup(
-            btnRelatorioDeVendas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgRelatorioDeVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblRelatorioDeVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        btnRelatorioDeEstoque1.setBackground(new java.awt.Color(12, 180, 206));
-        btnRelatorioDeEstoque1.setPreferredSize(new java.awt.Dimension(111, 40));
-        btnRelatorioDeEstoque1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnRelatorioDeEstoque1MousePressed(evt);
-            }
-        });
-
-        imgRelatorioDeEstoque1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Shredder_25px.png"))); // NOI18N
-
-        lblRelatorioDeEstoque1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblRelatorioDeEstoque1.setForeground(new java.awt.Color(255, 255, 255));
-        lblRelatorioDeEstoque1.setText("Relatório de Estoque");
-
-        javax.swing.GroupLayout btnRelatorioDeEstoque1Layout = new javax.swing.GroupLayout(btnRelatorioDeEstoque1);
-        btnRelatorioDeEstoque1.setLayout(btnRelatorioDeEstoque1Layout);
-        btnRelatorioDeEstoque1Layout.setHorizontalGroup(
-            btnRelatorioDeEstoque1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnRelatorioDeEstoque1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgRelatorioDeEstoque1)
-                .addGap(20, 20, 20)
-                .addComponent(lblRelatorioDeEstoque1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnRelatorioDeEstoque1Layout.setVerticalGroup(
-            btnRelatorioDeEstoque1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnRelatorioDeEstoque1Layout.createSequentialGroup()
-                .addGroup(btnRelatorioDeEstoque1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imgRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        btnUsuario.setBackground(new java.awt.Color(12, 180, 206));
-        btnUsuario.setPreferredSize(new java.awt.Dimension(111, 40));
-        btnUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnUsuarioMousePressed(evt);
-            }
-        });
-
-        imgUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_More_Info_25px.png"))); // NOI18N
-
-        lblUsuario1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblUsuario1.setForeground(new java.awt.Color(255, 255, 255));
-        lblUsuario1.setText("Usuário");
-
-        javax.swing.GroupLayout btnUsuarioLayout = new javax.swing.GroupLayout(btnUsuario);
-        btnUsuario.setLayout(btnUsuarioLayout);
-        btnUsuarioLayout.setHorizontalGroup(
-            btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnUsuarioLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgUsuario)
-                .addGap(20, 20, 20)
-                .addComponent(lblUsuario1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnUsuarioLayout.setVerticalGroup(
-            btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnUsuarioLayout.createSequentialGroup()
-                .addGroup(btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imgUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout menuLateralLayout = new javax.swing.GroupLayout(menuLateral);
-        menuLateral.setLayout(menuLateralLayout);
-        menuLateralLayout.setHorizontalGroup(
-            menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(btnContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addGroup(menuLateralLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-            .addComponent(btnVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(imgLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnCadastroDeProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(btnRelatorioDeVendas1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(btnCompras, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(btnSac, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(btnRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(btnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-        );
-        menuLateralLayout.setVerticalGroup(
-            menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuLateralLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(imgLogo)
-                .addGap(18, 18, 18)
-                .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnContasAPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnContasAReceber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnCadastroDeProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnRelatorioDeVendas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnRelatorioDeEstoque1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnSac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        menuLateral.add(btnSair, java.awt.BorderLayout.PAGE_END);
 
         areaDeTrabalho.setBackground(new java.awt.Color(255, 255, 255));
         areaDeTrabalho.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -661,7 +646,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(lblNomeSistema)
-                .addGap(0, 337, Short.MAX_VALUE))
+                .addGap(0, 283, Short.MAX_VALUE))
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
                 .addContainerGap()
@@ -698,44 +683,6 @@ public class Sistema extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   
-    private void atualizaPanelDinamico(String label, JPanel panel){
-        lblBreadcrumb.setText(label);
-        painelDinamico.removeAll();
-        painelDinamico.add(panel);
-        painelDinamico.validate();
-        painelDinamico.repaint();
-    
-    }
-    private void btnContasAPagarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMousePressed
-        atualizaPanelDinamico("Contas a Pagar", new ContasAPagarPrincipal());
-              
-    }//GEN-LAST:event_btnContasAPagarMousePressed
-
-    
-    private void btnContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMousePressed
-        atualizaPanelDinamico("Contas a Receber", new ContasAReceberPrincipal());
-    }//GEN-LAST:event_btnContasAReceberMousePressed
-
-    private void btnInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMousePressed
-        ExemploPopulaTabela exemplo = new ExemploPopulaTabela();
-        lblBreadcrumb.setText("BEM VINDO AO MEI");
-        painelDinamico.removeAll();
-        painelDinamico.add(exemplo);
-        painelDinamico.validate();
-        painelDinamico.repaint();
-
-    }//GEN-LAST:event_btnInicioMousePressed
-
-    private void btnClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMousePressed
-        atualizaPanelDinamico("Gerenciamento de Clientes", new ClientePrincipal());
-    }//GEN-LAST:event_btnClientesMousePressed
-
-    private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
-
-       atualizaPanelDinamico("Gerenciamento de Categoria ", new CategoriaPrincipal());
-   
-    }//GEN-LAST:event_btnCategoriasMousePressed
 
     private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
         System.exit(0);
@@ -745,38 +692,77 @@ public class Sistema extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSairMousePressed
 
-    private void btnFornecedorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedorMousePressed
-        atualizaPanelDinamico("Gerenciamento de Fornecedor", new FornecedorPrincipal());
-    }//GEN-LAST:event_btnFornecedorMousePressed
-
-    private void btnComprasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMousePressed
-        atualizaPanelDinamico("Gerenciamento de Compras", new CompraPrincipal());
-    }//GEN-LAST:event_btnComprasMousePressed
-
-    private void btnSacMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSacMousePressed
-        atualizaPanelDinamico("Sac", new SacPrincipal());
-    }//GEN-LAST:event_btnSacMousePressed
-
-    private void btnVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMousePressed
-        atualizaPanelDinamico("Gerenciamento de Vendas", new VendaPrincipal());
-    }//GEN-LAST:event_btnVendasMousePressed
-
-    private void btnRelatorioDeVendas1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendas1MousePressed
-        atualizaPanelDinamico("Relatória de Vendas", new RelatorioVendasPrincipal());
-    }//GEN-LAST:event_btnRelatorioDeVendas1MousePressed
-
-    private void btnRelatorioDeEstoque1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoque1MousePressed
-        atualizaPanelDinamico("Relatória de Estoque", new RelatorioDeEstoquePrincipal());
-    }//GEN-LAST:event_btnRelatorioDeEstoque1MousePressed
+    private void btnInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMousePressed
+        ExemploPopulaTabela exemplo = new ExemploPopulaTabela();
+        lblBreadcrumb.setText("BEM VINDO AO MEI");
+        painelDinamico.removeAll();
+        painelDinamico.add(exemplo);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    }//GEN-LAST:event_btnInicioMousePressed
 
     private void btnUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuarioMousePressed
         atualizaPanelDinamico("Usuário", new UsuarioPrincipal());
     }//GEN-LAST:event_btnUsuarioMousePressed
 
-    private void btnCadastroDeProdutosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroDeProdutosMousePressed
-       atualizaPanelDinamico("Cadastro de Produtos", new ProdutoPrincipal());
-    }//GEN-LAST:event_btnCadastroDeProdutosMousePressed
+    private void btnRelatorioDeEstoqueMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoqueMousePressed
+        atualizaPanelDinamico("Relatória de Estoque", new RelatorioDeEstoquePrincipal());
+    }//GEN-LAST:event_btnRelatorioDeEstoqueMousePressed
 
+    private void btnRelatorioDeVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendasMousePressed
+        atualizaPanelDinamico("Relatória de Vendas", new RelatorioVendasPrincipal());
+    }//GEN-LAST:event_btnRelatorioDeVendasMousePressed
+
+    private void btnProdutosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutosMousePressed
+        atualizaPanelDinamico("Cadastro de Produtos", new ProdutoPrincipal());
+    }//GEN-LAST:event_btnProdutosMousePressed
+
+    private void btnVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMousePressed
+        atualizaPanelDinamico("Gerenciamento de Vendas", new VendaPrincipal());
+    }//GEN-LAST:event_btnVendasMousePressed
+
+    private void btnComprasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMousePressed
+        atualizaPanelDinamico("Gerenciamento de Compras", new CompraPrincipal());
+    }//GEN-LAST:event_btnComprasMousePressed
+
+    private void btnFornecedorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedorMousePressed
+        atualizaPanelDinamico("Gerenciamento de Fornecedor", new FornecedorPrincipal());
+    }//GEN-LAST:event_btnFornecedorMousePressed
+
+    private void btnClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMousePressed
+        atualizaPanelDinamico("Gerenciamento de Clientes", new ClientePrincipal());
+    }//GEN-LAST:event_btnClientesMousePressed
+
+    private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
+
+        atualizaPanelDinamico("Gerenciamento de Categoria ", new CategoriaPrincipal());
+    }//GEN-LAST:event_btnCategoriasMousePressed
+
+    private void btnContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMousePressed
+        atualizaPanelDinamico("Contas a Receber", new ContasAReceberPrincipal());
+    }//GEN-LAST:event_btnContasAReceberMousePressed
+
+    private void btnContasAPagarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMousePressed
+        atualizaPanelDinamico("Contas a Pagar", new ContasAPagarPrincipal());
+    }//GEN-LAST:event_btnContasAPagarMousePressed
+
+    private void btnSacMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSacMousePressed
+        atualizaPanelDinamico("Sac", new SacPrincipal());
+    }//GEN-LAST:event_btnSacMousePressed
+
+    private void iconeSistemaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconeSistemaMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_iconeSistemaMousePressed
+   
+    private void atualizaPanelDinamico(String label, JPanel panel){
+        lblBreadcrumb.setText(label);
+        painelDinamico.removeAll();
+        painelDinamico.add(panel);
+        painelDinamico.validate();
+        painelDinamico.repaint();
+    
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -823,7 +809,7 @@ public class Sistema extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel areaDeTrabalho;
-    private javax.swing.JPanel btnCadastroDeProdutos;
+    private javax.swing.JPanel atalhosDoMenu;
     private javax.swing.JPanel btnCategorias;
     private javax.swing.JPanel btnClientes;
     private javax.swing.JPanel btnCompras;
@@ -831,12 +817,14 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel btnContasAReceber;
     private javax.swing.JPanel btnFornecedor;
     private javax.swing.JPanel btnInicio;
-    private javax.swing.JPanel btnRelatorioDeEstoque1;
-    private javax.swing.JPanel btnRelatorioDeVendas1;
+    private javax.swing.JPanel btnProdutos;
+    private javax.swing.JPanel btnRelatorioDeEstoque;
+    private javax.swing.JPanel btnRelatorioDeVendas;
     private javax.swing.JPanel btnSac;
     private javax.swing.JPanel btnSair;
     private javax.swing.JPanel btnUsuario;
     private javax.swing.JPanel btnVendas;
+    private javax.swing.JPanel iconeSistema;
     private javax.swing.JLabel imgCadastroDeProdutos;
     private javax.swing.JLabel imgCategorias;
     private javax.swing.JLabel imgClientes;
@@ -853,6 +841,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel imgUsuario;
     private javax.swing.JLabel imgVendas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblBreadcrumb;
     private javax.swing.JLabel lblCadastroDeProdutos;
     private javax.swing.JLabel lblCategorias;
@@ -872,6 +861,5 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel menuLateral;
     private javax.swing.JPanel painelBreadcrumb;
     private javax.swing.JPanel painelDinamico;
-    private javax.swing.JSeparator separador;
     // End of variables declaration//GEN-END:variables
 }
