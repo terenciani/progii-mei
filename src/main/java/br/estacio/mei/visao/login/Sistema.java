@@ -124,7 +124,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnInicioLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(imgInicio)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(lblInicio)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -142,6 +142,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgContasAPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Merchant_Account_25px_1.png"))); // NOI18N
+
         lblContasAPagar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblContasAPagar.setForeground(new java.awt.Color(255, 255, 255));
         lblContasAPagar.setText("Contas a Pagar");
@@ -153,9 +155,9 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnContasAPagarLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(imgContasAPagar)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(lblContasAPagar)
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         btnContasAPagarLayout.setVerticalGroup(
             btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,6 +173,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgContasAReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Capital_25px.png"))); // NOI18N
+
         lblContasAReceber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblContasAReceber.setForeground(new java.awt.Color(255, 255, 255));
         lblContasAReceber.setText("Contas a Receber");
@@ -182,7 +186,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnContasAReceberLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(imgContasAReceber)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(lblContasAReceber)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -200,9 +204,11 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Tournament_25px.png"))); // NOI18N
+
         lblCategorias.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblCategorias.setForeground(new java.awt.Color(255, 255, 255));
-        lblCategorias.setText("Categorias");
+        lblCategorias.setText("Categorias de Produtos");
 
         javax.swing.GroupLayout btnCategoriasLayout = new javax.swing.GroupLayout(btnCategorias);
         btnCategorias.setLayout(btnCategoriasLayout);
@@ -211,7 +217,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnCategoriasLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(imgCategorias)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(lblCategorias)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -229,6 +235,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Management_25px.png"))); // NOI18N
+
         lblClientes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClientes.setForeground(new java.awt.Color(255, 255, 255));
         lblClientes.setText("Clientes");
@@ -240,7 +248,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnClientesLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(imgClientes)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(lblClientes)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -258,6 +266,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgFornecedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Food_Truck_25px.png"))); // NOI18N
+
         lblFornecedores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblFornecedores.setForeground(new java.awt.Color(255, 255, 255));
         lblFornecedores.setText("Fornecedor");
@@ -267,11 +277,11 @@ public class Sistema extends javax.swing.JFrame {
         btnFornecedorLayout.setHorizontalGroup(
             btnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnFornecedorLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(imgFornecedores)
-                .addGap(33, 33, 33)
-                .addComponent(lblFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(lblFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btnFornecedorLayout.setVerticalGroup(
             btnFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,6 +332,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Buy_25px.png"))); // NOI18N
+
         lblCompras.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblCompras.setForeground(new java.awt.Color(255, 255, 255));
         lblCompras.setText("Compras");
@@ -331,9 +343,9 @@ public class Sistema extends javax.swing.JFrame {
         btnComprasLayout.setHorizontalGroup(
             btnComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnComprasLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(imgCompras)
-                .addGap(33, 33, 33)
+                .addGap(20, 20, 20)
                 .addComponent(lblCompras)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -351,6 +363,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Christmas_Gift_25px_1.png"))); // NOI18N
+
         lblVendas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblVendas.setForeground(new java.awt.Color(255, 255, 255));
         lblVendas.setText("Vendas");
@@ -360,9 +374,9 @@ public class Sistema extends javax.swing.JFrame {
         btnVendasLayout.setHorizontalGroup(
             btnVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnVendasLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(imgVendas)
-                .addGap(35, 35, 35)
+                .addGap(20, 20, 20)
                 .addComponent(lblVendas)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -380,6 +394,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgCadastroDeProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Packaging_25px.png"))); // NOI18N
+
         lblCadastroDeProdutos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblCadastroDeProdutos.setForeground(new java.awt.Color(255, 255, 255));
         lblCadastroDeProdutos.setText("Cadastro de Produtos");
@@ -389,9 +405,9 @@ public class Sistema extends javax.swing.JFrame {
         btnCadastroDeProdutosLayout.setHorizontalGroup(
             btnCadastroDeProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnCadastroDeProdutosLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(imgCadastroDeProdutos)
-                .addGap(33, 33, 33)
+                .addGap(20, 20, 20)
                 .addComponent(lblCadastroDeProdutos)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -409,6 +425,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgSac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Ask_Question_25px.png"))); // NOI18N
+
         lblSac.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblSac.setForeground(new java.awt.Color(255, 255, 255));
         lblSac.setText("Sac");
@@ -418,9 +436,9 @@ public class Sistema extends javax.swing.JFrame {
         btnSacLayout.setHorizontalGroup(
             btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnSacLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(imgSac)
-                .addGap(31, 31, 31)
+                .addGap(20, 20, 20)
                 .addComponent(lblSac)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -429,7 +447,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnSacLayout.createSequentialGroup()
                 .addGroup(btnSacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgSac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblSac, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                    .addComponent(lblSac, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -441,6 +459,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgRelatorioDeVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Print_25px.png"))); // NOI18N
+
         lblRelatorioDeVendas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblRelatorioDeVendas.setForeground(new java.awt.Color(255, 255, 255));
         lblRelatorioDeVendas.setText("Relatório de Vendas");
@@ -450,9 +470,9 @@ public class Sistema extends javax.swing.JFrame {
         btnRelatorioDeVendas1Layout.setHorizontalGroup(
             btnRelatorioDeVendas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnRelatorioDeVendas1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(imgRelatorioDeVendas)
-                .addGap(33, 33, 33)
+                .addGap(20, 20, 20)
                 .addComponent(lblRelatorioDeVendas)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -470,6 +490,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgRelatorioDeEstoque1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Shredder_25px.png"))); // NOI18N
+
         lblRelatorioDeEstoque1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblRelatorioDeEstoque1.setForeground(new java.awt.Color(255, 255, 255));
         lblRelatorioDeEstoque1.setText("Relatório de Estoque");
@@ -479,9 +501,9 @@ public class Sistema extends javax.swing.JFrame {
         btnRelatorioDeEstoque1Layout.setHorizontalGroup(
             btnRelatorioDeEstoque1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnRelatorioDeEstoque1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(imgRelatorioDeEstoque1)
-                .addGap(34, 34, 34)
+                .addGap(20, 20, 20)
                 .addComponent(lblRelatorioDeEstoque1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -490,7 +512,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnRelatorioDeEstoque1Layout.createSequentialGroup()
                 .addGroup(btnRelatorioDeEstoque1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                    .addComponent(lblRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -502,6 +524,8 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        imgUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_More_Info_25px.png"))); // NOI18N
+
         lblUsuario1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblUsuario1.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuario1.setText("Usuário");
@@ -511,9 +535,9 @@ public class Sistema extends javax.swing.JFrame {
         btnUsuarioLayout.setHorizontalGroup(
             btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnUsuarioLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(imgUsuario)
-                .addGap(34, 34, 34)
+                .addGap(20, 20, 20)
                 .addComponent(lblUsuario1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -522,7 +546,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(btnUsuarioLayout.createSequentialGroup()
                 .addGroup(btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                    .addComponent(lblUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -531,24 +555,24 @@ public class Sistema extends javax.swing.JFrame {
         menuLateralLayout.setHorizontalGroup(
             menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-            .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-            .addComponent(btnContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-            .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(btnContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
             .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
             .addGroup(menuLateralLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
-            .addComponent(btnVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE))
+            .addComponent(btnVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
             .addComponent(imgLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnCadastroDeProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-            .addComponent(btnRelatorioDeVendas1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-            .addComponent(btnCompras, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-            .addComponent(btnSac, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-            .addComponent(btnRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-            .addComponent(btnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(btnCadastroDeProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(btnRelatorioDeVendas1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(btnCompras, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(btnSac, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(btnRelatorioDeEstoque1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(btnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
         );
         menuLateralLayout.setVerticalGroup(
             menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -638,11 +662,11 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(lblNomeSistema)
                 .addGap(0, 337, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
-                .addGap(1, 1, 1)
+                .addContainerGap()
                 .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         areaDeTrabalhoLayout.setVerticalGroup(
             areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -51,25 +51,25 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="btnInicio" alignment="0" max="32767" attributes="0"/>
-              <Component id="btnContasAPagar" alignment="0" pref="360" max="32767" attributes="0"/>
-              <Component id="btnClientes" alignment="0" pref="360" max="32767" attributes="0"/>
-              <Component id="btnContasAReceber" alignment="0" pref="360" max="32767" attributes="0"/>
-              <Component id="btnCategorias" alignment="0" pref="360" max="32767" attributes="0"/>
+              <Component id="btnContasAPagar" alignment="0" pref="280" max="32767" attributes="0"/>
+              <Component id="btnClientes" alignment="0" pref="280" max="32767" attributes="0"/>
+              <Component id="btnContasAReceber" alignment="0" pref="280" max="32767" attributes="0"/>
+              <Component id="btnCategorias" alignment="0" pref="280" max="32767" attributes="0"/>
               <Component id="btnSair" alignment="0" max="32767" attributes="0"/>
-              <Component id="btnFornecedor" alignment="1" pref="360" max="32767" attributes="0"/>
+              <Component id="btnFornecedor" alignment="1" pref="280" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="separador" min="-2" pref="236" max="-2" attributes="0"/>
-                  <EmptySpace pref="102" max="32767" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
-              <Component id="btnVendas" alignment="0" pref="360" max="32767" attributes="0"/>
+              <Component id="btnVendas" alignment="0" pref="280" max="32767" attributes="0"/>
               <Component id="imgLogo" alignment="0" max="32767" attributes="0"/>
-              <Component id="btnCadastroDeProdutos" alignment="0" pref="360" max="32767" attributes="0"/>
-              <Component id="btnRelatorioDeVendas1" alignment="0" pref="360" max="32767" attributes="0"/>
-              <Component id="btnCompras" alignment="0" pref="360" max="32767" attributes="0"/>
-              <Component id="btnSac" alignment="0" pref="360" max="32767" attributes="0"/>
-              <Component id="btnRelatorioDeEstoque1" alignment="0" pref="360" max="32767" attributes="0"/>
-              <Component id="btnUsuario" alignment="0" pref="360" max="32767" attributes="0"/>
+              <Component id="btnCadastroDeProdutos" alignment="0" pref="280" max="32767" attributes="0"/>
+              <Component id="btnRelatorioDeVendas1" alignment="0" pref="280" max="32767" attributes="0"/>
+              <Component id="btnCompras" alignment="0" pref="280" max="32767" attributes="0"/>
+              <Component id="btnSac" alignment="0" pref="280" max="32767" attributes="0"/>
+              <Component id="btnRelatorioDeEstoque1" alignment="0" pref="280" max="32767" attributes="0"/>
+              <Component id="btnUsuario" alignment="0" pref="280" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -138,7 +138,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgInicio" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblInicio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -191,9 +191,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgContasAPagar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblContasAPagar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="192" max="32767" attributes="0"/>
+                      <EmptySpace pref="88" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -206,6 +206,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgContasAPagar">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Merchant_Account_25px_1.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblContasAPagar">
               <Properties>
@@ -239,7 +244,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgContasAReceber" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblContasAReceber" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -254,6 +259,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgContasAReceber">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Capital_25px.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblContasAReceber">
               <Properties>
@@ -287,7 +297,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgCategorias" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblCategorias" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -302,6 +312,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgCategorias">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Tournament_25px.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCategorias">
               <Properties>
@@ -311,7 +326,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Categorias"/>
+                <Property name="text" type="java.lang.String" value="Categorias de Produtos"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -335,7 +350,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgClientes" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblClientes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -350,6 +365,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgClientes">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Management_25px.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblClientes">
               <Properties>
@@ -381,11 +401,11 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgFornecedores" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="lblFornecedores" min="-2" pref="121" max="-2" attributes="0"/>
-                      <EmptySpace pref="200" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblFornecedores" min="-2" pref="127" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -398,6 +418,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgFornecedores">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Food_Truck_25px.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblFornecedores">
               <Properties>
@@ -482,9 +507,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgCompras" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblCompras" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -499,6 +524,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgCompras">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Buy_25px.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCompras">
               <Properties>
@@ -530,9 +560,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgVendas" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblVendas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -547,6 +577,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgVendas">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Christmas_Gift_25px_1.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblVendas">
               <Properties>
@@ -578,9 +613,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgCadastroDeProdutos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblCadastroDeProdutos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -595,6 +630,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgCadastroDeProdutos">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Packaging_25px.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCadastroDeProdutos">
               <Properties>
@@ -626,9 +666,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgSac" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblSac" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -639,7 +679,7 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="imgSac" max="32767" attributes="0"/>
-                          <Component id="lblSac" pref="28" max="32767" attributes="0"/>
+                          <Component id="lblSac" pref="27" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -648,6 +688,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgSac">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Ask_Question_25px.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblSac">
               <Properties>
@@ -679,9 +724,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgRelatorioDeVendas" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblRelatorioDeVendas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -696,6 +741,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgRelatorioDeVendas">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Print_25px.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblRelatorioDeVendas">
               <Properties>
@@ -727,9 +777,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgRelatorioDeEstoque1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblRelatorioDeEstoque1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -740,7 +790,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="imgRelatorioDeEstoque1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblRelatorioDeEstoque1" alignment="0" pref="28" max="32767" attributes="0"/>
+                          <Component id="lblRelatorioDeEstoque1" alignment="0" pref="27" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -749,6 +799,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgRelatorioDeEstoque1">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_Shredder_25px.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblRelatorioDeEstoque1">
               <Properties>
@@ -780,9 +835,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="imgUsuario" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lblUsuario1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -793,7 +848,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="imgUsuario" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblUsuario1" alignment="0" pref="28" max="32767" attributes="0"/>
+                          <Component id="lblUsuario1" alignment="0" pref="27" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -802,6 +857,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="imgUsuario">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/icons8_More_Info_25px.png"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblUsuario1">
               <Properties>
@@ -841,12 +901,12 @@
                   <Component id="lblNomeSistema" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="337" max="32767" attributes="0"/>
               </Group>
+              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="painelDinamico" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
-              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
