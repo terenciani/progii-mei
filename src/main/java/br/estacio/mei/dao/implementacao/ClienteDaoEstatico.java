@@ -7,9 +7,8 @@ package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.model.Cliente;
-import br.estacio.mei.visao.cliente.BancoSingleton;
+import br.estacio.mei.banco.estatico.BancoSingleton;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,12 +18,12 @@ public class ClienteDaoEstatico implements ClienteDao {
 
     @Override
     public ArrayList<Cliente> buscarClientes() {
-        return BancoSingleton.getInstance().tabelaClientes;
+        return BancoSingleton.getInstance().tabelaCliente;
     }
 
     @Override
     public Cliente salvarCliente(Cliente cliente) {
-        BancoSingleton.getInstance().tabelaClientes.add(cliente);
+        BancoSingleton.getInstance().tabelaCliente.add(cliente);
         return cliente;
     }
 
@@ -37,7 +36,7 @@ public class ClienteDaoEstatico implements ClienteDao {
         for (int i = 0; i < listaDeClientes.size(); i++) {
             Cliente exibeCliente = listaDeClientes.get(i);
             if (exibeCliente.getCodigo() == codigo) {
-                BancoSingleton.getInstance().tabelaClientes.remove(i);
+                BancoSingleton.getInstance().tabelaCliente.remove(i);
             }
         }
         
@@ -60,7 +59,7 @@ public class ClienteDaoEstatico implements ClienteDao {
         for (int i = 0; i < listaDeClientes.size(); i++) {
             Cliente exibeCliente = listaDeClientes.get(i);
             if (exibeCliente.getCodigo() == codigo) {
-                BancoSingleton.getInstance().tabelaClientes.remove(i);
+                BancoSingleton.getInstance().tabelaCliente.remove(i);
             }
 
         }

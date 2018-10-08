@@ -5,10 +5,10 @@
  */
 package br.estacio.mei.dao.implementacao;
 
+import br.estacio.mei.banco.estatico.BancoSingleton;
 import br.estacio.mei.model.Compras;
 import br.estacio.mei.dao.ComprasDao;
 import java.util.ArrayList;
-import javax.swing.JTable;
 
 /**
  * Da
@@ -17,18 +17,16 @@ import javax.swing.JTable;
  */
 public class ComprasDaoEstatico implements ComprasDao {
 
-    ArrayList<Compras> bancoDados = new ArrayList();
-
     @Override
     public ArrayList<Compras> buscarCompras() {
-
-        return bancoDados;
+        
+        return BancoSingleton.getInstance().tabelaCompra;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Compras salvarCompras(Compras compras) {
-        bancoDados.add(compras);
+        BancoSingleton.getInstance().tabelaCompra.add(compras);
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

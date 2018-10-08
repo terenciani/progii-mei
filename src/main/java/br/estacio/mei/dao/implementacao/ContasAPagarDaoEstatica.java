@@ -5,6 +5,7 @@
  */
 package br.estacio.mei.dao.implementacao;
 
+import br.estacio.mei.banco.estatico.BancoSingleton;
 import br.estacio.mei.dao.ContasAPagarDao;
 import br.estacio.mei.model.ContasAPagar;
 import java.util.ArrayList;
@@ -15,16 +16,16 @@ import java.util.ArrayList;
  */
 public class ContasAPagarDaoEstatica implements ContasAPagarDao {
 
-    ArrayList<ContasAPagar> tabelaContasAPagar = new ArrayList<ContasAPagar>();
+    
 
     @Override
     public ArrayList<ContasAPagar> buscarContasApagar() {
-        return tabelaContasAPagar;
+        return BancoSingleton.getInstance().tabelaContaAPagar;
     }
 
     @Override
     public ContasAPagar salvarContasApagar(ContasAPagar contasAPagar) {
-        tabelaContasAPagar.add(contasAPagar);
+        BancoSingleton.getInstance().tabelaContaAPagar.add(contasAPagar);
         return contasAPagar;
     }
 

@@ -5,6 +5,7 @@
  */
 package br.estacio.mei.dao.implementacao;
 
+import br.estacio.mei.banco.estatico.BancoSingleton;
 import br.estacio.mei.dao.UsuarioDao;
 import br.estacio.mei.model.Usuario;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
  */
 public class UsuarioDaoEstatica implements UsuarioDao{
     
-    ArrayList<Usuario> tabelaUsuario = new ArrayList();
+    
     
     @Override
     public Usuario buscarUsuarioPorLogin(String login){
@@ -30,15 +31,15 @@ public class UsuarioDaoEstatica implements UsuarioDao{
     
     @Override
     public Usuario salvarUsuario(Usuario usuario){
-        tabelaUsuario.add(usuario);
+        BancoSingleton.getInstance().tabelaUsuario.add(usuario);
         return usuario;
     }
     
     @Override
     public Usuario atualizarUsuario(Usuario usuario){
-        for(int i = 0; i < tabelaUsuario.size(); i++){
-            if(tabelaUsuario.get(i).getId() == usuario.getId()){
-                tabelaUsuario.add(i, usuario);
+        for(int i = 0; i < BancoSingleton.getInstance().tabelaUsuario.size(); i++){
+            if(BancoSingleton.getInstance().tabelaUsuario.get(i).getId() == usuario.getId()){
+                BancoSingleton.getInstance().tabelaUsuario.add(i, usuario);
             }
         }
         /*for (lista)
@@ -50,13 +51,13 @@ public class UsuarioDaoEstatica implements UsuarioDao{
     
     @Override
     public boolean excluirUsuario(Usuario usuario){
-        tabelaUsuario.remove(usuario);
+        BancoSingleton.getInstance().tabelaUsuario.remove(usuario);
         return true;
     }
 
 
     @Override
     public ArrayList<Usuario> buscarUsuarios() {
-        return tabelaUsuario;
+        return BancoSingleton.getInstance().tabelaUsuario;
     }
 }

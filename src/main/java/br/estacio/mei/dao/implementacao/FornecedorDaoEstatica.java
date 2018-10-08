@@ -5,6 +5,7 @@
  */
 package br.estacio.mei.dao.implementacao;
 
+import br.estacio.mei.banco.estatico.BancoSingleton;
 import br.estacio.mei.dao.FornecedorDao;
 import br.estacio.mei.model.Fornecedor;
 import java.util.ArrayList;
@@ -13,39 +14,37 @@ import java.util.ArrayList;
  *
  * @author Marcelo
  */
-public class FornecedorDaoEstatica implements FornecedorDao{
-    
-    ArrayList<Fornecedor> listaFornecedor = new ArrayList<>();
-            
-    
+public class FornecedorDaoEstatica implements FornecedorDao {
+
     @Override
     public Fornecedor salvarFornecedor(Fornecedor fornecedor) {
-        listaFornecedor.add(fornecedor);
+        BancoSingleton.getInstance().tabelaFornecedor.add(fornecedor);
         return fornecedor;
     }
 
     @Override
     public Fornecedor alterarFornecedor(Fornecedor fornecedor) {
-        for(int i = 0; i < listaFornecedor.size(); i++){
-            if(listaFornecedor.get(i).getCodigo() == fornecedor.getCodigo()){
-                listaFornecedor.set(i, fornecedor);
+        for (int i = 0; i < BancoSingleton.getInstance().tabelaFornecedor.size(); i++) {
+            if (BancoSingleton.getInstance().tabelaFornecedor.get(i).getCodigo() == fornecedor.getCodigo()) {
+                BancoSingleton.getInstance().tabelaFornecedor.set(i, fornecedor);
             }
         }
-        
+
         return fornecedor;
     }
 
     @Override
     public boolean excluirFornecedor(Fornecedor fornecedor) {
-        if(listaFornecedor.remove(fornecedor))
-           return true;
-        else
+        if (BancoSingleton.getInstance().tabelaFornecedor.remove(fornecedor)) {
+            return true;
+        } else {
             return false;
+        }
     }
 
     @Override
     public ArrayList<br.estacio.mei.model.Fornecedor> listarFornecedores() {
-        return listaFornecedor;
+        return BancoSingleton.getInstance().tabelaFornecedor;
     }
-    
+
 }

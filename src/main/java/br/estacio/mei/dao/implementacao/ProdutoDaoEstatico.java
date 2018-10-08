@@ -5,6 +5,7 @@
  */
 package br.estacio.mei.dao.implementacao;
 
+import br.estacio.mei.banco.estatico.BancoSingleton;
 import br.estacio.mei.dao.ProdutoDao;
 import br.estacio.mei.model.Produto;
 import java.util.ArrayList;
@@ -14,15 +15,15 @@ import java.util.ArrayList;
  * @author Marcelo
  */
 public class ProdutoDaoEstatico implements ProdutoDao {
-    ArrayList<Produto> tabelaProduto = new ArrayList();
+    
     @Override
     public ArrayList<Produto> buscarProdutos() {
-        return tabelaProduto;
+        return BancoSingleton.getInstance().tabelaProduto;
     }
 
     @Override
     public Produto salvar(Produto produto) {
-        tabelaProduto.add(produto);
+        BancoSingleton.getInstance().tabelaProduto.add(produto);
         return produto;
     }
 

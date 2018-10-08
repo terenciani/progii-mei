@@ -8,7 +8,7 @@ package br.estacio.mei.dao.implementacao;
 import br.estacio.mei.dao.EnderecoDao;
 import br.estacio.mei.model.Cliente;
 import br.estacio.mei.model.Endereco;
-import br.estacio.mei.visao.cliente.BancoSingleton;
+import br.estacio.mei.banco.estatico.BancoSingleton;
 import java.util.ArrayList;
 
 /**

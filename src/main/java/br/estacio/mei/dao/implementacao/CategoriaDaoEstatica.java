@@ -8,7 +8,7 @@ package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.model.Categoria;
 import br.estacio.mei.dao.CategoriaDao;
-import br.estacio.mei.visao.categoria.BancoSingleton;
+import br.estacio.mei.banco.estatico.BancoSingleton;
 import java.util.ArrayList;
 
 /**
@@ -22,19 +22,19 @@ public class CategoriaDaoEstatica implements CategoriaDao {
     @Override
     public ArrayList<Categoria> buscarCategoria() {
 
-        return BancoSingleton.getInstance().tabelaCategorias;
+        return BancoSingleton.getInstance().tabelaCategoria;
     }
 
     @Override
     public Categoria salvarCategoria(Categoria categoria) {
-        BancoSingleton.getInstance().tabelaCategorias.add(categoria);
+        BancoSingleton.getInstance().tabelaCategoria.add(categoria);
         return categoria;
         
     }
 
     @Override
     public Categoria atualizarCategoria(Categoria categoria) {
-        BancoSingleton.getInstance().tabelaCategorias.get(0);
+        BancoSingleton.getInstance().tabelaCategoria.get(0);
         return categoria;
         
     }

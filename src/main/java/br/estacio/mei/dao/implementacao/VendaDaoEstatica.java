@@ -5,6 +5,7 @@
  */
 package br.estacio.mei.dao.implementacao;
 
+import br.estacio.mei.banco.estatico.BancoSingleton;
 import java.util.ArrayList;
 import br.estacio.mei.dao.VendaDao;
 import br.estacio.mei.model.Venda;
@@ -13,19 +14,17 @@ import br.estacio.mei.model.Venda;
  * @author venda
  */
 public class VendaDaoEstatica implements VendaDao{
-    ArrayList<Venda> tabelaVendas = new ArrayList();
-
     @Override
     public ArrayList<Venda> buscarVendas() {
-        for(Venda venda: tabelaVendas){
+        for(Venda venda: BancoSingleton.getInstance().tabelaVenda){
             System.out.println(venda.toString());
         }
-        return tabelaVendas;
+        return BancoSingleton.getInstance().tabelaVenda;
     }   
 
     @Override
     public Venda salvarVenda(Venda venda) {
-        tabelaVendas.add(venda);
+        BancoSingleton.getInstance().tabelaVenda.add(venda);
         return venda;
     }
 
