@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CompraPrincipal extends javax.swing.JPanel {
     ComprasDao compra = new ComprasDaoEstatico();
-    Compras compras = new Compras();
+    //Compras compras = new Compras();
     
     
     
@@ -28,7 +28,6 @@ public class CompraPrincipal extends javax.swing.JPanel {
     public CompraPrincipal() {
         initComponents();
         
-        DefaultTableModel novaColuna = (DefaultTableModel) jTableArmazenamendoDados.getModel();
     }
 
     /**
