@@ -5,12 +5,16 @@
  */
 package br.estacio.mei.visao.login;
 
+import br.estacio.mei.dao.UsuarioDao;
+import br.estacio.mei.dao.implementacao.UsuarioDaoEstatica;
+import br.estacio.mei.model.Usuario;
+
 /**
  *
  * @author Bisteca
  */
 public class Login extends javax.swing.JFrame {
-
+    UsuarioDao daoUsuario = new UsuarioDaoEstatica();
     /**
      * Creates new form Frame_2_LoginMEI
      */
@@ -39,13 +43,13 @@ public class Login extends javax.swing.JFrame {
         separatorSenha = new javax.swing.JSeparator();
         labelButtonEntrar = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
+        lblMenssage = new javax.swing.JLabel();
         bgDireita = new javax.swing.JPanel();
         labelIconLogin = new javax.swing.JLabel();
         labelTitulo = new javax.swing.JLabel();
         labelSubTitulo = new javax.swing.JLabel();
         labelFooterLogin = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -90,6 +94,8 @@ public class Login extends javax.swing.JFrame {
         jRadioButton1.setText("Lembrar de mim");
         jRadioButton1.setOpaque(false);
 
+        lblMenssage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout bgEsquerdaLayout = new javax.swing.GroupLayout(bgEsquerda);
         bgEsquerda.setLayout(bgEsquerdaLayout);
         bgEsquerdaLayout.setHorizontalGroup(
@@ -116,11 +122,12 @@ public class Login extends javax.swing.JFrame {
                                         .addComponent(separatorSenha)
                                         .addComponent(labelButtonEntrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)))))
                         .addGap(78, 78, 78))))
+            .addComponent(lblMenssage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         bgEsquerdaLayout.setVerticalGroup(
             bgEsquerdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgEsquerdaLayout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
+                .addContainerGap(96, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,12 +143,12 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(labelButtonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton1)
-                .addGap(98, 98, 98))
+                .addGap(48, 48, 48)
+                .addComponent(lblMenssage, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
 
         bgDireita.setBackground(new java.awt.Color(12, 180, 206));
-
-        labelIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaloginmei/icons8-usuário-homem-com-círculo-96.png"))); // NOI18N
 
         labelTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -159,8 +166,6 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Caso ainda não possua uma conta, cadastre-se!");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-usuário-homem-com-círculo-96.png"))); // NOI18N
-
         javax.swing.GroupLayout bgDireitaLayout = new javax.swing.GroupLayout(bgDireita);
         bgDireita.setLayout(bgDireitaLayout);
         bgDireitaLayout.setHorizontalGroup(
@@ -172,16 +177,13 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(labelTitulo)
                     .addComponent(labelSubTitulo)
                     .addComponent(labelFooterLogin)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel1))
                 .addGap(120, 120, 120))
         );
         bgDireitaLayout.setVerticalGroup(
             bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgDireitaLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(78, 78, 78)
                 .addComponent(labelTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelIconLogin)
@@ -189,7 +191,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(labelSubTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
                 .addComponent(labelFooterLogin)
                 .addContainerGap())
         );
@@ -213,7 +215,20 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void labelButtonEntrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelButtonEntrarMousePressed
-        // TODO add your handling code here:
+        
+        Usuario usuario = daoUsuario.buscarUsuarioPorLogin(tfUsuario.getText());
+        
+        String senha = new String (tfSenha.getPassword());
+
+        if(usuario == null)
+            lblMenssage.setText("Usuario não Encontrado");
+        else if (usuario.getSenha().equals(senha)){
+            this.setVisible(false);
+            //Se passar o usuario como parâmetro ficará mais fácil pra vocês
+            new Sistema().setVisible(true);
+        }else{
+            lblMenssage.setText("A Senha não confere");
+        }
     }//GEN-LAST:event_labelButtonEntrarMousePressed
 
     /**
@@ -260,7 +275,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JRadioButton jRadioButton1;
@@ -270,6 +284,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel labelIconLogin;
     private javax.swing.JLabel labelSubTitulo;
     private javax.swing.JLabel labelTitulo;
+    private javax.swing.JLabel lblMenssage;
     private javax.swing.JSeparator separatorSenha;
     private javax.swing.JSeparator separatorUsuario;
     private javax.swing.JPasswordField tfSenha;

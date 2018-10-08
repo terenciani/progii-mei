@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * @author sena the great
  */
 public interface UsuarioDao {
-    public Usuario buscarUsuarioPorLogin(Usuario usuario);
+    public Usuario buscarUsuarioPorLogin(String login);
     
     public ArrayList<Usuario> buscarUsuarios();
     

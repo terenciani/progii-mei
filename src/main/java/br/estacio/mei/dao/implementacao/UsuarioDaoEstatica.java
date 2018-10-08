@@ -18,8 +18,14 @@ public class UsuarioDaoEstatica implements UsuarioDao{
     ArrayList<Usuario> tabelaUsuario = new ArrayList();
     
     @Override
-    public Usuario buscarUsuarioPorLogin(Usuario usuario){
-        return usuario;
+    public Usuario buscarUsuarioPorLogin(String login){
+        if(login.equals("admin")){
+            Usuario usuario = new Usuario();
+            usuario.setUsuario("admin");
+            usuario.setSenha("admin");
+            return usuario;
+        }
+        return null;
     }
     
     @Override
@@ -51,6 +57,6 @@ public class UsuarioDaoEstatica implements UsuarioDao{
 
     @Override
     public ArrayList<Usuario> buscarUsuarios() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return tabelaUsuario;
     }
 }
