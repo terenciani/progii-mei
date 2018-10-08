@@ -22,7 +22,6 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
 /**
  *
  * @author Marcelo
@@ -165,14 +164,14 @@ public class Sistema extends javax.swing.JFrame {
         btnVendas.setBackground(new java.awt.Color(12, 180, 206));
         btnVendas.setPreferredSize(new java.awt.Dimension(111, 40));
         btnVendas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnVendasMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnVendasMouseExited(evt);
-            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnVendasMousePressed(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                hoverExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                hoverEntered(evt);
             }
         });
 
@@ -204,14 +203,14 @@ public class Sistema extends javax.swing.JFrame {
         btnCompras.setBackground(new java.awt.Color(12, 180, 206));
         btnCompras.setPreferredSize(new java.awt.Dimension(111, 40));
         btnCompras.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnComprasMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnComprasMouseExited(evt);
-            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnComprasMousePressed(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                hoverExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                hoverEntered(evt);
             }
         });
 
@@ -243,14 +242,14 @@ public class Sistema extends javax.swing.JFrame {
         btnClientes.setBackground(new java.awt.Color(12, 180, 206));
         btnClientes.setPreferredSize(new java.awt.Dimension(111, 40));
         btnClientes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnClientesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnClientesMouseExited(evt);
-            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnClientesMousePressed(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                hoverExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                hoverEntered(evt);
             }
         });
 
@@ -282,14 +281,14 @@ public class Sistema extends javax.swing.JFrame {
         btnProdutos.setBackground(new java.awt.Color(12, 180, 206));
         btnProdutos.setPreferredSize(new java.awt.Dimension(111, 40));
         btnProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnProdutosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnProdutosMouseExited(evt);
-            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnProdutosMousePressed(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                hoverExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                hoverEntered(evt);
             }
         });
 
@@ -750,15 +749,15 @@ public class Sistema extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    public void setColor(JPanel btnVendas){
-        btnVendas.setBackground(new Color(44,197,221));
+
+    public void changeColor(JPanel panelHovered) {
+        panelHovered.setBackground(new Color(44, 197, 221));
     }
-    
-    public void resetColor(JPanel btnVendas){
-        btnVendas.setBackground(new Color(12,180,206));
+
+    public void resetColor(JPanel panelHovered) {
+        panelHovered.setBackground(new Color(12, 180, 206));
     }
-    
+
     private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
         System.exit(0);
     }//GEN-LAST:event_lblSairMousePressed
@@ -829,40 +828,8 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_iconeSistemaMousePressed
 
-    private void btnVendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMouseEntered
-        setColor(btnVendas);
-    }//GEN-LAST:event_btnVendasMouseEntered
-
-    private void btnVendasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMouseExited
-        resetColor(btnVendas);
-    }//GEN-LAST:event_btnVendasMouseExited
-
-    private void btnComprasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMouseEntered
-        setColor(btnVendas);
-    }//GEN-LAST:event_btnComprasMouseEntered
-
-    private void btnComprasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnComprasMouseExited
-
-    private void btnClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseEntered
-        setColor(btnVendas);
-    }//GEN-LAST:event_btnClientesMouseEntered
-
-    private void btnClientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnClientesMouseExited
-
-    private void btnProdutosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutosMouseEntered
-        setColor(btnVendas);
-    }//GEN-LAST:event_btnProdutosMouseEntered
-
-    private void btnProdutosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutosMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProdutosMouseExited
-
     private void btnCategoriasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMouseEntered
-        setColor(btnVendas);
+
     }//GEN-LAST:event_btnCategoriasMouseEntered
 
     private void btnCategoriasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMouseExited
@@ -870,7 +837,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCategoriasMouseExited
 
     private void btnFornecedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedorMouseEntered
-        setColor(btnVendas);
+
     }//GEN-LAST:event_btnFornecedorMouseEntered
 
     private void btnFornecedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedorMouseExited
@@ -878,7 +845,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFornecedorMouseExited
 
     private void btnContasAReceberMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMouseEntered
-        setColor(btnVendas);
+
     }//GEN-LAST:event_btnContasAReceberMouseEntered
 
     private void btnContasAReceberMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMouseExited
@@ -886,7 +853,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContasAReceberMouseExited
 
     private void btnContasAPagarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMouseEntered
-        setColor(btnVendas);
+
     }//GEN-LAST:event_btnContasAPagarMouseEntered
 
     private void btnContasAPagarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMouseExited
@@ -894,7 +861,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContasAPagarMouseExited
 
     private void btnRelatorioDeEstoqueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoqueMouseEntered
-        setColor(btnVendas);
+
     }//GEN-LAST:event_btnRelatorioDeEstoqueMouseEntered
 
     private void btnRelatorioDeEstoqueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoqueMouseExited
@@ -902,7 +869,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRelatorioDeEstoqueMouseExited
 
     private void btnRelatorioDeVendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendasMouseEntered
-        setColor(btnVendas);
+
     }//GEN-LAST:event_btnRelatorioDeVendasMouseEntered
 
     private void btnRelatorioDeVendasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendasMouseExited
@@ -910,22 +877,49 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRelatorioDeVendasMouseExited
 
     private void btnUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuarioMouseEntered
-        setColor(btnVendas);
+
     }//GEN-LAST:event_btnUsuarioMouseEntered
 
     private void btnUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuarioMouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUsuarioMouseExited
-   
-    private void atualizaPanelDinamico(String label, JPanel panel){
+
+    private void hoverEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hoverEntered
+        /*  
+            Primeiro faço uma verificação de segurança se a origem (fonte)
+            do evento é realmente um JPanel
+            Isso foi feito pois estou usando o mesmo evento para todos os 
+            itens do menu.
+        */
+        if (evt.getSource() instanceof JPanel) {
+            /*  O método getSource retorna um Object, por isso faço a conversão (cast)
+                para JPanel
+            */
+            JPanel panel = (JPanel) evt.getSource();
+            /*  o método change color recebe como parâmetro um JPanel e faz a 
+                mudança de cores, subistitui o setColor (já existe esse método na 
+                classe Jframe)
+            */
+            changeColor(panel);
+        }
+    }//GEN-LAST:event_hoverEntered
+
+    private void hoverExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hoverExited
+        if (evt.getSource() instanceof JPanel) {
+            JPanel panel = (JPanel) evt.getSource();
+            resetColor(panel);
+        }
+    }//GEN-LAST:event_hoverExited
+
+    private void atualizaPanelDinamico(String label, JPanel panel) {
         lblBreadcrumb.setText(label);
         painelDinamico.removeAll();
         painelDinamico.add(panel);
         painelDinamico.validate();
         painelDinamico.repaint();
-    
+
     }
-    
+
     /**
      * @param args the command line arguments
      */
