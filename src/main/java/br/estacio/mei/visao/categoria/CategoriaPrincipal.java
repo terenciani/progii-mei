@@ -33,18 +33,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
     public CategoriaPrincipal() {
         initComponents();
         panelCategAcao.setVisible(false);
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
-        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
-
-        for (int i=0; i < listaDeCategoria.size(); i++)
-        {
-            Categoria mostraCategoria = listaDeCategoria.get(i);
-            Object[] dadosLinha = new Object[2];
-            dadosLinha[0] = mostraCategoria.getCodigo();
-            dadosLinha[1] = mostraCategoria.getDescricao();
-            modeloDeColunasDaTabela.addRow(dadosLinha);
-        }
-//        jTblCategoria.getTableHeader();
+        populaTabela();
 
     }
 
@@ -80,6 +69,8 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        panelCategoria.setBackground(new java.awt.Color(255, 255, 255));
+
         labelBuscaCate.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         labelBuscaCate.setText("Busca Categoria");
 
@@ -87,6 +78,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         botaoBuscar.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         botaoBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8-pesquisar-25.png"))); // NOI18N
         botaoBuscar.setText("Pesquisar");
+        botaoBuscar.setPreferredSize(new java.awt.Dimension(125, 34));
         botaoBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoBuscarActionPerformed(evt);
@@ -98,18 +90,28 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
 
         jTblCategoria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Código", "Descrição"
             }
-        ));
-        jScrollPane2.setViewportView(jTblCategoria);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
 
-        panelCategAcao.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTblCategoria);
+        if (jTblCategoria.getColumnModel().getColumnCount() > 0) {
+            jTblCategoria.getColumnModel().getColumn(0).setResizable(false);
+            jTblCategoria.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        panelCategAcao.setBackground(new java.awt.Color(255, 255, 255));
+        panelCategAcao.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(204, 204, 204), null));
         panelCategAcao.setToolTipText("");
 
         botaoConfirmar.setBackground(new java.awt.Color(153, 153, 153));
@@ -142,6 +144,8 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         labelCodigo.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         labelCodigo.setText("Código:");
 
+        textCampoCodigo.setEditable(false);
+
         labelDescricao.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         labelDescricao.setText("Descrição: ");
 
@@ -170,7 +174,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                                 .addComponent(botaoConfirmar)
                                 .addGap(36, 36, 36)
                                 .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         panelCategAcaoLayout.setVerticalGroup(
             panelCategAcaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,6 +195,8 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                     .addComponent(botaoSair))
                 .addContainerGap())
         );
+
+        panelBotoes.setBackground(new java.awt.Color(255, 255, 255));
 
         botaoIncluir.setBackground(new java.awt.Color(153, 153, 153));
         botaoIncluir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
@@ -255,7 +261,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         panelBotoesLayout.setHorizontalGroup(
             panelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBotoesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botaoIncluir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botaoFecharCateg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -275,7 +281,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                 .addComponent(botaoImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoFecharCateg)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelCategoriaLayout = new javax.swing.GroupLayout(panelCategoria);
@@ -291,12 +297,15 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                             .addGroup(panelCategoriaLayout.createSequentialGroup()
                                 .addComponent(textCampoEntradaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(botaoBuscar))
-                            .addComponent(panelCategAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                                .addComponent(botaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, 0)
                         .addComponent(panelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCategoriaLayout.createSequentialGroup()
+                .addContainerGap(70, Short.MAX_VALUE)
+                .addComponent(panelCategAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
         );
         panelCategoriaLayout.setVerticalGroup(
             panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,19 +313,17 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                 .addGap(7, 7, 7)
                 .addComponent(labelBuscaCate, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelCategoriaLayout.createSequentialGroup()
-                        .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textCampoEntradaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoBuscar))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                        .addComponent(panelCategAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53))
-                    .addGroup(panelCategoriaLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(panelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(1, 1, 1)
+                        .addComponent(textCampoEntradaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(panelBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(panelCategAcao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
         add(panelCategoria, java.awt.BorderLayout.CENTER);
@@ -405,7 +412,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
             //clienteEdit = table.getValueAt(tbListaClientes.getSelectedRow(), 1).toString();
 
         }
-        
+
     }//GEN-LAST:event_botaoAlterarActionPerformed
 
     private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed
@@ -427,8 +434,37 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         //Aqui Esconde Panel
         panelCategAcao.setVisible(false);
         botaoConfirmar.setText("Confirmar");
+
+        //  Aqui você cria a categoria
+        Categoria categoria = new Categoria();
+        if (textCampoCodigo.getText().isEmpty()) {
+            categoria.setDescricao(textCampoDesc.getText());
+            categoriaDao.salvarCategoria(categoria);
+        } else {
+            categoria.setCodigo(Integer.parseInt(textCampoCodigo.getText()));
+            categoria.setDescricao(textCampoDesc.getText());
+            categoriaDao.atualizarCategoria(categoria);
+        }
+        populaTabela();
         labelAcaoUsuario.setText("");
     }//GEN-LAST:event_botaoConfirmarActionPerformed
+
+    private void populaTabela() {
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel) jTblCategoria.getModel();
+        //  Primeiro limpa a tabela
+        while (modeloDeColunasDaTabela.getRowCount() != 0) {
+            modeloDeColunasDaTabela.removeRow(0);
+        }
+        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
+
+        for (int i = 0; i < listaDeCategoria.size(); i++) {
+            Categoria mostraCategoria = listaDeCategoria.get(i);
+            Object[] dadosLinha = new Object[2];
+            dadosLinha[0] = mostraCategoria.getCodigo();
+            dadosLinha[1] = mostraCategoria.getDescricao();
+            modeloDeColunasDaTabela.addRow(dadosLinha);
+        }
+    }
 
     private void botaoBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBuscarActionPerformed
         // TODO add your handling code here:
@@ -480,4 +516,5 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
     private javax.swing.JTextField textCampoDesc;
     private javax.swing.JTextField textCampoEntradaBusca;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.model.Categoria;
@@ -13,11 +12,10 @@ import java.util.ArrayList;
 
 /**
  *
- * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir Orico)
+ * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir
+ * Orico)
  */
-
 public class CategoriaDaoEstatica implements CategoriaDao {
-    ArrayList<Categoria> listaCategoria = new ArrayList();
 
     @Override
     public ArrayList<Categoria> buscarCategoria() {
@@ -27,16 +25,17 @@ public class CategoriaDaoEstatica implements CategoriaDao {
 
     @Override
     public Categoria salvarCategoria(Categoria categoria) {
+        categoria.setCodigo(BancoSingleton.getInstance().tabelaCategoria.size() + 1);
         BancoSingleton.getInstance().tabelaCategoria.add(categoria);
         return categoria;
-        
+
     }
 
     @Override
     public Categoria atualizarCategoria(Categoria categoria) {
         BancoSingleton.getInstance().tabelaCategoria.get(0);
         return categoria;
-        
+
     }
 
     @Override
@@ -47,8 +46,7 @@ public class CategoriaDaoEstatica implements CategoriaDao {
     @Override
     public boolean excluirCategoria(Categoria categoria) {
         return true;
-        
+
     }
-    
 
 }

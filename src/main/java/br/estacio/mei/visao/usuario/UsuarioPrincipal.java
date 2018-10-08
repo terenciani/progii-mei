@@ -41,12 +41,11 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         txtnome = new javax.swing.JTextField();
         txtsenha = new javax.swing.JPasswordField();
-        cdCancelar = new javax.swing.JButton();
+        btnCadastrar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         cdTable = new javax.swing.JTable();
-        cdExcluir = new javax.swing.JButton();
-        cdAlterar = new javax.swing.JButton();
-        cdSair = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
@@ -66,11 +65,11 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("SENHA:");
 
-        cdCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdCancelar.setText("Cadastrar");
-        cdCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdCancelarActionPerformed(evt);
+                btnCadastrarActionPerformed(evt);
             }
         });
 
@@ -97,27 +96,19 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(cdTable);
 
-        cdExcluir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdExcluir.setText("Excluir");
-        cdExcluir.addActionListener(new java.awt.event.ActionListener() {
+        btnExcluir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdExcluirActionPerformed(evt);
+                btnExcluirActionPerformed(evt);
             }
         });
 
-        cdAlterar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdAlterar.setText("Alterar");
-        cdAlterar.addActionListener(new java.awt.event.ActionListener() {
+        btnAlterar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAlterar.setText("Alterar");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdAlterarActionPerformed(evt);
-            }
-        });
-
-        cdSair.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cdSair.setText("Sair");
-        cdSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdSairActionPerformed(evt);
+                btnAlterarActionPerformed(evt);
             }
         });
 
@@ -128,32 +119,19 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
-                                .addGap(258, 258, 258))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(67, 67, 67)
-                                .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 11, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addContainerGap(291, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(cdCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(cdAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(cdExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(cdSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(11, Short.MAX_VALUE))
+                        .addGap(67, 67, 67)
+                        .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(20, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -164,6 +142,14 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
                         .addComponent(jLabel4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane3)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,13 +166,12 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cdCancelar)
-                    .addComponent(cdExcluir)
-                    .addComponent(cdSair)
-                    .addComponent(cdAlterar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCadastrar)
+                    .addComponent(btnExcluir)
+                    .addComponent(btnAlterar))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
@@ -194,13 +179,15 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdCancelarActionPerformed
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         Usuario usuario = new Usuario();
         usuario.setUsuario(txtnome.getText());
         usuario.setSenha(txtsenha.getPassword().toString());
         
-        usuarioDao.salvarUsuario(usuario);        
-    }//GEN-LAST:event_cdCancelarActionPerformed
+        usuarioDao.salvarUsuario(usuario);
+        
+        populaTabela();
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void cdTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cdTableMouseClicked
         if(cdTable.getSelectedRow() != -1){
@@ -210,7 +197,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         }        // TODO add your handling code here:
     }//GEN-LAST:event_cdTableMouseClicked
 
-    private void cdExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdExcluirActionPerformed
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
 
         //System.out.println("Usuario Selecionado: "+CdTable.getSelectedRow());        // TODO add your handling code here:
         if(cdTable.getSelectedRow()!= -1){
@@ -220,9 +207,9 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Selecione um Usuario para Excluir!");
         }
 
-    }//GEN-LAST:event_cdExcluirActionPerformed
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
-    private void cdAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdAlterarActionPerformed
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         if(cdTable.getSelectedRow() != -1){
             Usuario usuario = new Usuario();
             
@@ -236,18 +223,13 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         }
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_cdAlterarActionPerformed
-
-    private void cdSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdSairActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_cdSairActionPerformed
+    }//GEN-LAST:event_btnAlterarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cdAlterar;
-    private javax.swing.JButton cdCancelar;
-    private javax.swing.JButton cdExcluir;
-    private javax.swing.JButton cdSair;
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JTable cdTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -260,6 +242,12 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populaTabela() {
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)cdTable.getModel();
+        
+        while (modeloDeColunasDaTabela.getRowCount() != 0) {
+            modeloDeColunasDaTabela.removeRow(0);
+        }
+        
         ArrayList<Usuario> lista = usuarioDao.buscarUsuarios();
         for(int i = 0; i < lista.size(); i++){
             addLinhaNaTabela(lista.get(i));
