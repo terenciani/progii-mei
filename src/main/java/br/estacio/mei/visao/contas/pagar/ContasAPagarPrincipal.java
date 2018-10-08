@@ -8,6 +8,7 @@ package br.estacio.mei.visao.contas.pagar;
 import br.estacio.mei.dao.ContasAPagarDao;
 import br.estacio.mei.dao.implementacao.ContasAPagarDaoEstatica;
 import br.estacio.mei.model.ContasAPagar;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,12 +17,15 @@ import javax.swing.table.DefaultTableModel;
  * @author aluno
  */
 public class ContasAPagarPrincipal extends javax.swing.JPanel {
-    ContasAPagarDao  daoContasAPagar = new ContasAPagarDaoEstatica();
+
+    ContasAPagarDao daoContasAPagar = new ContasAPagarDaoEstatica();
+
     /**
      * Creates new form ContasAPagarPrincipal
      */
     public ContasAPagarPrincipal() {
         initComponents();
+        populaTabela();
     }
 
     /**
@@ -303,23 +307,23 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_CbuscaActionPerformed
 
     private void jTabelaPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabelaPMouseClicked
-        if(jTabelaP.getSelectedRow() != -1){
-            txtdtv.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 0).toString());
-            txtdesc.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 1).toString());
-            txtv.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 2).toString());
-            txtdtp.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 3).toString());
-            txtcod.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 4).toString());
-            txtstatus.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow() , 5).toString());
+        if (jTabelaP.getSelectedRow() != -1) {
+            txtdtv.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow(), 0).toString());
+            txtdesc.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow(), 1).toString());
+            txtv.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow(), 2).toString());
+            txtdtp.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow(), 3).toString());
+            txtcod.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow(), 4).toString());
+            txtstatus.setText(jTabelaP.getValueAt(jTabelaP.getSelectedRow(), 5).toString());
         }
     }//GEN-LAST:event_jTabelaPMouseClicked
 
     private void BtexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtexcluirActionPerformed
 
-        if(jTabelaP.getSelectedRow() != -1){
+        if (jTabelaP.getSelectedRow() != -1) {
             DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
             dtmContas.removeRow(jTabelaP.getSelectedRow());
 
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Selecione um produto para excluir");
         }
 
@@ -333,19 +337,25 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_BtexcluirActionPerformed
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
-        
-            DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
-            Object[] dados = {txtdtv.getText(),txtdesc.getText(),txtv.getText(),txtdtp.getText(),txtcod.getText(),txtstatus.getText()};
-            dtmContas.addRow(dados);
-        
-        
 
+        DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
+        ContasAPagar conta = new ContasAPagar();
+        conta.setDataVencimento(txtdtv.getText());
+        conta.setDataPagamento(txtdtp.getText());
+        conta.setDescricao(txtdesc.getText());
+        conta.setValor(Double.parseDouble(txtv.getText()));
+        conta.setStatus("Aberto");
+        
+        daoContasAPagar.salvarContasApagar(conta);
+        
         txtdtv.setText(" ");
         txtdesc.setText(" ");
         txtv.setText(" ");
         txtdtp.setText(" ");
         txtcod.setText(" ");
         txtstatus.setText(" ");
+        
+        populaTabela();
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void txtdtvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdtvActionPerformed
@@ -365,7 +375,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_txtstatusActionPerformed
 
     private void BtEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtEditarActionPerformed
-        if(jTabelaP.getSelectedRow() != -1){
+        if (jTabelaP.getSelectedRow() != -1) {
             jTabelaP.setValueAt(txtdtv.getText(), jTabelaP.getSelectedRow(), 0);
             jTabelaP.setValueAt(txtdesc.getText(), jTabelaP.getSelectedRow(), 1);
             jTabelaP.setValueAt(txtv.getText(), jTabelaP.getSelectedRow(), 2);
@@ -383,7 +393,26 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
 
     }//GEN-LAST:event_BtEditarActionPerformed
 
+    private void populaTabela() {
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel) jTabelaP.getModel();
+        //  Primeiro limpa a tabela
+        while (modeloDeColunasDaTabela.getRowCount() != 0) {
+            modeloDeColunasDaTabela.removeRow(0);
+        }
+        ArrayList<ContasAPagar> listaDeCaontasAPagar = daoContasAPagar.buscarContasApagar();
 
+        for (int i = 0; i < listaDeCaontasAPagar.size(); i++) {
+            ContasAPagar mostraConta = listaDeCaontasAPagar.get(i);
+            Object[] dadosLinha = new Object[6];
+            dadosLinha[0] = mostraConta.getDataVencimento();
+            dadosLinha[1] = mostraConta.getDescricao();
+            dadosLinha[2] = mostraConta.getValor();
+            dadosLinha[3] = mostraConta.getDataPagamento();
+            dadosLinha[4] = mostraConta.getCodigo();
+            dadosLinha[5] = mostraConta.getStatus();
+            modeloDeColunasDaTabela.addRow(dadosLinha);
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtEditar;
     private javax.swing.JButton Btexcluir;
@@ -414,4 +443,6 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     private javax.swing.JTextField txtstatus;
     private javax.swing.JTextField txtv;
     // End of variables declaration//GEN-END:variables
+
+    
 }

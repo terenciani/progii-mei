@@ -25,6 +25,7 @@ public class ContasAPagarDaoEstatica implements ContasAPagarDao {
 
     @Override
     public ContasAPagar salvarContasApagar(ContasAPagar contasAPagar) {
+        contasAPagar.setCodigo(BancoSingleton.getInstance().tabelaContaAPagar.size() + 1);
         BancoSingleton.getInstance().tabelaContaAPagar.add(contasAPagar);
         return contasAPagar;
     }
