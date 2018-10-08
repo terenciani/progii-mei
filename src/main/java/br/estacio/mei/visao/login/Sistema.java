@@ -19,6 +19,7 @@ import br.estacio.mei.visao.sac.SacPrincipal;
 import br.estacio.mei.visao.usuario.UsuarioPrincipal;
 import br.estacio.mei.visao.vendas.VendaPrincipal;
 import java.awt.Color;
+import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -33,6 +34,7 @@ public class Sistema extends javax.swing.JFrame {
      */
     public Sistema() {
         initComponents();
+        panelActive = btnInicio;
     }
 
     /**
@@ -95,7 +97,7 @@ public class Sistema extends javax.swing.JFrame {
         painelBreadcrumb = new javax.swing.JPanel();
         lblBreadcrumb = new javax.swing.JLabel();
         lblNomeSistema = new javax.swing.JLabel();
-        painelDinamico = new javax.swing.JPanel();
+        panelDinamic = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,11 +110,6 @@ public class Sistema extends javax.swing.JFrame {
 
         iconeSistema.setBackground(new java.awt.Color(12, 197, 205));
         iconeSistema.setPreferredSize(new java.awt.Dimension(107, 120));
-        iconeSistema.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                iconeSistemaMousePressed(evt);
-            }
-        });
         iconeSistema.setLayout(null);
 
         imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -164,14 +161,14 @@ public class Sistema extends javax.swing.JFrame {
         btnVendas.setBackground(new java.awt.Color(12, 180, 206));
         btnVendas.setPreferredSize(new java.awt.Dimension(111, 40));
         btnVendas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnVendasMousePressed(evt);
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                hoverEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 hoverExited(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                hoverEntered(evt);
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnVendasMousePressed(evt);
             }
         });
 
@@ -281,14 +278,14 @@ public class Sistema extends javax.swing.JFrame {
         btnProdutos.setBackground(new java.awt.Color(12, 180, 206));
         btnProdutos.setPreferredSize(new java.awt.Dimension(111, 40));
         btnProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnProdutosMousePressed(evt);
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                hoverEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 hoverExited(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                hoverEntered(evt);
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnProdutosMousePressed(evt);
             }
         });
 
@@ -321,10 +318,10 @@ public class Sistema extends javax.swing.JFrame {
         btnCategorias.setPreferredSize(new java.awt.Dimension(134, 40));
         btnCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnCategoriasMouseEntered(evt);
+                hoverEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCategoriasMouseExited(evt);
+                hoverExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnCategoriasMousePressed(evt);
@@ -360,10 +357,10 @@ public class Sistema extends javax.swing.JFrame {
         btnFornecedor.setPreferredSize(new java.awt.Dimension(111, 40));
         btnFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnFornecedorMouseEntered(evt);
+                hoverEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnFornecedorMouseExited(evt);
+                hoverExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnFornecedorMousePressed(evt);
@@ -399,10 +396,10 @@ public class Sistema extends javax.swing.JFrame {
         btnContasAReceber.setPreferredSize(new java.awt.Dimension(191, 40));
         btnContasAReceber.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnContasAReceberMouseEntered(evt);
+                hoverEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnContasAReceberMouseExited(evt);
+                hoverExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnContasAReceberMousePressed(evt);
@@ -438,10 +435,10 @@ public class Sistema extends javax.swing.JFrame {
         btnContasAPagar.setPreferredSize(new java.awt.Dimension(171, 40));
         btnContasAPagar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnContasAPagarMouseEntered(evt);
+                hoverEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnContasAPagarMouseExited(evt);
+                hoverExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnContasAPagarMousePressed(evt);
@@ -477,10 +474,10 @@ public class Sistema extends javax.swing.JFrame {
         btnRelatorioDeEstoque.setPreferredSize(new java.awt.Dimension(111, 40));
         btnRelatorioDeEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnRelatorioDeEstoqueMouseEntered(evt);
+                hoverEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnRelatorioDeEstoqueMouseExited(evt);
+                hoverExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnRelatorioDeEstoqueMousePressed(evt);
@@ -516,10 +513,10 @@ public class Sistema extends javax.swing.JFrame {
         btnRelatorioDeVendas.setPreferredSize(new java.awt.Dimension(111, 40));
         btnRelatorioDeVendas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnRelatorioDeVendasMouseEntered(evt);
+                hoverEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnRelatorioDeVendasMouseExited(evt);
+                hoverExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnRelatorioDeVendasMousePressed(evt);
@@ -555,10 +552,10 @@ public class Sistema extends javax.swing.JFrame {
         btnUsuario.setPreferredSize(new java.awt.Dimension(111, 40));
         btnUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnUsuarioMouseEntered(evt);
+                hoverEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnUsuarioMouseExited(evt);
+                hoverExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnUsuarioMousePressed(evt);
@@ -593,6 +590,12 @@ public class Sistema extends javax.swing.JFrame {
         btnSac.setBackground(new java.awt.Color(12, 180, 206));
         btnSac.setPreferredSize(new java.awt.Dimension(111, 40));
         btnSac.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                hoverEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                hoverExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnSacMousePressed(evt);
             }
@@ -627,6 +630,12 @@ public class Sistema extends javax.swing.JFrame {
 
         btnSair.setBackground(new java.awt.Color(12, 180, 206));
         btnSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                hoverEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                hoverExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnSairMousePressed(evt);
             }
@@ -637,11 +646,6 @@ public class Sistema extends javax.swing.JFrame {
         lblSair.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblSair.setForeground(new java.awt.Color(255, 255, 255));
         lblSair.setText("Sair");
-        lblSair.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblSairMousePressed(evt);
-            }
-        });
 
         javax.swing.GroupLayout btnSairLayout = new javax.swing.GroupLayout(btnSair);
         btnSair.setLayout(btnSairLayout);
@@ -693,10 +697,10 @@ public class Sistema extends javax.swing.JFrame {
         lblNomeSistema.setForeground(new java.awt.Color(153, 153, 153));
         lblNomeSistema.setText("Sistema de Apoio ao Microempreendedor Individual");
 
-        painelDinamico.setBackground(new java.awt.Color(255, 255, 255));
-        painelDinamico.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        painelDinamico.setToolTipText("MayDay");
-        painelDinamico.setLayout(new java.awt.BorderLayout());
+        panelDinamic.setBackground(new java.awt.Color(255, 255, 255));
+        panelDinamic.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelDinamic.setToolTipText("MayDay");
+        panelDinamic.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -716,7 +720,7 @@ public class Sistema extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelDinamic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         areaDeTrabalhoLayout.setVerticalGroup(
@@ -726,7 +730,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(painelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelDinamic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -750,18 +754,6 @@ public class Sistema extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void changeColor(JPanel panelHovered) {
-        panelHovered.setBackground(new Color(44, 197, 221));
-    }
-
-    public void resetColor(JPanel panelHovered) {
-        panelHovered.setBackground(new Color(12, 180, 206));
-    }
-
-    private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
-        System.exit(0);
-    }//GEN-LAST:event_lblSairMousePressed
-
     private void btnSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMousePressed
         System.exit(0);
     }//GEN-LAST:event_btnSairMousePressed
@@ -769,120 +761,84 @@ public class Sistema extends javax.swing.JFrame {
     private void btnInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMousePressed
         ExemploPopulaTabela exemplo = new ExemploPopulaTabela();
         lblBreadcrumb.setText("BEM VINDO AO MEI");
-        painelDinamico.removeAll();
-        painelDinamico.add(exemplo);
-        painelDinamico.validate();
-        painelDinamico.repaint();
+        panelDinamic.removeAll();
+        panelDinamic.add(exemplo);
+        panelDinamic.validate();
+        panelDinamic.repaint();
     }//GEN-LAST:event_btnInicioMousePressed
 
     private void btnUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuarioMousePressed
-        atualizaPanelDinamico("Usuário", new UsuarioPrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Usuário", new UsuarioPrincipal());
     }//GEN-LAST:event_btnUsuarioMousePressed
 
     private void btnRelatorioDeEstoqueMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoqueMousePressed
-        atualizaPanelDinamico("Relatória de Estoque", new RelatorioDeEstoquePrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Relatória de Estoque", new RelatorioDeEstoquePrincipal());
     }//GEN-LAST:event_btnRelatorioDeEstoqueMousePressed
 
     private void btnRelatorioDeVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendasMousePressed
-        atualizaPanelDinamico("Relatória de Vendas", new RelatorioVendasPrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Relatória de Vendas", new RelatorioVendasPrincipal());
     }//GEN-LAST:event_btnRelatorioDeVendasMousePressed
 
     private void btnProdutosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutosMousePressed
-        atualizaPanelDinamico("Cadastro de Produtos", new ProdutoPrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Cadastro de Produtos", new ProdutoPrincipal());
     }//GEN-LAST:event_btnProdutosMousePressed
 
     private void btnVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMousePressed
-        atualizaPanelDinamico("Gerenciamento de Vendas", new VendaPrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Gerenciamento de Vendas", new VendaPrincipal());
     }//GEN-LAST:event_btnVendasMousePressed
 
     private void btnComprasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMousePressed
-        atualizaPanelDinamico("Gerenciamento de Compras", new CompraPrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Gerenciamento de Compras", new CompraPrincipal());
     }//GEN-LAST:event_btnComprasMousePressed
 
     private void btnFornecedorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedorMousePressed
-        atualizaPanelDinamico("Gerenciamento de Fornecedor", new FornecedorPrincipal());
+
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Gerenciamento de Fornecedor", new FornecedorPrincipal());
     }//GEN-LAST:event_btnFornecedorMousePressed
 
     private void btnClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMousePressed
-        atualizaPanelDinamico("Gerenciamento de Clientes", new ClientePrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Gerenciamento de Clientes", new ClientePrincipal());
     }//GEN-LAST:event_btnClientesMousePressed
 
     private void btnCategoriasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMousePressed
-
-        atualizaPanelDinamico("Gerenciamento de Categoria ", new CategoriaPrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Gerenciamento de Categoria ", new CategoriaPrincipal());
     }//GEN-LAST:event_btnCategoriasMousePressed
 
     private void btnContasAReceberMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMousePressed
-        atualizaPanelDinamico("Contas a Receber", new ContasAReceberPrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Contas a Receber", new ContasAReceberPrincipal());
     }//GEN-LAST:event_btnContasAReceberMousePressed
 
     private void btnContasAPagarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMousePressed
-        atualizaPanelDinamico("Contas a Pagar", new ContasAPagarPrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Contas a Pagar", new ContasAPagarPrincipal());
     }//GEN-LAST:event_btnContasAPagarMousePressed
 
     private void btnSacMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSacMousePressed
-        atualizaPanelDinamico("Sac", new SacPrincipal());
+        resetColor((JPanel) panelActive);
+        panelActive = evt.getSource();
+        updatePanelDinamic("Sac", new SacPrincipal());
     }//GEN-LAST:event_btnSacMousePressed
-
-    private void iconeSistemaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconeSistemaMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_iconeSistemaMousePressed
-
-    private void btnCategoriasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMouseEntered
-
-    }//GEN-LAST:event_btnCategoriasMouseEntered
-
-    private void btnCategoriasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCategoriasMouseExited
-
-    private void btnFornecedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedorMouseEntered
-
-    }//GEN-LAST:event_btnFornecedorMouseEntered
-
-    private void btnFornecedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedorMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnFornecedorMouseExited
-
-    private void btnContasAReceberMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMouseEntered
-
-    }//GEN-LAST:event_btnContasAReceberMouseEntered
-
-    private void btnContasAReceberMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnContasAReceberMouseExited
-
-    private void btnContasAPagarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMouseEntered
-
-    }//GEN-LAST:event_btnContasAPagarMouseEntered
-
-    private void btnContasAPagarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnContasAPagarMouseExited
-
-    private void btnRelatorioDeEstoqueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoqueMouseEntered
-
-    }//GEN-LAST:event_btnRelatorioDeEstoqueMouseEntered
-
-    private void btnRelatorioDeEstoqueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoqueMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRelatorioDeEstoqueMouseExited
-
-    private void btnRelatorioDeVendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendasMouseEntered
-
-    }//GEN-LAST:event_btnRelatorioDeVendasMouseEntered
-
-    private void btnRelatorioDeVendasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendasMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRelatorioDeVendasMouseExited
-
-    private void btnUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuarioMouseEntered
-
-    }//GEN-LAST:event_btnUsuarioMouseEntered
-
-    private void btnUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuarioMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnUsuarioMouseExited
 
     private void hoverEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hoverEntered
         /*  
@@ -890,34 +846,54 @@ public class Sistema extends javax.swing.JFrame {
             do evento é realmente um JPanel
             Isso foi feito pois estou usando o mesmo evento para todos os 
             itens do menu.
-        */
+         */
         if (evt.getSource() instanceof JPanel) {
             /*  O método getSource retorna um Object, por isso faço a conversão (cast)
                 para JPanel
-            */
+             */
             JPanel panel = (JPanel) evt.getSource();
             /*  o método change color recebe como parâmetro um JPanel e faz a 
                 mudança de cores, subistitui o setColor (já existe esse método na 
                 classe Jframe)
-            */
+             */
             changeColor(panel);
         }
     }//GEN-LAST:event_hoverEntered
 
     private void hoverExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hoverExited
-        if (evt.getSource() instanceof JPanel) {
+        if (evt.getSource() instanceof JPanel && !evt.getSource().equals(panelActive)) {
             JPanel panel = (JPanel) evt.getSource();
             resetColor(panel);
         }
     }//GEN-LAST:event_hoverExited
 
-    private void atualizaPanelDinamico(String label, JPanel panel) {
-        lblBreadcrumb.setText(label);
-        painelDinamico.removeAll();
-        painelDinamico.add(panel);
-        painelDinamico.validate();
-        painelDinamico.repaint();
+    private void updateColorActive(MouseEvent evt) {
+        /*Component[] components = evt.getComponent().getParent().getComponents();
+        for (Component component : components){
+            if(component instanceof JPanel){
+                if(component.equals(evt.getSource()))
+                    changeColor((JPanel)component);
+                else
+                    resetColor((JPanel)component);
+            }
+        }*/
+    }
 
+    private void updatePanelDinamic(String label, JPanel panel) {
+        lblBreadcrumb.setText(label);
+        panelDinamic.removeAll();
+        panelDinamic.add(panel);
+        panelDinamic.validate();
+        panelDinamic.repaint();
+
+    }
+
+    public void changeColor(JPanel panelHovered) {
+        panelHovered.setBackground(new Color(44, 197, 221));
+    }
+
+    public void resetColor(JPanel panelHovered) {
+        panelHovered.setBackground(new Color(12, 180, 206));
     }
 
     /**
@@ -1017,6 +993,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel lblVendas;
     private javax.swing.JPanel menuLateral;
     private javax.swing.JPanel painelBreadcrumb;
-    private javax.swing.JPanel painelDinamico;
+    private javax.swing.JPanel panelDinamic;
     // End of variables declaration//GEN-END:variables
+    private Object panelActive;
 }
