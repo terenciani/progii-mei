@@ -5,12 +5,18 @@
  */
 package br.estacio.mei.visao.produto;
 
+import br.estacio.mei.dao.ProdutoDao;
+import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
+import br.estacio.mei.model.Categoria;
+import br.estacio.mei.model.Fornecedor;
+import br.estacio.mei.model.Produto;
+
 /**
  *
  * @author aluno
  */
 public class DadosProduto extends javax.swing.JPanel {
-
+    ProdutoDao daoProduto = new ProdutoDaoEstatico();
     /**
      * Creates new form DadosProduto
      */
@@ -115,7 +121,27 @@ public class DadosProduto extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        //Dados para testes
+        
+        //Deverá ser dinâmico do formulário
+        Produto produto = new Produto();
+        Fornecedor fornecedor = new Fornecedor();
+        fornecedor.setRazaoSocial("Estácio");
+        Categoria categoria = new Categoria();
+        
+        categoria.setCodigo(1);
+        categoria.setDescricao("Bijuteria");
+        produto.setCodigo(1);
+        produto.setDescricao("Anel Dourado");
+        produto.setFornecedor(fornecedor);
+        produto.setLucro(10);
+        produto.setNome("Anel");
+        produto.setPrecoCompra(10);
+        produto.setPrecoVenda(20);
+        produto.setQuantidade(15);
+        produto.setValorAntigo(10);
+        produto.setValorAtual(15);
+        daoProduto.salvar(produto);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
