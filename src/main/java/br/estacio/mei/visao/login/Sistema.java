@@ -18,6 +18,7 @@ import br.estacio.mei.visao.relatorio.vendas.RelatorioVendasPrincipal;
 import br.estacio.mei.visao.sac.SacPrincipal;
 import br.estacio.mei.visao.usuario.UsuarioPrincipal;
 import br.estacio.mei.visao.vendas.VendaPrincipal;
+import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -164,6 +165,12 @@ public class Sistema extends javax.swing.JFrame {
         btnVendas.setBackground(new java.awt.Color(12, 180, 206));
         btnVendas.setPreferredSize(new java.awt.Dimension(111, 40));
         btnVendas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnVendasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnVendasMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnVendasMousePressed(evt);
             }
@@ -197,6 +204,12 @@ public class Sistema extends javax.swing.JFrame {
         btnCompras.setBackground(new java.awt.Color(12, 180, 206));
         btnCompras.setPreferredSize(new java.awt.Dimension(111, 40));
         btnCompras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnComprasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnComprasMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnComprasMousePressed(evt);
             }
@@ -230,6 +243,12 @@ public class Sistema extends javax.swing.JFrame {
         btnClientes.setBackground(new java.awt.Color(12, 180, 206));
         btnClientes.setPreferredSize(new java.awt.Dimension(111, 40));
         btnClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnClientesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnClientesMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnClientesMousePressed(evt);
             }
@@ -263,6 +282,12 @@ public class Sistema extends javax.swing.JFrame {
         btnProdutos.setBackground(new java.awt.Color(12, 180, 206));
         btnProdutos.setPreferredSize(new java.awt.Dimension(111, 40));
         btnProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnProdutosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnProdutosMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnProdutosMousePressed(evt);
             }
@@ -296,6 +321,12 @@ public class Sistema extends javax.swing.JFrame {
         btnCategorias.setBackground(new java.awt.Color(12, 180, 206));
         btnCategorias.setPreferredSize(new java.awt.Dimension(134, 40));
         btnCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCategoriasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCategoriasMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnCategoriasMousePressed(evt);
             }
@@ -329,6 +360,12 @@ public class Sistema extends javax.swing.JFrame {
         btnFornecedor.setBackground(new java.awt.Color(12, 180, 206));
         btnFornecedor.setPreferredSize(new java.awt.Dimension(111, 40));
         btnFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnFornecedorMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnFornecedorMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnFornecedorMousePressed(evt);
             }
@@ -362,6 +399,12 @@ public class Sistema extends javax.swing.JFrame {
         btnContasAReceber.setBackground(new java.awt.Color(12, 180, 206));
         btnContasAReceber.setPreferredSize(new java.awt.Dimension(191, 40));
         btnContasAReceber.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnContasAReceberMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnContasAReceberMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnContasAReceberMousePressed(evt);
             }
@@ -395,6 +438,12 @@ public class Sistema extends javax.swing.JFrame {
         btnContasAPagar.setBackground(new java.awt.Color(12, 180, 206));
         btnContasAPagar.setPreferredSize(new java.awt.Dimension(171, 40));
         btnContasAPagar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnContasAPagarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnContasAPagarMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnContasAPagarMousePressed(evt);
             }
@@ -415,7 +464,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(imgContasAPagar)
                 .addGap(20, 20, 20)
                 .addComponent(lblContasAPagar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
         btnContasAPagarLayout.setVerticalGroup(
             btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -428,6 +477,12 @@ public class Sistema extends javax.swing.JFrame {
         btnRelatorioDeEstoque.setBackground(new java.awt.Color(12, 180, 206));
         btnRelatorioDeEstoque.setPreferredSize(new java.awt.Dimension(111, 40));
         btnRelatorioDeEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRelatorioDeEstoqueMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRelatorioDeEstoqueMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnRelatorioDeEstoqueMousePressed(evt);
             }
@@ -461,6 +516,12 @@ public class Sistema extends javax.swing.JFrame {
         btnRelatorioDeVendas.setBackground(new java.awt.Color(12, 180, 206));
         btnRelatorioDeVendas.setPreferredSize(new java.awt.Dimension(111, 40));
         btnRelatorioDeVendas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRelatorioDeVendasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRelatorioDeVendasMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnRelatorioDeVendasMousePressed(evt);
             }
@@ -494,6 +555,12 @@ public class Sistema extends javax.swing.JFrame {
         btnUsuario.setBackground(new java.awt.Color(12, 180, 206));
         btnUsuario.setPreferredSize(new java.awt.Dimension(111, 40));
         btnUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnUsuarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnUsuarioMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnUsuarioMousePressed(evt);
             }
@@ -683,7 +750,15 @@ public class Sistema extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void setColor(JPanel btnVendas){
+        btnVendas.setBackground(new Color(44,197,221));
+    }
+    
+    public void resetColor(JPanel btnVendas){
+        btnVendas.setBackground(new Color(12,180,206));
+    }
+    
     private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
         System.exit(0);
     }//GEN-LAST:event_lblSairMousePressed
@@ -753,6 +828,94 @@ public class Sistema extends javax.swing.JFrame {
     private void iconeSistemaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconeSistemaMousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_iconeSistemaMousePressed
+
+    private void btnVendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnVendasMouseEntered
+
+    private void btnVendasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendasMouseExited
+        resetColor(btnVendas);
+    }//GEN-LAST:event_btnVendasMouseExited
+
+    private void btnComprasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnComprasMouseEntered
+
+    private void btnComprasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnComprasMouseExited
+
+    private void btnClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnClientesMouseEntered
+
+    private void btnClientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClientesMouseExited
+
+    private void btnProdutosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutosMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnProdutosMouseEntered
+
+    private void btnProdutosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutosMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProdutosMouseExited
+
+    private void btnCategoriasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnCategoriasMouseEntered
+
+    private void btnCategoriasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoriasMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCategoriasMouseExited
+
+    private void btnFornecedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedorMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnFornecedorMouseEntered
+
+    private void btnFornecedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFornecedorMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFornecedorMouseExited
+
+    private void btnContasAReceberMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnContasAReceberMouseEntered
+
+    private void btnContasAReceberMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAReceberMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnContasAReceberMouseExited
+
+    private void btnContasAPagarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnContasAPagarMouseEntered
+
+    private void btnContasAPagarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContasAPagarMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnContasAPagarMouseExited
+
+    private void btnRelatorioDeEstoqueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoqueMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnRelatorioDeEstoqueMouseEntered
+
+    private void btnRelatorioDeEstoqueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoqueMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRelatorioDeEstoqueMouseExited
+
+    private void btnRelatorioDeVendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendasMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnRelatorioDeVendasMouseEntered
+
+    private void btnRelatorioDeVendasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendasMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRelatorioDeVendasMouseExited
+
+    private void btnUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuarioMouseEntered
+        setColor(btnVendas);
+    }//GEN-LAST:event_btnUsuarioMouseEntered
+
+    private void btnUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuarioMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUsuarioMouseExited
    
     private void atualizaPanelDinamico(String label, JPanel panel){
         lblBreadcrumb.setText(label);
