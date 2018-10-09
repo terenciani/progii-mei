@@ -5,10 +5,9 @@
  */
 package br.estacio.mei.visao.vendas;
 
-import br.estacio.mei.model.Cliente;
-import br.estacio.mei.visao.cliente.ClientePrincipal;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,7 +30,16 @@ public class VendaPrincipal extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
+        jdPagamento = new javax.swing.JDialog();
+        jPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        btnDinheio = new javax.swing.JRadioButton();
+        btnDebito = new javax.swing.JRadioButton();
+        btnCredito = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+        gpPagamento = new javax.swing.ButtonGroup();
         painelInicio = new javax.swing.JPanel();
         lblCodCliente = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
@@ -46,6 +54,8 @@ public class VendaPrincipal extends javax.swing.JPanel {
         btnBusca = new javax.swing.JButton();
         btnIncluirCliente = new javax.swing.JButton();
         btnAddProduto = new javax.swing.JButton();
+        lblVal = new javax.swing.JLabel();
+        txtValor = new javax.swing.JTextField();
         painelMeio = new javax.swing.JPanel();
         tblProdutos = new javax.swing.JScrollPane();
         tbProdutos = new javax.swing.JTable();
@@ -54,7 +64,66 @@ public class VendaPrincipal extends javax.swing.JPanel {
         lblSifrao = new javax.swing.JLabel();
         lblValor = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
-        btFinalizar = new javax.swing.JButton();
+        btnPagamento = new javax.swing.JButton();
+
+        jLabel2.setText("Selecione o Meio de Pagamento: ");
+
+        gpPagamento.add(btnDinheio);
+        btnDinheio.setText("Dinheiro ");
+        btnDinheio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, gpPagamento, org.jdesktop.beansbinding.ObjectProperty.create(), btnDinheio, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        gpPagamento.add(btnDebito);
+        btnDebito.setText("Cartão de Débito (A Vista)");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, gpPagamento, org.jdesktop.beansbinding.ObjectProperty.create(), btnDebito, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        gpPagamento.add(btnCredito);
+        btnCredito.setText("Cartão de Crédito ");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, gpPagamento, org.jdesktop.beansbinding.ObjectProperty.create(), btnCredito, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        jButton1.setText("Finalizar");
+
+        javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
+        jPanel.setLayout(jPanelLayout);
+        jPanelLayout.setHorizontalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelLayout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCredito)
+                            .addComponent(btnDebito)
+                            .addComponent(btnDinheio)
+                            .addComponent(jLabel2)))
+                    .addGroup(jPanelLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jButton1)))
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+        jPanelLayout.setVerticalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(btnDinheio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCredito)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDebito)
+                .addGap(35, 35, 35)
+                .addComponent(jButton1)
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
+        jdPagamento.getContentPane().add(jPanel, java.awt.BorderLayout.CENTER);
 
         setLayout(new java.awt.BorderLayout());
 
@@ -109,71 +178,92 @@ public class VendaPrincipal extends javax.swing.JPanel {
             }
         });
 
+        lblVal.setText("Valor (u):");
+
+        txtValor.setText("R$ 1,00");
+
         javax.swing.GroupLayout painelInicioLayout = new javax.swing.GroupLayout(painelInicio);
         painelInicio.setLayout(painelInicioLayout);
         painelInicioLayout.setHorizontalGroup(
             painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelInicioLayout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblCodCliente)
-                    .addComponent(lclCodProduto)
-                    .addComponent(txtCodCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                    .addComponent(txtCodProduto, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lclCodProduto)
+                        .addComponent(txtCodCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                        .addComponent(txtCodProduto, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(lblCodCliente))
+                .addGap(18, 18, 18)
                 .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelInicioLayout.createSequentialGroup()
-                        .addComponent(lblNome)
-                        .addContainerGap(581, Short.MAX_VALUE))
-                    .addGroup(painelInicioLayout.createSequentialGroup()
-                        .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(painelInicioLayout.createSequentialGroup()
-                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelInicioLayout.createSequentialGroup()
-                                .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblDescricao)
-                                    .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                                .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblQtd))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAddProduto)
+                            .addComponent(lblDescricao)
+                            .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtDescricao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)))
+                        .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelInicioLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(btnIncluirCliente)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnIncluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(painelInicioLayout.createSequentialGroup()
+                                .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(painelInicioLayout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addComponent(lblQtd)
+                                        .addGap(36, 36, 36))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelInicioLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)))
+                                .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblVal)
+                                    .addGroup(painelInicioLayout.createSequentialGroup()
+                                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnAddProduto))))))
+                    .addComponent(lblNome))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         painelInicioLayout.setVerticalGroup(
             painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelInicioLayout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCodCliente)
-                    .addComponent(lblNome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnIncluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnBusca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtCodCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lclCodProduto)
-                    .addComponent(lblDescricao)
-                    .addComponent(lblQtd))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodProduto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnAddProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addGroup(painelInicioLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCodCliente)
+                            .addComponent(lblNome))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCodCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                            .addComponent(txtNome)))
+                    .addGroup(painelInicioLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnIncluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelInicioLayout.createSequentialGroup()
+                        .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblVal, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblQtd))
+                        .addGap(59, 59, 59))
+                    .addGroup(painelInicioLayout.createSequentialGroup()
+                        .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblDescricao)
+                            .addComponent(lclCodProduto))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAddProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCodProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12))))
         );
 
         txtCodCliente .addFocusListener(new FocusListener() {
@@ -246,6 +336,20 @@ public class VendaPrincipal extends javax.swing.JPanel {
                 }
             }
         });
+        txtValor .addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txtValor .getText().equals("R$ 1,00")) {
+                    txtValor .setText("");
+                }
+            }
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txtValor .getText().isEmpty()) {
+                    txtValor .setText("R$ 1,00");
+                }
+            }
+        });
 
         add(painelInicio, java.awt.BorderLayout.PAGE_START);
 
@@ -254,13 +358,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
 
         tbProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Código", "Descrição", "Quantidade", "Valor"
@@ -289,11 +387,11 @@ public class VendaPrincipal extends javax.swing.JPanel {
         btnSalvar.setMinimumSize(new java.awt.Dimension(86, 36));
         btnSalvar.setPreferredSize(new java.awt.Dimension(86, 36));
 
-        btFinalizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btFinalizar.setText("Finalizar");
-        btFinalizar.addActionListener(new java.awt.event.ActionListener() {
+        btnPagamento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnPagamento.setText("Pagamento");
+        btnPagamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btFinalizarActionPerformed(evt);
+                btnPagamentoActionPerformed(evt);
             }
         });
 
@@ -302,7 +400,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
         painelFimLayout.setHorizontalGroup(
             painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFimLayout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
+                .addContainerGap(206, Short.MAX_VALUE)
                 .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTotal, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -312,8 +410,8 @@ public class VendaPrincipal extends javax.swing.JPanel {
                         .addComponent(lblSifrao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblValor))
-                    .addComponent(btFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(306, Short.MAX_VALUE))
+                    .addComponent(btnPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
         painelFimLayout.setVerticalGroup(
             painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,42 +423,58 @@ public class VendaPrincipal extends javax.swing.JPanel {
                     .addComponent(lblValor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btFinalizar, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                    .addComponent(btnPagamento, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
         add(painelFim, java.awt.BorderLayout.PAGE_END);
+
+        bindingGroup.bind();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProdutoActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel dtm = (DefaultTableModel) tbProdutos.getModel();
+        dtm.addRow(new Object[]{txtCodProduto.getText(),txtDescricao.getText(),txtQtd.getText(),txtValor.getText()});
+
+        txtCodProduto.setText("Ex: 00000");
+        txtDescricao.setText("Descrição do Produto");
+        txtQtd.setText("Ex: 00");
+        txtValor.setText("R$ 1,00");
+    }//GEN-LAST:event_btnAddProdutoActionPerformed
 
     private void txtQtdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQtdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQtdActionPerformed
 
-    private void btFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFinalizarActionPerformed
+    private void btnPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagamentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btFinalizarActionPerformed
 
-    private void btnAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProdutoActionPerformed
-        // TODO add your handling code here:
-        txtCodProduto.getText();
-        txtDescricao.getText();
-        txtQtd.getText();
-    }//GEN-LAST:event_btnAddProdutoActionPerformed
+    }//GEN-LAST:event_btnPagamentoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btFinalizar;
     private javax.swing.JButton btnAddProduto;
     private javax.swing.JButton btnBusca;
+    private javax.swing.JRadioButton btnCredito;
+    private javax.swing.JRadioButton btnDebito;
+    private javax.swing.JRadioButton btnDinheio;
     private javax.swing.JButton btnIncluirCliente;
+    private javax.swing.JButton btnPagamento;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.ButtonGroup gpPagamento;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel;
+    private javax.swing.JDialog jdPagamento;
     private javax.swing.JLabel lblCodCliente;
     private javax.swing.JLabel lblDescricao;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblQtd;
     private javax.swing.JLabel lblSifrao;
     private javax.swing.JLabel lblTotal;
+    private javax.swing.JLabel lblVal;
     private javax.swing.JLabel lblValor;
     private javax.swing.JLabel lclCodProduto;
     private javax.swing.JPanel painelFim;
@@ -373,6 +487,8 @@ public class VendaPrincipal extends javax.swing.JPanel {
     private javax.swing.JTextField txtDescricao;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtQtd;
+    private javax.swing.JTextField txtValor;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 
 }
