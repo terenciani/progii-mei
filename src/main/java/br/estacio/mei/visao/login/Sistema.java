@@ -776,13 +776,13 @@ public class Sistema extends javax.swing.JFrame {
     private void btnRelatorioDeEstoqueMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeEstoqueMousePressed
         resetColor((JPanel) panelActive);
         panelActive = evt.getSource();
-        updatePanelDinamic("Relatória de Estoque", new RelatorioDeEstoquePrincipal());
+        updatePanelDinamic("Relatório de Estoque", new RelatorioDeEstoquePrincipal());
     }//GEN-LAST:event_btnRelatorioDeEstoqueMousePressed
 
     private void btnRelatorioDeVendasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioDeVendasMousePressed
         resetColor((JPanel) panelActive);
         panelActive = evt.getSource();
-        updatePanelDinamic("Relatória de Vendas", new RelatorioVendasPrincipal());
+        updatePanelDinamic("Relatório de Vendas", new RelatorioVendasPrincipal());
     }//GEN-LAST:event_btnRelatorioDeVendasMousePressed
 
     private void btnProdutosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutosMousePressed

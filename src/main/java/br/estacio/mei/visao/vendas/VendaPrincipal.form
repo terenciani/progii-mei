@@ -6,7 +6,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel">
+        <Container class="javax.swing.JPanel" name="jpPagamento">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
               <BorderConstraints direction="Center"/>
@@ -16,88 +16,75 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="57" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnCredito" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnDebito" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnDinheio" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="btnCredito" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDebito" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDinheiro" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblDialogo" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnFinalizar" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="129" max="32767" attributes="0"/>
+                      <EmptySpace pref="46" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnDinheio" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnCredito" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="51" max="32767" attributes="0"/>
+                      <Component id="lblDialogo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="btnDinheiro" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnDebito" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="52" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnCredito" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnFinalizar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="40" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="lblDialogo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Selecione o Meio de Pagamento: "/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Escolha o Meio de Pagamento: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="btnDinheio">
+            <Component class="javax.swing.JRadioButton" name="btnDinheiro">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="gpPagamento"/>
+                  <ComponentRef name="buttonGroup1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Dinheiro "/>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Padr&#xe3;o"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Dinheiro"/>
               </Properties>
-              <BindingProperties>
-                <BindingProperty name="selected" source="gpPagamento" target="btnDinheio" targetPath="selected" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="btnDebito">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="gpPagamento"/>
+                  <ComponentRef name="buttonGroup1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Cart&#xe3;o de D&#xe9;bito (A Vista)"/>
+                <Property name="text" type="java.lang.String" value="Cart&#xe3;o de D&#xe9;bito"/>
               </Properties>
-              <BindingProperties>
-                <BindingProperty name="selected" source="gpPagamento" target="btnDebito" targetPath="selected" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="btnCredito">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="gpPagamento"/>
+                  <ComponentRef name="buttonGroup1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Cart&#xe3;o de Cr&#xe9;dito "/>
+                <Property name="text" type="java.lang.String" value="Cart&#xe3;o de Cr&#xe9;dito"/>
               </Properties>
-              <BindingProperties>
-                <BindingProperty name="selected" source="gpPagamento" target="btnCredito" targetPath="selected" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btnFinalizar">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Finalizar"/>
               </Properties>
             </Component>
@@ -105,7 +92,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.ButtonGroup" name="gpPagamento">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
   </NonVisualComponents>
   <AuxValues>
@@ -334,9 +321,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ex: 00"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtQtdActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtQtd .addFocusListener(new FocusListener() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        if (txtQtd .getText().equals(&quot;Ex: 00&quot;)) {&#xa;            txtQtd .setText(&quot;&quot;);&#xa;        }&#xa;    }&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        if (txtQtd .getText().isEmpty()) {&#xa;             txtQtd .setText(&quot;Ex: 00&quot;);&#xa;        }&#xa;    }&#xa;    });"/>
           </AuxValues>
@@ -362,6 +346,13 @@
               <Image iconType="3" name="/icones/Incluir_black.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnIncluirClienteMousePressed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIncluirClienteActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="btnIncluirCliente.addMouseListener(new java.awt.event.MouseAdapter() {&#xa;    public void mousePressed(java.awt.event.MouseEvent evt) {&#xa;        btnIncluirClienteMousePressed(evt);&#xa;    }&#xa;    public void mouseExited(java.awt.event.MouseEvent evt) {&#xa;        hoverExited(evt);&#xa;    }&#xa;    public void mouseEntered(java.awt.event.MouseEvent evt) {&#xa;        hoverEntered(evt);&#xa;    }&#xa;});"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="btnAddProduto">
           <Properties>
@@ -533,9 +524,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Pagamento"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPagamentoActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
