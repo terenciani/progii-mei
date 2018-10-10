@@ -10,6 +10,7 @@ import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
 
 import br.estacio.mei.model.Cliente;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
@@ -47,6 +48,10 @@ public class ClientePrincipal extends javax.swing.JPanel {
         }
 
         //tbListaClientes.getTableHeader();
+    }
+
+    public ClientePrincipal(JFrame jFrame, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -338,5 +343,9 @@ public class ClientePrincipal extends javax.swing.JPanel {
     private javax.swing.JTable tbListaClientes;
     private javax.swing.JTextField txtCampoBusca;
     // End of variables declaration//GEN-END:variables
+
+    public void setLocationRelativeTo(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

@@ -4,13 +4,11 @@
  * and open the template in the editor.
  */
 package br.estacio.mei.visao.vendas;
-
-import br.estacio.mei.visao.cliente.ClientePrincipal;
-import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import br.estacio.mei.visao.cliente.ClientePrincipal;
+
 
 /**
  *
@@ -24,49 +22,6 @@ public class VendaPrincipal extends javax.swing.JPanel {
     public VendaPrincipal() {
         initComponents();
     }
-    public void resetColor(JPanel panelHovered) {
-        panelHovered.setBackground(new Color(12, 180, 206));
-    }
-    
-    private void updatePanelDinamic(String label, JPanel panel) {
-        lblBreadcrumb.setText(label);
-        panelDinamic.removeAll();
-        panelDinamic.add(panel);
-        panelDinamic.validate();
-        panelDinamic.repaint();
-
-    }
-    
-    private void hoverExited(java.awt.event.MouseEvent evt) {                             
-        if (evt.getSource() instanceof JPanel && !evt.getSource().equals(panelActive)) {
-            JPanel panel = (JPanel) evt.getSource();
-            resetColor(panel);
-        }
-    }
-    
-    public void changeColor(JPanel panelHovered) {
-        panelHovered.setBackground(new Color(44, 197, 221));
-    }
-    
-    private void hoverEntered(java.awt.event.MouseEvent evt) {                              
-        /*  
-            Primeiro faço uma verificação de segurança se a origem (fonte)
-            do evento é realmente um JPanel
-            Isso foi feito pois estou usando o mesmo evento para todos os 
-            itens do menu.
-         */
-        if (evt.getSource() instanceof JPanel) {
-            /*  O método getSource retorna um Object, por isso faço a conversão (cast)
-                para JPanel
-             */
-            JPanel panel = (JPanel) evt.getSource();
-            /*  o método change color recebe como parâmetro um JPanel e faz a 
-                mudança de cores, subistitui o setColor (já existe esse método na 
-                classe Jframe)
-             */
-            changeColor(panel);
-        }
-    }  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -77,14 +32,6 @@ public class VendaPrincipal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jdPagamento = new javax.swing.JDialog();
-        jpPagamento = new javax.swing.JPanel();
-        lblDialogo = new javax.swing.JLabel();
-        btnDinheiro = new javax.swing.JRadioButton();
-        btnDebito = new javax.swing.JRadioButton();
-        btnCredito = new javax.swing.JRadioButton();
-        btnFinalizar = new javax.swing.JButton();
-        buttonGroup1 = new javax.swing.ButtonGroup();
         painelInicio = new javax.swing.JPanel();
         lblCodCliente = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
@@ -110,53 +57,6 @@ public class VendaPrincipal extends javax.swing.JPanel {
         lblValor = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
         btnPagamento = new javax.swing.JButton();
-
-        lblDialogo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblDialogo.setText("Escolha o Meio de Pagamento: ");
-
-        buttonGroup1.add(btnDinheiro);
-        btnDinheiro.setText("Dinheiro");
-
-        buttonGroup1.add(btnDebito);
-        btnDebito.setText("Cartão de Débito");
-
-        buttonGroup1.add(btnCredito);
-        btnCredito.setText("Cartão de Crédito");
-
-        btnFinalizar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnFinalizar.setText("Finalizar");
-
-        javax.swing.GroupLayout jpPagamentoLayout = new javax.swing.GroupLayout(jpPagamento);
-        jpPagamento.setLayout(jpPagamentoLayout);
-        jpPagamentoLayout.setHorizontalGroup(
-            jpPagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPagamentoLayout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
-                .addGroup(jpPagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCredito)
-                    .addComponent(btnDebito)
-                    .addComponent(btnDinheiro)
-                    .addComponent(lblDialogo)
-                    .addComponent(btnFinalizar))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-        jpPagamentoLayout.setVerticalGroup(
-            jpPagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPagamentoLayout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
-                .addComponent(lblDialogo)
-                .addGap(27, 27, 27)
-                .addComponent(btnDinheiro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnDebito)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCredito)
-                .addGap(18, 18, 18)
-                .addComponent(btnFinalizar)
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-
-        jdPagamento.getContentPane().add(jpPagamento, java.awt.BorderLayout.CENTER);
 
         setLayout(new java.awt.BorderLayout());
 
@@ -197,19 +97,10 @@ public class VendaPrincipal extends javax.swing.JPanel {
         btnBusca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
 
         btnIncluirCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/Incluir_black.png"))); // NOI18N
-        btnIncluirCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnIncluirClienteMousePressed(evt);
-            }
-        });
-        btnIncluirCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIncluirClienteActionPerformed(evt);
-            }
-        });
 
         btnAddProduto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAddProduto.setText("Adicionar");
+        btnAddProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/Incluir_black.png"))); // NOI18N
+        btnAddProduto.setText("Add");
         btnAddProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddProdutoActionPerformed(evt);
@@ -263,7 +154,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(btnAddProduto))))))
                     .addComponent(lblNome))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelInicioLayout.setVerticalGroup(
             painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,17 +265,6 @@ public class VendaPrincipal extends javax.swing.JPanel {
                 }
             }
         });
-        btnIncluirCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnIncluirClienteMousePressed(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                hoverExited(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                hoverEntered(evt);
-            }
-        });
         txtValor .addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -431,20 +311,27 @@ public class VendaPrincipal extends javax.swing.JPanel {
         lblValor.setText("00,00");
 
         btnSalvar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save-button-interface-symbol-of-outlined-diskette_icon-icons.com_73167.png"))); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.setMaximumSize(new java.awt.Dimension(86, 36));
         btnSalvar.setMinimumSize(new java.awt.Dimension(86, 36));
         btnSalvar.setPreferredSize(new java.awt.Dimension(86, 36));
 
         btnPagamento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnPagamento.setText("Pagamento");
+        btnPagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/if_cash-money.png"))); // NOI18N
+        btnPagamento.setText("Pagar");
+        btnPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagamentoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelFimLayout = new javax.swing.GroupLayout(painelFim);
         painelFim.setLayout(painelFimLayout);
         painelFimLayout.setHorizontalGroup(
             painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFimLayout.createSequentialGroup()
-                .addContainerGap(206, Short.MAX_VALUE)
+                .addContainerGap(218, Short.MAX_VALUE)
                 .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTotal, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -454,8 +341,8 @@ public class VendaPrincipal extends javax.swing.JPanel {
                         .addComponent(lblSifrao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblValor))
-                    .addComponent(btnPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(310, Short.MAX_VALUE))
+                    .addComponent(btnPagamento))
+                .addContainerGap(303, Short.MAX_VALUE))
         );
         painelFimLayout.setVerticalGroup(
             painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -467,7 +354,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
                     .addComponent(lblValor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnPagamento, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                    .addComponent(btnPagamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
@@ -485,37 +372,23 @@ public class VendaPrincipal extends javax.swing.JPanel {
         txtQtd.setText("Ex: 00");
         txtValor.setText("R$ 1,00");
     }//GEN-LAST:event_btnAddProdutoActionPerformed
+
+    private void btnPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagamentoActionPerformed
+        // TODO add your handling code here:
+        jdPagamento dialog = new jdPagamento (new javax.swing.JFrame(), true);
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_btnPagamentoActionPerformed
  
-    private void btnIncluirClienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIncluirClienteMousePressed
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_btnIncluirClienteMousePressed
-
-    private void btnIncluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIncluirClienteActionPerformed
-        // TODO add your handling code here:
-        resetColor((JPanel) panelActive);
-        panelActive = evt.getSource();
-        updatePanelDinamic("Gerenciamento de Clientes", new ClientePrincipal());
-    }//GEN-LAST:event_btnIncluirClienteActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddProduto;
     private javax.swing.JButton btnBusca;
-    private javax.swing.JRadioButton btnCredito;
-    private javax.swing.JRadioButton btnDebito;
-    private javax.swing.JRadioButton btnDinheiro;
-    private javax.swing.JButton btnFinalizar;
     private javax.swing.JButton btnIncluirCliente;
     private javax.swing.JButton btnPagamento;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JDialog jdPagamento;
-    private javax.swing.JPanel jpPagamento;
     private javax.swing.JLabel lblCodCliente;
     private javax.swing.JLabel lblDescricao;
-    private javax.swing.JLabel lblDialogo;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblQtd;
     private javax.swing.JLabel lblSifrao;
@@ -535,7 +408,5 @@ public class VendaPrincipal extends javax.swing.JPanel {
     private javax.swing.JTextField txtQtd;
     private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
-    private Object panelActive;
-    private javax.swing.JLabel lblBreadcrumb;
-    private javax.swing.JPanel panelDinamic;
+
 }
