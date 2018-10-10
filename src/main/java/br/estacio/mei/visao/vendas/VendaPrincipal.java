@@ -58,8 +58,11 @@ public class VendaPrincipal extends javax.swing.JPanel {
         btnSalvar = new javax.swing.JButton();
         btnPagamento = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 153));
+        setForeground(new java.awt.Color(255, 255, 153));
         setLayout(new java.awt.BorderLayout());
 
+        painelInicio.setBackground(new java.awt.Color(255, 255, 153));
         painelInicio.setPreferredSize(new java.awt.Dimension(800, 200));
 
         lblCodCliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -116,7 +119,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
         painelInicioLayout.setHorizontalGroup(
             painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelInicioLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(lclCodProduto)
@@ -282,6 +285,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
 
         add(painelInicio, java.awt.BorderLayout.PAGE_START);
 
+        painelMeio.setBackground(new java.awt.Color(255, 255, 153));
         painelMeio.setPreferredSize(new java.awt.Dimension(804, 150));
         painelMeio.setLayout(new java.awt.BorderLayout());
 
@@ -299,6 +303,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
 
         add(painelMeio, java.awt.BorderLayout.CENTER);
 
+        painelFim.setBackground(new java.awt.Color(255, 255, 153));
         painelFim.setPreferredSize(new java.awt.Dimension(804, 150));
 
         lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -331,7 +336,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
         painelFimLayout.setHorizontalGroup(
             painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFimLayout.createSequentialGroup()
-                .addContainerGap(218, Short.MAX_VALUE)
+                .addContainerGap(212, Short.MAX_VALUE)
                 .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTotal, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -342,7 +347,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblValor))
                     .addComponent(btnPagamento))
-                .addContainerGap(303, Short.MAX_VALUE))
+                .addContainerGap(297, Short.MAX_VALUE))
         );
         painelFimLayout.setVerticalGroup(
             painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
