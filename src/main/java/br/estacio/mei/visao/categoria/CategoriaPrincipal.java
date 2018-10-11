@@ -7,12 +7,15 @@ package br.estacio.mei.visao.categoria;
 
 import br.estacio.mei.dao.CategoriaDao;
 import br.estacio.mei.dao.implementacao.CategoriaDaoEstatica;
+
 import br.estacio.mei.model.Categoria;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.util.ArrayList;
 import javax.lang.model.util.Elements;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -34,7 +37,6 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         initComponents();
         panelCategAcao.setVisible(false);
         populaTabela();
-
     }
 
     /**
@@ -174,7 +176,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                                 .addComponent(botaoConfirmar)
                                 .addGap(36, 36, 36)
                                 .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelCategAcaoLayout.setVerticalGroup(
             panelCategAcaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,21 +293,19 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
             .addGroup(panelCategoriaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelBuscaCate, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelCategoriaLayout.createSequentialGroup()
-                        .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelCategoriaLayout.createSequentialGroup()
+                        .addComponent(labelBuscaCate, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelCategoriaLayout.createSequentialGroup()
+                        .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(panelCategAcao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCategoriaLayout.createSequentialGroup()
                                 .addComponent(textCampoEntradaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(botaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, 0)
-                        .addComponent(panelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCategoriaLayout.createSequentialGroup()
-                .addContainerGap(70, Short.MAX_VALUE)
-                .addComponent(panelCategAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(panelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         panelCategoriaLayout.setVerticalGroup(
             panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,40 +317,48 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                     .addGroup(panelCategoriaLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(textCampoEntradaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(panelBotoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(panelCategAcao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(31, 31, 31))
         );
 
         add(panelCategoria, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoIncluirActionPerformed
-        String opcao = "inclusao";
+        String opcao;
+        opcao = "inclusao";
         labelAcaoUsuario.setText("Inclusão");
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
         // Rotina buscar o último código de CATEGORIA no Banco de Dados
         int codigoCategoria = 0;
-        categoriaDao.buscarCategoria();
-//        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
-//        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
-//        int fim=0;
-//        for (int i=0; i < listaDeCategoria.size();i++)
-//        {
-//        // Inicio da busca do último código de categoria cadastrado
-//            Categoria exibeCategoria = listaDeCategoria.get(i);
-//            if (fim == 0) {
-//                codigoCategoria = exibeCategoria.getCodigo();
-//                fim = 1;
-//            } else if (exibeCategoria.getCodigo() > codigoCategoria) {
-//                codigoCategoria = exibeCategoria.getCodigo();
-//            }
-//        }
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
+        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
+        int fim=0;
+        for (int i=0; i < listaDeCategoria.size();i++)
+       {
+        // Inicio da busca do último código de categoria cadastrado
+            Categoria exibeCategoria = listaDeCategoria.get(i);
+            if (fim == 0) {
+                codigoCategoria = exibeCategoria.getCodigo();
+                fim = 1;
+            } else if (exibeCategoria.getCodigo() > codigoCategoria) {
+               codigoCategoria = exibeCategoria.getCodigo();
+           }
+        }
+        if (codigoCategoria == 0) {
+            codigoCategoria = 1;
+        } else {
+            codigoCategoria += 1;
+        }
+        textCampoCodigo.setText("" + codigoCategoria);
+        textCampoCodigo.setEditable(false);
+        textCampoCodigo.setBackground(new Color(170, 170, 170));
     }//GEN-LAST:event_botaoIncluirActionPerformed
 
     private void botaoFecharCategActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFecharCategActionPerformed
@@ -390,28 +398,65 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
         // TODO add your handling code here:
+		
         String opcao = "exclusao";
         botaoConfirmar.setText("Confirmar");
         labelAcaoUsuario.setText("Exclusão");
         panelCategAcao.setVisible(true);
+		
+	if (jTblCategoria.getSelectedRow() >= 0) {
+		
+            int resposta = JOptionPane.showConfirmDialog(null, "Confirma a exclusão da Categoria?", "Excluir Categoria!", JOptionPane.YES_NO_OPTION);
+			
+            if (resposta == 0) {
+		int dadosLinha = jTblCategoria.getSelectedRow();
+		int codigo = (int) jTblCategoria.getModel().getValueAt(dadosLinha, 0);
+				
+		//******** Chama método para excluir Categoria ********
+                categoriaDao.excluirCategoria(categoria);
+			
+		//******** Faz nova busca, atualizando a tabela de Categorias ********
+		((DefaultTableModel)jTblCategoria.getModel()).setRowCount(0);
+		categoriaDao.excluirCategoria(categoria);
+		DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
+		ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
+				
+		for (int i=0; i < listaDeCategoria.size();i++) {
+                    Categoria exibeCategoria = listaDeCategoria.get(i);
+                    String descricao = textCampoEntradaBusca.getText();
+					
+                    //******** Faz a busca da Categoria por qualquer parte da sua descricao ********
+                    if (exibeCategoria.getDescricao().contains(descricao)) {
+					
+                        Object[] dadosLinha1 = new Object[2];
+                        
+                        dadosLinha1[0] = exibeCategoria.getCodigo();
+                        dadosLinha1[1] = exibeCategoria.getDescricao();
+                        modeloDeColunasDaTabela.addRow(dadosLinha1);
+                    }
+		}
+                JOptionPane.showMessageDialog(null, "Cliente Removido!");
+		}
+            } else {
+		JOptionPane.showMessageDialog(null, "Selecione uma Categoria!");
+            }
     }//GEN-LAST:event_botaoExcluirActionPerformed
 
     private void botaoAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarActionPerformed
         // TODO add your handling code here:
-        String opcao = "alteracao";
+        String opcao;
+        opcao = "alteracao";
         labelAcaoUsuario.setText("Alteração");
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
-        int dadosLinha = jTblCategoria.getSelectedRow();
-        int codigo = (int) jTblCategoria.getModel().getValueAt(dadosLinha, 0);
-        String descricao = (String) jTblCategoria.getModel().getValueAt(dadosLinha, 1);
-        //JPanel onde tem a tabela
-        DefaultTableModel table = (DefaultTableModel) jTblCategoria.getModel();
 
         if (jTblCategoria.getSelectedRow() >= 0) {
-            //clienteEdit = table.getValueAt(tbListaClientes.getSelectedRow(), 1).toString();
-
-        }
+            int dadosLinha = jTblCategoria.getSelectedRow();
+            int codigo = (int) jTblCategoria.getModel().getValueAt(dadosLinha, 0);
+            String descricao = (String) jTblCategoria.getModel().getValueAt(dadosLinha, 1);
+	} else {
+            JOptionPane.showMessageDialog(null, "Selecione uma Categoria!");
+	}
 
     }//GEN-LAST:event_botaoAlterarActionPerformed
 
@@ -422,7 +467,8 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         //Aqui Esconde Panel
         panelCategAcao.setVisible(false);
         labelAcaoUsuario.setText("");
-        String opcao = "";
+        String opcao;
+        opcao = "";
         int codigo = 0;
         String descricao = " ";
     }//GEN-LAST:event_botaoSairActionPerformed
@@ -430,11 +476,6 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
     private void botaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarActionPerformed
         // TODO add your handling code here:
         // Aqui Rotina de Salvar no Banco de Dados e Sair
-
-        //Aqui Esconde Panel
-        panelCategAcao.setVisible(false);
-        botaoConfirmar.setText("Confirmar");
-
         //  Aqui você cria a categoria
         Categoria categoria = new Categoria();
         if (textCampoCodigo.getText().isEmpty()) {
@@ -446,7 +487,10 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
             categoriaDao.atualizarCategoria(categoria);
         }
         populaTabela();
+         //Aqui Esconde Panel
+        botaoConfirmar.setText("Confirmar");
         labelAcaoUsuario.setText("");
+        panelCategAcao.setVisible(false);
     }//GEN-LAST:event_botaoConfirmarActionPerformed
 
     private void populaTabela() {
@@ -486,11 +530,8 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                 dadosLinha[0] = mostraCategoria.getCodigo();
                 dadosLinha[1] = mostraCategoria.getDescricao();
                 modeloDeColuna.addRow(dadosLinha);
-            } else {
-                //TERMINAR LOGICA SENÃO
             }
         }
-
     }//GEN-LAST:event_botaoBuscarActionPerformed
 
 
