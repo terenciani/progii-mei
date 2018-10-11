@@ -336,27 +336,27 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
         // Rotina buscar o último código de CATEGORIA no Banco de Dados
-        int codigoCategoria = 0;
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
-        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
-        int fim=0;
-        for (int i=0; i < listaDeCategoria.size();i++)
-       {
-        // Inicio da busca do último código de categoria cadastrado
-            Categoria exibeCategoria = listaDeCategoria.get(i);
-            if (fim == 0) {
-                codigoCategoria = exibeCategoria.getCodigo();
-                fim = 1;
-            } else if (exibeCategoria.getCodigo() > codigoCategoria) {
-               codigoCategoria = exibeCategoria.getCodigo();
-           }
-        }
-        if (codigoCategoria == 0) {
-            codigoCategoria = 1;
-        } else {
-            codigoCategoria += 1;
-        }
-        textCampoCodigo.setText("" + codigoCategoria);
+//        int codigoCategoria = 0;
+//        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
+//        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
+//        int fim=0;
+//        for (int i=0; i < listaDeCategoria.size();i++)
+//       {
+//        // Inicio da busca do último código de categoria cadastrado
+//            Categoria exibeCategoria = listaDeCategoria.get(i);
+//            if (fim == 0) {
+//                codigoCategoria = exibeCategoria.getCodigo();
+//                fim = 1;
+//            } else if (exibeCategoria.getCodigo() > codigoCategoria) {
+//               codigoCategoria = exibeCategoria.getCodigo();
+//           }
+//        }
+//        if (codigoCategoria == 0) {
+//            codigoCategoria = 1;
+//        } else {
+//            codigoCategoria += 1;
+//        }
+//        textCampoCodigo.setText("" + codigoCategoria);
         textCampoCodigo.setEditable(false);
         textCampoCodigo.setBackground(new Color(170, 170, 170));
     }//GEN-LAST:event_botaoIncluirActionPerformed

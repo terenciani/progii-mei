@@ -215,7 +215,7 @@
                           <Component id="labelDescricao" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="textCampoDesc" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoConfirmar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="botaoSair" alignment="3" min="-2" max="-2" attributes="0"/>
