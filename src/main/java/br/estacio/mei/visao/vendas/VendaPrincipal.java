@@ -4,25 +4,26 @@
  * and open the template in the editor.
  */
 package br.estacio.mei.visao.vendas;
+
+import br.estacio.mei.visao.cliente.ClientePrincipal;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import javax.swing.table.DefaultTableModel;
-import br.estacio.mei.visao.cliente.ClientePrincipal;
-
 
 /**
  *
- * @author aluno
+ * @author Familia TOPz
  */
 public class VendaPrincipal extends javax.swing.JPanel {
 
     /**
-     * Creates new form PainelVendas
+     * Creates new form backup
      */
     public VendaPrincipal() {
         initComponents();
     }
-
+    
+       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,57 +33,43 @@ public class VendaPrincipal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        vendasPainel = new javax.swing.JPanel();
         painelInicio = new javax.swing.JPanel();
         lblCodCliente = new javax.swing.JLabel();
-        lblNome = new javax.swing.JLabel();
-        lclCodProduto = new javax.swing.JLabel();
-        lblDescricao = new javax.swing.JLabel();
         txtCodCliente = new javax.swing.JTextField();
-        txtNome = new javax.swing.JTextField();
         txtCodProduto = new javax.swing.JTextField();
         txtDescricao = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
+        lblNome = new javax.swing.JLabel();
+        lblDescricao = new javax.swing.JLabel();
+        lclCodProduto = new javax.swing.JLabel();
+        btnBusca = new javax.swing.JButton();
         txtQtd = new javax.swing.JTextField();
         lblQtd = new javax.swing.JLabel();
-        btnBusca = new javax.swing.JButton();
+        txtValor = new javax.swing.JTextField();
+        lblVal = new javax.swing.JLabel();
         btnIncluirCliente = new javax.swing.JButton();
         btnAddProduto = new javax.swing.JButton();
-        lblVal = new javax.swing.JLabel();
-        txtValor = new javax.swing.JTextField();
         painelMeio = new javax.swing.JPanel();
         tblProdutos = new javax.swing.JScrollPane();
         tbProdutos = new javax.swing.JTable();
         painelFim = new javax.swing.JPanel();
-        lblTotal = new javax.swing.JLabel();
-        lblSifrao = new javax.swing.JLabel();
-        lblValor = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
+        lblTotal = new javax.swing.JLabel();
         btnPagamento = new javax.swing.JButton();
+        lblValor = new javax.swing.JLabel();
+        lblSifrao = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 153));
-        setForeground(new java.awt.Color(255, 255, 153));
         setLayout(new java.awt.BorderLayout());
 
-        painelInicio.setBackground(new java.awt.Color(255, 255, 153));
-        painelInicio.setPreferredSize(new java.awt.Dimension(800, 200));
+        vendasPainel.setLayout(new java.awt.BorderLayout());
 
         lblCodCliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblCodCliente.setText("Cod. :");
 
-        lblNome.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblNome.setText("Nome :");
-
-        lclCodProduto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lclCodProduto.setText("Cod. :");
-
-        lblDescricao.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblDescricao.setText("Descrição :");
-
         txtCodCliente.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtCodCliente.setText("Ex: 00000");
         txtCodCliente.setToolTipText("");
-
-        txtNome.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        txtNome.setText("Nome do Cliente");
 
         txtCodProduto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtCodProduto.setText("Ex: 00000");
@@ -91,15 +78,41 @@ public class VendaPrincipal extends javax.swing.JPanel {
         txtDescricao.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtDescricao.setText("Descrição do Produto");
 
+        txtNome.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtNome.setText("Nome do Cliente");
+
+        lblNome.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblNome.setText("Nome :");
+
+        lblDescricao.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblDescricao.setText("Descrição :");
+
+        lclCodProduto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lclCodProduto.setText("Cod. :");
+
+        btnBusca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
+        btnBusca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaActionPerformed(evt);
+            }
+        });
+
         txtQtd.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtQtd.setText("Ex: 00");
 
         lblQtd.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblQtd.setText("Qtd. :");
 
-        btnBusca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/findUser20.png"))); // NOI18N
+        txtValor.setText("R$ 1,00");
+
+        lblVal.setText("Valor (u):");
 
         btnIncluirCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/Incluir_black.png"))); // NOI18N
+        btnIncluirCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnIncluirClienteMousePressed(evt);
+            }
+        });
 
         btnAddProduto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAddProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/Incluir_black.png"))); // NOI18N
@@ -110,16 +123,12 @@ public class VendaPrincipal extends javax.swing.JPanel {
             }
         });
 
-        lblVal.setText("Valor (u):");
-
-        txtValor.setText("R$ 1,00");
-
         javax.swing.GroupLayout painelInicioLayout = new javax.swing.GroupLayout(painelInicio);
         painelInicio.setLayout(painelInicioLayout);
         painelInicioLayout.setHorizontalGroup(
             painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelInicioLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(100, Short.MAX_VALUE)
                 .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(lclCodProduto)
@@ -136,11 +145,6 @@ public class VendaPrincipal extends javax.swing.JPanel {
                                 .addComponent(txtDescricao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)))
                         .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelInicioLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnIncluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelInicioLayout.createSequentialGroup()
                                 .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(painelInicioLayout.createSequentialGroup()
                                         .addGap(20, 20, 20)
@@ -155,9 +159,14 @@ public class VendaPrincipal extends javax.swing.JPanel {
                                     .addGroup(painelInicioLayout.createSequentialGroup()
                                         .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnAddProduto))))))
+                                        .addComponent(btnAddProduto))))
+                            .addGroup(painelInicioLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnIncluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(lblNome))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         painelInicioLayout.setVerticalGroup(
             painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +182,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
                             .addComponent(txtCodCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                             .addComponent(txtNome)))
                     .addGroup(painelInicioLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(painelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnIncluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -212,20 +221,6 @@ public class VendaPrincipal extends javax.swing.JPanel {
                 }
             }
         });
-        txtNome .addFocusListener(new FocusListener() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                if (txtNome .getText().equals("Nome do Cliente")) {
-                    txtNome .setText("");
-                }
-            }
-            @Override
-            public void focusLost(FocusEvent e) {
-                if (txtNome .getText().isEmpty()) {
-                    txtNome .setText("Nome do Cliente");
-                }
-            }
-        });
         txtCodProduto .addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -251,6 +246,20 @@ public class VendaPrincipal extends javax.swing.JPanel {
             public void focusLost(FocusEvent e) {
                 if (txtDescricao .getText().isEmpty()) {
                     txtDescricao .setText("Descrição do Produto");
+                }
+            }
+        });
+        txtNome .addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txtNome .getText().equals("Nome do Cliente")) {
+                    txtNome .setText("");
+                }
+            }
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txtNome .getText().isEmpty()) {
+                    txtNome .setText("Nome do Cliente");
                 }
             }
         });
@@ -283,10 +292,8 @@ public class VendaPrincipal extends javax.swing.JPanel {
             }
         });
 
-        add(painelInicio, java.awt.BorderLayout.PAGE_START);
+        vendasPainel.add(painelInicio, java.awt.BorderLayout.PAGE_START);
 
-        painelMeio.setBackground(new java.awt.Color(255, 255, 153));
-        painelMeio.setPreferredSize(new java.awt.Dimension(804, 150));
         painelMeio.setLayout(new java.awt.BorderLayout());
 
         tbProdutos.setModel(new javax.swing.table.DefaultTableModel(
@@ -301,19 +308,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
 
         painelMeio.add(tblProdutos, java.awt.BorderLayout.CENTER);
 
-        add(painelMeio, java.awt.BorderLayout.CENTER);
-
-        painelFim.setBackground(new java.awt.Color(255, 255, 153));
-        painelFim.setPreferredSize(new java.awt.Dimension(804, 150));
-
-        lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTotal.setText("Total :");
-
-        lblSifrao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblSifrao.setText("R$ ");
-
-        lblValor.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblValor.setText("00,00");
+        vendasPainel.add(painelMeio, java.awt.BorderLayout.CENTER);
 
         btnSalvar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save-button-interface-symbol-of-outlined-diskette_icon-icons.com_73167.png"))); // NOI18N
@@ -321,6 +316,9 @@ public class VendaPrincipal extends javax.swing.JPanel {
         btnSalvar.setMaximumSize(new java.awt.Dimension(86, 36));
         btnSalvar.setMinimumSize(new java.awt.Dimension(86, 36));
         btnSalvar.setPreferredSize(new java.awt.Dimension(86, 36));
+
+        lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTotal.setText("Total :");
 
         btnPagamento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnPagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/if_cash-money.png"))); // NOI18N
@@ -331,12 +329,18 @@ public class VendaPrincipal extends javax.swing.JPanel {
             }
         });
 
+        lblValor.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblValor.setText("00,00");
+
+        lblSifrao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblSifrao.setText("R$ ");
+
         javax.swing.GroupLayout painelFimLayout = new javax.swing.GroupLayout(painelFim);
         painelFim.setLayout(painelFimLayout);
         painelFimLayout.setHorizontalGroup(
             painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFimLayout.createSequentialGroup()
-                .addContainerGap(212, Short.MAX_VALUE)
+                .addContainerGap(277, Short.MAX_VALUE)
                 .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTotal, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -347,7 +351,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblValor))
                     .addComponent(btnPagamento))
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(362, Short.MAX_VALUE))
         );
         painelFimLayout.setVerticalGroup(
             painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,7 +368,9 @@ public class VendaPrincipal extends javax.swing.JPanel {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        add(painelFim, java.awt.BorderLayout.PAGE_END);
+        vendasPainel.add(painelFim, java.awt.BorderLayout.PAGE_END);
+
+        add(vendasPainel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProdutoActionPerformed
@@ -384,7 +390,19 @@ public class VendaPrincipal extends javax.swing.JPanel {
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
     }//GEN-LAST:event_btnPagamentoActionPerformed
- 
+
+    private void btnIncluirClienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIncluirClienteMousePressed
+        // TODO add your handling code here:
+        ClientePrincipal areaNova = new ClientePrincipal();
+        vendasPainel.removeAll();
+        vendasPainel.add(areaNova);
+        vendasPainel.validate();
+        vendasPainel.repaint();
+    }//GEN-LAST:event_btnIncluirClienteMousePressed
+
+    private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
+    }//GEN-LAST:event_btnBuscaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddProduto;
@@ -412,6 +430,6 @@ public class VendaPrincipal extends javax.swing.JPanel {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtQtd;
     private javax.swing.JTextField txtValor;
+    private javax.swing.JPanel vendasPainel;
     // End of variables declaration//GEN-END:variables
-
 }
