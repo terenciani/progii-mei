@@ -435,7 +435,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                         modeloDeColunasDaTabela.addRow(dadosLinha1);
                     }
 		}
-                JOptionPane.showMessageDialog(null, "Cliente Removido!");
+                JOptionPane.showMessageDialog(null, "Categoria Removida!");
 		}
             } else {
 		JOptionPane.showMessageDialog(null, "Selecione uma Categoria!");
