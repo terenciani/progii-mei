@@ -5,8 +5,6 @@
  */
 package br.estacio.mei.model;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -18,7 +16,6 @@ public class Venda {
     private Date data;
     private Cliente cliente;
     private Usuario usuario;
-    private ArrayList<Produto> listaDeProdutos;
     private double valor;
     private String observacao;
     private int status;
@@ -55,14 +52,6 @@ public class Venda {
         this.usuario = usuario;
     }
 
-    public ArrayList<Produto> getListaDeProdutos() {
-        return listaDeProdutos;
-    }
-
-    public void setListaDeProdutos(ArrayList<Produto> listaDeProdutos) {
-        this.listaDeProdutos = listaDeProdutos;
-    }
-
     public double getValor() {
         return valor;
     }
@@ -89,7 +78,7 @@ public class Venda {
 
     @Override
     public String toString() {
-        return "Venda{" + "codigo=" + codigo + ", data=" + data + ", cliente=" + cliente + ", usuario=" + usuario + ", listaDeProdutos=" + listaDeProdutos + ", valor=" + valor + ", observacao=" + observacao + ", status=" + status + '}';
+        return "Venda{" + "codigo=" + codigo + ", data=" + data + ", cliente=" + cliente + ", usuario=" + usuario + ", valor=" + valor + ", observacao=" + observacao + ", status=" + status + '}';
     }
     
     

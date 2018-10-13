@@ -5,6 +5,7 @@
  */
 package br.estacio.mei.dao;
 
+import br.estacio.mei.model.ItemVenda;
 import java.util.ArrayList;
 import br.estacio.mei.model.Venda;
 /**
@@ -16,6 +17,10 @@ public interface VendaDao {
     public ArrayList<Venda> buscarVendas();
 
     public Venda salvarVenda(Venda venda);
+    
+    public ItemVenda salvarItemVenda (ItemVenda itemVenda);
+    
+    public double valorTotal (Venda venda);
 
     public Venda atualizarVenda(Venda venda);
 

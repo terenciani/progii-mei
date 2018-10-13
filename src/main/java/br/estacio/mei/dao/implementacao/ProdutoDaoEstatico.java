@@ -109,5 +109,4 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         return produtos;
     }
 
-
 }

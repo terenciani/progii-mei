@@ -12,6 +12,7 @@ import br.estacio.mei.model.Compras;
 import br.estacio.mei.model.ContasAPagar;
 import br.estacio.mei.model.Endereco;
 import br.estacio.mei.model.Fornecedor;
+import br.estacio.mei.model.ItemVenda;
 import br.estacio.mei.model.Produto;
 import br.estacio.mei.model.Usuario;
 import br.estacio.mei.model.Venda;
@@ -34,6 +35,7 @@ public class BancoSingleton {
     public ArrayList<Produto> tabelaProduto = new ArrayList();
     public ArrayList<Usuario> tabelaUsuario = new ArrayList();
     public ArrayList<Venda> tabelaVenda = new ArrayList();
+    public ArrayList<ItemVenda> tabelaItemVenda = new ArrayList();
     //public ArrayList<Sac> tabelaSac = new ArrayList();
     
     private BancoSingleton(){
