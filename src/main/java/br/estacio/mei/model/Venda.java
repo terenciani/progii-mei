@@ -18,6 +18,15 @@ public class Venda {
     private Usuario usuario;
     private double valor;
     private String observacao;
+    private String formaPagamento;
+
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
     private int status;
 
     public int getCodigo() {

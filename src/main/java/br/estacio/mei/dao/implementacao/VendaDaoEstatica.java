@@ -35,7 +35,8 @@ public class VendaDaoEstatica implements VendaDao{
 
     @Override
     public Venda atualizarVenda(Venda venda) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        BancoSingleton.getInstance().tabelaVenda.add(venda);
+        return venda;
     }
 
     @Override

@@ -16,6 +16,15 @@ public class ItemVenda {
     private int codigo;
     private int quantidade;
     private double valor;
+    private String formaPagamento;
+
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
 
     public Venda getVenda() {
         return venda;

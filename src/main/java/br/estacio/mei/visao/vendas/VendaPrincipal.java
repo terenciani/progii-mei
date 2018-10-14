@@ -57,7 +57,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
     private void initComboProduto(){
         Object produto[] = produtoDao.pesquisarPorNome(toString()).toArray();
         DefaultComboBoxModel modelProduto = new DefaultComboBoxModel();
-        modelProduto.addElement("Selecione um Produto");
+        modelProduto.addElement("Selecione Um Produto");
         for(int i = 0; i<produto.length; i++){
             modelProduto.addElement(produto[i]);
         }
@@ -121,7 +121,7 @@ public class VendaPrincipal extends javax.swing.JPanel {
         lblQtd.setText("Qtd. :");
 
         txtValor.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        txtValor.setText("1,00");
+        txtValor.setText("1.00");
 
         lblVal.setText("Valor (u):");
 
@@ -140,11 +140,6 @@ public class VendaPrincipal extends javax.swing.JPanel {
         lblDataVenda.setForeground(new java.awt.Color(0, 0, 0));
 
         jcNome.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jcNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcNomeActionPerformed(evt);
-            }
-        });
 
         jcProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -223,14 +218,14 @@ public class VendaPrincipal extends javax.swing.JPanel {
         txtValor .addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                if (txtValor .getText().equals("1,00")) {
+                if (txtValor .getText().equals("1.00")) {
                     txtValor .setText("");
                 }
             }
             @Override
             public void focusLost(FocusEvent e) {
                 if (txtValor .getText().isEmpty()) {
-                    txtValor .setText("1,00");
+                    txtValor .setText("1.00");
                 }
             }
         });
@@ -345,11 +340,6 @@ public class VendaPrincipal extends javax.swing.JPanel {
         gbFormaPagamento.add(jrbDinheiro);
         jrbDinheiro.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jrbDinheiro.setText("Dinheiro");
-        jrbDinheiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jrbDinheiroActionPerformed(evt);
-            }
-        });
 
         gbFormaPagamento.add(jrbCredito);
         jrbCredito.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -378,14 +368,16 @@ public class VendaPrincipal extends javax.swing.JPanel {
                         .addComponent(lblMeioPagamento)
                         .addGap(18, 18, 18)
                         .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jrbCredito)
-                            .addComponent(jrbDebito)
-                            .addComponent(jrbDinheiro))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                        .addComponent(btnCancelar)
-                        .addGap(64, 64, 64)
-                        .addComponent(btnFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)))
+                            .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jrbCredito)
+                                .addComponent(jrbDinheiro))
+                            .addGroup(painelFimLayout.createSequentialGroup()
+                                .addComponent(jrbDebito)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                                .addComponent(btnCancelar)
+                                .addGap(62, 62, 62)
+                                .addComponent(btnFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         painelFimLayout.setVerticalGroup(
@@ -398,19 +390,14 @@ public class VendaPrincipal extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jrbDinheiro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFimLayout.createSequentialGroup()
-                        .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jrbDebito)
-                            .addComponent(lblMeioPagamento))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jrbCredito)
-                        .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFimLayout.createSequentialGroup()
-                        .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42))))
+                .addGroup(painelFimLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jrbDebito)
+                    .addComponent(lblMeioPagamento)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jrbCredito)
+                .addGap(26, 26, 26))
         );
 
         vendasPainel.add(painelFim, java.awt.BorderLayout.PAGE_END);
@@ -448,41 +435,68 @@ public class VendaPrincipal extends javax.swing.JPanel {
         dtm.addRow(new Object[]{itemVenda.getCodigo(),itemVenda.getProduto().getNome(), itemVenda.getQuantidade(), itemVenda.getValor()});
 
         txtQtd.setText("Ex: 00");
-        txtValor.setText("1,00");
+        txtValor.setText("1.00");
         
         lblValor.setText("" + vendaDao.valorTotal(vendaAtual));
     }//GEN-LAST:event_btnAddProdutoActionPerformed
 
     private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
         // TODO add your handling code here:
+        if (jrbCredito.isSelected()) {
+            vendaFinalizada vendaFinalizada = new vendaFinalizada(new javax.swing.JFrame(), true);
+            vendaFinalizada.setLocationRelativeTo(this);
+            vendaFinalizada.setVisible(true);
+            
+        } else if(jrbDebito.isSelected()){ 
+            vendaFinalizada vendaFinalizada = new vendaFinalizada(new javax.swing.JFrame(), true);
+            vendaFinalizada.setLocationRelativeTo(this);
+            vendaFinalizada.setVisible(true);
+                       
+        }else if(jrbDinheiro.isSelected()){
+            vendaFinalizada vendaFinalizada = new vendaFinalizada(new javax.swing.JFrame(), true);
+            vendaFinalizada.setLocationRelativeTo(this);
+            vendaFinalizada.setVisible(true);
+            
+        }else{
+           erroPagamento erroPagamento = new erroPagamento(new javax.swing.JFrame(), true);
+           erroPagamento.setLocationRelativeTo(this);
+           erroPagamento.setVisible(true); 
+        }
+        
+        vendaAtual.setStatus(1);
+        vendaDao.atualizarVenda(vendaAtual);
+
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         txtDescADD.setText("Ex: Aqui pode colocar as informações adicionais!");
         txtQtd.setText("Ex: 00");
-        txtValor.setText("R$ 1,00");
+        txtValor.setText("1.00");
+        lblValor.setText("00,00");
+        
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        model.addElement("Selecione Um Cliente");
+        jcNome.setModel(model);
+        
+        DefaultComboBoxModel modelProduto = new DefaultComboBoxModel();
+        modelProduto.addElement("Selecione Um Produto");
+        jcProduto.setModel(modelProduto);
 
         DefaultTableModel dtm = (DefaultTableModel) tbProdutos.getModel();
         dtm.setRowCount(0);
+        
+        gbFormaPagamento.clearSelection();
     }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void jrbDinheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbDinheiroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jrbDinheiroActionPerformed
-
-    private void jcNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcNomeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddProduto;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnFinalizar;
-    private javax.swing.ButtonGroup gbFormaPagamento;
-    private javax.swing.JComboBox<String> jcNome;
-    private javax.swing.JComboBox<String> jcProduto;
+    protected static javax.swing.ButtonGroup gbFormaPagamento;
+    protected static javax.swing.JComboBox<String> jcNome;
+    protected static javax.swing.JComboBox<String> jcProduto;
     private javax.swing.JPanel jpTotal;
     private javax.swing.JRadioButton jrbCredito;
     private javax.swing.JRadioButton jrbDebito;
@@ -498,15 +512,15 @@ public class VendaPrincipal extends javax.swing.JPanel {
     private javax.swing.JLabel lblSifrao;
     private javax.swing.JLabel lblTotal;
     private javax.swing.JLabel lblVal;
-    private javax.swing.JLabel lblValor;
+    protected static javax.swing.JLabel lblValor;
     private javax.swing.JPanel painelFim;
     private javax.swing.JPanel painelInicio;
     private javax.swing.JPanel painelMeio;
-    private javax.swing.JTable tbProdutos;
+    protected static javax.swing.JTable tbProdutos;
     private javax.swing.JScrollPane tblProdutos;
-    private javax.swing.JTextArea txtDescADD;
-    private javax.swing.JTextField txtQtd;
-    private javax.swing.JTextField txtValor;
+    protected static javax.swing.JTextArea txtDescADD;
+    protected static javax.swing.JTextField txtQtd;
+    protected static javax.swing.JTextField txtValor;
     private javax.swing.JPanel vendasPainel;
     // End of variables declaration//GEN-END:variables
 }

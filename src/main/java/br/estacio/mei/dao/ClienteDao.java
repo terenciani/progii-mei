@@ -21,6 +21,7 @@ public interface ClienteDao {
     public boolean atualizarCliente(Cliente cliente, int codigo);
 
     public boolean excluirCliente(Cliente cliente);
+    
     public boolean excluirCliente(int codigo);
 
 }
