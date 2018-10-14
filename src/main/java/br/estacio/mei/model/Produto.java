@@ -114,4 +114,8 @@ public class Produto {
         this.descricao = descricao;
     }
 
+    public Object getCategoria() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

@@ -5,7 +5,14 @@
  */
 package br.estacio.mei.visao.produto;
 
+import br.estacio.mei.dao.ProdutoDao;
+import br.estacio.mei.dao.implementacao.FornecedorDaoEstatica;
+import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
+import br.estacio.mei.model.Fornecedor;
+import br.estacio.mei.model.Produto;
 import java.util.ArrayList;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -13,12 +20,28 @@ import javax.swing.table.DefaultTableModel;
  * @author aluno
  */
 public class ProdutoPrincipal extends javax.swing.JPanel {
-
+    ProdutoDao produtoDao = new ProdutoDaoEstatico();
     /**
      * Creates new form ProdutoPrincipal
      */
     public ProdutoPrincipal() {
         initComponents();
+        msgErro.setVisible(false);
+        produtos.setRowHeight(15);
+               
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)produtos.getModel();
+
+        ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
+        for (int i=0; i< listaDeProdutos.size();i++)
+        {
+            Produto p = listaDeProdutos.get(i);
+            Object[] dadosDaLinha = new Object[4];
+            dadosDaLinha[0] = p.getCodigo();
+            dadosDaLinha[1] = p.getNome();
+            dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+            dadosDaLinha[3] = p.getCategoria();
+            modeloDeColunasDaTabela.addRow(dadosDaLinha);
+    }
     }
 
     /**
@@ -39,6 +62,10 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
         tabelaProduto = new javax.swing.JScrollPane();
         produtos = new javax.swing.JTable();
         excluirProduto = new javax.swing.JButton();
+        tipoPesquisa = new javax.swing.JComboBox<>();
+        filtrarPor = new javax.swing.JLabel();
+        panelErro = new javax.swing.JPanel();
+        msgErro = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -60,7 +87,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
         buscarProduto.setText("Buscar");
         buscarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPesquisarActionPerformed(evt);
+                buscarProdutoActionPerformed(evt);
             }
         });
 
@@ -81,6 +108,31 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
         excluirProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/cancel.png"))); // NOI18N
         excluirProduto.setText("Excluir Produto");
 
+        tipoPesquisa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Nome", "Fornecedor", "Preço de Compra", "Preço de Venda", "Qtde Estoque" }));
+        tipoPesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoPesquisaActionPerformed(evt);
+            }
+        });
+
+        filtrarPor.setText("Filtrar por");
+
+        msgErro.setText("Erros");
+
+        javax.swing.GroupLayout panelErroLayout = new javax.swing.GroupLayout(panelErro);
+        panelErro.setLayout(panelErroLayout);
+        panelErroLayout.setHorizontalGroup(
+            panelErroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelErroLayout.createSequentialGroup()
+                .addGap(461, 461, 461)
+                .addComponent(msgErro)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelErroLayout.setVerticalGroup(
+            panelErroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(msgErro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -88,12 +140,17 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tabelaProduto)
+                    .addComponent(panelErro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tabelaProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 946, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(filtrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tipoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buscarProduto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(novoProduto)
                         .addGap(35, 35, 35)
                         .addComponent(excluirProduto)))
@@ -102,16 +159,25 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(buscarProduto)
-                        .addComponent(novoProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(excluirProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(campoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(tabelaProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buscarProduto)
+                            .addComponent(novoProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(excluirProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tipoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(filtrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campoBusca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addComponent(panelErro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tabelaProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                .addGap(27, 27, 27))
         );
 
         panelDinamico.add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -126,14 +192,18 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
         panelDinamico.validate();
         panelDinamico.repaint();
     }//GEN-LAST:event_novoProdutoActionPerformed
+
+    private void tipoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoPesquisaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipoPesquisaActionPerformed
 private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {                                             
         int itemSelecionado = tipoPesquisa.getSelectedIndex();
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)produtos.getModel();
         switch(itemSelecionado) {
             case 0:
                 try {
-                    lblError.setVisible(false);
-                    int pesqCodigo = Integer.parseInt(txtPesquisar.getText());
+                    msgErro.setVisible(false);
+                    int pesqCodigo = Integer.parseInt(buscar.getText());
                     while (modeloDeColunasDaTabela.getRowCount() != 0) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
@@ -149,15 +219,15 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
                            modeloDeColunasDaTabela.addRow(dadosDaLinha);
                        }
                 } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
+                    msgErro.setText("Pesquisa Invalida!");
+                    msgErro.setVisible(true);
                 }
 
                 break;
             case 1:
                 try {
-                    lblError.setVisible(false);
-                    String pesqNome = txtPesquisar.getText();
+                    msgErro.setVisible(false);
+                    String pesqNome = buscar.getText();
                     while (modeloDeColunasDaTabela.getRowCount() != 0) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
@@ -173,14 +243,14 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
                     }    
                 } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
+                    msgErro.setText("Pesquisa Invalida!");
+                    msgErro.setVisible(true);
                 }
                 break;
             case 2:
                 try {
-                    lblError.setVisible(false);
-                    String pesqFornecedor = txtPesquisar.getText();
+                    msgErro.setVisible(false);
+                    String pesqFornecedor = buscar.getText();
                     while (modeloDeColunasDaTabela.getRowCount() != 0) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
@@ -192,35 +262,35 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
                         dadosDaLinha[0] = p.getCodigo();
                         dadosDaLinha[1] = p.getNome();
                         dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.Categoria();
+                        dadosDaLinha[3] = p.getCategoria();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
                     }
                 } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
+                    msgErro.setText("Pesquisa Invalida!");
+                    msgErro.setVisible(true);
                 }
                     break;
             case 3:
                 try {
-                    lblError.setVisible(false);
-                    int pesqCategoria = Integer.parseInt(txtPesquisar.getText());
+                    msgErro.setVisible(false);
+                    int pesqCategoria = Integer.parseInt(buscar.getText());
                     while (modeloDeColunasDaTabela.getRowCount() != 0) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorCategoria = produtoDao.pesquisarPorCategoria(pesqCategoria);
                     for (int i=0; i< produtosPorCategoria.size();i++)
                     {
-                        Produto p = produtosPorPrecoCompra.get(i);
+                        Produto p = produtosPorCategoria.get(i);
                         Object[] dadosDaLinha = new Object[4];
                         dadosDaLinha[0] = p.getCodigo();
                         dadosDaLinha[1] = p.getNome();
                         dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.Categoria();
+                        dadosDaLinha[3] = p.getCategoria();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
                     }
                 } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
+                    msgErro.setText("Pesquisa Invalida!");
+                    msgErro.setVisible(true);
                 }
                     break;
            
@@ -232,10 +302,14 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JButton buscarProduto;
     private javax.swing.JScrollPane campoBusca;
     private javax.swing.JButton excluirProduto;
+    private javax.swing.JLabel filtrarPor;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel msgErro;
     private javax.swing.JButton novoProduto;
     private javax.swing.JPanel panelDinamico;
+    private javax.swing.JPanel panelErro;
     private javax.swing.JTable produtos;
     private javax.swing.JScrollPane tabelaProduto;
+    private javax.swing.JComboBox<String> tipoPesquisa;
     // End of variables declaration//GEN-END:variables
 }
