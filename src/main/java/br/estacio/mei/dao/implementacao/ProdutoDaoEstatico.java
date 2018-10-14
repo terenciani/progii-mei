@@ -109,4 +109,9 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         return produtos;
     }
 
+    @Override
+    public ArrayList<Produto> pesquisarPorCategoria(int pesqCategoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
