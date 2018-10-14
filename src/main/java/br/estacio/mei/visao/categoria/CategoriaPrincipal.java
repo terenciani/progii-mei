@@ -400,9 +400,9 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         // TODO add your handling code here:
 		
         String opcao = "exclusao";
-        botaoConfirmar.setText("Confirmar");
-        labelAcaoUsuario.setText("Exclusão");
-        panelCategAcao.setVisible(true);
+//        botaoConfirmar.setText("Confirmar");
+//        labelAcaoUsuario.setText("Exclusão");
+//        panelCategAcao.setVisible(true);
 		
 	if (jTblCategoria.getSelectedRow() >= 0) {
 		
@@ -467,10 +467,13 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         //Aqui Esconde Panel
         panelCategAcao.setVisible(false);
         labelAcaoUsuario.setText("");
+        textCampoCodigo.setText("");
+        textCampoDesc.setText("");
         String opcao;
         opcao = "";
         int codigo = 0;
-        String descricao = " ";
+        String descricao = "";
+
     }//GEN-LAST:event_botaoSairActionPerformed
 
     private void botaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarActionPerformed
@@ -490,6 +493,8 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
          //Aqui Esconde Panel
         botaoConfirmar.setText("Confirmar");
         labelAcaoUsuario.setText("");
+        textCampoCodigo.setText("");
+        textCampoDesc.setText("");
         panelCategAcao.setVisible(false);
     }//GEN-LAST:event_botaoConfirmarActionPerformed
 
