@@ -75,7 +75,7 @@ public class DadosProduto extends javax.swing.JPanel {
 
         descricao.setText("Descrição");
 
-        selcionarCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Artezanato", "Cosmeticos", "Serviços", "Textil" }));
+        selcionarCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         selcionarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selcionarCategoriaActionPerformed(evt);
