@@ -40,8 +40,15 @@ public class vendaFinalizada extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        vendaSucesso.setBackground(new java.awt.Color(204, 255, 204));
+        vendaSucesso.setForeground(new java.awt.Color(255, 255, 255));
+
+        lblSucesso.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblSucesso.setForeground(new java.awt.Color(0, 0, 0));
         lblSucesso.setText("Parabens! Sua venda Foi Finalizada");
 
+        btnEnd.setBackground(new java.awt.Color(0, 0, 0));
+        btnEnd.setForeground(new java.awt.Color(255, 255, 255));
         btnEnd.setText("OK");
         btnEnd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,9 +61,9 @@ public class vendaFinalizada extends javax.swing.JDialog {
         vendaSucessoLayout.setHorizontalGroup(
             vendaSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(vendaSucessoLayout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblSucesso)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(vendaSucessoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnEnd)
@@ -67,9 +74,9 @@ public class vendaFinalizada extends javax.swing.JDialog {
             .addGroup(vendaSucessoLayout.createSequentialGroup()
                 .addContainerGap(30, Short.MAX_VALUE)
                 .addComponent(lblSucesso)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(btnEnd)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         getContentPane().add(vendaSucesso, java.awt.BorderLayout.CENTER);
@@ -81,8 +88,7 @@ public class vendaFinalizada extends javax.swing.JDialog {
         // TODO add your handling code here:
         VendaPrincipal.txtDescADD.setText("Ex: Aqui pode colocar as informações adicionais!");
         VendaPrincipal.txtQtd.setText("Ex: 00");
-        VendaPrincipal.txtValor.setText("1.00");
-        VendaPrincipal.lblValor.setText("00,00");
+         VendaPrincipal.lblValor.setText("00,00");
         
         DefaultComboBoxModel model = new DefaultComboBoxModel();
         model.addElement("Selecione Um Cliente");

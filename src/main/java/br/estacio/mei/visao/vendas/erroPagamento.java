@@ -36,8 +36,13 @@ public class erroPagamento extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jdErro.setBackground(new java.awt.Color(255, 0, 0));
+
+        lblSelecao.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblSelecao.setForeground(new java.awt.Color(255, 255, 255));
         lblSelecao.setText("Selecione uma Forma de Pagamento!");
 
+        btnOk.setBackground(new java.awt.Color(0, 0, 0));
         btnOk.setText("OK");
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,23 +54,23 @@ public class erroPagamento extends javax.swing.JDialog {
         jdErro.setLayout(jdErroLayout);
         jdErroLayout.setHorizontalGroup(
             jdErroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jdErroLayout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
-                .addComponent(lblSelecao)
-                .addContainerGap(80, Short.MAX_VALUE))
-            .addGroup(jdErroLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdErroLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnOk)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdErroLayout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(lblSelecao)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jdErroLayout.setVerticalGroup(
             jdErroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jdErroLayout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addComponent(lblSelecao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnOk)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
 
         getContentPane().add(jdErro, java.awt.BorderLayout.CENTER);
