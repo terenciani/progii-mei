@@ -16,6 +16,10 @@ public class RelatorioVendas extends javax.swing.JFrame {
      */
     public RelatorioVendas() {
         initComponents();
+        
+       
+        
+        
     }
 
     /**
@@ -33,17 +37,17 @@ public class RelatorioVendas extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        seletorCategoria = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        seletorFabricante = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        seletorPagamento = new javax.swing.JComboBox<>();
+        vendaEstornada = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btImprimir = new javax.swing.JButton();
+        btSalvar = new javax.swing.JButton();
+        btFechar = new javax.swing.JButton();
+        btVisualizar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -111,42 +115,72 @@ public class RelatorioVendas extends javax.swing.JFrame {
 
         jLabel4.setText("Categoria do Produto");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todas as Categorias", "Categoria 1 ", "Categoria 2", "Categoria 3", "Categoria 4" }));
-        jComboBox1.setToolTipText("");
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        seletorCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todas as Categorias", "Categoria 1 ", "Categoria 2", "Categoria 3", "Categoria 4" }));
+        seletorCategoria.setToolTipText("");
+        seletorCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                seletorCategoriaActionPerformed(evt);
             }
         });
 
         jLabel5.setText("Fabricante");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos os Fabricantes", "Fabricante 1", "Fabricante 2", "Fabricante 3", "Fabricante 4" }));
+        seletorFabricante.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos os Fabricantes", "Fabricante 1", "Fabricante 2", "Fabricante 3", "Fabricante 4" }));
+        seletorFabricante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seletorFabricanteActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Forma de Pagamento");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A Vista(Dinheiro)", "A Vista(Débito)", "Crédito", "Crediário", " " }));
-
-        jCheckBox1.setText("Incluir vendas estornadas");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        seletorPagamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A Vista(Dinheiro)", "A Vista(Débito)", "Crédito", " ", " " }));
+        seletorPagamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                seletorPagamentoActionPerformed(evt);
+            }
+        });
+
+        vendaEstornada.setText("Incluir vendas estornadas");
+        vendaEstornada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vendaEstornadaActionPerformed(evt);
             }
         });
 
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/imprimir.png"))); // NOI18N
-        jButton2.setText("Imprimir");
+        btImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/imprimir.png"))); // NOI18N
+        btImprimir.setText("Imprimir");
+        btImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btImprimirActionPerformed(evt);
+            }
+        });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/salvar.png"))); // NOI18N
-        jButton3.setText("Salvar");
+        btSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/salvar.png"))); // NOI18N
+        btSalvar.setText("Salvar");
+        btSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalvarActionPerformed(evt);
+            }
+        });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/fechar.png"))); // NOI18N
-        jButton4.setText("Fechar");
+        btFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/fechar.png"))); // NOI18N
+        btFechar.setText("Fechar");
+        btFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFecharActionPerformed(evt);
+            }
+        });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/visualizar.png"))); // NOI18N
-        jButton5.setText("Visualizar");
+        btVisualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/visualizar.png"))); // NOI18N
+        btVisualizar.setText("Visualizar");
+        btVisualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVisualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,13 +188,13 @@ public class RelatorioVendas extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jButton5)
+                .addComponent(btVisualizar)
                 .addGap(50, 50, 50)
-                .addComponent(jButton2)
+                .addComponent(btImprimir)
                 .addGap(50, 50, 50)
-                .addComponent(jButton3)
+                .addComponent(btSalvar)
                 .addGap(50, 50, 50)
-                .addComponent(jButton4)
+                .addComponent(btFechar)
                 .addGap(25, 25, 25))
         );
         jPanel1Layout.setVerticalGroup(
@@ -168,10 +202,10 @@ public class RelatorioVendas extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(btImprimir)
+                    .addComponent(btSalvar)
+                    .addComponent(btFechar)
+                    .addComponent(btVisualizar))
                 .addContainerGap())
         );
 
@@ -187,12 +221,12 @@ public class RelatorioVendas extends javax.swing.JFrame {
         jDesktopPane2.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jComboBox1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(seletorCategoria, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jComboBox2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(seletorFabricante, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jComboBox3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jCheckBox1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(seletorPagamento, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(vendaEstornada, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -211,7 +245,7 @@ public class RelatorioVendas extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jDesktopPane2Layout.createSequentialGroup()
                         .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
+                            .addComponent(vendaEstornada)
                             .addComponent(jLabel3)
                             .addGroup(jDesktopPane2Layout.createSequentialGroup()
                                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,9 +254,9 @@ public class RelatorioVendas extends javax.swing.JFrame {
                                     .addComponent(jLabel6))
                                 .addGap(25, 25, 25)
                                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox2, 0, 0, Short.MAX_VALUE)
-                                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(seletorCategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(seletorFabricante, 0, 0, Short.MAX_VALUE)
+                                    .addComponent(seletorPagamento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jDesktopPane2Layout.createSequentialGroup()
@@ -246,20 +280,20 @@ public class RelatorioVendas extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(seletorCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jDesktopPane2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5))
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(seletorFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(seletorPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(36, 36, 36)
-                .addComponent(jCheckBox1)
+                .addComponent(vendaEstornada)
                 .addGap(33, 33, 33)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -515,13 +549,37 @@ public class RelatorioVendas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void vendaEstornadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vendaEstornadaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_vendaEstornadaActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void seletorCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seletorCategoriaActionPerformed
+        // TODO add your handldsffsding code here:
+    }//GEN-LAST:event_seletorCategoriaActionPerformed
+
+    private void seletorPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seletorPagamentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_seletorPagamentoActionPerformed
+
+    private void btVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVisualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btVisualizarActionPerformed
+
+    private void btImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btImprimirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btImprimirActionPerformed
+
+    private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSalvarActionPerformed
+
+    private void btFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFecharActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btFecharActionPerformed
+
+    private void seletorFabricanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seletorFabricanteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seletorFabricanteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -534,7 +592,7 @@ public class RelatorioVendas extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -562,6 +620,10 @@ public class RelatorioVendas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btFechar;
+    private javax.swing.JButton btImprimir;
+    private javax.swing.JButton btSalvar;
+    private javax.swing.JButton btVisualizar;
     private javax.swing.JPanel btnCategorias;
     private javax.swing.JPanel btnClientes;
     private javax.swing.JPanel btnContasAPagar;
@@ -577,14 +639,6 @@ public class RelatorioVendas extends javax.swing.JFrame {
     private javax.swing.JLabel imgInicio1;
     private javax.swing.JLabel imgLogo;
     private javax.swing.JLabel imgSair;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JDesktopPane jDesktopPane2;
@@ -608,6 +662,10 @@ public class RelatorioVendas extends javax.swing.JFrame {
     private javax.swing.JLabel lblInicio1;
     private javax.swing.JLabel lblSair;
     private javax.swing.JPanel painelLateral1;
+    private javax.swing.JComboBox<String> seletorCategoria;
+    private javax.swing.JComboBox<String> seletorFabricante;
+    private javax.swing.JComboBox<String> seletorPagamento;
     private javax.swing.JSeparator separador;
+    private javax.swing.JCheckBox vendaEstornada;
     // End of variables declaration//GEN-END:variables
 }
