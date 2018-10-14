@@ -5,6 +5,9 @@
  */
 package br.estacio.mei.visao.produto;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author aluno
@@ -29,9 +32,12 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
 
         panelDinamico = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        novoProduto = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        buscarProduto = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        buscar = new javax.swing.JTextPane();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -40,122 +46,135 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setToolTipText("");
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setText("Novo Produto");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        novoProduto.setBackground(new java.awt.Color(102, 102, 102));
+        novoProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/Incluir_black.png"))); // NOI18N
+        novoProduto.setText("Novo Produto");
+        novoProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                novoProdutoActionPerformed(evt);
             }
         });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Código ", "Nome", "Opções", "Quantidade", "Valor Atual", "Valor Antigo", "Lucro %", "Descrição"
+                "Código ", "Categoria", "Nome", "Fornecedor", "Descrição"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+
+        buscarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/re_search.png"))); // NOI18N
+        buscarProduto.setText("Buscar");
+        buscarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
+
+        buscar.setToolTipText("");
+        buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane2.setViewportView(buscar);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -163,20 +182,29 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buscarProduto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(novoProduto)))
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(291, 291, 291)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(jButton1)
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(novoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buscarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                .addGap(16, 16, 16))
         );
 
         panelDinamico.add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -184,20 +212,122 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
         add(panelDinamico, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void novoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoProdutoActionPerformed
        DadosProduto dadosProduto = new DadosProduto();
         panelDinamico.removeAll();
         panelDinamico.add(dadosProduto);
         panelDinamico.validate();
         panelDinamico.repaint();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_novoProdutoActionPerformed
+private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        int itemSelecionado = tipoPesquisa.getSelectedIndex();
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
+        switch(itemSelecionado) {
+            case 0:
+                try {
+                    lblError.setVisible(false);
+                    int pesqCodigo = Integer.parseInt(txtPesquisar.getText());
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorCodigo = produtoDao.pesquisarPorCodigo(pesqCodigo);
+                    for (int i=0; i< produtosPorCodigo.size();i++)
+                       {
+                           Produto p = produtosPorCodigo.get(i);
+                           Object[] dadosDaLinha = new Object[4];
+                           dadosDaLinha[0] = p.getCodigo();
+                           dadosDaLinha[1] = p.getNome();
+                           dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                           dadosDaLinha[3] = p.getCategoria();
+                           modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                       }
+                } catch (Exception e) {
+                    lblError.setText("Pesquisa Invalida!");
+                    lblError.setVisible(true);
+                }
 
+                break;
+            case 1:
+                try {
+                    lblError.setVisible(false);
+                    String pesqNome = txtPesquisar.getText();
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
+                    for (int i=0; i< produtosPorNome.size();i++)
+                    {
+                        Produto p = produtosPorNome.get(i);
+                        Object[] dadosDaLinha = new Object[4];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getCategoria();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }    
+                } catch (Exception e) {
+                    lblError.setText("Pesquisa Invalida!");
+                    lblError.setVisible(true);
+                }
+                break;
+            case 2:
+                try {
+                    lblError.setVisible(false);
+                    String pesqFornecedor = txtPesquisar.getText();
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorFornecedor(pesqFornecedor);
+                    for (int i=0; i< produtosPorFornecedor.size();i++)
+                    {
+                        Produto p = produtosPorFornecedor.get(i);
+                        Object[] dadosDaLinha = new Object[4];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.Categoria();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
+                } catch (Exception e) {
+                    lblError.setText("Pesquisa Invalida!");
+                    lblError.setVisible(true);
+                }
+                    break;
+            case 3:
+                try {
+                    lblError.setVisible(false);
+                    int pesqCategoria = Integer.parseInt(txtPesquisar.getText());
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorCategoria = produtoDao.pesquisarPorCategoria(pesqCategoria);
+                    for (int i=0; i< produtosPorCategoria.size();i++)
+                    {
+                        Produto p = produtosPorPrecoCompra.get(i);
+                        Object[] dadosDaLinha = new Object[4];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.Categoria();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
+                } catch (Exception e) {
+                    lblError.setText("Pesquisa Invalida!");
+                    lblError.setVisible(true);
+                }
+                    break;
+           
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextPane buscar;
+    private javax.swing.JButton buscarProduto;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton novoProduto;
     private javax.swing.JPanel panelDinamico;
     // End of variables declaration//GEN-END:variables
 }
