@@ -36,7 +36,7 @@ public class CategoriaDaoEstatica implements CategoriaDao {
         ArrayList<Categoria> categorias = BancoSingleton.getInstance().tabelaCategoria;
         for(int i=0; i< categorias.size();i++){
             if(categorias.get(i).getCodigo()==categoria.getCodigo()){
-                BancoSingleton.getInstance().tabelaCategoria.add(i, categoria);
+                BancoSingleton.getInstance().tabelaCategoria.set(i, categoria);
                 return categoria;
             }
         }
