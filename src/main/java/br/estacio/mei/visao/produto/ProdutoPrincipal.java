@@ -228,7 +228,7 @@ throw new UnsupportedOperationException("Not supported yet.");
                 int linha = produtos.getSelectedRow();
                 int codigo = (int) produtos.getModel().getValueAt(linha, 0);
 
-                produtoDao.excluirProduto();
+                excluirProduto();
 
                 ((DefaultTableModel) produtos.getModel()).setRowCount(0);
                 produtoDao.buscarProdutos();
@@ -375,4 +375,8 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JPanel tbProdutos;
     private javax.swing.JComboBox<String> tipoPesquisa;
     // End of variables declaration//GEN-END:variables
+
+    private void excluirProduto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
