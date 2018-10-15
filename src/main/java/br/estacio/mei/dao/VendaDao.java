@@ -25,5 +25,9 @@ public interface VendaDao {
     public Venda atualizarVenda(Venda venda);
 
     public boolean excluirVenda(Venda venda);
+
+    public void finalizarVendaAPrazo(Venda venda);
+
+    public ArrayList<Venda> listarVendasAPrazo();
     
 }

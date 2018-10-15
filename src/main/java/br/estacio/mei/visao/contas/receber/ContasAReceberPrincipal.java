@@ -5,20 +5,69 @@
  */
 package br.estacio.mei.visao.contas.receber;
 
-import javax.swing.JFrame;
+import br.estacio.mei.dao.VendaDao;
+import br.estacio.mei.dao.implementacao.VendaDaoEstatica;
+import br.estacio.mei.exemplo.Aluno;
+import br.estacio.mei.model.Cliente;
+import br.estacio.mei.model.Venda;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author aluno
  */
 public class ContasAReceberPrincipal extends javax.swing.JPanel {
-
+    VendaDao vendaDao = new VendaDaoEstatica();
     /**
      * Creates new form ContasAReceberPrincipal
      */
     public ContasAReceberPrincipal() {
         initComponents();
+        initVendasFake();
+        populaTabela();
     }
 
+    private void initVendasFake(){
+        Cliente cliente = new Cliente();
+        cliente.setNome("Teste");
+        Venda venda = new Venda();
+        venda.setCliente(cliente);
+        venda.setObservacao(" Nenhuma");
+        venda.setFormaPagamento("Prazo");
+        venda.setValor(2000);
+        
+        vendaDao.salvarVenda(venda);
+        
+        vendaDao.finalizarVendaAPrazo(venda);
+        
+    }
+    public void addLinhaNaTabela(Venda venda) {
+        DefaultTableModel model = (DefaultTableModel) tbConsultaReceber.getModel();
+        
+        System.out.println(venda);
+        
+        Object rowData[] = new Object[6];
+        rowData[0] = venda.getCliente().getNome();
+        rowData[1] = venda.getCodigo();
+        rowData[2] = venda.getFormaPagamento();
+        rowData[3] = venda.getValor();
+        rowData[4] = venda.getData();
+        rowData[5] = venda.getStatus();
+
+        model.addRow(rowData);
+    }
+
+    public void populaTabela() {
+
+        
+        ArrayList<Venda> lista = vendaDao.listarVendasAPrazo();
+
+        for (int i = 0; i < lista.size(); i++) {
+            addLinhaNaTabela(lista.get(i));
+        }
+        tbConsultaReceber.repaint();
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,7 +92,7 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tb_consulta_receber = new javax.swing.JTable();
+        tbConsultaReceber = new javax.swing.JTable();
         ef_baixa_consulta = new javax.swing.JButton();
         al_venda_consulta = new javax.swing.JButton();
         rl_mensal_consulta = new javax.swing.JButton();
@@ -147,7 +196,7 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
                             .addComponent(tx_cliente_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 1, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton4)))
@@ -156,34 +205,15 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
 
         jPanel2.add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        tb_consulta_receber.setModel(new javax.swing.table.DefaultTableModel(
+        tbConsultaReceber.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Cliente", "Cod. Venda", "Forma Pagamento", "Valor", "Data Venda", "Status"
             }
         ));
-        jScrollPane1.setViewportView(tb_consulta_receber);
+        jScrollPane1.setViewportView(tbConsultaReceber);
 
         ef_baixa_consulta.setText("Efetuar Baixa");
         ef_baixa_consulta.setMaximumSize(new java.awt.Dimension(123, 59));
@@ -292,8 +322,9 @@ public class ContasAReceberPrincipal extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JButton rl_mensal_consulta;
     private javax.swing.JComboBox<String> sl_status_consulta;
-    private javax.swing.JTable tb_consulta_receber;
+    private javax.swing.JTable tbConsultaReceber;
     private javax.swing.JTextField tx_cliente_consulta;
     private javax.swing.JTextField tx_cod_venda_consulta;
     // End of variables declaration//GEN-END:variables
 }
+

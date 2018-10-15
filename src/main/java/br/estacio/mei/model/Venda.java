@@ -19,7 +19,8 @@ public class Venda {
     private double valor;
     private String observacao;
     private String formaPagamento;
-
+    private int status;
+    
     public String getFormaPagamento() {
         return formaPagamento;
     }
@@ -27,7 +28,6 @@ public class Venda {
     public void setFormaPagamento(String formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
-    private int status;
 
     public int getCodigo() {
         return codigo;
