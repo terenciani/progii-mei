@@ -25,7 +25,7 @@ public class DadosProduto extends javax.swing.JPanel {
     }
 
     DadosProduto(int codigoNovoProduto, String tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        initComponents();
     }
 
     /**
