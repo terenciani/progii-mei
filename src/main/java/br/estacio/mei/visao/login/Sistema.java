@@ -6,6 +6,7 @@
 package br.estacio.mei.visao.login;
 
 import br.estacio.mei.exemplo.ExemploPopulaTabela;
+import br.estacio.mei.model.Usuario;
 import br.estacio.mei.visao.categoria.CategoriaPrincipal;
 import br.estacio.mei.visao.cliente.ClientePrincipal;
 import br.estacio.mei.visao.compras.CompraPrincipal;
@@ -32,10 +33,14 @@ public class Sistema extends javax.swing.JFrame {
     /**
      * Creates new form Sistema
      */
-    public Sistema() {
+    public Sistema(Usuario usuario) {
         initComponents();
         panelActive = btnInicio;
     }
+
+    /* Sistema(Usuario usuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    } */
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -932,12 +937,6 @@ public class Sistema extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                JFrame sistema = new Sistema();
-                sistema.setVisible(true);
-            }
-        });
     }
 
 
