@@ -24,6 +24,10 @@ public class DadosProduto extends javax.swing.JPanel {
         initComponents();
     }
 
+    DadosProduto(int codigoNovoProduto, String tipo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,7 +43,7 @@ public class DadosProduto extends javax.swing.JPanel {
         campoParaNome = new javax.swing.JTextField();
         categoria = new javax.swing.JLabel();
         campoParaCodigo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        inserirProduto = new javax.swing.JButton();
         Fornecedor = new javax.swing.JLabel();
         campoParaFornecedor = new javax.swing.JTextField();
         descricao = new javax.swing.JLabel();
@@ -56,12 +60,12 @@ public class DadosProduto extends javax.swing.JPanel {
 
         categoria.setText("Categoria");
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save-button-interface-symbol-of-outlined-diskette_icon-icons.com_73167.png"))); // NOI18N
-        jButton1.setText("Inserir Produto");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        inserirProduto.setBackground(new java.awt.Color(102, 102, 102));
+        inserirProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save-button-interface-symbol-of-outlined-diskette_icon-icons.com_73167.png"))); // NOI18N
+        inserirProduto.setText("Inserir Produto");
+        inserirProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                inserirProdutoActionPerformed(evt);
             }
         });
 
@@ -115,7 +119,7 @@ public class DadosProduto extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InserirLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inserirProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(170, 170, 170))
         );
         InserirLayout.setVerticalGroup(
@@ -142,7 +146,7 @@ public class DadosProduto extends javax.swing.JPanel {
                     .addComponent(campoParaDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inserirProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -157,7 +161,7 @@ public class DadosProduto extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoParaFornecedorActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void inserirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserirProdutoActionPerformed
         //Dados para testes
 
         //Deverá ser dinâmico do formulário
@@ -179,7 +183,7 @@ public class DadosProduto extends javax.swing.JPanel {
         produto.setValorAntigo(10);
         produto.setValorAtual(15);
         daoProduto.salvar(produto);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_inserirProdutoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -192,7 +196,7 @@ public class DadosProduto extends javax.swing.JPanel {
     private javax.swing.JLabel categoria;
     private javax.swing.JLabel codigo;
     private javax.swing.JLabel descricao;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton inserirProduto;
     private javax.swing.JLabel nome;
     private javax.swing.JComboBox<String> selcionarCategoria;
     // End of variables declaration//GEN-END:variables
