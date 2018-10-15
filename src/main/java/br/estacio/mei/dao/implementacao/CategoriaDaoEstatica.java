@@ -33,20 +33,36 @@ public class CategoriaDaoEstatica implements CategoriaDao {
 
     @Override
     public Categoria atualizarCategoria(Categoria categoria) {
-        BancoSingleton.getInstance().tabelaCategoria.get(0);
-        return categoria;
-
+        ArrayList<Categoria> categorias = BancoSingleton.getInstance().tabelaCategoria;
+        for(int i=0; i< categorias.size();i++){
+            if(categorias.get(i).getCodigo()==categoria.getCodigo()){
+                BancoSingleton.getInstance().tabelaCategoria.add(i, categoria);
+                return categoria;
+            }
+        }
+        return null;
     }
 
     @Override
-    public Categoria listarCategoria(Categoria categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Categoria buscarCategoriaPorId(int codigo) {
+        ArrayList<Categoria> categorias = BancoSingleton.getInstance().tabelaCategoria;
+        for(Categoria categoria : categorias){
+            if(categoria.getCodigo()==codigo)
+                return categoria;
+        }
+        return null;
     }
 
     @Override
     public boolean excluirCategoria(Categoria categoria) {
-        return true;
-
+        ArrayList<Categoria> categorias = BancoSingleton.getInstance().tabelaCategoria;
+        for(Categoria cat : categorias){
+            if(cat.getCodigo()==categoria.getCodigo()){
+                BancoSingleton.getInstance().tabelaCategoria.remove(cat);
+                return true;
+            }
+        }
+        return false;
     }
 
 }

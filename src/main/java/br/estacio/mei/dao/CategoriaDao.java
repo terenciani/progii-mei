@@ -21,7 +21,7 @@ public interface CategoriaDao {
 
     public Categoria atualizarCategoria(Categoria categoria);
     
-    public Categoria listarCategoria(Categoria categoria);
+    public Categoria buscarCategoriaPorId(int codigo);
 
     public boolean excluirCategoria(Categoria categoria);
     
