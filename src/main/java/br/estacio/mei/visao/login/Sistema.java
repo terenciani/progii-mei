@@ -697,9 +697,9 @@ public class Sistema extends javax.swing.JFrame {
         painelBreadcrumbLayout.setVerticalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(25, 25, 25)
                 .addComponent(lblBreadcrumb)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         lblNomeSistema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
