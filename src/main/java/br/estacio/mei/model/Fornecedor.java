@@ -13,11 +13,11 @@ public class Fornecedor {
     private int codigo;
     private String razaoSocial;
     private String fantasia;
-    private String CNPJ;
     private Endereco endereco;
-    private String CPF;
+    private String CPFCNPJ;
     private String email;
     private String telefone;
+    private String ie;
 
     public int getCodigo() {
         return codigo;
@@ -43,13 +43,6 @@ public class Fornecedor {
         this.fantasia = fantasia;
     }
 
-    public String getCNPJ() {
-        return CNPJ;
-    }
-
-    public void setCNPJ(String CNPJ) {
-        this.CNPJ = CNPJ;
-    }
 
     public Endereco getEndereco() {
         return endereco;
@@ -57,14 +50,6 @@ public class Fornecedor {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
-    }
-
-    public String getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
     }
 
     public String getEmail() {
@@ -81,6 +66,34 @@ public class Fornecedor {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    /**
+     * @return the CPFCNPJ
+     */
+    public String getCPFCNPJ() {
+        return CPFCNPJ;
+    }
+
+    /**
+     * @param CPFCNPJ the CPFCNPJ to set
+     */
+    public void setCPFCNPJ(String CPFCNPJ) {
+        this.CPFCNPJ = CPFCNPJ;
+    }
+
+    /**
+     * @return the ie
+     */
+    public String getIe() {
+        return ie;
+    }
+
+    /**
+     * @param ie the ie to set
+     */
+    public void setIe(String ie) {
+        this.ie = ie;
     }
     
 }

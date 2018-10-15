@@ -27,8 +27,8 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         return produto;
     }
 
-    @Override
-    public boolean excluir(Produto produto) {
+    
+    public boolean excluirProduto(Produto produto) {
         return true;
     }
 
@@ -111,6 +111,11 @@ public class ProdutoDaoEstatico implements ProdutoDao {
 
     @Override
     public ArrayList<Produto> pesquisarPorCategoria(int pesqCategoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void excluirProduto() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

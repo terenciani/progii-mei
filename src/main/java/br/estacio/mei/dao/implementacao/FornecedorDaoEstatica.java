@@ -41,6 +41,22 @@ public class FornecedorDaoEstatica implements FornecedorDao {
             return false;
         }
     }
+    
+    public boolean excluirFornecedorPCodigo(int codigo) {
+        FornecedorDao dao = new FornecedorDaoEstatica();
+        dao.listarFornecedores();
+        ArrayList<Fornecedor> listaDeFornecedor = dao.listarFornecedores();
+
+        for (int i = 0; i < listaDeFornecedor.size(); i++) {
+            Fornecedor exibeFornecedor = listaDeFornecedor.get(i);
+            if (exibeFornecedor.getCodigo() == codigo) {
+                BancoSingleton.getInstance().tabelaFornecedor.remove(i);
+            }
+
+        }
+        return true;
+    }
+    
 
     @Override
     public ArrayList<br.estacio.mei.model.Fornecedor> listarFornecedores() {

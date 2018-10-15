@@ -12,6 +12,7 @@ package br.estacio.mei.model;
 public class Endereco {
 
     private int codigoCliente;
+    private int codigoFornecedor;
     private String rua;
     private int numero;
     private String bairro;
@@ -87,6 +88,20 @@ public class Endereco {
     @Override
     public String toString() {
         return "Endereco{" + "codigoCliente=" + codigoCliente + ", rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + ", cep=" + cep + ", complemento=" + complemento + '}';
+    }
+
+    /**
+     * @return the codigoFornecedor
+     */
+    public int getCodigoFornecedor() {
+        return codigoFornecedor;
+    }
+
+    /**
+     * @param codigoFornecedor the codigoFornecedor to set
+     */
+    public void setCodigoFornecedor(int codigoFornecedor) {
+        this.codigoFornecedor = codigoFornecedor;
     }
 
 }

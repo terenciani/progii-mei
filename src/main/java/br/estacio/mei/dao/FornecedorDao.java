@@ -15,9 +15,12 @@ import java.util.ArrayList;
 public interface FornecedorDao {
     public Fornecedor salvarFornecedor(Fornecedor fornecedor);
     
-    public Fornecedor alterarFornecedor (Fornecedor categoria);
+    public Fornecedor alterarFornecedor (Fornecedor fornecedor);
     
-    public boolean excluirFornecedor(Fornecedor categoria);
+    public boolean excluirFornecedor(Fornecedor fornecedor);
     
     public ArrayList<Fornecedor> listarFornecedores();
+    
+    public boolean excluirFornecedorPCodigo(int codigo);
+            
 }
