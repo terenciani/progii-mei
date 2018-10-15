@@ -13,11 +13,9 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.util.ArrayList;
-import javax.lang.model.util.Elements;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -28,7 +26,6 @@ import javax.swing.table.DefaultTableModel;
 public class CategoriaPrincipal extends javax.swing.JPanel {
 
     CategoriaDao categoriaDao = new CategoriaDaoEstatica();
-    Categoria categoria = new Categoria();
 
     /**
      * Creates new form TelaPrincipalCategoria
@@ -397,55 +394,31 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_botaoImprimirActionPerformed
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
-        // TODO add your handling code here:
-		
-        String opcao = "exclusao";
-//        botaoConfirmar.setText("Confirmar");
-//        labelAcaoUsuario.setText("Exclusão");
-//        panelCategAcao.setVisible(true);
-		
-	if (jTblCategoria.getSelectedRow() >= 0) {
-		
+
+        if (jTblCategoria.getSelectedRow() >= 0) {
+
             int resposta = JOptionPane.showConfirmDialog(null, "Confirma a exclusão da Categoria?", "Excluir Categoria!", JOptionPane.YES_NO_OPTION);
-			
+
             if (resposta == 0) {
-		int dadosLinha = jTblCategoria.getSelectedRow();
-		int codigo = (int) jTblCategoria.getModel().getValueAt(dadosLinha, 0);
-				
-		//******** Chama método para excluir Categoria ********
+                int dadosLinha = jTblCategoria.getSelectedRow();
+                int codigo = (int) jTblCategoria.getModel().getValueAt(dadosLinha, 0);
+
+                Categoria categoria = new Categoria();
+                categoria.setCodigo(codigo);
+                //******** Chama método para excluir Categoria ********
                 categoriaDao.excluirCategoria(categoria);
-			
-		//******** Faz nova busca, atualizando a tabela de Categorias ********
-		((DefaultTableModel)jTblCategoria.getModel()).setRowCount(0);
-		categoriaDao.excluirCategoria(categoria);
-		DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
-		ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
-				
-		for (int i=0; i < listaDeCategoria.size();i++) {
-                    Categoria exibeCategoria = listaDeCategoria.get(i);
-                    String descricao = textCampoEntradaBusca.getText();
-					
-                    //******** Faz a busca da Categoria por qualquer parte da sua descricao ********
-                    if (exibeCategoria.getDescricao().contains(descricao)) {
-					
-                        Object[] dadosLinha1 = new Object[2];
-                        
-                        dadosLinha1[0] = exibeCategoria.getCodigo();
-                        dadosLinha1[1] = exibeCategoria.getDescricao();
-                        modeloDeColunasDaTabela.addRow(dadosLinha1);
-                    }
-		}
+
+                populaTabela();
+
                 JOptionPane.showMessageDialog(null, "Categoria Removida!");
-		}
-            } else {
-		JOptionPane.showMessageDialog(null, "Selecione uma Categoria!");
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma Categoria!");
+        }
     }//GEN-LAST:event_botaoExcluirActionPerformed
 
     private void botaoAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarActionPerformed
-        // TODO add your handling code here:
-        String opcao;
-        opcao = "alteracao";
+
         labelAcaoUsuario.setText("Alteração");
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
@@ -453,10 +426,14 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         if (jTblCategoria.getSelectedRow() >= 0) {
             int dadosLinha = jTblCategoria.getSelectedRow();
             int codigo = (int) jTblCategoria.getModel().getValueAt(dadosLinha, 0);
-            String descricao = (String) jTblCategoria.getModel().getValueAt(dadosLinha, 1);
-	} else {
+            Categoria categoria = categoriaDao.buscarCategoriaPorId(codigo);
+
+            textCampoCodigo.setText("" + categoria.getCodigo());
+            textCampoDesc.setText(categoria.getDescricao());
+
+        } else {
             JOptionPane.showMessageDialog(null, "Selecione uma Categoria!");
-	}
+        }
 
     }//GEN-LAST:event_botaoAlterarActionPerformed
 
@@ -490,7 +467,8 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
             categoriaDao.atualizarCategoria(categoria);
         }
         populaTabela();
-         //Aqui Esconde Panel
+
+        //Aqui Esconde Panel
         botaoConfirmar.setText("Confirmar");
         labelAcaoUsuario.setText("");
         textCampoCodigo.setText("");
@@ -518,8 +496,6 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
     private void botaoBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBuscarActionPerformed
         // TODO add your handling code here:
         ((DefaultTableModel) jTblCategoria.getModel()).setRowCount(0);
-
-        categoriaDao.buscarCategoria();
 
         DefaultTableModel modeloDeColuna = (DefaultTableModel) jTblCategoria.getModel();
         ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
