@@ -20,6 +20,7 @@ import br.estacio.mei.visao.sac.SacPrincipal;
 import br.estacio.mei.visao.usuario.UsuarioPrincipal;
 import br.estacio.mei.visao.vendas.VendaPrincipal;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -30,12 +31,15 @@ import javax.swing.JPanel;
  */
 public class Sistema extends javax.swing.JFrame {
 
+    private Usuario usuario;
+
     /**
      * Creates new form Sistema
      */
     public Sistema(Usuario usuario) {
         initComponents();
         panelActive = btnInicio;
+        this.usuario = usuario;
     }
 
     /* Sistema(Usuario usuario) {
@@ -101,9 +105,13 @@ public class Sistema extends javax.swing.JFrame {
         areaDeTrabalho = new javax.swing.JPanel();
         painelBreadcrumb = new javax.swing.JPanel();
         lblBreadcrumb = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         lblNomeSistema = new javax.swing.JLabel();
         panelDinamic = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        panelStatusLogin = new javax.swing.JPanel();
+        lblStatusLogin = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Apoio ao Micro Empreendedor Individual Regional");
@@ -681,21 +689,36 @@ public class Sistema extends javax.swing.JFrame {
         lblBreadcrumb.setForeground(new java.awt.Color(153, 153, 153));
         lblBreadcrumb.setText("Estou na Tela de Produtos");
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 27, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout painelBreadcrumbLayout = new javax.swing.GroupLayout(painelBreadcrumb);
         painelBreadcrumb.setLayout(painelBreadcrumbLayout);
         painelBreadcrumbLayout.setHorizontalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelBreadcrumbLayout.setVerticalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(32, 32, 32)
                 .addComponent(lblBreadcrumb)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         lblNomeSistema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -713,26 +736,70 @@ public class Sistema extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Powered by Students of Estácio TV-Morena");
 
+        panelStatusLogin.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblStatusLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/logged-green.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelStatusLoginLayout = new javax.swing.GroupLayout(panelStatusLogin);
+        panelStatusLogin.setLayout(panelStatusLoginLayout);
+        panelStatusLoginLayout.setHorizontalGroup(
+            panelStatusLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelStatusLoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblStatusLogin)
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        panelStatusLoginLayout.setVerticalGroup(
+            panelStatusLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelStatusLoginLayout.createSequentialGroup()
+                .addComponent(lblStatusLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(13, 155, 177));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout areaDeTrabalhoLayout = new javax.swing.GroupLayout(areaDeTrabalho);
         areaDeTrabalho.setLayout(areaDeTrabalhoLayout);
         areaDeTrabalhoLayout.setHorizontalGroup(
             areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(painelBreadcrumb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(lblNomeSistema)
-                .addGap(0, 283, Short.MAX_VALUE))
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelDinamic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
+                .addGroup(areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(lblNomeSistema)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                        .addComponent(panelStatusLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(panelDinamic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         areaDeTrabalhoLayout.setVerticalGroup(
             areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
-                .addComponent(lblNomeSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addGroup(areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNomeSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panelStatusLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelDinamic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -874,7 +941,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_hoverExited
 
     private void updateColorActive(MouseEvent evt) {
-        /*Component[] components = evt.getComponent().getParent().getComponents();
+        Component[] components = evt.getComponent().getParent().getComponents();
         for (Component component : components){
             if(component instanceof JPanel){
                 if(component.equals(evt.getSource()))
@@ -882,8 +949,9 @@ public class Sistema extends javax.swing.JFrame {
                 else
                     resetColor((JPanel)component);
             }
-        }*/
+        }
     }
+    
 
     private void updatePanelDinamic(String label, JPanel panel) {
         lblBreadcrumb.setText(label);
@@ -901,7 +969,7 @@ public class Sistema extends javax.swing.JFrame {
     public void resetColor(JPanel panelHovered) {
         panelHovered.setBackground(new Color(12, 180, 206));
     }
-
+    
     /**
      * @param args the command line arguments
      */
@@ -974,6 +1042,8 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel imgUsuario;
     private javax.swing.JLabel imgVendas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblBreadcrumb;
     private javax.swing.JLabel lblCadastroDeProdutos;
@@ -989,11 +1059,13 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel lblRelatorioDeVendas;
     private javax.swing.JLabel lblSac;
     private javax.swing.JLabel lblSair;
+    private javax.swing.JLabel lblStatusLogin;
     private javax.swing.JLabel lblUsuario1;
     private javax.swing.JLabel lblVendas;
     private javax.swing.JPanel menuLateral;
     private javax.swing.JPanel painelBreadcrumb;
     private javax.swing.JPanel panelDinamic;
+    private javax.swing.JPanel panelStatusLogin;
     // End of variables declaration//GEN-END:variables
     private Object panelActive;
 }

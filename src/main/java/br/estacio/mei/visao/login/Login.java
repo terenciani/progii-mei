@@ -65,72 +65,22 @@ public class Login extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1024, 680));
 
         bgEsquerda.setBackground(new java.awt.Color(102, 102, 102));
-        bgEsquerda.setLayout(new java.awt.GridBagLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuário");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(100, 79, 0, 0);
-        bgEsquerda.add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Senha");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 79, 0, 0);
-        bgEsquerda.add(jLabel3, gridBagConstraints);
 
         tfUsuario.setBorder(null);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 201;
-        gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 79, 0, 0);
-        bgEsquerda.add(tfUsuario, gridBagConstraints);
 
         tfSenha.setBorder(null);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 201;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 79, 0, 0);
-        bgEsquerda.add(tfSenha, gridBagConstraints);
 
         separatorUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 200;
-        gridBagConstraints.ipady = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 79, 0, 0);
-        bgEsquerda.add(separatorUsuario, gridBagConstraints);
 
         separatorSenha.setForeground(new java.awt.Color(255, 255, 255));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 200;
-        gridBagConstraints.ipady = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 79, 0, 0);
-        bgEsquerda.add(separatorSenha, gridBagConstraints);
 
         labelButtonEntrar.setBackground(new java.awt.Color(12, 180, 206));
         labelButtonEntrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -144,111 +94,145 @@ public class Login extends javax.swing.JFrame {
                 labelButtonEntrarMousePressed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 135;
-        gridBagConstraints.ipady = 15;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 79, 0, 0);
-        bgEsquerda.add(labelButtonEntrar, gridBagConstraints);
 
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("Lembrar de mim");
         jRadioButton1.setOpaque(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(7, 79, 0, 0);
-        bgEsquerda.add(jRadioButton1, gridBagConstraints);
 
         lblMenssage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 351;
-        gridBagConstraints.ipady = 24;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(48, 7, 14, 0);
-        bgEsquerda.add(lblMenssage, gridBagConstraints);
+
+        javax.swing.GroupLayout bgEsquerdaLayout = new javax.swing.GroupLayout(bgEsquerda);
+        bgEsquerda.setLayout(bgEsquerdaLayout);
+        bgEsquerdaLayout.setHorizontalGroup(
+            bgEsquerdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgEsquerdaLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jLabel2))
+            .addGroup(bgEsquerdaLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(tfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(bgEsquerdaLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(separatorUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(bgEsquerdaLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jLabel3))
+            .addGroup(bgEsquerdaLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(tfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(bgEsquerdaLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jRadioButton1))
+            .addGroup(bgEsquerdaLayout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(lblMenssage, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(bgEsquerdaLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addGroup(bgEsquerdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelButtonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(separatorSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        bgEsquerdaLayout.setVerticalGroup(
+            bgEsquerdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgEsquerdaLayout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(jLabel2)
+                .addGap(11, 11, 11)
+                .addComponent(tfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(separatorUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel3)
+                .addGap(6, 6, 6)
+                .addComponent(tfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(separatorSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(labelButtonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(jRadioButton1)
+                .addGap(48, 48, 48)
+                .addComponent(lblMenssage, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         bgDireita.setBackground(new java.awt.Color(12, 180, 206));
         bgDireita.setPreferredSize(new java.awt.Dimension(400, 435));
+        bgDireita.setLayout(new java.awt.GridBagLayout());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        bgDireita.add(labelIconLogin, gridBagConstraints);
 
         labelTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         labelTitulo.setText("Seja bem vindo!");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(100, 59, 0, 0);
+        bgDireita.add(labelTitulo, gridBagConstraints);
 
         labelSubTitulo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         labelSubTitulo.setForeground(new java.awt.Color(255, 255, 255));
         labelSubTitulo.setText("Faça o login para iniciar sua sessão.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 69, 0, 0);
+        bgDireita.add(labelSubTitulo, gridBagConstraints);
 
         labelFooterLogin.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         labelFooterLogin.setForeground(new java.awt.Color(255, 255, 255));
         labelFooterLogin.setText("Powered by Estácio");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(63, 150, 11, 0);
+        bgDireita.add(labelFooterLogin, gridBagConstraints);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Comece já e impulsione o seu negócio.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 9;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 59, 0, 32);
+        bgDireita.add(jLabel1, gridBagConstraints);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/login-intuitive.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(77, 109, 0, 0);
+        bgDireita.add(jLabel4, gridBagConstraints);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/login-network.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(77, 20, 0, 0);
+        bgDireita.add(jLabel5, gridBagConstraints);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/login-productive.png"))); // NOI18N
-
-        javax.swing.GroupLayout bgDireitaLayout = new javax.swing.GroupLayout(bgDireita);
-        bgDireita.setLayout(bgDireitaLayout);
-        bgDireitaLayout.setHorizontalGroup(
-            bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgDireitaLayout.createSequentialGroup()
-                .addGroup(bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgDireitaLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel1))
-                    .addGroup(bgDireitaLayout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(jLabel4)
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel5)
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel6))
-                    .addComponent(labelIconLogin)
-                    .addGroup(bgDireitaLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addGroup(bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgDireitaLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(labelSubTitulo))
-                            .addGroup(bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                .addComponent(labelFooterLogin)
-                                .addComponent(labelTitulo)))))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        bgDireitaLayout.setVerticalGroup(
-            bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgDireitaLayout.createSequentialGroup()
-                .addComponent(labelIconLogin)
-                .addGap(100, 100, 100)
-                .addComponent(labelTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(labelSubTitulo)
-                .addGap(77, 77, 77)
-                .addGroup(bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(labelFooterLogin)
-                .addContainerGap())
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(77, 20, 0, 0);
+        bgDireita.add(jLabel6, gridBagConstraints);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -261,7 +245,7 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgEsquerda, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(bgEsquerda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(bgDireita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
