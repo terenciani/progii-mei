@@ -221,7 +221,41 @@ throw new UnsupportedOperationException("Not supported yet.");
     }//GEN-LAST:event_tipoPesquisaActionPerformed
 
     private void excluirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirProdutoActionPerformed
- 
+ if (produtos.getSelectedRow() >= 0) {
+     int resposta = JOptionPane.showConfirmDialog(null, "Confirma a exclusão do Produto?", "Excluir Produto!", JOptionPane.YES_NO_OPTION);
+
+            if (resposta == 0) {
+                int linha = produtos.getSelectedRow();
+                int codigo = (int) produtos.getModel().getValueAt(linha, 0);
+
+                produtoDao.excluirProduto();
+
+                ((DefaultTableModel) produtos.getModel()).setRowCount(0);
+                produtoDao.buscarProdutos();
+                DefaultTableModel modeloDeColunaDaTabela = (DefaultTableModel) produtos.getModel();
+                ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
+
+                for (int i = 0; i < listaDeProdutos.size(); i++) {
+                    Produto exibeProduto = listaDeProdutos.get(i);
+                    String nome = buscar.getText();
+
+                    if (exibeProduto.getNome().contains(nome)) {
+                        
+                        Produto p = listaDeProdutos.get(i);
+                        Object[] dadosDaLinha1 = new Object[4];
+
+                        dadosDaLinha1[0] = p.getCodigo();
+                        dadosDaLinha1[1] = p.getCategoria();
+                        dadosDaLinha1[2] = p.getNome();
+                        dadosDaLinha1[3] = p.getFornecedor();
+                       modeloDeColunaDaTabela.addRow(dadosDaLinha1);
+                    }
+                }
+                JOptionPane.showMessageDialog(null, "Produto Removido!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um Produto!");
+ }
     }//GEN-LAST:event_excluirProdutoActionPerformed
 
 private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {                                             

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public interface ProdutoDao {
     public ArrayList<Produto> buscarProdutos();
     public Produto salvar(Produto produto);
-    public boolean excluir(Produto produto);
+    public boolean excluirProduto(Produto produto);
     public Produto alterar(Produto produto);
     public ArrayList<Produto> pesquisarPorCodigo(int filtro);
     public ArrayList<Produto> pesquisarPorNome(String filtro);
@@ -27,4 +27,6 @@ public interface ProdutoDao {
     public ArrayList<Produto> pesquisarPorQtdEstoque(int filtro);
 
     public ArrayList<Produto> pesquisarPorCategoria(int pesqCategoria);
+
+    public void excluirProduto();
 }
