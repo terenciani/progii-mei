@@ -12,6 +12,7 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Container;
 import java.awt.Desktop;
 import java.awt.print.PrinterException;
 import java.io.File;
@@ -31,7 +32,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author rodol
  */
-public class RelatorioVendasPrincipal extends javax.swing.JFrame {
+public class RelatorioVendasPrincipal extends javax.swing.JPanel {
     
     VendaDao vendaDao = new VendaDaoEstatica();
     /**
@@ -767,4 +768,16 @@ public class RelatorioVendasPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable tbRelatorioVenda;
     private javax.swing.JCheckBox vendaEstornada;
     // End of variables declaration//GEN-END:variables
+
+    private Container getContentPane() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void pack() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setDefaultCloseOperation(int EXIT_ON_CLOSE) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
