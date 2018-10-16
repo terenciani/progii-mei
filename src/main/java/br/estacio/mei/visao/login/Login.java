@@ -78,11 +78,11 @@ public class Login extends javax.swing.JFrame {
         LabelSenha.setForeground(new java.awt.Color(255, 255, 255));
         LabelSenha.setText("Senha");
 
-        tfUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        tfUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfUsuario.setBorder(null);
         tfUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        tfSenha.setBackground(new java.awt.Color(255, 255, 255));
+        tfSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfSenha.setBorder(null);
 
         separatorUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -282,7 +282,8 @@ public class Login extends javax.swing.JFrame {
         else if (usuario.getSenha().equals(senha)){
             this.setVisible(false);
             //Se passar o usuario como parâmetro ficará mais fácil pra vocês
-            new Sistema(usuario).setVisible(true);
+            Sistema usuarioLogado = new Sistema(tfUsuario.getText());
+            usuarioLogado.setVisible(true);
         }else{
             lblMenssage.setText("A Senha não confere");
         }
