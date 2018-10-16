@@ -39,6 +39,27 @@ public class RelatorioVendas extends javax.swing.JFrame {
      */
     public RelatorioVendas() {
         initComponents();
+        
+        Venda venda = new Venda();
+        venda.setCodigo(01);
+        venda.setObservacao("produto vendi, conferido e aprovado");
+        venda.setFormaPagamento("Débito");
+        vendaDao.salvarVenda(venda);
+        
+        DefaultTableModel preencherTabela = (DefaultTableModel)tbRelatorioVenda.getModel();
+        
+        ArrayList<Venda> RelatVenda = vendaDao.buscarVendas();
+        for (int i = 0; i < RelatVenda.size();i++)
+        {
+            Venda mostraVenda = RelatVenda.get(i);
+            Object[] infLinhas = new Object[5];
+            infLinhas[0] = mostraVenda.getCodigo();
+            infLinhas[1] = mostraVenda.getUsuario();
+            infLinhas[2] = mostraVenda.getObservacao();
+            infLinhas[3] = mostraVenda.getData();
+            infLinhas[4] = mostraVenda.getValor();
+            preencherTabela.addRow(infLinhas);
+        }
     }
 
     /**
