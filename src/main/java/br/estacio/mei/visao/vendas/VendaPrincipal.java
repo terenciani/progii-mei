@@ -480,28 +480,28 @@ public class VendaPrincipal extends javax.swing.JPanel {
     private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
         // TODO add your handling code here:
         if (jrbCredito.isSelected()) {
-            vendaFinalizada vendaFinalizada = new vendaFinalizada(new javax.swing.JFrame(), true);
+            VendaFinalizada vendaFinalizada = new VendaFinalizada(new javax.swing.JFrame(), true);
             vendaFinalizada.setLocationRelativeTo(this);
             vendaFinalizada.setVisible(true);
             vendaAtual.setStatus(1);
             vendaDao.atualizarVenda(vendaAtual);
             
         } else if(jrbDebito.isSelected()){ 
-            vendaFinalizada vendaFinalizada = new vendaFinalizada(new javax.swing.JFrame(), true);
+            VendaFinalizada vendaFinalizada = new VendaFinalizada(new javax.swing.JFrame(), true);
             vendaFinalizada.setLocationRelativeTo(this);
             vendaFinalizada.setVisible(true);
             vendaAtual.setStatus(1);
             vendaDao.atualizarVenda(vendaAtual);
                        
         }else if(jrbDinheiro.isSelected()){
-            vendaFinalizada vendaFinalizada = new vendaFinalizada(new javax.swing.JFrame(), true);
+            VendaFinalizada vendaFinalizada = new VendaFinalizada(new javax.swing.JFrame(), true);
             vendaFinalizada.setLocationRelativeTo(this);
             vendaFinalizada.setVisible(true);
             vendaAtual.setStatus(1);
             vendaDao.atualizarVenda(vendaAtual);
 
         }else{
-           erroPagamento erroPagamento = new erroPagamento(new javax.swing.JFrame(), true);
+           ErroPagamento erroPagamento = new ErroPagamento(new javax.swing.JFrame(), true);
            erroPagamento.setLocationRelativeTo(this);
            erroPagamento.setVisible(true); 
         }

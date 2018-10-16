@@ -7,7 +7,6 @@ package br.estacio.mei.visao.contas.receber;
 
 import br.estacio.mei.dao.VendaDao;
 import br.estacio.mei.dao.implementacao.VendaDaoEstatica;
-import br.estacio.mei.exemplo.Aluno;
 import br.estacio.mei.model.Cliente;
 import br.estacio.mei.model.Venda;
 import java.util.ArrayList;

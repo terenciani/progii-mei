@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Familia TOPz
  */
-public class vendaFinalizada extends javax.swing.JDialog {
+public class VendaFinalizada extends javax.swing.JDialog {
     ClienteDao clienteDao = new ClienteDaoEstatico();
     
     ProdutoDao produtoDao = new ProdutoDaoEstatico();
@@ -28,7 +28,7 @@ public class vendaFinalizada extends javax.swing.JDialog {
      * @param parent
      * @param modal
      */
-    public vendaFinalizada(java.awt.Frame parent, boolean modal) {
+    public VendaFinalizada(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         initComboCliente();
@@ -74,7 +74,6 @@ public class vendaFinalizada extends javax.swing.JDialog {
         vendaSucesso.setForeground(new java.awt.Color(255, 255, 255));
 
         lblSucesso.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblSucesso.setForeground(new java.awt.Color(0, 0, 0));
         lblSucesso.setText("Parabens! Sua venda Foi Finalizada");
 
         btnEnd.setBackground(new java.awt.Color(0, 0, 0));
@@ -92,11 +91,9 @@ public class vendaFinalizada extends javax.swing.JDialog {
             vendaSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(vendaSucessoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblSucesso)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(vendaSucessoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEnd)
+                .addGroup(vendaSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSucesso)
+                    .addComponent(btnEnd))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         vendaSucessoLayout.setVerticalGroup(
@@ -147,20 +144,21 @@ public class vendaFinalizada extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(vendaFinalizada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendaFinalizada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(vendaFinalizada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendaFinalizada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(vendaFinalizada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendaFinalizada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(vendaFinalizada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendaFinalizada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                vendaFinalizada dialog = new vendaFinalizada(new javax.swing.JFrame(), true);
+                VendaFinalizada dialog = new VendaFinalizada(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

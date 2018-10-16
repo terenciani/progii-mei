@@ -5,7 +5,7 @@
  */
 package br.estacio.mei.visao.login;
 
-import br.estacio.mei.exemplo.ExemploPopulaTabela;
+
 import br.estacio.mei.model.Usuario;
 import br.estacio.mei.visao.categoria.CategoriaPrincipal;
 import br.estacio.mei.visao.cliente.ClientePrincipal;
@@ -22,7 +22,6 @@ import br.estacio.mei.visao.vendas.VendaPrincipal;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -789,7 +788,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairMousePressed
 
     private void btnInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMousePressed
-        ExemploPopulaTabela exemplo = new ExemploPopulaTabela();
+        VendaPrincipal exemplo = new VendaPrincipal();
         lblBreadcrumb.setText("BEM VINDO AO MEI");
         panelDinamic.removeAll();
         panelDinamic.add(exemplo);
