@@ -44,6 +44,7 @@ public class RelatorioVendas extends javax.swing.JFrame {
         venda.setCodigo(01);
         venda.setObservacao("produto vendi, conferido e aprovado");
         venda.setFormaPagamento("Débito");
+        venda.setValor(10.50);
         vendaDao.salvarVenda(venda);
         
         DefaultTableModel preencherTabela = (DefaultTableModel)tbRelatorioVenda.getModel();
@@ -60,8 +61,9 @@ public class RelatorioVendas extends javax.swing.JFrame {
             infLinhas[4] = mostraVenda.getValor();
             preencherTabela.addRow(infLinhas);
         }
+      
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
