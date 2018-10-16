@@ -19,14 +19,9 @@ public interface ProdutoDao {
     public Produto salvar(Produto produto);
     public boolean excluirProduto(Produto produto);
     public Produto alterar(Produto produto);
-    public ArrayList<Produto> pesquisarPorCodigo(int filtro);
-    public ArrayList<Produto> pesquisarPorNome(String filtro);
-    public ArrayList<Produto> pesquisarPorFornecedor(String filtro);
-    public ArrayList<Produto> pesquisarPorPrecoCompra(int filtro);
-    public ArrayList<Produto> pesquisarPorPrecoVenda(int filtro);
-    public ArrayList<Produto> pesquisarPorQtdEstoque(int filtro);
-
+    public ArrayList<Produto> pesquisarPorCodigo(int pesqCodigo);
+    public ArrayList<Produto> pesquisarPorNome(String pesqNome);
+    public ArrayList<Produto> pesquisarPorFornecedor(String pesqFornecedor);
     public ArrayList<Produto> pesquisarPorCategoria(int pesqCategoria);
-
-    public void excluirProduto();
+    public boolean excluirProduto();
 }
