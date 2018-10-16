@@ -107,6 +107,11 @@ public class Login extends javax.swing.JFrame {
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("Lembrar de mim");
         jRadioButton1.setOpaque(false);
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         lblMenssage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
@@ -288,6 +293,12 @@ public class Login extends javax.swing.JFrame {
             lblMenssage.setText("A Senha não confere");
         }
     }//GEN-LAST:event_labelButtonEntrarMousePressed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     /**
      * @param args the command line arguments
