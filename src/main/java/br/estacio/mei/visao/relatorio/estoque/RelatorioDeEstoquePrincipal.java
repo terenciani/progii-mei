@@ -13,6 +13,8 @@ import br.estacio.mei.model.Fornecedor;
 import br.estacio.mei.model.Produto;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileOutputStream;
@@ -26,6 +28,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     ProdutoDao produtoDao = new ProdutoDaoEstatico();
+    static String OS = System.getProperty("os.name").toLowerCase();
     /**
      * Creates new form RelatorioDeEstoque
      */
@@ -33,7 +36,6 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         initComponents();
         lblError.setVisible(false);
         tbProdutos.setRowHeight(15);
-        
         Fornecedor fornecedor = new Fornecedor();	
         fornecedor.setRazaoSocial("Estacio");	
         FornecedorDao fornecedorDao = new FornecedorDaoEstatica();	
@@ -394,7 +396,6 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         while (modeloDeColunasDaTabela.getRowCount() != 0) {
             modeloDeColunasDaTabela.removeRow(0);
         }
-
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
         for (int i=0; i< listaDeProdutos.size();i++)
         {
@@ -412,10 +413,12 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
 
     private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
         Document relatorioPDF = new Document();
-        try {
-            
+        try {            
             PdfWriter.getInstance(relatorioPDF, new FileOutputStream("/home/dayves/pdfs/relatorio_estoque.pdf"));
             relatorioPDF.open();
+            Paragraph title = new Paragraph("Relatorio de estoque - SAMI");
+            title.setSpacingAfter(5);
+            relatorioPDF.add(title);
             PdfPTable table = new PdfPTable(6);
             table.addCell("Código");
             table.addCell("Nome");
@@ -424,8 +427,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             table.addCell("Preço Venda");
             table.addCell("Qtd Estoque");
             ArrayList<Produto> produtos = produtoDao.buscarProdutos();
-            int i = 0;
-            while (i < produtos.size()) {
+            for (int i = 0; i < produtos.size(); i++) {
                 Produto p = produtos.get(i);
                 table.addCell(Integer.toString(p.getCodigo()));
                 table.addCell(p.getNome());
@@ -433,7 +435,6 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 table.addCell(Double.toString(p.getPrecoCompra()));
                 table.addCell(Double.toString(p.getPrecoVenda()));
                 table.addCell(Integer.toString(p.getQuantidade()));
-                i++;
             }
             relatorioPDF.add(table);
         } catch (DocumentException de) {
