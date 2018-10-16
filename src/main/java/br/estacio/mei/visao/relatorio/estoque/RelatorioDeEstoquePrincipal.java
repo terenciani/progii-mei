@@ -19,6 +19,8 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -412,8 +414,10 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
 
     private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
         Document relatorioPDF = new Document();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH-mm-ss");
+        LocalDateTime now = LocalDateTime.now();
         try {            
-            PdfWriter.getInstance(relatorioPDF, new FileOutputStream("/home/dayves/pdfs/relatorio_estoque.pdf"));
+            PdfWriter.getInstance(relatorioPDF, new FileOutputStream("/home/dayves/pdfs/relatorio_estoque"+dtf.format(now)+".pdf"));
             relatorioPDF.open();
             Paragraph title = new Paragraph("Relatorio de estoque - SAMI");
             title.setSpacingAfter(5);
