@@ -28,7 +28,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     ProdutoDao produtoDao = new ProdutoDaoEstatico();
-    static String OS = System.getProperty("os.name").toLowerCase();
     /**
      * Creates new form RelatorioDeEstoque
      */
@@ -419,22 +418,14 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             Paragraph title = new Paragraph("Relatorio de estoque - SAMI");
             title.setSpacingAfter(5);
             relatorioPDF.add(title);
-            PdfPTable table = new PdfPTable(6);
-            table.addCell("Código");
-            table.addCell("Nome");
-            table.addCell("Fornecedor");
-            table.addCell("Preço Compra");
-            table.addCell("Preço Venda");
-            table.addCell("Qtd Estoque");
-            ArrayList<Produto> produtos = produtoDao.buscarProdutos();
-            for (int i = 0; i < produtos.size(); i++) {
-                Produto p = produtos.get(i);
-                table.addCell(Integer.toString(p.getCodigo()));
-                table.addCell(p.getNome());
-                table.addCell(p.getFornecedor().getRazaoSocial());
-                table.addCell(Double.toString(p.getPrecoCompra()));
-                table.addCell(Double.toString(p.getPrecoVenda()));
-                table.addCell(Integer.toString(p.getQuantidade()));
+            PdfPTable table = new PdfPTable(tbProdutos.getColumnCount());
+            for (int i = 0; i < tbProdutos.getColumnCount(); i++) {
+                table.addCell(tbProdutos.getColumnName(i));
+            }
+            for (int rows = 0; rows < tbProdutos.getRowCount(); rows++) {
+                for (int cols = 0; cols < tbProdutos.getColumnCount(); cols++) {
+                    table.addCell(tbProdutos.getModel().getValueAt(rows, cols).toString());
+                }
             }
             relatorioPDF.add(table);
         } catch (DocumentException de) {
