@@ -483,26 +483,28 @@ public class VendaPrincipal extends javax.swing.JPanel {
             vendaFinalizada vendaFinalizada = new vendaFinalizada(new javax.swing.JFrame(), true);
             vendaFinalizada.setLocationRelativeTo(this);
             vendaFinalizada.setVisible(true);
+            vendaAtual.setStatus(1);
+            vendaDao.atualizarVenda(vendaAtual);
             
         } else if(jrbDebito.isSelected()){ 
             vendaFinalizada vendaFinalizada = new vendaFinalizada(new javax.swing.JFrame(), true);
             vendaFinalizada.setLocationRelativeTo(this);
             vendaFinalizada.setVisible(true);
+            vendaAtual.setStatus(1);
+            vendaDao.atualizarVenda(vendaAtual);
                        
         }else if(jrbDinheiro.isSelected()){
             vendaFinalizada vendaFinalizada = new vendaFinalizada(new javax.swing.JFrame(), true);
             vendaFinalizada.setLocationRelativeTo(this);
             vendaFinalizada.setVisible(true);
-            
+            vendaAtual.setStatus(1);
+            vendaDao.atualizarVenda(vendaAtual);
+
         }else{
            erroPagamento erroPagamento = new erroPagamento(new javax.swing.JFrame(), true);
            erroPagamento.setLocationRelativeTo(this);
            erroPagamento.setVisible(true); 
         }
-        
-        vendaAtual.setStatus(1);
-        vendaDao.atualizarVenda(vendaAtual);
-
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -511,13 +513,9 @@ public class VendaPrincipal extends javax.swing.JPanel {
         txtQtd.setText("Ex: 00");
         lblValor.setText("00,00");
         
-        DefaultComboBoxModel model = new DefaultComboBoxModel();
-        model.addElement("Selecione Um Cliente");
-        jcNome.setModel(model);
+        initComboCliente();
         
-        DefaultComboBoxModel modelProduto = new DefaultComboBoxModel();
-        modelProduto.addElement("Selecione Um Produto");
-        jcProduto.setModel(modelProduto);
+        initComboProduto();
 
         DefaultTableModel dtm = (DefaultTableModel) tbProdutos.getModel();
         dtm.setRowCount(0);

@@ -5,7 +5,12 @@
  */
 package br.estacio.mei.visao.vendas;
 
-import static br.estacio.mei.visao.vendas.VendaPrincipal.gbFormaPagamento;
+import br.estacio.mei.dao.ClienteDao;
+import br.estacio.mei.dao.ProdutoDao;
+import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
+import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
+import static br.estacio.mei.visao.vendas.VendaPrincipal.jcNome;
+import static br.estacio.mei.visao.vendas.VendaPrincipal.jcProduto;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,7 +19,10 @@ import javax.swing.table.DefaultTableModel;
  * @author Familia TOPz
  */
 public class vendaFinalizada extends javax.swing.JDialog {
-
+    ClienteDao clienteDao = new ClienteDaoEstatico();
+    
+    ProdutoDao produtoDao = new ProdutoDaoEstatico();
+    
     /**
      * Creates new form vendaFinalizada
      * @param parent
@@ -23,6 +31,28 @@ public class vendaFinalizada extends javax.swing.JDialog {
     public vendaFinalizada(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        initComboCliente();
+        initComboProduto();
+    }
+    
+    private void initComboCliente(){
+        Object cliente[] = clienteDao.buscarClientes().toArray();
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        model.addElement("Selecione Um Cliente");
+        for(int i = 0; i<cliente.length; i++){
+            model.addElement(cliente[i]);
+        }
+        jcNome.setModel(model);
+    }
+    
+    private void initComboProduto(){
+        Object produto[] = produtoDao.pesquisarPorNome(toString()).toArray();
+        DefaultComboBoxModel modelProduto = new DefaultComboBoxModel();
+        modelProduto.addElement("Selecione Um Produto");
+        for(int i = 0; i<produto.length; i++){
+            modelProduto.addElement(produto[i]);
+        }
+       jcProduto.setModel(modelProduto);
     }
 
     /**
@@ -90,13 +120,8 @@ public class vendaFinalizada extends javax.swing.JDialog {
         VendaPrincipal.txtQtd.setText("Ex: 00");
          VendaPrincipal.lblValor.setText("00,00");
         
-        DefaultComboBoxModel model = new DefaultComboBoxModel();
-        model.addElement("Selecione Um Cliente");
-        VendaPrincipal.jcNome.setModel(model);
-        
-        DefaultComboBoxModel modelProduto = new DefaultComboBoxModel();
-        modelProduto.addElement("Selecione Um Produto");
-        VendaPrincipal.jcProduto.setModel(modelProduto);
+        initComboCliente();
+        initComboProduto();
 
         DefaultTableModel dtm = (DefaultTableModel) VendaPrincipal.tbProdutos.getModel();
         dtm.setRowCount(0);
