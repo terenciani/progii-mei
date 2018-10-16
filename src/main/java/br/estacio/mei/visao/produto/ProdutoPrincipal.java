@@ -6,17 +6,11 @@
 package br.estacio.mei.visao.produto;
 
 import br.estacio.mei.dao.ProdutoDao;
-import br.estacio.mei.dao.implementacao.FornecedorDaoEstatica;
 import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
-import br.estacio.mei.model.Fornecedor;
 import br.estacio.mei.model.Produto;
 import java.util.ArrayList;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,7 +18,9 @@ import javax.swing.table.DefaultTableModel;
  * @author aluno
  */
 public class ProdutoPrincipal extends javax.swing.JPanel {
+
     ProdutoDao produtoDao = new ProdutoDaoEstatico();
+
     /**
      * Creates new form ProdutoPrincipal
      */
@@ -32,12 +28,11 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
         initComponents();
         msgErro.setVisible(false);
         produtos.setRowHeight(15);
-               
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)produtos.getModel();
+
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel) produtos.getModel();
 
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
-        for (int i=0; i< listaDeProdutos.size();i++)
-        {
+        for (int i = 0; i < listaDeProdutos.size(); i++) {
             Produto p = listaDeProdutos.get(i);
             Object[] dadosDaLinha = new Object[4];
             dadosDaLinha[0] = p.getCodigo();
@@ -45,11 +40,9 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
             dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
             dadosDaLinha[3] = p.getCategoria();
             modeloDeColunasDaTabela.addRow(dadosDaLinha);
+        }
     }
-    }
-public ProdutoPrincipal (JFrame jFrame, boolean b) {
-throw new UnsupportedOperationException("Not supported yet.");
-}
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -201,9 +194,9 @@ throw new UnsupportedOperationException("Not supported yet.");
     }// </editor-fold>//GEN-END:initComponents
 
     private void novoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoProdutoActionPerformed
-       String tipo = "insert";
-       int codigoNovoProduto = 0;
-       if (codigoNovoProduto == 0) {
+        String tipo = "insert";
+        int codigoNovoProduto = 0;
+        if (codigoNovoProduto == 0) {
             codigoNovoProduto = 1;
         } else {
             //==> Se encontrou, incrementa 1, para não repetir o mesmo código <==\\
@@ -215,20 +208,21 @@ throw new UnsupportedOperationException("Not supported yet.");
         panelDinamico.validate();
         panelDinamico.repaint();
     }//GEN-LAST:event_novoProdutoActionPerformed
-   
+
     private void tipoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoPesquisaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tipoPesquisaActionPerformed
 
     private void excluirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirProdutoActionPerformed
- if (produtos.getSelectedRow() >= 0) {
-     int resposta = JOptionPane.showConfirmDialog(null, "Confirma a exclusão do Produto?", "Excluir Produto!", JOptionPane.YES_NO_OPTION);
+        if (produtos.getSelectedRow() >= 0) {
+            int resposta = JOptionPane.showConfirmDialog(null, "Confirma a exclusão do Produto?", "Excluir Produto!", JOptionPane.YES_NO_OPTION);
 
             if (resposta == 0) {
                 int linha = produtos.getSelectedRow();
                 int codigo = (int) produtos.getModel().getValueAt(linha, 0);
-
-                excluirProduto();
+                Produto produto = new Produto();
+                produto.setCodigo(codigo);
+                produtoDao.alterar(produto);
 
                 ((DefaultTableModel) produtos.getModel()).setRowCount(0);
                 produtoDao.buscarProdutos();
@@ -240,7 +234,7 @@ throw new UnsupportedOperationException("Not supported yet.");
                     String nome = buscar.getText();
 
                     if (exibeProduto.getNome().contains(nome)) {
-                        
+
                         Produto p = listaDeProdutos.get(i);
                         Object[] dadosDaLinha1 = new Object[4];
 
@@ -248,20 +242,20 @@ throw new UnsupportedOperationException("Not supported yet.");
                         dadosDaLinha1[1] = p.getCategoria();
                         dadosDaLinha1[2] = p.getNome();
                         dadosDaLinha1[3] = p.getFornecedor();
-                       modeloDeColunaDaTabela.addRow(dadosDaLinha1);
+                        modeloDeColunaDaTabela.addRow(dadosDaLinha1);
                     }
                 }
                 JOptionPane.showMessageDialog(null, "Produto Removido!");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Selecione um Produto!");
- }
+        }
     }//GEN-LAST:event_excluirProdutoActionPerformed
 
-private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
         int itemSelecionado = tipoPesquisa.getSelectedIndex();
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)produtos.getModel();
-        switch(itemSelecionado) {
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel) produtos.getModel();
+        switch (itemSelecionado) {
             case 0:
                 try {
                     msgErro.setVisible(false);
@@ -270,16 +264,15 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorCodigo = produtoDao.pesquisarPorCodigo(pesqCodigo);
-                    for (int i=0; i< produtosPorCodigo.size();i++)
-                       {
-                           Produto p = produtosPorCodigo.get(i);
-                           Object[] dadosDaLinha = new Object[4];
-                           dadosDaLinha[0] = p.getCodigo();
-                           dadosDaLinha[1] = p.getNome();
-                           dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                           dadosDaLinha[3] = p.getCategoria();
-                           modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                       }
+                    for (int i = 0; i < produtosPorCodigo.size(); i++) {
+                        Produto p = produtosPorCodigo.get(i);
+                        Object[] dadosDaLinha = new Object[4];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getNome();
+                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
+                        dadosDaLinha[3] = p.getCategoria();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
                 } catch (Exception e) {
                     msgErro.setText("Pesquisa Invalida!");
                     msgErro.setVisible(true);
@@ -294,8 +287,7 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
-                    for (int i=0; i< produtosPorNome.size();i++)
-                    {
+                    for (int i = 0; i < produtosPorNome.size(); i++) {
                         Produto p = produtosPorNome.get(i);
                         Object[] dadosDaLinha = new Object[4];
                         dadosDaLinha[0] = p.getCodigo();
@@ -303,7 +295,7 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
                         dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
                         dadosDaLinha[3] = p.getCategoria();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }    
+                    }
                 } catch (Exception e) {
                     msgErro.setText("Pesquisa Invalida!");
                     msgErro.setVisible(true);
@@ -317,8 +309,7 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorFornecedor(pesqFornecedor);
-                    for (int i=0; i< produtosPorFornecedor.size();i++)
-                    {
+                    for (int i = 0; i < produtosPorFornecedor.size(); i++) {
                         Produto p = produtosPorFornecedor.get(i);
                         Object[] dadosDaLinha = new Object[4];
                         dadosDaLinha[0] = p.getCodigo();
@@ -331,7 +322,7 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
                     msgErro.setText("Pesquisa Invalida!");
                     msgErro.setVisible(true);
                 }
-                    break;
+                break;
             case 3:
                 try {
                     msgErro.setVisible(false);
@@ -340,8 +331,7 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorCategoria = produtoDao.pesquisarPorCategoria(pesqCategoria);
-                    for (int i=0; i< produtosPorCategoria.size();i++)
-                    {
+                    for (int i = 0; i < produtosPorCategoria.size(); i++) {
                         Produto p = produtosPorCategoria.get(i);
                         Object[] dadosDaLinha = new Object[4];
                         dadosDaLinha[0] = p.getCodigo();
@@ -354,8 +344,8 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
                     msgErro.setText("Pesquisa Invalida!");
                     msgErro.setVisible(true);
                 }
-                    break;
-           
+                break;
+
         }
     }
 
@@ -376,7 +366,4 @@ private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JComboBox<String> tipoPesquisa;
     // End of variables declaration//GEN-END:variables
 
-    private void excluirProduto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

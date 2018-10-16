@@ -20,6 +20,7 @@ public class Produto {
     private float valorAtual;
     private float valorAntigo;
     private double lucro;
+    private Categoria categoria;
     private String descricao;
 
     public Produto() {
@@ -114,8 +115,12 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public Object getCategoria() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
 }
