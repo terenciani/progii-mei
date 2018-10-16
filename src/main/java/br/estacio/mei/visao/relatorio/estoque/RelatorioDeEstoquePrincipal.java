@@ -11,9 +11,13 @@ import br.estacio.mei.dao.implementacao.FornecedorDaoEstatica;
 import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
 import br.estacio.mei.model.Fornecedor;
 import br.estacio.mei.model.Produto;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -29,6 +33,17 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         initComponents();
         lblError.setVisible(false);
         tbProdutos.setRowHeight(15);
+        
+        Fornecedor fornecedor = new Fornecedor();	
+        fornecedor.setRazaoSocial("Estacio");	
+        FornecedorDao fornecedorDao = new FornecedorDaoEstatica();	
+        fornecedorDao.salvarFornecedor(fornecedor);	
+        Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);	
+        produtoDao.salvar(produto);	
+        	
+        produto = new Produto(1, "Short", 5, fornecedor, 40, 80);	
+        	
+        produtoDao.salvar(produto);
                
         DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
 
@@ -66,6 +81,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         tipoPesquisa = new javax.swing.JComboBox<>();
         pnlError = new javax.swing.JPanel();
         lblError = new javax.swing.JLabel();
+        btnExportar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbProdutos = new javax.swing.JTable();
@@ -118,21 +134,39 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
 
         lblError.setText("Errors");
 
+        btnExportar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/re_pdf.png"))); // NOI18N
+        btnExportar.setText("Gerar relatório");
+        btnExportar.setMaximumSize(new java.awt.Dimension(124, 32));
+        btnExportar.setMinimumSize(new java.awt.Dimension(124, 32));
+        btnExportar.setPreferredSize(new java.awt.Dimension(124, 32));
+        btnExportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlErrorLayout = new javax.swing.GroupLayout(pnlError);
         pnlError.setLayout(pnlErrorLayout);
         pnlErrorLayout.setHorizontalGroup(
             pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlErrorLayout.createSequentialGroup()
-                .addGap(325, 325, 325)
-                .addComponent(lblError)
+                .addGroup(pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlErrorLayout.createSequentialGroup()
+                        .addGap(355, 355, 355)
+                        .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlErrorLayout.createSequentialGroup()
+                        .addGap(389, 389, 389)
+                        .addComponent(lblError)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlErrorLayout.setVerticalGroup(
             pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlErrorLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlErrorLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblError)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel1.setText("Filtrar por");
@@ -376,8 +410,46 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnTodosActionPerformed
 
+    private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
+        Document relatorioPDF = new Document();
+        try {
+            
+            PdfWriter.getInstance(relatorioPDF, new FileOutputStream("/home/dayves/pdfs/relatorio_estoque.pdf"));
+            relatorioPDF.open();
+            PdfPTable table = new PdfPTable(6);
+            table.addCell("Código");
+            table.addCell("Nome");
+            table.addCell("Fornecedor");
+            table.addCell("Preço Compra");
+            table.addCell("Preço Venda");
+            table.addCell("Qtd Estoque");
+            ArrayList<Produto> produtos = produtoDao.buscarProdutos();
+            int i = 0;
+            while (i < produtos.size()) {
+                Produto p = produtos.get(i);
+                table.addCell(Integer.toString(p.getCodigo()));
+                table.addCell(p.getNome());
+                table.addCell(p.getFornecedor().getRazaoSocial());
+                table.addCell(Double.toString(p.getPrecoCompra()));
+                table.addCell(Double.toString(p.getPrecoVenda()));
+                table.addCell(Integer.toString(p.getQuantidade()));
+                i++;
+            }
+            relatorioPDF.add(table);
+        } catch (DocumentException de) {
+            lblError.setText("Documento deu merda!");
+            lblError.setVisible(true);
+        }catch(IOException ioe){
+            lblError.setText("Outra coisa deu merda!");
+            lblError.setVisible(true);
+        }finally{
+            relatorioPDF.close();
+        }
+    }//GEN-LAST:event_btnExportarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExportar;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnTodos;
     private javax.swing.JLabel jLabel1;
