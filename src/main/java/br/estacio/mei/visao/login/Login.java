@@ -78,10 +78,14 @@ public class Login extends javax.swing.JFrame {
         LabelSenha.setForeground(new java.awt.Color(255, 255, 255));
         LabelSenha.setText("Senha");
 
+        tfUsuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tfUsuario.setForeground(new java.awt.Color(51, 51, 51));
         tfUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfUsuario.setBorder(null);
         tfUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
+        tfSenha.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        tfSenha.setForeground(new java.awt.Color(51, 51, 51));
         tfSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfSenha.setBorder(null);
 
@@ -113,6 +117,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        lblMenssage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblMenssage.setForeground(new java.awt.Color(248, 248, 248));
         lblMenssage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanelCentralizadorLayout = new javax.swing.GroupLayout(jPanelCentralizador);
@@ -156,8 +162,8 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(labelButtonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(jRadioButton1)
-                .addGap(47, 47, 47)
-                .addComponent(lblMenssage, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(lblMenssage, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -174,21 +180,21 @@ public class Login extends javax.swing.JFrame {
             bgEsquerdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgEsquerdaLayout.createSequentialGroup()
                 .addContainerGap(78, Short.MAX_VALUE)
-                .addComponent(jPanelCentralizador, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelCentralizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
         );
 
         bgDireita.setBackground(new java.awt.Color(12, 180, 206));
         bgDireita.setPreferredSize(new java.awt.Dimension(400, 435));
 
-        labelTitulo.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
+        labelTitulo.setFont(new java.awt.Font("Calibri", 3, 36)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTitulo.setText("Seja bem vindo!");
         labelTitulo.setAutoscrolls(true);
         labelTitulo.setPreferredSize(new java.awt.Dimension(260, 42));
 
-        labelSubTitulo.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        labelSubTitulo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         labelSubTitulo.setForeground(new java.awt.Color(255, 255, 255));
         labelSubTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelSubTitulo.setText("Faça o login para iniciar sua sessão.");
@@ -198,7 +204,7 @@ public class Login extends javax.swing.JFrame {
         labelFooterLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelFooterLogin.setText("Powered by Estácio");
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Comece já e impulsione o seu negócio.");
@@ -234,15 +240,15 @@ public class Login extends javax.swing.JFrame {
             bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgDireitaLayout.createSequentialGroup()
                 .addComponent(labelIconLogin)
-                .addGap(78, 78, 78)
+                .addGap(85, 85, 85)
                 .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelSubTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labelFooterLogin)
                 .addContainerGap())
         );
@@ -273,7 +279,7 @@ public class Login extends javax.swing.JFrame {
         String senha = new String (tfSenha.getPassword());
 
         if(usuario == null)
-            lblMenssage.setText("Usuario não Encontrado");
+            lblMenssage.setText("Usuario e/ou Senha incorretos. Por favor, tente novamente.");
         else if (usuario.getSenha().equals(senha)){
             this.setVisible(false);
             //Se passar o usuario como parâmetro ficará mais fácil pra vocês

@@ -109,11 +109,13 @@ public class Sistema extends javax.swing.JFrame {
         areaDeTrabalho = new javax.swing.JPanel();
         painelBreadcrumb = new javax.swing.JPanel();
         lblBreadcrumb = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jlUsuarioLogado = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
         lblNomeSistema = new javax.swing.JLabel();
         panelDinamic = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jlUsuarioLogado = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Apoio ao Micro Empreendedor Individual Regional");
@@ -688,28 +690,52 @@ public class Sistema extends javax.swing.JFrame {
 
         lblBreadcrumb.setBackground(new java.awt.Color(204, 204, 204));
         lblBreadcrumb.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblBreadcrumb.setForeground(new java.awt.Color(153, 153, 153));
+        lblBreadcrumb.setForeground(new java.awt.Color(238, 238, 238));
         lblBreadcrumb.setText("Estou na Tela de Produtos");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Usuário:");
+
+        jlUsuarioLogado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jlUsuarioLogado.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/status-de-login.png"))); // NOI18N
 
         javax.swing.GroupLayout painelBreadcrumbLayout = new javax.swing.GroupLayout(painelBreadcrumb);
         painelBreadcrumb.setLayout(painelBreadcrumbLayout);
         painelBreadcrumbLayout.setHorizontalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelBreadcrumbLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBreadcrumbLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator2)
+                    .addGroup(painelBreadcrumbLayout.createSequentialGroup()
+                        .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel2)
+                        .addGap(5, 5, 5)
+                        .addComponent(jlUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30))
         );
         painelBreadcrumbLayout.setVerticalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(lblBreadcrumb)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addGroup(painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jlUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblBreadcrumb))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         lblNomeSistema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblNomeSistema.setForeground(new java.awt.Color(153, 153, 153));
+        lblNomeSistema.setForeground(new java.awt.Color(102, 102, 102));
         lblNomeSistema.setText("Sistema de Apoio ao Microempreendedor Individual");
 
         panelDinamic.setBackground(new java.awt.Color(255, 255, 255));
@@ -723,8 +749,6 @@ public class Sistema extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Powered by Students of Estácio TV-Morena");
 
-        jLabel2.setText("Usuário:");
-
         javax.swing.GroupLayout areaDeTrabalhoLayout = new javax.swing.GroupLayout(areaDeTrabalho);
         areaDeTrabalho.setLayout(areaDeTrabalhoLayout);
         areaDeTrabalhoLayout.setHorizontalGroup(
@@ -735,11 +759,7 @@ public class Sistema extends javax.swing.JFrame {
                     .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(lblNomeSistema)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jlUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12))
+                        .addGap(12, 273, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(panelDinamic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -749,13 +769,7 @@ public class Sistema extends javax.swing.JFrame {
         areaDeTrabalhoLayout.setVerticalGroup(
             areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
-                .addGroup(areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-                            .addComponent(jlUsuarioLogado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(lblNomeSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblNomeSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelDinamic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -999,7 +1013,9 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel imgVendas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel jlUsuarioLogado;
     private javax.swing.JLabel lblBreadcrumb;
     private javax.swing.JLabel lblCadastroDeProdutos;
