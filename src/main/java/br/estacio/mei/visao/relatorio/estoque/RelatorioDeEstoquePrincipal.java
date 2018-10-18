@@ -137,7 +137,6 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
 
         lblError.setText("Errors");
 
-        btnExportar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/re_pdf.png"))); // NOI18N
         btnExportar.setText("Gerar relatório");
         btnExportar.setMaximumSize(new java.awt.Dimension(124, 32));
         btnExportar.setMinimumSize(new java.awt.Dimension(124, 32));

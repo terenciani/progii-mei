@@ -12,7 +12,6 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.pdf.PdfWriter;
-import java.awt.Container;
 import java.awt.Desktop;
 import java.awt.print.PrinterException;
 import java.io.File;
@@ -26,45 +25,19 @@ import java.util.logging.Logger;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-
-
 /**
  *
- * @author rodol
+ * @author Marcelo
  */
 public class RelatorioVendasPrincipal extends javax.swing.JPanel {
-    
     VendaDao vendaDao = new VendaDaoEstatica();
     /**
-     * Creates new form RelatVendas
+     * Creates new form RelatorioVendasPrincipal
      */
     public RelatorioVendasPrincipal() {
         initComponents();
-        
-        Venda venda = new Venda();
-        venda.setCodigo(01);
-        venda.setObservacao("produto vendido, conferido e aprovado");
-        venda.setFormaPagamento("Crédito");
-        venda.setValor(09.45);
-        vendaDao.salvarVenda(venda);
-        
-        DefaultTableModel preencherTabela = (DefaultTableModel)tbRelatorioVenda.getModel();
-        
-        ArrayList<Venda> RelatVenda = vendaDao.buscarVendas();
-        for (int i = 0; i < RelatVenda.size();i++)
-        {
-            Venda mostraVenda = RelatVenda.get(i);
-            Object[] infLinhas = new Object[5];
-            infLinhas[0] = mostraVenda.getCodigo();
-            infLinhas[1] = mostraVenda.getUsuario();
-            infLinhas[2] = mostraVenda.getObservacao();
-            infLinhas[3] = mostraVenda.getData();
-            infLinhas[4] = mostraVenda.getValor();
-            preencherTabela.addRow(infLinhas);
-        }
-      
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,57 +68,16 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbRelatorioVenda = new javax.swing.JTable();
         btImprimir = new javax.swing.JButton();
-        painelLateral1 = new javax.swing.JPanel();
-        btnInicio1 = new javax.swing.JPanel();
-        imgInicio1 = new javax.swing.JLabel();
-        lblInicio1 = new javax.swing.JLabel();
-        btnContasAPagar = new javax.swing.JPanel();
-        imgContasAPagar = new javax.swing.JLabel();
-        lblContasAPagar = new javax.swing.JLabel();
-        btnContasAReceber = new javax.swing.JPanel();
-        imgContasAReceber = new javax.swing.JLabel();
-        lblContasAReceber = new javax.swing.JLabel();
-        btnCategorias = new javax.swing.JPanel();
-        imgCategorias = new javax.swing.JLabel();
-        lblCategorias = new javax.swing.JLabel();
-        btnClientes = new javax.swing.JPanel();
-        imgClientes = new javax.swing.JLabel();
-        lblClientes = new javax.swing.JLabel();
-        btnSair = new javax.swing.JPanel();
-        imgSair = new javax.swing.JLabel();
-        lblSair = new javax.swing.JLabel();
-        btnFornecedores = new javax.swing.JPanel();
-        imgFornecedores = new javax.swing.JLabel();
-        lblFornecedores = new javax.swing.JLabel();
-        separador = new javax.swing.JSeparator();
-        imgLogo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLayout(new java.awt.BorderLayout());
 
         jDesktopPane4.setBackground(new java.awt.Color(204, 204, 204));
+        jDesktopPane4.setLayout(new java.awt.BorderLayout());
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("RELATÓRIO DE VENDAS");
-
-        jDesktopPane4.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jDesktopPane4Layout = new javax.swing.GroupLayout(jDesktopPane4);
-        jDesktopPane4.setLayout(jDesktopPane4Layout);
-        jDesktopPane4Layout.setHorizontalGroup(
-            jDesktopPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(136, 136, 136))
-        );
-        jDesktopPane4Layout.setVerticalGroup(
-            jDesktopPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jDesktopPane4.add(jLabel8, java.awt.BorderLayout.PAGE_START);
 
         jDesktopPane2.setBackground(new java.awt.Color(240, 240, 240));
         jDesktopPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
@@ -312,7 +244,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
                     .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
         );
         jDesktopPane2Layout.setVerticalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -354,275 +286,29 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(vendaEstornada)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
         );
 
-        painelLateral1.setBackground(new java.awt.Color(12, 197, 205));
+        jDesktopPane4.add(jDesktopPane2, java.awt.BorderLayout.CENTER);
 
-        btnInicio1.setBackground(new java.awt.Color(13, 155, 177));
-
-        imgInicio1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Home_25px.png"))); // NOI18N
-
-        lblInicio1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblInicio1.setForeground(new java.awt.Color(255, 255, 255));
-        lblInicio1.setText("Início");
-
-        javax.swing.GroupLayout btnInicio1Layout = new javax.swing.GroupLayout(btnInicio1);
-        btnInicio1.setLayout(btnInicio1Layout);
-        btnInicio1Layout.setHorizontalGroup(
-            btnInicio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnInicio1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgInicio1)
-                .addGap(18, 18, 18)
-                .addComponent(lblInicio1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnInicio1Layout.setVerticalGroup(
-            btnInicio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgInicio1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-            .addComponent(lblInicio1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        btnContasAPagar.setBackground(new java.awt.Color(12, 180, 206));
-
-        lblContasAPagar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblContasAPagar.setForeground(new java.awt.Color(255, 255, 255));
-        lblContasAPagar.setText("Contas a Pagar");
-
-        javax.swing.GroupLayout btnContasAPagarLayout = new javax.swing.GroupLayout(btnContasAPagar);
-        btnContasAPagar.setLayout(btnContasAPagarLayout);
-        btnContasAPagarLayout.setHorizontalGroup(
-            btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnContasAPagarLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgContasAPagar)
-                .addGap(18, 18, 18)
-                .addComponent(lblContasAPagar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnContasAPagarLayout.setVerticalGroup(
-            btnContasAPagarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-        );
-
-        btnContasAReceber.setBackground(new java.awt.Color(12, 180, 206));
-
-        lblContasAReceber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblContasAReceber.setForeground(new java.awt.Color(255, 255, 255));
-        lblContasAReceber.setText("Contas a Receber");
-
-        javax.swing.GroupLayout btnContasAReceberLayout = new javax.swing.GroupLayout(btnContasAReceber);
-        btnContasAReceber.setLayout(btnContasAReceberLayout);
-        btnContasAReceberLayout.setHorizontalGroup(
-            btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnContasAReceberLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgContasAReceber)
-                .addGap(18, 18, 18)
-                .addComponent(lblContasAReceber)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnContasAReceberLayout.setVerticalGroup(
-            btnContasAReceberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-        );
-
-        btnCategorias.setBackground(new java.awt.Color(12, 180, 206));
-
-        lblCategorias.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblCategorias.setForeground(new java.awt.Color(255, 255, 255));
-        lblCategorias.setText("Categorias");
-
-        javax.swing.GroupLayout btnCategoriasLayout = new javax.swing.GroupLayout(btnCategorias);
-        btnCategorias.setLayout(btnCategoriasLayout);
-        btnCategoriasLayout.setHorizontalGroup(
-            btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnCategoriasLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgCategorias)
-                .addGap(18, 18, 18)
-                .addComponent(lblCategorias)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnCategoriasLayout.setVerticalGroup(
-            btnCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-        );
-
-        btnClientes.setBackground(new java.awt.Color(12, 180, 206));
-
-        lblClientes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblClientes.setForeground(new java.awt.Color(255, 255, 255));
-        lblClientes.setText("Clientes");
-
-        javax.swing.GroupLayout btnClientesLayout = new javax.swing.GroupLayout(btnClientes);
-        btnClientes.setLayout(btnClientesLayout);
-        btnClientesLayout.setHorizontalGroup(
-            btnClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnClientesLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgClientes)
-                .addGap(18, 18, 18)
-                .addComponent(lblClientes)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnClientesLayout.setVerticalGroup(
-            btnClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-        );
-
-        btnSair.setBackground(new java.awt.Color(12, 180, 206));
-
-        imgSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Sign_Out_25px.png"))); // NOI18N
-
-        lblSair.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblSair.setForeground(new java.awt.Color(255, 255, 255));
-        lblSair.setText("Sair");
-
-        javax.swing.GroupLayout btnSairLayout = new javax.swing.GroupLayout(btnSair);
-        btnSair.setLayout(btnSairLayout);
-        btnSairLayout.setHorizontalGroup(
-            btnSairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnSairLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgSair)
-                .addGap(18, 18, 18)
-                .addComponent(lblSair)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnSairLayout.setVerticalGroup(
-            btnSairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgSair, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-            .addComponent(lblSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        btnFornecedores.setBackground(new java.awt.Color(12, 180, 206));
-
-        lblFornecedores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblFornecedores.setForeground(new java.awt.Color(255, 255, 255));
-        lblFornecedores.setText("Fornecedores");
-
-        javax.swing.GroupLayout btnFornecedoresLayout = new javax.swing.GroupLayout(btnFornecedores);
-        btnFornecedores.setLayout(btnFornecedoresLayout);
-        btnFornecedoresLayout.setHorizontalGroup(
-            btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnFornecedoresLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgFornecedores)
-                .addGap(18, 18, 18)
-                .addComponent(lblFornecedores)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnFornecedoresLayout.setVerticalGroup(
-            btnFornecedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblFornecedores, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-        );
-
-        imgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Stocks_64px.png"))); // NOI18N
-
-        javax.swing.GroupLayout painelLateral1Layout = new javax.swing.GroupLayout(painelLateral1);
-        painelLateral1.setLayout(painelLateral1Layout);
-        painelLateral1Layout.setHorizontalGroup(
-            painelLateral1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnInicio1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnContasAPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnContasAReceber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnFornecedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(imgLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(painelLateral1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        painelLateral1Layout.setVerticalGroup(
-            painelLateral1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelLateral1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(imgLogo)
-                .addGap(18, 18, 18)
-                .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnInicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnContasAPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnContasAReceber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(painelLateral1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDesktopPane4)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jDesktopPane2)
-                        .addContainerGap())))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelLateral1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jDesktopPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(jDesktopPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        pack();
+        add(jDesktopPane4, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void vendaEstornadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vendaEstornadaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vendaEstornadaActionPerformed
+    private void seletorCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seletorCategoriaActionPerformed
 
-    private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-        Document documento = new Document();
-        documento.open();
-        try {
-            documento.add((Element) tbRelatorioVenda);
-        } catch (DocumentException ex) {
-            Logger.getLogger(RelatorioVendasPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try{
-            PdfWriter.getInstance(documento, new FileOutputStream("Relatório de Vendas.pdf"));
-        } catch (FileNotFoundException | DocumentException ex) {
-            System.out.println("Erro" + ex);
-        }finally{
-            documento.close();
-        }
-        try {
-            Desktop.getDesktop().open(new File("Relatório de Vendas.pdf"));
-        } catch (IOException ex) {
-            System.out.println("Erro" + ex);
-        }
-        
-    }//GEN-LAST:event_btSalvarActionPerformed
+    }//GEN-LAST:event_seletorCategoriaActionPerformed
+
+    private void seletorPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seletorPagamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seletorPagamentoActionPerformed
+
+    private void DataInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataInicialActionPerformed
+
+    }//GEN-LAST:event_DataInicialActionPerformed
+
+    private void DataFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataFinalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DataFinalActionPerformed
 
     private void btVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVisualizarActionPerformed
 
@@ -644,82 +330,43 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btVisualizarActionPerformed
 
-    private void DataFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataFinalActionPerformed
+    private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
+        Document documento = new Document();
+        documento.open();
+        try {
+            documento.add((Element) tbRelatorioVenda);
+        } catch (DocumentException ex) {
+            Logger.getLogger(RelatorioVendasPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try{
+            PdfWriter.getInstance(documento, new FileOutputStream("Relatório de Vendas.pdf"));
+        } catch (FileNotFoundException | DocumentException ex) {
+            System.out.println("Erro" + ex);
+        }finally{
+            documento.close();
+        }
+        try {
+            Desktop.getDesktop().open(new File("Relatório de Vendas.pdf"));
+        } catch (IOException ex) {
+            System.out.println("Erro" + ex);
+        }
+
+    }//GEN-LAST:event_btSalvarActionPerformed
+
+    private void vendaEstornadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vendaEstornadaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DataFinalActionPerformed
-
-    private void DataInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataInicialActionPerformed
-
-    }//GEN-LAST:event_DataInicialActionPerformed
-
-    private void seletorPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seletorPagamentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_seletorPagamentoActionPerformed
-
-    private void seletorCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seletorCategoriaActionPerformed
-
-    }//GEN-LAST:event_seletorCategoriaActionPerformed
+    }//GEN-LAST:event_vendaEstornadaActionPerformed
 
     private void btImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btImprimirActionPerformed
         try {
             MessageFormat headerFormat = new MessageFormat("Relatório de Vendas");
             MessageFormat footerFormat = new MessageFormat("");
-            tbRelatorioVenda.print(JTable.PrintMode.NORMAL, headerFormat, footerFormat);   
+            tbRelatorioVenda.print(JTable.PrintMode.NORMAL, headerFormat, footerFormat);
         } catch (PrinterException e) {
             Logger.getLogger("Erro ao gerar arquivo para impressão. Tente novamente!");
         }
     }//GEN-LAST:event_btImprimirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RelatorioVendasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RelatorioVendasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RelatorioVendasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RelatorioVendasPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RelatorioVendasPrincipal().setVisible(true);
-            }
-        });
-        
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField DataFinal;
@@ -727,21 +374,6 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
     private javax.swing.JButton btImprimir;
     private javax.swing.JButton btSalvar;
     private javax.swing.JButton btVisualizar;
-    private javax.swing.JPanel btnCategorias;
-    private javax.swing.JPanel btnClientes;
-    private javax.swing.JPanel btnContasAPagar;
-    private javax.swing.JPanel btnContasAReceber;
-    private javax.swing.JPanel btnFornecedores;
-    private javax.swing.JPanel btnInicio1;
-    private javax.swing.JPanel btnSair;
-    private javax.swing.JLabel imgCategorias;
-    private javax.swing.JLabel imgClientes;
-    private javax.swing.JLabel imgContasAPagar;
-    private javax.swing.JLabel imgContasAReceber;
-    private javax.swing.JLabel imgFornecedores;
-    private javax.swing.JLabel imgInicio1;
-    private javax.swing.JLabel imgLogo;
-    private javax.swing.JLabel imgSair;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JDesktopPane jDesktopPane4;
     private javax.swing.JLabel jLabel10;
@@ -754,30 +386,9 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblCategorias;
-    private javax.swing.JLabel lblClientes;
-    private javax.swing.JLabel lblContasAPagar;
-    private javax.swing.JLabel lblContasAReceber;
-    private javax.swing.JLabel lblFornecedores;
-    private javax.swing.JLabel lblInicio1;
-    private javax.swing.JLabel lblSair;
-    private javax.swing.JPanel painelLateral1;
     private javax.swing.JComboBox<String> seletorCategoria;
     private javax.swing.JComboBox seletorPagamento;
-    private javax.swing.JSeparator separador;
     private javax.swing.JTable tbRelatorioVenda;
     private javax.swing.JCheckBox vendaEstornada;
     // End of variables declaration//GEN-END:variables
-
-    private Container getContentPane() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void pack() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void setDefaultCloseOperation(int EXIT_ON_CLOSE) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

@@ -283,7 +283,7 @@ public class Login extends javax.swing.JFrame {
         else if (usuario.getSenha().equals(senha)){
             this.setVisible(false);
             //Se passar o usuario como parâmetro ficará mais fácil pra vocês
-            Sistema usuarioLogado = new Sistema(tfUsuario.getText());
+            Sistema usuarioLogado = new Sistema(usuario);
             usuarioLogado.setVisible(true);
         }else{
             lblMenssage.setText("A Senha não confere");

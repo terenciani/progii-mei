@@ -35,16 +35,13 @@ public class Sistema extends javax.swing.JFrame {
     /**
      * Creates new form Sistema
      */
-    public Sistema(String usuario) {
+    public Sistema(Usuario usuario) {
         initComponents();
         panelActive = btnInicio;
         //this.usuario = usuario;
-        jlUsuarioLogado.setText(usuario);
+        jlUsuarioLogado.setText(usuario.getUsuario());
     }
 
-    Sistema(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     /* Sistema(Usuario usuario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
