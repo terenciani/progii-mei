@@ -21,8 +21,15 @@ import br.estacio.mei.visao.usuario.UsuarioPrincipal;
 import br.estacio.mei.visao.vendas.VendaPrincipal;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /**
  *
@@ -113,9 +120,16 @@ public class Sistema extends javax.swing.JFrame {
         lblNomeSistema = new javax.swing.JLabel();
         panelDinamic = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLdata = new javax.swing.JLabel();
+        jLhora = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Apoio ao Micro Empreendedor Individual Regional");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         menuLateral.setBackground(new java.awt.Color(12, 197, 205));
         menuLateral.setMinimumSize(new java.awt.Dimension(64, 64));
@@ -746,6 +760,10 @@ public class Sistema extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Powered by Students of Estácio TV-Morena");
 
+        jLdata.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLhora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout areaDeTrabalhoLayout = new javax.swing.GroupLayout(areaDeTrabalho);
         areaDeTrabalho.setLayout(areaDeTrabalhoLayout);
         areaDeTrabalhoLayout.setHorizontalGroup(
@@ -756,7 +774,11 @@ public class Sistema extends javax.swing.JFrame {
                     .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(lblNomeSistema)
-                        .addGap(12, 273, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLdata, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLhora, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 4, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(panelDinamic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -766,8 +788,14 @@ public class Sistema extends javax.swing.JFrame {
         areaDeTrabalhoLayout.setVerticalGroup(
             areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(areaDeTrabalhoLayout.createSequentialGroup()
-                .addComponent(lblNomeSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addGroup(areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblNomeSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeTrabalhoLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(areaDeTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLhora, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                            .addComponent(jLdata, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)))
                 .addComponent(painelBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelDinamic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -781,9 +809,9 @@ public class Sistema extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(menuLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(areaDeTrabalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(areaDeTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -908,6 +936,17 @@ public class Sistema extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_hoverExited
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+       
+        Date dataSistema = new Date();
+        SimpleDateFormat formato =  new SimpleDateFormat("dd 'de' MMMM 'de' yyyy");
+        jLdata.setText(formato.format(dataSistema));
+        
+        Timer timer = new Timer(1000, new hora());
+        timer.start();
+        
+    }//GEN-LAST:event_formWindowOpened
+
     private void updateColorActive(MouseEvent evt) {
         Component[] components = evt.getComponent().getParent().getComponents();
         for (Component component : components){
@@ -1012,6 +1051,8 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLdata;
+    private javax.swing.JLabel jLhora;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel jlUsuarioLogado;
@@ -1036,4 +1077,14 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel panelDinamic;
     // End of variables declaration//GEN-END:variables
     private Object panelActive;
+    
+    class hora implements ActionListener{
+    @Override
+    public void actionPerformed(ActionEvent e){
+        Calendar now = Calendar.getInstance();
+        jLhora.setText(String.format("%1$tH:%1$tM:%1$tS",now));
+    }
+    
+    }
+    
 }
