@@ -306,11 +306,8 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 }
             }
             relatorioPDF.add(table);
-        } catch (DocumentException de) {
-            lblError.setText("Algo deu errado!");
-            lblError.setVisible(true);
-        } catch(IOException ioe){
-            lblError.setText("Algo deu errado!");
+        } catch (DocumentException | IOException de) {
+            lblError.setText("Relatorio nao pode ser gerado!");
             lblError.setVisible(true);
         }finally{
             relatorioPDF.close();
