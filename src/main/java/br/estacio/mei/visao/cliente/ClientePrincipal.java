@@ -70,7 +70,6 @@ public class ClientePrincipal extends javax.swing.JPanel {
         btnEditarCliente = new javax.swing.JButton();
         btnExcluirCliente = new javax.swing.JButton();
         btnAdicionarNovoCliente = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         txtCampoBusca = new javax.swing.JTextField();
         btnBuscarClientes = new javax.swing.JButton();
@@ -117,14 +116,6 @@ public class ClientePrincipal extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/close.png"))); // NOI18N
-        jButton1.setPreferredSize(new java.awt.Dimension(57, 33));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -138,8 +129,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
                         .addComponent(btnEditarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(btnExcluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -150,9 +140,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
                 .addComponent(btnEditarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(btnExcluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addContainerGap(332, Short.MAX_VALUE))
         );
 
         panelDinamico.add(jPanel5, java.awt.BorderLayout.LINE_END);
@@ -280,12 +268,6 @@ public class ClientePrincipal extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//        panelDinamico.removeAll();
-        panelDinamico.setVisible(false);
-        //System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void btnExcluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirClienteActionPerformed
         if (tbListaClientes.getSelectedRow() >= 0) {
 
@@ -335,7 +317,6 @@ public class ClientePrincipal extends javax.swing.JPanel {
     private javax.swing.JButton btnBuscarClientes;
     private javax.swing.JButton btnEditarCliente;
     private javax.swing.JButton btnExcluirCliente;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;

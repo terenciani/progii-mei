@@ -11,7 +11,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-34,0,0,3,3"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-31,0,0,3,43"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -38,71 +38,16 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel_codigo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel_cpfCnpj" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel_nome" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel_email" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="txtCodigo" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
-                                                  <Component id="txtCpfCNPJ" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
-                                                  <Component id="txtNome" alignment="0" pref="254" max="32767" attributes="0"/>
-                                                  <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel_inscrEstadual" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel_nomeFantasia" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel_foneRes" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="lblMsgCampoObrigatorio" min="-2" pref="290" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel_estado" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel_endereco" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel_complemento" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtRua" min="-2" pref="254" max="-2" attributes="0"/>
-                                          <Component id="txtComplemento" min="-2" pref="178" max="-2" attributes="0"/>
-                                          <Component id="cbEstado" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtConfirma" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel_bairro" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel_numero" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel_bairro1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TxtInscrEstadual" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
-                                  <Component id="txtNomeFantasia" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
-                                  <Component id="txtTelefone" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <Component id="txtCidade" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="txtNumero" min="-2" pref="58" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                                      <Component id="lblCep" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtCep" min="-2" pref="93" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtBairro" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                              <Component id="lblMsgCampoObrigatorio" min="-2" pref="290" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="163" pref="163" max="-2" attributes="0"/>
+                              <Component id="cbEstado" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="163" pref="163" max="-2" attributes="0"/>
+                              <Component id="txtConfirma" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="511" pref="511" max="-2" attributes="0"/>
@@ -111,20 +56,88 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jSeparator1" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jSeparator2" min="-2" pref="709" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel_codigo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_cpfCnpj" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_nome" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_email" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel_endereco" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_complemento" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_estado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtRua" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+                                          <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtCpfCNPJ" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
+                                          <Component id="txtComplemento" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                          <Component id="txtCodigo" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel_inscrEstadual" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_nomeFantasia" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_foneRes" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel_bairro" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_bairro1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_numero" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="TxtInscrEstadual" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
+                                          <Component id="txtNomeFantasia" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+                                          <Component id="txtTelefone" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="txtCidade" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="txtNumero" min="-2" pref="58" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                              <Component id="lblCep" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtCep" min="-2" pref="93" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="txtBairro" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jSeparator1" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -137,8 +150,8 @@
                       <Component id="lblMsgCampoObrigatorio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel_codigo" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="txtCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_codigo" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -166,7 +179,7 @@
                           <Component id="jLabel_foneRes" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="29" max="32767" attributes="0"/>
+                      <EmptySpace pref="71" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jSeparator1" alignment="1" min="-2" pref="8" max="-2" attributes="0"/>
@@ -218,11 +231,17 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel_codigo">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_cpfCnpj">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="CPF / CNPJ: *"/>
               </Properties>
             </Component>
@@ -235,6 +254,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_nome">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Nome / Raz&#xe3;o Social: *"/>
               </Properties>
             </Component>
@@ -245,6 +267,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_foneRes">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Telefone:"/>
               </Properties>
             </Component>
@@ -255,6 +280,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="0" red="ff" type="rgb"/>
                 </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
                 <Property name="name" type="java.lang.String" value="Inclus&#xe3;o de Cliente" noResource="true"/>
               </Properties>
@@ -264,6 +292,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_endereco">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Rua:"/>
               </Properties>
             </Component>
@@ -271,6 +302,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_complemento">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Complemento:"/>
               </Properties>
             </Component>
@@ -278,11 +312,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_estado">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Estado:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbEstado">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="26">
                     <StringItem index="0" value="AC"/>
@@ -320,6 +360,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_inscrEstadual">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Inscr Estadual:"/>
               </Properties>
             </Component>
@@ -327,6 +370,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_nomeFantasia">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Nome Fantasia:"/>
               </Properties>
             </Component>
@@ -336,11 +382,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_numero">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_bairro">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Bairro:"/>
               </Properties>
             </Component>
@@ -350,11 +402,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_bairro1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cidade:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_email">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Email:"/>
               </Properties>
             </Component>
@@ -365,6 +423,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="cc" red="0" type="rgb"/>
                 </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Confirmar"/>
               </Properties>
               <Events>
@@ -374,13 +435,16 @@
             <Component class="javax.swing.JLabel" name="lblMsgCampoObrigatorio">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="10" style="0"/>
+                  <Font name="sansserif" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Campos com * s&#xe3;o obrigat&#xf3;rios"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCep">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="14" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="CEP:"/>
               </Properties>
             </Component>
@@ -389,7 +453,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
+                  <Font name="sansserif" size="14" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Endere&#xe7;o"/>
               </Properties>
@@ -401,7 +465,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
+                  <Font name="sansserif" size="14" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Contato"/>
               </Properties>
