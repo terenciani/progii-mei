@@ -232,8 +232,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     ArrayList<Produto> produtosPorCodigo = produtoDao.pesquisarPorCodigo(pesqCodigo);
                     addProductToTable(produtosPorCodigo, tableColumns);  
                 } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
+                    showSearchError();
                 }
 
                 break;
@@ -245,8 +244,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
                     addProductToTable(produtosPorNome, tableColumns);  
                 } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
+                    showSearchError();
                 }
                 break;
             case 2:
@@ -258,8 +256,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     for (int i=0; i< produtosPorFornecedor.size();i++)
                     addProductToTable(produtosPorFornecedor, tableColumns);
                 } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
+                    showSearchError();
                 }
                     break;
             case 3:
@@ -270,8 +267,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     ArrayList<Produto> produtosPorPrecoCompra = produtoDao.pesquisarPorPrecoCompra(pesqPrecoCompra);
                     addProductToTable(produtosPorPrecoCompra, tableColumns);
                 } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
+                    showSearchError();
                 }
                     break;
             case 4:
@@ -282,8 +278,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     ArrayList<Produto> produtosPorPrecoVenda = produtoDao.pesquisarPorPrecoVenda(pesqPrecoVenda);
                     addProductToTable(produtosPorPrecoVenda, tableColumns);
                 } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
+                    showSearchError();
                 }
                     break;
             case 5:
@@ -296,8 +291,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     ArrayList<Produto> produtosPorQtdEstoque = produtoDao.pesquisarPorQtdEstoque(pesqQtdEstoque);
                     addProductToTable(produtosPorQtdEstoque, tableColumns);
                 } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
+                    showSearchError();
                 }
                     break;
         }
@@ -335,10 +329,10 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             }
             relatorioPDF.add(table);
         } catch (DocumentException de) {
-            lblError.setText("Documento deu merda!");
+            lblError.setText("Algo deu errado!");
             lblError.setVisible(true);
-        }catch(IOException ioe){
-            lblError.setText("Outra coisa deu merda!");
+        } catch(IOException ioe){
+            lblError.setText("Algo deu errado!");
             lblError.setVisible(true);
         }finally{
             relatorioPDF.close();
@@ -362,6 +356,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> tipoPesquisa;
     private javax.swing.JTextPane txtPesquisar;
     // End of variables declaration//GEN-END:variables
+   
     private void addProductToTable(ArrayList<Produto> products, DefaultTableModel TableColumns){
         for (int i=0; i< products.size();i++) {
             Produto p = products.get(i);
@@ -381,5 +376,9 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             tableColumns.removeRow(0);
         }
     }
-
+    
+    private void showSearchError(){
+        lblError.setText("Pesquisa Invalida!");
+        lblError.setVisible(true);
+    }
 }
