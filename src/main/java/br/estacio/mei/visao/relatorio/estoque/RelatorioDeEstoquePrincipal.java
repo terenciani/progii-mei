@@ -223,77 +223,55 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         int itemSelecionado = tipoPesquisa.getSelectedIndex();
         DefaultTableModel tableColumns = (DefaultTableModel)tbProdutos.getModel();
-        switch(itemSelecionado) {
-            case 0:
-                try {
+        try {
+            switch(itemSelecionado) {
+                case 0:
                     lblError.setVisible(false);
                     int pesqCodigo = Integer.parseInt(txtPesquisar.getText());
                     clearTable(tableColumns);
                     ArrayList<Produto> produtosPorCodigo = produtoDao.pesquisarPorCodigo(pesqCodigo);
                     addProductToTable(produtosPorCodigo, tableColumns);  
-                } catch (Exception e) {
-                    showSearchError();
-                }
-
-                break;
-            case 1:
-                try {
+                    break;
+                case 1:
                     lblError.setVisible(false);
                     String pesqNome = txtPesquisar.getText();
                     clearTable(tableColumns);
                     ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
                     addProductToTable(produtosPorNome, tableColumns);  
-                } catch (Exception e) {
-                    showSearchError();
-                }
-                break;
-            case 2:
-                try {
+                    break;
+                case 2:
                     lblError.setVisible(false);
                     String pesqFornecedor = txtPesquisar.getText();
                     clearTable(tableColumns);
                     ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorFornecedor(pesqFornecedor);
-                    for (int i=0; i< produtosPorFornecedor.size();i++)
                     addProductToTable(produtosPorFornecedor, tableColumns);
-                } catch (Exception e) {
-                    showSearchError();
-                }
-                    break;
-            case 3:
-                try {
+
+                        break;
+                case 3:
                     lblError.setVisible(false);
                     int pesqPrecoCompra = Integer.parseInt(txtPesquisar.getText());
                     clearTable(tableColumns);
                     ArrayList<Produto> produtosPorPrecoCompra = produtoDao.pesquisarPorPrecoCompra(pesqPrecoCompra);
                     addProductToTable(produtosPorPrecoCompra, tableColumns);
-                } catch (Exception e) {
-                    showSearchError();
-                }
                     break;
-            case 4:
-                try {
+                case 4:
                     lblError.setVisible(false);
                     int pesqPrecoVenda = Integer.parseInt(txtPesquisar.getText());
                     clearTable(tableColumns);
                     ArrayList<Produto> produtosPorPrecoVenda = produtoDao.pesquisarPorPrecoVenda(pesqPrecoVenda);
                     addProductToTable(produtosPorPrecoVenda, tableColumns);
-                } catch (Exception e) {
-                    showSearchError();
-                }
                     break;
-            case 5:
-                try {
+                case 5:
                     lblError.setVisible(false);
                     int pesqQtdEstoque = Integer.parseInt(txtPesquisar.getText());
-                    while (tableColumns.getRowCount() != 0) {
-                        tableColumns.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorQtdEstoque = produtoDao.pesquisarPorQtdEstoque(pesqQtdEstoque);
                     addProductToTable(produtosPorQtdEstoque, tableColumns);
-                } catch (Exception e) {
-                    showSearchError();
-                }
-                    break;
+                        break;
+            }
+        } catch (Exception e) {
+            lblError.setText("Pesquisa Invalida!");
+            lblError.setVisible(true);
         }
     }//GEN-LAST:event_btnPesquisarActionPerformed
     
@@ -375,10 +353,5 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         while (tableColumns.getRowCount() != 0) {
             tableColumns.removeRow(0);
         }
-    }
-    
-    private void showSearchError(){
-        lblError.setText("Pesquisa Invalida!");
-        lblError.setVisible(true);
     }
 }
