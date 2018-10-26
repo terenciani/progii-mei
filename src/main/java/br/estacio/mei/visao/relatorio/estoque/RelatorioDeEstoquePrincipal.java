@@ -37,6 +37,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         initComponents();
         lblError.setVisible(false);
         tbProdutos.setRowHeight(15);
+//        Cria dados para poder ser testado
         Fornecedor fornecedor = new Fornecedor();	
         fornecedor.setRazaoSocial("Estacio");	
         FornecedorDao fornecedorDao = new FornecedorDaoEstatica();	
@@ -48,10 +49,10 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         	
         produtoDao.salvar(produto);
                
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
-
+        DefaultTableModel tableColumns = (DefaultTableModel)tbProdutos.getModel();
+        clearTable(tableColumns);
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
-        addProductToTable(listaDeProdutos, modeloDeColunasDaTabela);  
+        addProductToTable(listaDeProdutos, tableColumns);  
     }
 
     /**
@@ -220,17 +221,15 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         int itemSelecionado = tipoPesquisa.getSelectedIndex();
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
+        DefaultTableModel tableColumns = (DefaultTableModel)tbProdutos.getModel();
         switch(itemSelecionado) {
             case 0:
                 try {
                     lblError.setVisible(false);
                     int pesqCodigo = Integer.parseInt(txtPesquisar.getText());
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorCodigo = produtoDao.pesquisarPorCodigo(pesqCodigo);
-                    addProductToTable(produtosPorCodigo, modeloDeColunasDaTabela);  
+                    addProductToTable(produtosPorCodigo, tableColumns);  
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -241,11 +240,9 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 try {
                     lblError.setVisible(false);
                     String pesqNome = txtPesquisar.getText();
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
-                    addProductToTable(produtosPorNome, modeloDeColunasDaTabela);  
+                    addProductToTable(produtosPorNome, tableColumns);  
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -255,12 +252,10 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 try {
                     lblError.setVisible(false);
                     String pesqFornecedor = txtPesquisar.getText();
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorFornecedor(pesqFornecedor);
                     for (int i=0; i< produtosPorFornecedor.size();i++)
-                    addProductToTable(produtosPorFornecedor, modeloDeColunasDaTabela);
+                    addProductToTable(produtosPorFornecedor, tableColumns);
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -270,11 +265,9 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 try {
                     lblError.setVisible(false);
                     int pesqPrecoCompra = Integer.parseInt(txtPesquisar.getText());
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorPrecoCompra = produtoDao.pesquisarPorPrecoCompra(pesqPrecoCompra);
-                    addProductToTable(produtosPorPrecoCompra, modeloDeColunasDaTabela);
+                    addProductToTable(produtosPorPrecoCompra, tableColumns);
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -284,11 +277,9 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 try {
                     lblError.setVisible(false);
                     int pesqPrecoVenda = Integer.parseInt(txtPesquisar.getText());
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorPrecoVenda = produtoDao.pesquisarPorPrecoVenda(pesqPrecoVenda);
-                    addProductToTable(produtosPorPrecoVenda, modeloDeColunasDaTabela);
+                    addProductToTable(produtosPorPrecoVenda, tableColumns);
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -298,11 +289,11 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 try {
                     lblError.setVisible(false);
                     int pesqQtdEstoque = Integer.parseInt(txtPesquisar.getText());
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
+                    while (tableColumns.getRowCount() != 0) {
+                        tableColumns.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorQtdEstoque = produtoDao.pesquisarPorQtdEstoque(pesqQtdEstoque);
-                    addProductToTable(produtosPorQtdEstoque, modeloDeColunasDaTabela);
+                    addProductToTable(produtosPorQtdEstoque, tableColumns);
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -322,6 +313,12 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             lineData[4] = p.getPrecoVenda();
             lineData[5] = p.getQuantidade();
             TableColumns.addRow(lineData);
+        }
+    }
+    
+    private void clearTable(DefaultTableModel tableColumns) {
+        while (tableColumns.getRowCount() != 0) {
+            tableColumns.removeRow(0);
         }
     }
     
