@@ -51,18 +51,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
 
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
-        for (int i=0; i< listaDeProdutos.size();i++)
-        {
-            Produto p = listaDeProdutos.get(i);
-            Object[] dadosDaLinha = new Object[6];
-            dadosDaLinha[0] = p.getCodigo();
-            dadosDaLinha[1] = p.getNome();
-            dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-            dadosDaLinha[3] = p.getPrecoCompra();
-            dadosDaLinha[4] = p.getPrecoVenda();
-            dadosDaLinha[5] = p.getQuantidade();
-            modeloDeColunasDaTabela.addRow(dadosDaLinha);
-        }
+        addProductToTable(listaDeProdutos, modeloDeColunasDaTabela);  
     }
 
     /**
@@ -241,18 +230,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorCodigo = produtoDao.pesquisarPorCodigo(pesqCodigo);
-                    for (int i=0; i< produtosPorCodigo.size();i++)
-                       {
-                           Produto p = produtosPorCodigo.get(i);
-                           Object[] dadosDaLinha = new Object[6];
-                           dadosDaLinha[0] = p.getCodigo();
-                           dadosDaLinha[1] = p.getNome();
-                           dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                           dadosDaLinha[3] = p.getPrecoCompra();
-                           dadosDaLinha[4] = p.getPrecoVenda();
-                           dadosDaLinha[5] = p.getQuantidade();
-                           modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                       }
+                    addProductToTable(produtosPorCodigo, modeloDeColunasDaTabela);  
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -267,18 +245,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
-                    for (int i=0; i< produtosPorNome.size();i++)
-                    {
-                        Produto p = produtosPorNome.get(i);
-                        Object[] dadosDaLinha = new Object[6];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getPrecoCompra();
-                        dadosDaLinha[4] = p.getPrecoVenda();
-                        dadosDaLinha[5] = p.getQuantidade();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }    
+                    addProductToTable(produtosPorNome, modeloDeColunasDaTabela);  
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -293,17 +260,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     }
                     ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorFornecedor(pesqFornecedor);
                     for (int i=0; i< produtosPorFornecedor.size();i++)
-                    {
-                        Produto p = produtosPorFornecedor.get(i);
-                        Object[] dadosDaLinha = new Object[6];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getPrecoCompra();
-                        dadosDaLinha[4] = p.getPrecoVenda();
-                        dadosDaLinha[5] = p.getQuantidade();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }
+                    addProductToTable(produtosPorFornecedor, modeloDeColunasDaTabela);
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -317,18 +274,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorPrecoCompra = produtoDao.pesquisarPorPrecoCompra(pesqPrecoCompra);
-                    for (int i=0; i< produtosPorPrecoCompra.size();i++)
-                    {
-                        Produto p = produtosPorPrecoCompra.get(i);
-                        Object[] dadosDaLinha = new Object[6];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getPrecoCompra();
-                        dadosDaLinha[4] = p.getPrecoVenda();
-                        dadosDaLinha[5] = p.getQuantidade();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }
+                    addProductToTable(produtosPorPrecoCompra, modeloDeColunasDaTabela);
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -342,18 +288,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorPrecoVenda = produtoDao.pesquisarPorPrecoVenda(pesqPrecoVenda);
-                    for (int i=0; i< produtosPorPrecoVenda.size();i++)
-                    {
-                        Produto p = produtosPorPrecoVenda.get(i);
-                        Object[] dadosDaLinha = new Object[6];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getPrecoCompra();
-                        dadosDaLinha[4] = p.getPrecoVenda();
-                        dadosDaLinha[5] = p.getQuantidade();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }
+                    addProductToTable(produtosPorPrecoVenda, modeloDeColunasDaTabela);
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -367,18 +302,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                         modeloDeColunasDaTabela.removeRow(0);
                     }
                     ArrayList<Produto> produtosPorQtdEstoque = produtoDao.pesquisarPorQtdEstoque(pesqQtdEstoque);
-                    for (int i=0; i< produtosPorQtdEstoque.size();i++)
-                    {
-                        Produto p = produtosPorQtdEstoque.get(i);
-                        Object[] dadosDaLinha = new Object[6];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getPrecoCompra();
-                        dadosDaLinha[4] = p.getPrecoVenda();
-                        dadosDaLinha[5] = p.getQuantidade();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }
+                    addProductToTable(produtosPorQtdEstoque, modeloDeColunasDaTabela);
                 } catch (Exception e) {
                     lblError.setText("Pesquisa Invalida!");
                     lblError.setVisible(true);
@@ -387,6 +311,20 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
+    private void addProductToTable(ArrayList<Produto> products, DefaultTableModel TableColumns){
+        for (int i=0; i< products.size();i++) {
+            Produto p = products.get(i);
+            Object[] lineData = new Object[6];
+            lineData[0] = p.getCodigo();
+            lineData[1] = p.getNome();
+            lineData[2] = p.getFornecedor().getRazaoSocial();
+            lineData[3] = p.getPrecoCompra();
+            lineData[4] = p.getPrecoVenda();
+            lineData[5] = p.getQuantidade();
+            TableColumns.addRow(lineData);
+        }
+    }
+    
     private void tipoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoPesquisaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tipoPesquisaActionPerformed
