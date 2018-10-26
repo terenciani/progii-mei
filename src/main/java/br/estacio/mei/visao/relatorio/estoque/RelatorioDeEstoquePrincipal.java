@@ -37,18 +37,19 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         initComponents();
         lblError.setVisible(false);
         tbProdutos.setRowHeight(15);
+        
 //        Cria dados para poder ser testado
-        Fornecedor fornecedor = new Fornecedor();	
-        fornecedor.setRazaoSocial("Estacio");	
-        FornecedorDao fornecedorDao = new FornecedorDaoEstatica();	
-        fornecedorDao.salvarFornecedor(fornecedor);	
-        Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);	
-        produtoDao.salvar(produto);	
-        	
-        produto = new Produto(1, "Short", 5, fornecedor, 40, 80);	
-        	
-        produtoDao.salvar(produto);
-               
+        if (produtoDao.buscarProdutos().size() <= 0) {
+            Fornecedor fornecedor = new Fornecedor();	
+            fornecedor.setRazaoSocial("Estacio");	
+            FornecedorDao fornecedorDao = new FornecedorDaoEstatica();	
+            fornecedorDao.salvarFornecedor(fornecedor);	
+            Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);	
+            produtoDao.salvar(produto);		
+            produto = new Produto(1, "Short", 5, fornecedor, 40, 80);
+            produtoDao.salvar(produto);
+        }
+//      Insere Todos os produto na tabela
         DefaultTableModel tableColumns = (DefaultTableModel)tbProdutos.getModel();
         clearTable(tableColumns);
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
@@ -301,49 +302,16 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                     break;
         }
     }//GEN-LAST:event_btnPesquisarActionPerformed
-
-    private void addProductToTable(ArrayList<Produto> products, DefaultTableModel TableColumns){
-        for (int i=0; i< products.size();i++) {
-            Produto p = products.get(i);
-            Object[] lineData = new Object[6];
-            lineData[0] = p.getCodigo();
-            lineData[1] = p.getNome();
-            lineData[2] = p.getFornecedor().getRazaoSocial();
-            lineData[3] = p.getPrecoCompra();
-            lineData[4] = p.getPrecoVenda();
-            lineData[5] = p.getQuantidade();
-            TableColumns.addRow(lineData);
-        }
-    }
-    
-    private void clearTable(DefaultTableModel tableColumns) {
-        while (tableColumns.getRowCount() != 0) {
-            tableColumns.removeRow(0);
-        }
-    }
     
     private void tipoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoPesquisaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tipoPesquisaActionPerformed
 
     private void btnTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodosActionPerformed
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
-        while (modeloDeColunasDaTabela.getRowCount() != 0) {
-            modeloDeColunasDaTabela.removeRow(0);
-        }
+        DefaultTableModel tableColumns = (DefaultTableModel)tbProdutos.getModel();
+        clearTable(tableColumns);
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
-        for (int i=0; i< listaDeProdutos.size();i++)
-        {
-            Produto p = listaDeProdutos.get(i);
-            Object[] dadosDaLinha = new Object[6];
-            dadosDaLinha[0] = p.getCodigo();
-            dadosDaLinha[1] = p.getNome();
-            dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-            dadosDaLinha[3] = p.getPrecoCompra();
-            dadosDaLinha[4] = p.getPrecoVenda();
-            dadosDaLinha[5] = p.getQuantidade();
-            modeloDeColunasDaTabela.addRow(dadosDaLinha);
-        }
+        addProductToTable(listaDeProdutos, tableColumns);
     }//GEN-LAST:event_btnTodosActionPerformed
 
     private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
@@ -394,4 +362,24 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> tipoPesquisa;
     private javax.swing.JTextPane txtPesquisar;
     // End of variables declaration//GEN-END:variables
+    private void addProductToTable(ArrayList<Produto> products, DefaultTableModel TableColumns){
+        for (int i=0; i< products.size();i++) {
+            Produto p = products.get(i);
+            Object[] lineData = new Object[6];
+            lineData[0] = p.getCodigo();
+            lineData[1] = p.getNome();
+            lineData[2] = p.getFornecedor().getRazaoSocial();
+            lineData[3] = p.getPrecoCompra();
+            lineData[4] = p.getPrecoVenda();
+            lineData[5] = p.getQuantidade();
+            TableColumns.addRow(lineData);
+        }
+    }
+    
+    private void clearTable(DefaultTableModel tableColumns) {
+        while (tableColumns.getRowCount() != 0) {
+            tableColumns.removeRow(0);
+        }
+    }
+
 }
