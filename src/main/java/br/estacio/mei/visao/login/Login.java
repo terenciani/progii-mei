@@ -8,6 +8,7 @@ package br.estacio.mei.visao.login;
 import br.estacio.mei.dao.UsuarioDao;
 import br.estacio.mei.dao.implementacao.UsuarioDaoEstatica;
 import br.estacio.mei.model.Usuario;
+import javax.swing.JPanel;
 
 /**
  *
@@ -55,6 +56,9 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        btnSair = new javax.swing.JPanel();
+        imgSair = new javax.swing.JLabel();
+        lblSair = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -63,6 +67,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setUndecorated(true);
 
         bgEsquerda.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -179,7 +184,7 @@ public class Login extends javax.swing.JFrame {
         bgEsquerdaLayout.setVerticalGroup(
             bgEsquerdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgEsquerdaLayout.createSequentialGroup()
-                .addContainerGap(78, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanelCentralizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
         );
@@ -222,33 +227,80 @@ public class Login extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/login-productive.png"))); // NOI18N
         jPanel1.add(jLabel6);
 
+        btnSair.setBackground(new java.awt.Color(12, 180, 206));
+        btnSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSairhoverEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSairhoverExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSairMousePressed(evt);
+            }
+        });
+
+        imgSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_Sign_Out_25px.png"))); // NOI18N
+
+        lblSair.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblSair.setForeground(new java.awt.Color(255, 255, 255));
+        lblSair.setText("Sair");
+        lblSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblSairMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnSairLayout = new javax.swing.GroupLayout(btnSair);
+        btnSair.setLayout(btnSairLayout);
+        btnSairLayout.setHorizontalGroup(
+            btnSairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnSairLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imgSair)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblSair))
+        );
+        btnSairLayout.setVerticalGroup(
+            btnSairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgSair, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+            .addComponent(lblSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout bgDireitaLayout = new javax.swing.GroupLayout(bgDireita);
         bgDireita.setLayout(bgDireitaLayout);
         bgDireitaLayout.setHorizontalGroup(
             bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(labelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(labelFooterLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgDireitaLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(labelIconLogin)
-                .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
             .addComponent(labelSubTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgDireitaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgDireitaLayout.createSequentialGroup()
+                        .addComponent(labelIconLogin)
+                        .addGap(40, 40, 40))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgDireitaLayout.createSequentialGroup()
+                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         bgDireitaLayout.setVerticalGroup(
             bgDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgDireitaLayout.createSequentialGroup()
                 .addComponent(labelIconLogin)
-                .addGap(85, 85, 85)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
                 .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelSubTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addComponent(labelFooterLogin)
                 .addContainerGap())
         );
@@ -264,7 +316,7 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgDireita, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+            .addComponent(bgDireita, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
             .addComponent(bgEsquerda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -295,6 +347,42 @@ public class Login extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void btnSairhoverEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairhoverEntered
+        /*
+        Primeiro faço uma verificação de segurança se a origem (fonte)
+        do evento é realmente um JPanel
+        Isso foi feito pois estou usando o mesmo evento para todos os
+        itens do menu.
+        */
+        if (evt.getSource() instanceof JPanel) {
+            /*  O método getSource retorna um Object, por isso faço a conversão (cast)
+            para JPanel
+            */
+            JPanel panel = (JPanel) evt.getSource();
+            /*  o método change color recebe como parâmetro um JPanel e faz a
+            mudança de cores, subistitui o setColor (já existe esse método na
+                classe Jframe)
+            */
+            changeColor(panel);
+        }
+    }//GEN-LAST:event_btnSairhoverEntered
+
+    private void btnSairhoverExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairhoverExited
+        Object panelActive = null;
+        if (evt.getSource() instanceof JPanel && !evt.getSource().equals(panelActive)) {
+            JPanel panel = (JPanel) evt.getSource();
+            resetColor(panel);
+        }
+    }//GEN-LAST:event_btnSairhoverExited
+
+    private void btnSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMousePressed
+        System.exit(0);
+    }//GEN-LAST:event_btnSairMousePressed
+
+    private void lblSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMousePressed
+        System.exit(0);
+    }//GEN-LAST:event_lblSairMousePressed
 
     /**
      * @param args the command line arguments
@@ -367,6 +455,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel LabelUsuário;
     private javax.swing.JPanel bgDireita;
     private javax.swing.JPanel bgEsquerda;
+    private javax.swing.JPanel btnSair;
+    private javax.swing.JLabel imgSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -383,9 +473,18 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel labelSubTitulo;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel lblMenssage;
+    private javax.swing.JLabel lblSair;
     private javax.swing.JSeparator separatorSenha;
     private javax.swing.JSeparator separatorUsuario;
     private javax.swing.JPasswordField tfSenha;
     private javax.swing.JTextField tfUsuario;
     // End of variables declaration//GEN-END:variables
+
+    private void changeColor(JPanel panel) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void resetColor(JPanel panel) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

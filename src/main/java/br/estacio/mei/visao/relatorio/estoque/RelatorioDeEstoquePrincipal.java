@@ -37,32 +37,23 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         initComponents();
         lblError.setVisible(false);
         tbProdutos.setRowHeight(15);
-        Fornecedor fornecedor = new Fornecedor();	
-        fornecedor.setRazaoSocial("Estacio");	
-        FornecedorDao fornecedorDao = new FornecedorDaoEstatica();	
-        fornecedorDao.salvarFornecedor(fornecedor);	
-        Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);	
-        produtoDao.salvar(produto);	
-        	
-        produto = new Produto(1, "Short", 5, fornecedor, 40, 80);	
-        	
-        produtoDao.salvar(produto);
-               
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
-
-        ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
-        for (int i=0; i< listaDeProdutos.size();i++)
-        {
-            Produto p = listaDeProdutos.get(i);
-            Object[] dadosDaLinha = new Object[6];
-            dadosDaLinha[0] = p.getCodigo();
-            dadosDaLinha[1] = p.getNome();
-            dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-            dadosDaLinha[3] = p.getPrecoCompra();
-            dadosDaLinha[4] = p.getPrecoVenda();
-            dadosDaLinha[5] = p.getQuantidade();
-            modeloDeColunasDaTabela.addRow(dadosDaLinha);
+        
+//        Cria dados para poder ser testado
+        if (produtoDao.buscarProdutos().size() <= 0) {
+            Fornecedor fornecedor = new Fornecedor();	
+            fornecedor.setRazaoSocial("Estacio");	
+            FornecedorDao fornecedorDao = new FornecedorDaoEstatica();	
+            fornecedorDao.salvarFornecedor(fornecedor);	
+            Produto produto = new Produto(0, "Camisa", 10, fornecedor, 10, 20);	
+            produtoDao.salvar(produto);		
+            produto = new Produto(1, "Short", 5, fornecedor, 40, 80);
+            produtoDao.salvar(produto);
         }
+//      Insere Todos os produto na tabela
+        DefaultTableModel tableColumns = (DefaultTableModel)tbProdutos.getModel();
+        clearTable(tableColumns);
+        ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
+        addProductToTable(listaDeProdutos, tableColumns);  
     }
 
     /**
@@ -231,184 +222,68 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         int itemSelecionado = tipoPesquisa.getSelectedIndex();
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
-        switch(itemSelecionado) {
-            case 0:
-                try {
+        DefaultTableModel tableColumns = (DefaultTableModel)tbProdutos.getModel();
+        try {
+            switch(itemSelecionado) {
+                case 0:
                     lblError.setVisible(false);
                     int pesqCodigo = Integer.parseInt(txtPesquisar.getText());
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorCodigo = produtoDao.pesquisarPorCodigo(pesqCodigo);
-                    for (int i=0; i< produtosPorCodigo.size();i++)
-                       {
-                           Produto p = produtosPorCodigo.get(i);
-                           Object[] dadosDaLinha = new Object[6];
-                           dadosDaLinha[0] = p.getCodigo();
-                           dadosDaLinha[1] = p.getNome();
-                           dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                           dadosDaLinha[3] = p.getPrecoCompra();
-                           dadosDaLinha[4] = p.getPrecoVenda();
-                           dadosDaLinha[5] = p.getQuantidade();
-                           modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                       }
-                } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
-                }
-
-                break;
-            case 1:
-                try {
+                    addProductToTable(produtosPorCodigo, tableColumns);  
+                    break;
+                case 1:
                     lblError.setVisible(false);
                     String pesqNome = txtPesquisar.getText();
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
-                    for (int i=0; i< produtosPorNome.size();i++)
-                    {
-                        Produto p = produtosPorNome.get(i);
-                        Object[] dadosDaLinha = new Object[6];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getPrecoCompra();
-                        dadosDaLinha[4] = p.getPrecoVenda();
-                        dadosDaLinha[5] = p.getQuantidade();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }    
-                } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
-                }
-                break;
-            case 2:
-                try {
+                    addProductToTable(produtosPorNome, tableColumns);  
+                    break;
+                case 2:
                     lblError.setVisible(false);
                     String pesqFornecedor = txtPesquisar.getText();
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorFornecedor(pesqFornecedor);
-                    for (int i=0; i< produtosPorFornecedor.size();i++)
-                    {
-                        Produto p = produtosPorFornecedor.get(i);
-                        Object[] dadosDaLinha = new Object[6];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getPrecoCompra();
-                        dadosDaLinha[4] = p.getPrecoVenda();
-                        dadosDaLinha[5] = p.getQuantidade();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }
-                } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
-                }
-                    break;
-            case 3:
-                try {
+                    addProductToTable(produtosPorFornecedor, tableColumns);
+
+                        break;
+                case 3:
                     lblError.setVisible(false);
                     int pesqPrecoCompra = Integer.parseInt(txtPesquisar.getText());
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorPrecoCompra = produtoDao.pesquisarPorPrecoCompra(pesqPrecoCompra);
-                    for (int i=0; i< produtosPorPrecoCompra.size();i++)
-                    {
-                        Produto p = produtosPorPrecoCompra.get(i);
-                        Object[] dadosDaLinha = new Object[6];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getPrecoCompra();
-                        dadosDaLinha[4] = p.getPrecoVenda();
-                        dadosDaLinha[5] = p.getQuantidade();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }
-                } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
-                }
+                    addProductToTable(produtosPorPrecoCompra, tableColumns);
                     break;
-            case 4:
-                try {
+                case 4:
                     lblError.setVisible(false);
                     int pesqPrecoVenda = Integer.parseInt(txtPesquisar.getText());
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorPrecoVenda = produtoDao.pesquisarPorPrecoVenda(pesqPrecoVenda);
-                    for (int i=0; i< produtosPorPrecoVenda.size();i++)
-                    {
-                        Produto p = produtosPorPrecoVenda.get(i);
-                        Object[] dadosDaLinha = new Object[6];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getPrecoCompra();
-                        dadosDaLinha[4] = p.getPrecoVenda();
-                        dadosDaLinha[5] = p.getQuantidade();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }
-                } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
-                }
+                    addProductToTable(produtosPorPrecoVenda, tableColumns);
                     break;
-            case 5:
-                try {
+                case 5:
                     lblError.setVisible(false);
                     int pesqQtdEstoque = Integer.parseInt(txtPesquisar.getText());
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
+                    clearTable(tableColumns);
                     ArrayList<Produto> produtosPorQtdEstoque = produtoDao.pesquisarPorQtdEstoque(pesqQtdEstoque);
-                    for (int i=0; i< produtosPorQtdEstoque.size();i++)
-                    {
-                        Produto p = produtosPorQtdEstoque.get(i);
-                        Object[] dadosDaLinha = new Object[6];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getPrecoCompra();
-                        dadosDaLinha[4] = p.getPrecoVenda();
-                        dadosDaLinha[5] = p.getQuantidade();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }
-                } catch (Exception e) {
-                    lblError.setText("Pesquisa Invalida!");
-                    lblError.setVisible(true);
-                }
-                    break;
+                    addProductToTable(produtosPorQtdEstoque, tableColumns);
+                        break;
+            }
+        } catch (Exception e) {
+            lblError.setText("Pesquisa Invalida!");
+            lblError.setVisible(true);
         }
     }//GEN-LAST:event_btnPesquisarActionPerformed
-
+    
     private void tipoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoPesquisaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tipoPesquisaActionPerformed
 
     private void btnTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodosActionPerformed
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)tbProdutos.getModel();
-        while (modeloDeColunasDaTabela.getRowCount() != 0) {
-            modeloDeColunasDaTabela.removeRow(0);
-        }
+        DefaultTableModel tableColumns = (DefaultTableModel)tbProdutos.getModel();
+        clearTable(tableColumns);
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
-        for (int i=0; i< listaDeProdutos.size();i++)
-        {
-            Produto p = listaDeProdutos.get(i);
-            Object[] dadosDaLinha = new Object[6];
-            dadosDaLinha[0] = p.getCodigo();
-            dadosDaLinha[1] = p.getNome();
-            dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-            dadosDaLinha[3] = p.getPrecoCompra();
-            dadosDaLinha[4] = p.getPrecoVenda();
-            dadosDaLinha[5] = p.getQuantidade();
-            modeloDeColunasDaTabela.addRow(dadosDaLinha);
-        }
+        addProductToTable(listaDeProdutos, tableColumns);
     }//GEN-LAST:event_btnTodosActionPerformed
 
     private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
@@ -431,11 +306,8 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 }
             }
             relatorioPDF.add(table);
-        } catch (DocumentException de) {
-            lblError.setText("Documento deu merda!");
-            lblError.setVisible(true);
-        }catch(IOException ioe){
-            lblError.setText("Outra coisa deu merda!");
+        } catch (DocumentException | IOException de) {
+            lblError.setText("Relatorio nao pode ser gerado!");
             lblError.setVisible(true);
         }finally{
             relatorioPDF.close();
@@ -459,4 +331,24 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> tipoPesquisa;
     private javax.swing.JTextPane txtPesquisar;
     // End of variables declaration//GEN-END:variables
+   
+    private void addProductToTable(ArrayList<Produto> products, DefaultTableModel TableColumns){
+        for (int i=0; i< products.size();i++) {
+            Produto p = products.get(i);
+            Object[] lineData = new Object[6];
+            lineData[0] = p.getCodigo();
+            lineData[1] = p.getNome();
+            lineData[2] = p.getFornecedor().getRazaoSocial();
+            lineData[3] = p.getPrecoCompra();
+            lineData[4] = p.getPrecoVenda();
+            lineData[5] = p.getQuantidade();
+            TableColumns.addRow(lineData);
+        }
+    }
+    
+    private void clearTable(DefaultTableModel tableColumns) {
+        while (tableColumns.getRowCount() != 0) {
+            tableColumns.removeRow(0);
+        }
+    }
 }
