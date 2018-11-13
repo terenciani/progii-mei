@@ -16,20 +16,22 @@ import java.util.logging.Logger;
  * @author aluno
  */
 public class Conexao {
+
     private static final String URL = "http://localhost:8080";
     private static final String usuario = "postgres";
     private static final String senha = "estacio@123";
     private Connection conexao = null;
-    public Connection retornaConexao(){
-        if (conexao != null){
-            return conexao;
-        }else {
+
+    public Connection retornaConexao() {
+        if (conexao == null) {
+
             try {
                 conexao = DriverManager.getConnection(URL, usuario, senha);
             } catch (SQLException ex) {
-                System.out.println(ex.printStackTrace());
+                ex.printStackTrace();
             }
         }
+        return conexao;
     }
-    
+
 }
