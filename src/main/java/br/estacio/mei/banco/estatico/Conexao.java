@@ -20,9 +20,9 @@ public class Conexao {
     private static final String URL = "http://localhost:5432/progii-mei";
     private static final String usuario = "postgres";
     private static final String senha = "estacio@123";
-    private Connection conexao = null;
+    private static Connection conexao = null;
 
-    public Connection retornaConexao() {
+    public static Connection retornaConexao() {
         if (conexao == null) {
 
             try {
