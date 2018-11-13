@@ -7,6 +7,7 @@ package br.estacio.mei.visao.cliente;
 
 import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
+import br.estacio.mei.dao.implementacao.ClienteDaoJDBC;
 
 import br.estacio.mei.model.Cliente;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ClientePrincipal extends javax.swing.JPanel {
 
-    ClienteDao clienteDao = new ClienteDaoEstatico();
+    ClienteDao clienteDao = new ClienteDaoJDBC();
     Cliente cliente = new Cliente();
 
     /**
