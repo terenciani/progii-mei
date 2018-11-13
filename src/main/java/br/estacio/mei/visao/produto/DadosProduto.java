@@ -49,6 +49,8 @@ public class DadosProduto extends javax.swing.JPanel {
         descricao = new javax.swing.JLabel();
         campoParaDescricao = new javax.swing.JTextField();
         selcionarCategoria = new javax.swing.JComboBox<>();
+        valor = new javax.swing.JLabel();
+        campoParaValor = new javax.swing.JTextField();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -69,7 +71,7 @@ public class DadosProduto extends javax.swing.JPanel {
             }
         });
 
-        Fornecedor.setText("Fornecedor");
+        Fornecedor.setText("Quantidade em estoque");
 
         campoParaFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,10 +88,26 @@ public class DadosProduto extends javax.swing.JPanel {
             }
         });
 
+        valor.setText("Valor");
+
+        campoParaValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoParaValorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout InserirLayout = new javax.swing.GroupLayout(Inserir);
         Inserir.setLayout(InserirLayout);
         InserirLayout.setHorizontalGroup(
             InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InserirLayout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addComponent(inserirProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InserirLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(campoParaDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
             .addGroup(InserirLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,27 +118,27 @@ public class DadosProduto extends javax.swing.JPanel {
                     .addGroup(InserirLayout.createSequentialGroup()
                         .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(InserirLayout.createSequentialGroup()
-                                .addComponent(descricao)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoParaDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(InserirLayout.createSequentialGroup()
-                                .addComponent(Fornecedor)
-                                .addGap(37, 37, 37)
-                                .addComponent(campoParaFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(InserirLayout.createSequentialGroup()
                                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(categoria)
-                                    .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(45, 45, 45)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InserirLayout.createSequentialGroup()
+                                        .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(categoria)
+                                            .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(45, 45, 45))
+                                    .addGroup(InserirLayout.createSequentialGroup()
+                                        .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(46, 46, 46)))
                                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(campoParaNome)
                                     .addComponent(campoParaCodigo)
-                                    .addComponent(selcionarCategoria, 0, 200, Short.MAX_VALUE))))
+                                    .addComponent(selcionarCategoria, 0, 200, Short.MAX_VALUE)
+                                    .addComponent(campoParaValor)))
+                            .addGroup(InserirLayout.createSequentialGroup()
+                                .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(descricao)
+                                    .addComponent(Fornecedor))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoParaFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InserirLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(inserirProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170))
         );
         InserirLayout.setVerticalGroup(
             InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,17 +155,21 @@ public class DadosProduto extends javax.swing.JPanel {
                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoParaNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(29, 29, 29)
+                .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoParaValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoParaFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60)
-                .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoParaDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(campoParaDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(inserirProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(23, 23, 23))
         );
 
         add(Inserir, java.awt.BorderLayout.CENTER);
@@ -185,6 +207,10 @@ public class DadosProduto extends javax.swing.JPanel {
         daoProduto.salvar(produto);
     }//GEN-LAST:event_inserirProdutoActionPerformed
 
+    private void campoParaValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoParaValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoParaValorActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fornecedor;
@@ -193,11 +219,13 @@ public class DadosProduto extends javax.swing.JPanel {
     private javax.swing.JTextField campoParaDescricao;
     private javax.swing.JTextField campoParaFornecedor;
     private javax.swing.JTextField campoParaNome;
+    private javax.swing.JTextField campoParaValor;
     private javax.swing.JLabel categoria;
     private javax.swing.JLabel codigo;
     private javax.swing.JLabel descricao;
     private javax.swing.JButton inserirProduto;
     private javax.swing.JLabel nome;
     private javax.swing.JComboBox<String> selcionarCategoria;
+    private javax.swing.JLabel valor;
     // End of variables declaration//GEN-END:variables
 }
