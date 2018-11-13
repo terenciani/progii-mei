@@ -5,10 +5,31 @@
  */
 package br.estacio.mei.banco.estatico;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author aluno
  */
 public class Conexao {
+    private static final String URL = "http://localhost:8080";
+    private static final String usuario = "postgres";
+    private static final String senha = "estacio@123";
+    private Connection conexao = null;
+    public Connection retornaConexao(){
+        if (conexao != null){
+            return conexao;
+        }else {
+            try {
+                conexao = DriverManager.getConnection(URL, usuario, senha);
+            } catch (SQLException ex) {
+                System.out.println(ex.printStackTrace());
+            }
+        }
+    }
     
 }
