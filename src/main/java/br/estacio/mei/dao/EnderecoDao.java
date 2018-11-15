@@ -5,7 +5,7 @@
  */
 package br.estacio.mei.dao;
 
-import br.estacio.mei.model.Cliente;
+
 import br.estacio.mei.model.Endereco;
 import java.util.ArrayList;
 

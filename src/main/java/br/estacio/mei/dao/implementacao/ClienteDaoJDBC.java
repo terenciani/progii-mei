@@ -31,7 +31,13 @@ public class ClienteDaoJDBC implements ClienteDao {
             while(resultado.next()){
                 Cliente cliente = new Cliente();
                 cliente.setCodigo(resultado.getInt("codigo"));
+                cliente.setCpfCnpj(resultado.getString("cpfCnpj"));
                 cliente.setNome(resultado.getString("nome"));
+                cliente.setNomeFantasia(resultado.getString("nomeFantasia"));
+                cliente.setInscrEstadual(resultado.getString("inscrEstadual"));
+                cliente.setTelefone(resultado.getInt("telefone"));
+                cliente.setEmail(resultado.getString("email"));
+                
                 
                 listaDeCliente.add(cliente);
             }
