@@ -8,6 +8,7 @@ package br.estacio.mei.visao.usuario;
 import br.estacio.mei.dao.UsuarioDao;
 import br.estacio.mei.model.Usuario;
 import br.estacio.mei.dao.implementacao.UsuarioDaoEstatica;
+import br.estacio.mei.dao.implementacao.UsuarioDaoJDBC;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -17,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author aluno
  */
 public class UsuarioPrincipal extends javax.swing.JPanel {
-    UsuarioDao usuarioDao = new UsuarioDaoEstatica();
+    UsuarioDao usuarioDao = new UsuarioDaoJDBC();
     /**
      * Creates new form CadastroUsuario
      */

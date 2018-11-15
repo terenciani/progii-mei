@@ -8,7 +8,9 @@ package br.estacio.mei.visao.cliente;
 import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.dao.EnderecoDao;
 import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
+import br.estacio.mei.dao.implementacao.ClienteDaoJDBC;
 import br.estacio.mei.dao.implementacao.EnderecoDaoEstatico;
+import br.estacio.mei.dao.implementacao.EnderecoDaoJDBC;
 import br.estacio.mei.model.Cliente;
 import br.estacio.mei.model.Endereco;
 import java.awt.Color;
@@ -21,8 +23,8 @@ import javax.swing.JOptionPane;
  */
 public class InformaDadosCliente extends javax.swing.JPanel {
 
-    ClienteDao clienteDao = new ClienteDaoEstatico();
-    EnderecoDao enderecoDao = new EnderecoDaoEstatico();
+    ClienteDao clienteDao = new ClienteDaoJDBC();
+    EnderecoDao enderecoDao = new EnderecoDaoJDBC();
     int codigoCliente = 0;
     String tipo= "";
     /**
@@ -391,7 +393,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
             enderecoCliente.setEstado(String.valueOf(cbEstado.getSelectedItem()));
 
             if (!txtCep.getText().isEmpty()) {
-                enderecoCliente.setCep(Integer.parseInt(txtCep.getText()));
+                enderecoCliente.setCep(txtCep.getText());
             }
 
             if (this.tipo.equals("insert") ) {

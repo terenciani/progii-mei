@@ -374,7 +374,7 @@ public class CadastroFornecedor extends javax.swing.JPanel {
             enderecoFornecedor.setEstado(txtUF.getText());
 
             if (!txtCep.getText().isEmpty()) {
-                enderecoFornecedor.setCep(Integer.parseInt(txtCep.getText()));
+                enderecoFornecedor.setCep(txtCep.getText());
             }
 
             if (this.tipo.equals("insert") ) {

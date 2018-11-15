@@ -37,8 +37,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
             Object[] dadosDaLinha = new Object[4];
             dadosDaLinha[0] = p.getCodigo();
             dadosDaLinha[1] = p.getNome();
-            dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-            dadosDaLinha[3] = p.getCategoria();
+            dadosDaLinha[2] = p.getCategoria();
             modeloDeColunasDaTabela.addRow(dadosDaLinha);
         }
     }
@@ -103,7 +102,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
             }
         });
 
-        tipoPesquisa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Nome", "Fornecedor", "Preço de Compra", "Preço de Venda", "Qtde Estoque" }));
+        tipoPesquisa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Nome", "Valor", "Qtde Estoque" }));
         tipoPesquisa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoPesquisaActionPerformed(evt);
@@ -135,7 +134,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Codigo", "Categoria", "Nome", "Fornecedor"
+                "Codigo", "Categoria", "Nome"
             }
         ));
         tabelaProduto.setViewportView(produtos);
@@ -158,7 +157,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                         .addComponent(campoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buscarProduto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                         .addComponent(novoProduto)
                         .addGap(35, 35, 35)
                         .addComponent(excluirProduto))
@@ -241,7 +240,6 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                         dadosDaLinha1[0] = p.getCodigo();
                         dadosDaLinha1[1] = p.getCategoria();
                         dadosDaLinha1[2] = p.getNome();
-                        dadosDaLinha1[3] = p.getFornecedor();
                         modeloDeColunaDaTabela.addRow(dadosDaLinha1);
                     }
                 }
@@ -269,8 +267,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                         Object[] dadosDaLinha = new Object[4];
                         dadosDaLinha[0] = p.getCodigo();
                         dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getCategoria();
+                        dadosDaLinha[2] = p.getCategoria();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
                     }
                 } catch (Exception e) {
@@ -292,8 +289,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                         Object[] dadosDaLinha = new Object[4];
                         dadosDaLinha[0] = p.getCodigo();
                         dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getCategoria();
+                        dadosDaLinha[2] = p.getCategoria();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
                     }
                 } catch (Exception e) {
@@ -302,28 +298,6 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                 }
                 break;
             case 2:
-                try {
-                    msgErro.setVisible(false);
-                    String pesqFornecedor = buscar.getText();
-                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
-                        modeloDeColunasDaTabela.removeRow(0);
-                    }
-                    ArrayList<Produto> produtosPorFornecedor = produtoDao.pesquisarPorFornecedor(pesqFornecedor);
-                    for (int i = 0; i < produtosPorFornecedor.size(); i++) {
-                        Produto p = produtosPorFornecedor.get(i);
-                        Object[] dadosDaLinha = new Object[4];
-                        dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getCategoria();
-                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
-                    }
-                } catch (Exception e) {
-                    msgErro.setText("Pesquisa Invalida!");
-                    msgErro.setVisible(true);
-                }
-                break;
-            case 3:
                 try {
                     msgErro.setVisible(false);
                     int pesqCategoria = Integer.parseInt(buscar.getText());
@@ -336,8 +310,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                         Object[] dadosDaLinha = new Object[4];
                         dadosDaLinha[0] = p.getCodigo();
                         dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getFornecedor().getRazaoSocial();
-                        dadosDaLinha[3] = p.getCategoria();
+                        dadosDaLinha[2] = p.getCategoria();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
                     }
                 } catch (Exception e) {
