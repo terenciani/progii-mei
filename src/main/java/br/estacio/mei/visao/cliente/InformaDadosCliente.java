@@ -363,7 +363,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                 cliente.setNomeFantasia(txtNomeFantasia.getText());
             }
             if (!txtTelefone.getText().isEmpty()) {
-                cliente.setTelefone(Integer.parseInt(txtTelefone.getText()));
+                cliente.setTelefone(txtTelefone.getText());
             }
             if (!txtEmail.getText().isEmpty()) {
                 cliente.setEmail(txtEmail.getText());
@@ -398,9 +398,9 @@ public class InformaDadosCliente extends javax.swing.JPanel {
 
             if (this.tipo.equals("insert") ) {
                 clienteDao.salvarCliente(cliente);
-                enderecoDao.salvarEnderecoCliente(enderecoCliente);
+//                enderecoDao.salvarEnderecoCliente(enderecoCliente);
 
-                JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
+               // JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
             } else {
                 clienteDao.atualizarCliente(cliente, codigoCliente);
                 enderecoDao.alterarEndereco(enderecoCliente);

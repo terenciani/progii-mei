@@ -16,14 +16,14 @@ public class Cliente {
     private String nome;
     private String nomeFantasia;
     private String inscrEstadual;
-    private int telefone;
+    private String telefone;
     private String email;
     private Endereco endereco;
 
     public Cliente() {
     }
     
-    public Cliente(int codigo, String cpfCnpj, String nome, String nomeFantasia, String inscrEstadual, int telefone, String email, Endereco endereco) {
+    public Cliente(int codigo, String cpfCnpj, String nome, String nomeFantasia, String inscrEstadual, String telefone, String email, Endereco endereco) {
         this.codigo = codigo;
         this.cpfCnpj = cpfCnpj;
         this.nome = nome;
@@ -74,11 +74,11 @@ public class Cliente {
         this.inscrEstadual = inscrEstadual;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

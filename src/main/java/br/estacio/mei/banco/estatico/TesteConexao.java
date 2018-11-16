@@ -18,11 +18,11 @@ public class TesteConexao {
     public static void main(String[] args) {
         /* Executar um de cada vez */
 
-        //Aluno aluno = testeInsersao();
+        Aluno aluno = testeInsersao();
         //testeAtualizacao(aluno);
         //testeBuscarPorId(aluno.getId());
         //testeBuscarTodosAlunos();
-        testeRemoverTodos();
+        //testeRemoverTodos();
     }
     private static Aluno testeInsersao(){
         AlunoDao alunoDao = new AlunoDaoJDBC();
