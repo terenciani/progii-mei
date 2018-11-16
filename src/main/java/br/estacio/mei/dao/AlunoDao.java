@@ -15,6 +15,8 @@ import java.util.ArrayList;
 public interface AlunoDao {
 
     public ArrayList<Aluno> buscarAlunos();
+    
+    public Aluno buscarAlunoPorId(int id);
 
     public Aluno salvarAluno(Aluno aluno);
 

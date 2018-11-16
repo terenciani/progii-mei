@@ -1,0 +1,5 @@
+Postgres
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+PGadmin
+https://www.postgresql.org/ftp/pgadmin/pgadmin4/v3.5/windows/

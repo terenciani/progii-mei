@@ -13,18 +13,17 @@ import java.util.Objects;
  */
 public class Aluno {
 
+    private int id;
     private String nome;
     private int RA;
     private String senha;
 
-    public Aluno(int RA) {
-        this.RA = RA;
+    public int getId() {
+        return id;
     }
 
-    public Aluno(String nome, int RA, String senha) {
-        this.nome = nome;
-        this.RA = RA;
-        this.senha = senha;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -81,7 +80,9 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{" + "nome2=" + nome + ", RA=" + RA + ", senha=" + senha + '}';
+        return "Aluno{" + "id=" + id + ", nome=" + nome + ", RA=" + RA + ", senha=" + senha + '}';
     }
+
+    
 
 }
