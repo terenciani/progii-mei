@@ -1,4 +1,4 @@
-Postgres
+Postgres 10.6
 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
 PGadmin
