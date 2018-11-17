@@ -6,8 +6,10 @@
 package br.estacio.mei.visao.cliente;
 
 import br.estacio.mei.dao.ClienteDao;
+import br.estacio.mei.dao.EnderecoDao;
 import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
 import br.estacio.mei.dao.implementacao.ClienteDaoJDBC;
+import br.estacio.mei.dao.implementacao.EnderecoDaoJDBC;
 
 import br.estacio.mei.model.Cliente;
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ import javax.swing.table.DefaultTableModel;
 public class ClientePrincipal extends javax.swing.JPanel {
 
     ClienteDao clienteDao = new ClienteDaoJDBC();
+    EnderecoDao enderecoDao = new EnderecoDaoJDBC();
     Cliente cliente = new Cliente();
 
     /**
@@ -272,9 +275,9 @@ public class ClientePrincipal extends javax.swing.JPanel {
     private void btnExcluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirClienteActionPerformed
         if (tbListaClientes.getSelectedRow() >= 0) {
 
-            int resposta = JOptionPane.showConfirmDialog(null, "Confirma a exclusão do cliente?", "Excluir Cliente!", JOptionPane.YES_NO_OPTION);
+            //int resposta = JOptionPane.showConfirmDialog(null, "Confirma a exclusão do cliente?", "Excluir Cliente!", JOptionPane.YES_NO_OPTION);
 
-            if (resposta == 0) {
+            //if (resposta == 0) {
                 int linha = tbListaClientes.getSelectedRow();
                 int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
 
@@ -304,10 +307,10 @@ public class ClientePrincipal extends javax.swing.JPanel {
                         modeloDeColuna.addRow(linha1);
                     }
                 }
-                JOptionPane.showMessageDialog(null, "Cliente Removido!");
-            }
+                //JOptionPane.showMessageDialog(null, "Cliente Removido!");
+            //}
         } else {
-            JOptionPane.showMessageDialog(null, "Selecione um Cliente!");
+            //JOptionPane.showMessageDialog(null, "Selecione um Cliente!");
         }
 
     }//GEN-LAST:event_btnExcluirClienteActionPerformed

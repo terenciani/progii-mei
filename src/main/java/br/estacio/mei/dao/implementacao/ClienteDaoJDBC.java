@@ -52,7 +52,6 @@ public class ClienteDaoJDBC implements ClienteDao {
     @Override
     public Cliente salvarCliente(Cliente cliente) {
 
-        
         String sql = "INSERT "
                 + "INTO "
                 + "tb_cliente (codigo, cpfcnpj, nome, nomefantasia, inscrestadual, telefone, email)"
@@ -68,9 +67,9 @@ public class ClienteDaoJDBC implements ClienteDao {
             preparacaoDaInstrucao.setString(5, cliente.getInscrEstadual());
             preparacaoDaInstrucao.setString(6, cliente.getTelefone());
             preparacaoDaInstrucao.setString(7, cliente.getEmail());
-            
+
             preparacaoDaInstrucao.executeUpdate();
-            
+
             return cliente;
 
         } catch (SQLException ex) {
@@ -91,7 +90,24 @@ public class ClienteDaoJDBC implements ClienteDao {
 
     @Override
     public boolean excluirCliente(int codigo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql1 = "DELETE FROM tb_cliente WHERE codigo=?";
+        String sql2 = "DELETE FROM tb_endereco WHERE codigo=?";
+        try {
+            
+            PreparedStatement preparacaoDaInstrucao1 = Conexao.retornaConexao().prepareStatement(sql1);
+            preparacaoDaInstrucao1.setInt(1, codigo);
+            preparacaoDaInstrucao1.executeUpdate();
+            
+            PreparedStatement preparacaoDaInstrucao2 = Conexao.retornaConexao().prepareStatement(sql2);
+            preparacaoDaInstrucao2.setInt(1, codigo);
+            preparacaoDaInstrucao2.executeUpdate();
+
+            return true;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
 
 }

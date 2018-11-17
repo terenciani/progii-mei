@@ -19,4 +19,5 @@ public interface EnderecoDao {
     public Endereco alterarEndereco (Endereco endereco);
     
     public ArrayList<Endereco> buscarEndereco ();
+    
 }
