@@ -18,7 +18,6 @@ public class ContasAPagarDaoEstatica implements ContasAPagarDao {
 
     
 
-    @Override
     public ArrayList<ContasAPagar> buscarContasApagar() {
         return BancoSingleton.getInstance().tabelaContaAPagar;
     }
@@ -37,7 +36,17 @@ public class ContasAPagarDaoEstatica implements ContasAPagarDao {
 
     @Override
     public boolean excluirContasApagar(ContasAPagar contasAPagar) {
+       BancoSingleton.getInstance().tabelaContaAPagar.remove(contasAPagar);
+        return true;
+    }
+
+    public ArrayList<ContasAPagar> ListaContasApagar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<ContasAPagar> buscarContaPorCodigo(int codigo) {
+        return BancoSingleton.getInstance().tabelaContaAPagar;
     }
 
 }

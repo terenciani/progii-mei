@@ -12,7 +12,12 @@ import java.util.ArrayList;
  * @author aluno
  */
 public interface ContasAPagarDao{
+
+    
+    
     public ArrayList<ContasAPagar> buscarContasApagar();
+    
+    public ArrayList<ContasAPagar> buscarContaPorCodigo(int codigo);
 
     public ContasAPagar salvarContasApagar(ContasAPagar contasApagar);
     

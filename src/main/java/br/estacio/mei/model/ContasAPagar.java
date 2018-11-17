@@ -66,5 +66,9 @@ public class ContasAPagar {
         this.status = status;
     }
 
+    public boolean codigo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }
