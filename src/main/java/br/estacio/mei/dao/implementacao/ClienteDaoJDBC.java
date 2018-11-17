@@ -55,20 +55,22 @@ public class ClienteDaoJDBC implements ClienteDao {
         
         String sql = "INSERT "
                 + "INTO "
-                + "tb_cliente (cpfCnpj, nome, nomeFantasia, inscrEstadual, telefone, email)"
-                + "VALUES (?, ?, ?, ?, ?, ?)";
+                + "tb_cliente (codigo, cpfcnpj, nome, nomefantasia, inscrestadual, telefone, email)"
+                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
 
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
 
-            //preparacaoDaInstrucao.setInt(1, cliente.getCodigo());
-            preparacaoDaInstrucao.setString(1, cliente.getCpfCnpj());
-            preparacaoDaInstrucao.setString(2, cliente.getNome());
-            preparacaoDaInstrucao.setString(3, cliente.getNomeFantasia());
-            preparacaoDaInstrucao.setString(4, cliente.getInscrEstadual());
-            preparacaoDaInstrucao.setString(5, cliente.getTelefone());
-            preparacaoDaInstrucao.setString(6, cliente.getEmail());
-
+            preparacaoDaInstrucao.setInt(1, cliente.getCodigo());
+            preparacaoDaInstrucao.setString(2, cliente.getCpfCnpj());
+            preparacaoDaInstrucao.setString(3, cliente.getNome().toUpperCase());
+            preparacaoDaInstrucao.setString(4, cliente.getNomeFantasia());
+            preparacaoDaInstrucao.setString(5, cliente.getInscrEstadual());
+            preparacaoDaInstrucao.setString(6, cliente.getTelefone());
+            preparacaoDaInstrucao.setString(7, cliente.getEmail());
+            
+            preparacaoDaInstrucao.executeUpdate();
+            
             return cliente;
 
         } catch (SQLException ex) {
