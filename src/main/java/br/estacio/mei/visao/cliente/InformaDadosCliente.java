@@ -14,6 +14,7 @@ import br.estacio.mei.dao.implementacao.EnderecoDaoJDBC;
 import br.estacio.mei.model.Cliente;
 import br.estacio.mei.model.Endereco;
 import java.awt.Color;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -44,8 +45,11 @@ public class InformaDadosCliente extends javax.swing.JPanel {
         txtCodigo.setText("" + codigo);
         txtCodigo.setEditable(false);
         txtCodigo.setBackground(new Color(170, 170, 170));
+        txtCodigo.setVisible(false);
+        jLabel_codigo.setVisible(false);
         if (tipo.equals("update")) {
-
+            txtCodigo.setVisible(true);
+            jLabel_codigo.setVisible(true);
             Cliente cliente = clienteDao.buscarCliente(codigo);
 
             Endereco endereco = enderecoDao.buscarEndereco(codigo);
@@ -61,7 +65,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
             txtNumero.setText(Integer.toString(endereco.getNumero()));
             txtBairro.setText(endereco.getBairro());
             txtCidade.setText(endereco.getCidade());
-            cbEstado.setSelectedItem(endereco.getEstado()); ;
+            cbEstado.setSelectedItem(endereco.getEstado());
             txtCep.setText(endereco.getCep());
             txtComplemento.setText(endereco.getComplemento());
 
@@ -418,7 +422,9 @@ public class InformaDadosCliente extends javax.swing.JPanel {
 
             if (this.tipo.equals("insert")) {
                 clienteDao.salvarCliente(cliente);
-                enderecoDao.salvarEnderecoCliente(enderecoCliente);
+                int id = enderecoDao.maxCodigo();
+                                
+                enderecoDao.salvarEnderecoCliente(enderecoCliente, id);
 
                 // JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
             } else {

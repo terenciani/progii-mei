@@ -46,7 +46,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
             linha[1] = exibeCliente.getNome();
             linha[2] = exibeCliente.getTelefone();
             linha[3] = exibeCliente.getCpfCnpj();
-            linha[4] = exibeCliente.getEmail(); // Endereco Criar classe. 
+            linha[4] = exibeCliente.getEmail();
             modeloDeColuna.addRow(linha);
 
         }
@@ -190,6 +190,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
 
         //==> Faz  uma busca dos clientes para trazer o último código cadastrado <==\\
         int codigoNovoCliente = 0;
+        /*
         clienteDao.buscarClientes();
 
         DefaultTableModel modeloDeColuna = (DefaultTableModel) tbListaClientes.getModel();
@@ -213,7 +214,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
             //==> Se encontrou, incrementa 1, para não repetir o mesmo código <==\\
             codigoNovoCliente += 1;
         }
-
+*/
         //==> Abre a tela para inserir dados do cliente, passando o código e o tipo (insert=novo ou update=atualiza) <==\\
         InformaDadosCliente adicionarCliente = new InformaDadosCliente(codigoNovoCliente, tipo);
         panelDinamico.removeAll();

@@ -51,7 +51,7 @@ public class EnderecoDaoJDBC implements EnderecoDao {
 
     @Override
     public Endereco alterarEndereco(Endereco endereco) {
-        
+
         String sql = "UPDATE tb_endereco set rua = ?, numero = ?, bairro = ?, cidade = ?, estado = ?, cep = ?, complemento = ? where codigo = ?";
 
         try {
@@ -61,17 +61,17 @@ public class EnderecoDaoJDBC implements EnderecoDao {
             preparacaoDaInstrucao1.setString(3, endereco.getBairro());
             preparacaoDaInstrucao1.setString(4, endereco.getCidade());
             preparacaoDaInstrucao1.setString(5, endereco.getEstado());
-            preparacaoDaInstrucao1.setString(6, endereco.getCep());            
-            preparacaoDaInstrucao1.setString(7, endereco.getComplemento());            
+            preparacaoDaInstrucao1.setString(6, endereco.getCep());
+            preparacaoDaInstrucao1.setString(7, endereco.getComplemento());
             preparacaoDaInstrucao1.setInt(8, endereco.getCodigo());
-            
+
             preparacaoDaInstrucao1.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
             return endereco;
         }
         return endereco;
-        
+
     }
 
     @Override
@@ -124,8 +124,7 @@ public class EnderecoDaoJDBC implements EnderecoDao {
         return endereco;
 
     }
-    
-    
+
     private Endereco enderecoObjeto(ResultSet resultado) throws SQLException {
         Endereco endereco = new Endereco();
         try {
@@ -145,5 +144,57 @@ public class EnderecoDaoJDBC implements EnderecoDao {
         }
     }
 
+    public Endereco salvarEnderecoCliente(Endereco endereco, int codigo) {
+
+        String sql = "INSERT "
+                + "INTO "
+                + "tb_endereco (codigo, rua, numero, bairro, cidade, estado, cep, complemento)"
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+
+            preparacaoDaInstrucao.setInt(1, codigo);
+            preparacaoDaInstrucao.setString(2, endereco.getRua());
+            preparacaoDaInstrucao.setInt(3, endereco.getNumero());
+            preparacaoDaInstrucao.setString(4, endereco.getBairro());
+            preparacaoDaInstrucao.setString(5, endereco.getCidade());
+            preparacaoDaInstrucao.setString(6, endereco.getEstado());
+            preparacaoDaInstrucao.setString(7, endereco.getCep());
+            preparacaoDaInstrucao.setString(8, endereco.getComplemento());
+
+            preparacaoDaInstrucao.executeUpdate();
+
+            return endereco;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
+
+    public int maxCodigo() {
+        int id = 0;
+        String sql = "select max(codigo) from tb_cliente";
+
+        try {
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+
+            ResultSet maxCodigo = preparacaoDaInstrucao.executeQuery();
+
+            while (maxCodigo.next()) {
+                Endereco endereco = new Endereco();
+                endereco.setCodigo(maxCodigo.getInt("max"));
+                id = maxCodigo.getInt("max");
+                return id;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return id;
+        }
+
+        return id;
+    }
 
 }

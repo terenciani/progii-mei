@@ -54,22 +54,23 @@ public class ClienteDaoJDBC implements ClienteDao {
 
         String sql = "INSERT "
                 + "INTO "
-                + "tb_cliente (codigo, cpfcnpj, nome, nomefantasia, inscrestadual, telefone, email)"
-                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+                + "tb_cliente (cpfcnpj, nome, nomefantasia, inscrestadual, telefone, email)"
+                + "VALUES (?, ?, ?, ?, ?, ?)";
         try {
 
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
 
-            preparacaoDaInstrucao.setInt(1, cliente.getCodigo());
-            preparacaoDaInstrucao.setString(2, cliente.getCpfCnpj());
-            preparacaoDaInstrucao.setString(3, cliente.getNome().toUpperCase());
-            preparacaoDaInstrucao.setString(4, cliente.getNomeFantasia());
-            preparacaoDaInstrucao.setString(5, cliente.getInscrEstadual());
-            preparacaoDaInstrucao.setString(6, cliente.getTelefone());
-            preparacaoDaInstrucao.setString(7, cliente.getEmail());
+            //preparacaoDaInstrucao.setInt(1, cliente.getCodigo());
+            preparacaoDaInstrucao.setString(1, cliente.getCpfCnpj());
+            preparacaoDaInstrucao.setString(2, cliente.getNome());
+            preparacaoDaInstrucao.setString(3, cliente.getNomeFantasia());
+            preparacaoDaInstrucao.setString(4, cliente.getInscrEstadual());
+            preparacaoDaInstrucao.setString(5, cliente.getTelefone());
+            preparacaoDaInstrucao.setString(6, cliente.getEmail());
 
             preparacaoDaInstrucao.executeUpdate();
 
+            System.out.println(cliente.getCodigo());
             return cliente;
 
         } catch (SQLException ex) {
@@ -89,9 +90,9 @@ public class ClienteDaoJDBC implements ClienteDao {
             preparacaoDaInstrucao1.setString(3, cliente.getNomeFantasia());
             preparacaoDaInstrucao1.setString(4, cliente.getInscrEstadual());
             preparacaoDaInstrucao1.setString(5, cliente.getTelefone());
-            preparacaoDaInstrucao1.setString(6, cliente.getEmail());            
+            preparacaoDaInstrucao1.setString(6, cliente.getEmail());
             preparacaoDaInstrucao1.setInt(7, cliente.getCodigo());
-            
+
             preparacaoDaInstrucao1.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -165,5 +166,7 @@ public class ClienteDaoJDBC implements ClienteDao {
             throw new SQLException("Erro na Conversão");
         }
     }
+
+    
 
 }
