@@ -26,7 +26,8 @@ public class InformaDadosCliente extends javax.swing.JPanel {
     ClienteDao clienteDao = new ClienteDaoJDBC();
     EnderecoDao enderecoDao = new EnderecoDaoJDBC();
     int codigoCliente = 0;
-    String tipo= "";
+    String tipo = "";
+
     /**
      * Creates new form testeFechaTela
      */
@@ -37,14 +38,34 @@ public class InformaDadosCliente extends javax.swing.JPanel {
 
     public InformaDadosCliente(int codigo, String tipo) {
         initComponents();
-        
+
         this.tipo = tipo;
         codigoCliente = codigo;
         txtCodigo.setText("" + codigo);
         txtCodigo.setEditable(false);
         txtCodigo.setBackground(new Color(170, 170, 170));
         if (tipo.equals("update")) {
-            clienteDao.buscarClientes();
+
+            Cliente cliente = clienteDao.buscarCliente(codigo);
+
+            Endereco endereco = enderecoDao.buscarEndereco(codigo);
+
+            txtNome.setText(cliente.getNome());
+            txtCpfCNPJ.setText(cliente.getCpfCnpj());
+            txtNomeFantasia.setText(cliente.getNomeFantasia());
+            TxtInscrEstadual.setText(cliente.getInscrEstadual());
+            txtTelefone.setText(cliente.getTelefone());
+            txtEmail.setText(cliente.getEmail());
+
+            txtRua.setText(endereco.getRua());
+            txtNumero.setText(Integer.toString(endereco.getNumero()));
+            txtBairro.setText(endereco.getBairro());
+            txtCidade.setText(endereco.getCidade());
+            cbEstado.setSelectedItem(endereco.getEstado()); ;
+            txtCep.setText(endereco.getCep());
+            txtComplemento.setText(endereco.getComplemento());
+
+            /*            clienteDao.buscarClientes();
             enderecoDao.buscarEndereco();
 
             ArrayList<Cliente> buscarCliente = clienteDao.buscarClientes();
@@ -60,6 +81,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                     txtEmail.setText(editarCliente.getEmail());
                 }
             }
+             */
         }
     }
 
@@ -353,7 +375,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
         } else {
             lblMsgCampoObrigatorio.setText("");
             Cliente cliente = new Cliente();
-            
+
             cliente.setCodigo(Integer.parseInt(txtCodigo.getText()));
             enderecoCliente.setCodigo(Integer.parseInt(txtCodigo.getText()));
             cliente.setNome(txtNome.getText().toUpperCase());
@@ -373,7 +395,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
             }
 
             if (!txtRua.getText().isEmpty()) {
-                enderecoCliente.setRua(txtRua.getText());
+                enderecoCliente.setRua(txtRua.getText().toUpperCase());
             }
             if (!txtNumero.getText().isEmpty()) {
                 enderecoCliente.setNumero(Integer.parseInt(txtNumero.getText()));
@@ -394,11 +416,11 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                 enderecoCliente.setCep(txtCep.getText());
             }
 
-            if (this.tipo.equals("insert") ) {
+            if (this.tipo.equals("insert")) {
                 clienteDao.salvarCliente(cliente);
                 enderecoDao.salvarEnderecoCliente(enderecoCliente);
 
-               // JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
+                // JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
             } else {
                 clienteDao.atualizarCliente(cliente, codigoCliente);
                 enderecoDao.alterarEndereco(enderecoCliente);

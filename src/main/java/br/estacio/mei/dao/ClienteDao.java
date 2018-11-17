@@ -23,5 +23,6 @@ public interface ClienteDao {
     public boolean excluirCliente(Cliente cliente);
     
     public boolean excluirCliente(int codigo);
-
+    
+    public Cliente buscarCliente(int codigo);
 }

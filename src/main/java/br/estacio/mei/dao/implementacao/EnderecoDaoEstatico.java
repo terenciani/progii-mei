@@ -32,4 +32,9 @@ public class EnderecoDaoEstatico implements EnderecoDao {
         return endereco;
     }
 
+    @Override
+    public Endereco buscarEndereco(int codigo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

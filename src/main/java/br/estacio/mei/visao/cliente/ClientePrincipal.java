@@ -230,9 +230,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
 
             int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
             //JPanel onde tem a tabela
-            //DefaultTableModel table = (DefaultTableModel) tbListaClientes.getModel();
 
-            //clienteEdit = table.getValueAt(tbListaClientes.getSelectedRow(), 1).toString();
             //==> Abre a tela de edição, passando o código do cliente <==\\
             InformaDadosCliente adicionarCliente = new InformaDadosCliente(codigo, tipo);
             panelDinamico.removeAll();
@@ -240,7 +238,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
             panelDinamico.validate();
             panelDinamico.repaint();
         } else {
-            JOptionPane.showMessageDialog(null, "Selecione um Cliente!");
+            //JOptionPane.showMessageDialog(null, "Selecione um Cliente!");
         }
 
     }//GEN-LAST:event_btnEditarClienteActionPerformed
@@ -255,7 +253,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
 
         for (int i = 0; i < listaDeClientes.size(); i++) {
             Cliente exibeCliente = listaDeClientes.get(i);
-            String nome = txtCampoBusca.getText();
+            String nome = txtCampoBusca.getText().toUpperCase();
 
             //==> Faz a busca do cliente por qualquer parte do seu nome <==\\
             if (exibeCliente.getNome().contains(nome)) {

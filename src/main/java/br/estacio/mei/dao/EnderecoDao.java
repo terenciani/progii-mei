@@ -20,4 +20,6 @@ public interface EnderecoDao {
     
     public ArrayList<Endereco> buscarEndereco ();
     
+    public Endereco buscarEndereco(int codigo);
+    
 }
