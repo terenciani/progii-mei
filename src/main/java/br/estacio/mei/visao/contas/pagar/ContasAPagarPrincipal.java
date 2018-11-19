@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ContasAPagarPrincipal extends javax.swing.JPanel {
 
-    ContasAPagarDao daoContasAPagar = new ContasAPagarDaoJDBC();
+    ContasAPagarDao daoContasAPagar = new ContasAPagarDaoEstatica();
 
     /**
      * Creates new form ContasAPagarPrincipal
