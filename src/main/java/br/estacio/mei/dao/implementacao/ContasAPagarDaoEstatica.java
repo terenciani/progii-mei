@@ -45,8 +45,7 @@ public class ContasAPagarDaoEstatica implements ContasAPagarDao {
     }
 
     @Override
-    public ArrayList<ContasAPagar> buscarContaPorCodigo(int codigo) {
-        return BancoSingleton.getInstance().tabelaContaAPagar;
+    public ContasAPagar buscarContaPorCodigo(int codigo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 }

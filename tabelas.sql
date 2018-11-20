@@ -57,3 +57,25 @@ WITH (
 );
 ALTER TABLE public.tb_clientes
   OWNER TO postgres;
+  
+  -- Table: public.tb_contas_a_pagar
+
+-- DROP TABLE public.tb_contas_a_pagar;
+
+CREATE TABLE public.tb_contas_a_pagar
+(
+    codigo integer NOT NULL DEFAULT nextval('tb_contas_a_pagar_codigo_seq'::regclass),
+    data_vencimento date,
+    descricao character varying(255) COLLATE pg_catalog."default",
+    valor numeric,
+    data_pagamento date,
+    status boolean,
+    CONSTRAINT tb_contas_a_pagar_pkey PRIMARY KEY (codigo)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.tb_contas_a_pagar
+    OWNER to postgres;
