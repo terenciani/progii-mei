@@ -19,7 +19,7 @@ public interface CategoriaDao {
     
     public Categoria salvarCategoria(Categoria categoria);
 
-    public Categoria atualizarCategoria(Categoria categoria);
+    public boolean atualizarCategoria(Categoria categoria);
     
     public Categoria buscarCategoriaPorId(int codigo);
 

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.banco.estatico.Conexao;
@@ -20,13 +19,13 @@ import java.util.ArrayList;
  * Orico)
  */
 public class CategoriaDaoJDBC implements CategoriaDao {
-    
+
     Categoria categoria = new Categoria();
-    
+
     @Override
     public ArrayList<Categoria> buscarCategoria() {
         ArrayList<Categoria> listaDeCategoria = new ArrayList<>();
-        
+
         String SQL = "SELECT * FROM tb_categoria";
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);
@@ -37,8 +36,8 @@ public class CategoriaDaoJDBC implements CategoriaDao {
                 Categoria categoria = new Categoria();
                 categoria.setCodigo(resultado.getInt("codigo"));
                 categoria.setDescricao(resultado.getString("descricao"));
-                
-		listaDeCategoria.add(categoria);
+
+                listaDeCategoria.add(categoria);
             }
 
         } catch (Exception excecao) {
@@ -70,12 +69,10 @@ public class CategoriaDaoJDBC implements CategoriaDao {
         }
     }
 
-    //@Override
-    
-    // INDICOU PARA RETIRAR O @Override acima
-    public boolean atualizarCategoria(Categoria categoria, int codigo) {
-        
-	String SQL = "UPDATE tb_categoria set descricao = ? where codigo = ?";
+    @Override
+    public boolean atualizarCategoria(Categoria categoria) {
+
+        String SQL = "UPDATE tb_categoria set descricao = ? where codigo = ?";
 
         try {
             PreparedStatement preparacaoDaInstrucao1 = Conexao.retornaConexao().prepareStatement(SQL);
@@ -97,11 +94,6 @@ public class CategoriaDaoJDBC implements CategoriaDao {
 
     @Override
     public boolean excluirCategoria(Categoria categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Categoria atualizarCategoria(Categoria categoria) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

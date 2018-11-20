@@ -66,6 +66,18 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("SENHA:");
 
+        txtnome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnomeActionPerformed(evt);
+            }
+        });
+
+        txtsenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtsenhaActionPerformed(evt);
+            }
+        });
+
         btnCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +118,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         });
 
         btnAlterar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAlterar.setText("Alterar");
+        btnAlterar.setText("Alterar usuario");
         btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAlterarActionPerformed(evt);
@@ -128,7 +140,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
-                        .addContainerGap(291, Short.MAX_VALUE))
+                        .addContainerGap(315, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,9 +158,9 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(166, 166, 166)
                 .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -181,13 +193,16 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        
+        
         Usuario usuario = new Usuario();
-        usuario.setUsuario(txtnome.getText());
-        usuario.setSenha(txtsenha.getPassword().toString());
+            usuario.setUsuario(txtnome.getText());
+            usuario.setSenha(txtsenha.getPassword().toString());
+
+            usuarioDao.salvarUsuario(usuario);
+
+            populaTabela();
         
-        usuarioDao.salvarUsuario(usuario);
-        
-        populaTabela();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void cdTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cdTableMouseClicked
@@ -200,7 +215,8 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
 
-        //System.out.println("Usuario Selecionado: "+CdTable.getSelectedRow());        // TODO add your handling code here:
+        //escluir
+        String sql = "";
         if(cdTable.getSelectedRow()!= -1){
             DefaultTableModel dtmCadastro = (DefaultTableModel) cdTable.getModel();
             dtmCadastro.removeRow(cdTable.getSelectedRow());
@@ -212,19 +228,29 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         if(cdTable.getSelectedRow() != -1){
-            Usuario usuario = new Usuario();
-            
-            usuario.setId(WIDTH);
-            usuario.setUsuario("LUCAS");
-            usuario.setSenha("1234");
-            usuario = usuarioDao.atualizarUsuario(usuario);
-            
+            Usuario usuario = new Usuario();            
+            int linha = cdTable.getSelectedRow();
+            int codigo = (int) cdTable.getModel().getValueAt(linha, 2);
+            usuario.setId(codigo);           
+            int txtnomeActionPerformed = cdTable.getSelectedRow();
+            String nome = (String) cdTable.getModel().getValueAt(txtnomeActionPerformed, 1);                     
+            usuario.setUsuario(nome);            
+            int txtsenhaActionPerformed = cdTable.getSelectedRow();
+            String senha = (String) cdTable.getModel().getValueAt(txtsenhaActionPerformed, 0);
+            usuario.setSenha(senha);
+            usuario = usuarioDao.atualizarUsuario(usuario);            
             cdTable.setValueAt(usuario.getUsuario(),cdTable.getSelectedRow() , 0);
             cdTable.setValueAt(usuario.getSenha(),cdTable.getSelectedRow() , 1);
         }
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void txtnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnomeActionPerformed
+
+    private void txtsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsenhaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
