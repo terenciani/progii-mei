@@ -422,6 +422,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
 
             if (this.tipo.equals("insert")) {
                 clienteDao.salvarCliente(cliente);
+                //metodo que pega o último código da tabela clientes para utilizar este no endereco do mesmo cliente .
                 int id = enderecoDao.maxCodigo();
                                 
                 enderecoDao.salvarEnderecoCliente(enderecoCliente, id);
