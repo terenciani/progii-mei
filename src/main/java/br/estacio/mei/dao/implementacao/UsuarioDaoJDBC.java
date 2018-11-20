@@ -45,11 +45,14 @@ public class UsuarioDaoJDBC implements UsuarioDao{
 
     @Override
     public Usuario salvarUsuario(Usuario usuario) {
+        String sql = "UPDATE tb_usuario set usuario = ?";
+        Usuario usu = new Usuario();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Usuario atualizarUsuario(Usuario usuario) {
+        String sql = "DELETE usuario WHERE tb_usuario = 'usuario'";
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

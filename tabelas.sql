@@ -79,3 +79,22 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.tb_contas_a_pagar
     OWNER to postgres;
+
+	
+	-- Table: public.tb_categoria
+
+-- DROP TABLE public.tb_categoria;
+
+CREATE TABLE public.tb_categoria
+(
+    codigo integer NOT NULL DEFAULT nextval('tb_categoria_codigo_seq'::regclass),
+    descricao character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT tb_categoria_pkey PRIMARY KEY (codigo)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.tb_categoria
+    OWNER to postgres;
