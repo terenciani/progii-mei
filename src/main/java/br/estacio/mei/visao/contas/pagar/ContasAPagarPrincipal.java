@@ -6,7 +6,7 @@
 package br.estacio.mei.visao.contas.pagar;
 
 import br.estacio.mei.dao.ContasAPagarDao;
-import br.estacio.mei.dao.implementacao.ContasAPagarDaoEstatica;
+// import br.estacio.mei.dao.implementacao.ContasAPagarDaoEstatica;
 import br.estacio.mei.dao.implementacao.ContasAPagarDaoJDBC;
 import br.estacio.mei.model.ContasAPagar;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ContasAPagarPrincipal extends javax.swing.JPanel {
 
-    ContasAPagarDao daoContasAPagar = new ContasAPagarDaoEstatica();
+    ContasAPagarDao daoContasAPagar = new ContasAPagarDaoJDBC();
 
     /**
      * Creates new form ContasAPagarPrincipal

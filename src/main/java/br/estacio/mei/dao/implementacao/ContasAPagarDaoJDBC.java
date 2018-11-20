@@ -19,11 +19,9 @@ import java.util.ArrayList;
  */
 public class ContasAPagarDaoJDBC implements ContasAPagarDao {
 
-    private Object ListaContasApagar;
-
     @Override
     public ArrayList<ContasAPagar> buscarContasApagar() {
-    ArrayList<ContasAPagar> buscarContasApagar = new ArrayList<>();
+        ArrayList<ContasAPagar> listaDeContasApagar = new ArrayList<>();
         String SQL = "SELECT * FROM tb_contas_a_pagar";
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);                      
@@ -31,17 +29,23 @@ public class ContasAPagarDaoJDBC implements ContasAPagarDao {
             while(resultado.next()){
                 ContasAPagar conta = new ContasAPagar();
                 conta.setCodigo(resultado.getInt("codigo"));
-
+                conta.setDataVencimento(resultado.getString("data_vencimento"));
+                conta.setDescricao(resultado.getString("descricao"));
+                conta.setValor(resultado.getDouble("valor"));
+                conta.setDataPagamento(resultado.getString("data_pagamento"));
+                conta.setStatus(resultado.getString("status"));
+                
+                listaDeContasApagar.add(conta);
             }
         } catch(Exception excecao){
             excecao.printStackTrace();
         }
-        return (ArrayList<ContasAPagar>) ListaContasApagar; 
+        return listaDeContasApagar; 
     }
 
     @Override
-    public ArrayList<ContasAPagar> buscarContaPorCodigo(int codigo) {
-    String SQL = "SELECT * FROM tb_contas_a_pagar where codigo = ?";
+    public ContasAPagar buscarContaPorCodigo(int codigo) {
+        String SQL = "SELECT * FROM tb_contas_a_pagar where codigo = ?";
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);                      
             ResultSet resultado = SQLPreparada.executeQuery();
@@ -53,7 +57,7 @@ public class ContasAPagarDaoJDBC implements ContasAPagarDao {
         } catch(Exception excecao){
             excecao.printStackTrace();
         }
-        return (ArrayList<ContasAPagar>) ListaContasApagar; 
+        return new ContasAPagar(); 
     }
 
     @Override
