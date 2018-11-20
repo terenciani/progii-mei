@@ -32,15 +32,15 @@ public class CategoriaDaoEstatica implements CategoriaDao {
     }
 
     @Override
-    public Categoria atualizarCategoria(Categoria categoria) {
+    public boolean atualizarCategoria(Categoria categoria) {
         ArrayList<Categoria> categorias = BancoSingleton.getInstance().tabelaCategoria;
         for(int i=0; i< categorias.size();i++){
             if(categorias.get(i).getCodigo()==categoria.getCodigo()){
                 BancoSingleton.getInstance().tabelaCategoria.set(i, categoria);
-                return categoria;
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
     @Override
