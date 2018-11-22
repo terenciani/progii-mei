@@ -71,7 +71,7 @@ public class DadosProduto extends javax.swing.JPanel {
             }
         });
 
-        Fornecedor.setText("Quantidade em estoque");
+        Fornecedor.setText("Qtd em estoque");
 
         campoParaFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +116,7 @@ public class DadosProduto extends javax.swing.JPanel {
                         .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(431, 431, 431))
                     .addGroup(InserirLayout.createSequentialGroup()
-                        .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(InserirLayout.createSequentialGroup()
                                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InserirLayout.createSequentialGroup()
@@ -136,8 +136,8 @@ public class DadosProduto extends javax.swing.JPanel {
                                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(descricao)
                                     .addComponent(Fornecedor))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoParaFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campoParaFornecedor)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         InserirLayout.setVerticalGroup(

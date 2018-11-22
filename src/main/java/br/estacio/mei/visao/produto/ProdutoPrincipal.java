@@ -65,6 +65,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
         tbProdutos = new javax.swing.JPanel();
         tabelaProduto = new javax.swing.JScrollPane();
         produtos = new javax.swing.JTable();
+        alterarProduto = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -134,12 +135,15 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Codigo", "Categoria", "Nome"
+                "Codigo", "Categoria", "Nome", "Valor", "Qtd em Estoque", "Descrição"
             }
         ));
         tabelaProduto.setViewportView(produtos);
 
         tbProdutos.add(tabelaProduto, java.awt.BorderLayout.CENTER);
+
+        alterarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar.png"))); // NOI18N
+        alterarProduto.setText("Alterar Produto");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -157,9 +161,11 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                         .addComponent(campoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buscarProduto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                        .addComponent(novoProduto)
-                        .addGap(35, 35, 35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(novoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(alterarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(excluirProduto))
                     .addComponent(tbProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -172,7 +178,8 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(buscarProduto)
                         .addComponent(novoProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(excluirProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(excluirProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(alterarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -323,6 +330,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton alterarProduto;
     private javax.swing.JTextPane buscar;
     private javax.swing.JButton buscarProduto;
     private javax.swing.JScrollPane campoBusca;
