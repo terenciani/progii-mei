@@ -14,11 +14,7 @@ public class Produto {
     private int codigo;
     private String nome;
     private int quantidade;
-    private Fornecedor fornecedor;
-    private double precoCompra;
-    private double precoVenda;
     private float valorAtual;
-    private float valorAntigo;
     private double lucro;
     private Categoria categoria;
     private String descricao;
@@ -30,9 +26,6 @@ public class Produto {
         this.codigo = codigo;
         this.nome = nome;
         this.quantidade = quantidade;
-        this.fornecedor = fornecedor;
-        this.precoCompra = precoCompra;
-        this.precoVenda = precoVenda;
     }
 
     public int getCodigo() {
@@ -59,44 +52,12 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    public Fornecedor getFornecedor() {
-        return fornecedor;
-    }
-
-    public void setFornecedor(Fornecedor fornecedor) {
-        this.fornecedor = fornecedor;
-    }
-
-    public double getPrecoCompra() {
-        return precoCompra;
-    }
-
-    public void setPrecoCompra(double precoCompra) {
-        this.precoCompra = precoCompra;
-    }
-
-    public double getPrecoVenda() {
-        return precoVenda;
-    }
-
-    public void setPrecoVenda(double precoVenda) {
-        this.precoVenda = precoVenda;
-    }
-
     public float getValorAtual() {
         return valorAtual;
     }
 
     public void setValorAtual(float valorAtual) {
         this.valorAtual = valorAtual;
-    }
-
-    public float getValorAntigo() {
-        return valorAntigo;
-    }
-
-    public void setValorAntigo(float valorAntigo) {
-        this.valorAntigo = valorAntigo;
     }
 
     public double getLucro() {
@@ -121,6 +82,10 @@ public class Produto {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public void setValor(double aDouble) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

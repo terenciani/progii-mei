@@ -335,13 +335,10 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     private void addProductToTable(ArrayList<Produto> products, DefaultTableModel TableColumns){
         for (int i=0; i< products.size();i++) {
             Produto p = products.get(i);
-            Object[] lineData = new Object[6];
+            Object[] lineData = new Object[3];
             lineData[0] = p.getCodigo();
             lineData[1] = p.getNome();
-            lineData[2] = p.getFornecedor().getRazaoSocial();
-            lineData[3] = p.getPrecoCompra();
-            lineData[4] = p.getPrecoVenda();
-            lineData[5] = p.getQuantidade();
+            lineData[2] = p.getQuantidade();
             TableColumns.addRow(lineData);
         }
     }

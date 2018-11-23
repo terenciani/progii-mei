@@ -44,8 +44,6 @@ public class DadosProduto extends javax.swing.JPanel {
         categoria = new javax.swing.JLabel();
         campoParaCodigo = new javax.swing.JTextField();
         inserirProduto = new javax.swing.JButton();
-        Fornecedor = new javax.swing.JLabel();
-        campoParaFornecedor = new javax.swing.JTextField();
         descricao = new javax.swing.JLabel();
         campoParaDescricao = new javax.swing.JTextField();
         selcionarCategoria = new javax.swing.JComboBox<>();
@@ -68,14 +66,6 @@ public class DadosProduto extends javax.swing.JPanel {
         inserirProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inserirProdutoActionPerformed(evt);
-            }
-        });
-
-        Fornecedor.setText("Qtd em estoque");
-
-        campoParaFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoParaFornecedorActionPerformed(evt);
             }
         });
 
@@ -116,7 +106,7 @@ public class DadosProduto extends javax.swing.JPanel {
                         .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(431, 431, 431))
                     .addGroup(InserirLayout.createSequentialGroup()
-                        .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(InserirLayout.createSequentialGroup()
                                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InserirLayout.createSequentialGroup()
@@ -132,12 +122,7 @@ public class DadosProduto extends javax.swing.JPanel {
                                     .addComponent(campoParaCodigo)
                                     .addComponent(selcionarCategoria, 0, 200, Short.MAX_VALUE)
                                     .addComponent(campoParaValor)))
-                            .addGroup(InserirLayout.createSequentialGroup()
-                                .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(descricao)
-                                    .addComponent(Fornecedor))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoParaFornecedor)))
+                            .addComponent(descricao))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         InserirLayout.setVerticalGroup(
@@ -159,11 +144,7 @@ public class DadosProduto extends javax.swing.JPanel {
                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoParaValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoParaFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(campoParaDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,10 +160,6 @@ public class DadosProduto extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_selcionarCategoriaActionPerformed
 
-    private void campoParaFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoParaFornecedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoParaFornecedorActionPerformed
-
     private void inserirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserirProdutoActionPerformed
         //Dados para testes
 
@@ -196,13 +173,9 @@ public class DadosProduto extends javax.swing.JPanel {
         categoria.setDescricao("Bijuteria");
         produto.setCodigo(1);
         produto.setDescricao("Anel Dourado");
-        produto.setFornecedor(fornecedor);
         produto.setLucro(10);
         produto.setNome("Anel");
-        produto.setPrecoCompra(10);
-        produto.setPrecoVenda(20);
         produto.setQuantidade(15);
-        produto.setValorAntigo(10);
         produto.setValorAtual(15);
         daoProduto.salvar(produto);
     }//GEN-LAST:event_inserirProdutoActionPerformed
@@ -213,11 +186,9 @@ public class DadosProduto extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Fornecedor;
     private javax.swing.JPanel Inserir;
     private javax.swing.JTextField campoParaCodigo;
     private javax.swing.JTextField campoParaDescricao;
-    private javax.swing.JTextField campoParaFornecedor;
     private javax.swing.JTextField campoParaNome;
     private javax.swing.JTextField campoParaValor;
     private javax.swing.JLabel categoria;
