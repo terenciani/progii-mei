@@ -116,4 +116,8 @@ public class Compras {
         return "Compras{" + "descricao=" + descricao + ", valor=" + valor + ", quantidade=" + quantidade + ", data=" + data + ", total=" + total + '}';
     }
 
+    public java.sql.Date getDate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
