@@ -16,7 +16,7 @@ import java.util.ArrayList;
 /**
  *
  * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir
- * Orico)
+ * Orrico)
  */
 public class CategoriaDaoJDBC implements CategoriaDao {
 
@@ -33,11 +33,11 @@ public class CategoriaDaoJDBC implements CategoriaDao {
             ResultSet resultado = SQLPreparada.executeQuery();
 
             while (resultado.next()) {
-                Categoria categoria = new Categoria();
-                categoria.setCodigo(resultado.getInt("codigo"));
-                categoria.setDescricao(resultado.getString("descricao"));
+                Categoria categ = new Categoria();
+                categ.setCodigo(resultado.getInt("codigo"));
+                categ.setDescricao(resultado.getString("descricao"));
 
-                listaDeCategoria.add(categoria);
+                listaDeCategoria.add(categ);
             }
 
         } catch (Exception excecao) {
@@ -94,6 +94,29 @@ public class CategoriaDaoJDBC implements CategoriaDao {
 
     @Override
     public boolean excluirCategoria(Categoria categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public boolean excluirCategoria(int codigo) {
+        String SQL = "DELETE FROM tb_categoria WHERE codigo=?";
+        
+        try {
+
+            PreparedStatement preparacaoDaInstrucao2 = Conexao.retornaConexao().prepareStatement(SQL);
+            preparacaoDaInstrucao2.setInt(1, codigo);
+            preparacaoDaInstrucao2.executeUpdate();
+
+            return true;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public Categoria buscarCategoria(int codigo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

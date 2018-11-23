@@ -8,7 +8,7 @@ package br.estacio.mei.model;
 
 /**
  *
- * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir Orico)
+ * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir Orrico)
  */
 public class Categoria {
     private int Codigo;

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  *
  * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir
- * Orico)
+ * Orrico)
  */
 public class CategoriaDaoEstatica implements CategoriaDao {
 
@@ -64,5 +64,27 @@ public class CategoriaDaoEstatica implements CategoriaDao {
         }
         return false;
     }
+
+    @Override
+    public boolean excluirCategoria(int codigo) {
+        CategoriaDao categoriaDao = new CategoriaDaoEstatica();
+	categoriaDao.buscarCategoria();
+        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
+        for(int i = 0; i < listaDeCategoria.size(); i++){
+            Categoria exibeCategoria = listaDeCategoria.get(i);
+            if(exibeCategoria.getCodigo()==codigo){
+                BancoSingleton.getInstance().tabelaCategoria.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public Categoria buscarCategoria(int codigo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 
 }

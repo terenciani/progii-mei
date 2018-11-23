@@ -7,7 +7,8 @@ package br.estacio.mei.visao.categoria;
 
 /**
  *
- * @author Equipe 7
+ * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir
+ * Orrico)
  */
 public class LayoutBaseCategoria extends javax.swing.JFrame {
 

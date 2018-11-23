@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir Orico)
+ * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir Orrico)
  */
 public interface CategoriaDao {
     
@@ -24,6 +24,10 @@ public interface CategoriaDao {
     public Categoria buscarCategoriaPorId(int codigo);
 
     public boolean excluirCategoria(Categoria categoria);
+    
+    public boolean excluirCategoria(int codigo);
+    
+    public Categoria buscarCategoria(int codigo);
     
 
 }

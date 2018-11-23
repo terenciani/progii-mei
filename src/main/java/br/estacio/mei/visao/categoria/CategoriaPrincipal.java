@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @Author Equipe 7 (Carlos Pellat, Marcio Piter, Jose Victor Ferreira e Waldir
- * Orico)
+ * Orrico)
  */
 public class CategoriaPrincipal extends javax.swing.JPanel {
 
