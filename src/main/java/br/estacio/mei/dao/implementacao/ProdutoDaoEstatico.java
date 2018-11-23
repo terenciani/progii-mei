@@ -66,9 +66,9 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
         for (int i = 0; i < todosProdutos.size(); i++) {
-             if (todosProdutos.get(i).getFornecedor().getRazaoSocial().toUpperCase().contains(filtro.toUpperCase())) {
+             //if (todosProdutos.get(i).getFornecedor().getRazaoSocial().toUpperCase().contains(filtro.toUpperCase())) {
                 produtos.add(todosProdutos.get(i));
-            }
+            //}
         }
         return produtos;
     }
@@ -78,9 +78,9 @@ public class ProdutoDaoEstatico implements ProdutoDao {
          ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
         for (int i = 0; i < todosProdutos.size(); i++) {
-            if (todosProdutos.get(i).getPrecoCompra()== filtro) {
+            //if (todosProdutos.get(i).getPrecoCompra()== filtro) {
                 produtos.add(todosProdutos.get(i));
-            }
+            //}
         }
         return produtos;
     }
@@ -90,9 +90,9 @@ public class ProdutoDaoEstatico implements ProdutoDao {
          ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
         for (int i = 0; i < todosProdutos.size(); i++) {
-            if (todosProdutos.get(i).getPrecoVenda()== filtro) {
+            //if (todosProdutos.get(i).getPrecoVenda()== filtro) {
                 produtos.add(todosProdutos.get(i));
-            }
+            //}
         }
         return produtos;
     }

@@ -587,7 +587,6 @@ public class VendaPrincipal extends javax.swing.JPanel {
         }
         Produto produto = new Produto();
         produto.setDescricao(jcProduto.getSelectedItem().toString());
-        produto.setPrecoVenda(Double.parseDouble(txtValor.getText()));
 
         ItemVenda itemVenda = new ItemVenda();
         itemVenda.setQuantidade(Integer.parseInt(txtQtd.getText()));

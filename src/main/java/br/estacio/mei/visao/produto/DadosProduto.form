@@ -50,7 +50,7 @@
                           <EmptySpace min="-2" pref="431" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
@@ -72,14 +72,7 @@
                                       <Component id="campoParaValor" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="descricao" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Fornecedor" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="campoParaFornecedor" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="descricao" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -110,12 +103,7 @@
                       <Component id="valor" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="campoParaValor" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="33" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Fornecedor" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="campoParaFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace pref="84" max="32767" attributes="0"/>
                   <Component id="descricao" min="-2" pref="20" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Component id="campoParaDescricao" min="-2" pref="70" max="-2" attributes="0"/>
@@ -158,16 +146,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inserirProdutoActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="Fornecedor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Qtd em estoque"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="campoParaFornecedor">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoParaFornecedorActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="descricao">
