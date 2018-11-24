@@ -140,7 +140,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Codigo", "Categoria", "Nome", "Valor", "Qtd em Estoque", "Descrição"
+                "Codigo", "Categoria", "Nome", "Valor", "Lucro", "Descrição"
             }
         ));
         tabelaProduto.setViewportView(produtos);
@@ -361,30 +361,19 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton alterarProduto;
-    private javax.swing.JTextPane buscar;
     private javax.swing.JTextPane buscar1;
-    private javax.swing.JButton buscarProduto;
     private javax.swing.JButton buscarProduto1;
-    private javax.swing.JScrollPane campoBusca;
     private javax.swing.JScrollPane campoBusca1;
-    private javax.swing.JButton excluirProduto;
     private javax.swing.JButton excluirProduto1;
-    private javax.swing.JLabel filtrarPor;
     private javax.swing.JLabel filtrarPor1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel msgErro;
     private javax.swing.JLabel msgErro1;
-    private javax.swing.JButton novoProduto;
     private javax.swing.JButton novoProduto1;
-    private javax.swing.JPanel panelDinamico;
     private javax.swing.JPanel panelDinamico1;
-    private javax.swing.JPanel panelErro;
     private javax.swing.JPanel panelErro1;
     private javax.swing.JTable produtos;
     private javax.swing.JScrollPane tabelaProduto;
     private javax.swing.JPanel tbProdutos;
-    private javax.swing.JComboBox<String> tipoPesquisa;
     private javax.swing.JComboBox<String> tipoPesquisa1;
     // End of variables declaration//GEN-END:variables
 
