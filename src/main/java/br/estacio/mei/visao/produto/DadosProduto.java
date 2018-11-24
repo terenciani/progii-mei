@@ -49,6 +49,8 @@ public class DadosProduto extends javax.swing.JPanel {
         selcionarCategoria = new javax.swing.JComboBox<>();
         valor = new javax.swing.JLabel();
         campoParaValor = new javax.swing.JTextField();
+        Lucro = new javax.swing.JLabel();
+        campoParaLucro = new javax.swing.JTextField();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -86,6 +88,14 @@ public class DadosProduto extends javax.swing.JPanel {
             }
         });
 
+        Lucro.setText("Lucro");
+
+        campoParaLucro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoParaLucroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout InserirLayout = new javax.swing.GroupLayout(Inserir);
         Inserir.setLayout(InserirLayout);
         InserirLayout.setHorizontalGroup(
@@ -107,22 +117,27 @@ public class DadosProduto extends javax.swing.JPanel {
                         .addGap(431, 431, 431))
                     .addGroup(InserirLayout.createSequentialGroup()
                         .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(descricao)
                             .addGroup(InserirLayout.createSequentialGroup()
                                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InserirLayout.createSequentialGroup()
-                                        .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(categoria)
-                                            .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(45, 45, 45))
+                                    .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InserirLayout.createSequentialGroup()
+                                            .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(categoria)
+                                                .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(45, 45, 45))
+                                        .addGroup(InserirLayout.createSequentialGroup()
+                                            .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(46, 46, 46)))
                                     .addGroup(InserirLayout.createSequentialGroup()
-                                        .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(46, 46, 46)))
+                                        .addComponent(Lucro)
+                                        .addGap(66, 66, 66)))
                                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(campoParaNome)
                                     .addComponent(campoParaCodigo)
                                     .addComponent(selcionarCategoria, 0, 200, Short.MAX_VALUE)
-                                    .addComponent(campoParaValor)))
-                            .addComponent(descricao))
+                                    .addComponent(campoParaValor)
+                                    .addComponent(campoParaLucro))))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         InserirLayout.setVerticalGroup(
@@ -144,7 +159,11 @@ public class DadosProduto extends javax.swing.JPanel {
                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoParaValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lucro)
+                    .addComponent(campoParaLucro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addComponent(descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(campoParaDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -184,11 +203,17 @@ public class DadosProduto extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoParaValorActionPerformed
 
+    private void campoParaLucroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoParaLucroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoParaLucroActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Inserir;
+    private javax.swing.JLabel Lucro;
     private javax.swing.JTextField campoParaCodigo;
     private javax.swing.JTextField campoParaDescricao;
+    private javax.swing.JTextField campoParaLucro;
     private javax.swing.JTextField campoParaNome;
     private javax.swing.JTextField campoParaValor;
     private javax.swing.JLabel categoria;
