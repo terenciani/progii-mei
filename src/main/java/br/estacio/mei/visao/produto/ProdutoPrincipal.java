@@ -210,7 +210,23 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void alterarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarProdutoActionPerformed
-        // TODO add your handling code here:
+       if (produtos.getSelectedRow() >= 0) {
+            //==> Pega o cógido do produto selecionado na tabela <==\\
+            String tipo = "update";
+            int linha = produtos.getSelectedRow();
+
+            int codigo = (int) produtos.getModel().getValueAt(linha, 0);
+            //JPanel onde tem a tabela
+
+            //==> Abre a tela de edição, passando o código do produto <==\\
+            DadosProduto dadosProduto = new DadosProduto(codigoNovoProduto, tipo);
+            panelDinamico.removeAll();
+            panelDinamico.add(dadoProduto);
+            panelDinamico.validate();
+            panelDinamico.repaint();
+        } else {
+            //JOptionPane.showMessageDialog(null, "Selecione um Produto");
+        }
     }//GEN-LAST:event_alterarProdutoActionPerformed
 
     private void tipoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoPesquisaActionPerformed
