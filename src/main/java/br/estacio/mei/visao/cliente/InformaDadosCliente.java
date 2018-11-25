@@ -7,16 +7,11 @@ package br.estacio.mei.visao.cliente;
 
 import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.dao.EnderecoDao;
-import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
 import br.estacio.mei.dao.implementacao.ClienteDaoJDBC;
-import br.estacio.mei.dao.implementacao.EnderecoDaoEstatico;
 import br.estacio.mei.dao.implementacao.EnderecoDaoJDBC;
 import br.estacio.mei.model.Cliente;
 import br.estacio.mei.model.Endereco;
 import java.awt.Color;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -421,12 +416,8 @@ public class InformaDadosCliente extends javax.swing.JPanel {
             }
 
             if (this.tipo.equals("insert")) {
+                cliente.setEndereco(enderecoCliente);
                 clienteDao.salvarCliente(cliente);
-                //metodo que pega o último código da tabela clientes para utilizar este no endereco do mesmo cliente .
-                int id = enderecoDao.maxCodigo();
-                                
-                enderecoDao.salvarEnderecoCliente(enderecoCliente, id);
-
                 
                 // JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
             } else {

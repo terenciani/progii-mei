@@ -1,3 +1,36 @@
+-- Sequence: public.tb_endereco_id_seq
+
+-- DROP SEQUENCE public.tb_endereco_id_seq;
+
+CREATE SEQUENCE public.tb_endereco_codigo_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 100000
+  START 1
+  CACHE 1;
+ALTER TABLE public.tb_endereco_codigo_seq
+  OWNER TO postgres;
+
+-- Table: public.tb_endereco
+
+-- DROP TABLE public.tb_endereco;
+  
+CREATE TABLE endereco
+(
+codigo integer NOT NULL DEFAULT nextval('tb_endereco_codigo_seq'::regclass),
+rua character varying(30) COLLATE pg_catalog."default",
+numero integer,
+bairro character varying(30) COLLATE pg_catalog."default",
+cidade character varying(30) COLLATE pg_catalog."default",
+estado character varying(25)[] COLLATE pg_catalog."default",
+cep character varying(8)[] COLLATE pg_catalog."default",
+complemento character varying(50)[] COLLATE pg_catalog."default",
+CONSTRAINT endereco_pkey PRIMARY KEY (codigo)
+)
+WITH (
+OIDS = FALSE
+)
+TABLESPACE pg_default;
 -- Table: public.tb_aluno
 
 -- DROP TABLE public.tb_aluno;
@@ -29,33 +62,33 @@ ALTER TABLE public.tb_aluno
 
 -- DROP SEQUENCE public.tb_aluno_id_seq;
 
-CREATE SEQUENCE public.tb_clientes_codigo_seq
+CREATE SEQUENCE public.tb_cliente_codigo_seq
   INCREMENT 1
   MINVALUE 1
   MAXVALUE 100000
   START 1
   CACHE 1;
-ALTER TABLE public.tb_clientes_codigo_seq
+ALTER TABLE public.tb_cliente_codigo_seq
   OWNER TO postgres;
 
--- Table: public.tb_clientes
+-- Table: public.tb_cliente
 
--- DROP TABLE public.tb_clientes;
+-- DROP TABLE public.tb_cliente;
 
-CREATE TABLE public.tb_clientes
+CREATE TABLE public.tb_cliente
 (
-  codigo integer NOT NULL DEFAULT nextval('tb_clientes_codigo_seq'::regclass),
-  "cpfCnpj" character varying(14),
+  codigo integer NOT NULL DEFAULT nextval('tb_cliente_codigo_seq'::regclass),
+  cpfCnpj character varying(14),
   nome character varying(50),
-  "nomeFantasia" character varying(50),
-  "inscrEstadual" character varying(20),
+  nomeFantasia character varying(50),
+  inscrEstadual character varying(20),
   telefone character varying(20),
   email character varying(30)
 )
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE public.tb_clientes
+ALTER TABLE public.tb_cliente
   OWNER TO postgres;
  
  CREATE SEQUENCE public.tb_contas_a_pagar_codigo_seq

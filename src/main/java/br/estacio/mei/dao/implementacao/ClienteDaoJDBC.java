@@ -8,8 +8,8 @@ package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.banco.estatico.Conexao;
 import br.estacio.mei.dao.ClienteDao;
+import br.estacio.mei.dao.EnderecoDao;
 import br.estacio.mei.model.Cliente;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * @author aluno
  */
 public class ClienteDaoJDBC implements ClienteDao {
-
+    EnderecoDao enderecoDao = new EnderecoDaoJDBC();
     Cliente cliente = new Cliente();
 
     @Override
@@ -51,7 +51,11 @@ public class ClienteDaoJDBC implements ClienteDao {
 
     @Override
     public Cliente salvarCliente(Cliente cliente) {
+        //metodo que pega o último código da tabela clientes para utilizar este no endereco do mesmo cliente .
+        int id = enderecoDao.maxCodigo();
 
+        enderecoDao.salvarEnderecoCliente(cliente.getEndereco(), id);
+        
         String sql = "INSERT "
                 + "INTO "
                 + "tb_cliente (cpfcnpj, nome, nomefantasia, inscrestadual, telefone, email)"
@@ -84,16 +88,16 @@ public class ClienteDaoJDBC implements ClienteDao {
         String sql = "UPDATE tb_cliente set cpfcnpj = ?, nome = ?, nomefantasia = ?, inscrestadual = ?, telefone = ?, email = ? where codigo = ?";
 
         try {
-            PreparedStatement preparacaoDaInstrucao1 = Conexao.retornaConexao().prepareStatement(sql);
-            preparacaoDaInstrucao1.setString(1, cliente.getCpfCnpj());
-            preparacaoDaInstrucao1.setString(2, cliente.getNome());
-            preparacaoDaInstrucao1.setString(3, cliente.getNomeFantasia());
-            preparacaoDaInstrucao1.setString(4, cliente.getInscrEstadual());
-            preparacaoDaInstrucao1.setString(5, cliente.getTelefone());
-            preparacaoDaInstrucao1.setString(6, cliente.getEmail());
-            preparacaoDaInstrucao1.setInt(7, cliente.getCodigo());
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            preparacaoDaInstrucao.setString(1, cliente.getCpfCnpj());
+            preparacaoDaInstrucao.setString(2, cliente.getNome());
+            preparacaoDaInstrucao.setString(3, cliente.getNomeFantasia());
+            preparacaoDaInstrucao.setString(4, cliente.getInscrEstadual());
+            preparacaoDaInstrucao.setString(5, cliente.getTelefone());
+            preparacaoDaInstrucao.setString(6, cliente.getEmail());
+            preparacaoDaInstrucao.setInt(7, cliente.getCodigo());
 
-            preparacaoDaInstrucao1.executeUpdate();
+            preparacaoDaInstrucao.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
             return false;
