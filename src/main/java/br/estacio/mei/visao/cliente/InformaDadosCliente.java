@@ -427,6 +427,7 @@ public class InformaDadosCliente extends javax.swing.JPanel {
                                 
                 enderecoDao.salvarEnderecoCliente(enderecoCliente, id);
 
+                
                 // JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
             } else {
                 clienteDao.atualizarCliente(cliente, codigoCliente);
