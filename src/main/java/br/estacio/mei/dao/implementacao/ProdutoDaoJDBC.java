@@ -9,7 +9,6 @@ import br.estacio.mei.banco.estatico.Conexao;
 import br.estacio.mei.dao.ProdutoDao;
 import br.estacio.mei.model.Categoria;
 import br.estacio.mei.model.Produto;
-import static com.sun.xml.internal.ws.api.streaming.XMLStreamWriterFactory.set;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
