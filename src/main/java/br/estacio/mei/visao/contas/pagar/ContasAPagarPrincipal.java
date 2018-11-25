@@ -188,8 +188,8 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(btnBusca))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel1Layout.createSequentialGroup()
-                                    .addComponent(btCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(31, 31, 31)
+                                    .addComponent(btCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
                                     .addComponent(BtEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(Btexcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -518,6 +518,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_jTabelaPMouseClicked
 
     private void btCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrar1ActionPerformed
+        
         Painel1.setVisible(false);
         Painel2.setVisible(true);
         Painel3.setVisible(false);
@@ -526,15 +527,33 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     private void BtEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtEditarActionPerformed
         
         if (jTabelaP.getSelectedRow() != -1) {
-            jTabelaP.setValueAt(txtdtv.getText(), jTabelaP.getSelectedRow(), 0);
-            jTabelaP.setValueAt(txtdesc.getText(), jTabelaP.getSelectedRow(), 1);
-            jTabelaP.setValueAt(txtv.getText(), jTabelaP.getSelectedRow(), 2);
-            jTabelaP.setValueAt(txtdtp.getText(), jTabelaP.getSelectedRow(), 3);
-            jTabelaP.setValueAt(txtcod.getText(), jTabelaP.getSelectedRow(), 4);
-            jTabelaP.setValueAt(txtstatus.getText(), jTabelaP.getSelectedRow(), 5);
-
+            int linha = jTabelaP.getSelectedRow();
+            String dataValidade = jTabelaP.getValueAt(linha, 0).toString();
+            txtdtv1.setText(dataValidade);
+            //----------------------------------------------------
+            String Descricao = jTabelaP.getValueAt(linha, 1).toString();
+            txtdesc1.setText(Descricao);
+            //----------------------------------------------------
+            String Valor = jTabelaP.getValueAt(linha, 2).toString();
+            txtv1.setText(Valor);
+            //----------------------------------------------------
+            String dataPagamento = jTabelaP.getValueAt(linha, 3).toString();
+            txtdtp1.setText(dataPagamento);
+            //----------------------------------------------------
+            String codigo = jTabelaP.getValueAt(linha, 4).toString();
+            txtcod1.setText(codigo);
+            //----------------------------------------------------
+            String status = jTabelaP.getValueAt(linha, 5).toString();
+            txtstatus1.setText(status);
         }
-
+        
+        if (jTabelaP.getSelectedRow() != -1) {
+        DefaultTableModel dtmContas = (DefaultTableModel) jTabelaP.getModel();
+        Object[] dados  = {txtdtv1.getText(),txtdesc1.getText(),txtv1.getText(),txtdtp1.getText(),txtcod1.getText(),txtstatus1.getText()};
+        dtmContas.equals(dados);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um produto para editar");
+        }
         Painel3.setVisible(true);
         Painel1.setVisible(false);
         Painel2.setVisible(false);
