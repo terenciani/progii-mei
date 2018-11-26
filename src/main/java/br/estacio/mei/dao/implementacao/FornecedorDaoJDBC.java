@@ -63,23 +63,23 @@ public class FornecedorDaoJDBC implements FornecedorDao {
 
     @Override
     public Fornecedor alterarFornecedor(Fornecedor fornecedor) {
-        String sql = "UPDATE tb_fornecedor  SET razaosocial=?, fantasia=?, cpfcnpj=?, email=?, telefone=?, ie=?, endereco=?, numero=?, bairro=?, cidade=?, estado=?, cep=? WHERE codigo = ?";
+        String sql = "UPDATE tb_fornecedor SET razaosocial=?, fantasia=?, cpfcnpj=?, email=?, telefone=?, ie=?, endereco=?, numero=?, bairro=?, cidade=?, estado=?, cep=? WHERE codigo = ?";
         
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
             preparacaoDaInstrucao.setString(1, fornecedor.getRazaoSocial());
             preparacaoDaInstrucao.setString(2, fornecedor.getFantasia());
-            preparacaoDaInstrucao.setString(4, fornecedor.getCPFCNPJ());
-            preparacaoDaInstrucao.setString(5, fornecedor.getEmail());
-            preparacaoDaInstrucao.setString(6, fornecedor.getTelefone());
-            preparacaoDaInstrucao.setString(7, fornecedor.getIe());
-            preparacaoDaInstrucao.setString(8, fornecedor.getEndereco());
-            preparacaoDaInstrucao.setInt(9, fornecedor.getNumero());
-            preparacaoDaInstrucao.setString(10, fornecedor.getBairro());
-            preparacaoDaInstrucao.setString(11, fornecedor.getCidade());
-            preparacaoDaInstrucao.setString(12, fornecedor.getEstado());
-            preparacaoDaInstrucao.setString(13, fornecedor.getCep());
-            preparacaoDaInstrucao.setInt(14, fornecedor.getCodigo());
+            preparacaoDaInstrucao.setString(3, fornecedor.getCPFCNPJ());
+            preparacaoDaInstrucao.setString(4, fornecedor.getEmail());
+            preparacaoDaInstrucao.setString(5, fornecedor.getTelefone());
+            preparacaoDaInstrucao.setString(6, fornecedor.getIe());
+            preparacaoDaInstrucao.setString(7, fornecedor.getEndereco());
+            preparacaoDaInstrucao.setInt(8, fornecedor.getNumero());
+            preparacaoDaInstrucao.setString(9, fornecedor.getBairro());
+            preparacaoDaInstrucao.setString(10, fornecedor.getCidade());
+            preparacaoDaInstrucao.setString(11, fornecedor.getEstado());
+            preparacaoDaInstrucao.setString(12, fornecedor.getCep());
+            preparacaoDaInstrucao.setInt(13, fornecedor.getCodigo());
             
 
             preparacaoDaInstrucao.executeUpdate();
