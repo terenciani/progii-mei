@@ -46,7 +46,7 @@ public class DadosProduto extends javax.swing.JPanel {
         inserirProduto = new javax.swing.JButton();
         descricao = new javax.swing.JLabel();
         campoParaDescricao = new javax.swing.JTextField();
-        selcionarCategoria = new javax.swing.JComboBox<>();
+        selecionarCategoria = new javax.swing.JComboBox<>();
         valor = new javax.swing.JLabel();
         campoParaValor = new javax.swing.JTextField();
         Lucro = new javax.swing.JLabel();
@@ -73,10 +73,10 @@ public class DadosProduto extends javax.swing.JPanel {
 
         descricao.setText("Descrição");
 
-        selcionarCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        selcionarCategoria.addActionListener(new java.awt.event.ActionListener() {
+        selecionarCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selecionarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selcionarCategoriaActionPerformed(evt);
+                selecionarCategoriaActionPerformed(evt);
             }
         });
 
@@ -135,7 +135,7 @@ public class DadosProduto extends javax.swing.JPanel {
                                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(campoParaNome)
                                     .addComponent(campoParaCodigo)
-                                    .addComponent(selcionarCategoria, 0, 200, Short.MAX_VALUE)
+                                    .addComponent(selecionarCategoria, 0, 200, Short.MAX_VALUE)
                                     .addComponent(campoParaValor)
                                     .addComponent(campoParaLucro))))
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -149,7 +149,7 @@ public class DadosProduto extends javax.swing.JPanel {
                     .addComponent(campoParaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(selcionarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selecionarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -175,27 +175,24 @@ public class DadosProduto extends javax.swing.JPanel {
         add(Inserir, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void selcionarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selcionarCategoriaActionPerformed
+    private void selecionarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selecionarCategoriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_selcionarCategoriaActionPerformed
+    }//GEN-LAST:event_selecionarCategoriaActionPerformed
 
     private void inserirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserirProdutoActionPerformed
-        //Dados para testes
-
+        /**Dados para testes 
+        */
+        
         //Deverá ser dinâmico do formulário
         Produto produto = new Produto();
-        Fornecedor fornecedor = new Fornecedor();
-        fornecedor.setRazaoSocial("Estácio");
         Categoria categoria = new Categoria();
 
-        categoria.setCodigo(1);
-        categoria.setDescricao("Bijuteria");
         produto.setCodigo(1);
-        produto.setDescricao("Anel Dourado");
-        produto.setLucro(10);
-        produto.setNome("Anel");
-        produto.setQuantidade(15);
-        produto.setValorAtual(15);
+        categoria.setCategoria(selecionarCategoria.getActionCommand());
+        produto.setNome(campoParaNome.getText());
+        produto.setValor(Double.parseDouble(campoParaValor.getText()));
+        produto.setLucro(Double.parseDouble(campoParaLucro.getText()));
+        produto.setDescricao(campoParaDescricao.getText());
         daoProduto.salvar(produto);
     }//GEN-LAST:event_inserirProdutoActionPerformed
 
@@ -221,7 +218,7 @@ public class DadosProduto extends javax.swing.JPanel {
     private javax.swing.JLabel descricao;
     private javax.swing.JButton inserirProduto;
     private javax.swing.JLabel nome;
-    private javax.swing.JComboBox<String> selcionarCategoria;
+    private javax.swing.JComboBox<String> selecionarCategoria;
     private javax.swing.JLabel valor;
     // End of variables declaration//GEN-END:variables
 }

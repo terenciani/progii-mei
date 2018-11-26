@@ -75,7 +75,7 @@
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="campoParaNome" max="32767" attributes="0"/>
                                       <Component id="campoParaCodigo" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="selcionarCategoria" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="selecionarCategoria" alignment="0" pref="200" max="32767" attributes="0"/>
                                       <Component id="campoParaValor" max="32767" attributes="0"/>
                                       <Component id="campoParaLucro" max="32767" attributes="0"/>
                                   </Group>
@@ -97,7 +97,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="selcionarCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="selecionarCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="categoria" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -167,7 +167,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="campoParaDescricao">
         </Component>
-        <Component class="javax.swing.JComboBox" name="selcionarCategoria">
+        <Component class="javax.swing.JComboBox" name="selecionarCategoria">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -179,7 +179,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selcionarCategoriaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selecionarCategoriaActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
