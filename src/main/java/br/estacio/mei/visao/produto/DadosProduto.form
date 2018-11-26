@@ -36,11 +36,6 @@
                   <Component id="inserirProduto" min="-2" pref="150" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="campoParaDescricao" min="-2" pref="360" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -50,38 +45,42 @@
                           <EmptySpace min="-2" pref="431" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="descricao" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="categoria" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="nome" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="descricao" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Component id="campoParaDescricao" min="-2" pref="360" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="categoria" min="-2" max="-2" attributes="0"/>
+                                              <Component id="nome" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="valor" min="-2" pref="46" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                          </Group>
+                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="Lucro" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                          <Component id="valor" min="-2" pref="46" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="campoParaNome" max="32767" attributes="0"/>
-                                      <Component id="campoParaCodigo" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="selecionarCategoria" alignment="0" pref="200" max="32767" attributes="0"/>
-                                      <Component id="campoParaValor" max="32767" attributes="0"/>
-                                      <Component id="campoParaLucro" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Lucro" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="campoParaNome" max="32767" attributes="0"/>
+                                  <Component id="campoParaCodigo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="campoParaValor" max="32767" attributes="0"/>
+                                  <Component id="campoParaLucro" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="campoCategoria" pref="316" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -95,12 +94,12 @@
                       <Component id="codigo" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="campoParaCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="selecionarCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="categoria" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="campoCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="nome" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="campoParaNome" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -132,6 +131,8 @@
             <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JTextField" name="campoParaCodigo">
+        </Component>
         <Component class="javax.swing.JLabel" name="nome">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nome"/>
@@ -144,20 +145,9 @@
             <Property name="text" type="java.lang.String" value="Categoria"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoParaCodigo">
-        </Component>
-        <Component class="javax.swing.JButton" name="inserirProduto">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icones/save-button-interface-symbol-of-outlined-diskette_icon-icons.com_73167.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Inserir Produto"/>
-          </Properties>
+        <Component class="javax.swing.JTextField" name="campoCategoria">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inserirProdutoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoCategoriaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="descricao">
@@ -166,24 +156,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="campoParaDescricao">
-        </Component>
-        <Component class="javax.swing.JComboBox" name="selecionarCategoria">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
-            </Property>
-          </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selecionarCategoriaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoParaDescricaoActionPerformed"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="valor">
           <Properties>
@@ -203,6 +178,20 @@
         <Component class="javax.swing.JTextField" name="campoParaLucro">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoParaLucroActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="inserirProduto">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="66" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icones/save-button-interface-symbol-of-outlined-diskette_icon-icons.com_73167.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Inserir Produto"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inserirProdutoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
