@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import br.estacio.mei.dao.FornecedorDao;
 import br.estacio.mei.dao.implementacao.FornecedorDaoEstatica;
+import br.estacio.mei.dao.implementacao.FornecedorDaoJDBC;
 import br.estacio.mei.model.Fornecedor;
 
 
@@ -19,7 +20,7 @@ import br.estacio.mei.model.Fornecedor;
  */
 public class FornecedorPrincipal extends javax.swing.JPanel {
     
-    FornecedorDao dao = new FornecedorDaoEstatica();
+    FornecedorDao dao = new FornecedorDaoJDBC();
     Fornecedor fornecedor = new Fornecedor();
     /**
      * Creates new form ConsultaFornecedor

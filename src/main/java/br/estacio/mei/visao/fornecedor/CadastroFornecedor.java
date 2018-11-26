@@ -9,6 +9,7 @@ import br.estacio.mei.dao.EnderecoDao;
 import br.estacio.mei.dao.FornecedorDao;
 import br.estacio.mei.dao.implementacao.EnderecoDaoEstatico;
 import br.estacio.mei.dao.implementacao.FornecedorDaoEstatica;
+import br.estacio.mei.dao.implementacao.FornecedorDaoJDBC;
 import br.estacio.mei.model.Endereco;
 import br.estacio.mei.model.Fornecedor;
 import java.awt.Color;
@@ -19,8 +20,7 @@ import javax.swing.JOptionPane;
  * @author Marcelo
  */
 public class CadastroFornecedor extends javax.swing.JPanel {
-    FornecedorDao daofor = new FornecedorDaoEstatica();
-    EnderecoDao enderecoDao = new EnderecoDaoEstatico();
+    FornecedorDao daofor = new FornecedorDaoJDBC();
     
     int codigoFornecedor = 0;
     String tipo= "";
@@ -39,7 +39,6 @@ public class CadastroFornecedor extends javax.swing.JPanel {
         codigoFornecedor = codigo;
         if (tipo.equals("update")) {
             daofor.listarFornecedores();
-            enderecoDao.buscarEndereco();
 
             ArrayList<Fornecedor> buscarFornecedor = daofor.listarFornecedores();
             for (int i = 0; i < buscarFornecedor.size(); i++) {
@@ -47,11 +46,18 @@ public class CadastroFornecedor extends javax.swing.JPanel {
 
                 if (editarFornecedor.getCodigo() == codigoFornecedor) {
                     txtRazaoSocial.setText(editarFornecedor.getRazaoSocial());
-                    txtCPFCNPJ.setText(editarFornecedor.getCPFCNPJ());
                     txtFantasia.setText(editarFornecedor.getFantasia());
+                    txtEndereco.setText(editarFornecedor.getEndereco());
+                    txtNumero.setText(String.valueOf(editarFornecedor.getNumero()));
+                    txtCep.setText(String.valueOf(editarFornecedor.getCep()));
+                    txtBairro.setText(String.valueOf(editarFornecedor.getBairro()));
+                    txtCidade.setText(String.valueOf(editarFornecedor.getCidade()));
+                    txtUF.setText(String.valueOf(editarFornecedor.getEstado()));
+                    txtCPFCNPJ.setText(editarFornecedor.getCPFCNPJ());
                     txtIE.setText(editarFornecedor.getIe());
                     txtTelefone.setText(editarFornecedor.getTelefone());
                     txtEmail.setText(editarFornecedor.getEmail());
+                    
                 }
             }
         }
@@ -91,12 +97,8 @@ public class CadastroFornecedor extends javax.swing.JPanel {
         txtIE = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtTelefone = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        txtCelular = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        txtSite = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
 
@@ -150,8 +152,6 @@ public class CadastroFornecedor extends javax.swing.JPanel {
             }
         });
 
-        jLabel12.setText("Celular:");
-
         jLabel13.setText("Email:");
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -159,8 +159,6 @@ public class CadastroFornecedor extends javax.swing.JPanel {
                 txtEmailActionPerformed(evt);
             }
         });
-
-        jLabel14.setText("Site:");
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -188,21 +186,11 @@ public class CadastroFornecedor extends javax.swing.JPanel {
                     .addComponent(jLabel3)
                     .addComponent(jLabel6)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel12))
+                    .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtRazaoSocial)
                     .addComponent(txtFantasia)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -214,7 +202,18 @@ public class CadastroFornecedor extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtUF))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtCPFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -222,26 +221,17 @@ public class CadastroFornecedor extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtIE, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel11))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel13)
+                                .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btnCancelar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnSalvar))
-                                    .addComponent(txtEmail))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSite)))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                                .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(65, 65, 65))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(249, 249, 249)
+                .addComponent(btnCancelar)
+                .addGap(98, 98, 98)
+                .addComponent(btnSalvar)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,17 +271,13 @@ public class CadastroFornecedor extends javax.swing.JPanel {
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14)
-                    .addComponent(txtSite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
                     .addComponent(btnSalvar))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         painelDinamico.add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -358,33 +344,31 @@ public class CadastroFornecedor extends javax.swing.JPanel {
 
             if (!txtEndereco.getText().isEmpty()) {
 
-                enderecoFornecedor.setRua(txtEndereco.getText());
+                fornecedor.setEndereco(txtEndereco.getText());
 
             }
             if (!txtNumero.getText().isEmpty()) {
-                enderecoFornecedor.setNumero(Integer.parseInt(txtNumero.getText()));
+                fornecedor.setNumero(Integer.parseInt(txtNumero.getText()));
             }
             if (!txtBairro.getText().isEmpty()) {
-                enderecoFornecedor.setBairro(txtBairro.getText());
+                fornecedor.setBairro(txtBairro.getText());
             }
             if (!txtCidade.getText().isEmpty()) {
-                enderecoFornecedor.setCidade(txtCidade.getText());
+                fornecedor.setCidade(txtCidade.getText());
             }
 
-            enderecoFornecedor.setEstado(txtUF.getText());
+            fornecedor.setEstado(txtUF.getText());
 
             if (!txtCep.getText().isEmpty()) {
-                enderecoFornecedor.setCep(txtCep.getText());
+                fornecedor.setCep(txtCep.getText());
             }
 
             if (this.tipo.equals("insert") ) {
                 daofor.salvarFornecedor(fornecedor);
-                enderecoDao.salvarEnderecoCliente(enderecoFornecedor);
 
                 JOptionPane.showMessageDialog(null, "Fornecedor Cadastrado!");
             } else {
                 daofor.alterarFornecedor(fornecedor);
-                enderecoDao.alterarEndereco(enderecoFornecedor);
                 JOptionPane.showMessageDialog(null, "Fornecedor Atualizado!");
             }
 
@@ -403,9 +387,7 @@ public class CadastroFornecedor extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -418,7 +400,6 @@ public class CadastroFornecedor extends javax.swing.JPanel {
     private javax.swing.JPanel painelDinamico;
     private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtCPFCNPJ;
-    private javax.swing.JTextField txtCelular;
     private javax.swing.JTextField txtCep;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtEmail;
@@ -427,7 +408,6 @@ public class CadastroFornecedor extends javax.swing.JPanel {
     private javax.swing.JTextField txtIE;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtRazaoSocial;
-    private javax.swing.JTextField txtSite;
     private javax.swing.JTextField txtTelefone;
     private javax.swing.JTextField txtUF;
     // End of variables declaration//GEN-END:variables
