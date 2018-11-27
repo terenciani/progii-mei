@@ -117,7 +117,38 @@ public class CategoriaDaoJDBC implements CategoriaDao {
 
     @Override
     public Categoria buscarCategoria(int codigo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Categoria categoria = new Categoria();
+		
+	String SQL = "SELECT * FROM tb_categoria where codigo = ?";
+	try {
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(SQL);
+            preparacaoDaInstrucao.setInt(1, codigo);
+
+            ResultSet resultado = preparacaoDaInstrucao.executeQuery();
+
+            while (resultado.next()) {
+                categoria = categoriaObjeto(resultado);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        return categoria;
+    }
+    
+    private Categoria categoriaObjeto(ResultSet resultado) throws SQLException {
+        Categoria categoria = new Categoria();
+        try {
+            categoria.setCodigo(resultado.getInt("codigo"));
+            categoria.setDescricao(resultado.getString("descricao"));
+            
+
+            return categoria;
+
+        } catch (SQLException ex) {
+            throw new SQLException("Erro na Conversão");
+        }
     }
 
 }
