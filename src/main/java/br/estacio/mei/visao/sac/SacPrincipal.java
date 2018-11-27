@@ -5,19 +5,42 @@
  */
 package br.estacio.mei.visao.sac;
 
+import br.estacio.mei.dao.ServicoDeAtendimentoAoClienteDao;
+import br.estacio.mei.dao.implementacao.ServicoDeAtendimentoAoClienteDaoJDBC;
+import br.estacio.mei.model.ServicoDeAtendimentoAoCliente;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Marcelo
  */
 public class SacPrincipal extends javax.swing.JPanel {
-
+    ServicoDeAtendimentoAoClienteDao sacDao = new ServicoDeAtendimentoAoClienteDaoJDBC();
     /**
      * Creates new form Sac
      */
     public SacPrincipal() {
         initComponents();
+        ArrayList<ServicoDeAtendimentoAoCliente> listaDeSac = sacDao.buscarTodos();
+        popularTabela(listaDeSac);
     }
+    private void popularTabela(ArrayList<ServicoDeAtendimentoAoCliente> listaDeSac) {
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel) jTable1.getModel();
+        //  Primeiro limpa a tabela
+        while (modeloDeColunasDaTabela.getRowCount() != 0) {
+            modeloDeColunasDaTabela.removeRow(0);
+        }
 
+        for (int i = 0; i < listaDeSac.size(); i++) {
+            ServicoDeAtendimentoAoCliente sac = listaDeSac.get(i);
+            Object[] dadosLinha = new Object[3];
+            dadosLinha[0] = sac.getCodigo();
+            dadosLinha[1] = sac.getPalavraChave();
+            dadosLinha[2] = sac.getPergunta();
+            modeloDeColunasDaTabela.addRow(dadosLinha);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,28 +54,27 @@ public class SacPrincipal extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
-        setLayout(new java.awt.GridLayout());
+        setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 500));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setText("Filtrar");
 
-        jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("jButton1");
+        btnBuscar.setText("Buscar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -67,7 +89,7 @@ public class SacPrincipal extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -77,7 +99,7 @@ public class SacPrincipal extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                     .addComponent(jTextField1))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
@@ -86,24 +108,23 @@ public class SacPrincipal extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Produto", "Como cadastrar um produto?"},
-                {"Categoria", "O que é uma categoria?"},
-                {"Vendas", "Preciso preencher todos os campos de uma venda?"},
-                {"Fornecedor", null}
+                {null, "Produto", "Como cadastrar um produto?"},
+                {null, "Categoria", "O que é uma categoria?"},
+                {null, "Vendas", "Preciso preencher todos os campos de uma venda?"},
+                {null, "Fornecedor", null}
             },
             new String [] {
-                "Palavra Chave", "Pergunta"
+                "Código", "Palavra Chave", "Pergunta"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setPreferredSize(null);
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -129,7 +150,7 @@ public class SacPrincipal extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

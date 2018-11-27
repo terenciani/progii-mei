@@ -216,3 +216,33 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.tb_produto
     OWNER to postgres;
+	
+
+	CREATE SEQUENCE public.tb_sac_codigo_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.tb_sac_codigo_seq
+    OWNER TO postgres;
+	-- Table: public.tb_sac
+
+-- DROP TABLE public.tb_sac;
+
+CREATE TABLE public.tb_sac
+(
+    codigo integer NOT NULL DEFAULT nextval('tb_sac_codigo_seq'::regclass),
+    "palavra-chave" character varying(255) COLLATE pg_catalog."default",
+    pergunta character varying(255) COLLATE pg_catalog."default",
+    resposta text COLLATE pg_catalog."default",
+    CONSTRAINT tb_sac_pkey PRIMARY KEY (codigo)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.tb_sac
+    OWNER to postgres;
