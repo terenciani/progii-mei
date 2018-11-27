@@ -10,6 +10,7 @@ import br.estacio.mei.dao.UsuarioDao;
 import br.estacio.mei.model.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -45,21 +46,60 @@ public class UsuarioDaoJDBC implements UsuarioDao{
 
     @Override
     public Usuario salvarUsuario(Usuario usuario) {
-        String sql = "UPDATE tb_usuario set usuario = ?";
-        Usuario usu = new Usuario();
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        String sql = "INSERT "
+                + "INTO " 
+                + "tb_usuario( nome, usuario, senha)"
+                + "VALUES (?, ?, ?)";
+        try {
 
-    @Override
-    public Usuario atualizarUsuario(Usuario usuario) {
-        String sql = "DELETE usuario WHERE tb_usuario = 'usuario'";
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+
+            
+            preparacaoDaInstrucao.setString(1, usuario.getNome());
+            preparacaoDaInstrucao.setString(2, usuario.getUsuario());
+            preparacaoDaInstrucao.setString(3, usuario.getSenha());
+           
+            
+
+            preparacaoDaInstrucao.executeUpdate();
+
+            
+            return usuario;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        
+
+  
     }
 
     @Override
     public boolean excluirUsuario(Usuario usuario) {
+         String sql = "DELETE FROM tb_usuario"
+                    + "WHERE id=?";
+         try {
+            // Objeto PreparedStatement é um objeto que prepara a instrução de sql
+            // ou seja, preenche os valores
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            //De acordo com a posicao do ponto de interrogacao na SQL e o tipo do dado
+            preparacaoDaInstrucao.setInt(1, usuario.getId());
+
+            preparacaoDaInstrucao.executeUpdate();
+
+            return true;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }//To change body of generated methods, choose Tools | Templates.
+
+    @Override
+    public Usuario atualizarUsuario(Usuario usuario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+        
 }
 
