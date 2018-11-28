@@ -28,16 +28,23 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
         initComponents();
         msgErro.setVisible(false);
         produtos.setRowHeight(15);
-
-        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel) produtos.getModel();
-
         ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
+
+        populaTabela(listaDeProdutos);
+    }
+
+    private void populaTabela(ArrayList<Produto> listaDeProdutos) {
+        //limpar tabela
+        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel) produtos.getModel();
         for (int i = 0; i < listaDeProdutos.size(); i++) {
             Produto p = listaDeProdutos.get(i);
-            Object[] dadosDaLinha = new Object[4];
+            Object[] dadosDaLinha = new Object[6];
             dadosDaLinha[0] = p.getCodigo();
-            dadosDaLinha[1] = p.getNome();
-            dadosDaLinha[2] = p.getCategoria();
+            dadosDaLinha[1] = p.getCategoria();
+            dadosDaLinha[2] = p.getNome();
+            dadosDaLinha[3] = p.getValor();
+            dadosDaLinha[4] = p.getLucro();
+            dadosDaLinha[5] = p.getDescricao();
             modeloDeColunasDaTabela.addRow(dadosDaLinha);
         }
     }
@@ -101,7 +108,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
             }
         });
 
-        tipoPesquisa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Categoria", "Nome", "Valor", "Qtde Estoque", "Descrição" }));
+        tipoPesquisa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Categoria", "Nome", "Valor", "Lucro", "Descrição" }));
         tipoPesquisa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoPesquisaActionPerformed(evt);
@@ -210,16 +217,15 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void alterarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarProdutoActionPerformed
-       if (produtos.getSelectedRow() >= 0) {
+        if (produtos.getSelectedRow() >= 0) {
             //==> Pega o cógido do produto selecionado na tabela <==\\
-            String tipo = "update";
-            int linha = produtos.getSelectedRow();
 
+            int linha = produtos.getSelectedRow();
             int codigo = (int) produtos.getModel().getValueAt(linha, 0);
             //JPanel onde tem a tabela
 
             //==> Abre a tela de edição, passando o código do produto <==\\
-            DadosProduto dadosProduto = new DadosProduto(codigo, tipo);
+            DadosProduto dadosProduto = new DadosProduto(codigo);
             panelDinamico.removeAll();
             panelDinamico.add(dadosProduto);
             panelDinamico.validate();
@@ -230,7 +236,10 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_alterarProdutoActionPerformed
 
     private void tipoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoPesquisaActionPerformed
-        // TODO add your handling code here:
+        String nome = buscar.getText();
+         ArrayList<Produto> listaDeProdutos=  produtoDao.pesquisarPorNome(nome);
+         
+         populaTabela(listaDeProdutos);
     }//GEN-LAST:event_tipoPesquisaActionPerformed
 
     private void excluirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirProdutoActionPerformed
@@ -240,30 +249,11 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
             if (resposta == 0) {
                 int linha = produtos.getSelectedRow();
                 int codigo = (int) produtos.getModel().getValueAt(linha, 0);
-                Produto produto = new Produto();
-                produto.setCodigo(codigo);
-                produtoDao.alterar(produto);
-
-                ((DefaultTableModel) produtos.getModel()).setRowCount(0);
-                produtoDao.buscarProdutos();
-                DefaultTableModel modeloDeColunaDaTabela = (DefaultTableModel) produtos.getModel();
+                produtoDao.excluirProduto();
                 ArrayList<Produto> listaDeProdutos = produtoDao.buscarProdutos();
 
-                for (int i = 0; i < listaDeProdutos.size(); i++) {
-                    Produto exibeProduto = listaDeProdutos.get(i);
-                    String nome = buscar.getText();
+                populaTabela(listaDeProdutos);
 
-                    if (exibeProduto.getNome().contains(nome)) {
-
-                        Produto p = listaDeProdutos.get(i);
-                        Object[] dadosDaLinha1 = new Object[4];
-
-                        dadosDaLinha1[0] = p.getCodigo();
-                        dadosDaLinha1[1] = p.getCategoria();
-                        dadosDaLinha1[2] = p.getNome();
-                        modeloDeColunaDaTabela.addRow(dadosDaLinha1);
-                    }
-                }
                 JOptionPane.showMessageDialog(null, "Produto Removido!");
             }
         } else {
@@ -280,7 +270,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
             //==> Se encontrou, incrementa 1, para não repetir o mesmo código <==\\
             codigoNovoProduto += 1;
         }
-        DadosProduto dadosProduto = new DadosProduto(codigoNovoProduto, tipo);
+        DadosProduto dadosProduto = new DadosProduto();
         panelDinamico.removeAll();
         panelDinamico.add(dadosProduto);
         panelDinamico.validate();
@@ -301,10 +291,13 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                     ArrayList<Produto> produtosPorCodigo = produtoDao.pesquisarPorCodigo(pesqCodigo);
                     for (int i = 0; i < produtosPorCodigo.size(); i++) {
                         Produto p = produtosPorCodigo.get(i);
-                        Object[] dadosDaLinha = new Object[4];
+                        Object[] dadosDaLinha = new Object[6];
                         dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getCategoria();
+                        dadosDaLinha[1] = p.getCategoria();
+                        dadosDaLinha[2] = p.getNome();
+                        dadosDaLinha[3] = p.getValor();
+                        dadosDaLinha[4] = p.getLucro();
+                        dadosDaLinha[5] = p.getDescricao();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
                     }
                 } catch (Exception e) {
@@ -323,10 +316,13 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                     ArrayList<Produto> produtosPorNome = produtoDao.pesquisarPorNome(pesqNome);
                     for (int i = 0; i < produtosPorNome.size(); i++) {
                         Produto p = produtosPorNome.get(i);
-                        Object[] dadosDaLinha = new Object[4];
+                        Object[] dadosDaLinha = new Object[6];
                         dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getCategoria();
+                        dadosDaLinha[1] = p.getCategoria();
+                        dadosDaLinha[2] = p.getNome();
+                        dadosDaLinha[3] = p.getValor();
+                        dadosDaLinha[4] = p.getLucro();
+                        dadosDaLinha[5] = p.getDescricao();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
                     }
                 } catch (Exception e) {
@@ -344,10 +340,37 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                     ArrayList<Produto> produtosPorCategoria = produtoDao.pesquisarPorCategoria(pesqCategoria);
                     for (int i = 0; i < produtosPorCategoria.size(); i++) {
                         Produto p = produtosPorCategoria.get(i);
-                        Object[] dadosDaLinha = new Object[4];
+                        Object[] dadosDaLinha = new Object[6];
                         dadosDaLinha[0] = p.getCodigo();
-                        dadosDaLinha[1] = p.getNome();
-                        dadosDaLinha[2] = p.getCategoria();
+                        dadosDaLinha[1] = p.getCategoria();
+                        dadosDaLinha[2] = p.getNome();
+                        dadosDaLinha[3] = p.getValor();
+                        dadosDaLinha[4] = p.getLucro();
+                        dadosDaLinha[5] = p.getDescricao();
+                        modeloDeColunasDaTabela.addRow(dadosDaLinha);
+                    }
+                } catch (Exception e) {
+                    msgErro.setText("Pesquisa Invalida!");
+                    msgErro.setVisible(true);
+                }
+                break;
+                 case 3:
+                try {
+                    msgErro.setVisible(false);
+                    int pesqValor = Integer.parseInt(buscar.getText());
+                    while (modeloDeColunasDaTabela.getRowCount() != 0) {
+                        modeloDeColunasDaTabela.removeRow(0);
+                    }
+                    ArrayList<Produto> produtosPorValor = produtoDao.pesquisarPorValor(pesqValor);
+                    for (int i = 0; i < produtosPorValor.size(); i++) {
+                        Produto p = produtosPorValor.get(i);
+                        Object[] dadosDaLinha = new Object[6];
+                        dadosDaLinha[0] = p.getCodigo();
+                        dadosDaLinha[1] = p.getCategoria();
+                        dadosDaLinha[2] = p.getNome();
+                        dadosDaLinha[3] = p.getValor();
+                        dadosDaLinha[4] = p.getLucro();
+                        dadosDaLinha[5] = p.getDescricao();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
                     }
                 } catch (Exception e) {

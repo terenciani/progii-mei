@@ -169,7 +169,7 @@
                     <StringItem index="1" value="Categoria"/>
                     <StringItem index="2" value="Nome"/>
                     <StringItem index="3" value="Valor"/>
-                    <StringItem index="4" value="Qtde Estoque"/>
+                    <StringItem index="4" value="Lucro"/>
                     <StringItem index="5" value="Descri&#xe7;&#xe3;o"/>
                   </StringArray>
                 </Property>

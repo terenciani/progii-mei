@@ -20,6 +20,7 @@ public interface ProdutoDao {
     public boolean excluirProduto(Produto produto);
     public Produto alterar(Produto produto);
     public ArrayList<Produto> pesquisarPorCodigo(int filtro);
+    public Produto buscarProdutoPorCodigo(int filtro);
     public ArrayList<Produto> pesquisarPorNome(String filtro);
     public ArrayList<Produto> pesquisarPorFornecedor(String filtro);
     public ArrayList<Produto> pesquisarPorPrecoCompra(int filtro);
@@ -29,4 +30,6 @@ public interface ProdutoDao {
     public ArrayList<Produto> pesquisarPorCategoria(int pesqCategoria);
 
     public void excluirProduto();
+
+    public ArrayList<Produto> pesquisarPorValor(int pesqValor);
 }
