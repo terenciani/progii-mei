@@ -189,7 +189,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                 .addGroup(panelCategAcaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textCampoDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(panelCategAcaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoConfirmar)
                     .addComponent(botaoSair))
@@ -197,6 +197,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         );
 
         panelBotoes.setBackground(new java.awt.Color(255, 255, 255));
+        panelBotoes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         botaoIncluir.setBackground(new java.awt.Color(153, 153, 153));
         botaoIncluir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
@@ -208,6 +209,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                 botaoIncluirActionPerformed(evt);
             }
         });
+        panelBotoes.add(botaoIncluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 125, -1));
 
         botaoAlterar.setBackground(new java.awt.Color(153, 153, 153));
         botaoAlterar.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
@@ -219,6 +221,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                 botaoAlterarActionPerformed(evt);
             }
         });
+        panelBotoes.add(botaoAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 44, 125, -1));
 
         botaoExcluir.setBackground(new java.awt.Color(153, 153, 153));
         botaoExcluir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
@@ -230,6 +233,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                 botaoExcluirActionPerformed(evt);
             }
         });
+        panelBotoes.add(botaoExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 88, 125, -1));
 
         botaoImprimir.setBackground(new java.awt.Color(153, 153, 153));
         botaoImprimir.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
@@ -243,6 +247,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                 botaoImprimirActionPerformed(evt);
             }
         });
+        panelBotoes.add(botaoImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 132, -1, -1));
 
         botaoFecharCateg.setBackground(new java.awt.Color(153, 153, 153));
         botaoFecharCateg.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
@@ -255,34 +260,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                 botaoFecharCategActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout panelBotoesLayout = new javax.swing.GroupLayout(panelBotoes);
-        panelBotoes.setLayout(panelBotoesLayout);
-        panelBotoesLayout.setHorizontalGroup(
-            panelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBotoesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoIncluir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoFecharCateg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoImprimir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoExcluir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        panelBotoesLayout.setVerticalGroup(
-            panelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBotoesLayout.createSequentialGroup()
-                .addComponent(botaoIncluir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botaoAlterar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botaoExcluir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botaoImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botaoFecharCateg)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        panelBotoes.add(botaoFecharCateg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 176, 125, -1));
 
         javax.swing.GroupLayout panelCategoriaLayout = new javax.swing.GroupLayout(panelCategoria);
         panelCategoria.setLayout(panelCategoriaLayout);
@@ -295,14 +273,14 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                         .addComponent(labelBuscaCate, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelCategoriaLayout.createSequentialGroup()
-                        .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(panelCategAcao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCategoriaLayout.createSequentialGroup()
                                 .addComponent(textCampoEntradaBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(botaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addGap(28, 28, 28)
                         .addComponent(panelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         panelCategoriaLayout.setVerticalGroup(
@@ -322,7 +300,7 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(panelCategAcao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
 
         add(panelCategoria, java.awt.BorderLayout.CENTER);
@@ -334,28 +312,6 @@ public class CategoriaPrincipal extends javax.swing.JPanel {
         labelAcaoUsuario.setText("Inclusão");
         botaoConfirmar.setText("Salvar");
         panelCategAcao.setVisible(true);
-        // Rotina buscar o último código de CATEGORIA no Banco de Dados
-//        int codigoCategoria = 0;
-//        DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel)jTblCategoria.getModel();
-//        ArrayList<Categoria> listaDeCategoria = categoriaDao.buscarCategoria();
-//        int fim=0;
-//        for (int i=0; i < listaDeCategoria.size();i++)
-//       {
-//        // Inicio da busca do último código de categoria cadastrado
-//            Categoria exibeCategoria = listaDeCategoria.get(i);
-//            if (fim == 0) {
-//                codigoCategoria = exibeCategoria.getCodigo();
-//                fim = 1;
-//            } else if (exibeCategoria.getCodigo() > codigoCategoria) {
-//               codigoCategoria = exibeCategoria.getCodigo();
-//           }
-//        }
-//        if (codigoCategoria == 0) {
-//            codigoCategoria = 1;
-//        } else {
-//            codigoCategoria += 1;
-//        }
-//        textCampoCodigo.setText("" + codigoCategoria);
         textCampoCodigo.setEditable(false);
         textCampoCodigo.setBackground(new Color(170, 170, 170));
     }//GEN-LAST:event_botaoIncluirActionPerformed

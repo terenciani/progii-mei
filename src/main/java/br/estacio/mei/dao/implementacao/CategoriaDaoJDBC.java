@@ -26,7 +26,7 @@ public class CategoriaDaoJDBC implements CategoriaDao {
     public ArrayList<Categoria> buscarCategoria() {
         ArrayList<Categoria> listaDeCategoria = new ArrayList<>();
 
-        String SQL = "SELECT * FROM tb_categoria";
+        String SQL = "SELECT * FROM tb_categoria ORDER BY codigo";
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);
 
@@ -89,18 +89,51 @@ public class CategoriaDaoJDBC implements CategoriaDao {
 
     @Override
     public Categoria buscarCategoriaPorId(int codigo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Categoria categ = new Categoria();
+        String SQL = "SELECT * FROM tb_categoria WHERE codigo = ? ORDER BY codigo";
+        //System.err.println(codigo);
+        try {
+            PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);
+            SQLPreparada.setInt(1, codigo);
+            ResultSet resultado = SQLPreparada.executeQuery();
+
+            while (resultado.next()) {
+
+                categ.setCodigo(resultado.getInt("codigo"));
+                categ.setDescricao(resultado.getString("descricao"));
+                //System.err.println(categ.toString());
+            }
+
+        } catch (Exception excecao) {
+            excecao.printStackTrace();
+        }
+        return categ;
     }
 
     @Override
     public boolean excluirCategoria(Categoria categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //Categoria categ = new Categoria();
+        
+        String SQL = "DELETE FROM tb_categoria WHERE codigo=?";
+
+        try {
+
+            PreparedStatement preparacaoDaInstrucao2 = Conexao.retornaConexao().prepareStatement(SQL);
+            preparacaoDaInstrucao2.setInt(1, categoria.getCodigo());
+            preparacaoDaInstrucao2.executeUpdate();
+
+            return true;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
-    
+
     @Override
     public boolean excluirCategoria(int codigo) {
         String SQL = "DELETE FROM tb_categoria WHERE codigo=?";
-        
+
         try {
 
             PreparedStatement preparacaoDaInstrucao2 = Conexao.retornaConexao().prepareStatement(SQL);
@@ -118,9 +151,9 @@ public class CategoriaDaoJDBC implements CategoriaDao {
     @Override
     public Categoria buscarCategoria(int codigo) {
         Categoria categoria = new Categoria();
-		
-	String SQL = "SELECT * FROM tb_categoria where codigo = ?";
-	try {
+
+        String SQL = "SELECT * FROM tb_categoria where codigo = ?";
+        try {
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(SQL);
             preparacaoDaInstrucao.setInt(1, codigo);
 
@@ -136,13 +169,12 @@ public class CategoriaDaoJDBC implements CategoriaDao {
         }
         return categoria;
     }
-    
+
     private Categoria categoriaObjeto(ResultSet resultado) throws SQLException {
         Categoria categoria = new Categoria();
         try {
             categoria.setCodigo(resultado.getInt("codigo"));
             categoria.setDescricao(resultado.getString("descricao"));
-            
 
             return categoria;
 
