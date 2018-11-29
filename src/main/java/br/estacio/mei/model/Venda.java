@@ -89,7 +89,7 @@ public class Venda {
     public String toString() {
         return "Venda{" + "codigo=" + codigo + ", data=" + data + ", cliente=" + cliente + ", usuario=" + usuario + ", valor=" + valor + ", observacao=" + observacao + ", status=" + status + '}';
     }
-    
-    
+
+
     
 }
