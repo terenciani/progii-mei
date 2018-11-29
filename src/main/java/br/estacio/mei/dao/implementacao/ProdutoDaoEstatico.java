@@ -19,6 +19,7 @@ public class ProdutoDaoEstatico implements ProdutoDao {
     @Override
     public ArrayList<Produto> buscarProdutos() {
         return BancoSingleton.getInstance().tabelaProduto;
+        
     }
 
     @Override

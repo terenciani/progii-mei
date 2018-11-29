@@ -60,7 +60,7 @@ public class VendaDaoEstatica implements VendaDao {
         double soma = 0;
         for (int i = 0; i < tabela.size(); i++) {
             if (venda.getCodigo() == tabela.get(i).getCodigo()) {
-                soma += (tabela.get(i).getValor() * tabela.get(i).getQuantidade());
+                soma += ((tabela.get(i).getValor() * tabela.get(i).getQuantidade())- tabela.get(i).getDesconto());
             }
         }
         return soma;

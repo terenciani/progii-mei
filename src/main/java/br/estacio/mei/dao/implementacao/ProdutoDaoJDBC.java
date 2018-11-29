@@ -108,5 +108,4 @@ public class ProdutoDaoJDBC implements ProdutoDao {
     public ArrayList<Produto> pesquisarPorValor(int pesqValor) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

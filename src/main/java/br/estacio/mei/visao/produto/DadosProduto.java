@@ -195,7 +195,7 @@ public class DadosProduto extends javax.swing.JPanel {
 
         produto.setCodigo(Integer.parseInt(campoParaCodigo.getText()));
         produto.setNome(campoParaNome.getText());
-        produto.setValor(Double.parseDouble(campoParaValor.getText()));
+        produto.setValorAtual((float) Double.parseDouble(campoParaValor.getText()));
         produto.setLucro(Double.parseDouble(campoParaLucro.getText()));
         produto.setDescricao(campoParaDescricao.getText());
 

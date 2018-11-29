@@ -26,10 +26,7 @@ public interface ProdutoDao {
     public ArrayList<Produto> pesquisarPorPrecoCompra(int filtro);
     public ArrayList<Produto> pesquisarPorPrecoVenda(int filtro);
     public ArrayList<Produto> pesquisarPorQtdEstoque(int filtro);
-
     public ArrayList<Produto> pesquisarPorCategoria(int pesqCategoria);
-
-    public void excluirProduto();
-
     public ArrayList<Produto> pesquisarPorValor(int pesqValor);
+    public void excluirProduto();    
 }

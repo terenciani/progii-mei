@@ -16,7 +16,16 @@ public class Venda {
     private Date data;
     private Cliente cliente;
     private Usuario usuario;
+
+    public double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
+    }
     private double valor;
+    private double desconto;
     private String observacao;
     private String formaPagamento;
     private int status;
@@ -87,7 +96,7 @@ public class Venda {
 
     @Override
     public String toString() {
-        return "Venda{" + "codigo=" + codigo + ", data=" + data + ", cliente=" + cliente + ", usuario=" + usuario + ", valor=" + valor + ", observacao=" + observacao + ", status=" + status + '}';
+        return "Venda{" + "codigo=" + codigo + ", data=" + data + ", cliente=" + cliente + ", usuario=" + usuario + ", valor=" + valor + ", observacao=" + observacao + ", desconto=" + desconto + ", status=" + status + "}";
     }
 
 

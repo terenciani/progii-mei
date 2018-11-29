@@ -16,6 +16,15 @@ public class ItemVenda {
     private int codigo;
     private int quantidade;
     private double valor;
+    private double desconto;
+
+    public double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
+    }
     private String formaPagamento;
 
     public String getFormaPagamento() {

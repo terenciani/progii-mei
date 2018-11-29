@@ -42,7 +42,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
             dadosDaLinha[0] = p.getCodigo();
             dadosDaLinha[1] = p.getCategoria();
             dadosDaLinha[2] = p.getNome();
-            dadosDaLinha[3] = p.getValor();
+            dadosDaLinha[3] = p.getValorAtual();
             dadosDaLinha[4] = p.getLucro();
             dadosDaLinha[5] = p.getDescricao();
             modeloDeColunasDaTabela.addRow(dadosDaLinha);
@@ -295,7 +295,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                         dadosDaLinha[0] = p.getCodigo();
                         dadosDaLinha[1] = p.getCategoria();
                         dadosDaLinha[2] = p.getNome();
-                        dadosDaLinha[3] = p.getValor();
+                        dadosDaLinha[3] = p.getValorAtual();
                         dadosDaLinha[4] = p.getLucro();
                         dadosDaLinha[5] = p.getDescricao();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
@@ -320,7 +320,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                         dadosDaLinha[0] = p.getCodigo();
                         dadosDaLinha[1] = p.getCategoria();
                         dadosDaLinha[2] = p.getNome();
-                        dadosDaLinha[3] = p.getValor();
+                        dadosDaLinha[3] = p.getValorAtual();
                         dadosDaLinha[4] = p.getLucro();
                         dadosDaLinha[5] = p.getDescricao();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
@@ -344,7 +344,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                         dadosDaLinha[0] = p.getCodigo();
                         dadosDaLinha[1] = p.getCategoria();
                         dadosDaLinha[2] = p.getNome();
-                        dadosDaLinha[3] = p.getValor();
+                        dadosDaLinha[3] = p.getValorAtual();
                         dadosDaLinha[4] = p.getLucro();
                         dadosDaLinha[5] = p.getDescricao();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
@@ -368,7 +368,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
                         dadosDaLinha[0] = p.getCodigo();
                         dadosDaLinha[1] = p.getCategoria();
                         dadosDaLinha[2] = p.getNome();
-                        dadosDaLinha[3] = p.getValor();
+                        dadosDaLinha[3] = p.getValorAtual();
                         dadosDaLinha[4] = p.getLucro();
                         dadosDaLinha[5] = p.getDescricao();
                         modeloDeColunasDaTabela.addRow(dadosDaLinha);
