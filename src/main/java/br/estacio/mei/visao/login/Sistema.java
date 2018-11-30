@@ -101,9 +101,6 @@ public class Sistema extends javax.swing.JFrame {
         btnRelatorioDeVendas = new javax.swing.JPanel();
         imgRelatorioDeVendas = new javax.swing.JLabel();
         lblRelatorioDeVendas = new javax.swing.JLabel();
-        btnUsuario = new javax.swing.JPanel();
-        imgUsuario = new javax.swing.JLabel();
-        lblUsuario1 = new javax.swing.JLabel();
         btnSac = new javax.swing.JPanel();
         imgSac = new javax.swing.JLabel();
         lblSac = new javax.swing.JLabel();
@@ -112,10 +109,11 @@ public class Sistema extends javax.swing.JFrame {
         lblSair = new javax.swing.JLabel();
         areaDeTrabalho = new javax.swing.JPanel();
         painelBreadcrumb = new javax.swing.JPanel();
+        btnUsuario = new javax.swing.JPanel();
+        imgUsuario = new javax.swing.JLabel();
         lblBreadcrumb = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jlUsuarioLogado = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         lblNomeSistema = new javax.swing.JLabel();
         panelDinamic = new javax.swing.JPanel();
@@ -577,45 +575,6 @@ public class Sistema extends javax.swing.JFrame {
 
         atalhosDoMenu.add(btnRelatorioDeVendas);
 
-        btnUsuario.setBackground(new java.awt.Color(12, 180, 206));
-        btnUsuario.setPreferredSize(new java.awt.Dimension(111, 40));
-        btnUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                hoverEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                hoverExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnUsuarioMousePressed(evt);
-            }
-        });
-
-        imgUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_More_Info_25px.png"))); // NOI18N
-
-        lblUsuario1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblUsuario1.setForeground(new java.awt.Color(255, 255, 255));
-        lblUsuario1.setText("Usuário");
-
-        javax.swing.GroupLayout btnUsuarioLayout = new javax.swing.GroupLayout(btnUsuario);
-        btnUsuario.setLayout(btnUsuarioLayout);
-        btnUsuarioLayout.setHorizontalGroup(
-            btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnUsuarioLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(imgUsuario)
-                .addGap(20, 20, 20)
-                .addComponent(lblUsuario1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        btnUsuarioLayout.setVerticalGroup(
-            btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(imgUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        atalhosDoMenu.add(btnUsuario);
-
         btnSac.setBackground(new java.awt.Color(12, 180, 206));
         btnSac.setPreferredSize(new java.awt.Dimension(111, 40));
         btnSac.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -700,6 +659,37 @@ public class Sistema extends javax.swing.JFrame {
 
         painelBreadcrumb.setBackground(new java.awt.Color(102, 102, 102));
 
+        btnUsuario.setBackground(new java.awt.Color(102, 102, 102));
+        btnUsuario.setPreferredSize(new java.awt.Dimension(111, 40));
+        btnUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                hoverEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                hoverExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnUsuarioMousePressed(evt);
+            }
+        });
+
+        imgUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icons8_More_Info_25px.png"))); // NOI18N
+
+        javax.swing.GroupLayout btnUsuarioLayout = new javax.swing.GroupLayout(btnUsuario);
+        btnUsuario.setLayout(btnUsuarioLayout);
+        btnUsuarioLayout.setHorizontalGroup(
+            btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnUsuarioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(imgUsuario))
+        );
+        btnUsuarioLayout.setVerticalGroup(
+            btnUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnUsuarioLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(imgUsuario))
+        );
+
         lblBreadcrumb.setBackground(new java.awt.Color(204, 204, 204));
         lblBreadcrumb.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblBreadcrumb.setForeground(new java.awt.Color(238, 238, 238));
@@ -712,8 +702,6 @@ public class Sistema extends javax.swing.JFrame {
         jlUsuarioLogado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jlUsuarioLogado.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/usuario-login.png"))); // NOI18N
-
         javax.swing.GroupLayout painelBreadcrumbLayout = new javax.swing.GroupLayout(painelBreadcrumb);
         painelBreadcrumb.setLayout(painelBreadcrumbLayout);
         painelBreadcrumbLayout.setHorizontalGroup(
@@ -723,10 +711,10 @@ public class Sistema extends javax.swing.JFrame {
                 .addGroup(painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator2)
                     .addGroup(painelBreadcrumbLayout.createSequentialGroup()
-                        .addComponent(lblBreadcrumb, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addGap(3, 3, 3)
+                        .addComponent(lblBreadcrumb, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
                         .addComponent(jLabel2)
                         .addGap(5, 5, 5)
                         .addComponent(jlUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -735,12 +723,12 @@ public class Sistema extends javax.swing.JFrame {
         painelBreadcrumbLayout.setVerticalGroup(
             painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBreadcrumbLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(13, 13, 13)
                 .addGroup(painelBreadcrumbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel3)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jlUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblBreadcrumb))
+                    .addComponent(lblBreadcrumb)
+                    .addComponent(btnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(87, Short.MAX_VALUE))
@@ -764,6 +752,7 @@ public class Sistema extends javax.swing.JFrame {
         jLdata.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLdata.setForeground(new java.awt.Color(13, 155, 177));
         jLdata.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLdata.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         jLhora.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLhora.setForeground(new java.awt.Color(51, 51, 51));
@@ -784,7 +773,7 @@ public class Sistema extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addComponent(lblNomeSistema)
                         .addGap(40, 40, 40)
-                        .addComponent(jLdata, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLdata, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -841,7 +830,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairMousePressed
 
     private void btnInicioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMousePressed
-        VendaPrincipal exemplo = new VendaPrincipal();
+        InicioPrincipal exemplo = new InicioPrincipal();
         lblBreadcrumb.setText("BEM VINDO AO MEI");
         panelDinamic.removeAll();
         panelDinamic.add(exemplo);
@@ -1063,7 +1052,6 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel imgVendas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLdata;
     private javax.swing.JLabel jLhora;
@@ -1084,7 +1072,6 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel lblRelatorioDeVendas;
     private javax.swing.JLabel lblSac;
     private javax.swing.JLabel lblSair;
-    private javax.swing.JLabel lblUsuario1;
     private javax.swing.JLabel lblVendas;
     private javax.swing.JPanel menuLateral;
     private javax.swing.JPanel painelBreadcrumb;
