@@ -21,8 +21,28 @@ public class UsuarioDaoJDBC implements UsuarioDao{
 
     @Override
     public Usuario buscarUsuarioPorLogin(String login) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            Usuario usuario = new Usuario();
+        String sql = "SELECT * FROM tb_usuario WHERE usuario=?";
+
+        try {
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            preparacaoDaInstrucao.setString(1, login);
+            ResultSet resultado = preparacaoDaInstrucao.executeQuery();
+
+            while (resultado.next()) {
+                usuario = transformaResultSetEmObjeto(resultado);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+
+        return usuario;
     }
+
+        
+  
 
     @Override
     public ArrayList<Usuario> buscarUsuarios() {
@@ -100,6 +120,18 @@ public class UsuarioDaoJDBC implements UsuarioDao{
     public Usuario atualizarUsuario(Usuario usuario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-        
+    
+ private Usuario transformaResultSetEmObjeto(ResultSet resultado) throws SQLException {
+        Usuario usuario = new Usuario();
+        try {
+            usuario.setId(resultado.getInt("id"));
+            usuario.setNome(resultado.getString("nome"));
+            usuario.setUsuario(resultado.getString("usuario"));
+            usuario.setSenha(resultado.getString("senha"));
+            return usuario;
+        } catch (SQLException ex) {
+            throw new SQLException("Erro na Transformação");
+        }
+    }
 }
 

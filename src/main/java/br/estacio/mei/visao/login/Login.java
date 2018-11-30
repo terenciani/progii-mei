@@ -6,7 +6,7 @@
 package br.estacio.mei.visao.login;
 
 import br.estacio.mei.dao.UsuarioDao;
-import br.estacio.mei.dao.implementacao.UsuarioDaoEstatica;
+import br.estacio.mei.dao.implementacao.UsuarioDaoJDBC;
 import br.estacio.mei.model.Usuario;
 import javax.swing.JPanel;
 
@@ -15,7 +15,7 @@ import javax.swing.JPanel;
  * @author Bisteca
  */
 public class Login extends javax.swing.JFrame {
-    UsuarioDao daoUsuario = new UsuarioDaoEstatica();
+    UsuarioDao daoUsuario = new UsuarioDaoJDBC();
     /**
      * Creates new form Frame_2_LoginMEI
      */
@@ -325,13 +325,14 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void labelButtonEntrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelButtonEntrarMousePressed
+        System.out.println(tfUsuario.getText());
         
         Usuario usuario = daoUsuario.buscarUsuarioPorLogin(tfUsuario.getText());
-        
+        System.out.println(usuario.toString());
         String senha = new String (tfSenha.getPassword());
 
         if(usuario == null)
-            lblMenssage.setText("Usuario e/ou Senha incorretos. Por favor, tente novamente.");
+            lblMenssage.setText("Usuario não encontrado.");
         else if (usuario.getSenha().equals(senha)){
             this.setVisible(false);
             //Se passar o usuario como parâmetro ficará mais fácil pra vocês
