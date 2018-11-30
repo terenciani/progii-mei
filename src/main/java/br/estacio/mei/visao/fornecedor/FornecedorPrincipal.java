@@ -66,7 +66,6 @@ public class FornecedorPrincipal extends javax.swing.JPanel {
         btnEditarFornecedores = new javax.swing.JButton();
         btnExcluirFornecedores = new javax.swing.JButton();
         btnAdicionarNovoFornecedor = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new java.awt.BorderLayout());
@@ -141,13 +140,6 @@ public class FornecedorPrincipal extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/close.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -161,8 +153,7 @@ public class FornecedorPrincipal extends javax.swing.JPanel {
                         .addComponent(btnEditarFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(btnExcluirFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -173,9 +164,7 @@ public class FornecedorPrincipal extends javax.swing.JPanel {
                 .addComponent(btnEditarFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(btnExcluirFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addContainerGap(303, Short.MAX_VALUE))
         );
 
         painelDinamico.add(jPanel5, java.awt.BorderLayout.LINE_END);
@@ -312,19 +301,12 @@ public class FornecedorPrincipal extends javax.swing.JPanel {
         painelDinamico.repaint();
     }//GEN-LAST:event_btnAdicionarNovoFornecedorActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        //        panelDinamico.removeAll();
-        painelDinamico.setVisible(false);
-        //System.exit(0);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarNovoFornecedor;
     private javax.swing.JButton btnBuscarFornecedores;
     private javax.swing.JButton btnEditarFornecedores;
     private javax.swing.JButton btnExcluirFornecedores;
-    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;

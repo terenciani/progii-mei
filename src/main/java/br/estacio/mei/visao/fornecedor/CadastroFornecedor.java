@@ -5,12 +5,9 @@
  */
 package br.estacio.mei.visao.fornecedor;
 
-import br.estacio.mei.dao.EnderecoDao;
+
 import br.estacio.mei.dao.FornecedorDao;
-import br.estacio.mei.dao.implementacao.EnderecoDaoEstatico;
-import br.estacio.mei.dao.implementacao.FornecedorDaoEstatica;
 import br.estacio.mei.dao.implementacao.FornecedorDaoJDBC;
-import br.estacio.mei.model.Endereco;
 import br.estacio.mei.model.Fornecedor;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -101,12 +98,13 @@ public class CadastroFornecedor extends javax.swing.JPanel {
         txtEmail = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
         painelDinamico.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setText("Razão Social:");
+        jLabel1.setText("Razão Social: *");
 
         jLabel2.setText("Fantasia:");
 
@@ -128,7 +126,7 @@ public class CadastroFornecedor extends javax.swing.JPanel {
             }
         });
 
-        jLabel9.setText("CPF/CNPJ:");
+        jLabel9.setText("CPF/CNPJ: *");
 
         txtCPFCNPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,6 +171,9 @@ public class CadastroFornecedor extends javax.swing.JPanel {
                 btnSalvarActionPerformed(evt);
             }
         });
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
+        jLabel12.setText("Campos com * são obrigatórios");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -232,11 +233,17 @@ public class CadastroFornecedor extends javax.swing.JPanel {
                 .addGap(98, 98, 98)
                 .addComponent(btnSalvar)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(285, 285, 285)
+                .addComponent(jLabel12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -277,7 +284,7 @@ public class CadastroFornecedor extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
                     .addComponent(btnSalvar))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         painelDinamico.add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -314,18 +321,19 @@ public class CadastroFornecedor extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        Endereco enderecoFornecedor = new Endereco();
-        if (txtCPFCNPJ.getText().isEmpty()) {
-            txtCPFCNPJ.setBackground(Color.RED);
-
-        } else if (txtRazaoSocial.getText().isEmpty()) {
+        if (txtRazaoSocial.getText().isEmpty()) {
             txtRazaoSocial.setBackground(Color.RED);
+            txtRazaoSocial.requestFocus();
+            
+
+        } else if (txtCPFCNPJ.getText().isEmpty()) {
+            txtCPFCNPJ.setBackground(Color.RED);
+            txtCPFCNPJ.requestFocus();
 
         } else {
             Fornecedor fornecedor = new Fornecedor();
             
             fornecedor.setCodigo(codigoFornecedor);
-            enderecoFornecedor.setCodigoFornecedor(codigoFornecedor);
             fornecedor.setRazaoSocial(txtRazaoSocial.getText());
             fornecedor.setCPFCNPJ(txtCPFCNPJ.getText());
 
@@ -387,6 +395,7 @@ public class CadastroFornecedor extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
