@@ -20,6 +20,7 @@ import java.util.ArrayList;
  * @author aluno
  */
 public class ClienteDaoJDBC implements ClienteDao {
+
     EnderecoDao enderecoDao = new EnderecoDaoJDBC();
     Cliente cliente = new Cliente();
 
@@ -37,8 +38,11 @@ public class ClienteDaoJDBC implements ClienteDao {
                 cliente.setCodigo(resultado.getInt("codigo"));
                 cliente.setCpfCnpj(resultado.getString("cpfCnpj"));
                 cliente.setNome(resultado.getString("nome"));
+                cliente.setNomeFantasia(resultado.getString("nomefantasia"));
+                cliente.setInscrEstadual(resultado.getString("inscrestadual"));
                 cliente.setTelefone(resultado.getString("telefone"));
                 cliente.setEmail(resultado.getString("email"));
+                cliente.setCodEndereco(resultado.getInt("codendereco"));
 
                 listaDeCliente.add(cliente);
             }
@@ -51,11 +55,10 @@ public class ClienteDaoJDBC implements ClienteDao {
 
     @Override
     public Cliente salvarCliente(Cliente cliente) {
-        //metodo que pega o último código da tabela clientes para utilizar este no endereco do mesmo cliente .
+        
         int id = enderecoDao.maxCodigo();
 
-        enderecoDao.salvarEnderecoCliente(cliente.getEndereco(), id);
-        
+        //enderecoDao.salvarEnderecoCliente(cliente.getEndereco(), id);
         String sql = "INSERT "
                 + "INTO "
                 + "tb_cliente (cpfcnpj, nome, nomefantasia, inscrestadual, telefone, email)"
@@ -74,7 +77,6 @@ public class ClienteDaoJDBC implements ClienteDao {
 
             preparacaoDaInstrucao.executeUpdate();
 
-            System.out.println(cliente.getCodigo());
             return cliente;
 
         } catch (SQLException ex) {
@@ -85,7 +87,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 
     @Override
     public boolean atualizarCliente(Cliente cliente, int codigo) {
-        String sql = "UPDATE tb_cliente set cpfcnpj = ?, nome = ?, nomefantasia = ?, inscrestadual = ?, telefone = ?, email = ? where codigo = ?";
+        String sql = "UPDATE tb_cliente set cpfcnpj = ?, nome = ?, nomefantasia = ?, inscrestadual = ?, telefone = ?, email = ? where codendereco = ?";
 
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
@@ -95,7 +97,7 @@ public class ClienteDaoJDBC implements ClienteDao {
             preparacaoDaInstrucao.setString(4, cliente.getInscrEstadual());
             preparacaoDaInstrucao.setString(5, cliente.getTelefone());
             preparacaoDaInstrucao.setString(6, cliente.getEmail());
-            preparacaoDaInstrucao.setInt(7, cliente.getCodigo());
+            preparacaoDaInstrucao.setInt(7, cliente.getCodEndereco());
 
             preparacaoDaInstrucao.executeUpdate();
         } catch (Exception e) {
@@ -112,18 +114,20 @@ public class ClienteDaoJDBC implements ClienteDao {
 
     @Override
     public boolean excluirCliente(int codigo) {
-        String sqlC = "DELETE FROM tb_cliente WHERE codigo=?";
-        String sqlE = "DELETE FROM tb_endereco WHERE codigo=?";
+        String sqlC = "DELETE FROM tb_cliente WHERE codendereco=?";
+        //String sqlE = "DELETE FROM tb_endereco WHERE codigo=?";
         try {
 
             PreparedStatement preparacaoDaInstrucao1 = Conexao.retornaConexao().prepareStatement(sqlC);
             preparacaoDaInstrucao1.setInt(1, codigo);
             preparacaoDaInstrucao1.executeUpdate();
 
-            PreparedStatement preparacaoDaInstrucao2 = Conexao.retornaConexao().prepareStatement(sqlE);
+          /*  PreparedStatement preparacaoDaInstrucao2 = Conexao.retornaConexao().prepareStatement(sqlE);
             preparacaoDaInstrucao2.setInt(1, codigo);
             preparacaoDaInstrucao2.executeUpdate();
-
+          */
+          enderecoDao.excluirEndereco(codigo);
+          
             return true;
 
         } catch (SQLException ex) {
@@ -135,7 +139,7 @@ public class ClienteDaoJDBC implements ClienteDao {
     @Override
     public Cliente buscarCliente(int codigo) {
         Cliente cliente = new Cliente();
-        String SQL = "SELECT * FROM tb_cliente where codigo = ?";
+        String SQL = "SELECT * FROM tb_cliente where codendereco = ?";
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(SQL);
             preparacaoDaInstrucao.setInt(1, codigo);
@@ -163,6 +167,7 @@ public class ClienteDaoJDBC implements ClienteDao {
             cliente.setInscrEstadual(resultado.getString("inscrestadual"));
             cliente.setTelefone(resultado.getString("telefone"));
             cliente.setEmail(resultado.getString("email"));
+            cliente.setCodEndereco(resultado.getInt("codendereco"));
 
             return cliente;
 
@@ -171,6 +176,33 @@ public class ClienteDaoJDBC implements ClienteDao {
         }
     }
 
-    
+    @Override
+    public Cliente salvarCliente(Cliente cliente, int codigo) {
+        String sql = "INSERT "
+                + "INTO "
+                + "tb_cliente (cpfcnpj, nome, nomefantasia, inscrestadual, telefone, email, codendereco)"
+                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try {
+
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+
+            //preparacaoDaInstrucao.setInt(1, cliente.getCodigo());
+            preparacaoDaInstrucao.setString(1, cliente.getCpfCnpj());
+            preparacaoDaInstrucao.setString(2, cliente.getNome());
+            preparacaoDaInstrucao.setString(3, cliente.getNomeFantasia());
+            preparacaoDaInstrucao.setString(4, cliente.getInscrEstadual());
+            preparacaoDaInstrucao.setString(5, cliente.getTelefone());
+            preparacaoDaInstrucao.setString(6, cliente.getEmail());
+            preparacaoDaInstrucao.setInt(7, codigo);
+
+            preparacaoDaInstrucao.executeUpdate();
+
+            return cliente;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
 
 }

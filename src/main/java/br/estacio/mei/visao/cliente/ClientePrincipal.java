@@ -43,7 +43,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
         for (int i = 0; i < listaDeClientes.size(); i++) {
             Cliente exibeCliente = listaDeClientes.get(i);
             Object[] linha = new Object[5];
-            linha[0] = exibeCliente.getCodigo();
+            linha[0] = exibeCliente.getCodEndereco();
             linha[1] = exibeCliente.getNome();
             linha[2] = exibeCliente.getTelefone();
             linha[3] = exibeCliente.getCpfCnpj();
@@ -274,9 +274,9 @@ public class ClientePrincipal extends javax.swing.JPanel {
 
     private void btnExcluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirClienteActionPerformed
         if (tbListaClientes.getSelectedRow() >= 0) {
-
+            
             //int resposta = JOptionPane.showConfirmDialog(null, "Confirma a exclusão do cliente?", "Excluir Cliente!", JOptionPane.YES_NO_OPTION);
-            //if (resposta == 0) {
+            
             int linha = tbListaClientes.getSelectedRow();
             int codigo = (int) tbListaClientes.getModel().getValueAt(linha, 0);
 
@@ -298,7 +298,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
 
                     Object[] linha1 = new Object[5];
 
-                    linha1[0] = exibeCliente.getCodigo();
+                    linha1[0] = exibeCliente.getCodEndereco();
                     linha1[1] = exibeCliente.getNome();
                     linha1[2] = exibeCliente.getTelefone();
                     linha1[3] = exibeCliente.getCpfCnpj();
@@ -307,7 +307,7 @@ public class ClientePrincipal extends javax.swing.JPanel {
                 }
             }
             //JOptionPane.showMessageDialog(null, "Cliente Removido!");
-            //}
+            
         } else {
             //JOptionPane.showMessageDialog(null, "Selecione um Cliente!");
         }

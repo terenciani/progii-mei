@@ -8,6 +8,7 @@ package br.estacio.mei.dao.implementacao;
 import br.estacio.mei.dao.EnderecoDao;
 import br.estacio.mei.model.Endereco;
 import br.estacio.mei.banco.estatico.BancoSingleton;
+import br.estacio.mei.model.Cliente;
 import java.util.ArrayList;
 
 /**
@@ -37,13 +38,24 @@ public class EnderecoDaoEstatico implements EnderecoDao {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    
     @Override
-    public Endereco salvarEnderecoCliente(Endereco endereco, int codigo) {
+    public int maxCodigo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int maxCodigo() {
+    public Endereco alterarEndereco(Endereco endereco, int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Endereco salvarEnderecoCliente(Endereco endereco, Cliente cliente) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean excluirEndereco(int codigo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
