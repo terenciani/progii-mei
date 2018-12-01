@@ -236,14 +236,14 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                         break;
                 case 3:
                     lblError.setVisible(false);
-                    int pesqValor = Integer.parseInt(txtPesquisar.getText());
+                    float pesqValor = Float.parseFloat(txtPesquisar.getText());
                     clearTable(tableColumns);
                     ArrayList<Produto> produtosPorValor = produtoDao.pesquisarPorValor(pesqValor);
                     addProductToTable(produtosPorValor, tableColumns);
                     break;
                 case 4:
                     lblError.setVisible(false);
-                    int pesqLucro = Integer.parseInt(txtPesquisar.getText());
+                    float pesqLucro = Float.parseFloat(txtPesquisar.getText());
                     clearTable(tableColumns);
                     ArrayList<Produto> produtosPorPrecoVenda = produtoDao.pesquisarPorLucro(pesqLucro);
                     addProductToTable(produtosPorPrecoVenda, tableColumns);
