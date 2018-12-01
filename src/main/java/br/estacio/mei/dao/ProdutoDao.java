@@ -19,14 +19,12 @@ public interface ProdutoDao {
     public Produto salvar(Produto produto);
     public boolean excluirProduto(Produto produto);
     public Produto alterar(Produto produto);
-    public ArrayList<Produto> pesquisarPorCodigo(int filtro);
     public Produto buscarProdutoPorCodigo(int filtro);
+    public ArrayList<Produto> pesquisarPorCodigo(int filtro);
     public ArrayList<Produto> pesquisarPorNome(String filtro);
-    public ArrayList<Produto> pesquisarPorFornecedor(String filtro);
-    public ArrayList<Produto> pesquisarPorPrecoCompra(int filtro);
-    public ArrayList<Produto> pesquisarPorPrecoVenda(int filtro);
+    public ArrayList<Produto> pesquisarPorValor(float filtro);
+    public ArrayList<Produto> pesquisarPorLucro(float filtro);
     public ArrayList<Produto> pesquisarPorQtdEstoque(int filtro);
-    public ArrayList<Produto> pesquisarPorCategoria(int pesqCategoria);
-    public ArrayList<Produto> pesquisarPorValor(int pesqValor);
+    public ArrayList<Produto> pesquisarPorCategoria(String filtro);
     public void excluirProduto();    
 }
