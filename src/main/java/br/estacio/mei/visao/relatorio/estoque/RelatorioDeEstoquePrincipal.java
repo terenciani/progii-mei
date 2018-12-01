@@ -338,9 +338,9 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     
     private String report_path(){
         String os = System.getProperty("os.name");
-        if (os.toLowerCase().equals("linux")) {
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH-mm-ss");
-            LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH-mm-ss");
+        LocalDateTime now = LocalDateTime.now();
+        if (os.toLowerCase().equals("linux")) {    
             String home = System.getProperty("user.home");
             File folder = new File(home+"/relatorios");
             if (!folder.exists()) {
@@ -348,7 +348,8 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             }
             return home+"/relatorios/relatorio_estoque"+dtf.format(now)+".pdf";
         } else {
-         return "Windows Path a fazer";   
+         String desktop = System.getProperty("user.home") + "/Desktop";
+         return desktop+"/relatorios/relatorio_estoque"+dtf.format(now)+".pdf";
         }
     }
     
