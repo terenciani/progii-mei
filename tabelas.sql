@@ -14,23 +14,27 @@ ALTER TABLE public.tb_endereco_codigo_seq
 -- Table: public.tb_endereco
 
 -- DROP TABLE public.tb_endereco;
-  
-CREATE TABLE endereco
+
+CREATE TABLE public.tb_endereco
 (
-codigo integer NOT NULL DEFAULT nextval('tb_endereco_codigo_seq'::regclass),
-rua character varying(30) COLLATE pg_catalog."default",
-numero integer,
-bairro character varying(30) COLLATE pg_catalog."default",
-cidade character varying(30) COLLATE pg_catalog."default",
-estado character varying(25)[] COLLATE pg_catalog."default",
-cep character varying(8)[] COLLATE pg_catalog."default",
-complemento character varying(50)[] COLLATE pg_catalog."default",
-CONSTRAINT endereco_pkey PRIMARY KEY (codigo)
+    codigo integer NOT NULL DEFAULT nextval('tb_endereco_codigo_seq1'::regclass),
+    rua character varying COLLATE pg_catalog."default",
+    numero integer,
+    bairro character varying COLLATE pg_catalog."default",
+    cidade character varying COLLATE pg_catalog."default",
+    estado character varying COLLATE pg_catalog."default",
+    cep character varying COLLATE pg_catalog."default",
+    complemento character varying COLLATE pg_catalog."default",
+    CONSTRAINT tb_endereco_pkey PRIMARY KEY (codigo)
 )
 WITH (
-OIDS = FALSE
+    OIDS = FALSE
 )
 TABLESPACE pg_default;
+
+ALTER TABLE public.tb_endereco
+    OWNER to postgres;
+    
 -- Table: public.tb_aluno
 
 -- DROP TABLE public.tb_aluno;
@@ -77,19 +81,27 @@ ALTER TABLE public.tb_cliente_codigo_seq
 
 CREATE TABLE public.tb_cliente
 (
-  codigo integer NOT NULL DEFAULT nextval('tb_cliente_codigo_seq'::regclass),
-  cpfCnpj character varying(14),
-  nome character varying(50),
-  nomeFantasia character varying(50),
-  inscrEstadual character varying(20),
-  telefone character varying(20),
-  email character varying(30)
+    codigo integer NOT NULL DEFAULT nextval('tb_cliente_codigo_seq1'::regclass),
+    cpfcnpj character varying COLLATE pg_catalog."default",
+    nome character varying COLLATE pg_catalog."default",
+    nomefantasia character varying COLLATE pg_catalog."default",
+    inscrestadual character varying COLLATE pg_catalog."default",
+    telefone character varying COLLATE pg_catalog."default",
+    email character varying COLLATE pg_catalog."default",
+    codendereco integer,
+    CONSTRAINT tb_cliente_pkey PRIMARY KEY (codigo),
+    CONSTRAINT fk_endereco FOREIGN KEY (codendereco)
+        REFERENCES public.tb_endereco (codigo) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
 )
 WITH (
-  OIDS=FALSE
-);
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
 ALTER TABLE public.tb_cliente
-  OWNER TO postgres;
+    OWNER to postgres;
  
  CREATE SEQUENCE public.tb_contas_a_pagar_codigo_seq
     INCREMENT 1
