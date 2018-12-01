@@ -6,6 +6,7 @@
 package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.banco.estatico.Conexao;
+import br.estacio.mei.dao.CategoriaDao;
 import br.estacio.mei.dao.ProdutoDao;
 import br.estacio.mei.model.Categoria;
 import br.estacio.mei.model.Produto;
@@ -23,7 +24,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
     @Override
     public ArrayList<Produto> buscarProdutos() {
         ArrayList<Produto> listaDeProdutos = new ArrayList<>();
-        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.descricao  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo)";
+        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.codigo  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo)";
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);                      
             ResultSet resultado = SQLPreparada.executeQuery();
@@ -52,7 +53,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
     @Override
     public ArrayList<Produto> pesquisarPorCodigo(int filtro) {
         ArrayList<Produto> listaDeProdutos = new ArrayList<>();
-        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.descricao  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where p.id = " +filtro;
+        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.codigo  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where p.id = " +filtro;
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);                      
             ResultSet resultado = SQLPreparada.executeQuery();
@@ -66,7 +67,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
     @Override
     public ArrayList<Produto> pesquisarPorNome(String filtro) {
         ArrayList<Produto> listaDeProdutos = new ArrayList<>();
-        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.descricao  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where p.nome = '" + filtro + "'";
+        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.codigo  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where p.nome = '" + filtro + "'";
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);                      
             ResultSet resultado = SQLPreparada.executeQuery();
@@ -81,7 +82,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
     @Override
     public ArrayList<Produto> pesquisarPorValor(float filtro) {
         ArrayList<Produto> listaDeProdutos = new ArrayList<>();
-        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.descricao  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where p.valor = " + filtro + "";
+        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.codigo  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where p.valor = " + filtro + "";
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);                      
             ResultSet resultado = SQLPreparada.executeQuery();
@@ -95,7 +96,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
     @Override
     public ArrayList<Produto> pesquisarPorQtdEstoque(int filtro) {
         ArrayList<Produto> listaDeProdutos = new ArrayList<>();
-        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.descricao  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where p.quantidade_estoque = " + filtro;
+        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.codigo  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where p.quantidade_estoque = " + filtro;
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);                      
             ResultSet resultado = SQLPreparada.executeQuery();
@@ -109,7 +110,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
     @Override
     public ArrayList<Produto> pesquisarPorLucro(float filtro) {
         ArrayList<Produto> listaDeProdutos = new ArrayList<>();
-        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.descricao  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where p.lucro = " + filtro;
+        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.codigo  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where p.lucro = " + filtro;
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);                      
             ResultSet resultado = SQLPreparada.executeQuery();
@@ -123,7 +124,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
     @Override
     public ArrayList<Produto> pesquisarPorCategoria(String filtro) {
         ArrayList<Produto> listaDeProdutos = new ArrayList<>();
-        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.descricao  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where c.descricao = '" + filtro + "'";
+        String SQL = "select p.id, p.nome, p.quantidade_estoque, p.lucro, p.valor, c.codigo  from tb_produto as p left join tb_categoria as c on (p.fk_categoria = c.codigo) where c.descricao = '" + filtro + "'";
         try {
             PreparedStatement SQLPreparada = Conexao.retornaConexao().prepareStatement(SQL);                      
             ResultSet resultado = SQLPreparada.executeQuery();
@@ -145,6 +146,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
     }
     
     private void resultadoQueryArray(ResultSet resultado, ArrayList<Produto> listaDeProdutos) throws SQLException{
+        CategoriaDao categoria = new CategoriaDaoJDBC();
         while(resultado.next()){
             Produto pro = new Produto();
             pro.setCodigo(resultado.getInt("id"));
@@ -152,6 +154,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
             pro.setValorAtual(resultado.getFloat("valor"));
             pro.setQuantidade(resultado.getInt("quantidade_estoque"));
             pro.setLucro(resultado.getFloat("lucro"));
+            pro.setCategoria(categoria.buscarCategoriaPorId(resultado.getInt("codigo")));
             listaDeProdutos.add(pro);
         }
     }

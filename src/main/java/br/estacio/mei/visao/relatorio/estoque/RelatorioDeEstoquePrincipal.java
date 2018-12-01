@@ -165,15 +165,16 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPesquisar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
-                .addComponent(btnTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addComponent(btnTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
             .addComponent(pnlError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -280,17 +281,13 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             Paragraph title = new Paragraph("Relatorio de estoque - SAMI");
             title.setSpacingAfter(5);
             relatorioPDF.add(title);
-            PdfPTable table = new PdfPTable(tbProdutos.getColumnCount() - 1);
+            PdfPTable table = new PdfPTable(tbProdutos.getColumnCount());
             for (int i = 0; i < tbProdutos.getColumnCount(); i++) {
-                if (i != 4){
-                    table.addCell(tbProdutos.getColumnName(i));
-                }
+                table.addCell(tbProdutos.getColumnName(i));
             }
             for (int rows = 0; rows < tbProdutos.getRowCount(); rows++) {
                 for (int cols = 0; cols < tbProdutos.getColumnCount(); cols++) {
-                    if (cols != 4){
-                        table.addCell(tbProdutos.getModel().getValueAt(rows, cols).toString());
-                    }
+                    table.addCell(tbProdutos.getModel().getValueAt(rows, cols).toString());
                 }
             }
             relatorioPDF.add(table);
@@ -327,7 +324,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             lineData[1] = p.getNome();
             lineData[2] = p.getValorAtual();
             lineData[3] = p.getLucro();
-            lineData[4] = p.getCategoria();
+            lineData[4] = p.getCategoria().getDescricao();
             lineData[5] = p.getQuantidade();
             TableColumns.addRow(lineData);
         }
