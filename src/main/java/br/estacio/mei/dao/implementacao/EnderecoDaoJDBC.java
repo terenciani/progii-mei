@@ -7,6 +7,7 @@ package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.banco.estatico.Conexao;
 import br.estacio.mei.dao.EnderecoDao;
+import br.estacio.mei.model.Cliente;
 import br.estacio.mei.model.Endereco;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,26 +21,33 @@ import java.util.ArrayList;
 public class EnderecoDaoJDBC implements EnderecoDao {
 
     @Override
-    public Endereco salvarEnderecoCliente(Endereco endereco) {
+    public Endereco salvarEnderecoCliente(Endereco endereco, Cliente cliente) {
 
         String sql = "INSERT "
                 + "INTO "
-                + "tb_endereco (codigo, rua, numero, bairro, cidade, estado, cep, complemento)"
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                + "tb_endereco (rua, numero, bairro, cidade, estado, cep, complemento)"
+                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
 
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
 
-            preparacaoDaInstrucao.setInt(1, endereco.getCodigo());
-            preparacaoDaInstrucao.setString(2, endereco.getRua());
-            preparacaoDaInstrucao.setInt(3, endereco.getNumero());
-            preparacaoDaInstrucao.setString(4, endereco.getBairro());
-            preparacaoDaInstrucao.setString(5, endereco.getCidade());
-            preparacaoDaInstrucao.setString(6, endereco.getEstado());
-            preparacaoDaInstrucao.setString(7, endereco.getCep());
-            preparacaoDaInstrucao.setString(8, endereco.getComplemento());
+            //preparacaoDaInstrucao.setInt(1, endereco.getCodigo());
+            preparacaoDaInstrucao.setString(1, endereco.getRua());
+            preparacaoDaInstrucao.setInt(2, endereco.getNumero());
+            preparacaoDaInstrucao.setString(3, endereco.getBairro());
+            preparacaoDaInstrucao.setString(4, endereco.getCidade());
+            preparacaoDaInstrucao.setString(5, endereco.getEstado());
+            preparacaoDaInstrucao.setString(6, endereco.getCep());
+            preparacaoDaInstrucao.setString(7, endereco.getComplemento());
 
             preparacaoDaInstrucao.executeUpdate();
+
+            //metodo que pega o último código da tabela clientes para utilizar este no endereco do mesmo cliente .
+            int id = maxCodigo();
+
+            ClienteDaoJDBC clienteDao = new ClienteDaoJDBC();
+            //Cliente cliente = new Cliente();
+            clienteDao.salvarCliente(cliente, id);
 
             return endereco;
 
@@ -144,7 +152,7 @@ public class EnderecoDaoJDBC implements EnderecoDao {
         }
     }
 
-    public Endereco salvarEnderecoCliente(Endereco endereco, int codigo) {
+    public Endereco salvarEnderecoCliente(Endereco endereco) {
 
         String sql = "INSERT "
                 + "INTO "
@@ -154,7 +162,7 @@ public class EnderecoDaoJDBC implements EnderecoDao {
 
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
 
-            preparacaoDaInstrucao.setInt(1, codigo);
+            //preparacaoDaInstrucao.setInt(1, codigo);
             preparacaoDaInstrucao.setString(2, endereco.getRua());
             preparacaoDaInstrucao.setInt(3, endereco.getNumero());
             preparacaoDaInstrucao.setString(4, endereco.getBairro());
@@ -175,7 +183,7 @@ public class EnderecoDaoJDBC implements EnderecoDao {
 
     public int maxCodigo() {
         int id = 0;
-        String sql = "select max(codigo) from tb_cliente";
+        String sql = "select max(codigo) from tb_endereco";
 
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
@@ -195,6 +203,47 @@ public class EnderecoDaoJDBC implements EnderecoDao {
         }
 
         return id;
+    }
+
+    @Override
+    public Endereco alterarEndereco(Endereco endereco, int codigo) {
+
+        String sql = "UPDATE tb_endereco set rua = ?, numero = ?, bairro = ?, cidade = ?, estado = ?, cep = ?, complemento = ? where codigo = ?";
+
+        try {
+            PreparedStatement preparacaoDaInstrucao1 = Conexao.retornaConexao().prepareStatement(sql);
+            preparacaoDaInstrucao1.setString(1, endereco.getRua());
+            preparacaoDaInstrucao1.setInt(2, endereco.getNumero());
+            preparacaoDaInstrucao1.setString(3, endereco.getBairro());
+            preparacaoDaInstrucao1.setString(4, endereco.getCidade());
+            preparacaoDaInstrucao1.setString(5, endereco.getEstado());
+            preparacaoDaInstrucao1.setString(6, endereco.getCep());
+            preparacaoDaInstrucao1.setString(7, endereco.getComplemento());
+            preparacaoDaInstrucao1.setInt(8, codigo);
+
+            preparacaoDaInstrucao1.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return endereco;
+        }
+        return endereco;
+
+    }
+
+    @Override
+    public boolean excluirEndereco(int codigo) {
+        String sqlE = "DELETE FROM tb_endereco WHERE codigo=?";
+
+        try {
+            PreparedStatement preparacaoDaInstrucao2 = Conexao.retornaConexao().prepareStatement(sqlE);
+            preparacaoDaInstrucao2.setInt(1, codigo);
+            preparacaoDaInstrucao2.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
 }

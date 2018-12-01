@@ -71,4 +71,9 @@ public class ClienteDaoEstatico implements ClienteDao {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public Cliente salvarCliente(Cliente cliente, int codigo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

@@ -19,20 +19,7 @@ public class Cliente {
     private String telefone;
     private String email;
     private Endereco endereco;
-
-    public Cliente() {
-    }
-    
-    public Cliente(int codigo, String cpfCnpj, String nome, String nomeFantasia, String inscrEstadual, String telefone, String email, Endereco endereco) {
-        this.codigo = codigo;
-        this.cpfCnpj = cpfCnpj;
-        this.nome = nome;
-        this.nomeFantasia = nomeFantasia;
-        this.inscrEstadual = inscrEstadual;
-        this.telefone = telefone;
-        this.email = email;
-        this.endereco = endereco;
-    }
+    private int codEndereco;
 
     public int getCodigo() {
         return codigo;
@@ -97,11 +84,13 @@ public class Cliente {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-    
-    @Override
-    public String toString() {
-        return getNome();
-  }
-     
+
+    public int getCodEndereco() {
+        return codEndereco;
+    }
+
+    public void setCodEndereco(int codEndereco) {
+        this.codEndereco = codEndereco;
+    }
 
 }

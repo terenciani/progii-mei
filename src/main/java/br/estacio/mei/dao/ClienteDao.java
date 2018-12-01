@@ -12,6 +12,8 @@ public interface ClienteDao {
     public ArrayList<Cliente> buscarClientes();
 
     public Cliente salvarCliente(Cliente cliente);
+    
+    public Cliente salvarCliente(Cliente cliente, int codigo);
 
     public boolean atualizarCliente(Cliente cliente, int codigo);
 
