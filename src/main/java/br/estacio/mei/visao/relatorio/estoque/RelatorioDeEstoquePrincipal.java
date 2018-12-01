@@ -57,7 +57,6 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtPesquisar = new javax.swing.JTextPane();
@@ -84,13 +83,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(400, 300));
-        jPanel1.setPreferredSize(new java.awt.Dimension(400, 300));
-        jPanel1.setRequestFocusEnabled(false);
-        jPanel1.setLayout(new java.awt.BorderLayout());
-
-        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setBackground(new java.awt.Color(13, 155, 177));
 
         txtPesquisar.setToolTipText("");
         txtPesquisar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -117,6 +110,9 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
             }
         });
 
+        pnlError.setBackground(new java.awt.Color(13, 155, 177));
+
+        lblError.setForeground(new java.awt.Color(255, 0, 0));
         lblError.setText("Errors");
 
         btnExportar.setText("Gerar relatório");
@@ -153,6 +149,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Filtrar por");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -193,7 +190,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
                 .addComponent(pnlError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(jPanel10, java.awt.BorderLayout.PAGE_START);
+        add(jPanel10, java.awt.BorderLayout.PAGE_START);
 
         tbProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -206,9 +203,7 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
         tbProdutos.setMaximumSize(new java.awt.Dimension(650, 400));
         jScrollPane1.setViewportView(tbProdutos);
 
-        jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
-
-        add(jPanel1, java.awt.BorderLayout.CENTER);
+        add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
@@ -313,7 +308,6 @@ public class RelatorioDeEstoquePrincipal extends javax.swing.JPanel {
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnTodos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
