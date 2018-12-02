@@ -6,7 +6,6 @@
 package br.estacio.mei.visao.categoria;
 
 import br.estacio.mei.dao.CategoriaDao;
-import br.estacio.mei.dao.implementacao.CategoriaDaoEstatica;
 import br.estacio.mei.dao.implementacao.CategoriaDaoJDBC;
 
 import br.estacio.mei.model.Categoria;

@@ -6,9 +6,8 @@
 package br.estacio.mei.visao.produto;
 
 import br.estacio.mei.dao.ProdutoDao;
-import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
+import br.estacio.mei.dao.implementacao.ProdutoDaoJDBC;
 import br.estacio.mei.model.Categoria;
-import br.estacio.mei.model.Fornecedor;
 import br.estacio.mei.model.Produto;
 
 /**
@@ -17,7 +16,7 @@ import br.estacio.mei.model.Produto;
  */
 public class DadosProduto extends javax.swing.JPanel {
 
-    ProdutoDao daoProduto = new ProdutoDaoEstatico();
+    ProdutoDao daoProduto = new ProdutoDaoJDBC();
 
     /**
      * Creates new form DadosProduto
@@ -191,12 +190,12 @@ public class DadosProduto extends javax.swing.JPanel {
 
         //Deverá ser dinâmico do formulário
         Produto produto = new Produto();
-        int codigo = Integer.parseInt(campoParaCodigo.getText());
+        int codigo = campoParaCodigo.getText().trim().isEmpty() ?  0 : Integer.parseInt(campoParaCodigo.getText());
 
-        produto.setCodigo(Integer.parseInt(campoParaCodigo.getText()));
+        produto.setCodigo(codigo);
         produto.setNome(campoParaNome.getText());
         produto.setValorAtual((float) Double.parseDouble(campoParaValor.getText()));
-        produto.setLucro(Double.parseDouble(campoParaLucro.getText()));
+        produto.setLucro(Float.parseFloat(campoParaLucro.getText()));
         produto.setDescricao(campoParaDescricao.getText());
 
         Categoria cat = new Categoria();

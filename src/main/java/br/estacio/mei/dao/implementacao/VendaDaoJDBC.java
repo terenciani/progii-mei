@@ -47,7 +47,7 @@ public class VendaDaoJDBC implements VendaDao{
     public Venda salvarVenda(Venda venda) {
          String sql = "INSERT "
                 + "INTO "
-                + "tb_venda (codigo, cliente, data, observação, formapagamento, valor, status)"
+                + "tb_venda (codigo, cliente, data, observacao, formapagamento, valor, status)"
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             // Objeto PreparedStatement é um objeto que prepara a instrução de sql
@@ -83,8 +83,8 @@ public class VendaDaoJDBC implements VendaDao{
     @Override
     public Venda atualizarVenda(Venda venda) {
         // Instrução SQL que será executada no banco
-        String sql = "UPDATE tb_aluno "
-                + "SET codigo=? , cliente=?, data=?, observação=?, formapagamento=?, valor=?, status=?"
+        String sql = "UPDATE tb_venda "
+                + "SET codigo=? , cliente=?, data=?, observacao=?, formapagamento=?, valor=?, status=?"
                 + "WHERE codigo=?";
         try {
             // Objeto PreparedStatement é um objeto que prepara a instrução de sql

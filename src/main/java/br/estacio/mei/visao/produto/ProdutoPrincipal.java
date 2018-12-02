@@ -6,10 +6,9 @@
 package br.estacio.mei.visao.produto;
 
 import br.estacio.mei.dao.ProdutoDao;
-import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
+import br.estacio.mei.dao.implementacao.ProdutoDaoJDBC;
 import br.estacio.mei.model.Produto;
 import java.util.ArrayList;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ProdutoPrincipal extends javax.swing.JPanel {
 
-    ProdutoDao produtoDao = new ProdutoDaoEstatico();
+    ProdutoDao produtoDao = new ProdutoDaoJDBC();
 
     /**
      * Creates new form ProdutoPrincipal
@@ -333,7 +332,7 @@ public class ProdutoPrincipal extends javax.swing.JPanel {
             case 2:
                 try {
                     msgErro.setVisible(false);
-                    int pesqCategoria = Integer.parseInt(buscar.getText());
+                    String pesqCategoria = buscar.getText();
                     while (modeloDeColunasDaTabela.getRowCount() != 0) {
                         modeloDeColunasDaTabela.removeRow(0);
                     }

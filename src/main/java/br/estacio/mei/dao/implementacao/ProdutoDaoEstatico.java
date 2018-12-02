@@ -14,15 +14,15 @@ import java.util.ArrayList;
  *
  * @author Marcelo
  */
-public class ProdutoDaoEstatico implements ProdutoDao {
+public class ProdutoDaoEstatico  {
     
-    @Override
+     
     public ArrayList<Produto> buscarProdutos() {
         return BancoSingleton.getInstance().tabelaProduto;
         
     }
 
-    @Override
+     
     public Produto salvar(Produto produto) {
         BancoSingleton.getInstance().tabelaProduto.add(produto);
         return produto;
@@ -33,12 +33,12 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         return true;
     }
 
-    @Override
+     
     public Produto alterar(Produto produto) {
         return null;
     }
 
-    @Override
+     
     public ArrayList<Produto> pesquisarPorCodigo(int filtro) {
         ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
@@ -50,7 +50,7 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         return produtos;
     }
 
-    @Override
+     
     public ArrayList<Produto> pesquisarPorNome(String filtro) {
         ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
@@ -62,7 +62,7 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         return produtos;
     }
 
-    @Override
+     
     public ArrayList<Produto> pesquisarPorFornecedor(String filtro) {
         ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
@@ -74,7 +74,7 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         return produtos;
     }
 
-    @Override
+     
     public ArrayList<Produto> pesquisarPorPrecoCompra(int filtro) {
          ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
@@ -86,7 +86,7 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         return produtos;
     }
 
-    @Override
+     
     public ArrayList<Produto> pesquisarPorPrecoVenda(int filtro) {
          ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
@@ -98,7 +98,7 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         return produtos;
     }
 
-    @Override
+     
     public ArrayList<Produto> pesquisarPorQtdEstoque(int filtro) {
          ArrayList<Produto> todosProdutos = buscarProdutos();
         ArrayList<Produto> produtos = new ArrayList<Produto>();
@@ -110,22 +110,22 @@ public class ProdutoDaoEstatico implements ProdutoDao {
         return produtos;
     }
 
-    @Override
+     
     public ArrayList<Produto> pesquisarPorCategoria(int pesqCategoria) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+     
     public void excluirProduto() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+     
     public Produto buscarProdutoPorCodigo(int filtro) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+     
     public ArrayList<Produto> pesquisarPorValor(int pesqValor) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

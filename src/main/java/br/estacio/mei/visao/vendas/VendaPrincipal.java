@@ -8,8 +8,8 @@ package br.estacio.mei.visao.vendas;
 import br.estacio.mei.dao.ClienteDao;
 import br.estacio.mei.dao.ProdutoDao;
 import br.estacio.mei.dao.VendaDao;
-import br.estacio.mei.dao.implementacao.ClienteDaoEstatico;
-import br.estacio.mei.dao.implementacao.ProdutoDaoEstatico;
+import br.estacio.mei.dao.implementacao.ClienteDaoJDBC;
+import br.estacio.mei.dao.implementacao.ProdutoDaoJDBC;
 import br.estacio.mei.dao.implementacao.VendaDaoEstatica;
 import br.estacio.mei.model.Cliente;
 import java.awt.event.FocusEvent;
@@ -32,9 +32,9 @@ public class VendaPrincipal extends javax.swing.JPanel {
     VendaDao vendaDao = new VendaDaoEstatica();
     Venda vendaAtual = null;
     
-    ClienteDao clienteDao = new ClienteDaoEstatico();
+    ClienteDao clienteDao = new ClienteDaoJDBC();
     
-    ProdutoDao produtoDao = new ProdutoDaoEstatico();
+    ProdutoDao produtoDao = new ProdutoDaoJDBC();
     
     /**
      * Creates new form backup

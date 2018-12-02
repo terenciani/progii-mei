@@ -6,8 +6,7 @@
 package br.estacio.mei.visao.compras;
 
 import br.estacio.mei.dao.ComprasDao;
-import br.estacio.mei.dao.implementacao.ComprasDaoEstatico;
-import br.estacio.mei.model.Compras;
+import br.estacio.mei.dao.implementacao.ComprasDaoJDBC;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * @author rhena
  */
 public class CompraPrincipal extends javax.swing.JPanel {
-    ComprasDao compra = new ComprasDaoEstatico();
+    ComprasDao compra = new ComprasDaoJDBC();
     //Compras compras = new Compras();
     
     

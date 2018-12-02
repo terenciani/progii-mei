@@ -90,6 +90,11 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         Painel1.setBackground(new java.awt.Color(255, 255, 255));
 
         btnBusca.setText("Pesquisar");
+        btnBusca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaActionPerformed(evt);
+            }
+        });
 
         Cbusca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,7 +175,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
                         .addGroup(Painel1Layout.createSequentialGroup()
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(43, 43, 43)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, Short.MAX_VALUE)
                             .addGap(74, 74, 74)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
                             .addGap(47, 47, 47)
@@ -649,6 +654,10 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         Painel3.setVisible(false);
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscaActionPerformed
 
     private void populaTabela() {
         DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel) jTabelaP.getModel();
