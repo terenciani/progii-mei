@@ -6,6 +6,7 @@
 package br.estacio.mei.dao.implementacao;
 
 import br.estacio.mei.banco.estatico.Conexao;
+import br.estacio.mei.banco.estatico.ConexaoMySQL;
 import br.estacio.mei.dao.AlunoDao;
 import br.estacio.mei.model.Aluno;
 import java.sql.PreparedStatement;
@@ -25,7 +26,7 @@ public class AlunoDaoJDBC implements AlunoDao {
         String sql = "SELECT * FROM tb_aluno";
 
         try {
-            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            PreparedStatement preparacaoDaInstrucao = ConexaoMySQL.retornaConexao().prepareStatement(sql);
             ResultSet resultado = preparacaoDaInstrucao.executeQuery();
 
             while (resultado.next()) {
@@ -46,7 +47,7 @@ public class AlunoDaoJDBC implements AlunoDao {
         String sql = "SELECT * FROM tb_aluno WHERE id=?";
 
         try {
-            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            PreparedStatement preparacaoDaInstrucao = ConexaoMySQL.retornaConexao().prepareStatement(sql);
             preparacaoDaInstrucao.setInt(1, id);
             ResultSet resultado = preparacaoDaInstrucao.executeQuery();
 
@@ -71,7 +72,7 @@ public class AlunoDaoJDBC implements AlunoDao {
         try {
             // Objeto PreparedStatement é um objeto que prepara a instrução de sql
             // ou seja, preenche os valores
-            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            PreparedStatement preparacaoDaInstrucao = ConexaoMySQL.retornaConexao().prepareStatement(sql);
             //De acordo com a posicao do ponto de interrogacao na SQL e o tipo do dado
             preparacaoDaInstrucao.setString(1, aluno.getNome());
             preparacaoDaInstrucao.setInt(2, aluno.getRA());
@@ -94,7 +95,7 @@ public class AlunoDaoJDBC implements AlunoDao {
         try {
             // Objeto PreparedStatement é um objeto que prepara a instrução de sql
             // ou seja, preenche os valores
-            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            PreparedStatement preparacaoDaInstrucao = ConexaoMySQL.retornaConexao().prepareStatement(sql);
             //De acordo com a posicao do ponto de interrogacao na SQL e o tipo do dado
             preparacaoDaInstrucao.setString(1, aluno.getNome());
             preparacaoDaInstrucao.setInt(2, aluno.getRA());
@@ -121,7 +122,7 @@ public class AlunoDaoJDBC implements AlunoDao {
         try {
             // Objeto PreparedStatement é um objeto que prepara a instrução de sql
             // ou seja, preenche os valores
-            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            PreparedStatement preparacaoDaInstrucao = ConexaoMySQL.retornaConexao().prepareStatement(sql);
             //De acordo com a posicao do ponto de interrogacao na SQL e o tipo do dado
             preparacaoDaInstrucao.setInt(1, aluno.getId());
 

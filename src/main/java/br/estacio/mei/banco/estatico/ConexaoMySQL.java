@@ -14,9 +14,15 @@ import java.sql.SQLException;
  * @author aluno
  */
 public class ConexaoMySQL {
-
+    
+    /*
     private static final String URL = "jdbc:mysql://terenciani.com.br/teren671_progii_mei";
     private static final String usuario = "teren671_estacio";
+    private static final String senha = "estacio@123";
+    private static Connection conexao = null;
+    */
+    private static final String URL = "jdbc:mysql://ericvdias.com/ericvd20_progii_mei";
+    private static final String usuario = "ericvd20_estacio";
     private static final String senha = "estacio@123";
     private static Connection conexao = null;
 
