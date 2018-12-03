@@ -60,4 +60,9 @@ public class UsuarioDaoEstatica implements UsuarioDao{
     public ArrayList<Usuario> buscarUsuarios() {
         return BancoSingleton.getInstance().tabelaUsuario;
     }
+
+    @Override
+    public boolean excluirUsuario(int codigo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

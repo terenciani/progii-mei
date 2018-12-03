@@ -23,4 +23,6 @@ public interface UsuarioDao {
     public Usuario atualizarUsuario (Usuario usuario);
     
     public boolean excluirUsuario(Usuario usuario);
+    
+    public boolean excluirUsuario(int codigo);
 }

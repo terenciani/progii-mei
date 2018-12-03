@@ -208,6 +208,10 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         if(cdTable.getSelectedRow()!= -1){
             DefaultTableModel dtmCadastro = (DefaultTableModel) cdTable.getModel();
             dtmCadastro.removeRow(cdTable.getSelectedRow());
+            
+            int linha = cdTable.getSelectedRow();
+            int codigo = (int) cdTable.getModel().getValueAt(linha, 2);
+            usuarioDao.excluirUsuario(codigo);
         }else{
             JOptionPane.showMessageDialog(null,"Selecione um Usuario para Excluir!");
         }

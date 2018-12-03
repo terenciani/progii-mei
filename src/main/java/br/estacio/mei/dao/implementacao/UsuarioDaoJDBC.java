@@ -133,5 +133,26 @@ public class UsuarioDaoJDBC implements UsuarioDao{
             throw new SQLException("Erro na Transformação");
         }
     }
+
+    @Override
+    public boolean excluirUsuario(int codigo) {
+        String sql = "DELETE FROM tb_usuario"
+                    + "WHERE id=?";
+         try {
+            // Objeto PreparedStatement é um objeto que prepara a instrução de sql
+            // ou seja, preenche os valores
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            //De acordo com a posicao do ponto de interrogacao na SQL e o tipo do dado
+            preparacaoDaInstrucao.setInt(1, codigo);
+
+            preparacaoDaInstrucao.executeUpdate();
+
+            return true;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 }
 
