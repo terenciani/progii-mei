@@ -6,7 +6,7 @@
 package br.estacio.mei.visao.relatorio.vendas;
 
 import br.estacio.mei.dao.VendaDao;
-import br.estacio.mei.dao.implementacao.VendaDaoEstatica;
+import br.estacio.mei.dao.implementacao.VendaDaoJDBC;
 import br.estacio.mei.model.Venda;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -30,7 +30,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Marcelo
  */
 public class RelatorioVendasPrincipal extends javax.swing.JPanel {
-    VendaDao vendaDao = new VendaDaoEstatica();
+    VendaDao vendaDao = new VendaDaoJDBC();
     /**
      * Creates new form RelatorioVendasPrincipal
      */
@@ -319,6 +319,8 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
         ArrayList<Venda> RelatVenda = vendaDao.buscarVendas();
         for (int i = 0; i < RelatVenda.size();i++)
         {
+            
+                    
             Venda mostraVenda = RelatVenda.get(i);
             Object[] infLinhas = new Object[5];
             infLinhas[0] = mostraVenda.getCodigo();
@@ -326,6 +328,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
             infLinhas[2] = mostraVenda.getObservacao();
             infLinhas[3] = mostraVenda.getData();
             infLinhas[4] = mostraVenda.getValor();
+            System.out.println(infLinhas);
             preencherTabela.addRow(infLinhas);
         }
     }//GEN-LAST:event_btVisualizarActionPerformed

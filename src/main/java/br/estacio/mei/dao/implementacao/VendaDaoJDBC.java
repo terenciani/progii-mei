@@ -145,10 +145,15 @@ public class VendaDaoJDBC implements VendaDao{
         Venda venda = new Venda();
         try {
             venda.setCodigo(resultado.getInt("codigo"));
-            venda.setCliente((Cliente) resultado.getObject("cliente"));
+            
+            
+            Cliente cliente = new Cliente();
+            cliente.setCodigo(resultado.getInt("cliente"));
+            
+            venda.setCliente(cliente);
             venda.setStatus(resultado.getInt("status"));
             venda.setValor(resultado.getDouble("valor"));
-            venda.setData((Date) resultado.getObject("data"));
+            venda.setData(resultado.getDate("data"));
             venda.setObservacao( resultado.getString("observacao"));
             venda.setFormaPagamento(resultado.getString("formaPagamento"));
             return venda;
