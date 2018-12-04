@@ -26,6 +26,7 @@ public class ConexaoMySQL {
     private static final String usuario = "ericvd20_estacio";
     private static final String senha = "estacio@123";
     private static Connection conexao = null;
+    
 
     public static Connection retornaConexao() {
         if (conexao == null) {
