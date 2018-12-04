@@ -49,8 +49,6 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         btnExcluir = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
-        setLayout(new java.awt.BorderLayout());
-
         jPanel1.setBackground(new java.awt.Color(12, 180, 206));
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 36)); // NOI18N
@@ -129,7 +127,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
                 .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(146, 146, 146)
                 .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 176, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -137,7 +135,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)))
@@ -176,7 +174,16 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
                 .addGap(0, 0, 0))
         );
 
-        add(jPanel1, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
@@ -184,7 +191,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         
         Usuario usuario = new Usuario();
             usuario.setUsuario(txtnome.getText());
-            usuario.setSenha(Arrays.toString(txtsenha.getPassword()));
+            usuario.setSenha(txtsenha.getPassword().toString());
 
             usuarioDao.salvarUsuario(usuario);
 
@@ -207,11 +214,13 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         String sql = "";
         if(cdTable.getSelectedRow()!= -1){
             DefaultTableModel dtmCadastro = (DefaultTableModel) cdTable.getModel();
-            dtmCadastro.removeRow(cdTable.getSelectedRow());
+            
             
             int linha = cdTable.getSelectedRow();
-            int codigo = (int) cdTable.getModel().getValueAt(linha, 2);
+            int codigo = (int) dtmCadastro.getValueAt(linha, 2);
+            System.out.println(codigo);
             usuarioDao.excluirUsuario(codigo);
+            dtmCadastro.removeRow(cdTable.getSelectedRow());
         }else{
             JOptionPane.showMessageDialog(null,"Selecione um Usuario para Excluir!");
         }

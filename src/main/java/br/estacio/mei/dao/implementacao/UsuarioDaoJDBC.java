@@ -97,7 +97,7 @@ public class UsuarioDaoJDBC implements UsuarioDao{
 
     @Override
     public boolean excluirUsuario(Usuario usuario) {
-         String sql = "DELETE FROM tb_usuario"
+         String sql = "DELETE FROM tb_usuario "
                     + "WHERE id=?";
          try {
             // Objeto PreparedStatement é um objeto que prepara a instrução de sql
@@ -136,7 +136,7 @@ public class UsuarioDaoJDBC implements UsuarioDao{
 
     @Override
     public boolean excluirUsuario(int codigo) {
-        String sql = "DELETE FROM tb_usuario"
+        String sql = "DELETE FROM tb_usuario "
                     + "WHERE id=?";
          try {
             // Objeto PreparedStatement é um objeto que prepara a instrução de sql
