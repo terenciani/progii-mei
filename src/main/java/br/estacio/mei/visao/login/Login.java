@@ -6,6 +6,7 @@
 package br.estacio.mei.visao.login;
 
 import br.estacio.mei.dao.UsuarioDao;
+import br.estacio.mei.dao.implementacao.UsuarioDaoEstatica;
 import br.estacio.mei.dao.implementacao.UsuarioDaoJDBC;
 import br.estacio.mei.model.Usuario;
 import javax.swing.JPanel;
@@ -15,7 +16,7 @@ import javax.swing.JPanel;
  * @author Bisteca
  */
 public class Login extends javax.swing.JFrame {
-    UsuarioDao daoUsuario = new UsuarioDaoJDBC();
+    UsuarioDao daoUsuario = new UsuarioDaoEstatica();
     /**
      * Creates new form Frame_2_LoginMEI
      */

@@ -5,29 +5,23 @@
  */
 package br.estacio.mei.visao.relatorio.vendas;
 
-import br.estacio.mei.banco.estatico.Conexao;
 import br.estacio.mei.dao.VendaDao;
 import br.estacio.mei.dao.implementacao.VendaDaoJDBC;
 import br.estacio.mei.model.Venda;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
-import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.print.PrinterException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -88,6 +82,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        btVisualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/visualizar.png"))); // NOI18N
         btVisualizar.setText("Visualizar");
         btVisualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,13 +90,15 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
             }
         });
 
-        btSalvar.setText("Salvar Documento");
+        btSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/salvar.png"))); // NOI18N
+        btSalvar.setText("Salvar ");
         btSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSalvarActionPerformed(evt);
             }
         });
 
+        btImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/imprimir.png"))); // NOI18N
         btImprimir.setText("Imprimir");
         btImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +109,12 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
         jLabel5.setText("Período");
 
         jLabel6.setText("Data Inicial");
+
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("a");
 
@@ -180,7 +183,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -229,7 +232,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
                     .addComponent(jLabel7)
                     .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -245,14 +248,14 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
             
                     
             Venda mostraVenda = RelatVenda.get(i);
-            Object[] infLinhas = new Object[6];
+            Object[] infLinhas = new Object[7];
             infLinhas[0] = mostraVenda.getCodigo();
-            //infLinhas[1] = mostraVenda.getCliente();
-            infLinhas[1] = mostraVenda.getStatus();
-            infLinhas[2] = mostraVenda.getValor();
-            infLinhas[3] = mostraVenda.getData();
-            infLinhas[4] = mostraVenda.getObservacao();
-            infLinhas[5] = mostraVenda.getFormaPagamento();
+            infLinhas[1] = mostraVenda.getCliente().getNome();
+            infLinhas[2] = mostraVenda.getStatus();
+            infLinhas[3] = mostraVenda.getValor();
+            infLinhas[4] = mostraVenda.getData();
+            infLinhas[5] = mostraVenda.getObservacao();
+            infLinhas[6] = mostraVenda.getFormaPagamento();
             
             System.out.println(infLinhas);
             preencherTabela.addRow(infLinhas);
@@ -280,6 +283,10 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
     private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextField2ActionPerformed
+
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
