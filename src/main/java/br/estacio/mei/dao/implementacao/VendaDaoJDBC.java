@@ -14,7 +14,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -157,6 +156,39 @@ public class VendaDaoJDBC implements VendaDao{
         } catch (SQLException ex) {
             throw new SQLException("Erro na Transformação");
         }
+    }
+
+    /**
+     *
+     * @param dataI
+     * @param dataF
+     * @return
+     */
+    @Override
+    public ArrayList<Venda> buscarVendaData(Venda dataI, Venda dataF) {
+        
+        ArrayList<Venda> listaParaRetorno = new ArrayList<>();
+        
+        try {
+            String sql = "SELECT * FROM tb_venda WHERE (data,'%y/%m/%d') BETWEEN (?,'%d/%m/%Y') AND (?,'%d/%m/%Y')";
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            
+            preparacaoDaInstrucao.setObject(1, dataI.getData());
+            preparacaoDaInstrucao.setObject(2, dataF.getData());
+            
+            ResultSet resultado = preparacaoDaInstrucao.executeQuery();
+
+            while (resultado.next()) {
+                Venda venda = transformaResultSetEmObjeto(resultado);
+                listaParaRetorno.add(venda);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+
+        return listaParaRetorno;
+       
     }
     
 }

@@ -46,7 +46,7 @@ public class VendaDaoMySQL {
             venda.setCliente((Cliente) resultado.getObject("cliente"));
             venda.setStatus(resultado.getInt("status"));
             venda.setValor(resultado.getDouble("valor"));
-            venda.setData((Date) resultado.getObject("data"));
+            venda.setData((java.sql.Date) (Date) resultado.getObject("data"));
             venda.setObservacao( resultado.getString("observacao"));
             venda.setFormaPagamento(resultado.getString("formaPagamento"));
             return venda;
