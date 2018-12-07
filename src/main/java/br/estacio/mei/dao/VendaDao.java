@@ -30,4 +30,6 @@ public interface VendaDao {
 
     public ArrayList<Venda> listarVendasAPrazo();
     
+    public ArrayList<Venda> buscarVendaData(Venda dataI, Venda dataF);
+    
 }

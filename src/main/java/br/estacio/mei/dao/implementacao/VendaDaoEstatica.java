@@ -28,7 +28,7 @@ public class VendaDaoEstatica implements VendaDao {
 
     @Override
     public Venda salvarVenda(Venda venda) {
-        venda.setData(new Date());
+        venda.setData((java.sql.Date) new Date());
         venda.setStatus(0);
         venda.setCodigo(BancoSingleton.getInstance().tabelaVenda.size() + 1);
         BancoSingleton.getInstance().tabelaVenda.add(venda);
@@ -89,6 +89,11 @@ public class VendaDaoEstatica implements VendaDao {
             }
         }
         return tabelaFiltrada;
+    }
+
+    @Override
+    public ArrayList<Venda> buscarVendaData(Venda dataI, Venda dataF) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
