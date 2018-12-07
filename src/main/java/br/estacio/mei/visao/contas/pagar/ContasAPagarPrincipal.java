@@ -40,7 +40,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
 
         Painel1 = new javax.swing.JPanel();
         btnBusca = new javax.swing.JButton();
-        Cbusca = new javax.swing.JFormattedTextField();
+        txtCampoBusca = new javax.swing.JFormattedTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTabelaP = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
@@ -52,10 +52,10 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         btCadastrar1 = new javax.swing.JButton();
         BtEditar = new javax.swing.JButton();
         Btexcluir = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
         Painel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtdtv = new javax.swing.JTextField();
         txtdesc = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -63,15 +63,15 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         txtv = new javax.swing.JTextField();
-        txtdtp = new javax.swing.JTextField();
         txtcod = new javax.swing.JTextField();
         txtstatus = new javax.swing.JTextField();
         btCadastrar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        txtdtv = new javax.swing.JFormattedTextField();
+        txtdtp = new javax.swing.JFormattedTextField();
         Painel3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        txtdtv1 = new javax.swing.JTextField();
         txtdesc1 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -79,11 +79,12 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         txtv1 = new javax.swing.JTextField();
-        txtdtp1 = new javax.swing.JTextField();
         txtcod1 = new javax.swing.JTextField();
         txtstatus1 = new javax.swing.JTextField();
         btCadastrar2 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        txtdtv1 = new javax.swing.JFormattedTextField();
+        txtdtp1 = new javax.swing.JFormattedTextField();
 
         setLayout(new java.awt.CardLayout());
 
@@ -96,9 +97,9 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
             }
         });
 
-        Cbusca.addActionListener(new java.awt.event.ActionListener() {
+        txtCampoBusca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CbuscaActionPerformed(evt);
+                txtCampoBuscaActionPerformed(evt);
             }
         });
 
@@ -162,11 +163,28 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
             }
         });
 
+        jCheckBox1.setText("Desabilitar Edição");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Painel1Layout = new javax.swing.GroupLayout(Painel1);
         Painel1.setLayout(Painel1Layout);
         Painel1Layout.setHorizontalGroup(
             Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 860, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel1Layout.createSequentialGroup()
+                .addContainerGap(450, Short.MAX_VALUE)
+                .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jCheckBox1)
+                    .addGroup(Painel1Layout.createSequentialGroup()
+                        .addComponent(btCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BtEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Btexcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
             .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Painel1Layout.createSequentialGroup()
                     .addGap(7, 7, 7)
@@ -175,7 +193,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
                         .addGroup(Painel1Layout.createSequentialGroup()
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(43, 43, 43)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
                             .addGap(74, 74, 74)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
                             .addGap(47, 47, 47)
@@ -186,28 +204,29 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
                             .addGap(41, 41, 41))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel1Layout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel1Layout.createSequentialGroup()
-                                    .addComponent(Cbusca, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnBusca))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel1Layout.createSequentialGroup()
-                                    .addComponent(btCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(BtEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(Btexcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGap(0, 637, Short.MAX_VALUE)
+                            .addComponent(txtCampoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnBusca)))
                     .addGap(7, 7, 7)))
         );
         Painel1Layout.setVerticalGroup(
             Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel1Layout.createSequentialGroup()
+                .addContainerGap(438, Short.MAX_VALUE)
+                .addComponent(jCheckBox1)
+                .addGap(18, 18, 18)
+                .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Btexcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20))
             .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Painel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Cbusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCampoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnBusca))
                     .addGap(50, 50, 50)
                     .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -219,13 +238,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(BtEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(Painel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Btexcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap()))
+                    .addGap(112, 112, 112)))
         );
 
         add(Painel1, "card2");
@@ -235,12 +248,6 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         jLabel7.setText("Area de Cadastro e Edição de contas");
 
         jLabel8.setText("Data de Venvimento");
-
-        txtdtv.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtdtvActionPerformed(evt);
-            }
-        });
 
         txtdesc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -270,6 +277,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
             }
         });
 
+        btCadastrar.setBackground(new java.awt.Color(0, 204, 0));
         btCadastrar.setText("Inserir");
         btCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,78 +292,98 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
             }
         });
 
+        txtdtv.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+
+        txtdtp.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        txtdtp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdtpActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Painel2Layout = new javax.swing.GroupLayout(Painel2);
         Painel2.setLayout(Painel2Layout);
         Painel2Layout.setHorizontalGroup(
             Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Painel2Layout.createSequentialGroup()
-                .addGap(289, 289, 289)
-                .addComponent(btCadastrar)
-                .addGap(125, 125, 125)
-                .addComponent(jButton1)
-                .addContainerGap(308, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel2Layout.createSequentialGroup()
+                .addContainerGap(308, Short.MAX_VALUE)
+                .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtcod, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtdtv, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                            .addComponent(txtdtp)
+                            .addComponent(txtdesc)
+                            .addComponent(txtv)))
+                    .addGroup(Painel2Layout.createSequentialGroup()
+                        .addComponent(btCadastrar)
+                        .addGap(125, 125, 125)
+                        .addComponent(jButton1)
+                        .addGap(1, 1, 1)))
+                .addGap(288, 288, 288))
             .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Painel2Layout.createSequentialGroup()
+                    .addGap(331, 331, 331)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                    .addGap(316, 316, 316))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel2Layout.createSequentialGroup()
+                    .addGap(319, 319, 319)
                     .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(Painel2Layout.createSequentialGroup()
-                            .addGap(331, 331, 331)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(20, 20, 20))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel2Layout.createSequentialGroup()
-                            .addGap(295, 295, 295)
-                            .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel10)
-                                .addComponent(jLabel13)
-                                .addComponent(jLabel12)
-                                .addComponent(jLabel11))
-                            .addGap(18, 18, 18)
-                            .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtdesc)
-                                .addComponent(txtv)
-                                .addComponent(txtdtp)
-                                .addComponent(txtcod)
-                                .addComponent(txtstatus)
-                                .addComponent(txtdtv, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(296, 296, 296)))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(51, 51, 51))
+                        .addGroup(Painel2Layout.createSequentialGroup()
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(73, 73, 73))
+                        .addGroup(Painel2Layout.createSequentialGroup()
+                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(66, 66, 66))
+                        .addGroup(Painel2Layout.createSequentialGroup()
+                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(64, 64, 64))
+                        .addGroup(Painel2Layout.createSequentialGroup()
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(2, 2, 2)))
+                    .addGap(355, 355, 355)))
         );
         Painel2Layout.setVerticalGroup(
             Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel2Layout.createSequentialGroup()
-                .addContainerGap(476, Short.MAX_VALUE)
+                .addGap(114, 114, 114)
+                .addComponent(txtdtv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(txtdesc)
+                .addGap(41, 41, 41)
+                .addComponent(txtv)
+                .addGap(29, 29, 29)
+                .addComponent(txtdtp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(txtcod)
+                .addGap(32, 32, 32)
+                .addComponent(txtstatus)
+                .addGap(71, 71, 71)
                 .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btCadastrar)
                     .addComponent(jButton1))
-                .addGap(41, 41, 41))
+                .addGap(43, 43, 43))
             .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Painel2Layout.createSequentialGroup()
                     .addGap(45, 45, 45)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGap(41, 41, 41)
-                    .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtdtv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8))
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtdesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel9))
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel10))
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtdtp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel11))
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtcod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel12))
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtstatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel13))
+                    .addGap(47, 47, 47)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(24, 24, 24)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(24, 24, 24)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(24, 24, 24)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(24, 24, 24)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(24, 24, 24)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(133, 133, 133)))
         );
 
@@ -366,12 +394,6 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         jLabel14.setText("Area de Edição de contas");
 
         jLabel15.setText("Data de Venvimento");
-
-        txtdtv1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtdtv1ActionPerformed(evt);
-            }
-        });
 
         txtdesc1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -395,12 +417,6 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
             }
         });
 
-        txtdtp1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtdtp1ActionPerformed(evt);
-            }
-        });
-
         txtcod1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcod1ActionPerformed(evt);
@@ -413,6 +429,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
             }
         });
 
+        btCadastrar2.setBackground(new java.awt.Color(51, 204, 0));
         btCadastrar2.setText("Atualização");
         btCadastrar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -420,10 +437,25 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(255, 0, 0));
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        txtdtv1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        txtdtv1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdtv1ActionPerformed(evt);
+            }
+        });
+
+        txtdtp1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        txtdtp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdtp1ActionPerformed(evt);
             }
         });
 
@@ -432,82 +464,86 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         Painel3Layout.setHorizontalGroup(
             Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Painel3Layout.createSequentialGroup()
-                .addGap(289, 289, 289)
+                .addGap(336, 336, 336)
+                .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Painel3Layout.createSequentialGroup()
+                        .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17))
+                        .addGap(18, 18, 18)
+                        .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtv1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtdesc1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtdtv1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Painel3Layout.createSequentialGroup()
+                        .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20))
+                        .addGap(18, 18, 18)
+                        .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtdtp1, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(txtcod1)
+                            .addComponent(txtstatus1))))
+                .addContainerGap(279, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btCadastrar2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(114, 114, 114)
                 .addComponent(jButton2)
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addGap(270, 270, 270))
             .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Painel3Layout.createSequentialGroup()
-                    .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(Painel3Layout.createSequentialGroup()
-                            .addGap(331, 331, 331)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(20, 20, 20))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel3Layout.createSequentialGroup()
-                            .addGap(295, 295, 295)
-                            .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel15)
-                                .addComponent(jLabel16)
-                                .addComponent(jLabel17)
-                                .addComponent(jLabel20)
-                                .addComponent(jLabel19)
-                                .addComponent(jLabel18))
-                            .addGap(18, 18, 18)
-                            .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtdesc1)
-                                .addComponent(txtv1)
-                                .addComponent(txtdtp1)
-                                .addComponent(txtcod1)
-                                .addComponent(txtstatus1)
-                                .addComponent(txtdtv1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(296, 296, 296)))
+                    .addGap(395, 395, 395)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(316, Short.MAX_VALUE)))
         );
         Painel3Layout.setVerticalGroup(
             Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Painel3Layout.createSequentialGroup()
-                .addContainerGap(476, Short.MAX_VALUE)
+                .addGap(191, 191, 191)
+                .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(txtdtv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(txtdesc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(txtv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addComponent(txtdtp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(txtcod1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(txtstatus1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btCadastrar2)
                     .addComponent(jButton2))
-                .addGap(41, 41, 41))
+                .addGap(59, 59, 59))
             .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Painel3Layout.createSequentialGroup()
                     .addGap(45, 45, 45)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGap(41, 41, 41)
-                    .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtdtv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel15))
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtdesc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel16))
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel17))
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtdtp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel18))
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtcod1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel19))
-                    .addGap(18, 18, 18)
-                    .addGroup(Painel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtstatus1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel20))
-                    .addGap(133, 133, 133)))
+                    .addGap(384, 384, 384)))
         );
 
         add(Painel3, "card3");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CbuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbuscaActionPerformed
+    private void txtCampoBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCampoBuscaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CbuscaActionPerformed
+    }//GEN-LAST:event_txtCampoBuscaActionPerformed
 
     private void jTabelaPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabelaPMouseClicked
         if (jTabelaP.getSelectedRow() != -1) {
@@ -583,10 +619,6 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         txtstatus.setText(" ");
     }//GEN-LAST:event_BtexcluirActionPerformed
 
-    private void txtdtvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdtvActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtdtvActionPerformed
-
     private void txtdescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdescActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtdescActionPerformed
@@ -618,10 +650,6 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
         Painel2.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void txtdtv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdtv1ActionPerformed
-
-    }//GEN-LAST:event_txtdtv1ActionPerformed
-
     private void txtdesc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdesc1ActionPerformed
 
     }//GEN-LAST:event_txtdesc1ActionPerformed
@@ -629,10 +657,6 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     private void txtv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtv1ActionPerformed
 
     }//GEN-LAST:event_txtv1ActionPerformed
-
-    private void txtdtp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdtp1ActionPerformed
-
-    }//GEN-LAST:event_txtdtp1ActionPerformed
 
     private void txtcod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcod1ActionPerformed
 
@@ -656,8 +680,27 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_btnBuscaActionPerformed
+
+    private void txtdtpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdtpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdtpActionPerformed
+
+    private void txtdtv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdtv1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdtv1ActionPerformed
+
+    private void txtdtp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdtp1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdtp1ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        btCadastrar1.setEnabled(false);
+        BtEditar.setEnabled(false);
+        Btexcluir.setEnabled(false);
+        jTabelaP.setEnabled(false);
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void populaTabela() {
         DefaultTableModel modeloDeColunasDaTabela = (DefaultTableModel) jTabelaP.getModel();
@@ -682,7 +725,6 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtEditar;
     private javax.swing.JButton Btexcluir;
-    private javax.swing.JFormattedTextField Cbusca;
     private javax.swing.JPanel Painel1;
     private javax.swing.JPanel Painel2;
     private javax.swing.JPanel Painel3;
@@ -692,6 +734,7 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     private javax.swing.JButton btnBusca;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -714,19 +757,24 @@ public class ContasAPagarPrincipal extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTabelaP;
+    private javax.swing.JFormattedTextField txtCampoBusca;
     private javax.swing.JTextField txtcod;
     private javax.swing.JTextField txtcod1;
     private javax.swing.JTextField txtdesc;
     private javax.swing.JTextField txtdesc1;
-    private javax.swing.JTextField txtdtp;
-    private javax.swing.JTextField txtdtp1;
-    private javax.swing.JTextField txtdtv;
-    private javax.swing.JTextField txtdtv1;
+    private javax.swing.JFormattedTextField txtdtp;
+    private javax.swing.JFormattedTextField txtdtp1;
+    private javax.swing.JFormattedTextField txtdtv;
+    private javax.swing.JFormattedTextField txtdtv1;
     private javax.swing.JTextField txtstatus;
     private javax.swing.JTextField txtstatus1;
     private javax.swing.JTextField txtv;
     private javax.swing.JTextField txtv1;
     // End of variables declaration//GEN-END:variables
+
+    private void buscarContasApagar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     
 }
