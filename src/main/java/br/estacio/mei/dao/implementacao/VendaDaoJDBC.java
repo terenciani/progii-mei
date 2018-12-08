@@ -56,7 +56,7 @@ public class VendaDaoJDBC implements VendaDao{
             
             preparacaoDaInstrucao.setInt(1, venda.getCodigo());
             preparacaoDaInstrucao.setObject(2, venda.getCliente());
-            preparacaoDaInstrucao.setObject(3, venda.getData());
+            preparacaoDaInstrucao.setString(3, venda.getData());
             preparacaoDaInstrucao.setString(4, venda.getObservacao());
             preparacaoDaInstrucao.setString(5, venda.getFormaPagamento());
             preparacaoDaInstrucao.setDouble(6, venda.getValor());
@@ -92,7 +92,7 @@ public class VendaDaoJDBC implements VendaDao{
             //De acordo com a posicao do ponto de interrogacao na SQL e o tipo do dado
             preparacaoDaInstrucao.setInt(1, venda.getCodigo());
             preparacaoDaInstrucao.setObject(2, venda.getCliente());
-            preparacaoDaInstrucao.setObject(3, venda.getData());
+            preparacaoDaInstrucao.setString(3, venda.getData());
             preparacaoDaInstrucao.setString(4, venda.getObservacao());
             preparacaoDaInstrucao.setString(5, venda.getFormaPagamento());
             preparacaoDaInstrucao.setDouble(6, venda.getValor());
@@ -145,46 +145,40 @@ public class VendaDaoJDBC implements VendaDao{
         try {
             venda.setCodigo(resultado.getInt("codigo"));
             Cliente cliente = new Cliente();
-            cliente.setNome(resultado.getString("cliente"));
+            cliente.setNome((String) resultado.getObject("cliente"));
             venda.setCliente(cliente);
             venda.setStatus(resultado.getInt("status"));
             venda.setValor(resultado.getDouble("valor"));
-            venda.setData(resultado.getDate("data"));
+            venda.setData((String) resultado.getObject("data"));
             venda.setObservacao( resultado.getString("observacao"));
             venda.setFormaPagamento(resultado.getString("formaPagamento"));
             return venda;
         } catch (SQLException ex) {
-            throw new SQLException("Erro na Transformação");
+            throw new SQLException("Erro na Transformação"+ ex);
         }
     }
 
-    /**
-     *
-     * @param dataI
-     * @param dataF
-     * @return
-     */
+   
     @Override
     public ArrayList<Venda> buscarVendaData(Venda dataI, Venda dataF) {
         
         ArrayList<Venda> listaParaRetorno = new ArrayList<>();
         
         try {
-            String sql = "SELECT * FROM tb_venda WHERE (data,'%y/%m/%d') BETWEEN (?,'%d/%m/%Y') AND (?,'%d/%m/%Y')";
+            String sql = "SELECT * FROM tb_venda WHERE (data,'%d-%m-%Y') BETWEEN (?,'%d-%m-%Y') AND (?,'%d-%m-%Y') ORDER BY data";
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
             
-            preparacaoDaInstrucao.setObject(1, dataI.getData());
-            preparacaoDaInstrucao.setObject(2, dataF.getData());
-            
+            preparacaoDaInstrucao.setString(1,dataI.getData());
+            preparacaoDaInstrucao.setString(2,dataF.getData());
+       
             ResultSet resultado = preparacaoDaInstrucao.executeQuery();
-
+         
             while (resultado.next()) {
                 Venda venda = transformaResultSetEmObjeto(resultado);
                 listaParaRetorno.add(venda);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
-            return null;
         }
 
         return listaParaRetorno;

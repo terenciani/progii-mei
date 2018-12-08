@@ -28,7 +28,7 @@ public class VendaDaoEstatica implements VendaDao {
 
     @Override
     public Venda salvarVenda(Venda venda) {
-        venda.setData((java.sql.Date) new Date());
+        //venda.setData(Date());
         venda.setStatus(0);
         venda.setCodigo(BancoSingleton.getInstance().tabelaVenda.size() + 1);
         BancoSingleton.getInstance().tabelaVenda.add(venda);

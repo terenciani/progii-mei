@@ -10,14 +10,13 @@ import java.util.Date;
 
 
 
-
 /**
  *
  * @author Aluno
  */
 public class Venda {
     private int codigo;
-    private Date data;
+    private String data;
     private Cliente cliente;
     private Usuario usuario;
 
@@ -48,14 +47,6 @@ public class Venda {
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
-    }
-
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
     }
 
     public Cliente getCliente() {
@@ -101,6 +92,14 @@ public class Venda {
     @Override
     public String toString() {
         return "Venda{" + "codigo=" + codigo + ", data=" + data + ", cliente=" + cliente + ", usuario=" + usuario + ", valor=" + valor + ", observacao=" + observacao + ", desconto=" + desconto + ", status=" + status + "}";
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 
 
