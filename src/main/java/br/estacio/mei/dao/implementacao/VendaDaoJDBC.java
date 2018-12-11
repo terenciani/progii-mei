@@ -10,6 +10,7 @@ import br.estacio.mei.dao.VendaDao;
 import br.estacio.mei.model.Cliente;
 import br.estacio.mei.model.ItemVenda;
 import br.estacio.mei.model.Venda;
+import br.estacio.mei.visao.relatorio.vendas.RelatorioVendasPrincipal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -58,7 +59,7 @@ public class VendaDaoJDBC implements VendaDao{
             preparacaoDaInstrucao.setObject(2, venda.getCliente());
             preparacaoDaInstrucao.setString(3, venda.getData());
             preparacaoDaInstrucao.setString(4, venda.getObservacao());
-            preparacaoDaInstrucao.setString(5, venda.getFormaPagamento());
+            preparacaoDaInstrucao.setObject(5, venda.getFormapagamento());
             preparacaoDaInstrucao.setDouble(6, venda.getValor());
             preparacaoDaInstrucao.setInt(7, venda.getStatus());
             return venda;
@@ -94,7 +95,7 @@ public class VendaDaoJDBC implements VendaDao{
             preparacaoDaInstrucao.setObject(2, venda.getCliente());
             preparacaoDaInstrucao.setString(3, venda.getData());
             preparacaoDaInstrucao.setString(4, venda.getObservacao());
-            preparacaoDaInstrucao.setString(5, venda.getFormaPagamento());
+            preparacaoDaInstrucao.setObject(5, venda.getFormapagamento());
             preparacaoDaInstrucao.setDouble(6, venda.getValor());
             preparacaoDaInstrucao.setInt(7, venda.getStatus());
 
@@ -151,7 +152,7 @@ public class VendaDaoJDBC implements VendaDao{
             venda.setValor(resultado.getDouble("valor"));
             venda.setData((String) resultado.getObject("data"));
             venda.setObservacao( resultado.getString("observacao"));
-            venda.setFormaPagamento(resultado.getString("formaPagamento"));
+            venda.setFormapagamento(resultado.getString("formaPagamento"));
             return venda;
         } catch (SQLException ex) {
             throw new SQLException("Erro na Transformação"+ ex);
@@ -160,19 +161,20 @@ public class VendaDaoJDBC implements VendaDao{
 
    
     @Override
-    public ArrayList<Venda> buscarVendaData(Venda dataI, Venda dataF) {
+    public ArrayList<Venda> buscarVendaData(Venda dataI, Venda dataF, Venda formaPag) {
         
         ArrayList<Venda> listaParaRetorno = new ArrayList<>();
-        
         try {
-            String sql = "SELECT * FROM tb_venda WHERE (data,'%d-%m-%Y') BETWEEN (?,'%d-%m-%Y') AND (?,'%d-%m-%Y') ORDER BY data";
+            
+            String sql = "SELECT * FROM tb_venda WHERE (data,'%d/%m/%Y') BETWEEN (?,'%d/%m/%Y') AND (?,'%d/%m/%Y') AND (formapagamento = ?) ORDER BY data";
             PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
             
             preparacaoDaInstrucao.setString(1,dataI.getData());
             preparacaoDaInstrucao.setString(2,dataF.getData());
-       
+            preparacaoDaInstrucao.setObject(3,formaPag.getFormapagamento());  
+             
             ResultSet resultado = preparacaoDaInstrucao.executeQuery();
-         
+      
             while (resultado.next()) {
                 Venda venda = transformaResultSetEmObjeto(resultado);
                 listaParaRetorno.add(venda);
@@ -182,7 +184,31 @@ public class VendaDaoJDBC implements VendaDao{
         }
 
         return listaParaRetorno;
-       
+       } 
+
+    @Override
+    public ArrayList<Venda> buscarVendaData2(Venda dataI, Venda dataF) {
+            ArrayList<Venda> listaParaRetorno = new ArrayList<>();
+        try {
+            
+            String sql = "SELECT * FROM tb_venda WHERE (data,'%d/%m/%Y') BETWEEN (?,'%d/%m/%Y') AND (?,'%d/%m/%Y') ORDER BY data";
+            PreparedStatement preparacaoDaInstrucao = Conexao.retornaConexao().prepareStatement(sql);
+            
+            preparacaoDaInstrucao.setString(1,dataI.getData());
+            preparacaoDaInstrucao.setString(2,dataF.getData());
+             
+            ResultSet resultado = preparacaoDaInstrucao.executeQuery();
+      
+            while (resultado.next()) {
+                Venda venda = transformaResultSetEmObjeto(resultado);
+                listaParaRetorno.add(venda);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return listaParaRetorno;
+        
+         }
     }
     
-}
