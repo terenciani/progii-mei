@@ -30,14 +30,14 @@ public class Venda {
     private double valor;
     private double desconto;
     private String observacao;
-    private String formaPagamento;
+    private Object formaPagamento;
     private int status;
     
-    public String getFormaPagamento() {
+    public Object getFormaPagamento() {
         return formaPagamento;
     }
 
-    public void setFormaPagamento(String formaPagamento) {
+    public void setFormaPagamento(Object formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
 

@@ -92,7 +92,12 @@ public class VendaDaoEstatica implements VendaDao {
     }
 
     @Override
-    public ArrayList<Venda> buscarVendaData(Venda dataI, Venda dataF) {
+    public ArrayList<Venda> buscarVendaData(Venda dataI, Venda dataF, Venda formaPag) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Venda> buscarVendaData2(Venda dataI, Venda dataF) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
