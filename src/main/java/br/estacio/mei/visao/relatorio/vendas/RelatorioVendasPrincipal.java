@@ -236,7 +236,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
          
              data.setData(jData1.getText());
              data2.setData(jData2.getText());
-             pagamento.setFormapagamento(jSelecaoPag.getSelectedItem());
+             pagamento.setFormaPagamento(jSelecaoPag.getSelectedItem());
              buscarVendaData(data, data2, pagamento);
          
     }//GEN-LAST:event_btVisualizarActionPerformed
@@ -308,7 +308,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
             infLinhas[3] = mostraVenda.getValor();
             infLinhas[4] = mostraVenda.getData();
             infLinhas[5] = mostraVenda.getObservacao();
-            infLinhas[6] = mostraVenda.getFormapagamento();
+            infLinhas[6] = mostraVenda.getFormaPagamento();
             
             System.out.println(Arrays.toString(infLinhas));
             preencherTabela.addRow(infLinhas);
@@ -330,7 +330,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
             infLinhas[3] = mostraVenda.getValor();
             infLinhas[4] = mostraVenda.getData();
             infLinhas[5] = mostraVenda.getObservacao();
-            infLinhas[6] = mostraVenda.getFormapagamento();
+            infLinhas[6] = mostraVenda.getFormaPagamento();
             
             System.out.println(Arrays.toString(infLinhas));
             preencherTabela.addRow(infLinhas);

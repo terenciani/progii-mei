@@ -48,7 +48,7 @@ public class VendaDaoMySQL {
             venda.setValor(resultado.getDouble("valor"));
             venda.setData(resultado.getString("data"));
             venda.setObservacao( resultado.getString("observacao"));
-            venda.setFormapagamento(resultado.getString("formaPagamento"));
+            venda.setFormaPagamento(resultado.getString("formaPagamento"));
             return venda;
         } catch (SQLException ex) {
             throw new SQLException("Erro na Transformação");

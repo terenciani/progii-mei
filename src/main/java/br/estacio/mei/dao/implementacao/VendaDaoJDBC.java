@@ -59,7 +59,7 @@ public class VendaDaoJDBC implements VendaDao{
             preparacaoDaInstrucao.setObject(2, venda.getCliente());
             preparacaoDaInstrucao.setString(3, venda.getData());
             preparacaoDaInstrucao.setString(4, venda.getObservacao());
-            preparacaoDaInstrucao.setObject(5, venda.getFormapagamento());
+            preparacaoDaInstrucao.setObject(5, venda.getFormaPagamento());
             preparacaoDaInstrucao.setDouble(6, venda.getValor());
             preparacaoDaInstrucao.setInt(7, venda.getStatus());
             return venda;
@@ -95,7 +95,7 @@ public class VendaDaoJDBC implements VendaDao{
             preparacaoDaInstrucao.setObject(2, venda.getCliente());
             preparacaoDaInstrucao.setString(3, venda.getData());
             preparacaoDaInstrucao.setString(4, venda.getObservacao());
-            preparacaoDaInstrucao.setObject(5, venda.getFormapagamento());
+            preparacaoDaInstrucao.setObject(5, venda.getFormaPagamento());
             preparacaoDaInstrucao.setDouble(6, venda.getValor());
             preparacaoDaInstrucao.setInt(7, venda.getStatus());
 
@@ -152,7 +152,7 @@ public class VendaDaoJDBC implements VendaDao{
             venda.setValor(resultado.getDouble("valor"));
             venda.setData((String) resultado.getObject("data"));
             venda.setObservacao( resultado.getString("observacao"));
-            venda.setFormapagamento(resultado.getString("formaPagamento"));
+            venda.setFormaPagamento(resultado.getString("formaPagamento"));
             return venda;
         } catch (SQLException ex) {
             throw new SQLException("Erro na Transformação"+ ex);
@@ -171,7 +171,7 @@ public class VendaDaoJDBC implements VendaDao{
             
             preparacaoDaInstrucao.setString(1,dataI.getData());
             preparacaoDaInstrucao.setString(2,dataF.getData());
-            preparacaoDaInstrucao.setObject(3,formaPag.getFormapagamento());  
+            preparacaoDaInstrucao.setObject(3,formaPag.getFormaPagamento());  
              
             ResultSet resultado = preparacaoDaInstrucao.executeQuery();
       
