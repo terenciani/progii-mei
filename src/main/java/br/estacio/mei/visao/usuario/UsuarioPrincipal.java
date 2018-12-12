@@ -231,7 +231,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         
         Usuario usuario = new Usuario();
             usuario.setUsuario(txtnome.getText());
-            usuario.setSenha(Arrays.toString(txtsenha.getPassword()));
+            usuario.setSenha(txtsenha.getPassword().toString());
 
             usuarioDao.salvarUsuario(usuario);
 
