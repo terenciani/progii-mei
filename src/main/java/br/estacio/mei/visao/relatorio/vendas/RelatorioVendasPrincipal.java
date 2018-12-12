@@ -1,19 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.estacio.mei.visao.relatorio.vendas;
 
 import br.estacio.mei.dao.VendaDao;
 import br.estacio.mei.dao.implementacao.VendaDaoJDBC;
 import br.estacio.mei.model.Venda;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.print.PrinterException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JTable;
+import javax.swing.filechooser.FileFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -29,10 +36,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
      * Creates new form RelatorioVendasPrincipal
      */
     public RelatorioVendasPrincipal() {
-        initComponents();
-        
-        //mostraTabela();
-        
+        initComponents();      
     }
 
     /**
@@ -213,7 +217,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 162, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel8))
@@ -226,7 +230,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
                         .addComponent(btSalvar)
                         .addGap(27, 27, 27)
                         .addComponent(btImprimir)))
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -242,7 +246,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_btVisualizarActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-                               
+            gerarPDF();  
     }//GEN-LAST:event_btSalvarActionPerformed
 
     private void btImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btImprimirActionPerformed
@@ -253,7 +257,6 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
         } catch (PrinterException e) {
             Logger.getLogger("Erro ao gerar arquivo para impressão. Tente novamente!" + e);
         }
-
     }//GEN-LAST:event_btImprimirActionPerformed
 
     private void jData1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jData1ActionPerformed
@@ -290,9 +293,7 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
    private void buscarVendaData(Venda dataI, Venda dataF, Venda formaPag){
         
        String pag = (String) jSelecaoPag.getSelectedItem();
-       
        if(pag != "Todos os pagamentos"){
-           
             DefaultTableModel preencherTabela = (DefaultTableModel)tbItens.getModel();  
         while (preencherTabela.getRowCount() != 0) {
             preencherTabela.removeRow(0);
@@ -337,5 +338,58 @@ public class RelatorioVendasPrincipal extends javax.swing.JPanel {
            }
        }
    }
+   
+   private void gerarPDF(){
+      Document relatorio = new Document(PageSize.A4,50,50,50,50);
+      JFileChooser jFileChooser = new JFileChooser();
+      jFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);  
+      jFileChooser.setAcceptAllFileFilterUsed(false);
+      jFileChooser.setFileFilter(new FileFilter(){
+          
+          @Override
+          public String getDescription(){
+              return "Extensão PDF";
+          }
+          
+          @Override
+          public boolean accept(File f){
+              return f.getName().toLowerCase().endsWith(".pdf");
+          }
+      });
+      int acao = jFileChooser.showSaveDialog(null);
+            switch (acao) {
+                case JFileChooser.APPROVE_OPTION:
+                    try {
+                        PdfWriter.getInstance(relatorio, new FileOutputStream(jFileChooser.getSelectedFile().getAbsolutePath().concat(".pdf")));
+                        relatorio.open();
+                        Paragraph titulo = new Paragraph("Relatorio de Vendas");
+                        titulo.setSpacingAfter(10);
+                        titulo.setAlignment(Element.ALIGN_CENTER);
+                        relatorio.add(titulo);
+                        PdfPTable tabela = new PdfPTable(tbItens.getColumnCount());
+                        for (int i = 0; i < tbItens.getColumnCount(); i++) {
+                            tabela.addCell(tbItens.getColumnName(i));
+                        }
+                        for (int linha = 0; linha < tbItens.getRowCount(); linha++) {
+                            for (int coluna = 0; coluna < tbItens.getColumnCount(); coluna++) {
+                                tabela.addCell(tbItens.getModel().getValueAt(linha, coluna).toString());
+                            }
+                        }
+                        relatorio.add(tabela);
+                        relatorio.close();
+                    } catch (DocumentException ex ) {
+                        Logger.getLogger("Erro ao gerar arquivo"+ ex);
+                    } catch (FileNotFoundException ex2){
+                        Logger.getLogger(ex2+ "Erro para gerar arquivo");
+                    }           break;
+                case JFileChooser.CANCEL_OPTION:
+                    break;
+                case JFileChooser.ERROR_OPTION:
+                    break;
+                default: 
+                    break;
+            }  
+    }
 }
+
 
