@@ -63,7 +63,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 104, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 104, 0, 0);
         add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 24)); // NOI18N
@@ -84,7 +84,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         gridBagConstraints.gridx = 12;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 26, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 14, 0, 0);
         add(jLabel3, gridBagConstraints);
 
         txtnome.addActionListener(new java.awt.event.ActionListener() {
@@ -114,11 +114,12 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 165;
         gridBagConstraints.ipady = 15;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 26, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 14, 0, 0);
         add(txtsenha, gridBagConstraints);
 
         btnCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCadastrar.setText("Cadastrar");
+        btnCadastrar.setPreferredSize(new java.awt.Dimension(115, 25));
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarActionPerformed(evt);
@@ -127,9 +128,9 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = -1;
+        gridBagConstraints.ipadx = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 13, 0, 0);
         add(btnCadastrar, gridBagConstraints);
 
         cdTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -166,8 +167,8 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 15;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1024;
-        gridBagConstraints.ipady = 57;
+        gridBagConstraints.ipadx = 1026;
+        gridBagConstraints.ipady = 117;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
@@ -185,9 +186,9 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipadx = 23;
+        gridBagConstraints.ipadx = 38;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 23, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 20, 0, 0);
         add(btnExcluir, gridBagConstraints);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icone usuario2.fw.png"))); // NOI18N
@@ -196,7 +197,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 52, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(7, 39, 0, 0);
         add(jLabel4, gridBagConstraints);
 
         txtusuario.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +212,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 165;
         gridBagConstraints.ipady = 15;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 26, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 16, 0, 0);
         add(txtusuario, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 24)); // NOI18N
@@ -221,7 +222,7 @@ public class UsuarioPrincipal extends javax.swing.JPanel {
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 26, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 16, 0, 0);
         add(jLabel5, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
