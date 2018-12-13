@@ -179,23 +179,23 @@ public class SacPrincipal extends javax.swing.JPanel {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         
         if(jTable1.getSelectedRow() != -1){
-             DefaultTableModel buscarTodos = (DefaultTableModel) jTable1.getModel();
+         ArrayList<ServicoDeAtendimentoAoCliente> listaDeSac = sacDao.buscarTodos();
+            popularTabela(listaDeSac);
              
-             ServicoDeAtendimentoAoCliente sac = dadoDaTabela.get(i);
+            DefaultTableModel buscarTodos = (DefaultTableModel) jTable1.getModel();
              
+            ServicoDeAtendimentoAoCliente sac = listaDeSac.get(0);
             Object[] dadoDaTabela = new Object[4];
             dadoDaTabela[0] = sac.getCodigo();
             dadoDaTabela[1] = sac.getPalavraChave();
             dadoDaTabela[2] = sac.getPergunta();
             dadoDaTabela[3] = sac.getResposta();
             buscarTodos.addRow(dadoDaTabela);
-             
-            txtResposta.setText(jTable1.getValueAt(jTable1.getSelectedRow(),4).toString());
-            
+        
+        }           
+            txtresposta.setText(jTable1.getValueAt(jTable1.getSelectedRow(),4).toString());
             JTextArea.setText(dadoDaTabela);
-} 
-        
-        
+ 
         
     }//GEN-LAST:event_jTable1MouseClicked
 
