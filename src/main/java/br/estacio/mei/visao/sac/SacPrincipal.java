@@ -9,6 +9,7 @@ import br.estacio.mei.dao.ServicoDeAtendimentoAoClienteDao;
 import br.estacio.mei.dao.implementacao.ServicoDeAtendimentoAoClienteDaoJDBC;
 import br.estacio.mei.model.ServicoDeAtendimentoAoCliente;
 import java.util.ArrayList;
+import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -53,7 +54,7 @@ public class SacPrincipal extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtxtFiltro = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -68,13 +69,18 @@ public class SacPrincipal extends javax.swing.JPanel {
 
         jLabel1.setText("Filtrar");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jtxtFiltro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jtxtFiltroActionPerformed(evt);
             }
         });
 
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -87,7 +93,7 @@ public class SacPrincipal extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtxtFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -100,7 +106,7 @@ public class SacPrincipal extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(jtxtFiltro))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
@@ -125,7 +131,22 @@ public class SacPrincipal extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jTable1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTable1KeyPressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setHeaderValue("Código");
+            jTable1.getColumnModel().getColumn(1).setHeaderValue("Palavra Chave");
+            jTable1.getColumnModel().getColumn(2).setHeaderValue("Pergunta");
+        }
 
         jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
@@ -135,7 +156,6 @@ public class SacPrincipal extends javax.swing.JPanel {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Teste\n\nTeste");
         jTextArea1.setEnabled(false);
         jScrollPane2.setViewportView(jTextArea1);
 
@@ -144,9 +164,40 @@ public class SacPrincipal extends javax.swing.JPanel {
         add(jPanel2);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void jtxtFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtFiltroActionPerformed
+     //criar metodo filtro    
+    }//GEN-LAST:event_jtxtFiltroActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+     //criar metodo busca    
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void jTable1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyPressed
+
+    }//GEN-LAST:event_jTable1KeyPressed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        
+        if(jTable1.getSelectedRow() != -1){
+             DefaultTableModel buscarTodos = (DefaultTableModel) jTable1.getModel();
+             
+             ServicoDeAtendimentoAoCliente sac = dadoDaTabela.get(i);
+             
+            Object[] dadoDaTabela = new Object[4];
+            dadoDaTabela[0] = sac.getCodigo();
+            dadoDaTabela[1] = sac.getPalavraChave();
+            dadoDaTabela[2] = sac.getPergunta();
+            dadoDaTabela[3] = sac.getResposta();
+            buscarTodos.addRow(dadoDaTabela);
+             
+            txtResposta.setText(jTable1.getValueAt(jTable1.getSelectedRow(),4).toString());
+            
+            JTextArea.setText(dadoDaTabela);
+} 
+        
+        
+        
+    }//GEN-LAST:event_jTable1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -159,6 +210,6 @@ public class SacPrincipal extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jtxtFiltro;
     // End of variables declaration//GEN-END:variables
 }
